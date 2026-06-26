@@ -5,6 +5,7 @@ import { Figure } from "./Figure";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 import { Quiz } from "./Quiz";
 import { PaybackCalculator } from "./PaybackCalculator";
+import SteamBoilerOptimizer from "../simulators/SteamBoilerOptimizer";
 
 /** Internal links use next/link for client-side nav; external open in a new tab. */
 function MdxLink({
@@ -35,4 +36,5 @@ export const mdxComponents = {
   YouTubeEmbed,
   Quiz,
   PaybackCalculator,
+  SteamBoilerOptimizer,
 };

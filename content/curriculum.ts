@@ -741,6 +741,13 @@ export const curriculum: Level[] = [
                 minutes: 9,
               },
               {
+                slug: "optimization-capstone",
+                title: "Capstone: Boiler Optimization Simulator",
+                summary:
+                  "Hands-on: tune a live industrial steam boiler, read the flue gas, and decide when to invest or replace.",
+                minutes: 20,
+              },
+              {
                 slug: "boilers-check",
                 title: "Boilers & Fired Systems Check",
                 summary: "Quiz on combustion, efficiency, and practical optimization.",

@@ -1,0 +1,48 @@
+You've learned how combustion works, where boilers waste energy, and the practical levers for efficiency. Now put it all together on a realistic industrial steam boiler — and learn to read it the way an auditor does.
+
+This is a hands-on capstone. Rather than reading about efficiency, you'll *drive* a 5 t/h natural-gas fire-tube boiler: trim the combustion, manage the water, test it across the load range, and decide when capital investment is justified. Watch how every adjustment moves the energy-flow bar, the flue-gas analyser, and the live coaching.
+
+<SteamBoilerOptimizer />
+
+## How to use the simulator
+
+Start in the **Sandbox** to build intuition, then work through the three scenarios in order. As you move each control, watch three things:
+
+- **The energy-flow bar** — 100% of fuel energy in, split into useful heat and each loss. This is the heart of the exercise: efficiency is just the green segment. Make a loss shrink and you've made efficiency grow.
+- **The flue-gas analyser** — the instrument a real combustion technician clips to the stack. O₂, CO₂, CO and stack temperature are the symptoms you diagnose from.
+- **The live coaching** — names what's happening and why, and points at your biggest remaining opportunity.
+
+## What each lever does
+
+**Excess O₂ (combustion air)** — the single biggest efficiency lever. Too little air and the flame is starved: incomplete combustion, CO, soot, wasted unburnt fuel. Too much air and you heat all that spare air and throw it up the stack. The sweet spot — around 3–4% O₂ — is near-complete combustion with minimal excess. Watch the CO₂ reading peak and the stack temperature fall as you trim toward it.
+
+**Blowdown rate** — boiler water must be blown down to control dissolved solids, but every blowdown dumps hot water. Too low and you get scale and corrosion; too high and you waste heat and chemicals. Find the balance, typically around 2–3%.
+
+**Firing rate (load)** — real boilers rarely run flat out. Efficiency falls at part load because fixed losses (radiation, casing) become a bigger *share*. Tune for the load pattern you actually run, not just the peak.
+
+## The progression you'll discover
+
+The three scenarios teach a deliberate sequence that mirrors how real decarbonisation plans are built:
+
+1. **Baseline tune** — combustion trim on a healthy boiler is free efficiency, and gets you to ~82%.
+2. **Variable load + heat recovery** — trim alone caps out; to go further you invest in an **economiser** to recover stack heat. Cheapest measures first, then capital.
+3. **Tune or replace?** — on a worn, fouled boiler, even trim *and* an economiser fall short. The valuable finding is recognising when optimisation has run out of road and replacement is the sounder investment.
+
+<Callout variant="key" title="The core insight">
+On a natural-gas boiler, roughly 10% of the fuel energy leaves as latent heat in the flue-gas moisture — unrecoverable without a condensing economiser. That's why even a perfectly tuned non-condensing boiler tops out in the low-to-mid 80s%. Combustion trim is free and should always come first; heat recovery buys the next few points; and there's a hard ceiling that tells you when to stop optimising and start budgeting for replacement.
+</Callout>
+
+## After you finish
+
+Ask yourself the questions a real auditor would:
+
+- Could you make these same tuning decisions standing in front of a real boiler with a flue-gas analyser?
+- What would you put in your report to the facility manager — and how would you justify the economiser spend?
+- In Scenario 3, at what point did you conclude the old boiler wasn't worth saving? What evidence convinced you?
+
+## Related lessons
+
+- [Combustion Efficiency](/courses/boilers-and-fired-systems/combustion-efficiency) — the physics behind the flue-gas analyser
+- [Managing Excess Air](/courses/boilers-and-fired-systems/excess-air) — the main lever, in depth
+- [Boiler Blowdown & Water Treatment](/courses/boilers-and-fired-systems/blowdown) — the water-side trade-off
+- [Retrofit & Replacement Options](/courses/boilers-and-fired-systems/retrofit-options) — turning the Scenario 3 verdict into a recommendation
