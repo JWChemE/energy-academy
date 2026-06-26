@@ -1,0 +1,58 @@
+**Power factor** (PF) is the fraction of apparent power that does useful work. Low PF wastes energy and costs money.
+
+## Real, reactive, and apparent power
+
+- **Real power (P, kW):** does useful work (heating, motion)
+- **Reactive power (Q, kVAr):** oscillates, wasted in inductors (motors, transformers)
+- **Apparent power (S, kVA):** total = √(P² + Q²)
+- **Power factor** = P / S = cos(φ), where φ is the phase angle
+
+At PF = 1.0 (resistive), all power is real. At PF = 0.7 (inductive motors), 30% is reactive (wasted).
+
+## Why poor PF costs money
+
+1. **Larger cables and switchgear needed** for the same real power
+2. **I² R losses in wiring** scale with total current (higher at poor PF)
+3. **Utility charges:** Most commercial tariffs charge for kVA, not just kW
+   - 100 kW motor at PF 0.85: draws 100 / 0.85 = 118 kVA
+   - Same motor at PF 0.95: draws 105 kVA
+   - Difference = 13 kVA, billed as higher demand charge
+
+**Example:** If demand is 500 kVA, improving from PF 0.85 to 0.95 reduces it to 474 kVA, saving demand charge on 26 kVA.
+
+## Causes of low PF
+
+- **Induction motors** — inherently inductive, especially when:
+  - Oversized (running light)
+  - Lightly loaded (20–50% of capacity)
+- **Transformers** — also inductive
+- **Ballasts in old fluorescent lights** — reactive
+- **VFDs and other power electronics** — non-linear, create harmonics
+
+## Improving PF
+
+**Method 1: Right-size motors**
+- An oversized motor at 50% load has poor PF
+- Replacing with a right-sized motor improves PF to 0.92+
+
+**Method 2: Capacitor banks**
+- Capacitors inject reactive power, opposing inductors
+- Sized to raise PF to 0.95 or better
+- Cost: 2,000–5,000 GBP for typical facility
+- Savings: 500–1,500 GBP/year
+- Payback: 3–5 years
+
+**Method 3: Active harmonic filters**
+- More expensive, but also reduce harmonics
+- Good if equipment with VFDs is causing poor PF and harmonics
+
+**Method 4: Load better** — if motors are lightly loaded, increase load (or right-size the motor).
+
+## Checking your facility
+
+Check the electricity bill:
+- If it shows PF, look at it monthly
+- If PF < 0.95, you're paying for reactive power
+- Target: PF > 0.95
+
+Use a power-factor meter (handheld clamp-on: £200–500) to check PF in motor rooms, HVAC plants, etc.

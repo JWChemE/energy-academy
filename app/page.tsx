@@ -1,65 +1,121 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getLevels } from "@/lib/content";
 
 export default function Home() {
+  const levels = getLevels();
+  const totalCourses = levels.reduce((n, l) => n + l.courses.length, 0);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div>
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-slate-200 bg-white">
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-sky-50"
+          aria-hidden
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-sm font-medium text-brand-700">
+              Energy management, made learnable
+            </span>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+              Master energy management, one principle at a time.
+            </h1>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              A structured path from the fundamentals everyone should know, through
+              hands-on technical deep dives, to the leadership skills that drive an
+              organisation toward net zero.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/courses/intro-to-energy-management"
+                className="rounded-lg bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+              >
+                Start the foundation course
+              </Link>
+              <Link
+                href="#levels"
+                className="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+              >
+                Explore the curriculum
+              </Link>
+            </div>
+            <dl className="mt-12 flex gap-8">
+              <div>
+                <dt className="text-sm text-slate-500">Tiers</dt>
+                <dd className="text-2xl font-bold text-slate-900">3</dd>
+              </div>
+              <div>
+                <dt className="text-sm text-slate-500">Courses</dt>
+                <dd className="text-2xl font-bold text-slate-900">
+                  {totalCourses}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm text-slate-500">Cost to start</dt>
+                <dd className="text-2xl font-bold text-slate-900">Free</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* Three tiers */}
+      <section id="levels" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+            Three tiers of learning
+          </h2>
+          <p className="mt-3 text-lg text-slate-600">
+            Aligned to the way the energy profession develops expertise — start at
+            the foundations and progress as far as you need.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {levels.map((level) => (
+            <Link
+              key={level.slug}
+              href={`/levels/${level.slug}`}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              <div
+                className={`h-1.5 bg-gradient-to-r ${level.accent.gradient}`}
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg font-bold ${level.accent.badge}`}
+                  >
+                    {level.number}
+                  </span>
+                  <div>
+                    <div className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                      Level {level.number}
+                    </div>
+                    <div className="text-lg font-semibold text-slate-900">
+                      {level.title}
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">
+                  {level.description}
+                </p>
+                <div className="mt-5 flex items-center justify-between">
+                  <span className="text-sm text-slate-400">
+                    {level.courses.length} courses
+                  </span>
+                  <span
+                    className={`text-sm font-semibold ${level.accent.text} group-hover:underline`}
+                  >
+                    Browse Level {level.number} →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </main>
+      </section>
     </div>
   );
 }

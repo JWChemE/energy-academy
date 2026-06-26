@@ -1,0 +1,36 @@
+Different control **modes** (algorithms) describe how the controller adjusts the actuator.
+
+## On-Off (Bang-Bang) Control
+
+Actuator is either fully on or fully off.
+
+Example: Thermostat at 21°C setpoint. If T < 20.5°C, heating on fully. If T > 21.5°C, heating off fully.
+
+Pros: Simple, cheap.
+Cons: Causes oscillation, energy waste (overshoots setpoint), noise.
+
+## Proportional (P) Control
+
+Actuator position is proportional to error.
+
+If error = 0, actuator is at neutral. If error = 2°C too cold, actuator is 50% on (example).
+
+Pros: Smoother than on-off, less oscillation.
+Cons: Offset (doesn't always reach setpoint exactly). Dead band required to prevent chatter.
+
+## Proportional-Integral-Derivative (PID) Control
+
+- **P:** Proportional to error (same as P above)
+- **I:** Integral (accounts for past error; if you're always 0.2°C too cold, I gradually increases output to compensate)
+- **D:** Derivative (looks at rate of change; if temperature is rising fast, D reduces output to prevent overshoot)
+
+PID is the industry standard for good control: no offset, minimal overshoot, fast response.
+
+Tuning PID is an art: too aggressive (high gains) causes oscillation; too conservative causes slow response.
+
+## Energy impact
+
+PID: tight control without oscillation = less energy wasted.
+On-off: oscillation = overshooting setpoint, wasting energy.
+
+Example: Office with on-off heat: temp swings 19–23°C. PID maintains 21±0.2°C. PID saves ~5–10% heating energy.

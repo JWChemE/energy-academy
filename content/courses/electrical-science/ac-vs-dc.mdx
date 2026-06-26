@@ -1,0 +1,44 @@
+Most buildings use **alternating current (AC)**, not DC. Understanding the difference, and why, matters for energy management.
+
+## AC vs DC: the core difference
+
+**DC (direct current):** voltage and current flow in one direction only. Batteries deliver DC. Constant value over time.
+
+**AC (alternating current):** voltage and current oscillate back and forth, reversing direction many times per second (50 times per second in the UK — 50 Hz).
+
+## Why buildings use AC
+
+1. **Transformers work only on AC**. To step voltage up or down efficiently, you need AC. High-voltage transmission (e.g., 400 kV) can reduce cable losses; transformers drop it back to 230 V for use. DC has no equivalent.
+2. **AC motors are simpler and more reliable** than DC motors. No brushes, less maintenance. Most industrial and HVAC motors are AC.
+3. **Distribution is efficient**. AC's ability to be transformed means power can travel long distances at high voltage (low current, low losses), then stepped down for use.
+
+## The RMS value
+
+AC voltage varies sinusoidally: V(t) = V_peak × sin(2πft). But the **RMS (root mean square)** value is what we use in calculations.
+
+RMS is defined so that an AC signal at RMS voltage delivers the same power as a DC signal at that voltage.
+
+For a sinusoidal wave: V_RMS = V_peak / √2 ≈ 0.707 × V_peak
+
+**Example:** UK mains is 230 V RMS. The peak voltage is 230 × √2 ≈ 325 V.
+
+When you see "230 V" on a label or meter, that's RMS. Use it directly in calculations; don't try to adjust for the sine wave.
+
+<Callout variant="key" title="RMS is the standard for AC measurements">
+All AC voltage and current values are RMS unless otherwise stated. A 5 A meter reading means 5 A RMS, which delivers the same power as 5 A DC would.
+</Callout>
+
+## Frequency and benefits
+
+UK frequency is **50 Hz** (Europe-wide standard). The US uses 60 Hz.
+
+At 50 Hz, a synchronous motor's speed is naturally related to frequency: a 2-pole motor runs at 3,000 rpm, a 4-pole at 1,500 rpm. This "free" speed control is handy for fixed-speed equipment.
+
+Variable-frequency drives (VFDs) change the AC frequency to vary motor speed — a key energy management tool.
+
+## Practical implications
+
+- **AC lets transformers work** — essential for efficient long-distance distribution
+- **AC motors dominate** — boiler pumps, fan motors, compressor motors are almost always AC
+- **RMS values** are what you measure and use; the sine wave is handled automatically by the meter
+- **Frequency stability** is important — power grids maintain ±0.5 Hz to keep motors and controls running correctly

@@ -1,0 +1,31 @@
+A **Building Management System (BMS)** centralises control of all building systems: HVAC, lighting, power, security, fire.
+
+## Centralised vs distributed
+
+**Centralised:** All control logic in one computer (traditional). Pros: one place to manage everything. Cons: single point of failure.
+
+**Distributed:** Intelligence spread across local controllers (VAV controllers, chiller controller, etc.) talking to a central BMS. Pros: more robust, faster local response. Cons: complex integration.
+
+**Modern approach:** Distributed with central oversight — each system has a controller, but BMS monitors and coordinates.
+
+## Network protocols
+
+**BACnet:** Open standard, widely supported, popular in building automation.
+
+**Modbus:** Simpler, older, still widely used.
+
+**LonWorks:** Proprietary but powerful, common in larger systems.
+
+**Proprietary:** Manufacturers lock systems (e.g., Honeywell, Johnson Controls). Integration is harder.
+
+**Trend:** Cloud-based systems (Amazon, Microsoft) growing in adoption for data analysis and remote management.
+
+## Data points
+
+A typical building BMS logs thousands of points:
+- Room temperatures (hundreds)
+- Damper positions, valve positions
+- Equipment runtimes, alarms
+- Energy consumption (kWh)
+
+Data archival: 1–5 years typical; longer for compliance (utility contracts, audits).

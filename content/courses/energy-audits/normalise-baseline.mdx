@@ -1,0 +1,49 @@
+Raw utility data can't be fairly compared across months or years without accounting for external factors like weather and occupancy. **Normalisation** adjusts the data.
+
+## Why normalise?
+
+A building uses more gas in a cold winter than a mild one. A hospital uses more electricity if occupancy increases. Without normalisation, you can't tell if consumption actually rose (bad) or just varied with factors outside your control.
+
+## Weather normalisation
+
+**Degree-days** (HDD for heating, CDD for cooling) quantify how much heating/cooling is needed.
+
+HDD = max(0, 15.5°C − daily average temperature)
+
+Sum across all days in a period.
+
+**Example:** January has average 5°C, so HDD/day = 15.5 − 5 = 10.5. Over 31 days: 325 HDD for January.
+
+If your consumption is ~8,000 kWh (January 2023) and HDD was 325, your **heating sensitivity** is ~24.6 kWh/HDD.
+
+Next January: HDD is 280 (milder). Expected consumption: 280 × 24.6 ≈ 6,900 kWh.
+
+**Actual consumption: 7,200 kWh.** Did you improve? 7,200 vs 6,900 = you used 300 kWh more than expected. No, you got slightly worse (or there's another factor).
+
+## Occupancy normalisation
+
+If headcount increased 10%, energy proportionally should rise. Normalise by dividing consumption by headcount to get **intensity** (kWh per person).
+
+## Production volume
+
+In a factory, more production = more energy. Divide by production volume to get intensity.
+
+## Baseline establishment
+
+**Method:**
+1. Gather 12 months of utility data (kWh monthly)
+2. Gather HDD for each month (from UK Met Office or online)
+3. Regress: kWh = intercept + slope × HDD
+4. The intercept is **base consumption** (what you'd use at 15.5°C average temperature — essentially non-heating, non-cooling uses)
+5. Normalise all 12 months to average HDD (say, 100 HDD/month)
+6. Average the 12 normalised months → your baseline
+
+**Example outcome:** Baseline = 7,500 kWh/month (normalised to average weather).
+
+This baseline is your "no-improvement" point. Any reduction below it is savings.
+
+## Living baseline
+
+As you implement improvements, establish a new baseline (after each major change) so future comparisons are valid.
+
+Do NOT use the original baseline indefinitely — equipment changes, occupancy shifts, buildings are expanded. Update when conditions change.

@@ -1,0 +1,44 @@
+Temperature sensors are the eyes of the control system. Accuracy, response time, and placement determine control quality.
+
+## RTD (Resistance Temperature Detector)
+
+**Principle:** Resistance of a metal (usually platinum) changes with temperature.
+
+Common types: Pt100 (0°C = 100Ω), Pt1000 (0°C = 1,000Ω).
+
+Pros: Accurate (±0.5–1°C typical), linear, long-term stable, not affected by vibration.
+Cons: Needs 4-wire wiring for accuracy, slower response than thermocouple.
+
+Best for: HVAC, building automation, most comfort control.
+
+## Thermistor (NTC = Negative Temperature Coefficient)
+
+**Principle:** Resistance drops as temperature rises (opposite of RTD).
+
+Pros: Cheap, fast response, small.
+Cons: Non-linear, less accurate, drifts over time.
+
+Best for: Simple applications, low-cost devices.
+
+## Thermocouple
+
+**Principle:** Two different metals at different temperatures produce voltage (Seebeck effect).
+
+Pros: Fast response (seconds), works at very high temp (up to 1800°C), simple.
+Cons: Low output voltage (needs amplification), non-linear, reference junction errors.
+
+Best for: Industrial high-temperature (furnaces, ovens).
+
+## Placement errors
+
+**Window-mounted sensor:** Affected by direct sun, cold from outside. Reading unrepresentative.
+
+**Sensor in stagnant air:** Doesn't respond to room conditions; control lags.
+
+**Ceiling-mounted sensor:** Reads higher temp (warm air rises).
+
+**Best practice:** Mount in active space, away from drafts, direct sun, and radiators. Wall height (1.2–1.5 m), centrally located.
+
+## Calibration drift
+
+Sensors drift over time (1–2% per year typical). Recalibrate annually or every 2 years for critical systems.

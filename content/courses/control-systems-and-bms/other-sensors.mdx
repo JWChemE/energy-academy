@@ -1,0 +1,39 @@
+Beyond temperature, modern buildings need humidity, pressure, and flow measurement.
+
+## Humidity (RH - Relative Humidity)
+
+**Sensors:** Capacitive (most common), resistive, or psychrometric.
+
+Pros: Capacitive sensors are cheap and reasonably accurate (±2–5%).
+Cons: Drift over time, affected by temperature, condensation kills them.
+
+Applications: HVAC latent load control, datacenter humidity management, laboratory environments.
+
+Placement: Away from supply diffusers, not in condensation zones.
+
+## Pressure sensors
+
+**Applications:** Duct static pressure (fan speed control), chiller pressure (flow), pump pressure (system monitoring).
+
+Types: Diaphragm (most common), capacitive, strain gauge.
+
+Typical accuracy: ±1–2% of full scale.
+
+Energy impact: Low duct static pressure = fans can run slower (VFD on fan) = big energy savings.
+
+## Flow sensors
+
+**Types:** Turbine (mechanical rotation counted), magnetic (Coriolis, very accurate), ultrasonic (non-invasive).
+
+Applications: Chilled water flow (chiller control), hot water flow (boiler modulation), air flow (VAV box damper control).
+
+Challenge: Pipe scale and debris plug mechanical sensors. Ultrasonic avoids this.
+
+## Integration errors
+
+A poorly placed or uncalibrated sensor ruins control. Examples:
+
+- Humidity sensor in condensation zone reads 100% year-round; dehumidification runs 24/7 (waste).
+- Flow sensor reading 50% of actual flow → pump runs 2× harder to compensate (energy waste).
+
+Budget for sensor maintenance and annual recalibration.

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Energy Academy
 
-## Getting Started
+A Coursera-style web app for learning **energy management**, structured into three
+tiers — Foundations, System Deep Dives, and Leadership & Strategy.
 
-First, run the development server:
+Built with Next.js (App Router), TypeScript, Tailwind CSS v4, and MDX.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install      # first time only
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other commands:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build (statically generates every page)
+npm run start    # serve the production build
+npm run lint     # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's here so far
 
-## Learn More
+- The full **three-tier curriculum** for 30 courses (the catalogue), defined in
+  `content/curriculum.ts`.
+- One complete course, end to end: **Introduction to Energy Management**
+  (7 lessons across 3 modules) with prose, callouts, a YouTube embed, an
+  interactive payback calculator, and a scored quiz.
+- The remaining courses appear as "coming soon" teasers, ready to be filled in.
 
-To learn more about Next.js, take a look at the following resources:
+## Adding content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See **`AGENTS.md`** (imported by `CLAUDE.md`) for the full guide. In short:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Lessons are MDX files in `content/courses/<course>/<lesson>.mdx`, listed in the
+  manifest at `content/curriculum.ts`.
+- Quizzes live in `content/quizzes.ts` and are referenced from MDX as
+  `<Quiz id="..." />`.
+- Reusable lesson components (`Callout`, `Figure`, `YouTubeEmbed`, `Quiz`,
+  `PaybackCalculator`) are registered in `components/mdx/index.tsx`.
 
-## Deploy on Vercel
+## Deploying
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed to deploy to [Vercel](https://vercel.com/new) with zero config (it's a
+standard Next.js app). Push to a Git repo and import it, or run `vercel`.

@@ -1,0 +1,108 @@
+An HVAC system must satisfy the **thermal load** of a building. The load varies with
+weather, occupancy, and time. Understanding where the load comes from — and what you
+can control — is the key to running HVAC efficiently.
+
+## Sources of heating load (winter)
+
+**Transmission through the envelope:**
+- Heat flows out through walls, roof, windows, doors. The colder outside, the higher
+  the flow.
+- Quantified by **U-values** (W/m²K) of each surface and **air-tightness**.
+- Dominates heating load in poorly insulated buildings.
+
+**Ventilation:**
+- Fresh outdoor air enters at near-outdoor temperature, must be heated to indoor
+  setpoint.
+- In a leaky building, infiltration (uncontrolled air leakage) adds to this.
+- Can be 20–40% of heating load.
+
+**Note:** there's no internal cooling load in winter (people, equipment generate heat,
+but it's a small comfort gain, not a net load).
+
+Heating load ≈ (transmission loss) + (ventilation heat required)
+
+## Sources of cooling load (summer)
+
+**Transmission and solar gain:**
+- Heat flows *in* through the roof and walls. Solar radiation on glazing adds to it.
+- High solar gain on west-facing glass in summer afternoon can be huge.
+
+**Ventilation and infiltration:**
+- Warm outdoor air leaks in (or is provided for ventilation).
+
+**Internal gains:**
+- **People**: ~100 W per occupant (sensible) + ~50 W (latent, from breathing/
+  perspiration)
+- **Lighting**: ~15–50 W per m² (depending on density and control)
+- **Equipment**: office equipment, servers, industrial processes
+
+In modern offices, internal gains (people + equipment + lighting) can exceed
+transmission + solar, especially with good insulation and shading.
+
+**Latent gain:**
+- Moisture from occupants and (outdoors in hot, humid climates)
+
+Cooling load ≈ (transmission + solar) + (ventilation) + (people + equipment) + (latent)
+
+## Load profiles: when you actually need HVAC
+
+A building's load changes throughout the day and season. A typical office:
+
+- **Winter, night**: ~20 kW heating (transmission only; no people)
+- **Winter, occupied daytime**: ~50 kW heating (transmission + ventilation, offset
+  partially by people/equipment)
+- **Summer, night**: ~5 kW cooling (minimal load; windows open if allowed)
+- **Summer, occupied hot afternoon**: ~80 kW cooling (transmission + solar + people)
+
+Notice: peak cooling is much sharper than peak heating. A single hot day in June can
+spike cooling load far above the annual average.
+
+**HVAC systems are often sized for peak load** (a few days per year). They run at
+10–30% of capacity most of the time. This is where part-load efficiency matters hugely.
+
+<Callout variant="key" title="Load profiling saves energy">
+If you measure or model your building's load profile, you can often relax setpoints
+on mild days, turn off cooling when it's cool enough outside, and avoid oversized
+equipment.
+</Callout>
+
+## Key controllables
+
+From the sources above, you can control:
+
+1. **Transmission** — improve envelope (insulation, glazing, air-sealing). Reduces
+   both heating and cooling load.
+2. **Solar gain** — install shading (blinds, overhangs). Reduces cooling.
+3. **Ventilation rate** — lower outdoor-air flow (demand-controlled ventilation,
+   CO₂ sensors). Reduces both heating and cooling.
+4. **Setpoint** — lower heating setpoint, raise cooling setpoint. Cuts demand
+   directly.
+5. **Internal gains** — control lighting (occupancy sensors, daylighting controls),
+   reduce plug loads (turn off unused equipment).
+
+Improvements to 1–4 often have 1–2 year paybacks. Improvement to 5 is free if you
+just discipline occupants.
+
+## Load factors: degree-days and bin analysis
+
+**Heating degree-days (HDD)** in winter = sum of (baseline T – outdoor T) for each
+day. Baseline is typically 15.5 °C.
+
+A UK office might accumulate 2,000 HDD/year. A Scottish one might see 3,000. A
+London one might see 1,500.
+
+The HDD of your location tells you how much heating capacity you need and how long
+the heating season is.
+
+**Cooling degree-days (CDD)** similarly quantify cooling need, though far less
+significant in the UK than in hotter climates.
+
+**Bin analysis** divides the year into temperature ranges and counts hours in each
+bin. A building running HVAC in mild weather (say, 10–15 °C) might find that free
+cooling or ventilation (no active heating/cooling) covers 30% of hours.
+
+<Callout variant="tip">
+If you're optimizing HVAC, commission a load analysis for your building. Knowing
+your load profile often reveals quick wins (higher cooling setpoint on mild days,
+lower heating on sunny mornings).
+</Callout>

@@ -1,0 +1,19 @@
+A 10% increase might mean nothing if it was unusually cold. **Normalisation** adjusts for weather/occupancy so you compare apples-to-apples.
+
+## Degree-days
+
+**HDD** (heating degree-days) = max(0, 15.5°C − daily average temp)
+
+Cold month (5°C avg): HDD = 10.5/day × 30 = 315 HDD.
+Mild month (12°C avg): HDD = 3.5/day × 30 = 105 HDD.
+
+Same building uses much more energy in the cold month. Normalising accounts for this.
+
+Heating load ≈ baseline + sensitivity × HDD.
+
+## Other normalisers
+
+- Occupancy, production volume, hours of operation
+- Cooling season uses **cooling degree-days (CDD)** = max(0, temp − 21°C)
+
+Good M&T tracks these so you can decompose: "Energy up 5%, occupancy up 10%, so efficiency improved."

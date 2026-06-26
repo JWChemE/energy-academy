@@ -1,0 +1,70 @@
+Electricity is everywhere in energy systems — powering motors, lighting, heaters, and controls. Before you can manage electrical energy, you need to understand the fundamentals: voltage, current, and power, and how they relate through Ohm's law.
+
+## Voltage, current, and resistance
+
+**Voltage (V)** is the electrical pressure that pushes current around a circuit. Measured in volts.
+
+**Current (I)** is the flow of electrons. Measured in amperes (amps, A).
+
+**Resistance (R)** is how much a component opposes the flow of current. Measured in ohms (Ω).
+
+The relationship between them is **Ohm's law**:
+
+> **V = I × R**
+
+**Example:** If a heating element has 10 Ω of resistance and 20 amps of current flow through it, the voltage across it is 20 × 10 = 200 V.
+
+<Callout variant="key" title="Ohm's law is foundational">
+Understanding V = I × R unlocks nearly all electrical calculations. If you know any two, you can find the third.
+</Callout>
+
+## Power in electrical systems
+
+**Power (P)** is the rate at which electrical energy is used. Measured in watts (W) or kilowatts (kW).
+
+Power is calculated as:
+
+> **P = V × I**
+
+or equivalently:
+
+> **P = I² × R** (from substituting Ohm's law)
+
+**Example:** A device with 230 V across it drawing 5 amps uses P = 230 × 5 = **1,150 W** (or 1.15 kW).
+
+This is the rate of energy consumption *right now*. If it runs for 1 hour, it uses 1.15 kWh.
+
+## Single-phase AC: the sine wave
+
+Household and office electricity is **single-phase AC** — the voltage and current oscillate sinusoidally at 50 Hz in the UK (50 cycles per second).
+
+The instantaneous voltage varies: V(t) = V_peak × sin(2πft)
+
+But what matters for practical power calculations is the **RMS value** (root mean square), which is what meters show. For a 230 V outlet, that's the RMS voltage; the peak is actually about 325 V.
+
+**Why RMS?** It's the equivalent DC voltage that would deliver the same power. A 230 V RMS AC source delivers the same power as a 230 V DC source of the same current.
+
+<Callout variant="tip">
+When you see "230 V" on a meter or spec sheet, that's always the RMS value, not the peak. You can use it directly in P = V × I without worrying about the sine wave.
+</Callout>
+
+## Resistive loads (heaters, lights, etc.)
+
+For a **resistive load** — one where current is in phase with voltage (a heating element, incandescent light) — the power is simply:
+
+**P = V × I = I² × R = V² / R**
+
+All three forms are equivalent.
+
+**Example:** An electric heater with 10 Ω resistance in a 230 V circuit draws I = V / R = 230 / 10 = 23 A, so P = 230 × 23 = **5,290 W** (5.29 kW).
+
+In energy management, you'll often see:
+- Heating elements, lighting (incandescent or LED), and resistive loads behave this way
+- Voltage is what the circuit provides (230 V single-phase, or a higher voltage in three-phase)
+- Current and power are what you measure; use them to calculate energy use
+
+## Practical implications for energy management
+
+- **Higher voltage = lower current for the same power** (P = V × I constant). This is why distribution systems use high voltages — it reduces current, which reduces losses in wires (P_loss = I² × R).
+- **Higher current = more heat in wires**. An undersized wire carrying high current gets hot and wastes energy. Proper cable sizing is crucial.
+- **Power (watts) is what you pay for**. Your electricity bill charges per kWh, which is power × time.

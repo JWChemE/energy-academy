@@ -1,0 +1,49 @@
+An **electric motor** converts electrical energy into mechanical motion. Understanding motor specifications and efficiency is key to energy management.
+
+## How motors work (simplified)
+
+AC induction motor: current flows through the stator (coils), creating a rotating magnetic field. This induces current in the rotor (cage), creating force that spins the shaft.
+
+Key parameters:
+- **Power (kW):** mechanical output power
+- **Voltage (V):** 230V single-phase, 400V three-phase (UK)
+- **Speed (rpm):** 1,450 or 2,900 rpm (at 50 Hz)
+- **Power factor:** typically 0.8–0.9 (lags voltage)
+- **Efficiency (%):** 85–96% depending on age and size
+
+## Motor nameplate
+
+The nameplate lists:
+- **Rated power (kW):** continuous output the motor is designed for
+- **Rated voltage & current**
+- **Rated speed (rpm):** synchronous speed minus slip
+- **Service factor:** can briefly run above rated power (usually 1.15, meaning 115% is safe)
+- **Efficiency class (IE):** IE2, IE3, IE4, etc.
+
+**Important:** Rated power is output. Input power = output / efficiency. A 10 kW motor at 90% efficiency draws ~11.1 kW from the wall.
+
+## Slip and losses
+
+**Slip** = (synchronous speed − actual speed) / synchronous speed
+
+At 50 Hz, a "four-pole" motor has synchronous speed 1,500 rpm. With 3% slip, it runs at 1,455 rpm.
+
+Slip causes losses in the rotor as heat. Higher slip = higher losses = lower efficiency.
+
+## Oversizing problem
+
+A 50 kW motor running a 25 kW load is oversized. It:
+- Draws more reactive power (poor power factor)
+- Has poor efficiency at part load (losses don't scale down with load)
+- Costs more upfront and draws more current
+
+Result: Same 10–15% energy waste at half load. Matching motor size to actual load is crucial.
+
+## Motor age and efficiency
+
+- **Before 1990:** ~85% efficiency, no standard
+- **2000s (IE2):** 87–91% efficiency, improving
+- **2010s (IE3):** 90–95% efficiency, good
+- **2020s (IE4):** 93–97% efficiency, best-in-class
+
+Upgrading an old motor to IE3/IE4 saves 2–4% energy, paying back in 3–8 years for motors running > 5,000 h/year.

@@ -1,0 +1,108 @@
+A thermostat is a **control loop** — it senses temperature, compares it to a setpoint,
+and adjusts output to maintain that setpoint. Understanding how control loops work —
+and how they can go wrong — is key to running HVAC efficiently.
+
+## Feedback control: the basic loop
+
+1. **Sensor** measures a variable (e.g., room temperature)
+2. **Setpoint** is the target (e.g., 21 °C)
+3. **Error** = setpoint - actual = 21 - 20 = +1 °C (too cold)
+4. **Controller** sees error and increases heating
+5. **Actuator** (valve, damper, fan) responds
+6. **Effect** warms the room; actual temperature rises to 21 °C
+7. Loop repeats
+
+This is called **negative feedback** — the loop acts to reduce error.
+
+## Types of control
+
+**On-off (bang-bang):**
+- If T < 20.5 °C, heating is ON
+- If T > 20.5 °C, heating is OFF
+- Simple but causes temperature to oscillate (20.5 → 21.5 → 20.5...) and frequent
+  cycling
+
+**Proportional (P):**
+- Heating is **proportional** to error. If error is +2 °C, heating is 100%. If error
+  is +1 °C, heating is 50%.
+- Smoother than on-off, less cycling
+- But can have **offset** (temperature never quite reaches setpoint)
+
+**Proportional-Integral-Derivative (PID):**
+- Proportional: respond to current error
+- Integral: correct for persistent error (offset)
+- Derivative: anticipate (don't overshoot)
+- Most sophisticated. Modern controls use PID for good response without oscillation.
+
+<Callout variant="key" title="Control stability matters">
+A poorly tuned control loop hunts (oscillates widely), causing the HVAC system to
+cycle on/off frequently. Each cycle has startup losses. A stable loop maintains
+setpoint smoothly with fewer cycles.
+</Callout>
+
+## Multi-loop hierarchical control
+
+Most buildings have **multiple control loops at different levels:**
+
+1. **Zone thermostat loop** (room level): sensor in a zone, setpoint 21 °C, actuator
+   is a valve modulating flow through a fan coil
+2. **Plant loop** (building level): sensor is central supply-water temperature,
+   setpoint 45 °C (or lower for condensing), actuator is the boiler burner
+
+The **zone loop** adjusts the valve; the **plant loop** adjusts the boiler.
+
+**Where problems arise:**
+- **Competing loops**: zone asks for heating, but building-level thermostat is
+  already satisfied. The zone valve opens, but no hot water is available because
+  the burner is off.
+- **Slow response**: if the plant is distant from the zone (long pipe run), delays
+  build up and control can oscillate
+
+Modern systems use **outdoor reset** (weather compensation) at the plant level to
+avoid this: the plant maintains a supply temperature that varies with outdoor
+weather, and zone loops modulate it as needed.
+
+## Sensor issues
+
+Control is only as good as the sensor.
+
+- **Location**: a sensor in a sunny corner reads higher than the building average.
+  Poor placement causes over/under-heating.
+- **Calibration drift**: a sensor that was accurate for 5 years might be off by 1–2
+  °C
+- **Buildup**: dust on a sensor can insulate it, causing reading errors
+
+**Energy implication:** a sensor that reads 1 °C high causes the HVAC system to run
+1 °C cooler than setpoint (wasting cooling energy) or not heat enough (occupant
+complaint).
+
+## Dead band (avoid hunting)
+
+A **dead band** is a temperature range where the controller does nothing.
+
+Example: heating activates below 20 °C, cooling above 22 °C. Between 20–22 °C is the
+dead band (no active control).
+
+- **Benefit**: reduces cycling (no constant on/off at exactly 21 °C)
+- **Drawback**: temperature can float within the band, which may feel uncomfortable
+
+Most modern controls use a dead band of 0.5–1 °C and proportional control to reduce
+oscillation.
+
+## Common control failures
+
+| Problem | Symptom | Root cause |
+| --- | --- | --- |
+| Hunting | Rapid cycling on/off | Over-sensitive control, too-narrow dead band |
+| Offset | Temperature 2 °C below setpoint | Poor tuning (P-only), slow response |
+| Lag | System takes 30 min to warm up | Distance, poor circulation |
+| Sensor error | Different zones at different temps | Sensor placed in draft or sun |
+
+Fixing control problems is often free or very cheap — retuning, sensor relocation,
+or calibration.
+
+<Callout variant="tip">
+If your building is always too cold or too hot, blame controls first. A good
+commissioning engineer checks sensor accuracy and control tuning before blaming the
+equipment.
+</Callout>

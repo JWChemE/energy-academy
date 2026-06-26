@@ -1,0 +1,35 @@
+**Actuators** are the muscles of the control system — they do the actual adjusting.
+
+## Valve authority
+
+**Authority** = pressure drop across valve / total system pressure drop.
+
+Example: Heating loop with 60 kPa total drop. If proportional valve has 50 kPa drop, authority = 50/60 = 0.83 (very good).
+
+If valve has only 5 kPa drop, authority = 5/60 = 0.08 (poor).
+
+**Why it matters:** Low authority = small changes in valve position have little effect. Control is sluggish and can oscillate.
+
+**Target:** Authority 0.3–0.5 for good control.
+
+## Actuator types
+
+**Solenoid valve:** Electric coil pulls a plunger; on/off only. Fast response, cheap. Used for simple switching.
+
+**Proportional solenoid valve:** Coil current controls plunger position; can modulate flow smoothly. More sophisticated.
+
+**Pneumatic actuator:** Air pressure moves a diaphragm; opens/closes a valve. Common in older systems, slower response.
+
+**Electric motor actuator:** Motor opens/closes a valve over 10–30 seconds. Slow but reliable.
+
+## Damper linkage
+
+In ductwork, dampers control airflow. **Linkage** connects the actuator to the damper blade.
+
+Poor linkage design (excessive friction, binding) prevents full stroke, limits control range, and wastes energy.
+
+Always verify damper moves freely (test at commissioning).
+
+## Energy efficiency
+
+Actuator choice affects response speed and energy consumption. A slow (pneumatic) actuator may miss setpoint adjustments, causing overshoot. A fast (electric, proportional solenoid) actuator tracks setpoint better with less waste.

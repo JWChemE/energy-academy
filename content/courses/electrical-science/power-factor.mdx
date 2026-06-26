@@ -1,0 +1,47 @@
+In AC systems, not all current is doing useful work. Some is **reactive** — oscillating back and forth without transferring energy. Power factor is the ratio of real (useful) to apparent (total) power, and improving it saves money.
+
+## Real vs reactive power
+
+**Real power (P)** measured in watts: the power that does actual work (heating, light, motion).
+
+**Reactive power (Q)** measured in VArs (volt-amps reactive): power that oscillates back and forth, driven by inductive and capacitive loads.
+
+**Apparent power (S)** measured in VA: the total current × voltage = √(P² + Q²)
+
+**Power factor (PF)** = P / S = cosine of the phase angle between voltage and current.
+
+For a resistive load (heater), current and voltage are in phase: PF = 1.0 (100%).
+For an inductive load (motor), current lags voltage: PF < 1.0.
+
+## Why poor power factor costs money
+
+When PF is low (say, 0.7), you draw more current to deliver the same real power. Extra current means:
+- **Larger cables and switchgear** needed
+- **I² R losses in wiring** (copper loss is proportional to current squared)
+- **Utility penalties**: most commercial meters charge for kVA, not just kW. Low PF means you're charged for reactive power you're not using.
+
+<Callout variant="key" title="Power factor < 1 is expensive">
+A 100 kW motor at PF 0.85 draws apparent power of 100 / 0.85 = 118 kVA. At PF 0.95, it's 105 kVA. The utility charges for the higher value.
+</Callout>
+
+## Causes of low power factor
+
+- **Induction motors and transformers** when lightly loaded or oversized
+- **Uncompensated reactive loads**
+- **Harmonic distortion** from VFDs, LED drivers, and switching power supplies
+
+## Improving power factor
+
+1. **Right-size motors** — oversized motors run at low load with poor PF
+2. **Capacitor banks** — add capacitors near inductive loads to cancel reactive power
+3. **Synchronous condensers** — rotary devices that inject reactive power
+4. **Active harmonic filters** — in facilities with heavy distortion
+
+Cost to install capacitors: £2,000–5,000 for a typical building. Savings: ~£500–1,000/year in reduced demand charges. Payback: 3–5 years.
+
+## Practical management
+
+- Check your utility bill — it will show demand (kVA or kW) and PF
+- If PF < 0.95, you're being charged for reactive power
+- Measure PF in key areas (motor rooms, HVAC plants) using a power-factor meter
+- A multi-meter or power analyser (£200–500) gives real-time PF

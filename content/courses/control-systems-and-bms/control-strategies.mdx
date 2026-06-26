@@ -1,0 +1,37 @@
+**Energy-optimised strategies** use BMS intelligence to reduce waste.
+
+## Setpoint reset (or reset control)
+
+Rather than fixed setpoint, adjust based on external driver:
+
+**Heating setpoint reset:** Raise setpoint on cold days, lower on mild days.
+- Formula: Setpoint = 15 + (21 − outdoor temp)
+- If outdoor = 0°C: setpoint = 15 + 21 = 36°C (high, needed)
+- If outdoor = 15°C: setpoint = 15 + 6 = 21°C (moderate)
+- If outdoor = 18°C: setpoint = 15 + 3 = 18°C (low, minimal heating)
+
+Savings: 10–20% heating energy vs fixed setpoint.
+
+## Demand-reset (load-based)
+
+For cooling: Lower setpoint only if demand is high (zone temp near limit). If buildings are mostly comfortable, raise setpoint slightly.
+
+Savings: Prevents over-cooling on mild days.
+
+## Occupancy-based control
+
+If building is unoccupied, disable conditioning (or use lower setpoint). Modern buildings use keycard/app data or CO₂ sensors to detect occupancy.
+
+Savings: 20–40% in buildings with variable occupancy (offices, schools, churches).
+
+## Load sequencing
+
+For multi-boiler or multi-chiller systems, BMS decides which units to run:
+- Run only necessary units (avoid part-load inefficiency on oversized equipment)
+- Rotate duty (each unit gets equal runtime, even wear)
+
+Savings: 5–15% by avoiding part-load operation.
+
+## Economic impact
+
+Setpoint reset on a 500 m² office building: ~£1,000–2,000/year savings. Cost to implement (BMS tuning): £500–1,000. Payback: < 1 year.

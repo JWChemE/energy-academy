@@ -1,0 +1,52 @@
+Installing a VFD requires electrical knowledge. Key considerations:
+
+## Electrical requirements
+
+**Power supply:** VFD must match supply voltage (230V single-phase, 400V three-phase). Most industrial installations are three-phase.
+
+**Cable sizing:** VFD output is pulse-width modulated (PWM) — very high frequency switching. Standard cables can cause:
+- Motor winding damage (voltage spikes)
+- Electromagnetic interference (EMI)
+
+Solution: **Shielded motor cable** and **reactor** (inductor) on VFD output to smooth waveform.
+
+Cost: adds ~20% to VFD cost, but essential.
+
+## Harmonic distortion
+
+VFD switching at ~16 kHz creates harmonics that can distort the voltage waveform, affecting:
+- Transformer heating (losses, shortened life)
+- Other equipment interference (sensitive controls, PLCs)
+- Utility penalties (if harmonics exceed allowed limits)
+
+**Solution:** Harmonic filter (active or passive) on VFD input. Cost: ~5–10% of VFD cost.
+
+## Motor heating
+
+VFD's switching creates additional losses in the motor (core losses, cooling losses). Motor runs hotter than with mains supply.
+
+**Impact:** Motor may overheat if:
+- Motor is already running hot
+- Ambient temperature is high
+- Motor cooling fan is blocked
+
+**Solution:** Thermal sensor or slightly lower rated load. Well-ventilated motors are less affected.
+
+## Installation cost
+
+- VFD unit: 2,000–10,000 GBP (depending on power)
+- Cable/reactor/filter: 1,000–3,000 GBP
+- Labour/commissioning: 1,000–2,000 GBP
+- **Total: 4,000–15,000 GBP for typical pump/fan installation**
+
+Payback on high-run motors (>5,000 h/year): 2–4 years.
+
+## Commissioning
+
+VFD must be tuned to the motor and load:
+- Acceleration ramps (how fast motor speeds up)
+- Deceleration ramps
+- Load sensing (is pressure/flow feedback available?)
+- Safety interlocks (what happens if VFD fails?)
+
+Poor commissioning leads to poor performance. Budget for a qualified technician.

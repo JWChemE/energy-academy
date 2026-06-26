@@ -1,0 +1,110 @@
+**VAV** stands for variable-air-volume. In an all-air HVAC system, VAV boxes are
+the mechanism that allow different zones to demand different amounts of air
+(and thus heating/cooling) simultaneously.
+
+## How VAV boxes work
+
+A VAV box sits in the ductwork serving a zone. Inside is a damper that throttles
+the airflow:
+
+1. **Zone thermostat** measures room temperature
+2. **If room is too cold**, thermostat opens the VAV damper → more air flows in
+3. **If room is satisfied**, damper closes → less air flows in
+4. **If room is too warm** (cooling needed), damper opens wider and more cool air flows
+
+This allows **zone independence** — one zone can be heating while another is cooling,
+without the central system fighting itself.
+
+## The efficiency advantage
+
+Compare:
+
+**System without VAV:** central unit supplies 100% air regardless of load.
+- All zones get full air flow, even when satisfied
+- Excess air (and the energy to heat/cool it) is "dumped" — wasted
+- Typical efficiency: 65–75%
+
+**System with VAV:** central unit supplies air on demand.
+- Each zone throttles its damper; total air flow drops as zones are satisfied
+- Central fans run slower (smaller airflow), consuming much less energy
+- Typical efficiency: 80–85%
+
+**Savings: 10–20% of fan energy**, which is huge in all-air systems.
+
+## VAV control problems
+
+VAV systems only work efficiently if **controls are good**:
+
+### Stuck dampers
+
+A damper that's stuck open or closed → zone can't reach setpoint.
+- Stuck open → zone can't cool down (damper won't close)
+- Stuck closed → zone can't warm up
+
+**Symptom:** one zone is always too hot or cold while others are fine. **Fix:**
+mechanical cleaning or damper replacement, ~£500–1,500.
+
+### Minimum airflow (ventilation requirement)
+
+VAV dampers can't close fully — they must maintain **minimum outdoor air** for
+ventilation and fresh air.
+
+- **Minimum flow setting:** typical 20–30% of full flow
+- If minimum is too high, you waste energy running air even when zone is satisfied
+- If minimum is too low, air quality suffers
+
+**Optimization:** lower minimum flow if occupancy is low or demand-controlled
+ventilation is available.
+
+### Duct static pressure
+
+In a VAV system, closing some dampers can cause **duct pressure to rise**
+(less flow out, same fan pushing). The fan must work harder.
+
+**Solution:** a **static pressure sensor** in the duct adjusts **fan speed** to
+maintain target pressure (typically 100–150 Pa). The fan slows down as dampers
+close, saving energy.
+
+Most modern VAV systems have this, but older ones don't — which means the fan runs
+full speed even as dampers close.
+
+**Retrofit static pressure control:** ~£3,000–5,000. **Savings:** 15–25% of fan
+energy. **Payback:** 2–4 years.
+
+## Typical VAV operation
+
+**Peak load (hot summer afternoon, all zones want cooling):**
+- All VAV dampers open
+- System runs at full fan speed
+- Duct pressure near maximum
+
+**Part load (mild afternoon, some zones satisfied):**
+- Some dampers close
+- System recognizes lower pressure demand
+- Fan slows down (if variable-speed drive installed)
+- Energy use drops
+
+**Light load (night, minimal ventilation):**
+- All dampers nearly closed (minimum ventilation only)
+- Fan slow, low energy
+
+The efficiency gain from variable-speed fans is the biggest win in VAV systems.
+
+## Troubleshooting VAV issues
+
+| Problem | Likely cause | Fix |
+| --- | --- | --- |
+| One zone always hot, others OK | Stuck damper | Clean/replace damper, ~£500–1,500 |
+| High fan energy despite VAV | No static pressure control | Add variable-speed drive, ~£4,000–6,000 |
+| Multiple zones can't reach setpoint | Damper calibration drift | Commission (adjust damper travel), ~£500–1,000 |
+| Fresh-air quality poor | Minimum airflow set too low | Raise minimum setpoint, may require CO₂ control |
+| Noise/drafts from a zone | Damper hunting/vibrating | Adjust control bandwidth, ~£200–500 |
+
+Most VAV problems are **control commissioning issues**, not equipment failure. A
+good commissioning engineer can fix 80% of VAV problems in one day for under £2,000.
+
+<Callout variant="tip">
+If your all-air HVAC system has VAV boxes and high fan energy, the problem is usually
+no static pressure control or damper drift. These are cheap fixes (~£5,000) with huge
+savings.
+</Callout>

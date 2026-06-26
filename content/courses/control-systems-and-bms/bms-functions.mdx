@@ -1,0 +1,34 @@
+Modern BMS systems do far more than just control. Data analytics, alarming, and scheduling are powerful tools for energy management.
+
+## Data trending
+
+Collect time-series data (kWh, temperature, runtime) and plot over time (daily, weekly, monthly).
+
+Trends reveal: equipment cycling (are pumps running 24/7?), seasonal changes (cooling season vs heating), anomalies (sudden spikes).
+
+Example: BMS plot of chiller kW over 4 weeks shows it running 150 kW overnight when building is empty. Opportunity: occupancy-based scheduling.
+
+## Alarming
+
+Flag when a variable exceeds a threshold or doesn't behave as expected.
+
+Example alarms:
+- High: Chiller running but not producing cold (sensor or equipment failure)
+- Low: Zone temperature below 18°C (heating failure or setpoint error)
+- Rate-of-change: Supply air temperature rising 2°C in 1 minute (actuator stuck, control failure)
+
+**Alarm fatigue:** Too many alarms → operators ignore real problems. Thresholds should be meaningful.
+
+## Scheduling
+
+Automatically adjust setpoints based on time:
+- Weekdays: 8 AM–6 PM occupied, setpoint 21°C. Evenings/weekends: unoccupied, setpoint 16°C.
+- Summer: cooling setpoint 24°C. Winter: heating setpoint 19°C.
+
+Scheduling saves significant energy by not conditioning unoccupied spaces.
+
+## Reporting
+
+BMS can generate reports: energy consumption by system, cost, efficiency metrics, seasonal analysis.
+
+Useful for energy audits, utility benchmarking, identifying efficiency projects.

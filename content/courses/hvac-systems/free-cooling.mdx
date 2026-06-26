@@ -1,0 +1,89 @@
+One of the biggest wins in HVAC efficiency is **using the outdoors to do your
+cooling** instead of running the chiller. In the UK, this is possible for much of
+the year.
+
+## Outdoor air economizer (free cooling)
+
+When outdoor air is cooler than your indoor setpoint, instead of cooling with a
+chiller, you open dampers to admit more outdoor air. The cooler air cools the
+building naturally.
+
+**Example:** on a 12 °C spring day, if your building is 20 °C and needs cooling (from
+internal gains — people, equipment), you can open the air intake to 100% outdoor air.
+The cooler outdoor air brings the building temperature down at the cost of **fan
+energy only**, not compressor energy.
+
+Chiller energy to remove 50 kW: ~15 kW electric, costing ~£2/hour.
+Fan energy to deliver the same with outdoor air: ~2 kW, costing ~£0.30/hour.
+
+**Savings: 85% of cooling energy whenever the economizer is active.**
+
+## When economizer works
+
+**Outdoor temperature < indoor setpoint + delta:** the economizer is active.
+
+In the UK:
+- **Winter (Nov–Mar)**: outdoor air is usually cooler than 20 °C indoor setpoint,
+  so economizer is on. No cooling needed unless there's solar gain or high internal
+  load.
+- **Spring/autumn (Apr–May, Sep–Oct)**: variable. Many days are economizer-capable.
+- **Summer (Jun–Aug)**: some days are hot; some mild mornings are economizer-capable.
+
+Rough estimate: **60% of the year, free cooling via economizer is possible in the
+UK.**
+
+<Callout variant="key" title="Free cooling can save 30–60% of cooling energy">
+A building in the UK with a chiller might use 80 MWh/year for cooling. With a good
+economizer, that could drop to 40 MWh. The investment (dampers, controls): £5,000–
+10,000. Payback: 1–2 years.
+</Callout>
+
+## Enthalpy recovery (heat recovery ventilation)
+
+In winter, you need fresh outdoor air for ventilation. But outdoor air is cold and
+needs heating.
+
+**Heat recovery ventilation (HRV)** captures the heat in the exhaust air (warm indoor
+air being extracted) and uses it to preheat incoming fresh air.
+
+- Incoming air: 0 °C outside → 15 °C after recovery (85% effectiveness typical)
+- Heating load reduced by ~70% of the ventilation load
+
+**Example:** a 100-person office needs ~1,000 L/s outdoor air. Heating that from 0
+°C to 20 °C requires ~30 kW. An HRV cuts this to ~9 kW.
+
+**Cost:** £8,000–15,000 for a typical office. **Savings:** 20–30 MWh/year heating.
+**Payback:** 3–5 years.
+
+HRV is not as fast as economizer, but it's valuable in winter when economizer can't
+help.
+
+## Hybrid systems
+
+Modern control strategies combine economizer + chiller + HRV:
+
+1. **Winter daytime:** economizer on (if mild), HRV active. Minimal heating/cooling.
+2. **Winter night:** HRV active, minimum ventilation. Setpoint lowered.
+3. **Summer daytime:** economizer on early morning (cool outdoor air); chiller off.
+   As outdoor air warms, switch to chiller.
+4. **Summer night:** economizer on fully (cool outdoor air passes through). Chiller
+   off.
+
+The control logic is simple: always ask "can I use outdoors before I use the
+chiller?" If the answer is yes, use outdoor air. This automation can save 30–50% of
+cooling energy compared to a plant with no economizer.
+
+## Practical implementation
+
+- **Check if your system has an economizer:** look for outdoor-air dampers that can
+  open fully, and an outdoor-air temperature sensor. If missing, add them (usually
+  cheap retrofits).
+- **Verify the controls:** does the damper actually open when it should? Stuck
+  dampers are common.
+- **Measure the savings:** compare chiller energy before/after a sunny/cool day with
+  economizer on vs off.
+
+<Callout variant="tip">
+If your building has a chiller and no economizer, installing one is often the
+fastest efficiency win. Cost under £10k; savings £10k+/year.
+</Callout>

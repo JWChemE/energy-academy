@@ -1,0 +1,40 @@
+Most large buildings and all industrial sites use **three-phase AC**. It's more efficient and simpler than single-phase for high-power equipment.
+
+## Why three-phase?
+
+In single-phase AC, power oscillates: P = V × I × sin²(ωt). It dips to zero 50 times per second (at 50 Hz), causing flickering in lights and pulsing in motors.
+
+In **three-phase**, three sine waves are 120° apart:
+- Phase A: 0°
+- Phase B: 120°
+- Phase C: 240°
+
+They're offset so that power is delivered smoothly and constantly — no dips. P = 1.5 × V_phase × I × cos(φ) — constant!
+
+## Voltages and connections
+
+**Phase voltage (V_phase)**: voltage between one phase and neutral (UK: ~230 V)
+**Line voltage (V_line)**: voltage between two phases = V_phase × √3 ≈ 400 V (UK standard)
+
+In a **Y (star) connection**: neutral is the common point; phases are at 230 V from it.
+In a **Delta connection**: phases are 400 V apart with no neutral.
+
+Most commercial buildings use **Y**: 400 V between phases, 230 V phase-to-neutral.
+
+## Power in three-phase
+
+Total power: **P = √3 × V_line × I_line × cos(φ)**
+
+or equivalently: **P = 3 × V_phase × I_phase × cos(φ)**
+
+Example: A three-phase 400 V system with 10 A per phase and PF 0.95 delivers:
+P = √3 × 400 × 10 × 0.95 ≈ **6,600 W** (6.6 kW) from each phase, for a total of **19.8 kW**.
+
+## Advantages for motors and large loads
+
+- **Smooth power delivery** — constant, no pulsing
+- **High torque** — motors start and run reliably
+- **Efficiency** — three-phase motors are 85–95% efficient; single-phase are 50–70%
+- **No neutral current** in a balanced system — saves wiring
+
+This is why boiler pumps, HVAC fans, compressors, and industrial equipment are three-phase.

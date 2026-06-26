@@ -1,0 +1,92 @@
+A room might feel uncomfortable at 21 °C and 70% humidity even though the temperature
+is correct. The problem is **latent load** — the water vapour in the air. To design
+an efficient HVAC system, you must control both sensible (temperature) and latent
+(humidity) loads. They require different strategies.
+
+## Sensible cooling and heating
+
+**Sensible** means you can feel it — a thermometer measures it.
+
+To add heat (winter): blow warm air or run hot water through a coil.
+To remove heat (summer): blow cool air or run cold water through a coil.
+
+**The challenge:** the cooler the water, the more cooling you must apply. A chiller
+running 5 °C water consumes more energy than one running 10 °C. So there's a
+balance: how cold must you run to meet the sensible load?
+
+## Latent cooling (dehumidification)
+
+Moisture must be **removed from the air** to drop humidity. This happens when air is
+cooled **below its dew point**. Water vapour condenses on the coil (like condensation
+on a cold window), and the liquid drains away. The air leaves the coil dry and cold,
+then is reheated (if necessary) to the target temperature.
+
+This two-step process — cool to condense, then reheat — is called the **cooling-
+dehumidification cycle**.
+
+**The inefficiency:** you cool the air very cold (say, 8 °C) to remove moisture, then
+you reheat it to 20 °C for comfort. All that reheating is wasted energy if you don't
+need to remove moisture.
+
+## Sensible vs latent ratio
+
+Buildings produce sensible and latent loads in different ratios:
+
+- **Winter**: mostly sensible (cold outside, dry because cold air holds little
+  moisture). Latent load ~10% of sensible.
+- **Summer**: mix of sensible (cooling) and latent (humidity). Latent can be
+  30–50% of total.
+- **Occupied office in summer**: occupants (breathing, perspiration) create latent
+  load. 100 people = ~10 kW latent + ~20 kW sensible from their bodies and equipment.
+
+## Control strategies for humidity
+
+**Traditional approach: cool and reheat**
+- Cool the air to ~8 °C to remove all moisture
+- Reheat it to 20 °C for comfort
+
+Simple but energy-intensive.
+
+**Modern approach: desiccant or enthalpy recovery**
+- Use a **desiccant wheel** (rotating wheel coated with silica gel) to remove
+  moisture from outdoor air
+- Reuse the "dry" air instead of over-cooling
+
+Saves 30–50% of dehumidification energy, but more complex.
+
+**Practical approach: accept wider humidity swings**
+- Allow humidity to swing 30–60% instead of strict 45–55%
+- Humans tolerate this range
+- Greatly reduces cooling load
+
+Many buildings over-control humidity, wasting cooling energy. A 10% relaxation in
+humidity setpoint (say, 60% instead of 50%) often saves 5–10% of cooling energy
+with no occupant complaint.
+
+<Callout variant="key" title="Don't over-dehumidify">
+Unless your building has a specific need (museum, clean room, server farm), relaxing
+humidity setpoint is one of the fastest wins. Humidity at 65% is still comfortable.
+</Callout>
+
+## The psychrometric chart: how engineers visualize it
+
+Engineers use a **psychrometric chart** — a graph with temperature on the x-axis and
+humidity on the y-axis. Different moist-air properties (dew point, enthalpy, etc.)
+are plotted as curves.
+
+You don't need to be able to use one, but the key concept: cooling moves you down
+(lower enthalpy) and left (lower temperature), removing sensible heat. To also
+reduce humidity, you must cool below the dew point (the saturation line).
+
+## Energy implications
+
+To summarize:
+- **Sensible control** (hot/cold coils): straightforward; efficiency depends on
+  setpoint and part-load
+- **Latent control** (dehumidification): expensive because you cool far below target
+  then reheat
+- **Best practice**: size HVAC for sensible load, allow wider humidity ranges,
+  recover heat from dehumidification if latent load is high
+
+A system designed to keep humidity strict 45–55% in a UK office (not essential) will
+use 20–30% more cooling energy than one that allows 30–65%.

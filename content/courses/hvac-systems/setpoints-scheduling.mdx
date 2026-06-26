@@ -1,0 +1,98 @@
+The setpoint — the target temperature — is one of the most powerful levers in HVAC
+efficiency. A 1 °C change in setpoint can change heating or cooling energy by 5–10%.
+
+## Seasonal setpoints
+
+Running 21 °C heating all winter and 21 °C cooling setpoint all summer is wasteful.
+
+**Winter:** outdoors are cold. A 19–20 °C setpoint is comfortable with warm clothing,
+reducing heating load significantly.
+
+**Summer:** outdoors are warm. Cooling to 21 °C when 23–24 °C is acceptable reduces
+cooling load.
+
+**Spring/autumn:** mild weather allows much wider swings. 18–24 °C might be acceptable
+on some days without any heating or cooling.
+
+A building that manually adjusts setpoints by season — or better, allows automatic
+adjustment — often saves 5–10% of HVAC energy.
+
+## Weather compensation (automated seasonal reset)
+
+Instead of manual adjustment, **weather compensation** automatically adjusts the
+setpoint based on outdoor temperature:
+
+- **Cold day (5 °C):** heating setpoint 21 °C (full heating)
+- **Mild day (12 °C):** heating setpoint 18 °C (partial heating)
+- **Warm day (18 °C):** no heating (use free cooling)
+
+The relationship (setpoint vs outdoor T) is called a **reset curve**. Modern
+controllers let you program this.
+
+**Benefit:** no operator action needed; setpoint follows weather automatically.
+**Typical savings:** 5–15% of heating/cooling energy.
+
+<Callout variant="key" title="Weather compensation is one of the fastest paybacks">
+Retrofit cost: ~£2,000–5,000 (outdoor sensor + control upgrade). Savings:
+5–15% of HVAC energy (~50 MWh/year on a typical office). Payback: 1–2 years.
+</Callout>
+
+## Occupancy-based control
+
+Many buildings are unoccupied at night, weekends, and during downtime. Running full
+HVAC during those periods is waste.
+
+**Occupancy reset:**
+- **Occupied hours (e.g., 6am–8pm weekdays):** heating 21 °C, cooling 23 °C
+- **Unoccupied (nights/weekends):** setpoint drifts to 17 °C (winter) or 27 °C
+  (summer) — minimal conditioning
+
+Or go further: if motion sensors detect no occupancy, setpoint shifts immediately.
+
+**Savings:** 10–30% of HVAC energy (depending on occupancy profile).
+
+**Cost:** occupancy sensors + automation: £5,000–15,000 for a building. **Payback:**
+1–3 years on typical office.
+
+## Night setback and pre-cooling
+
+**Night setback:** lower heating (or raise cooling) setpoint at night. When the
+building warms (or cools) as occupants arrive in the morning, it's cheaper to reach
+setpoint gradually from a low base.
+
+**Pre-cooling:** on mild nights in summer, cool the building down to 20 °C (using
+outdoor air / economizer). During the day, allow it to coast up to 24 °C before
+activating cooling. Uses only fan energy.
+
+Both strategies **shift loads away from peak electricity hours** (mid-afternoon in
+summer, early morning in winter), which can also lower demand charges.
+
+## Deadband between heating and cooling
+
+In intermediate weather (spring/autumn), you don't want heating AND cooling
+competing.
+
+A **dead band** between heating and cooling setpoints prevents this:
+- Heating below 19 °C
+- Cooling above 23 °C
+- 19–23 °C: do nothing (allow passive operation)
+
+This is especially useful during mild seasons when outdoor air is close to comfort
+range.
+
+## Practical implementation checklist
+
+1. **Current setpoint:** what is it? Is it the same all year?
+2. **Occupancy profile:** when is the building used? Can you set back nights/weekends?
+3. **Outdoor sensor:** does your HVAC system have one? If not, adding one enables
+   weather compensation.
+4. **Controls software:** can you program reset curves? If controls are old (manual
+   dampers, wall thermostat), upgrade to a BMS (building management system).
+
+A building with no weather compensation or occupancy control is likely wasting
+10–20% of HVAC energy. Retrofitting these is almost always a quick win.
+
+<Callout variant="tip">
+Before upgrading equipment, check setpoints and controls. Many HVAC "efficiency
+problems" are actually control tuning problems that cost nothing to fix.
+</Callout>

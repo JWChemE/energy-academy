@@ -1,0 +1,41 @@
+Control sequence testing verifies that the BMS (or control system) executes logic correctly.
+
+## Manual sequence walk-through
+
+Step through each control mode and verify actuator response:
+
+**Heating mode (winter, cold):**
+1. Lower room temp below setpoint (e.g., 16°C)
+2. Check that heating valve opens (or boiler fires)
+3. Verify supply temp rises
+4. Confirm room temp rises toward setpoint
+5. Verify heating stops when setpoint reached
+
+**Cooling mode (summer, warm):**
+1. Raise room temp above setpoint (e.g., 26°C)
+2. Check that chiller starts (if it should)
+3. Verify supply temp drops
+4. Confirm room temp drops toward setpoint
+5. Verify cooling stops when setpoint reached
+
+Many systems have logic errors: heating and cooling both active, dampers in wrong position, logic incomplete.
+
+## Sensor response testing
+
+Simulate sensor inputs and verify BMS responds:
+- Block a temperature sensor (simulate cold); verify BMS increases heating
+- Disconnect a humidity sensor; verify BMS defaults to safe mode (not full dehumidification)
+
+## Failsafe verification
+
+If BMS loses power, can manual overrides work? If a sensor fails, does the system default to safe (heating on cold day, not cooling)?
+
+## Documentation
+
+Record all test results in a commissioning log:
+- Date, time, system tested
+- Pass/fail and any issues found
+- Corrective action taken
+- Retesting results
+
+This becomes the handover documentation.

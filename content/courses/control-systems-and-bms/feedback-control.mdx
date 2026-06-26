@@ -1,0 +1,26 @@
+All automatic controls work on the **feedback principle:** measure actual value, compare to desired (setpoint), adjust until error is zero.
+
+## The feedback loop
+
+1. **Sensor** measures actual value (e.g., room temperature = 22°C)
+2. **Setpoint** is desired value (e.g., 21°C)
+3. **Error** = setpoint − actual = 21 − 22 = −1°C (too warm)
+4. **Controller** computes what adjustment to make
+5. **Actuator** makes the adjustment (e.g., close heating valve)
+6. **Loop repeats:** Sensor measures new value, adjusts again if needed
+
+This happens continuously (many times per second for fast systems, every few minutes for HVAC).
+
+## Stability and response
+
+A good control loop is **stable** (no oscillation) and **responsive** (reaches setpoint quickly without overshooting too much).
+
+Poor control: On-off thermostat bangs on/off repeatedly, temperature swings 20°C → 24°C → 20°C (unstable).
+
+Good control: PID loop gently adjusts, temperature smoothly approaches 21°C and stays within ±0.5°C (stable).
+
+## Key insight for energy
+
+Tight control (±0.5°C) uses less energy than loose control (±2°C) because the system doesn't overshoot. But tighter control requires more advanced controllers (more cost).
+
+Energy balance: cost of better controller vs. savings in avoided overshoot.

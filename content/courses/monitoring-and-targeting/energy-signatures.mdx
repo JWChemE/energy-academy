@@ -1,0 +1,20 @@
+An **energy signature** shows consumption vs external drivers (temperature, occupancy, production).
+
+## Temperature signature
+
+Below 15.5°C: more heating, consumption rises. Above 21°C: more cooling, consumption rises. 15–21°C: minimal conditioning needed.
+
+Scatterplot of daily consumption vs daily temperature shows this. Fit a line: **consumption = intercept + slope × temperature**.
+
+Slope = sensitivity (kWh per °C).
+Intercept = baseline (energy at 15.5°C).
+
+## Using signatures
+
+Once you have a signature, predict: "It's 8°C tomorrow, expect ~9,500 kWh." When actual is 10,500, something's wrong. Investigate.
+
+## Regression analysis
+
+Fit a line to 365 daily points. R² tells you how well temperature explains consumption. R² > 0.9: temperature is the main driver. R² < 0.6: other factors matter.
+
+Flattening suggests heating is limited (thermostat low, valve stuck). Steeper slope suggests over-heating or poor insulation.

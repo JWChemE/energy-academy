@@ -1,0 +1,32 @@
+**Multi-loop control** coordinates multiple control loops working together (e.g., chiller, boiler, pump speed, damper position).
+
+## Cascade control
+
+Inner loop: Controls fast-responding variable (valve position, damper angle, pump speed).
+Outer loop: Controls slower-responding variable (room temperature, supply water temp, pressure).
+
+Example: BMS sets heating supply water setpoint (60°C). Lower-level loop controls valve to maintain 60°C. This is faster and more stable than BMS directly controlling valve.
+
+## Precedent hierarchy
+
+When multiple control loops conflict, a hierarchy determines priority.
+
+Example: Building with cooling and heating:
+1. **Highest priority:** Safety (prevent freeze-up, overpressure)
+2. **Next:** Comfort (maintain setpoint)
+3. **Next:** Energy efficiency (minimize consumption)
+4. **Lowest:** Convenience (nice-to-have features)
+
+If cooling and heating both demand action, comfort (temperature) overrides energy efficiency.
+
+## Coordination
+
+Loops must not fight each other.
+
+Bad: Heating loop opens valve; cooling loop simultaneously opens chiller. Result: simultaneous heating and cooling (waste).
+
+Good: Heating disabled when cooling is active. Or, use a setpoint "deadband": heating at 18°C, cooling only if temp > 24°C. In between, neither acts.
+
+## Practical benefit
+
+Well-coordinated multi-loop control can save 10–20% energy compared to independent, poorly coordinated loops.

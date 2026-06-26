@@ -1,0 +1,39 @@
+Three-phase power calculations are straightforward if you remember the formula. It's the same concept as single-phase, just distributed across three lines.
+
+## The formula revisited
+
+**P = √3 × V_line × I_line × cos(φ)**
+
+Where:
+- √3 ≈ 1.73
+- V_line is the voltage between two phase lines (400 V in UK)
+- I_line is the current in each line
+- cos(φ) is the power factor
+
+If you measure two of these, you can find the third.
+
+## Example calculations
+
+**Example 1:** A motor on 400 V three-phase drawing 20 A per phase, PF 0.9.
+P = 1.73 × 400 × 20 × 0.9 = **12,456 W** ≈ **12.5 kW**
+
+**Example 2:** You have a 30 kW motor on 400 V, PF 0.85. What current?
+I = P / (√3 × V × PF) = 30,000 / (1.73 × 400 × 0.85) ≈ **51 A per phase**
+
+## Balanced vs unbalanced loads
+
+In a **balanced** system, all three phases have the same current. Power is smooth and you can use the simple formula.
+
+In an **unbalanced** system (common in buildings where single-phase loads are split unevenly across phases), one phase carries more than others. This causes:
+- Neutral current (even though it should be zero)
+- Harmonic distortion
+- Heating in the neutral wire
+- Inefficiency
+
+Most commercial buildings are reasonably balanced because they have many small loads spread across phases.
+
+## Energy from three-phase
+
+Energy (kWh) = Power (kW) × Time (hours), same as single-phase.
+
+A 10 kW three-phase motor running 8 hours uses **80 kWh**.

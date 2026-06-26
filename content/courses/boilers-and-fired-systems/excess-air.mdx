@@ -1,0 +1,98 @@
+You need excess air to burn fuel completely. But more is not better. Too much excess
+air wastes energy up the flue; too little leaves CO and incomplete combustion. The
+art of boiler tuning is finding the sweet spot.
+
+## The efficiency penalty of excess air
+
+Nitrogen in air doesn't participate in combustion — it just heats up and leaves via
+the flue, carrying sensible heat. The more excess air, the more nitrogen goes up the
+flue.
+
+The rule of thumb:
+
+> **Every 1% of excess air above stoichiometric costs about 0.1% efficiency**
+
+Practical example:
+- **Stoichiometric (theoretical)**: 0% O₂ in flue gas (impossible to achieve)
+- **10% excess air**: ~1.8% O₂ in flue gas, efficiency ~99% (never happens)
+- **20% excess air**: ~3.6% O₂ in flue gas, efficiency ~98%
+- **40% excess air**: ~7.2% O₂ in flue gas, efficiency ~96%
+- **80% excess air**: ~14.4% O₂ in flue gas, efficiency ~92%
+
+A boiler running at 80% excess air (a not-uncommon sight on old plants) is throwing
+away **~6 percentage points of efficiency** compared to one running 20% excess. On a
+500 kW boiler, that's **30 kW of continuous waste**, or roughly **250 MWh/year**.
+
+<Callout variant="key" title="Measure, don't guess">
+The only way to know excess air is to measure O₂ in the flue gas. A flue-gas
+analyser gives you the number in seconds; estimation by visual inspection of flame
+colour is guesswork.
+</Callout>
+
+## Why we run excess air anyway
+
+If excess air wastes energy, why not run at stoichiometric? The answer: **incomplete
+combustion is worse**.
+
+At or near stoichiometric air, small variations in burner tuning lead to pockets of
+fuel-rich mixture (not enough oxygen). That unburned fuel becomes:
+- **Carbon monoxide (CO)** — poisonous and an energy loss
+- **Smoke and soot** — dirty and fouls the boiler
+- **Unburned hydrocarbons** — lost fuel
+
+A small amount of CO (50 ppm) is acceptable and indicates good burner efficiency. A
+lot of CO (>200 ppm) means the fuel is not burning and you're wasting money.
+
+The **minimum safe excess air** is the point where CO stays low (below 50 ppm) under
+typical operating conditions. For most burners, that's **10–20% excess air**, or
+**2–4% O₂ in the flue gas**.
+
+## Tuning the air/fuel ratio
+
+A burner has two controls:
+
+- **Fuel**: gas pressure or oil-pump setting
+- **Air**: damper position on the air inlet
+
+To tune a burner:
+
+- **Start with gas/oil rate** fixed to the desired output (say, 80% of max)
+- **Adjust air damper** until O₂ reads around 3%. CO should be below 50 ppm
+- **Check flue temperature** — if it's unusually high (>170 °C for non-condensing),
+  something is wrong (fouling, poor heat exchange)
+- **Repeat at different loads** — test 100%, 75%, 50%, and 25% if the burner modulates
+
+<Callout variant="warning" title="Tuning on O₂ alone can hide fouling">
+If O₂ is good (3%) but flue temperature is high (180 °C), the boiler is dirty.
+Clean it first, then retune the air/fuel ratio.
+</Callout>
+
+## Lambda and oxygen trim
+
+Modern burners have **oxygen trim** — automatic sensors that adjust the air damper to
+maintain a target O₂. This is called **lambda control** (lambda = air/fuel ratio).
+
+- **Manual tuning**: you adjust the damper once and hope it doesn't drift
+- **Automatic lambda trim**: the sensor actively adjusts damper to keep O₂ at a
+  setpoint (typically 3%)
+
+Lambda trim systems cost £1,500–3,000 to retrofit and can save **1–2% efficiency**
+by preventing drift. Over a year on a 500 kW boiler, that's roughly **50 MWh** and
+**£5,000–6,000**.
+
+<Callout variant="tip">
+If you manage a boiler burning >1,000 hours/year, oxygen trim pays for itself. It's
+one of the fastest payback retrofits available.
+</Callout>
+
+## Practical tuning: a checklist
+
+- **Get a flue-gas analyser** (or hire someone with one)
+- **Clean the boiler first** (soot reduces efficiency)
+- **Measure O₂, CO, and flue temperature** at full and part load
+- **Adjust the air damper** to target 3% O₂ and below 50 ppm CO
+- **Record the before/after** efficiency and fuel consumption
+- **Follow up every 6–12 months** — drift happens
+
+A well-tuned boiler stays tuned for a year or so, then drifts. A poorly tuned one
+wastes 2–5% right from day one.

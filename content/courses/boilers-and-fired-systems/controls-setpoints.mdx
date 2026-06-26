@@ -1,0 +1,112 @@
+A boiler doesn't run in isolation. It responds to demand from the building — heating
+water for radiators, heating a swimming pool, generating steam for a process. How
+that demand is sensed and how the boiler responds defines whether it runs efficiently
+or wastes energy.
+
+## Demand signals: temperature setpoint
+
+The simplest control: a **temperature sensor** in the boiler outlet water, with a
+setpoint (e.g., 70 °C). The burner modulates or cycles to keep the water at that
+temperature.
+
+- If water temperature drops below setpoint, the burner fires
+- If it reaches setpoint, the burner throttles back or shuts off
+
+This is **reactive control** — the boiler responds to what's happening now.
+
+## The problem: constant temperature is wasteful
+
+Running boiler outlet water at 70 °C all year is inefficient. In winter, when demand
+is high, you need that heat. In summer (or mild weather), a building needs only 40–50
+°C water for low-load heating. Running at 70 °C anyway wastes energy:
+- Distribution losses are higher (higher ΔT, more heat lost from pipes)
+- The boiler runs frequently even when demand is small
+- If you have a condensing boiler, it won't condense (return water is too warm)
+
+## Weather compensation: follow the load
+
+**Weather compensation** adjusts the boiler setpoint based on **outdoor air
+temperature**.
+
+When it's cold outside:
+- Building heat loss is high
+- You set the boiler to 70 °C (high output)
+
+When it's mild (say, 15 °C):
+- Building heat loss is lower
+- The controller lowers the setpoint to 50 °C
+
+The relationship is called a **heating curve**. Modern controls have a slope and
+offset you can tune.
+
+<Callout variant="key" title="Weather compensation saves 5–10% on heating energy">
+If your building heats for 5,000 degree-days per year, weather compensation
+typically saves 1–2 percentage points of total energy. It's especially valuable
+with condensing boilers, which need cold return water to function.
+</Callout>
+
+## Sequencing: multi-boiler plants
+
+If you have two or more boilers, how do they work together?
+
+**Lead/lag (cascade) sequencing:**
+- Boiler 1 handles the load first (is the "lead" boiler)
+- When demand exceeds Boiler 1's capacity, Boiler 2 fires (the "lag")
+- As demand drops, Boiler 2 shuts down before Boiler 1 modulates down
+
+**Benefit**: both boilers share load, which keeps each running closer to optimal
+efficiency. You avoid one boiler at very low part-load while another idles.
+
+**Parallel sequencing** (less common):
+- Both boilers fire together at part load, each doing half the work
+- More complex but can optimize for efficiency
+
+The choice depends on the boiler type and the range of loads. Typically:
+- **Best practice**: lead/lag with both boilers sized to ~60% of maximum demand
+  (ensures good part-load efficiency)
+- **Common mistake**: boilers badly oversized, so they run at 20–30% load and
+  cycling dominates efficiency loss
+
+## Setpoint problems and drift
+
+Temperature setpoints sometimes **creep higher** over time:
+
+- Operators raise the setpoint thinking it will speed up heating (it doesn't,
+  much — it just wastes energy)
+- An old controller's thermostat fails and is replaced with a wrongly-calibrated
+  one
+- The weather compensation is disabled because "it wasn't working properly" (maybe
+  it just needed tuning)
+
+A boiler running at 75 °C instead of 65 °C wastes roughly **5–10% more energy**.
+Over a year, that's thousands of pounds.
+
+<Callout variant="warning" title="Check setpoints quarterly">
+If your boiler setpoint has drifted up in the last few years, that's lost savings.
+Resetting it can recover 5–10% of heating energy with zero capital cost.
+</Callout>
+
+## Demand-side control: load balancing
+
+The best control is one that doesn't waste fuel in the first place. That starts with
+**balancing the heating distribution system** so demand is met without overshooting.
+
+- **Oversized radiators** in one room → water is hotter than needed → boiler
+  setpoint must be high
+- **Underbalanced valve** → some zones get cold water, others get scalding hot
+
+**Balancing the system** (using differential-pressure regulators and manual balancing
+valves) ensures every zone gets the right flow for its demand, reducing the
+temperature needed at the boiler.
+
+## Practical tuning checklist
+
+- **Check the setpoint** — is it set correctly for the season?
+- **Enable weather compensation** if available (and tune it to your building)
+- **Check for setpoint drift** — if it's crept up over a year, reset it
+- **Review multi-boiler sequencing** — is lead/lag set up correctly?
+- **Balance the heating system** — are some zones hot while others are cold?
+
+A well-controlled boiler plant runs at the lowest possible temperature to meet
+demand, adjusts to weather, and sequences multiple boilers efficiently. These are
+all software/tuning changes — no capital cost, but significant savings.
