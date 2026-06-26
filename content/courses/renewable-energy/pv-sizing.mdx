@@ -1,10 +1,43 @@
-Lesson on pv-sizing for energy management learning.
+Sizing a PV system means matching the array to the available space, the site conditions, and - crucially - the building's own electricity demand. A well-sized system maximises value; a poorly sized one exports cheap power it could have used.
 
-Key concepts:
-- Essential topic from energy management domain
-- Practical application and real-world context
-- Integration with broader energy system
+## Capacity and yield
 
-This is a key topic in energy management. Understanding pv-sizing helps improve overall system efficiency and performance.
+PV capacity is rated in **kilowatts-peak (kWp)** - the output under standard test conditions. Actual annual energy depends on location, orientation, and losses:
 
-For more details and comprehensive coverage, refer to industry standards and technical guides.
+Annual energy (kWh) = kWp x specific yield (kWh/kWp/year)
+
+In the UK, specific yield is around 800-1,000 kWh/kWp/year for a well-oriented system; sunnier climates reach 1,400-1,800. So a 10 kWp array in the UK generates roughly 8,500-9,500 kWh/year.
+
+## Orientation and tilt
+
+Output depends strongly on which way the panels face and their angle:
+- **Orientation:** south is optimal in the northern hemisphere; east or west typically lose 10-20% but spread generation across morning or afternoon
+- **Tilt:** around 30-40 degrees is optimal in the UK; flatter or steeper reduces annual yield modestly
+- **East-west split:** flat-roof systems often face panels east and west to flatten the generation curve and fit more capacity
+
+## The enemy: shading
+
+Shading hurts PV disproportionately. Because cells are wired in series, shading even one cell can throttle a whole string - like a kink in a hosepipe. Survey for:
+- Chimneys, parapets, plant, and adjacent buildings
+- Trees (and their growth over time)
+- Self-shading between rows on flat roofs (set row spacing to avoid winter shading)
+
+Microinverters or optimisers mitigate shading by managing panels individually, recovering much of the lost output where shading is unavoidable.
+
+## Sizing to demand: the key decision
+
+The most important sizing choice is matching generation to on-site consumption, because **self-consumed power is worth far more than exported power**:
+- Power used on site displaces grid electricity at the retail price (perhaps 0.25 GBP/kWh)
+- Power exported earns only the export rate (perhaps 0.05-0.15 GBP/kWh)
+
+Overlay the building's daytime load profile on the expected generation. A system sized so most output is consumed on site (or stored) returns far more than one that floods the grid with cheap exports at midday. For a building with low daytime demand, a smaller array - or added battery storage - often makes better financial sense than filling every square metre of roof.
+
+## Practical constraints
+
+Final sizing reconciles the ideal with reality:
+- Available unshaded roof area and its structural load capacity
+- The size of the grid connection and any export limit
+- Budget and the point of diminishing returns on self-consumption
+- Inverter sizing (often slightly undersized relative to array peak, since peak output is rare)
+
+The result is a system tuned to the building - large enough to capture the value, not so large that it exports its best energy at a loss.

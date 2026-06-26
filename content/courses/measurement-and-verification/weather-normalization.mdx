@@ -1,1 +1,51 @@
-Lesson: weather-normalization
+Weather is the biggest single influence on most buildings' energy use, and it changes every year. Weather normalisation adjusts for this so that savings reflect your project, not the seasons.
+
+## The problem weather creates
+
+Compare two winters: a cold one drives heating energy up; a mild one lets it fall. If you install an efficiency measure and the following winter is mild, energy falls - but how much is your project and how much is the weather? Without normalising for weather, you cannot tell, and you risk claiming the mild winter as your success (or, in a cold year, hiding a real saving).
+
+## Degree-days
+
+The standard tool for weather normalisation is the **degree-day**, which quantifies how cold (or hot) a period was relative to a base temperature:
+
+- **Heating degree-days (HDD):** accumulate how far the outside temperature falls below a base (often around 15.5 C in the UK) - more HDD means a colder period and more heating demand
+- **Cooling degree-days (CDD):** accumulate how far temperature rises above a base - more CDD means a hotter period and more cooling demand
+
+Degree-days turn "it was a cold winter" into a number you can calculate with.
+
+## How normalisation works
+
+The baseline model relates energy to degree-days:
+
+Energy = base load + (coefficient x degree-days)
+
+To find the saving in any period:
+1. Take the **actual degree-days** for the post-project period
+2. Put them into the **baseline model** to calculate what the building *would have* used, before the project, under that weather - the **adjusted baseline**
+3. Compare to the **actual energy** used after the project
+4. The difference is the weather-normalised saving
+
+This way, both figures reflect the same weather, so the saving is genuinely attributable to the project, not the season.
+
+## A worked example
+
+A building's baseline model is: Energy = 20,000 + 50 x HDD (kWh per month).
+
+After a retrofit, a month has 200 HDD and the building used 26,000 kWh.
+- Adjusted baseline (what it would have used): 20,000 + 50 x 200 = 30,000 kWh
+- Actual: 26,000 kWh
+- Weather-normalised saving: 30,000 - 26,000 = 4,000 kWh
+
+Crucially, the saving is measured against what the *old* building would have used *in this month's weather* - not against last year's different weather.
+
+## Getting the base temperature right
+
+The **base temperature** for degree-days should match the building, not just default to a standard value. It depends on the building's balance point - the outside temperature at which heating is needed. A well-insulated building with high internal gains has a lower base temperature. Using the wrong base temperature weakens the correlation; sometimes testing several base temperatures finds the one that best fits the data.
+
+## Beyond degree-days
+
+Degree-days handle the dominant weather effect, but for some buildings other weather factors matter - solar gain, humidity (for cooling and dehumidification), wind. Where these significantly affect energy, they can be added to the regression model. For most buildings, however, heating and cooling degree-days capture the great majority of the weather effect.
+
+## The honest core of M&V
+
+Weather normalisation embodies the integrity at the heart of M&V: you must not take credit for a mild winter, nor be penalised for a harsh one. By always comparing actual energy to what the baseline would have used *under the same weather*, you isolate the true effect of your work - the essential adjustment that makes savings credible.

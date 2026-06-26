@@ -1,10 +1,45 @@
-Lesson on grid-codes for energy management learning.
+Any generator connected to the grid must follow strict rules to keep the network safe and stable. Understanding grid codes and the connection process is essential before installing renewables.
 
-Key concepts:
-- Essential topic from energy management domain
-- Practical application and real-world context
-- Integration with broader energy system
+## Why grid codes exist
 
-This is a key topic in energy management. Understanding grid-codes helps improve overall system efficiency and performance.
+The grid is a tightly balanced system shared by everyone. A generator that misbehaves - feeding power when it should not, or destabilising voltage and frequency - endangers people and equipment across the network. **Grid codes** set the technical requirements every connected generator must meet to protect the system and those working on it.
 
-For more details and comprehensive coverage, refer to industry standards and technical guides.
+## Anti-islanding: the critical safety function
+
+The single most important requirement is **anti-islanding protection**. If the grid loses power - say for maintenance or a fault - a connected generator must *not* keep energising the local network. If it did, it could:
+- Electrocute engineers working on lines they believe are dead
+- Damage equipment when the grid reconnects out of sync
+
+Grid-tied inverters continuously monitor the grid and disconnect within milliseconds if it fails or drifts out of limits. This is why a standard grid-tied PV system gives no power during an outage - the safety function shuts it down. (Battery-hybrid systems with islanding capability handle this with deliberate, controlled disconnection.)
+
+## The connection process (UK)
+
+Connecting generation involves the Distribution Network Operator (DNO):
+- **Smaller installations** (e.g. domestic PV under a threshold) can often connect under a "connect and notify" (G98) process - install, then inform the DNO
+- **Larger installations** need prior application and approval (G99), where the DNO assesses the network's capacity to accept the generation
+- The DNO sets a **maximum export capacity**, and large connections may require costly network reinforcement
+
+Engaging the DNO early is essential - connection terms, timescales, and any reinforcement cost can make or break a project.
+
+## Protection requirements
+
+Connected generators must include protection that disconnects them if the grid goes out of safe limits for:
+- **Voltage** (too high or too low)
+- **Frequency** (too high or too low)
+- **Loss of mains** (the anti-islanding function)
+
+These are built into compliant inverters certified to the relevant standard, which is why specifying certified, grid-code-compliant equipment matters.
+
+## Export limitation
+
+Where a site should not export (or export above a set limit), **export limitation** controls throttle generation or divert surplus (to storage or loads) to stay within the agreed cap. This can ease or speed up a connection where network capacity is constrained, allowing a larger array than the export limit alone would permit, as long as the surplus is used or stored on site.
+
+## The practical sequence
+
+1. Assess the renewable resource and size the system
+2. Check DNO capacity and the connection route (G98/G99)
+3. Apply for connection where required, agreeing export capacity
+4. Install certified, grid-code-compliant equipment with proper protection
+5. Commission and register the installation
+
+Getting the grid connection right - early - keeps a renewable project legal, safe, and on schedule.

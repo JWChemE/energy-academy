@@ -1,1 +1,62 @@
-Lesson: calculating-savings
+With a baseline established and the adjustment factors understood, the savings calculation brings it together. The logic is simple in principle but demands care in execution.
+
+## The fundamental equation
+
+All M&V savings come from one core equation:
+
+Savings = (adjusted baseline energy) - (actual reporting-period energy)
+
+The **adjusted baseline** is what the building or system *would have* used during the reporting period, under that period's actual conditions, *if the project had not happened*. The **actual energy** is what it really used. The difference is the saving the project delivered.
+
+The word "adjusted" carries the whole weight - it is what makes the comparison fair.
+
+## Avoided energy use, not just lower bills
+
+This is sometimes called **avoided energy use**, and the distinction matters. You are not simply comparing this year's bill to last year's. You are comparing actual energy to a moving, adjusted baseline that tracks current weather, occupancy, and production. The saving is the energy you *avoided* using, given the conditions that actually prevailed.
+
+## Step by step
+
+1. **Take the baseline model** - the equation relating energy to its drivers (degree-days, production, occupancy)
+2. **Insert the reporting period's actual driver values** - this period's degree-days, production, occupancy
+3. **Calculate the adjusted baseline** - what the old building would have used under these conditions
+4. **Measure the actual energy** used in the reporting period
+5. **Subtract:** adjusted baseline minus actual = the saving
+6. **Value it** - multiply energy saved by the energy price for the cost saving
+
+## A worked example
+
+A factory's baseline model: Energy = 100,000 + 40 x HDD + 5 x (tonnes produced), per month.
+
+A reporting month has 150 HDD, produced 8,000 tonnes, and used 130,000 kWh.
+- Adjusted baseline: 100,000 + (40 x 150) + (5 x 8,000) = 100,000 + 6,000 + 40,000 = 146,000 kWh
+- Actual: 130,000 kWh
+- Saving: 146,000 - 130,000 = 16,000 kWh
+
+Note that the adjusted baseline accounts for this month's actual weather *and* production - so the 16,000 kWh saving is attributable to the efficiency project, not to weather or output changes.
+
+## Ongoing savings and cumulative totals
+
+Savings are usually calculated each period (monthly) and accumulated:
+- Each month, compute that month's saving against its adjusted baseline
+- Sum across the year for the annual saving
+- Track cumulative savings over the project life
+
+This ongoing calculation also reveals **persistence** - whether savings hold up over time or decay (a sign of controls drifting back or equipment fouling), linking M&V to maintenance.
+
+## Confidence and uncertainty
+
+A savings figure is an estimate, and good practice acknowledges its **uncertainty**. Sources of uncertainty include:
+- Scatter in the baseline model (how well it fit the data)
+- Measurement error in meters and driver data
+- Modelling assumptions
+
+Rigorous M&V quotes savings with a confidence interval (for example, "16,000 kWh +/- 1,500 kWh"). The saving should be large enough relative to its uncertainty to be meaningful - a saving smaller than the noise in the baseline cannot be claimed with confidence. This is why small savings need tighter methods (isolation, sub-metering) and why whole-building Option C needs savings of roughly 10%+ to stand out.
+
+## Energy and cost
+
+Finally, translate energy savings into money carefully:
+- Use the correct **energy price** (including all components - unit rate, and demand charges if peak was affected)
+- Recognise that saving energy at peak times may be worth more than off-peak
+- Separate **energy cost savings** from other benefits (maintenance, capacity) for clarity
+
+The result is a defensible, conditions-adjusted, uncertainty-aware savings figure - the credible number that justifies the project, settles any performance contract, and feeds reporting. But producing it honestly means avoiding the pitfalls covered next.

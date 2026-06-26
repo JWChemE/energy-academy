@@ -1,10 +1,36 @@
-Lesson on pv-basics for energy management learning.
+Solar photovoltaics (PV) convert sunlight directly into electricity with no moving parts. They are now the cheapest form of new generation in much of the world and the most common on-site renewable for buildings.
 
-Key concepts:
-- Essential topic from energy management domain
-- Practical application and real-world context
-- Integration with broader energy system
+## The photovoltaic effect
 
-This is a key topic in energy management. Understanding pv-basics helps improve overall system efficiency and performance.
+A PV cell is made of semiconductor material, usually silicon. When photons of sunlight strike the cell, they knock electrons free, and the cell's structure drives those electrons around an external circuit as direct current (DC). No combustion, no moving parts, no noise - just light in, electricity out.
 
-For more details and comprehensive coverage, refer to industry standards and technical guides.
+## From cell to array
+
+- **Cell:** the basic unit, producing around 0.5 V
+- **Module (panel):** many cells wired in series, typically producing 350-450 W in standard sizes
+- **String:** modules wired in series to build up voltage
+- **Array:** strings combined to deliver the required power
+
+## DC to AC: the inverter
+
+PV produces DC, but buildings and the grid use AC. The **inverter** converts DC to grid-synchronised AC. Its types:
+- **String inverters:** one inverter per string - simple and cost-effective
+- **Microinverters:** one per panel - better with shading and panel-level monitoring
+- **Optimisers:** per-panel DC devices feeding a string inverter - a middle path
+
+The inverter also performs maximum power point tracking (MPPT), continuously adjusting to extract the most power as light changes.
+
+## Cell technologies
+
+- **Monocrystalline silicon:** highest efficiency (20-23%), uniform black appearance, now the mainstream choice
+- **Polycrystalline silicon:** slightly cheaper, slightly lower efficiency, less common now
+- **Thin film:** lower efficiency but flexible, lightweight, and better in diffuse light or high temperatures - niche uses
+- **Emerging (perovskite, tandem cells):** pushing efficiencies higher in the lab and beginning to reach market
+
+## Efficiency and its limits
+
+Module efficiency - the fraction of incident solar energy turned into electricity - is typically 18-23% for modern silicon. The theoretical limit for a single silicon junction is about 33% (the Shockley-Queisser limit); tandem cells stack materials to exceed it. Higher efficiency means more power from a given roof area, which matters where space is limited.
+
+## Why PV dominates
+
+PV has become the default on-site renewable because it is modular (scales from a few panels to vast farms), silent, low-maintenance, long-lived (25-30 year warranties), and has fallen dramatically in cost. The following lessons cover how to size a system, connect it, store its output, and judge whether it pays.

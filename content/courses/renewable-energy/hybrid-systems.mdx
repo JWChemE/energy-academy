@@ -1,10 +1,49 @@
-Lesson on hybrid-systems for energy management learning.
+Real buildings rarely run on a single energy source. Hybrid systems combine renewables with conventional supply - or several renewables together - to balance cost, carbon, and reliability.
 
-Key concepts:
-- Essential topic from energy management domain
-- Practical application and real-world context
-- Integration with broader energy system
+## Why hybridise
 
-This is a key topic in energy management. Understanding hybrid-systems helps improve overall system efficiency and performance.
+No single source is perfect: renewables are variable, conventional plant is carbon-intensive, and each technology has a sweet spot. Hybrids combine them so each works where it is strongest:
+- Renewables provide low-cost, low-carbon energy when available
+- Conventional plant guarantees supply when they are not
+- The result is lower carbon and cost than either alone, with reliability maintained
 
-For more details and comprehensive coverage, refer to industry standards and technical guides.
+## Heat pump plus boiler (bivalent heating)
+
+A common and powerful hybrid is a **heat pump with a backup boiler**:
+- The heat pump handles the bulk of the year - mild weather, where its COP is high and running cost low
+- The boiler (gas or biomass) tops up on the coldest days, when heat pump output and efficiency fall and demand peaks
+- The control system chooses the cheaper or cleaner source for the conditions (the "bivalent point")
+
+This lets a smaller, cheaper heat pump cover most of the annual heat (often 80%+) while the boiler covers the rare peaks - avoiding the cost of a heat pump sized for the worst day, and easing retrofit in buildings not ready for full electrification.
+
+## PV plus battery plus grid
+
+On the electricity side, a typical hybrid is **PV + battery + grid**:
+- PV generates clean power by day
+- The battery stores surplus for evening use and provides backup
+- The grid fills any remaining gap and absorbs export
+
+This maximises self-consumption and resilience while keeping the grid as a safety net.
+
+## Renewables plus storage
+
+Hybridising a renewable with thermal or electrical storage smooths its variability:
+- Solar thermal + a hot-water store banks daytime heat for evening
+- PV + battery shifts midday generation to the evening peak
+- Wind + storage captures gusty output for steady use
+
+Storage turns intermittent renewable supply into something closer to dispatchable, greatly increasing its useful value.
+
+## Multi-source systems
+
+Larger sites combine several sources into an integrated system - PV, heat pumps, CHP, solar thermal, and storage - managed by a controller that dispatches the cheapest, cleanest option moment to moment. District energy schemes often blend waste heat, heat pumps, solar, and thermal storage in exactly this way.
+
+## Designing a good hybrid
+
+The art is in the controls and sizing:
+- Size each component to its strength (renewable to the base, backup to the peak)
+- Set sensible switchover logic (the bivalent point, the battery dispatch strategy)
+- Use storage to bridge the gaps
+- Let the control system optimise for cost or carbon as priorities dictate
+
+Done well, a hybrid delivers most of the carbon benefit of full renewables with the reliability of conventional supply - often the most practical and economic path, especially in retrofit, on the road to net zero.

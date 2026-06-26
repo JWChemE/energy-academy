@@ -1,1 +1,47 @@
-Lesson: occupancy-production
+Weather is the biggest driver of energy use, but rarely the only one. Changes in occupancy, operating hours, and production must also be accounted for, or savings will be over- or understated.
+
+## Why other drivers matter
+
+A building's energy use responds to more than the weather:
+- An **office** with more staff or longer hours uses more energy regardless of any efficiency measure
+- A **factory** making more product uses more energy on its processes
+- A **hotel** at higher occupancy uses more heating, hot water, and power
+
+If occupancy or production changes between the baseline and the reporting period, comparing raw energy use confuses that change with the project's effect. These drivers must be normalised, just like weather.
+
+## Occupancy and operating hours
+
+For buildings where activity drives energy:
+- **Occupancy** (number of people) affects heating, cooling, ventilation, lighting, and small power
+- **Operating hours** (how long the building runs) directly scale energy use - a building open 12 hours uses more than one open 8
+
+If a retrofit coincides with the building becoming busier, raw energy might not fall even though the project saved energy - the extra occupancy masked it. Normalising for occupancy reveals the true saving. Conversely, if the building emptied (as many did during the pandemic), energy fell for reasons nothing to do with efficiency - and claiming that as a project saving would be wrong.
+
+## Production in industry
+
+For industrial sites, **production volume** is often the dominant driver. Energy use is better expressed as **specific energy consumption (SEC)** - energy per unit of output (kWh per tonne, per item, per litre):
+
+SEC = total energy / units produced
+
+Normalising by production means a saving shows up as a fall in energy *per unit*, separating genuine efficiency from mere changes in how much was made. A plant making more product will use more total energy while still becoming more efficient per unit - only SEC reveals this.
+
+## Adding drivers to the model
+
+These factors are incorporated through **multi-variable regression**, extending the baseline model:
+
+Energy = base load + (a x degree-days) + (b x production) + (c x occupancy)
+
+Each significant driver gets its coefficient. To find the saving, the model is fed the reporting period's actual values for *all* drivers - weather, production, occupancy - to compute the adjusted baseline, which is then compared to actual energy. The saving reflects the project alone, with every driver accounted for.
+
+## Choosing which drivers to include
+
+Include a driver if it:
+- **Significantly affects** energy use (a real, sizeable influence)
+- **Changes** between baseline and reporting periods (a constant driver needs no adjustment)
+- **Can be measured** reliably over both periods
+
+Avoid adding drivers that do not genuinely affect energy or that cannot be measured - they add noise and false precision. The aim is a model that captures the real drivers of energy use, no more and no less.
+
+## The combined adjustment
+
+In practice, savings calculation adjusts for all relevant drivers together - weather, occupancy, and production - so the final figure isolates the effect of the energy project from everything else that moved. This routine adjustment for changing conditions is the everyday work of M&V, and the next lesson brings it together into the savings calculation itself.

@@ -1,1 +1,63 @@
-Lesson: baseline-development
+A robust baseline is built from good data and sound analysis. This lesson covers the practical work of developing one - collecting data, finding the relationships, and avoiding the traps.
+
+## Collecting the data
+
+A baseline needs two matched data sets over the baseline period:
+
+**Energy data:**
+- Utility bills or, far better, meter readings (ideally half-hourly or daily)
+- Sub-meter data where available, for the specific system in scope
+- Enough history - normally at least 12 continuous months
+
+**Independent variable (driver) data, over the same period:**
+- Weather data (temperatures, to derive degree-days)
+- Occupancy or operating hours
+- Production volumes for industrial sites
+- Anything else that demonstrably drives energy use
+
+The two must align in time so you can relate energy to its drivers period by period.
+
+## Cleaning the data
+
+Raw data is rarely ready to use. Before analysis:
+- **Check for gaps** (missing readings) and fill or exclude them properly
+- **Identify anomalies** - meter errors, estimated bills, spikes from one-off events
+- **Exclude unrepresentative periods** - a long shutdown, a major fault, commissioning of unrelated plant
+- **Verify units and meter boundaries** match the measurement boundary
+
+Bad data produces a bad baseline, so cleaning is time well spent. But beware: exclude only genuine anomalies, not inconvenient data that happens not to fit - that is manipulation, not cleaning.
+
+## Finding the relationship: regression
+
+The core analytical tool is **regression analysis** - finding the equation that best relates energy use to its drivers. The simplest and commonest is energy against degree-days:
+
+Energy = base load + (coefficient x degree-days)
+
+- The **base load** is energy independent of weather (lighting, equipment, hot water)
+- The **coefficient** captures how much energy rises with each degree-day (the weather-sensitive heating or cooling)
+
+Plotting energy against degree-days should give points clustering around a straight line. The fitted line is the baseline model.
+
+## Judging the model
+
+A good baseline model:
+- **Fits well** - the data points lie close to the line. The **R-squared** value (0-1) measures this; above about 0.75 is usually considered a good fit for monthly energy data
+- **Makes physical sense** - the base load and coefficients are plausible
+- **Uses the right drivers** - if weather alone fits poorly, occupancy or production may be needed (multi-variable regression)
+
+A poor fit signals a missing driver, noisy data, or that the energy use is not well explained by the chosen variables - a warning to investigate before relying on the baseline.
+
+## Multiple drivers
+
+Many buildings need more than one variable. A factory's energy might depend on both degree-days *and* production volume; an office on degree-days *and* occupancy. **Multi-variable regression** handles this, producing a model with a coefficient for each driver. Include drivers that genuinely and significantly affect energy - but avoid over-fitting with spurious variables that happen to correlate by chance.
+
+## Documenting the baseline
+
+Finally, record everything:
+- The baseline period and why it was chosen
+- The measurement boundary
+- The data sources and any cleaning done
+- The regression model, its drivers, and its goodness of fit
+- The static factors assumed constant
+
+This documentation makes the baseline transparent, defensible, and adjustable later. A well-developed, well-documented baseline is the bedrock on which credible savings rest - and the foundation for the adjustments covered next.

@@ -1,10 +1,38 @@
-Lesson on pv-integration for energy management learning.
+A PV array has to connect into the building's electrical system and, usually, the grid. How it integrates - and whether it includes battery storage - determines how much of its value the building actually captures.
 
-Key concepts:
-- Essential topic from energy management domain
-- Practical application and real-world context
-- Integration with broader energy system
+## Grid-tied systems
 
-This is a key topic in energy management. Understanding pv-integration helps improve overall system efficiency and performance.
+The vast majority of building PV is **grid-tied**: it works in parallel with the mains supply.
+- PV supplies the building's load first
+- Any surplus exports to the grid
+- Any shortfall is drawn from the grid
+- When the grid fails, a grid-tied inverter shuts down for safety (anti-islanding) - so without batteries, a grid-tied system gives no power in an outage
 
-For more details and comprehensive coverage, refer to industry standards and technical guides.
+This is the simplest, cheapest configuration and suits most buildings where grid power is reliable.
+
+## Self-consumption versus export
+
+The central integration goal is to maximise **self-consumption**, because on-site use is worth two to four times the export rate. Strategies:
+- Size the array to the daytime base load
+- Shift flexible loads (water heating, EV charging, pumping, cooling) into the sunny midday hours
+- Add storage to bank surplus for evening use
+
+A building that uses most of its own generation has a far better return than one exporting heavily at low midday prices.
+
+## Battery storage
+
+A **battery** stores surplus daytime PV for use in the evening peak, sharply increasing self-consumption:
+- Typical home/building batteries: 5-30 kWh of usable capacity
+- Round-trip efficiency: 85-95% for lithium-ion
+- Benefits: more self-consumption, evening peak avoidance, and (with the right inverter) backup power during outages
+
+Batteries add significant cost, so they pay best where the export rate is low, the self-consumption uplift is large, the tariff has a wide peak/off-peak spread, or resilience is valued. They also enable charging from cheap off-peak grid power for arbitrage - covered in the storage module.
+
+## Off-grid and hybrid systems
+
+- **Off-grid:** PV plus substantial battery (and often a backup generator) with no grid connection - for remote sites where connection is impractical
+- **Hybrid:** a grid-tied system with battery and the ability to island during outages - increasingly popular for combining cost savings with resilience
+
+## Monitoring and control
+
+Good integration includes monitoring - tracking generation, consumption, self-consumption, and export. This verifies performance, catches faults (a failed string can go unnoticed for months otherwise), and informs load-shifting to lift self-consumption. Smart energy management systems can automatically divert surplus PV to water heating, EV charging, or batteries, squeezing maximum value from every generated unit.

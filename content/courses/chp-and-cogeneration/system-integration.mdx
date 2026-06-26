@@ -1,1 +1,39 @@
-Lesson: system-integration
+A CHP unit rarely works alone. It sits within a plant room alongside boilers, pumps, controls, and the electrical supply. How it is integrated determines whether it achieves its design run hours.
+
+## Hydraulic integration with boilers
+
+CHP is the **lead heat source** - it runs first and continuously, with boilers as top-up and standby. The hydraulic design must ensure the CHP always gets first call on the heat demand:
+
+- CHP connects to the return leg so it sees the coolest water, maximising heat recovery and (for condensing-style recovery) efficiency.
+- Boilers stage on only when CHP cannot meet demand.
+- A **low-loss header** or buffer vessel hydraulically separates CHP, boilers, and the building circuits so flow rates do not fight one another.
+
+## The thermal store
+
+A buffer store is the single most valuable integration component. It:
+- Lets CHP run steadily through short demand dips instead of cycling on and off
+- Absorbs the morning heat-up surge so a smaller CHP can contribute
+- Lifts annual run hours and heat utilisation
+
+Stop-start cycling is the enemy of engine life and efficiency, so the store earns its space many times over.
+
+## Electrical integration
+
+The generator connects to the site's electrical system, normally running in parallel with the grid:
+- **G99 (UK) protection** disconnects the unit safely if the grid fails, preventing dangerous islanding.
+- Most building schemes are sized to avoid export, so all power is used on site where it is most valuable (displacing imported power at retail price beats exporting at wholesale).
+- Where export is allowed, an export meter and agreement with the network operator are required.
+
+## Controls and sequencing
+
+The control system ties it together: it runs CHP as lead, stages boilers, manages the store's charge, and can shift operation to the most profitable hours where tariffs vary. Good controls also log run hours, heat utilisation, and efficiency so performance can be verified against design - the link to measurement and verification.
+
+## Common integration failures
+
+Schemes underperform when:
+- No thermal store is fitted, so the unit short-cycles
+- CHP is plumbed to hot return water, starving its heat recovery
+- Boilers are allowed to compete with CHP rather than top it up
+- Controls are left on default, so the unit runs at the wrong times
+
+Most disappointing CHP installations fail on integration, not on the unit itself.
