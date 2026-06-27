@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { CalcPart, CalcStatus, checkAnswer, RefTable } from "@/lib/steamCases";
-import ReferencePanel from "./ReferencePanel";
+import { useEffect, useState, type ReactNode } from "react";
+import { CalcPart, CalcStatus, checkAnswer } from "@/lib/diagnostics";
 
 /**
  * The Calculate step. The learner computes each derived figure from the raw
@@ -27,11 +26,11 @@ function parseNum(s: string): number | null {
 
 export default function CalcStep({
   parts,
-  refTables,
+  reference,
   onStatuses,
 }: {
   parts: CalcPart[];
-  refTables: RefTable[];
+  reference?: ReactNode;
   onStatuses: (s: CalcStatus[]) => void;
 }) {
   const [state, setState] = useState<PartState[]>(
@@ -58,7 +57,7 @@ export default function CalcStep({
 
   return (
     <div className="space-y-4">
-      <ReferencePanel tables={refTables} />
+      {reference}
 
       <div className="space-y-3">
         {parts.map((part, i) => {

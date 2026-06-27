@@ -8,18 +8,17 @@
  * unaided. Answers below are consistent with lib/steamTables.ts.
  */
 
-import { TIER_LABEL } from "./boilerCases";
-
-export { TIER_LABEL };
+import {
+  CalcPart,
+  CauseDef,
+  ActionDef,
+  DiagnosticCase,
+  Reading,
+} from "./diagnostics";
 
 // ---- master cause & action pools ----
 
-export interface SteamCause {
-  id: string;
-  label: string;
-}
-
-export const STEAM_CAUSES: SteamCause[] = [
+export const STEAM_CAUSES: CauseDef[] = [
   { id: "condensate-to-drain", label: "Condensate run to drain instead of recovered" },
   { id: "process-leak", label: "Process-side leak contaminating the condensate" },
   { id: "over-cautious-dump", label: "Clean condensate being dumped unnecessarily" },
@@ -33,13 +32,7 @@ export const STEAM_CAUSES: SteamCause[] = [
   { id: "poor-separation", label: "No separator / inadequate main trapping — wet steam" },
 ];
 
-export interface SteamAction {
-  id: string;
-  label: string;
-  tier: number; // 0 safety · 1 no-cost/operational · 2 remedial · 3 capital
-}
-
-export const STEAM_ACTIONS: SteamAction[] = [
+export const STEAM_ACTIONS: ActionDef[] = [
   { id: "fix-condensate-route", label: "Re-route the condensate back to the feed tank", tier: 2 },
   { id: "pumped-condensate-return", label: "Install a pumped condensate return", tier: 3 },
   { id: "stop-dumping", label: "Stop dumping the (clean) condensate — return it", tier: 1 },
@@ -57,57 +50,16 @@ export const STEAM_ACTIONS: SteamAction[] = [
   { id: "control-boiler-tds", label: "Control boiler TDS (auto blowdown) to stop carryover", tier: 1 },
 ];
 
-export function steamActionTier(id: string): number {
-  return STEAM_ACTIONS.find((a) => a.id === id)?.tier ?? 1;
-}
-
 // ---- reference tables to surface per case ----
 export type RefTable = "steam" | "trapLoss" | "pipeLoss";
 
-// ---- calculation parts ----
-export interface CalcPart {
-  id: string;
-  prompt: string;
-  unit: string;
-  answer: number;
-  tol: number;
-  tolType: "abs" | "rel";
-  /** hints[0] is the method/formula; later entries are numeric nudges. */
-  hints: string[];
-  worked: string;
-}
-
-export function checkAnswer(part: CalcPart, value: number): boolean {
-  const margin = part.tolType === "rel" ? Math.abs(part.answer) * part.tol : part.tol;
-  return Math.abs(value - part.answer) <= margin;
-}
-
-// ---- a reading shown on the panel ----
-export interface Reading {
-  label: string;
-  value: string;
-  unit?: string;
-  /** A reading that is itself a clue worth weighing (highlighted). */
-  note?: string;
-}
-
-export interface SteamCase {
-  id: string;
-  title: string;
-  tag: string;
-  brief: string;
-  knownFacts: string[];
-  readings: Reading[];
+/** A steam case is a generic diagnostic case plus which reference tables to show. */
+export interface SteamCase extends DiagnosticCase {
   refTables: RefTable[];
-  calcParts: CalcPart[];
-  candidateCauseIds: string[];
-  correctCauseIds: string[];
-  candidateActionIds: string[];
-  correctActionIds: string[];
-  improvementActionIds: string[];
-  debrief: string;
-  faultChain: string[];
 }
+
+// re-export for the calc parts declared inline below
+export type { CalcPart, Reading };
 
 export const STEAM_CASES: SteamCase[] = [
   // ---------------------------------------------------------------- Case 1
@@ -664,99 +616,4 @@ export const STEAM_CASES: SteamCase[] = [
 
 export function getSteamCase(id: string): SteamCase | undefined {
   return STEAM_CASES.find((c) => c.id === id);
-}
-
-// ---- scoring ----
-
-export type CalcStatus = "unaided" | "hinted" | "skipped" | "wrong" | "unsolved";
-
-export interface SteamScore {
-  calcScore: number;
-  causeScore: number;
-  actionScore: number;
-  orderScore: number;
-  captured: boolean;
-  usedCalcHelp: boolean;
-  improvementsSpotted: string[];
-  wrongPicks: string[];
-  hasOrderInversion: boolean;
-  total: number;
-  passed: boolean;
-}
-
-function setScore(selected: string[], correct: string[], universe: string[]): number {
-  const sel = new Set(selected);
-  const cor = new Set(correct);
-  let right = 0;
-  let wrong = 0;
-  for (const id of universe) {
-    const picked = sel.has(id);
-    const should = cor.has(id);
-    if (picked && should) right++;
-    else if (picked !== should) wrong++;
-  }
-  const denom = right + wrong;
-  return denom === 0 ? 100 : Math.round((right / denom) * 100);
-}
-
-export function scoreSteamCase(
-  c: SteamCase,
-  calcStatuses: CalcStatus[],
-  selectedCauseIds: string[],
-  orderedActionIds: string[]
-): SteamScore {
-  // Calculation: unaided = full, hinted = partial, skipped/wrong = none.
-  const perPart: number[] = calcStatuses.map((s) =>
-    s === "unaided" ? 100 : s === "hinted" ? 40 : 0
-  );
-  const calcScore = perPart.length
-    ? Math.round(perPart.reduce((a, b) => a + b, 0) / perPart.length)
-    : 0;
-  const usedCalcHelp = calcStatuses.some((s) => s !== "unaided");
-
-  const causeScore = setScore(selectedCauseIds, c.correctCauseIds, c.candidateCauseIds);
-
-  const improvements = new Set(c.improvementActionIds);
-  const universe = c.candidateActionIds.filter((id) => !improvements.has(id));
-  const scoredSel = orderedActionIds.filter((id) => !improvements.has(id));
-  const actionScore = setScore(scoredSel, c.correctActionIds, universe);
-
-  const tiers = orderedActionIds.map(steamActionTier);
-  let good = 0;
-  let pairs = 0;
-  let hasOrderInversion = false;
-  for (let i = 0; i < tiers.length - 1; i++) {
-    pairs++;
-    if (tiers[i] <= tiers[i + 1]) good++;
-    else hasOrderInversion = true;
-  }
-  const orderScore = pairs === 0 ? 100 : Math.round((good / pairs) * 100);
-
-  const captured = c.correctActionIds.every((id) => orderedActionIds.includes(id));
-  const improvementsSpotted = orderedActionIds.filter((id) => improvements.has(id));
-  const wrongPicks = orderedActionIds.filter(
-    (id) => !c.correctActionIds.includes(id) && !improvements.has(id)
-  );
-
-  const total = Math.round(
-    calcScore * 0.3 + causeScore * 0.25 + actionScore * 0.25 + orderScore * 0.1 + (captured ? 100 : 0) * 0.1
-  );
-
-  // A pass requires the maths done unaided — taking any hint/skip blocks it
-  // until the learner retries and nails the calculations.
-  const passed = total >= 70 && captured && !usedCalcHelp;
-
-  return {
-    calcScore,
-    causeScore,
-    actionScore,
-    orderScore,
-    captured,
-    usedCalcHelp,
-    improvementsSpotted,
-    wrongPicks,
-    hasOrderInversion,
-    total,
-    passed,
-  };
 }

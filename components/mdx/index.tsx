@@ -7,6 +7,9 @@ import { Quiz } from "./Quiz";
 import { PaybackCalculator } from "./PaybackCalculator";
 import SteamBoilerOptimizer from "../simulators/SteamBoilerOptimizer";
 import SteamSystemDiagnostics from "../simulators/SteamSystemDiagnostics";
+import HvacSystemDiagnostics from "../simulators/HvacSystemDiagnostics";
+import MotorSystemDiagnostics from "../simulators/MotorSystemDiagnostics";
+import AirSystemDiagnostics from "../simulators/AirSystemDiagnostics";
 
 /** Internal links use next/link for client-side nav; external open in a new tab. */
 function MdxLink({
@@ -39,4 +42,7 @@ export const mdxComponents = {
   PaybackCalculator,
   SteamBoilerOptimizer,
   SteamSystemDiagnostics,
+  HvacSystemDiagnostics,
+  MotorSystemDiagnostics,
+  AirSystemDiagnostics,
 };

@@ -1128,6 +1128,13 @@ export const curriculum: Level[] = [
                 minutes: 9,
               },
               {
+                slug: "diagnostics-capstone",
+                title: "Capstone: HVAC Diagnostics & Optimisation",
+                summary:
+                  "Hands-on: quantify the waste (fan/pump affinity, COP, free cooling, ventilation) then diagnose and fix eight real HVAC call-outs.",
+                minutes: 25,
+              },
+              {
                 slug: "hvac-check",
                 title: "HVAC Systems Check",
                 summary: "Quiz on loads, controls, free cooling, and optimization.",
@@ -1266,6 +1273,13 @@ export const curriculum: Level[] = [
                 minutes: 9,
               },
               {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Motors & Drives Diagnostics",
+                summary:
+                  "Hands-on: work out load factor, affinity-law savings, power factor and payback, then diagnose and decide on eight real motor call-outs.",
+                minutes: 25,
+              },
+              {
                 slug: "electrical-check",
                 title: "Electrical Management Check",
                 summary: "Quiz on power factor, demand management, and system optimization.",
@@ -1308,6 +1322,7 @@ export const curriculum: Level[] = [
               { slug: "maintenance", title: "Maintenance & Efficiency Retention", summary: "Filter replacement, oil analysis, bearing care, preventive maintenance.", minutes: 9 },
               { slug: "heat-recovery", title: "Waste Heat Recovery from Compressed Air", summary: "Compressor discharge is 80–100°C; recovery for DHW or space heating.", minutes: 10 },
               { slug: "improvement-projects", title: "Common Improvement Projects", summary: "Speed controllers (VFD), variable-displacement compressors, audits.", minutes: 9 },
+              { slug: "diagnostics-capstone", title: "Capstone: Compressed Air Diagnostics", summary: "Hands-on: quantify leaks, idling, pressure and heat-recovery savings, then diagnose and fix eight real compressed-air call-outs.", minutes: 25 },
               { slug: "maintenance-check", title: "Maintenance & Recovery Check", summary: "Quiz on maintenance, heat recovery, and improvement projects.", minutes: 5 },
             ],
           },
