@@ -1,0 +1,137 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
+import { useAuth } from "@/app/auth-context";
+import { mdxComponents } from "@/components/mdx";
+
+/**
+ * Renders a gated (Level 2/3) lesson body. The text is never in the page HTML —
+ * this component fetches it from /api/lesson with the user's access token. Signed
+ * out, it shows a sign-in wall instead; the lesson title, summary and outline
+ * (rendered by the page around this component) stay visible as a preview.
+ */
+type State = "checking" | "loading" | "ready" | "locked" | "error";
+
+export default function GatedLesson({
+  course,
+  lesson,
+  levelNumber,
+  levelTitle,
+  summary,
+}: {
+  course: string;
+  lesson: string;
+  levelNumber: number;
+  levelTitle: string;
+  summary: string;
+}) {
+  const { user, session, loading } = useAuth();
+  const [state, setState] = useState<State>("checking");
+  const [mdx, setMdx] = useState<MDXRemoteSerializeResult | null>(null);
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user || !session?.access_token) {
+      setState("locked");
+      return;
+    }
+    let cancelled = false;
+    setState("loading");
+    fetch(`/api/lesson?course=${encodeURIComponent(course)}&lesson=${encodeURIComponent(lesson)}`, {
+      headers: { Authorization: `Bearer ${session.access_token}` },
+    })
+      .then(async (res) => {
+        if (cancelled) return;
+        if (res.status === 401) {
+          setState("locked");
+          return;
+        }
+        if (!res.ok) {
+          setState("error");
+          return;
+        }
+        const data = await res.json();
+        setMdx(data.mdxSource as MDXRemoteSerializeResult);
+        setState("ready");
+      })
+      .catch(() => {
+        if (!cancelled) setState("error");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [loading, user, session, course, lesson]);
+
+  if (loading || state === "checking" || state === "loading") {
+    return <Skeleton />;
+  }
+
+  if (state === "locked") {
+    return <Wall levelNumber={levelNumber} levelTitle={levelTitle} summary={summary} />;
+  }
+
+  if (state === "error") {
+    return (
+      <div className="not-prose rounded-xl border border-amber-200 bg-amber-50 p-6 text-sm text-amber-800">
+        Something went wrong loading this lesson. Please refresh, or sign out and back in.
+      </div>
+    );
+  }
+
+  return <MDXRemote {...mdx!} components={mdxComponents} />;
+}
+
+function Skeleton() {
+  return (
+    <div className="not-prose animate-pulse space-y-4" aria-hidden>
+      <div className="h-4 w-3/4 rounded bg-slate-200" />
+      <div className="h-4 w-full rounded bg-slate-200" />
+      <div className="h-4 w-5/6 rounded bg-slate-200" />
+      <div className="h-32 w-full rounded-xl bg-slate-100" />
+      <div className="h-4 w-2/3 rounded bg-slate-200" />
+    </div>
+  );
+}
+
+function Wall({
+  levelNumber,
+  levelTitle,
+  summary,
+}: {
+  levelNumber: number;
+  levelTitle: string;
+  summary: string;
+}) {
+  return (
+    <div className="not-prose rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-8 text-center shadow-sm">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-2xl">
+        🔒
+      </div>
+      <span className="mt-4 inline-block rounded-full bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-800">
+        Level {levelNumber} · {levelTitle}
+      </span>
+      <h2 className="mt-3 text-xl font-bold text-slate-900">Create a free account to read this lesson</h2>
+      <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600">{summary}</p>
+      <p className="mx-auto mt-3 max-w-md text-sm text-slate-500">
+        Level 1 is open to everyone. A free account unlocks all of Level 2 &amp; 3 — every lesson,
+        quiz and interactive capstone.
+      </p>
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <Link
+          href="/auth"
+          className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+        >
+          Create free account
+        </Link>
+        <Link
+          href="/auth"
+          className="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+        >
+          Sign in
+        </Link>
+      </div>
+    </div>
+  );
+}

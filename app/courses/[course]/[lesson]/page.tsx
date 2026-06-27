@@ -9,6 +9,9 @@ import {
   getLessonSource,
 } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx";
+import GatedLesson from "@/components/GatedLesson";
+import LessonOutline from "@/components/LessonOutline";
+import LessonComplete from "@/components/LessonComplete";
 
 type Props = { params: Promise<{ course: string; lesson: string }> };
 
@@ -31,53 +34,27 @@ export default async function LessonPage({ params }: Props) {
   const ctx = getLessonContext(course, lesson);
   if (!ctx) notFound();
 
-  const source = await getLessonSource(course, lesson);
   const { level, position, total } = ctx;
   const progress = Math.round((position / total) * 100);
+
+  // Level 1 is free and rendered statically (public, indexable). Levels 2 & 3
+  // are gated: their body is fetched client-side from an authenticated API, so
+  // the text is never baked into this page's HTML for signed-out visitors.
+  const gated = level.number > 1;
+  const source = gated ? null : await getLessonSource(course, lesson);
 
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[260px_1fr]">
       {/* Outline sidebar */}
       <aside className="hidden lg:block">
-        <div className="sticky top-24">
-          <Link
-            href={`/courses/${ctx.course.slug}`}
-            className="text-sm font-semibold text-slate-900 hover:text-brand-700"
-          >
-            {ctx.course.title}
-          </Link>
-          <p className="mt-1 text-xs text-slate-400">
-            Lesson {position} of {total}
-          </p>
-          <nav className="mt-4 space-y-5">
-            {ctx.course.modules.map((m) => (
-              <div key={m.slug}>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
-                  {m.title}
-                </div>
-                <ul className="space-y-1 border-l border-slate-200">
-                  {m.lessons.map((l) => {
-                    const current = l.slug === ctx.lesson.slug;
-                    return (
-                      <li key={l.slug}>
-                        <Link
-                          href={`/courses/${ctx.course.slug}/${l.slug}`}
-                          className={`-ml-px block border-l-2 py-1 pl-3 text-sm transition-colors ${
-                            current
-                              ? "border-brand-500 font-medium text-brand-700"
-                              : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-900"
-                          }`}
-                        >
-                          {l.title}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
-          </nav>
-        </div>
+        <LessonOutline
+          courseSlug={ctx.course.slug}
+          courseTitle={ctx.course.title}
+          modules={ctx.course.modules}
+          currentSlug={ctx.lesson.slug}
+          position={position}
+          total={total}
+        />
       </aside>
 
       {/* Lesson content */}
@@ -127,12 +104,30 @@ export default async function LessonPage({ params }: Props) {
         <hr className="my-8 border-slate-200" />
 
         <div className="prose prose-slate max-w-none prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-700 prose-a:no-underline hover:prose-a:underline">
-          <MDXRemote
-            source={source}
-            components={mdxComponents}
-            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-          />
+          {gated ? (
+            <GatedLesson
+              course={course}
+              lesson={lesson}
+              levelNumber={level.number}
+              levelTitle={level.title}
+              summary={ctx.lesson.summary}
+            />
+          ) : (
+            <MDXRemote
+              source={source!}
+              components={mdxComponents}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+            />
+          )}
         </div>
+
+        {/* Mark complete & continue */}
+        <LessonComplete
+          course={course}
+          lesson={lesson}
+          next={ctx.next ? { slug: ctx.next.slug, title: ctx.next.title } : null}
+          courseHref={`/courses/${ctx.course.slug}`}
+        />
 
         {/* Prev / next */}
         <nav className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-8 sm:flex-row sm:justify-between">

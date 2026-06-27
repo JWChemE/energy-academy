@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AuthProvider } from "@/app/auth-context";
+import { ProgressProvider } from "@/app/progress-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +37,11 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-slate-50 font-sans text-slate-900">
         <AuthProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <ProgressProvider>
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </ProgressProvider>
         </AuthProvider>
       </body>
     </html>

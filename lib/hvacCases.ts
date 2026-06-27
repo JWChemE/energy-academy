@@ -227,6 +227,7 @@ export const HVAC_CASES: HvacCase[] = [
       { label: "Reheat valve", value: "60", unit: "%", note: "modulating, not stuck" },
       { label: "Zone airflow", value: "0.5", unit: "m³/s" },
       { label: "Reheat ΔT", value: "7", unit: "K", note: "13 → 20 °C" },
+      { label: "Reheat hours", value: "2,500", unit: "h/yr" },
     ],
     refTables: ["air", "costs"],
     calcParts: [

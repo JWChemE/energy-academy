@@ -55,6 +55,13 @@ export function SiteHeader() {
             <>
               <Link
                 href="/auth"
+                className="hidden items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition-colors hover:text-slate-700 sm:inline-flex"
+                title="Create a free account to track your progress"
+              >
+                🔖 Save your progress
+              </Link>
+              <Link
+                href="/auth"
                 className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100"
               >
                 Sign In

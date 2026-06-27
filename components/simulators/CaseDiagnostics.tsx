@@ -188,7 +188,10 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
       {/* STEP 2: CALCULATE */}
       {step === "calculate" && (
         <div className="grid gap-5 lg:grid-cols-2">
-          <Readings c={theCase} />
+          <div className="space-y-5">
+            <Readings c={theCase} />
+            <KnownFacts c={theCase} />
+          </div>
           <div className="space-y-4">
             {theCase.calcParts.length > 0 ? (
               <CalcStep
@@ -399,6 +402,21 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
 }
 
 // ---- helpers ----
+
+function KnownFacts({ c }: { c: DiagnosticCase }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-4">
+      <div className="mb-1.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+        What you know (from the brief)
+      </div>
+      <ul className="space-y-1">
+        {c.knownFacts.map((f, i) => (
+          <li key={i} className="text-xs text-slate-600">• {f}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 function Readings({ c }: { c: DiagnosticCase }) {
   return (
