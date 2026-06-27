@@ -841,6 +841,13 @@ export const curriculum: Level[] = [
                 minutes: 10,
               },
               {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Steam System Diagnostics",
+                summary:
+                  "Hands-on: work out condensate return, flash, trap loss and more from raw readings, then diagnose and fix eight real call-outs.",
+                minutes: 25,
+              },
+              {
                 slug: "steam-check",
                 title: "Steam Systems Check",
                 summary: "Quiz on steam system assessment and optimization opportunities.",
