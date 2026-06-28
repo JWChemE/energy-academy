@@ -580,6 +580,19 @@ export const curriculum: Level[] = [
               },
             ],
           },
+          {
+            slug: "capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "field-audit-capstone",
+                title: "Capstone: Audit Frostfield Foods",
+                summary:
+                  "Take one client through the whole audit lifecycle — plan, on-site, normalise & baseline, quantify opportunities, report — and get scored on every competency.",
+                minutes: 35,
+              },
+            ],
+          },
         ],
       },
       {
@@ -664,6 +677,19 @@ export const curriculum: Level[] = [
                 title: "Economic Analysis Check",
                 summary: "Quiz on project prioritisation, portfolio approach, and financing.",
                 minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "economic-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Economic Analysis Diagnostics",
+                summary:
+                  "Hands-on: appraise eight projects — payback screening, time value, NPV, IRR, NPV-vs-IRR, whole-life cost, financing and portfolio risk — then calculate, verify and make the call.",
+                minutes: 30,
               },
             ],
           },
@@ -893,6 +919,19 @@ export const curriculum: Level[] = [
               { slug: "economics-check", title: "Economics & Carbon Check", summary: "Quiz on CHP payback, export economics, and carbon assessment.", minutes: 5 },
             ],
           },
+          {
+            slug: "chp-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: CHP Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight CHP call-outs — dumped heat, spark spread, low-value export, fouled heat exchangers, short-cycling and the carbon case — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -992,6 +1031,19 @@ export const curriculum: Level[] = [
               },
             ],
           },
+          {
+            slug: "whr-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Waste Heat Recovery Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight waste-heat call-outs — flue economiser, condenser recovery, air-to-air, fouled exchanger, flash steam, timing and temperature mismatches — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -1028,6 +1080,19 @@ export const curriculum: Level[] = [
               { slug: "insulation-retrofit", title: "Adding Insulation to Existing Buildings", summary: "Internal vs external; solid wall vs cavity; cost and disruption trade-offs.", minutes: 10 },
               { slug: "window-replacement", title: "Window & Door Replacement", summary: "Payback for single to double/triple conversion; cost per m²; bundling with other work.", minutes: 10 },
               { slug: "retrofit-check", title: "Retrofit Strategy Check", summary: "Quiz on retrofit approaches and economics.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "envelope-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Building Envelope Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight envelope call-outs — loft and cavity insulation, air leakage, thermal bridging, solid walls, glazing, solar gain and over-sealing — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
             ],
           },
         ],
@@ -1179,6 +1244,19 @@ export const curriculum: Level[] = [
               { slug: "vessel-lagging", title: "Tank & Vessel Lagging", summary: "Boiler, chiller, thermal storage tanks; lagging thickness, access doors, heat loss calculation.", minutes: 10 },
               { slug: "safety-surface-temp", title: "Surface Temperature Safety", summary: "Maximum safe touch temperature (60°C), insulation to meet regulations, guarding.", minutes: 8 },
               { slug: "lagging-check", title: "Pipe & Lagging Check", summary: "Quiz on pipe sizing, vessel lagging, and safety.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "insulation-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Insulation Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight insulation call-outs — bare pipes and valves, an unlagged vessel, economic thickness, a sweating cold pipe, material choice, surface safety and lagging removed in maintenance — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
             ],
           },
         ],
@@ -1364,6 +1442,19 @@ export const curriculum: Level[] = [
               { slug: "retrofit-check", title: "Retrofit & Design Check", summary: "Quiz on LED retrofits, design principles, and performance measurement.", minutes: 5 },
             ],
           },
+          {
+            slug: "lighting-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Lighting Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight lighting call-outs — over-lighting, LED retrofit, scheduling, occupancy, daylight, ballast losses, commissioning and cheap-LED failure — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -1400,6 +1491,19 @@ export const curriculum: Level[] = [
               { slug: "cooling-storage", title: "Cooling Load Storage (Ice/Chilled Water)", summary: "Night cooling for day use; reduced chiller size and peak demand.", minutes: 10 },
               { slug: "economics-payback", title: "Economics & Payback Analysis", summary: "Cost of storage vs energy savings, tariff structures, incentives.", minutes: 10 },
               { slug: "applications-check", title: "Applications & Economics Check", summary: "Quiz on DHW, cooling, and economic feasibility of storage.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "tes-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Thermal Storage Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight storage call-outs — sensible vs latent sizing, the cooling business case, the flat-tariff trap, stratification, standing losses, seasonal scale, charging schedules and PCM selection — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
             ],
           },
         ],
@@ -1449,6 +1553,19 @@ export const curriculum: Level[] = [
               { slug: "battery-storage", title: "Battery Storage for Self-Consumption & Demand Shifting", summary: "Lithium-ion, lead-acid, round-trip efficiency, depth of discharge.", minutes: 10 },
               { slug: "net-zero-pathway", title: "Pathway to Net-Zero (Retrofit Sequencing)", summary: "Insulation → electrification → renewable generation → storage.", minutes: 10 },
               { slug: "grid-check", title: "Grid & Storage Check", summary: "Quiz on grid connection, batteries, and net-zero pathways.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "renewables-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Renewable Energy Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight on-site renewables call-outs — PV yield and sizing, string shading, batteries, the wind cube law, load-shifting, monitoring and orientation — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
             ],
           },
         ],
@@ -1550,6 +1667,19 @@ export const curriculum: Level[] = [
               },
             ],
           },
+          {
+            slug: "controls-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Controls & BMS Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight controls call-outs — out-of-hours running, simultaneous heating/cooling, setpoint reset, sensor drift and placement, on-off vs PID, valve authority and sequencing — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -1646,6 +1776,19 @@ export const curriculum: Level[] = [
                 title: "Re-Commissioning Check",
                 summary: "Quiz on drift, re-commissioning cycles, and persistence.",
                 minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "commissioning-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Commissioning Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight commissioning call-outs — flow balancing, performance shortfalls, sequence defects, sensors, setpoints, duct pressure, drift and handover — then calculate, verify and decide whether to sign off.",
+                minutes: 30,
               },
             ],
           },
@@ -1778,6 +1921,19 @@ export const curriculum: Level[] = [
               },
             ],
           },
+          {
+            slug: "refrigeration-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Refrigeration & Heat Pump Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight refrigeration and heat-pump call-outs — fouled condenser, low charge, setpoint, part-load, resistance-vs-heat-pump, flow temperature, free cooling and backup controls — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -1816,6 +1972,19 @@ export const curriculum: Level[] = [
               { slug: "program-check", title: "Program Development Check", summary: "Quiz on maintenance planning and performance tracking.", minutes: 5 },
             ],
           },
+          {
+            slug: "maintenance-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Maintenance Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight maintenance call-outs — deferral, flue-temp creep, reactive vs preventive, condition monitoring, belt slip, intervals, accumulated drift and prioritisation — then calculate, verify and prescribe the strategy.",
+                minutes: 30,
+              },
+            ],
+          },
         ],
       },
       {
@@ -1852,6 +2021,19 @@ export const curriculum: Level[] = [
               { slug: "common-pitfalls", title: "Common Pitfalls & Overstatement", summary: "Boundary changes, occupancy underestimation, weather luck, rebound effects; how to avoid.", minutes: 10 },
               { slug: "reporting-verification", title: "Reporting & Independent Verification", summary: "M&V plan, annual reports, independent third-party review for credibility.", minutes: 10 },
               { slug: "savings-check", title: "Savings Calculation Check", summary: "Quiz on calculating savings and avoiding pitfalls.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "mv-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: M&V Diagnostics",
+                summary:
+                  "Hands-on: work eight M&V call-outs — adjusted baselines, multi-driver models, weather luck, IPMVP option choice, non-routine adjustments, the noise floor, persistence and rebound — then calculate, verify and report honestly.",
+                minutes: 30,
+              },
             ],
           },
         ],

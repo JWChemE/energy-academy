@@ -1,0 +1,46 @@
+You've learned how feedback loops work, the difference between on-off, P and PID control, the energy-optimised strategies a BMS can run, and how sensors and actuators make or break control quality. This capstone sends you round a building as the controls engineer — reading trends, finding the settings that waste energy, and fixing them.
+
+The thread through every case: **most controls waste is a setting, not the plant.** Good control keeps the building on setpoint without overshoot, conditions it only when occupied, stops its loops fighting, and trusts only sensors that are well placed and calibrated. The cheapest savings on most sites are sitting in the BMS, waiting for someone to look.
+
+<CtrlSystemDiagnostics />
+
+## How the cases work
+
+Each is the same five-step loop as your other deep-dive capstones:
+
+1. **Investigate** — read the brief and the panel: trends, setpoints, sensor readings, valve and damper positions.
+2. **Calculate** — work out the figure that decides it: out-of-hours energy, a reset or sequencing saving, a sensor error, valve authority. The **reference data is on hand** — control modes, energy strategies, coordination, sensors, valve authority — but the *method* is yours. **"I'm stuck"** gives the formula then a nudge, but using it blocks a clean pass until you retry unaided.
+3. **Diagnose** — pick the root cause from the evidence and your numbers.
+4. **Prescribe** — build an ordered work plan (free settings/recalibration first, then capital).
+5. **Verify** — score across Calculation, Diagnosis, Prescription, Sequence and Capture, then read the debrief.
+
+<Callout variant="key" title="Look at the trend, trust the right sensor">
+Before you reach for new plant, ask the controls questions. Is it running when the building's empty (schedule)? Are heating and cooling fighting (deadband)? Is the setpoint fixed when it should reset to the weather? Is the sensor telling the truth — calibrated, and in a representative spot? Is the valve big enough to actually control? And on multi-unit plant, are you running only the units you need? Almost all of these are settings, recalibrations or re-sizes — not replacements.
+</Callout>
+
+## What you'll practise
+
+- **Scheduling** — catching 24/7 plant on an empty building from the BMS trend.
+- **Coordination** — the silent waste of simultaneous heating and cooling, fixed with a deadband.
+- **Strategies** — setpoint reset (weather compensation) and multi-unit load sequencing.
+- **Sensors** — drift and placement errors that quietly mis-control the plant.
+- **Control quality** — on-off versus PID, and valve authority.
+
+## Differential thinking
+
+A room that "won't hold temperature" might be a drifted sensor, a badly placed sensor, an on-off controller, or a valve with no authority — and the fix for each is completely different. A high bill might be a missing schedule, a missing reset curve, or two loops fighting. The decisive evidence is in the BMS: the trend, the setpoint, the sensor reading against a reference, the valve's share of the loop pressure.
+
+## After you finish
+
+- Which **reading** decided each case — the trend, the sensor error, the valve authority, the part-load?
+- Could you reproduce each **calculation** on site, without the hints?
+- For each fix, is it a free settings change (schedule, deadband, reset, recalibrate, relocate), a re-size (valve), or a controller upgrade (PID, sequencing) that still pays back in months?
+
+## Related lessons
+
+- [Energy-Optimised Control Strategies](/courses/control-systems-and-bms/control-strategies) — Cases 1, 3 and 8
+- [BMS Functions: Trending, Alarming, Scheduling](/courses/control-systems-and-bms/bms-functions) — Case 1
+- [Multi-Loop Control & Coordination](/courses/control-systems-and-bms/multi-loop-control) — Case 2
+- [Control Modes: On-Off, P, PID](/courses/control-systems-and-bms/control-modes) — Case 6
+- [Temperature Sensors & Placement](/courses/control-systems-and-bms/temperature-sensors) — Cases 4 and 5
+- [Actuators & Valve Authority](/courses/control-systems-and-bms/actuators-valves) — Case 7
