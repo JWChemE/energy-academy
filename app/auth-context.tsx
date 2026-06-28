@@ -10,15 +10,29 @@ interface User {
   full_name?: string;
   role: 'student' | 'admin' | 'superuser';
   subscription_status: 'free' | 'premium' | 'cancelled';
+  industry?: string | null;
+  job_role?: string | null;
+  interests?: string[];
+  comms_updates?: boolean;
+  comms_newsletter?: boolean;
+  comms_consulting?: boolean;
+  comms_events?: boolean;
+  marketing_consent_at?: string | null;
 }
 
 interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
-  signUp: (email: string, password: string, fullName: string) => Promise<void>;
+  signUp: (
+    email: string,
+    password: string,
+    fullName: string,
+    marketingOptIn?: boolean
+  ) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
+  refreshUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -73,27 +87,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   }
 
-  async function signUp(email: string, password: string, fullName: string) {
-    // Sign up with Supabase Auth
-    const { data, error } = await supabase.auth.signUp({
+  async function signUp(
+    email: string,
+    password: string,
+    fullName: string,
+    marketingOptIn = false
+  ) {
+    // The public.users row (and any signup consent) is created by the
+    // `handle_new_user` database trigger from this metadata — robust and not
+    // dependent on a client-side insert succeeding.
+    const { error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          full_name: fullName,
+          comms_updates: marketingOptIn,
+          comms_newsletter: marketingOptIn,
+          comms_consulting: marketingOptIn,
+          comms_events: marketingOptIn,
+        },
+      },
     });
 
     if (error) throw error;
+  }
 
-    // Create user record in public.users table
-    if (data.user) {
-      await supabase
-        .from('users')
-        .insert({
-          id: data.user.id,
-          email,
-          full_name: fullName,
-          role: 'student',
-          subscription_status: 'free',
-        });
-    }
+  async function refreshUser() {
+    if (session?.user) await fetchUser(session.user.id);
   }
 
   async function signIn(email: string, password: string) {
@@ -112,7 +133,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

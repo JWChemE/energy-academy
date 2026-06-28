@@ -43,6 +43,11 @@ export default function PrivacyPolicy() {
           results, so we can show your progress.
         </li>
         <li>
+          <strong>Profile &amp; interests (optional)</strong> — details you choose to add, such as your
+          industry, job role and topics of interest, and your email-communication preferences. These
+          are never required and are used only to send you relevant content if you&apos;ve opted in.
+        </li>
+        <li>
           <strong>Technical data</strong> — strictly-necessary local storage to keep you signed in and
           to remember your cookie choice. See our{" "}
           <Link href="/cookies">Cookie Policy</Link>.
@@ -71,10 +76,29 @@ export default function PrivacyPolicy() {
           <strong>To respond to you</strong> when you contact us — lawful basis:{" "}
           <em>legitimate interests</em>.
         </li>
+        <li>
+          <strong>To send you marketing communications</strong> you&apos;ve asked for (course updates,
+          newsletter, services and events) and to tailor them using your optional profile details —
+          lawful basis: <em>your consent</em>.
+        </li>
       </ul>
       <p>
-        We do not currently use analytics, advertising or other non-essential tracking. If we ever do,
-        we will ask for your consent first and update this policy.
+        We do not currently use analytics, advertising or other non-essential tracking cookies. If we
+        ever do, we will ask for your consent first and update this policy.
+      </p>
+
+      <h2>Marketing communications and your choices</h2>
+      <p>
+        We only send you marketing emails if you have opted in, and you can choose which types you
+        receive (course and platform updates, our newsletter and energy tips, consulting and services,
+        and events and webinars). You can change your choices or unsubscribe at any time from the{" "}
+        <strong>Email preferences</strong> section of your profile, or via the unsubscribe link in any
+        marketing email. Withdrawing consent does not affect anything we sent before you withdrew it.
+      </p>
+      <p>
+        We use the optional details you give us (such as your industry, role and interests) only to
+        make those communications more relevant to you. <strong>We do not sell your personal data,
+        and we do not share it with third parties for their own marketing.</strong>
       </p>
 
       <h2>Who we share it with</h2>

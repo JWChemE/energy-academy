@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useAuth } from '@/app/auth-context';
 import { useRouter } from 'next/navigation';
 
@@ -9,6 +10,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { signUp, signIn } = useAuth();
@@ -21,7 +23,7 @@ export default function AuthPage() {
 
     try {
       if (isSignUp) {
-        await signUp(email, password, fullName);
+        await signUp(email, password, fullName, marketingOptIn);
         setError('Check your email to confirm your account');
       } else {
         await signIn(email, password);
@@ -85,6 +87,26 @@ export default function AuthPage() {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
           </div>
+
+          {isSignUp && (
+            <label className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3 text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={marketingOptIn}
+                onChange={(e) => setMarketingOptIn(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <span>
+                Email me about new courses, energy-management tips, services and events.
+                This is optional, and you can choose exactly what you receive — or unsubscribe — any
+                time in your profile. See our{' '}
+                <Link href="/privacy" className="font-medium text-indigo-600 hover:underline">
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+            </label>
+          )}
 
           {error && (
             <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">

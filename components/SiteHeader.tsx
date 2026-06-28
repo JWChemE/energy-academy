@@ -82,9 +82,13 @@ export function SiteHeader() {
               >
                 Dashboard
               </Link>
-              <span className="text-sm text-slate-600">
-                {user.full_name || user.email}
-              </span>
+              <Link
+                href="/profile"
+                title="Your profile"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+              >
+                {user.full_name?.split(" ")[0] || user.email}
+              </Link>
             </>
           )}
         </div>

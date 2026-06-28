@@ -32,3 +32,19 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Shared form input style (used on the profile page) */
+.input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1; /* slate-300 */
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #0f172a; /* slate-900 */
+}
+.input:focus {
+  outline: none;
+  border-color: #059669; /* brand-600 */
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
