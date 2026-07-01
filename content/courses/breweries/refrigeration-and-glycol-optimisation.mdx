@@ -1,0 +1,29 @@
+The [refrigeration and cooling demand lesson](/courses/breweries/refrigeration-and-cooling-demand) showed that fermentation and conditioning are the brewery's biggest electrical load. This lesson looks at three ways to run that plant harder for less — none of which require touching a single food-safety limit.
+
+## Multi-temperature glycol loops
+
+Fermentation and conditioning don't need the same temperature. A typical ale ferments around 18–22 °C but conditions cold, sometimes down near 0 °C; even within a lager brewery, conditioning tanks usually run colder than active fermenters do. If a single glycol loop supplies both at whatever temperature the coldest user needs — say 0 °C, to satisfy conditioning — then every fermenter drawing from that same loop is being cooled by glycol far colder than it actually requires, and the [refrigeration COP relationship](/courses/refrigeration-and-heat-pumps/cop-and-performance) means making colder glycol always costs more per kWh of cooling delivered.
+
+Splitting the plant into **two glycol loops at two temperatures** — a warmer loop for fermentation, a colder one reserved for conditioning — lets each run only as cold as its own load actually needs. Using the same roughly 3%-per-°C relationship between glycol temperature and energy cost:
+
+> If conditioning's load (≈140,000 kWh/year of the site's refrigeration electricity) is currently held 4 °C colder than necessary by sharing fermentation's loop, splitting it into its own correctly-set loop saves roughly 3% × 4 = 12% of that portion:
+>
+> 140,000 × 0.12 = **16,800 kWh/year**, worth about **£3,360/year** at £0.20/kWh
+
+That's a genuine, if modest, capital project (a second glycol circuit and controls) rather than a free setpoint tweak — but it's a permanent structural fix, not a one-off tune, and it removes the temptation to keep the whole plant unnecessarily cold "for safety margin" that a single shared loop invites.
+
+## Setpoint review within validated limits
+
+The [food safety lesson](/courses/breweries/food-safety-and-energy) drew the line clearly: never cross a HACCP-validated limit to save energy. But it also pointed out that many brewery setpoints are inherited conventions, not validated limits — a fermenter run 1–2 °C colder than the yeast strain and beer style actually require, "because that's what we've always done." Reviewing setpoints against the brewer's actual process requirements (not the energy manager's assumption, and not without the brewer's sign-off) is exactly the kind of low-cost, no-capital opportunity the [diagnostic case](/courses/breweries/two-quick-diagnostics) in this course's next lesson tests directly.
+
+## Free cooling from the winter climate
+
+A glycol chiller rejects heat to the outside air through its condenser. On a cold day, that rejection happens easily — the compressor barely has to work to maintain a low condensing temperature. Many modern chiller plants exploit this directly with a **free-cooling coil**, which lets outside air (or an evaporative process) do some or all of the cooling duty without running the compressor at all when ambient conditions are cold enough — exactly the [free cooling principle](/courses/hvac-systems/free-cooling) from the HVAC systems course, applied to a brewery's glycol plant instead of a building's air conditioning.
+
+<Callout variant="tip" title="Check if the plant can already do this before assuming it can't">
+Some glycol chillers are free-cooling-capable but never commissioned to use it, or have the feature disabled after a fault years ago and forgotten. Before proposing a capital retrofit, confirm whether the existing plant already has this capability sitting unused — recommissioning existing, unused capability is almost always cheaper than adding new equipment.
+</Callout>
+
+## Putting the three together
+
+None of these three — loop splitting, setpoint review, free-cooling recommissioning — touches a HACCP limit, and each attacks the refrigeration load from a different angle: matching supply temperature to actual need, questioning an unvalidated convention, and using free winter cooling instead of the compressor. The next lesson puts two short, concrete versions of this kind of diagnosis into practice.

@@ -1,0 +1,40 @@
+The [psychrometric mass balance lesson](/courses/mass-and-energy-balances/psychrometric-mass-balance) tracked water vapour through a cooling coil and found 8 g/s of condensate draining away. This lesson finishes the job: turning that mass balance into the energy balance that actually sizes the cooling coil, splitting the load into the **sensible** and **latent** components the [HVAC sensible & latent lesson](/courses/hvac-systems/sensible-latent) introduced.
+
+## Two heat streams, one coil
+
+A cooling coil does two jobs on the same air stream simultaneously, and a proper energy balance keeps them separate:
+
+- **Sensible heat removed** — cooling the air's temperature down, at constant moisture content
+- **Latent heat removed** — condensing water vapour out of the air, at (roughly) constant temperature
+
+Using the same air handling unit as before — 2 kg/s of dry air, entering at 24 °C and 12 g/kg humidity ratio, leaving the coil at 10 °C and 8 g/kg:
+
+**Sensible load.** Moist air has a specific heat of about 1.02 kJ/kg·K:
+
+> Q_sensible = ṁ × cp × ΔT = 2 × 1.02 × (24 − 10) = **28.6 kW**
+
+**Latent load.** From the mass balance, 8 g/s (0.008 kg/s) of water vapour condenses. Water's latent heat of condensation near coil surface temperatures (around 10 °C) is about 2,500 kJ/kg — a little higher than the 2,257 kJ/kg you saw for steam condensing at 100 °C in the [steam properties lesson](/courses/steam-and-condensate/steam-basics), because latent heat isn't quite constant — it rises somewhat as temperature falls:
+
+> Q_latent = ṁ_condensate × h_fg = 0.008 × 2,500 = **20.0 kW**
+
+**Total coil load:**
+
+> Q_total = Q_sensible + Q_latent = 28.6 + 20.0 = **48.6 kW**
+
+That 20 kW latent figure is a genuinely useful sanity check against the sensible-latent lesson's occupancy figure — "100 people = ~10 kW latent" — this AHU's latent load is the right order of magnitude for a building with a couple of hundred occupants, exactly where you'd expect it to land.
+
+## Where the "expensive" part of dehumidification shows up
+
+The sensible-latent lesson describes the standard dehumidification approach as **cool, then reheat**: cool the air well below the target temperature to force condensation, then add heat back to bring it to a comfortable supply temperature. Suppose this air needs reheating from the coil's 10 °C up to an 18 °C supply temperature:
+
+> Q_reheat = ṁ × cp × ΔT = 2 × 1.02 × (18 − 10) = **16.3 kW**
+
+<Callout variant="warning" title="Reheat is a straight energy penalty, visible in the balance">
+That 16.3 kW of reheat is genuinely additional energy — on top of the 48.6 kW already spent cooling and dehumidifying the same air. It's worth **a third of the entire coil load** (16.3 ÷ 48.6 ≈ 34%), spent purely to correct for having over-cooled the air in the first place. This is exactly the inefficiency the sensible-latent lesson warns about, now with a number attached: every degree of unnecessary reheat is unnecessary cooling paid for twice.
+</Callout>
+
+## The balance explains the fix
+
+The sensible-latent lesson's advice — relax the humidity setpoint, or use desiccant/enthalpy-wheel dehumidification instead of cool-and-reheat — isn't a vague efficiency tip once you can see the numbers behind it. A wider humidity band means less condensate needs removing (a smaller 20 kW latent load), which means less over-cooling, which means less of that 16.3 kW reheat is needed at all. The energy balance doesn't just describe the waste — it tells you exactly which lever (moisture removed, or degrees of reheat) to pull, and by how much, to shrink it.
+
+This closes the loop on the three worked "real system" balances in this course — a boiler, a steam system, and now an HVAC coil. The next module turns these numeric balances into pictures, and introduces one more idea — that not every kilowatt is equally valuable — before you put the whole method together on a combined balance of your own.

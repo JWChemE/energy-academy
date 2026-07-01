@@ -37,11 +37,14 @@ export default async function LessonPage({ params }: Props) {
   const { level, position, total } = ctx;
   const progress = Math.round((position / total) * 100);
 
-  // Level 1 is free and rendered statically (public, indexable). Levels 2 & 3
-  // are gated: their body is fetched client-side from an authenticated API, so
-  // the text is never baked into this page's HTML for signed-out visitors.
-  const gated = level.number > 1;
+  // Level 1 is free and rendered statically (public, indexable). Levels 2 & 3,
+  // and all Sectors, are gated: their body is fetched client-side from an
+  // authenticated API, so the text is never baked into this page's HTML for
+  // signed-out visitors.
+  const gated = level.kind === "sector" || level.number > 1;
   const source = gated ? null : await getLessonSource(course, lesson);
+  const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
+  const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[260px_1fr]">
@@ -62,10 +65,10 @@ export default async function LessonPage({ params }: Props) {
         {/* Breadcrumb + progress */}
         <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
           <Link
-            href={`/levels/${level.slug}`}
+            href={levelHref}
             className="hover:text-slate-900"
           >
-            Level {level.number}
+            {levelLabel}
           </Link>
           <span>/</span>
           <Link
@@ -108,7 +111,7 @@ export default async function LessonPage({ params }: Props) {
             <GatedLesson
               course={course}
               lesson={lesson}
-              levelNumber={level.number}
+              levelLabel={levelLabel}
               levelTitle={level.title}
               summary={ctx.lesson.summary}
             />

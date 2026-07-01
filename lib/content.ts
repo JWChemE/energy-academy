@@ -2,22 +2,39 @@ import { promises as fs } from "fs";
 import path from "path";
 import {
   curriculum,
+  sectors,
   type Course,
   type Lesson,
   type Level,
   type Module,
+  type NumberedLevel,
 } from "@/content/curriculum";
 
 const COURSES_DIR = path.join(process.cwd(), "content", "courses");
 
+/** Levels (the numbered tiers) plus Sectors — every place a course can live. */
+function allSections(): Level[] {
+  return [...curriculum, ...sectors];
+}
+
 /* ----------------------------- Level helpers ----------------------------- */
 
-export function getLevels(): Level[] {
+export function getLevels(): NumberedLevel[] {
   return curriculum;
 }
 
-export function getLevel(slug: string): Level | undefined {
+export function getLevel(slug: string): NumberedLevel | undefined {
   return curriculum.find((l) => l.slug === slug);
+}
+
+/* ----------------------------- Sector helpers ----------------------------- */
+
+export function getSectors(): Level[] {
+  return sectors;
+}
+
+export function getSector(slug: string): Level | undefined {
+  return sectors.find((s) => s.slug === slug);
 }
 
 /* ----------------------------- Course helpers ---------------------------- */
@@ -25,7 +42,7 @@ export function getLevel(slug: string): Level | undefined {
 export type CourseWithLevel = { course: Course; level: Level };
 
 export function getCourse(slug: string): CourseWithLevel | undefined {
-  for (const level of curriculum) {
+  for (const level of allSections()) {
     const course = level.courses.find((c) => c.slug === slug);
     if (course) return { course, level };
   }
@@ -105,12 +122,12 @@ export async function getLessonSource(
 
 /** Every course slug (available and coming-soon) — for the course pages. */
 export function getAllCourseParams(): { course: string }[] {
-  return curriculum.flatMap((l) => l.courses.map((c) => ({ course: c.slug })));
+  return allSections().flatMap((l) => l.courses.map((c) => ({ course: c.slug })));
 }
 
 /** Every lesson of every available course — for the lesson reader pages. */
 export function getAllLessonParams(): { course: string; lesson: string }[] {
-  return curriculum.flatMap((level) =>
+  return allSections().flatMap((level) =>
     level.courses
       .filter((c) => c.status === "available")
       .flatMap((course) =>

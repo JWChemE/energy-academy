@@ -1,9 +1,9 @@
 "use client";
 
 import AuditCapstone from "./AuditCapstone";
-import { STAGES, DATASET, REFERENCE } from "@/lib/auditCapstone";
+import { STAGES, DATASET, REFERENCE } from "@/lib/breweryAuditCapstone";
 
-/** Frostfield Foods — the on-site data stage's table + reference panel. */
+/** Fenmarsh Brewing Co. — the on-site data stage's table + reference panel. */
 function DataPanel() {
   return (
     <div className="mt-4 space-y-3">
@@ -13,10 +13,10 @@ function DataPanel() {
             <tr>
               <th className="px-2 py-2 text-left font-semibold">Month</th>
               <th className="px-2 py-2 font-semibold">Avg °C</th>
-              <th className="px-2 py-2 font-semibold">HDD</th>
+              <th className="px-2 py-2 font-semibold">CDD</th>
+              <th className="px-2 py-2 font-semibold">Hectolitres</th>
               <th className="px-2 py-2 font-semibold">Gas kWh</th>
               <th className="px-2 py-2 font-semibold">Elec kWh</th>
-              <th className="px-2 py-2 font-semibold">Tonnes</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
@@ -24,10 +24,10 @@ function DataPanel() {
               <tr key={r.month} className="text-slate-700">
                 <td className="px-2 py-1.5 text-left font-medium">{r.month}</td>
                 <td className="px-2 py-1.5">{r.avgTempC.toFixed(1)}</td>
-                <td className="px-2 py-1.5">{r.month === "Mar" ? "?" : r.hdd}</td>
+                <td className="px-2 py-1.5">{r.month === "Aug" ? "?" : r.cdd}</td>
+                <td className="px-2 py-1.5">{r.hectolitres.toLocaleString()}</td>
                 <td className="px-2 py-1.5">{r.gasKwh.toLocaleString()}</td>
                 <td className="px-2 py-1.5">{r.elecKwh.toLocaleString()}</td>
-                <td className="px-2 py-1.5">{r.tonnes}</td>
               </tr>
             ))}
           </tbody>
@@ -35,16 +35,16 @@ function DataPanel() {
       </div>
       <div className="flex flex-wrap gap-x-4 gap-y-1 rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-600">
         <span><strong>Reference</strong> —</span>
-        <span>HDD base {REFERENCE.hddBase} °C</span>
+        <span>CDD base {REFERENCE.cddBase} °C</span>
         <span>Elec £{REFERENCE.elecPrice}/kWh</span>
         <span>Gas £{REFERENCE.gasPrice}/kWh</span>
         <span>Grid {REFERENCE.co2Factor} kg CO₂e/kWh</span>
-        <span>Floor area {REFERENCE.floorArea.toLocaleString()} m²</span>
+        <span>Annual production {REFERENCE.annualHl.toLocaleString()} hL</span>
       </div>
     </div>
   );
 }
 
-export default function EnergyAuditCapstone() {
+export default function BreweryAuditCapstone() {
   return <AuditCapstone stages={STAGES} renderDataPanel={() => <DataPanel />} />;
 }

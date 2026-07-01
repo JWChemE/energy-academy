@@ -1,0 +1,45 @@
+Before you can balance anything, you have to decide what "it" is. The single most important — and most often skipped — step in any mass or energy balance is drawing the boundary: the imaginary line that separates "the system" from "everything else." Get the boundary wrong, and no amount of careful arithmetic inside it will save you.
+
+## The boundary is a choice, not a given
+
+A **system boundary** (sometimes called a **control volume**) is a line you draw around whatever you want to analyse. It can be as small as a single valve or as large as an entire site. Nothing about the equipment tells you where to draw it — that's your decision, made based on the question you're trying to answer.
+
+Consider a boiler:
+
+- Draw the boundary around just the **combustion chamber**, and your balance is about fuel, air, and flue gas — useful for understanding combustion efficiency.
+- Draw the boundary around the **whole boiler including the heat exchanger**, and your balance includes the water/steam side — useful for understanding overall thermal efficiency.
+- Draw the boundary around the **whole boiler house** (boiler, pumps, feedwater treatment, blowdown), and you capture auxiliary electrical loads too — useful for a full energy audit of that plant room.
+
+Each boundary is legitimate. Each answers a different question. Confusing them — quoting a combustion efficiency number as if it were the whole boiler house's efficiency — is one of the most common errors in energy work.
+
+<Callout variant="key" title="Always state your boundary before you calculate anything">
+"What's the efficiency of the boiler?" is not a complete question until you've said which boundary you mean. Get in the habit of sketching the boundary — literally, a box on paper — and labelling every arrow crossing it, before you write down a single number.
+</Callout>
+
+## Open vs closed systems
+
+- A **closed system** exchanges energy with its surroundings but not mass — nothing physical crosses the boundary, only heat or work. A sealed, fixed volume of refrigerant undergoing compression (for one moment in the cycle) is a closed-system idealisation.
+- An **open system** (also called a control volume) exchanges both mass and energy across its boundary — material flows in and out, carrying energy with it. Almost everything you'll analyse in energy management is an open system: a boiler (fuel and air in, flue gas out), an air handling unit (air in, air out), a compressed air system (air in, compressed air out).
+
+Because most real equipment is an open system, most of your balances will need to track **flows** — mass per unit time (kg/s), volume per unit time (m³/s), and the energy carried by those flows — rather than just a fixed quantity of "stuff."
+
+## Steady-state vs transient
+
+- **Steady-state** means nothing inside the boundary is changing with time: the same mass and energy enter as leave, continuously, and nothing accumulates. A boiler running at a constant load, hour after hour, is well approximated as steady-state.
+- **Transient** (or **unsteady**) means conditions are changing: a boiler firing up from cold, a building's fabric absorbing heat through a hot afternoon, a thermal store charging overnight. Here, mass or energy genuinely accumulates (or depletes) inside the boundary over time.
+
+Most of the worked examples in this course are steady-state, because that's the simplest and most common case for finding efficiency losses. But you already have transient balances elsewhere on this platform without necessarily naming them that way — the [Thermal Energy Storage](/courses/thermal-energy-storage/sensible-latent) course is entirely about a system that deliberately accumulates energy (or mass, or both) over time, and a building's thermal mass responding to weather is a transient energy balance too.
+
+<Callout variant="tip" title="Steady-state is often 'close enough'">
+Real equipment is never perfectly steady — but averaged over an hour or a day, most continuously-operating plant (boilers, chillers, compressors) is steady enough that treating it as steady-state gives a trustworthy answer. Reserve the extra complexity of a transient analysis for genuinely time-varying situations: start-up, storage, or a building's response to weather.
+</Callout>
+
+## Why the boundary decides the answer
+
+Two examples make this concrete:
+
+**A "leaking" compressed air system.** If you draw your boundary around the compressor only, a leak downstream is invisible — the compressor's own balance looks fine (electricity in, compressed air out, at the rated efficiency). Draw the boundary around the *whole distribution system* instead, and the leak shows up immediately as air that entered the system but is never delivered to a point of use.
+
+**An "efficient" boiler with a cold return.** Draw the boundary around the boiler alone, and a condensing boiler with a warm return might show excellent combustion efficiency. Draw the boundary around the boiler *and* its heating circuit, and you'd discover the return temperature is too high for the boiler to actually condense and capture that extra latent heat — a fact the narrower boundary would never reveal. (More on this exact trade-off in the [boiler energy balance](/courses/mass-and-energy-balances/boiler-energy-balance) lesson shortly.)
+
+The lesson is the same both times: **a balance can only tell you about what's inside its boundary.** Choosing the boundary is choosing the question. The next lesson builds your first complete balance, boundary and all.

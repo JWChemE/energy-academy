@@ -1,0 +1,39 @@
+A balance is a set of numbers. A **Sankey diagram** is the same balance turned into a picture — and it's the single most effective way to communicate an energy balance to someone who doesn't want to read a table. If you take one visual habit from this course into your career, make it this one.
+
+## What a Sankey diagram is
+
+A Sankey diagram represents flows as arrows (or bands) whose **width is proportional to their magnitude**. A single wide arrow enters from the left (the input), and it splits into progressively narrower arrows as energy is diverted to useful output or lost along the way. The wider the arrow, the bigger that flow — so the eye immediately sees where the big losses are, without anyone needing to read a single number.
+
+<Callout variant="key" title="Width is the whole point">
+The reason Sankey diagrams work is that human eyes are much better at comparing *widths* than reading a column of numbers and doing the comparison mentally. A 60 kW loss and a 5 kW loss look like two very different sized arrows at a glance — in a table, they're just two rows that require you to stop and compare.
+</Callout>
+
+## Building one from a balance you already have
+
+Take the [boiler energy balance](/courses/mass-and-energy-balances/boiler-energy-balance) from earlier in this course. You already have every number a Sankey diagram needs:
+
+| Flow | Value | Share of input |
+| --- | --- | --- |
+| Fuel in (the single input arrow) | 500 kW | 100% |
+| → Useful heat out | 425 kW | 85% |
+| → Flue loss | 60 kW | 12% |
+| → Casing loss | 10 kW | 2% |
+| → Blowdown loss | 5 kW | 1% |
+
+To sketch this as a Sankey diagram: draw one arrow 500 units wide entering from the left. It splits into four arrows leaving to the right — one 425 units wide (running on to "useful heat," typically drawn continuing to the right as the main flow), and three progressively narrower ones peeling off downward or upward as losses (60, 10, and 5 units wide respectively, in that order of visual prominence). Anyone looking at that picture sees instantly that the flue loss is by far the biggest of the three losses — six times wider than the casing loss, twelve times wider than blowdown — without doing a single division.
+
+## Why this matters more than it seems
+
+A table of numbers requires the reader to already understand what's important. A Sankey diagram *shows* what's important, which makes it a far better tool for:
+
+- **Persuading a decision-maker** to fund a burner-tuning project (a wide "flue loss" band is a visceral argument for spending money on it) — exactly the audience the [making the case for savings](/courses/intro-to-energy-management/simple-payback) lesson is aimed at
+- **Spotting where you're missing data** — if your arrows don't quite add up to the input width, you have an unclosed balance and a missing stream, exactly as the [first balance lesson](/courses/mass-and-energy-balances/your-first-balance) described
+- **Comparing systems at a glance** — a Sankey for an 85%-efficient boiler next to one for a 92%-efficient boiler makes the improvement immediately visible as "look how much narrower the loss arrows got"
+
+## Where you'll see them again
+
+Sankey diagrams are the standard way whole-site energy flows are presented in a professional [energy audit report](/courses/energy-audits/audit-report) — from the site's total energy input, splitting out to each major end use (heating, cooling, process, lighting) and each major loss, all on one page. The [dashboards and communication lesson](/courses/monitoring-and-targeting/dashboards) in the M&T course covers presenting ongoing consumption data; a Sankey diagram is the equivalent tool for presenting a one-off balance — a snapshot of where every unit of energy on a site actually goes, drawn so that a non-technical stakeholder can understand it in seconds.
+
+<Callout variant="tip">
+You don't need special software to sketch a rough Sankey diagram for your own thinking — a hand-drawn box with proportionally-sized arrows on a whiteboard, built directly from a balance table like the one above, is often enough to spot the biggest opportunity in a system before you've even finished the meeting.
+</Callout>

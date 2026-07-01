@@ -1,0 +1,55 @@
+Mass balances follow exactly the same logic as the energy balance you just built — but they're worth treating as their own skill, because so many energy processes (combustion, drying, humidification, cooling) only make sense once you've tracked the material flowing through them alongside the energy.
+
+## The mass balance equation
+
+For a steady-state, open system — the case you'll meet most often — the general balance simplifies the same way it did for energy:
+
+> **Mass In = Mass Out**
+
+Nothing appears or disappears; every kilogram entering the boundary either leaves it or is still there. (In processes with a chemical reaction, like combustion, individual *substances* can be created or consumed — carbon and oxygen atoms rearrange into CO₂ — but total mass is still conserved. You'll see exactly this in the next lesson.)
+
+## Working with flows, not just quantities
+
+Most equipment you'll analyse doesn't hold a fixed batch of material — it has a continuous flow through it. So instead of a single mass, you're usually working with a **mass flow rate**: kilograms per second (kg/s), tonnes per hour, or similar.
+
+Three quantities you'll convert between constantly:
+
+| Quantity | Symbol | Typical unit | Relationship |
+| --- | --- | --- | --- |
+| Mass flow rate | ṁ | kg/s | ṁ = ρ × V̇ |
+| Volume flow rate | V̇ | m³/s, L/s | V̇ = ṁ ÷ ρ |
+| Density | ρ | kg/m³ | Fixed for a given substance and condition |
+
+Water's density is a convenient constant to remember: **1,000 kg/m³** (so 1 litre of water = 1 kg, near enough). Air at typical room conditions is much lighter, around **1.2 kg/m³** — which is why a decent-sized fan can move a lot of *volume* very fast while shifting relatively little *mass*.
+
+<Callout variant="key" title="Meters usually measure volume, not mass">
+Most flow meters (water meters, gas meters, many air-flow instruments) measure **volume**, not mass. Because a fluid's density changes with temperature and pressure (gases especially), you often need to convert a volume-flow reading to a mass-flow figure before you can balance it against other streams — particularly when comparing a gas at one temperature to the same gas at another.
+</Callout>
+
+## A simple worked example: a mixing tank
+
+Two water streams feed a tank, and one stream leaves it, at steady state (the tank's water level isn't changing):
+
+- Stream A in: 2.0 kg/s
+- Stream B in: 0.5 kg/s
+- Stream C out: ?
+
+Applying the balance:
+
+> Mass In = Mass Out
+> 2.0 + 0.5 = Stream C
+
+So Stream C = **2.5 kg/s**. If you measured Stream C directly and got 2.3 kg/s instead, you'd have a 0.2 kg/s discrepancy — a leak, an unmeasured overflow, or a faulty meter somewhere, exactly the same "gap means something's missing" logic from the previous lesson.
+
+## Accumulation: when the balance doesn't simplify
+
+If the tank's level *is* changing — say it's slowly filling — the full balance applies:
+
+> Accumulation = In − Out
+> Accumulation = (2.0 + 0.5) − 2.3 = 0.2 kg/s
+
+That 0.2 kg/s isn't missing at all — it's genuinely accumulating in the tank, raising its level. This is the same distinction from the boundaries lesson: steady-state assumes no accumulation, but plenty of real systems — a thermal store charging, a tank filling, a building's fabric absorbing heat — are deliberately transient, and the accumulation term is the answer, not an error.
+
+## Where this is going
+
+The next two lessons put mass balances to work on real processes you'll recognise from elsewhere on this platform: balancing fuel and air in combustion, and tracking water vapour through an air handling unit. Both use nothing more than "mass in = mass out" — the skill is in identifying every stream, including the ones (like water vapour, or a specific chemical species) that are easy to overlook.

@@ -7,10 +7,10 @@ import { getLessonContext, getLessonSource } from "@/lib/content";
 /**
  * Authenticated lesson content endpoint.
  *
- * Level 1 lessons render statically in the page itself (public). Level 2 & 3
- * lesson bodies are NOT baked into the HTML — they're served from here only to
- * a request carrying a valid Supabase access token, so the text never reaches a
- * signed-out browser. This is the "hard gate".
+ * Level 1 lessons render statically in the page itself (public). Level 2 & 3,
+ * and every Sector, lesson bodies are NOT baked into the HTML — they're served
+ * from here only to a request carrying a valid Supabase access token, so the
+ * text never reaches a signed-out browser. This is the "hard gate".
  */
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,9 +28,10 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Lesson not found" }, { status: 404 });
   }
 
-  // Level 1 is free; only Levels 2 & 3 are gated. (The page serves L1 directly,
-  // but guard here too so this endpoint can't be used to bypass anything.)
-  const gated = ctx.level.number > 1;
+  // Level 1 is free; Levels 2 & 3 and every Sector are gated. (The page serves
+  // L1 directly, but guard here too so this endpoint can't be used to bypass
+  // anything.)
+  const gated = ctx.level.kind === "sector" || ctx.level.number > 1;
 
   if (gated) {
     const authHeader = req.headers.get("authorization") ?? "";

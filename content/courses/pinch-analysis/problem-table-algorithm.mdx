@@ -1,0 +1,75 @@
+The composite-curve picture from the last lesson is intuitive, but you don't need to draw it precisely to get an exact answer. The **problem table algorithm** finds the pinch temperature and the minimum hot and cold utility requirements through nothing but addition and subtraction — a cascade of numbers down a temperature scale. This lesson works it through in full, on a small two-stream example, so every step is visible.
+
+## The process
+
+| Stream | Type | Supply (°C) | Target (°C) | CP (kW/°C) |
+| --- | --- | --- | --- | --- |
+| H1 | Hot | 140 | 40 | 1.0 |
+| C1 | Cold | 60 | 150 | 1.1 |
+
+Take a minimum approach temperature of **ΔTmin = 20 °C**.
+
+## Step 1: shift the temperatures
+
+This is the trick that makes the whole method work. Shift every **hot** stream's temperatures *down* by ΔTmin ÷ 2, and every **cold** stream's temperatures *up* by ΔTmin ÷ 2 (here, 10 °C each way). This creates a single shared "shifted temperature" scale where, if two streams' shifted ranges touch, they're exactly ΔTmin apart in reality — so you can now compare hot and cold streams directly, on one scale, without tracking the ΔTmin offset separately at every step.
+
+| Stream | Actual range (°C) | Shifted range (°C) |
+| --- | --- | --- |
+| H1 (hot, shift down 10) | 140 → 40 | 130 → 30 |
+| C1 (cold, shift up 10) | 60 → 150 | 70 → 160 |
+
+## Step 2: mark out the temperature intervals
+
+Collect every shifted temperature that appears (130, 30, 70, 160) and sort them from highest to lowest: **160, 130, 70, 30**. These four numbers mark out three temperature bands to work through.
+
+## Step 3: find the net heat surplus or deficit in each band
+
+For each band, add up the CP of every hot stream present, subtract the CP of every cold stream present, and multiply by the band's width:
+
+| Band (shifted °C) | Streams present | Net CP (kW/°C) | Heat surplus/deficit (kW) |
+| --- | --- | --- | --- |
+| 160 → 130 | C1 only | −1.1 | −1.1 × 30 = **−33** |
+| 130 → 70 | H1 and C1 | 1.0 − 1.1 = −0.1 | −0.1 × 60 = **−6** |
+| 70 → 30 | H1 only | +1.0 | 1.0 × 40 = **+40** |
+
+A negative number means that band needs more heat (from cold streams) than the hot streams there can supply; a positive number means there's a surplus of hot-stream heat in that band.
+
+## Step 4: cascade the heat downward
+
+Starting at the top with (assumed) zero heat supplied from outside, run the surplus/deficit of each band into the next, accumulating a running total as you go down the temperature scale:
+
+| Shifted temperature | Running cascade (kW) |
+| --- | --- |
+| 160 | 0 |
+| 130 | 0 − 33 = **−33** |
+| 70 | −33 − 6 = **−39** |
+| 30 | −39 + 40 = **1** |
+
+## Step 5: the most negative value is your minimum hot utility
+
+The cascade dips to **−39 kW** at its lowest point. A negative cascade is thermodynamically impossible on its own — it implies heat flowing somewhere it can't reach without help — so you must feed in exactly enough hot utility at the very top to bring that lowest point up to zero:
+
+> **Minimum hot utility = 39 kW**
+
+## Step 6: re-run the cascade with that utility added
+
+Add 39 kW at the top and cascade again:
+
+| Shifted temperature | Running cascade (kW) |
+| --- | --- |
+| 160 | 39 |
+| 130 | 6 |
+| 70 | **0** |
+| 30 | 40 |
+
+## Reading off the answer
+
+- **The pinch** is exactly where the cascade touches zero: shifted temperature **70 °C**. Converting back: the pinch is at **80 °C on the hot-stream scale** (70 + 10) and **60 °C on the cold-stream scale** (70 − 10) — twenty degrees apart, exactly ΔTmin, as it must be.
+- **Minimum hot utility = 39 kW** (what you added at the top).
+- **Minimum cold utility = 40 kW** (whatever the cascade has left over at the very bottom).
+
+<Callout variant="key" title="Check it against the overall balance">
+H1 has a total heat load of 1.0 × (140 − 40) = 100 kW to give away. C1 needs 1.1 × (150 − 60) = 99 kW. The full balance: hot utility (39) + H1's load (100) = 139 kW in; C1's demand (99) + cold utility (40) = 139 kW out. It closes exactly — the same "everything must add up" discipline from the [first-balance lesson](/courses/mass-and-energy-balances/your-first-balance), now applied to a whole process's heat exchange.
+</Callout>
+
+This two-stream cascade is small enough to do by hand in a few minutes. Real processes have dozens of streams and the same method applies without any conceptual change — just more rows in the interval table. The next lesson takes a larger, four-stream example and shows you the result the same algorithm gives, without re-deriving every step.

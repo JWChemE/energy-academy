@@ -52,15 +52,35 @@ export type Course = {
   modules: Module[];
 };
 
-export type Level = {
-  slug: string;
-  number: 1 | 2 | 3;
-  title: string;
-  tagline: string;
-  description: string;
-  accent: LevelAccent;
-  courses: Course[];
-};
+/**
+ * A numbered tier (Level 1/2/3 — the expertise progression) or a Sector — a
+ * peer section, not a tier, for industry-specific application courses
+ * (Breweries, Data Centres, etc.). Discriminated on `kind`: numbered levels
+ * omit it, sectors set it to "sector" and have no `number`.
+ */
+export type Level =
+  | {
+      kind?: undefined;
+      slug: string;
+      number: 1 | 2 | 3;
+      title: string;
+      tagline: string;
+      description: string;
+      accent: LevelAccent;
+      courses: Course[];
+    }
+  | {
+      kind: "sector";
+      slug: string;
+      title: string;
+      tagline: string;
+      description: string;
+      accent: LevelAccent;
+      courses: Course[];
+    };
+
+/** The three numbered tiers only (excludes Sectors) — what the homepage's "Tiers" stat counts. */
+export type NumberedLevel = Extract<Level, { number: 1 | 2 | 3 }>;
 
 /**
  * NOTE on Tailwind classes below: they are written as complete literal
@@ -94,12 +114,22 @@ const accents: Record<1 | 2 | 3, LevelAccent> = {
   },
 };
 
+/** Accent for the Sectors section — distinct from all three numbered tiers. */
+const sectorAccent: LevelAccent = {
+  badge: "bg-rose-100 text-rose-700",
+  dot: "bg-rose-500",
+  gradient: "from-rose-500 to-fuchsia-600",
+  ring: "ring-rose-500/20",
+  text: "text-rose-700",
+  softBg: "bg-rose-50",
+};
+
 /** Convenience for declaring a not-yet-written course. */
 function comingSoon(slug: string, title: string, summary: string): Course {
   return { slug, title, summary, status: "coming-soon", modules: [] };
 }
 
-export const curriculum: Level[] = [
+export const curriculum: NumberedLevel[] = [
   {
     slug: "level-1",
     number: 1,
@@ -194,6 +224,147 @@ export const curriculum: Level[] = [
                 summary:
                   "A short quiz to consolidate everything from the foundation course.",
                 minutes: 6,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        slug: "mass-and-energy-balances",
+        title: "Mass & Energy Balances",
+        summary:
+          "The universal method behind every audit, diagnosis and M&V calculation: drawing a boundary, tracking what goes in and out, and never losing a kWh.",
+        status: "available",
+        modules: [
+          {
+            slug: "conservation-principles",
+            title: "Conservation Principles & System Boundaries",
+            lessons: [
+              {
+                slug: "conservation-laws",
+                title: "The Conservation Laws: Mass & Energy",
+                summary:
+                  "Why nothing is created or destroyed — the first law restated as a practical accounting tool, not just theory.",
+                minutes: 9,
+              },
+              {
+                slug: "system-boundaries",
+                title: "Defining the System: Boundaries & Control Volumes",
+                summary:
+                  "Drawing the line around what you're analysing — open vs closed systems, steady-state vs transient — and why the boundary you choose changes the answer.",
+                minutes: 10,
+              },
+              {
+                slug: "your-first-balance",
+                title: "Building Your First Balance: In = Out + Losses",
+                summary:
+                  "The general balance equation, a black-box worked example, and the habit of always accounting for 100% of what goes in.",
+                minutes: 10,
+              },
+              {
+                slug: "conservation-check",
+                title: "Conservation Principles Check",
+                summary: "Quiz on conservation laws, boundaries and the general balance equation.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "mass-balances",
+            title: "Mass Balances in Practice",
+            lessons: [
+              {
+                slug: "conservation-of-mass",
+                title: "Conservation of Mass & Material Flow",
+                summary:
+                  "Mass in = mass out + accumulation; units, density and flow-rate conversions for steady-flow processes.",
+                minutes: 9,
+              },
+              {
+                slug: "combustion-mass-balance",
+                title: "Worked Example: A Combustion Mass Balance",
+                summary:
+                  "Balancing fuel and air for methane combustion — stoichiometric air, excess air, and why boilers never run at the theoretical ratio.",
+                minutes: 11,
+              },
+              {
+                slug: "psychrometric-mass-balance",
+                title: "Worked Example: A Moisture (Psychrometric) Balance",
+                summary:
+                  "Tracking water vapour through an air-handling unit — where dehumidification energy actually goes.",
+                minutes: 10,
+              },
+              {
+                slug: "mass-balances-check",
+                title: "Mass Balances Check",
+                summary: "Quiz on mass conservation, combustion stoichiometry and moisture balances.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "energy-balances",
+            title: "Energy Balances Across Real Systems",
+            lessons: [
+              {
+                slug: "boiler-energy-balance",
+                title: "Worked Example: The Boiler Energy Balance",
+                summary:
+                  "Fuel in, useful heat out, and where the rest goes — flue losses, casing losses, blowdown.",
+                minutes: 10,
+              },
+              {
+                slug: "steam-energy-balance",
+                title: "Worked Example: The Steam & Condensate Balance",
+                summary:
+                  "Enthalpy in, enthalpy out — tracking sensible and latent heat through generation, distribution and return.",
+                minutes: 10,
+              },
+              {
+                slug: "hvac-energy-balance",
+                title: "Worked Example: The HVAC Sensible & Latent Balance",
+                summary:
+                  "Splitting a cooling load into sensible and latent components, and why over-dehumidifying wastes energy.",
+                minutes: 10,
+              },
+              {
+                slug: "energy-balances-check",
+                title: "Energy Balances Check",
+                summary: "Quiz on boiler, steam and HVAC energy balances.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "applying-balances",
+            title: "Visualising, Grading & Applying Balances",
+            lessons: [
+              {
+                slug: "sankey-diagrams",
+                title: "Sankey Diagrams: Seeing Where the Energy Goes",
+                summary:
+                  "Turning a balance into a picture — reading and building a Sankey diagram from your own numbers.",
+                minutes: 9,
+              },
+              {
+                slug: "quality-of-energy",
+                title: "The Quality of Energy: An Introduction to Exergy",
+                summary:
+                  "Why a kWh of electricity and a kWh of lukewarm waste heat aren't worth the same — grading energy by its ability to do useful work.",
+                minutes: 9,
+              },
+              {
+                slug: "balances-in-the-field",
+                title: "Putting It Together: Using Balances to Find Savings",
+                summary:
+                  "A combined mass-and-energy balance on a real process, and how it becomes the backbone of an energy audit.",
+                minutes: 11,
+              },
+              {
+                slug: "practice-check",
+                title: "Balances in Practice Check",
+                summary: "Quiz on Sankey diagrams, energy quality and applying balances to find savings.",
+                minutes: 5,
               },
             ],
           },
@@ -1040,6 +1211,160 @@ export const curriculum: Level[] = [
                 title: "Capstone: Waste Heat Recovery Diagnostics",
                 summary:
                   "Hands-on: diagnose eight waste-heat call-outs — flue economiser, condenser recovery, air-to-air, fouled exchanger, flash steam, timing and temperature mismatches — then calculate, verify and prescribe the fix.",
+                minutes: 30,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        slug: "pinch-analysis",
+        title: "Pinch Analysis & Process Integration",
+        summary:
+          "Optimise heat exchange across a whole process at once: composite curves, the pinch point, minimum utility targets, network design and the economics of the approach temperature.",
+        status: "available",
+        modules: [
+          {
+            slug: "pinch-fundamentals",
+            title: "Pinch Analysis Fundamentals",
+            lessons: [
+              {
+                slug: "why-optimise-the-whole-process",
+                title: "Why Optimise Heat Exchange Across a Whole Process?",
+                summary:
+                  "From matching one waste-heat source to one load, to matching every hot and cold stream on a site simultaneously — and finding the truly minimum energy bill.",
+                minutes: 9,
+              },
+              {
+                slug: "streams-and-approach-temperature",
+                title: "Hot & Cold Streams and the Minimum Approach Temperature",
+                summary:
+                  "Classifying every stream on a site as hot or cold, and the ΔTmin concept that governs how close they can approach each other.",
+                minutes: 10,
+              },
+              {
+                slug: "building-composite-curves",
+                title: "Building Composite Curves",
+                summary:
+                  "Combining many streams into one hot curve and one cold curve — the graphical heart of pinch analysis.",
+                minutes: 11,
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Pinch Fundamentals Check",
+                summary: "Quiz on streams, approach temperature and composite curves.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "finding-the-pinch",
+            title: "Finding the Pinch — Targeting Minimum Utilities",
+            lessons: [
+              {
+                slug: "problem-table-algorithm",
+                title: "The Problem Table Algorithm",
+                summary:
+                  "The temperature-interval cascade that finds the pinch and the minimum hot and cold utility requirements by arithmetic alone.",
+                minutes: 12,
+              },
+              {
+                slug: "reading-the-pinch",
+                title: "Reading the Pinch: Composite Curves & Overlap",
+                summary:
+                  "Interpreting the graphical picture — where the curves come closest, and why that point sets the whole process's minimum energy target.",
+                minutes: 9,
+              },
+              {
+                slug: "the-golden-rules",
+                title: "The Golden Rules: Don't Cross the Pinch",
+                summary:
+                  "The three rules that keep a design at its true minimum utility — and the energy penalty of breaking each one.",
+                minutes: 10,
+              },
+              {
+                slug: "targeting-check",
+                title: "Targeting Check",
+                summary: "Quiz on the problem table algorithm, the pinch point and the golden rules.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "network-design",
+            title: "Designing the Heat Exchanger Network",
+            lessons: [
+              {
+                slug: "matching-at-the-pinch",
+                title: "Matching Streams at the Pinch",
+                summary:
+                  "The feasibility rule that decides which streams can be matched right at the pinch, and a fully worked network.",
+                minutes: 11,
+              },
+              {
+                slug: "tick-off-and-splitting",
+                title: "The Tick-Off Heuristic & Stream Splitting",
+                summary:
+                  "Building a workable network match by match, and when a stream must be split to keep every match feasible.",
+                minutes: 10,
+              },
+              {
+                slug: "minimum-number-of-units",
+                title: "Minimum Number of Units & Network Simplification",
+                summary:
+                  "Targeting the fewest heat exchangers a network needs, and simplifying an over-complicated design by breaking loops.",
+                minutes: 10,
+              },
+              {
+                slug: "network-design-check",
+                title: "Network Design Check",
+                summary: "Quiz on pinch matching, the tick-off heuristic and minimum units.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "economics-and-application",
+            title: "Economics & Practical Application",
+            lessons: [
+              {
+                slug: "choosing-delta-t-min",
+                title: "Choosing ΔTmin: The Capital-Energy Trade-off",
+                summary:
+                  "Why the minimum approach temperature is an economic choice, not a fixed constant — balancing utility cost against heat-exchanger capital cost.",
+                minutes: 10,
+              },
+              {
+                slug: "threshold-problems",
+                title: "Threshold Problems: When There's No Pinch",
+                summary:
+                  "Processes that only ever need one utility, and why forcing a two-utility design onto them wastes money.",
+                minutes: 9,
+              },
+              {
+                slug: "retrofit-pinch-analysis",
+                title: "Retrofit Pinch Analysis: Applying It to an Existing Site",
+                summary:
+                  "Using targets from a pinch study to find the missed heat-recovery opportunities in a plant that already exists.",
+                minutes: 10,
+              },
+              {
+                slug: "economics-check",
+                title: "Economics & Application Check",
+                summary: "Quiz on ΔTmin economics, threshold problems and retrofit application.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "pinch-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "diagnostics-capstone",
+                title: "Capstone: Pinch Analysis Diagnostics",
+                summary:
+                  "Hands-on: diagnose eight process-integration call-outs — cross-pinch heat transfer, infeasible matches, wrong utility placement, threshold problems and over-complicated networks — then calculate, verify and prescribe the fix.",
                 minutes: 30,
               },
             ],
@@ -2255,6 +2580,181 @@ export const curriculum: Level[] = [
             { slug: "credibility-reporting", title: "Credibility, Reporting & Accountability", summary: "Science-based targets (SBTi); annual progress reporting; reassessment if needed.", minutes: 10 },
             { slug: "delivery-check", title: "Delivery Check", summary: "Quiz on roadmap phasing, offsets, and credibility.", minutes: 5 },
           ] },
+        ],
+      },
+    ],
+  },
+];
+
+/**
+ * Sectors — a peer section to the numbered Levels, not a tier in the
+ * expertise progression. Each sector applies the Level 1/2 foundations to one
+ * specific vertical: its processes, its benchmarks, its regulation, and which
+ * systems matter most there. Sector lessons assume Level 1/2 grounding and
+ * cross-link back rather than re-teaching — see AGENTS.md.
+ */
+export const sectors: Level[] = [
+  {
+    kind: "sector",
+    slug: "breweries",
+    title: "Breweries",
+    tagline: "Process, energy and regulation in the brewhouse and cellar",
+    description:
+      "Apply everything from Levels 1 and 2 to one of the most process- and utility-intensive site types there is: mashing, boiling, fermentation and cold conditioning all impose real, sequenced thermal and refrigeration loads, and the sector carries its own regulation — trade effluent, food safety, packaging producer responsibility. This is where steam, refrigeration, compressed air, heat recovery and pinch analysis meet a real production line.",
+    accent: sectorAccent,
+    courses: [
+      {
+        slug: "breweries",
+        title: "Energy Management in Breweries",
+        summary:
+          "The brewing process and where energy enters it, brewery-specific benchmarks and regulation, and the heat-recovery and refrigeration opportunities unique to a brewhouse — capped with a full brewery energy audit.",
+        status: "available",
+        modules: [
+          {
+            slug: "brewing-process-fundamentals",
+            title: "The Brewing Process & Where Energy Goes",
+            lessons: [
+              {
+                slug: "the-brewing-process",
+                title: "The Brewing Process, Stage by Stage",
+                summary:
+                  "From milled grain to packaged beer — mashing, lautering, boiling, fermentation and conditioning — and where each stage draws its energy.",
+                minutes: 11,
+              },
+              {
+                slug: "steam-and-hot-water-demand",
+                title: "Steam & Hot Water Demand in the Brewhouse",
+                summary:
+                  "Mashing, sparging and the wort boil are the single biggest thermal load in the building — quantifying it and why the boil dominates.",
+                minutes: 10,
+              },
+              {
+                slug: "refrigeration-and-cooling-demand",
+                title: "Refrigeration & Cooling Demand: Wort to Cellar",
+                summary:
+                  "Wort chilling, fermentation temperature control and cold conditioning — the brewery's other dominant load, this time electrical.",
+                minutes: 10,
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Brewing Fundamentals Check",
+                summary: "Quiz on the brewing process and its thermal and refrigeration loads.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "energy-benchmarks",
+            title: "Brewery Energy Use & Benchmarks",
+            lessons: [
+              {
+                slug: "energy-intensity-benchmarks",
+                title: "Energy Intensity: kWh per Hectolitre",
+                summary:
+                  "Typical thermal and electrical intensity benchmarks, why craft breweries run less efficiently than macro-breweries, and the water-energy link.",
+                minutes: 10,
+              },
+              {
+                slug: "cip-and-packaging-energy",
+                title: "CIP, Pasteurisation & Packaging-Line Energy",
+                summary:
+                  "Clean-in-place cycles and pasteurisation are hidden hot-water heavyweights; the packaging line's own electrical and compressed-air demand.",
+                minutes: 10,
+              },
+              {
+                slug: "compressed-air-and-utilities",
+                title: "Compressed Air & Site Utilities",
+                summary:
+                  "Where compressed air is used in a brewery, and the ancillary loads (pumps, cold stores, lighting) that add up across the site.",
+                minutes: 9,
+              },
+              {
+                slug: "benchmarks-check",
+                title: "Energy Benchmarks Check",
+                summary: "Quiz on brewery energy intensity, CIP/packaging and site utilities.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "regulation-and-compliance",
+            title: "Regulation & Compliance for Breweries",
+            lessons: [
+              {
+                slug: "trade-effluent-and-water",
+                title: "Trade Effluent Consent & Water Reuse",
+                summary:
+                  "Why brewery effluent is charged by strength as well as volume, and how heat and water recovery cut both the energy bill and the effluent charge together.",
+                minutes: 10,
+              },
+              {
+                slug: "food-safety-and-energy",
+                title: "Food Safety Requirements That Set Energy Floors",
+                summary:
+                  "HACCP-driven CIP temperatures and cold-chain limits aren't negotiable — where safety, not efficiency, sets the minimum.",
+                minutes: 9,
+              },
+              {
+                slug: "reporting-and-schemes",
+                title: "ESOS, SECR, Climate Change Agreements & Packaging EPR",
+                summary:
+                  "Which UK schemes actually apply to a brewery your size, the sector's historic Climate Change Agreement, and the rising cost of packaging producer responsibility.",
+                minutes: 10,
+              },
+              {
+                slug: "compliance-check",
+                title: "Regulation & Compliance Check",
+                summary: "Quiz on trade effluent, food safety limits and applicable UK schemes.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "efficiency-in-practice",
+            title: "Efficiency Opportunities in Practice",
+            lessons: [
+              {
+                slug: "heat-recovery-in-the-brewhouse",
+                title: "Heat Recovery in the Brewhouse",
+                summary:
+                  "Capturing the wort boil's vapour and hot-wort heat, and why a brewery's steady, simultaneous steam-and-power demand often suits CHP unusually well.",
+                minutes: 11,
+              },
+              {
+                slug: "refrigeration-and-glycol-optimisation",
+                title: "Refrigeration & Glycol System Optimisation",
+                summary:
+                  "Tuning fermentation and conditioning cooling — setpoints, glycol loop design and free cooling — for the cellar's round-the-clock load.",
+                minutes: 10,
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short, real brewery call-outs — a missed heat-recovery opportunity and a glycol system fault — calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on brewhouse heat recovery, CHP suitability and refrigeration optimisation.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "brewery-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "brewery-audit-capstone",
+                title: "Capstone: Audit a Brewery",
+                summary:
+                  "A full, staged energy audit of a fictional brewery — scope it, walk the site, normalise and baseline its data, and rank the opportunities you find by payback.",
+                minutes: 35,
+              },
+            ],
+          },
         ],
       },
     ],

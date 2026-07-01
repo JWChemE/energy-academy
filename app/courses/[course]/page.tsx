@@ -31,6 +31,8 @@ export default async function CoursePage({ params }: Props) {
   const lessons = getCourseLessons(course);
   const { lessonCount, totalMinutes } = getCourseStats(course);
   const firstLesson = lessons[0];
+  const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
+  const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
   return (
     <div>
@@ -39,10 +41,10 @@ export default async function CoursePage({ params }: Props) {
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
           <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
             <Link
-              href={`/levels/${level.slug}`}
+              href={levelHref}
               className="font-medium hover:text-slate-900"
             >
-              Level {level.number}: {level.title}
+              {levelLabel}: {level.title}
             </Link>
             <span>/</span>
             <span className="text-slate-400">{course.title}</span>
@@ -53,7 +55,7 @@ export default async function CoursePage({ params }: Props) {
               className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold ${level.accent.badge}`}
             >
               <span className={`h-1.5 w-1.5 rounded-full ${level.accent.dot}`} />
-              Level {level.number}
+              {levelLabel}
             </span>
             {available ? (
               <span className="text-xs font-medium text-slate-400">

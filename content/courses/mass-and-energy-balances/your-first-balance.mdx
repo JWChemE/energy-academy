@@ -1,0 +1,65 @@
+With a boundary drawn, building the balance itself is almost anticlimactic — it's addition and subtraction. The skill isn't the arithmetic; it's being disciplined enough to find every stream crossing your boundary before you start adding things up.
+
+## The general balance equation
+
+For any boundary, over any period of time, the same statement holds for both mass and energy:
+
+> **Accumulation = In − Out**
+
+Everything that crosses in, minus everything that crosses out, equals however much has built up (or drained away) inside the boundary. For a **steady-state** system — the case you'll use most often — nothing accumulates, so this simplifies to the form you'll use constantly:
+
+> **In = Out**
+
+For an energy balance specifically, it's useful to split "Out" into the output you wanted and everything else:
+
+> **Energy In = Useful Energy Output + Losses**
+
+This single line is the entire content of every efficiency calculation you'll ever do. Efficiency is nothing more than:
+
+> **Efficiency = Useful Output ÷ Input**
+
+and every inefficiency you'll ever hunt down is hiding inside that "Losses" term.
+
+## A worked example: the black-box motor
+
+Treat an electric motor as a black box — you don't need to know anything about its internal windings, just what crosses its boundary.
+
+| Stream | Value |
+| --- | --- |
+| Electrical energy in | 100 kW |
+| Useful mechanical output (measured at the shaft) | 92 kW |
+| Losses (heat, from resistance and friction) | ? |
+
+Applying the balance:
+
+> 100 kW (in) = 92 kW (useful out) + Losses
+
+So Losses = 100 − 92 = **8 kW**. This motor is 92% efficient (92 ÷ 100), and every one of those 8 kW is real — it leaves the motor as heat, warming the room it sits in. Nothing is unaccounted for; the balance closes exactly.
+
+<Callout variant="key" title="A balance that doesn't close is telling you something">
+In practice, when you measure a real piece of equipment, your numbers rarely add up perfectly on the first try. If you measured 100 kW in, 92 kW of useful output, and only 6 kW of heat loss by direct measurement, you'd have a 2 kW gap. That gap is not a mistake in arithmetic — it's a signal that something crossing the boundary hasn't been measured yet: perhaps a small amount of noise and vibration, a slightly warm bearing you didn't put a thermometer on, or a measurement error in one of your instruments. Chasing that gap to zero is often exactly how you find the fault nobody had noticed.
+</Callout>
+
+## Using the balance to find an unmeasured quantity
+
+The real power of the balance equation is that you rarely need to measure everything — you can measure most streams and *calculate* the one you couldn't easily get to. This is the single most useful trick in the whole toolkit.
+
+Suppose you can measure the fuel going into a furnace and the useful heat coming out, but you have no way to directly measure the heat lost through the casing (it would need a full thermal survey). The balance gives it to you for free:
+
+> Casing losses = Fuel input − Useful heat output − (any other losses you *can* measure, like flue losses)
+
+You'll use exactly this move in the [boiler energy balance](/courses/mass-and-energy-balances/boiler-energy-balance) lesson: measuring fuel input, flue-gas temperature (which gives flue losses), and useful heat output, then finding casing and blowdown losses as "whatever's left" rather than measuring them directly.
+
+## The habit to build
+
+Every balance you do, from here to the end of this course (and every audit you'll ever run), follows the same three steps:
+
+1. **Draw the boundary** and list every stream crossing it — inputs, useful outputs, and every loss mechanism you can think of.
+2. **Measure or estimate** as many of those streams as you reasonably can.
+3. **Close the balance** — use conservation to solve for whatever you couldn't measure directly, or to confirm your numbers by checking that everything adds up.
+
+<Callout variant="tip">
+If step 3 leaves an unexplained gap of more than a few percent, don't shrug it off as measurement error until you've genuinely searched for a missing stream. A surprisingly large unexplained gap is one of the most reliable ways to discover a fault, a leak, or a loss mechanism nobody had thought to look for.
+</Callout>
+
+The next module puts this to work on mass balances specifically — starting with the simplest case (steady flow of a single material) before tackling a real combustion balance.

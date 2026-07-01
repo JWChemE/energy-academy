@@ -23,7 +23,10 @@ import CommxSystemDiagnostics from "../simulators/CommxSystemDiagnostics";
 import MaintSystemDiagnostics from "../simulators/MaintSystemDiagnostics";
 import MvSystemDiagnostics from "../simulators/MvSystemDiagnostics";
 import EconSystemDiagnostics from "../simulators/EconSystemDiagnostics";
+import PinchSystemDiagnostics from "../simulators/PinchSystemDiagnostics";
+import BrewerySystemDiagnostics from "../simulators/BrewerySystemDiagnostics";
 import EnergyAuditCapstone from "../simulators/EnergyAuditCapstone";
+import BreweryAuditCapstone from "../simulators/BreweryAuditCapstone";
 
 /** Internal links use next/link for client-side nav; external open in a new tab. */
 function MdxLink({
@@ -72,5 +75,8 @@ export const mdxComponents = {
   MaintSystemDiagnostics,
   MvSystemDiagnostics,
   EconSystemDiagnostics,
+  PinchSystemDiagnostics,
+  BrewerySystemDiagnostics,
   EnergyAuditCapstone,
+  BreweryAuditCapstone,
 };

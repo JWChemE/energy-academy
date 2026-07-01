@@ -1,0 +1,42 @@
+Air conditioning doesn't just move heat — it moves water. Every time a cooling coil dehumidifies a building's air, it's running a genuine mass balance on water vapour, and understanding that balance is the key to understanding why dehumidification is one of the most energy-intensive things an HVAC system does. This lesson works that balance through; the [HVAC sensible & latent lesson](/courses/hvac-systems/sensible-latent) already introduced the physical process — cooling air below its dew point so moisture condenses out — this is where you quantify it.
+
+## Humidity as a mass fraction
+
+Moist air is really a *mixture*: dry air plus a variable amount of water vapour riding along with it. The standard way to quantify how much water vapour is present is the **humidity ratio** (also called specific humidity): grams of water vapour per kilogram of dry air (g/kg).
+
+Because the dry-air portion of the flow doesn't change as air passes through a cooling coil — only the water content does — the humidity ratio is exactly the right quantity to run a mass balance on.
+
+## Setting up the balance
+
+Consider an air handling unit processing 2 kg/s of dry air (a mid-sized commercial system) on a humid summer day:
+
+| Stream | Humidity ratio | Water vapour flow |
+| --- | --- | --- |
+| Air entering the coil | 12 g/kg | 2 × 12 = 24 g/s |
+| Air leaving the coil (after cooling below dew point) | 8 g/kg | 2 × 8 = 16 g/s |
+| Condensate draining from the coil | — | ? |
+
+Applying conservation of mass to the water alone:
+
+> Water vapour in = Water vapour out (as vapour) + Condensate removed (as liquid)
+> 24 g/s = 16 g/s + Condensate
+
+So **Condensate = 8 g/s** (about 29 kg/hour, or roughly 700 kg over a 24-hour day) — real, measurable water running down the drain line from every cooling coil doing real dehumidification work. If you've ever wondered why AHUs need a condensate drain at all, this is why: it's not a design afterthought, it's the necessary output of a mass balance that has to close.
+
+<Callout variant="key" title="The condensate is the balance closing, not a byproduct">
+Every gram of water vapour that leaves the entering air stream has to go *somewhere*. If the leaving air is drier, the missing water isn't destroyed — it's sitting in the condensate line as liquid. This is exactly the same "in = out, no exceptions" logic from every other balance in this course, just applied to a component of the air instead of the whole flow.
+</Callout>
+
+## Why this mass balance matters for energy
+
+Condensing that 8 g/s of water vapour back to liquid doesn't happen for free — it releases the water's **latent heat** (the same property behind steam's power as a heating medium, covered in the [steam properties lesson](/courses/steam-and-condensate/steam-basics)) which the cooling coil has to absorb and reject, on top of whatever sensible cooling it's already doing. That's the direct energy consequence of the mass balance you've just built, and it's exactly why the sensible & latent lesson describes dehumidification as the expensive part of air conditioning: removing water vapour from air costs real cooling energy, independent of the temperature change. You'll quantify that energy cost precisely in the [HVAC energy balance](/courses/mass-and-energy-balances/hvac-energy-balance) lesson in the next module — this lesson has given you the mass flow (8 g/s of condensate) that calculation will need as its starting point.
+
+## The general lesson: track the component, not just the flow
+
+The technique here — picking out one component of a mixed flow (water vapour within moist air) and balancing it separately — generalises well beyond HVAC. You'd use exactly the same approach to track:
+
+- A specific pollutant or contaminant through a ventilation system
+- Dissolved solids through a boiler's blowdown (the [boiler blowdown lesson](/courses/boilers-and-fired-systems/blowdown) is a mass balance on dissolved minerals in exactly this style)
+- Moisture through an industrial drying process
+
+Whenever a stream is a mixture and you only care about one ingredient in it, isolate that ingredient and balance it on its own — the rest of the mixture is just along for the ride.

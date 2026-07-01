@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { getLevels } from "@/lib/content";
+import { getLevels, getSectors } from "@/lib/content";
 
 export default function Home() {
   const levels = getLevels();
+  const sectors = getSectors();
   const totalCourses = levels.reduce((n, l) => n + l.courses.length, 0);
 
   return (
@@ -114,6 +115,68 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Sectors */}
+      <section id="sectors" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700">
+              A peer to Levels 1–3, not a fourth tier
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900">
+              Or go deep on one sector
+            </h2>
+            <p className="mt-3 text-lg text-slate-600">
+              Once you have the foundations and the system deep dives, apply them to a specific
+              industry — its processes, its energy benchmarks, and the regulation unique to it.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {sectors.map((sector) => (
+              <Link
+                key={sector.slug}
+                href={`/sectors/${sector.slug}`}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <div className={`h-1.5 bg-gradient-to-r ${sector.accent.gradient}`} />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg ${sector.accent.badge}`}
+                    >
+                      🏭
+                    </span>
+                    <div>
+                      <div className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                        Sector
+                      </div>
+                      <div className="text-lg font-semibold text-slate-900">{sector.title}</div>
+                    </div>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">
+                    {sector.description}
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <span className="text-sm text-slate-400">{sector.courses.length} courses</span>
+                    <span
+                      className={`text-sm font-semibold ${sector.accent.text} group-hover:underline`}
+                    >
+                      Browse {sector.title} →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link href="/sectors" className="text-sm font-semibold text-rose-700 hover:underline">
+              See all sectors →
+            </Link>
+          </div>
         </div>
       </section>
     </div>

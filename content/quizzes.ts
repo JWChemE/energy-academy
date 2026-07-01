@@ -2256,4 +2256,655 @@ export const quizzes: Record<string, QuizQuestion[]> = {
   "netzero-framework-check": [{ question: "Scope 3 emissions include:", options: ["Only direct (fuel, electricity)", "Indirect value-chain: supply chain, business travel, waste; often 50-75% of total", "Nothing", "Not counted"], answer: 1, explanation: "Many organizations forget scope 3. For manufacturing/retail, it often dominates total emissions." }],
   "netzero-pathways-check": [{ question: "Electrification strategy for net-zero prioritizes:", options: ["Keep fossil fuels", "Heat pump replacement of gas boilers; EV fleet; coupling with renewable grid", "No change", "Impossible"], answer: 1, explanation: "Decarbonization = eliminating fossil fuel use. Heat pump COP 3-4 on renewable electricity >> boiler." }],
   "netzero-delivery-check": [{ question: "Offset strategy is needed because:", options: ["All emissions can be eliminated", "Residual emissions (10-20% after efficiency & electrification) must be balanced by removals/offsets", "Never needed", "Offsets alone sufficient"], answer: 1, explanation: "True net-zero: 90% reduction + 10% offsets. Fake net-zero: 50% reduction + 50% offsets. Be credible." }],
+
+  "meb-conservation-check": [
+    {
+      question: "The first law of thermodynamics, restated as a balance, says:",
+      options: [
+        "Energy can be created if enough power is supplied",
+        "Every unit of energy crossing into a system must leave it, or still be inside it",
+        "Energy always increases over time as equipment ages",
+        "Only mass is conserved; energy is not",
+      ],
+      answer: 1,
+      explanation:
+        "Energy is neither created nor destroyed. In = Out + Accumulation, always — that's the whole content of the first law as a practical tool.",
+    },
+    {
+      question: "Why must you define a system boundary before building a balance?",
+      options: [
+        "It's a formality with no effect on the numbers",
+        "The boundary you choose determines which streams are 'inside' and which are ignored, so it changes what question the balance actually answers",
+        "Boundaries are only needed for mass balances, not energy balances",
+        "Only closed systems need a boundary",
+      ],
+      answer: 1,
+      explanation:
+        "The same equipment gives different, equally valid answers depending on where you draw the line — a boiler-only boundary and a whole-steam-system boundary tell different stories.",
+    },
+    {
+      question: "A boiler running at a constant load, hour after hour, is best approximated as:",
+      options: ["A closed system", "A transient system", "A steady-state system", "An unbalanced system"],
+      answer: 2,
+      explanation:
+        "Steady-state means nothing inside the boundary is changing with time — the same mass and energy enter as leave, continuously.",
+    },
+    {
+      question:
+        "You measure a motor's electrical input and mechanical output, and estimate its heat loss separately. The three don't quite add up — there's a small unexplained gap. What does that gap most likely indicate?",
+      options: [
+        "The first law has been violated",
+        "A stream crossing the boundary hasn't been fully measured or accounted for yet",
+        "The units must be wrong somewhere and the whole calculation should be discarded",
+        "Balances never close in practice, so the gap can be ignored",
+      ],
+      answer: 1,
+      explanation:
+        "A balance that doesn't close is a signal, not an error to shrug off — it usually points to an unmeasured stream, which is often exactly where a fault or saving is hiding.",
+    },
+    {
+      question: "For a steady-state open system, the general balance equation 'Accumulation = In − Out' simplifies to:",
+      options: ["In = 0", "Out = 0", "In = Out", "Accumulation = In × Out"],
+      answer: 2,
+      explanation:
+        "At steady state nothing builds up inside the boundary, so accumulation is zero and everything entering must equal everything leaving.",
+    },
+  ],
+
+  "meb-mass-check": [
+    {
+      question: "For a steady-state open system, the mass balance states that:",
+      options: [
+        "Mass in is always greater than mass out",
+        "Mass in equals mass out",
+        "Mass is destroyed in proportion to energy released",
+        "Mass balances only apply to liquids, not gases",
+      ],
+      answer: 1,
+      explanation: "At steady state, nothing accumulates inside the boundary, so mass in must equal mass out.",
+    },
+    {
+      question: "A flow meter reads 2 m³/s of air at a density of 1.2 kg/m³. The mass flow rate is:",
+      options: ["1.2 kg/s", "0.6 kg/s", "2.4 kg/s", "2.0 kg/s"],
+      answer: 2,
+      explanation: "Mass flow = density × volume flow = 1.2 × 2 = 2.4 kg/s.",
+    },
+    {
+      question: "Why does a combustion mass balance need the mass fraction of oxygen in air (~23.2%), not the volume/mole fraction (~21%)?",
+      options: [
+        "They're the same number and it doesn't matter which is used",
+        "Mass and volume/mole percentages differ because oxygen and nitrogen molecules have different masses, and a mass balance must be done in mass units",
+        "The volume fraction is only used for liquid fuels",
+        "23.2% is simply a more accurate measurement of the same 21% figure",
+      ],
+      answer: 1,
+      explanation:
+        "Because O₂ molecules are heavier than N₂ molecules, air's oxygen content differs when expressed by mass versus by mole/volume — mixing the two up is a classic source of error.",
+    },
+    {
+      question:
+        "A boiler burns 0.01 kg/s of methane, needing 0.206 kg/s of actual (excess) air. By mass conservation alone, the flue gas mass flow must be:",
+      options: ["0.01 kg/s", "0.196 kg/s", "0.216 kg/s", "It cannot be found without measuring it directly"],
+      answer: 2,
+      explanation:
+        "Everything entering the combustion chamber (fuel + air) must leave as flue gas: 0.01 + 0.206 = 0.216 kg/s — found from the balance, with no flue-gas flow measurement needed.",
+    },
+    {
+      question:
+        "An air handling unit has 24 g/s of water vapour entering and 16 g/s leaving in the supply air. By mass conservation, the condensate draining from the coil must be:",
+      options: ["40 g/s", "8 g/s", "24 g/s", "It depends on the air's temperature, not its mass balance"],
+      answer: 1,
+      explanation:
+        "Water vapour in = water vapour out (as vapour) + condensate, so condensate = 24 − 16 = 8 g/s — the water is not destroyed, just converted from vapour to liquid.",
+    },
+  ],
+
+  "meb-energy-check": [
+    {
+      question:
+        "A boiler's fuel input, useful heat output, flue loss and blowdown loss are all measured or estimated directly. Casing loss is not directly measured. How is it found?",
+      options: [
+        "It's assumed to be zero",
+        "As the residual: Fuel In − Useful Heat − Flue Loss − Blowdown Loss",
+        "By multiplying the flue loss by a standard factor",
+        "It cannot be estimated without a thermal-imaging survey",
+      ],
+      answer: 1,
+      explanation:
+        "This is the balance's most useful trick: solve for the one stream you can't easily measure directly by subtracting everything you can measure from the total input.",
+    },
+    {
+      question: "In a steam system's energy balance, why does condensate typically return to the boiler carrying less energy than it left the point of use with?",
+      options: [
+        "Condensate loses mass on the way back",
+        "Sensible heat radiates from uninsulated or long condensate return pipework as it travels back",
+        "The boiler consumes the missing energy before the condensate arrives",
+        "Condensate always returns at the same enthalpy it left with; nothing is ever lost",
+      ],
+      answer: 1,
+      explanation:
+        "Condensate leaves the process near steam temperature and cools in transit if the return line isn't well insulated — a genuine, avoidable heat loss the balance reveals directly.",
+    },
+    {
+      question: "Removing moisture from air in a cooling coil (dehumidification) requires cooling the air:",
+      options: [
+        "To exactly the target supply temperature, no further",
+        "Below its dew point, so water vapour condenses out",
+        "Above its dew point, so water evaporates faster",
+        "It requires no cooling at all, only a change in air speed",
+      ],
+      answer: 1,
+      explanation: "Moisture only condenses out of air once it's cooled below its dew point — the basis of the standard cool-and-reheat dehumidification cycle.",
+    },
+    {
+      question: "In an HVAC energy balance, 'reheat' (warming dehumidified air back up to a comfortable supply temperature) represents:",
+      options: [
+        "Free energy recovered from the cooling process",
+        "A genuine additional energy cost, on top of the cooling and dehumidification already done",
+        "A reduction in the coil's total load",
+        "Energy that doesn't need to be counted in the balance",
+      ],
+      answer: 1,
+      explanation:
+        "Reheat is real additional energy spent purely to correct for over-cooling the air — it can be a third or more of the total coil load in a poorly designed system.",
+    },
+    {
+      question: "A boiler's own combustion efficiency and a wider 'fuel to point of use' efficiency for the same plant can legitimately differ because:",
+      options: [
+        "One of the two figures must be a measurement error",
+        "They are balances drawn around two different boundaries, answering two different questions",
+        "Efficiency can only be defined one way; a difference always signals a fault",
+        "Wider boundaries always show identical numbers to narrower ones",
+      ],
+      answer: 1,
+      explanation:
+        "A boiler-only boundary excludes distribution losses that a whole-system boundary includes — both numbers can be correct, for different questions.",
+    },
+  ],
+
+  "meb-practice-check": [
+    {
+      question: "In a Sankey diagram, the width of each arrow represents:",
+      options: [
+        "The temperature of that flow",
+        "The magnitude of that flow, so wider arrows are bigger flows",
+        "How recently that flow was measured",
+        "The cost per kWh of that flow",
+      ],
+      answer: 1,
+      explanation: "Sankey diagrams use proportional width so the eye can compare flow sizes at a glance, without reading numbers.",
+    },
+    {
+      question: "Exergy (or 'quality of energy') describes:",
+      options: [
+        "The total quantity of energy in a stream, exactly as an energy balance measures it",
+        "How much of a stream's energy could theoretically be converted into useful work, given its temperature relative to its surroundings",
+        "The price of energy in pounds per kWh",
+        "A stream's mass flow rate",
+      ],
+      answer: 1,
+      explanation:
+        "Exergy captures usefulness, not just quantity — a kWh of electricity and a kWh of lukewarm waste heat contain the same energy but very different amounts of exergy.",
+    },
+    {
+      question: "Compared with a heat source close to ambient temperature, a heat source much hotter than ambient has:",
+      options: [
+        "Less exergy (less potential to do useful work)",
+        "More exergy (more potential to do useful work)",
+        "Exactly the same exergy, since exergy doesn't depend on temperature",
+        "No exergy at all, regardless of temperature",
+      ],
+      answer: 1,
+      explanation:
+        "The further a source's temperature is above ambient, the greater the fraction of its heat that could, in principle, be converted into useful work.",
+    },
+    {
+      question: "Which sequence best describes the general method taught throughout this course?",
+      options: [
+        "Guess the losses, then adjust the input to match",
+        "Draw a boundary, list every stream crossing it, measure what you can, and use conservation to solve for the rest",
+        "Only ever measure every single stream directly; never calculate one",
+        "Skip the boundary step and go straight to the arithmetic",
+      ],
+      answer: 1,
+      explanation: "This sequence — boundary, streams, measure, solve, check it closes — is the method behind every balance in this course.",
+    },
+    {
+      question: "If a generic industry rule of thumb disagrees with a balance you've built from your own measured, plant-specific numbers, you should generally:",
+      options: [
+        "Always trust the rule of thumb, since it's based on wide industry experience",
+        "Trust your own balance, since rules of thumb are generic approximations meant for quick screening, not site-specific decisions",
+        "Average the two figures together",
+        "Discard both and use neither",
+      ],
+      answer: 1,
+      explanation: "Rules of thumb are useful for a first, rapid screen — but a balance built from your own measured numbers on the actual plant is the more trustworthy figure for a real decision.",
+    },
+  ],
+
+  "pinch-fundamentals-check": [
+    {
+      question: "Compared with matching waste heat sources to loads one pair at a time, pinch analysis:",
+      options: [
+        "Gives exactly the same result, just with more paperwork",
+        "Looks at every hot and cold stream on site at once and calculates the true minimum utility requirement, which one-at-a-time matching cannot prove it has found",
+        "Only works for a single stream at a time, like the waste heat recovery method",
+        "Is only useful for processes with no waste heat at all",
+      ],
+      answer: 1,
+      explanation:
+        "A one-at-a-time search can find good matches but can never prove it found the best combination — pinch analysis calculates the provable minimum by considering the whole process simultaneously.",
+    },
+    {
+      question: "A stream with a supply temperature of 160 °C that needs to leave at 60 °C is:",
+      options: ["A cold stream", "A hot stream", "Neither — it needs a fixed temperature, not a change", "Both, depending on the fluid"],
+      answer: 1,
+      explanation: "A hot stream needs cooling — its supply temperature is higher than its target. This one needs cooling from 160 to 60 °C.",
+    },
+    {
+      question: "CP (heat capacity flow rate), in kW/°C, is:",
+      options: [
+        "The stream's absolute temperature",
+        "Mass flow rate × specific heat capacity",
+        "The stream's pressure divided by its temperature",
+        "A fixed constant that's the same for every stream",
+      ],
+      answer: 1,
+      explanation: "CP = ṁ × cp — the same quantity from the Mass & Energy Balances course, given its own symbol because it's used so heavily in this method.",
+    },
+    {
+      question: "The minimum approach temperature, ΔTmin, is best described as:",
+      options: [
+        "A universal physical constant that never changes",
+        "A design choice, applied across the whole process, that trades off heat recovery against heat-exchanger size and cost",
+        "The boiling point of the process fluid",
+        "Something that only matters for cold streams, not hot ones",
+      ],
+      answer: 1,
+      explanation: "ΔTmin isn't fixed by physics — it's chosen to balance how much heat you want to recover against how much exchanger area you're willing to pay for.",
+    },
+    {
+      question: "A hot composite curve is built by:",
+      options: [
+        "Picking the single hottest stream and ignoring the rest",
+        "In each temperature band, summing the CP of every hot stream present, multiplying by the band width, and accumulating the heat from the highest temperature downward",
+        "Averaging the supply temperatures of all hot streams",
+        "Plotting each hot stream on a separate, unrelated chart",
+      ],
+      answer: 1,
+      explanation: "Composite curves combine multiple streams by adding their CPs within each temperature interval where they're simultaneously present, then accumulating heat band by band.",
+    },
+  ],
+
+  "pinch-targeting-check": [
+    {
+      question: "Why do you shift hot stream temperatures down and cold stream temperatures up by ΔTmin ÷ 2 before building the problem table?",
+      options: [
+        "It's just a convention with no real purpose",
+        "It puts hot and cold streams on one shared scale, where touching shifted ranges are automatically exactly ΔTmin apart in reality",
+        "It converts the temperatures from Celsius to Kelvin",
+        "It only applies to cold streams, not hot ones",
+      ],
+      answer: 1,
+      explanation: "Shifting lets you compare hot and cold streams directly on one scale without tracking the ΔTmin offset separately at every step of the cascade.",
+    },
+    {
+      question: "In the problem table cascade (started at zero heat input), the most negative running value represents:",
+      options: [
+        "A calculation error that should be ignored",
+        "The minimum hot utility that must be added at the top to make the whole cascade thermodynamically feasible",
+        "The minimum cold utility needed",
+        "The total heat load of all cold streams combined",
+      ],
+      answer: 1,
+      explanation: "A negative cascade value is thermodynamically impossible on its own; topping it up to zero at its lowest point sets the minimum hot utility.",
+    },
+    {
+      question: "After topping up the cascade with the minimum hot utility, the pinch point is located where:",
+      options: [
+        "The cascade is at its highest value", "The cascade touches exactly zero", "The cascade is negative", "The very top of the temperature scale, always",
+      ],
+      answer: 1,
+      explanation: "The pinch is exactly where the topped-up cascade reaches zero — the single tightest point in the whole process.",
+    },
+    {
+      question: "According to the golden rules, above the pinch you should never use:",
+      options: ["Hot utility", "Cold utility", "Any process stream", "A heat exchanger"],
+      answer: 1,
+      explanation: "Above the pinch is a net heat sink — using cold utility there wastes heat the process itself needs, forcing extra hot utility to compensate.",
+    },
+    {
+      question: "If 15 kW of heat is transferred directly across the pinch, the total utility penalty (extra hot + extra cold combined) is:",
+      options: ["15 kW", "30 kW", "7.5 kW", "0 kW — crossing the pinch has no energy penalty"],
+      answer: 1,
+      explanation: "Every kW crossing the pinch costs 2 kW of total utility — 1 extra kW of hot utility to replace what's missing, and 1 extra kW of cold utility to reject what shouldn't have been cooled there.",
+    },
+  ],
+
+  "pinch-network-design-check": [
+    {
+      question: "Immediately above the pinch, a feasible match requires:",
+      options: [
+        "CP(hot) ≥ CP(cold)", "CP(hot) ≤ CP(cold)", "CP(hot) = CP(cold), always exactly", "The rule doesn't apply above the pinch",
+      ],
+      answer: 1,
+      explanation: "Above the pinch, CP(hot) ≤ CP(cold) keeps the temperature approach growing (not shrinking) as you move away from the pinch.",
+    },
+    {
+      question: "The 'tick-off' heuristic means:",
+      options: [
+        "Randomly assigning matches until something works",
+        "Matching feasible streams at the pinch, transferring heat until one stream is exhausted, removing it from consideration, and repeating with what's left",
+        "Ticking a checklist with no calculation involved",
+        "Only ever matching streams of identical CP",
+      ],
+      answer: 1,
+      explanation: "Tick-off works outward from the pinch, exhausting one stream per match and removing ('ticking off') it before continuing with the remainder.",
+    },
+    {
+      question: "Splitting a stream into two branches is the right move when:",
+      options: [
+        "You want to add unnecessary complexity to a network",
+        "No single unsplit match between the streams involved satisfies the CP feasibility rule",
+        "Every possible match is already feasible",
+        "The stream's CP is very small",
+      ],
+      answer: 1,
+      explanation: "Splitting creates two smaller-CP branches from one stream, which can satisfy the feasibility rule even when the original, unsplit stream couldn't against either target on its own.",
+    },
+    {
+      question: "The minimum number of heat-transfer units for a region with 5 streams and utilities (no loops) is:",
+      options: ["5", "4", "6", "2.5"],
+      answer: 1,
+      explanation: "N = S + L − 1 = 5 + 0 − 1 = 4.",
+    },
+    {
+      question: "A network with more units than its minimum-units target most likely contains:",
+      options: [
+        "A calculation error that should be re-checked from scratch",
+        "An independent loop — a redundant connection that can often be removed with a small energy penalty",
+        "A missing utility that needs to be added",
+        "Nothing unusual — extra units are always harmless",
+      ],
+      answer: 1,
+      explanation: "Extra units beyond S − 1 signal a loop; breaking it (removing the smallest-duty exchanger and rebalancing) usually cuts capital cost for a small energy trade-off.",
+    },
+  ],
+
+  "pinch-economics-check": [
+    {
+      question: "As ΔTmin is tightened (made smaller), the minimum hot and cold utility requirements:",
+      options: [
+        "Both increase", "Both decrease (or stay the same)", "Hot utility increases while cold utility decreases", "Neither changes — ΔTmin only affects equipment size",
+      ],
+      answer: 1,
+      explanation: "A smaller ΔTmin lets more heat be recovered between process streams, reducing (or holding steady) both utility requirements.",
+    },
+    {
+      question: "As ΔTmin is tightened, heat-exchanger capital cost typically:",
+      options: ["Falls", "Rises, because a smaller temperature difference needs more heat-transfer area", "Stays exactly fixed", "Becomes irrelevant"],
+      answer: 1,
+      explanation: "A tighter approach temperature drives heat transfer more slowly for a given area, so more area (and cost) is needed to move the same heat.",
+    },
+    {
+      question: "A 'threshold problem' in pinch analysis is a process that:",
+      options: [
+        "Needs both a hot and cold utility in equal amounts",
+        "Genuinely needs only one utility — either hot or cold, never both",
+        "Cannot be analysed with the problem table method",
+        "Always requires stream splitting",
+      ],
+      answer: 1,
+      explanation: "In a threshold problem, one stream's surplus (or deficit) is large enough, with good temperature overlap, that only one utility is ever needed.",
+    },
+    {
+      question: "Before recommending new heat-recovery equipment on an existing site, a retrofit pinch study should first check for:",
+      options: [
+        "Whether the site has a large car park",
+        "Existing golden-rule violations already in the plant, since correcting those is often a near-free re-piping job",
+        "The colour of the pipework",
+        "Whether competitors use pinch analysis",
+      ],
+      answer: 1,
+      explanation: "Existing cross-pinch violations are usually the cheapest fix available — often just re-routing an existing connection — and should be found and corrected before proposing new capital.",
+    },
+    {
+      question: "In a retrofit audit, if actual hot utility and actual cold utility both exceed their calculated targets by the same amount, that pattern most likely indicates:",
+      options: [
+        "A meter calibration error that should be ignored",
+        "A single connection crossing the pinch, since a violation of size Q raises both utilities by Q each",
+        "The targets were calculated incorrectly",
+        "The process needs a completely new stream table",
+      ],
+      answer: 1,
+      explanation: "Equal gaps on both hot and cold utility is the signature of a golden-rule violation — a single misplaced connection of that size crossing the pinch.",
+    },
+  ],
+
+  "brewery-fundamentals-check": [
+    {
+      question: "Malting — steeping, germinating and kilning barley into malt — usually happens:",
+      options: [
+        "At the brewery itself, as the very first process step",
+        "Off-site, at a maltster, and is outside a brewery energy audit's usual boundary",
+        "During the wort boil",
+        "During fermentation",
+      ],
+      answer: 1,
+      explanation: "Malting is normally done off-site by a specialist maltster, on a different energy bill and outside what a brewery's own audit can measure or change.",
+    },
+    {
+      question: "Which single brewhouse step is typically the biggest thermal (gas) load?",
+      options: ["Milling the malt", "Mashing", "The wort boil", "Lautering"],
+      answer: 2,
+      explanation: "Boiling the wort for 60–90 minutes — raising it to boiling and maintaining a rolling boil — is the single largest heat demand in the brewhouse.",
+    },
+    {
+      question: "Fermentation is a major electrical (refrigeration) load because:",
+      options: [
+        "It requires bright lighting",
+        "It's exothermic — yeast converting sugar to alcohol releases heat that a cooling jacket must continuously remove to hold the target temperature",
+        "It uses compressed air",
+        "It requires reheating the wort",
+      ],
+      answer: 1,
+      explanation: "Fermentation releases real heat as a byproduct of the biological reaction, and active cooling is needed throughout to hold the target temperature.",
+    },
+    {
+      question: "Comparing a 12-day fermentation cycle to a 14-day conditioning cycle for a similar-sized vessel, which typically costs more in refrigeration electricity, and why?",
+      options: [
+        "Conditioning always costs more, simply because it lasts longer",
+        "Fermentation can cost more despite the shorter duration, because its peak cooling intensity (kW) is much higher than conditioning's gentler, steady load",
+        "They always cost exactly the same",
+        "Neither uses meaningful refrigeration energy",
+      ],
+      answer: 1,
+      explanation: "Intensity matters as much as duration — a short, intense fermentation load can outweigh a longer but gentler conditioning load in total electrical cost.",
+    },
+    {
+      question: "A brewery's electrical load profile, compared to a typical office building's, usually:",
+      options: [
+        "Shows a sharp daytime peak and a night-time trough, just like an office",
+        "Is fairly flat and continuous, because fermentation and conditioning refrigeration run around the clock regardless of time of day",
+        "Only draws power during office hours",
+        "Has no predictable pattern at all",
+      ],
+      answer: 1,
+      explanation: "Because refrigeration for fermentation and conditioning runs continuously, a brewery's load looks much flatter than an occupancy-driven building load.",
+    },
+  ],
+
+  "brewery-benchmarks-check": [
+    {
+      question: "Energy intensity (kWh per hectolitre) is a more useful comparison metric than total annual energy because:",
+      options: [
+        "It's easier to calculate",
+        "It normalises for production volume, so breweries of different sizes (or the same brewery in different years) can be compared fairly",
+        "It ignores production entirely",
+        "Total energy is always a bigger number",
+      ],
+      answer: 1,
+      explanation: "A brewery's total energy tells you little without knowing how much beer it made — intensity (kWh/hL) is the normalised, comparable figure.",
+    },
+    {
+      question: "Craft breweries typically show higher energy intensity (kWh/hL) than large macro-breweries mainly because:",
+      options: [
+        "Craft brewers are careless with energy",
+        "Fixed losses (standing losses, minimum practical batch sizes) don't shrink with output, so they're a bigger share of the total at smaller production scales",
+        "Craft beer requires more hops",
+        "Macro-breweries use free energy",
+      ],
+      answer: 1,
+      explanation: "Fixed equipment losses stay roughly constant regardless of scale, so they dominate more at smaller production volumes — a scale effect, not a competence one.",
+    },
+    {
+      question: "The water-to-beer ratio matters for energy management because:",
+      options: [
+        "Water has no connection to energy use",
+        "Most water used in brewing (mashing, sparging, CIP) needs heating, so a lower water-to-beer ratio often means lower energy intensity too",
+        "It only affects the water bill, never the energy bill",
+        "It's purely an environmental metric with no cost link",
+      ],
+      answer: 1,
+      explanation: "Reducing water use often reduces the energy needed to heat that water — the two are linked, not independent, in a brewery.",
+    },
+    {
+      question: "Before comparing a small regional brewery's energy intensity to a published benchmark, you should:",
+      options: [
+        "Assume all breweries should hit the same number regardless of scale",
+        "Check whether the benchmark reflects a comparable scale and beer style (e.g. ale vs lager), since both significantly affect achievable intensity",
+        "Ignore benchmarks entirely",
+        "Only compare to breweries in other countries",
+      ],
+      answer: 1,
+      explanation: "Benchmarks are only useful compared like-for-like — scale and process style (lager's longer, colder conditioning costs more than ale) both genuinely change what's achievable.",
+    },
+    {
+      question: "A brewery's own historical intensity trend (kWh/hL over time, production held roughly constant) is useful because:",
+      options: [
+        "It's required by law",
+        "A rising trend is a clear signal that something (fouling, drift, a failing control) needs investigating, independent of any external benchmark",
+        "It replaces the need for any external benchmark comparison",
+        "It only matters once a year",
+      ],
+      answer: 1,
+      explanation: "Establishing your own baseline and watching it over time reveals developing problems directly — the same principle as the monitoring & targeting course's baseline method.",
+    },
+  ],
+
+  "brewery-compliance-check": [
+    {
+      question: "Why is brewery trade effluent typically charged more than its raw volume would suggest?",
+      options: [
+        "Trade effluent charges are always flat-rate regardless of content",
+        "Charging formulas (like the Mogden formula) charge for strength (BOD/COD load) as well as volume, and brewery effluent is often high in organic strength",
+        "Breweries are charged extra purely because they make alcohol",
+        "There is no separate trade effluent charge for breweries",
+      ],
+      answer: 1,
+      explanation: "Trade effluent charging typically has both a volume component and a strength (BOD/COD) component — brewery effluent's high organic content pushes up the strength-based charge specifically.",
+    },
+    {
+      question: "Recovering both the heat AND the water from wort cooling (reusing it as brewing liquor, rather than draining it) can reduce:",
+      options: [
+        "Only the gas bill",
+        "Both the gas bill (recovered heat) and the trade effluent bill (reduced discharge volume) at the same time",
+        "Only the trade effluent bill",
+        "Neither bill",
+      ],
+      answer: 1,
+      explanation: "Recovering the water itself, not just its heat, cuts the volume side of the trade effluent charge alongside the energy saving — two benefits from one project.",
+    },
+    {
+      question: "A HACCP critical limit, such as a CIP wash temperature, should be treated as:",
+      options: [
+        "A setpoint that can be lowered freely if it saves energy",
+        "A food-safety requirement that should never be crossed without proper validation, regardless of the energy saving on offer",
+        "A rough suggestion with no real consequence",
+        "Something only relevant to large breweries",
+      ],
+      answer: 1,
+      explanation: "HACCP critical limits are set to reliably prevent a hazard — lowering one without validating that it still works is a food-safety risk, not a legitimate efficiency measure.",
+    },
+    {
+      question: "Most craft and regional UK breweries, in terms of ESOS and SECR applicability, are:",
+      options: [
+        "Always in scope, regardless of size",
+        "Likely SMEs, below the size thresholds, and therefore exempt from both — though large or multinational brewing groups are firmly in scope",
+        "Automatically exempt because they make alcohol",
+        "Only in scope if they export beer",
+      ],
+      answer: 1,
+      explanation: "ESOS and SECR apply to large undertakings by employee count and turnover/balance-sheet thresholds — most craft/regional breweries fall below these and are exempt, unlike large brewing groups.",
+    },
+    {
+      question: "A Climate Change Agreement (CCA), historically available to the brewing sector, works by:",
+      options: [
+        "Banning the use of gas in breweries",
+        "Giving a reduced Climate Change Levy rate in exchange for the sector meeting agreed energy-efficiency targets",
+        "Replacing the need for an energy audit entirely",
+        "Applying automatically to every business regardless of sector",
+      ],
+      answer: 1,
+      explanation: "A CCA is a sector-negotiated agreement trading a lower CCL rate for meeting efficiency targets — eligibility and terms should always be checked current for the specific site.",
+    },
+  ],
+
+  "brewery-efficiency-check": [
+    {
+      question: "Vapour condensing (recovering heat from the wort boil's evaporated water) and wort-cooling heat recovery (recovering heat from the cooled wort afterward) are:",
+      options: [
+        "The same project under two different names",
+        "Two independent opportunities that recover heat at different points in the process, so their savings add rather than compete",
+        "Mutually exclusive — only one can ever be installed",
+        "Not worth pursuing in a brewery of any size",
+      ],
+      answer: 1,
+      explanation: "One captures latent heat leaving as vapour during the boil; the other captures heat leaving as hot water afterward — genuinely separate recovery points.",
+    },
+    {
+      question: "Breweries often suit CHP (combined heat and power) unusually well because:",
+      options: [
+        "They have no electrical demand at all",
+        "They typically need steam/hot water and electricity simultaneously and fairly continuously — a load profile CHP economics favour",
+        "CHP is mandatory for food and drink businesses",
+        "Breweries never use any heat",
+      ],
+      answer: 1,
+      explanation: "A steady, simultaneous heat-and-power demand (unlike a weather-driven building load) is exactly the profile that makes a CHP business case work well.",
+    },
+    {
+      question: "Running one shared glycol loop at the coldest temperature any user needs (e.g. conditioning) means:",
+      options: [
+        "Every user gets exactly the temperature it needs, with no waste",
+        "Users needing a warmer temperature (e.g. fermentation) are cooled by unnecessarily cold glycol, costing more energy than a correctly-matched loop would",
+        "The plant automatically becomes more efficient",
+        "Nothing changes regardless of loop design",
+      ],
+      answer: 1,
+      explanation: "Making colder glycol always costs more per the COP relationship — supplying warmer-temperature users from an unnecessarily cold shared loop wastes that extra cost on them too.",
+    },
+    {
+      question: "Before proposing a new free-cooling system for a glycol chiller, you should first check whether:",
+      options: [
+        "The plant already has free-cooling capability that's simply unused or disabled",
+        "Free cooling is illegal in the UK",
+        "The brewery has ever heard of the concept",
+        "It's cheaper to just buy a second chiller",
+      ],
+      answer: 0,
+      explanation: "Some plants are free-cooling-capable but never commissioned to use it, or had it disabled after a fault — recommissioning existing capability is usually far cheaper than adding new equipment.",
+    },
+    {
+      question: "A glycol chiller's condenser becomes fouled. What is the direct effect on the fermentation jacket it serves?",
+      options: [
+        "No effect — fouling only affects the compressor's electricity bill, not cooling capacity",
+        "The chiller can only deliver glycol at a warmer supply temperature, which reduces the jacket's cooling capacity by shrinking the temperature approach available",
+        "The jacket's cooling capacity increases",
+        "Fouling only matters for boilers, not refrigeration plant",
+      ],
+      answer: 1,
+      explanation: "A fouled condenser can't reject heat as effectively, forcing a warmer glycol supply temperature — which directly shrinks the approach temperature driving heat transfer in the jacket, cutting its real cooling capacity.",
+    },
+  ],
 };

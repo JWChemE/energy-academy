@@ -71,7 +71,7 @@ export default function Dashboard() {
         return {
           slug,
           title: f?.course.title ?? slug,
-          levelNumber: f?.level.number ?? 0,
+          levelNumber: f?.level.kind === "sector" ? 99 : (f?.level.number ?? 0),
           completed,
           total,
           pct: total ? Math.round((completed / total) * 100) : 0,

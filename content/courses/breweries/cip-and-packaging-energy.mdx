@@ -1,0 +1,37 @@
+Ask someone to name a brewery's energy uses and they'll say the boiler and the fridges. Few mention cleaning — yet CIP (clean-in-place) and pasteurisation are genuine, substantial, and easy-to-overlook hot-water demands, hiding in plain sight between the processes everyone does think of.
+
+## CIP: cleaning is a heating process
+
+Every vessel — mash tun, kettle, fermenter, conditioning tank, bright beer tank — is cleaned between uses with a CIP cycle: typically a pre-rinse, a hot caustic wash, a rinse, sometimes an acid wash, and a final rinse. The **hot caustic wash is the energy cost**: cleaning solution heated to around 75 °C to do its job effectively.
+
+For a 40 hL fermenter, cleaned with roughly 60 hL of caustic solution heated from 15 °C mains temperature to 75 °C:
+
+> Heat = 6,000 kg × 4.18 kJ/kg·K × 60 °C ÷ 3,600 = **418 kWh per CIP cycle**
+
+At 85% boiler efficiency, that's about 492 kWh of gas input per cycle. With 8 fermenters each cleaned roughly 26 times a year (a typical two-week vessel turnaround):
+
+> 208 cycles/year × 492 kWh ≈ **102,300 kWh/year** — for fermenter cleaning alone, before the brewhouse, conditioning tanks or packaging line are even counted.
+
+<Callout variant="key" title="CIP is a genuine significant energy use, not a rounding error">
+102,300 kWh/year is a real number worth ranking alongside the brewhouse and refrigeration loads from earlier in this course — and unlike those, it's very rarely sub-metered or separately tracked, so it hides inside the general gas bill unless someone specifically goes looking for it.
+</Callout>
+
+## Pasteurisation: where heat recovery already does most of the work
+
+Canned and bottled beer is usually flash-pasteurised — briefly heated to around 72 °C to stabilise it microbiologically, then cooled back down before packaging. Done naively, that would mean heating beer from cold storage (≈4 °C) all the way to 72 °C, then throwing that heat away on the way back down — a 68 °C swing, twice, for every litre packaged.
+
+In practice, a well-designed flash pasteuriser uses a **regenerative heat exchanger**: incoming cold beer is warmed by outgoing hot, already-pasteurised beer, recovering the vast majority of the heat before any external energy is added. At a typical 90% regeneration efficiency, the *net* heating duty the boiler actually has to supply is only 10% of the full swing:
+
+> Net ΔT = 68 °C × (1 − 0.90) = 6.8 °C, rather than the full 68 °C
+
+For a line running 3,000 L/hour, 6 hours a day, 250 days a year:
+
+> Net heat duty ≈ **22.7 kW**, giving about 34,000 kWh/year of process heat, or roughly **40,000 kWh/year of gas** at 85% boiler efficiency
+
+<Callout variant="tip" title="Without regeneration, this would be ten times worse">
+Strip out the regenerative exchanger and the same pasteuriser would need the full 68 °C swing rather than 6.8 °C — a tenfold increase, to roughly 400,000 kWh/year of gas. This is exactly the [heat exchanger effectiveness](/courses/waste-heat-recovery/heat-exchangers) principle from the waste heat recovery course, already built into standard packaging equipment. If you ever audit a pasteuriser and find its regenerative section fouled, bypassed, or removed, you've found a very large, very avoidable cost.
+</Callout>
+
+## The takeaway for an audit
+
+Both CIP and pasteurisation are process steps nobody thinks of as "heating," which is exactly why they're so often left off a first-pass energy review. Ask for CIP frequency and temperature, and check whether pasteurisation heat recovery is actually working as designed — these are two of the highest-value questions a brewery energy audit can ask that a simple walkthrough of the brewhouse and cellar would miss entirely.

@@ -7,23 +7,24 @@ import { useAuth } from "@/app/auth-context";
 import { mdxComponents } from "@/components/mdx";
 
 /**
- * Renders a gated (Level 2/3) lesson body. The text is never in the page HTML —
- * this component fetches it from /api/lesson with the user's access token. Signed
- * out, it shows a sign-in wall instead; the lesson title, summary and outline
- * (rendered by the page around this component) stay visible as a preview.
+ * Renders a gated (Level 2/3, or Sector) lesson body. The text is never in the
+ * page HTML — this component fetches it from /api/lesson with the user's
+ * access token. Signed out, it shows a sign-in wall instead; the lesson title,
+ * summary and outline (rendered by the page around this component) stay
+ * visible as a preview.
  */
 type State = "checking" | "loading" | "ready" | "locked" | "error";
 
 export default function GatedLesson({
   course,
   lesson,
-  levelNumber,
+  levelLabel,
   levelTitle,
   summary,
 }: {
   course: string;
   lesson: string;
-  levelNumber: number;
+  levelLabel: string;
   levelTitle: string;
   summary: string;
 }) {
@@ -69,7 +70,7 @@ export default function GatedLesson({
   }
 
   if (state === "locked") {
-    return <Wall levelNumber={levelNumber} levelTitle={levelTitle} summary={summary} />;
+    return <Wall levelLabel={levelLabel} levelTitle={levelTitle} summary={summary} />;
   }
 
   if (state === "error") {
@@ -96,11 +97,11 @@ function Skeleton() {
 }
 
 function Wall({
-  levelNumber,
+  levelLabel,
   levelTitle,
   summary,
 }: {
-  levelNumber: number;
+  levelLabel: string;
   levelTitle: string;
   summary: string;
 }) {
@@ -110,13 +111,13 @@ function Wall({
         🔒
       </div>
       <span className="mt-4 inline-block rounded-full bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-800">
-        Level {levelNumber} · {levelTitle}
+        {levelLabel} · {levelTitle}
       </span>
       <h2 className="mt-3 text-xl font-bold text-slate-900">Create a free account to read this lesson</h2>
       <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600">{summary}</p>
       <p className="mx-auto mt-3 max-w-md text-sm text-slate-500">
-        Level 1 is open to everyone. A free account unlocks all of Level 2 &amp; 3 — every lesson,
-        quiz and interactive capstone.
+        Level 1 is open to everyone. A free account unlocks all of Level 2 &amp; 3, and every Sector
+        — every lesson, quiz and interactive capstone.
       </p>
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <Link

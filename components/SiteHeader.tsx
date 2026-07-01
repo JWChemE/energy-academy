@@ -48,6 +48,12 @@ export function SiteHeader() {
               {level.title}
             </Link>
           ))}
+          <Link
+            href="/sectors"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+          >
+            <span className="text-slate-400">🏭</span> Sectors
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
