@@ -129,9 +129,12 @@ export default function PrivacyPolicy() {
 
       <h2>How long we keep it</h2>
       <p>
-        We keep your account and learning data for as long as your account is active. If you close your
-        account or ask us to delete your data, we will delete it within [RETENTION PERIOD, e.g. 30 days],
-        except where we must keep some information to meet a legal obligation.
+        We keep your account and learning data for as long as your account is active. When you delete
+        your account (from your profile page) or ask us to delete your data, your account, profile,
+        learning progress, quiz results and consent records are deleted immediately, and any residual
+        copies clear from our provider&apos;s encrypted backups within 30 days. We may retain a minimal
+        record for longer only where we must meet a legal obligation (for example, evidence that a
+        marketing consent was withdrawn).
       </p>
 
       <h2>Your rights</h2>

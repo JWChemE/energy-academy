@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { AuthProvider } from "@/app/auth-context";
 import { ProgressProvider } from "@/app/progress-context";
 import CookieConsent from "@/components/CookieConsent";
+import { SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,12 +19,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Energy Academy — Learn Energy Management",
     template: "%s · Energy Academy",
   },
   description:
     "Learn energy management across three tiers: foundations for everyone, technical deep dives system by system, and leadership for driving change.",
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_GB",
+    title: "Energy Academy — Learn Energy Management",
+    description:
+      "Learn energy management across three tiers: foundations for everyone, technical deep dives system by system, and leadership for driving change.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Energy Academy — Learn Energy Management",
+    description:
+      "Structured energy-management training: foundations, system deep dives, leadership and sector courses.",
+  },
 };
 
 export default function RootLayout({

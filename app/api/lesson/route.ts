@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
 import { getLessonContext, getLessonSource } from "@/lib/content";
+import { rateLimit } from "@/lib/rateLimit";
 
 /**
  * Authenticated lesson content endpoint.
@@ -16,6 +17,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
+  // Generous for real readers (a lesson fetch per page view), tight enough to
+  // blunt bulk scraping and MDX-serialisation abuse.
+  if (!rateLimit(req, "lesson", 60, 60_000)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { searchParams } = new URL(req.url);
   const course = searchParams.get("course");
   const lesson = searchParams.get("lesson");

@@ -21,12 +21,19 @@ export default function GatedLesson({
   levelLabel,
   levelTitle,
   summary,
+  preview,
 }: {
   course: string;
   lesson: string;
   levelLabel: string;
   levelTitle: string;
   summary: string;
+  /**
+   * Short lead-paragraph excerpt, extracted server-side. Rendered while the
+   * lesson is locked/loading (so it's in the server HTML for crawlers and
+   * signed-out visitors), and replaced by the full body once it arrives.
+   */
+  preview?: string;
 }) {
   const { user, session, loading } = useAuth();
   const [state, setState] = useState<State>("checking");
@@ -66,11 +73,21 @@ export default function GatedLesson({
   }, [loading, user, session, course, lesson]);
 
   if (loading || state === "checking" || state === "loading") {
-    return <Skeleton />;
+    return (
+      <>
+        <Preview text={preview} />
+        <Skeleton />
+      </>
+    );
   }
 
   if (state === "locked") {
-    return <Wall levelLabel={levelLabel} levelTitle={levelTitle} summary={summary} />;
+    return (
+      <>
+        <Preview text={preview} />
+        <Wall levelLabel={levelLabel} levelTitle={levelTitle} summary={summary} />
+      </>
+    );
   }
 
   if (state === "error") {
@@ -82,6 +99,20 @@ export default function GatedLesson({
   }
 
   return <MDXRemote {...mdx!} components={mdxComponents} />;
+}
+
+/** The indexable lead-paragraph teaser, with a fade into the wall below. */
+function Preview({ text }: { text?: string }) {
+  if (!text) return null;
+  return (
+    <div className="relative mb-6" aria-label="Lesson preview">
+      <p>{text}</p>
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-50 to-transparent"
+        aria-hidden
+      />
+    </div>
+  );
 }
 
 function Skeleton() {

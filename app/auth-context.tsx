@@ -20,6 +20,13 @@ interface User {
   marketing_consent_at?: string | null;
 }
 
+export interface CommsChoices {
+  comms_updates: boolean;
+  comms_newsletter: boolean;
+  comms_consulting: boolean;
+  comms_events: boolean;
+}
+
 interface AuthContextType {
   user: User | null;
   session: Session | null;
@@ -28,7 +35,7 @@ interface AuthContextType {
     email: string,
     password: string,
     fullName: string,
-    marketingOptIn?: boolean
+    comms?: Partial<CommsChoices>
   ) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -68,21 +75,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   async function fetchUser(userId: string) {
-    console.log('Fetching user:', userId);
     const { data, error } = await supabase
       .from('users')
       .select('*')
       .eq('id', userId)
       .single();
 
-    console.log('User fetch response:', { data, error });
-    if (error) {
-      console.error('Failed to fetch user - Full error:', error);
-      console.error('Error message:', error?.message);
-      console.error('Error code:', error?.code);
-    }
     if (data) {
       setUser(data as User);
+    } else {
+      // The session is valid but the profile row couldn't be read (an RLS
+      // problem, or the trigger hasn't created the row yet). Don't strand
+      // the user in a broken half-signed-in state: fall back to a minimal
+      // user built from the auth session. Server-side gates (the lesson API)
+      // validate the token themselves and don't rely on this object.
+      if (error) console.error('Profile fetch failed:', error.message);
+      const { data: sess } = await supabase.auth.getSession();
+      const au = sess.session?.user;
+      if (au) {
+        setUser({
+          id: au.id,
+          email: au.email ?? '',
+          full_name: (au.user_metadata?.full_name as string) || undefined,
+          role: 'student',
+          subscription_status: 'free',
+        });
+      }
     }
     setLoading(false);
   }
@@ -91,21 +109,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     email: string,
     password: string,
     fullName: string,
-    marketingOptIn = false
+    comms: Partial<CommsChoices> = {}
   ) {
     // The public.users row (and any signup consent) is created by the
     // `handle_new_user` database trigger from this metadata — robust and not
-    // dependent on a client-side insert succeeding.
+    // dependent on a client-side insert succeeding. Each stream is a separate,
+    // freely-given consent (UK GDPR/PECR); all default to false.
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        // Where the confirmation email's link lands. Must also be listed in
+        // Supabase → Authentication → URL Configuration → Redirect URLs.
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
         data: {
           full_name: fullName,
-          comms_updates: marketingOptIn,
-          comms_newsletter: marketingOptIn,
-          comms_consulting: marketingOptIn,
-          comms_events: marketingOptIn,
+          comms_updates: comms.comms_updates ?? false,
+          comms_newsletter: comms.comms_newsletter ?? false,
+          comms_consulting: comms.comms_consulting ?? false,
+          comms_events: comms.comms_events ?? false,
         },
       },
     });

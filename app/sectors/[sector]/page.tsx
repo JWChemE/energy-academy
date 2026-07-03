@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Sector: ${sector.title}`,
     description: sector.description,
+    alternates: { canonical: `/sectors/${slug}` },
   };
 }
 

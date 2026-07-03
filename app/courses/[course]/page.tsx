@@ -7,6 +7,7 @@ import {
   getCourseLessons,
   getCourseStats,
 } from "@/lib/content";
+import { SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 
 type Props = { params: Promise<{ course: string }> };
 
@@ -18,7 +19,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { course: slug } = await params;
   const found = getCourse(slug);
   if (!found) return {};
-  return { title: found.course.title, description: found.course.summary };
+  return {
+    title: found.course.title,
+    description: found.course.summary,
+    alternates: { canonical: `/courses/${slug}` },
+    openGraph: {
+      title: found.course.title,
+      description: found.course.summary,
+      url: `/courses/${slug}`,
+    },
+  };
 }
 
 export default async function CoursePage({ params }: Props) {
@@ -34,8 +44,30 @@ export default async function CoursePage({ params }: Props) {
   const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
   const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
+  // schema.org Course markup — helps search engines show this as a course.
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: course.summary,
+    url: `${SITE_URL}/courses/${course.slug}`,
+    provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    isAccessibleForFree: level.kind !== "sector" && level.number === 1,
+    ...(available && {
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "online",
+        courseWorkload: `PT${totalMinutes}M`,
+      },
+    }),
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+      />
       {/* Header */}
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">

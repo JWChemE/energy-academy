@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Level ${level.number}: ${level.title}`,
     description: level.description,
+    alternates: { canonical: `/levels/${slug}` },
   };
 }
 

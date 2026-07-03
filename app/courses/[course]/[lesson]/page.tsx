@@ -8,6 +8,7 @@ import {
   getLessonContext,
   getLessonSource,
 } from "@/lib/content";
+import { lessonExcerpt } from "@/lib/excerpt";
 import { mdxComponents } from "@/components/mdx";
 import GatedLesson from "@/components/GatedLesson";
 import LessonOutline from "@/components/LessonOutline";
@@ -26,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${ctx.lesson.title} — ${ctx.course.title}`,
     description: ctx.lesson.summary,
+    alternates: { canonical: `/courses/${course}/${lesson}` },
+    openGraph: {
+      title: ctx.lesson.title,
+      description: ctx.lesson.summary,
+      url: `/courses/${course}/${lesson}`,
+      type: "article",
+    },
   };
 }
 
@@ -40,9 +48,11 @@ export default async function LessonPage({ params }: Props) {
   // Level 1 is free and rendered statically (public, indexable). Levels 2 & 3,
   // and all Sectors, are gated: their body is fetched client-side from an
   // authenticated API, so the text is never baked into this page's HTML for
-  // signed-out visitors.
+  // signed-out visitors — except a short lead-paragraph excerpt, rendered
+  // statically so the page is indexable and gives visitors a real taste.
   const gated = level.kind === "sector" || level.number > 1;
   const source = gated ? null : await getLessonSource(course, lesson);
+  const preview = gated ? lessonExcerpt(await getLessonSource(course, lesson)) : "";
   const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
   const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
@@ -114,6 +124,7 @@ export default async function LessonPage({ params }: Props) {
               levelLabel={levelLabel}
               levelTitle={level.title}
               summary={ctx.lesson.summary}
+              preview={preview}
             />
           ) : (
             <MDXRemote
