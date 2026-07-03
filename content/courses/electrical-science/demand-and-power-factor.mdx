@@ -1,35 +1,50 @@
-Your electricity bill has two main charges: **energy (kWh)** and **demand (kW)**. Managing demand is often a bigger lever than managing total kWh.
+A business electricity bill is not just a price per unit. For any site above domestic scale, the bill also charges for *how fast* electricity is taken and *how much capacity* is reserved, and those charges respond to different actions than the kWh line does. Plenty of sites have cut consumption and been puzzled that the bill barely moved; the answer is usually in the demand-related lines this lesson explains.
 
-## How demand charges work
+## The anatomy of a larger site's bill
 
-Utilities measure your peak power draw in fixed intervals (usually 30 minutes). The **highest 30-minute peak in the month** sets your demand charge for that month.
+Four elements matter for energy management:
 
-If your peak is 100 kW in any 30-minute window, you're charged for 100 kW all month, even if you're usually at 50 kW.
+- **Unit charges (per kWh):** the energy itself, possibly split into day, night and evening/weekend rates. Reduced by using less or shifting use to cheaper periods.
+- **Standing and fixed charges:** per-day amounts largely independent of behaviour.
+- **Availability or capacity charges (per kVA):** larger sites agree a maximum supply capacity with the network, and pay monthly for every kVA of it, used or not. This is where the [power factor lesson](/courses/electrical-science/power-factor) lands on the bill, because capacity is measured in kVA, froth included.
+- **Maximum demand charges (per kW or kVA):** some tariffs charge for the highest half-hourly demand recorded in the month, so a single energetic half hour can set a charge for the whole period.
 
-Example: A 500 kW peak in January = ~£5,000–10,000/month depending on your contract. Cut the peak to 450 kW and you save ~£500–1,000/month.
+Network (distribution) charges also vary by time of day on many tariffs, with short expensive peak windows on weekday evenings, so the same kWh can carry very different network costs depending on when it is drawn.
 
-## Why this matters
+<WorkedExample title="right-sizing an agreed capacity">
+  <Given>
+    - A site's agreed capacity: 500 kVA, charged at £1.50 per kVA per month
+    - Half-hourly data shows the site has not exceeded 400 kVA in two years
+    - A sensible planning margin suggests 425 kVA would be safe
+  </Given>
+  <Find>The current annual capacity cost and the saving from re-declaring.</Find>
+  <Solution>
+    Current cost = 500 × £1.50 × 12 = **£9,000 a year**.
 
-A single event — all compressors or HVAC units starting simultaneously — can spike demand and cost you thousands for the whole billing period.
+    Reducing to 425 kVA saves (500 − 425) × £1.50 × 12 = **£1,350 a year**, for a
+    paperwork exercise with the network operator. The check the other way matters too:
+    exceeding agreed capacity brings penalty rates and, at worst, connection issues, so
+    the margin should be evidence-based, not guessed.
+  </Solution>
+</WorkedExample>
 
-## Practical demand-management tactics
+## Managing demand, not just consumption
 
-1. **Load shifting** — spread start-ups. Stagger boiler firing, start compressors one at a time, delay non-essential equipment.
-2. **Reduce peak loads** — turn off non-essential equipment during peak hours (typically 8am–8pm in summer).
-3. **Improve power factor** — reduces apparent power (kVA), which utilities sometimes charge for alongside kW.
-4. **Energy storage** — charge a thermal store or battery at off-peak, discharge at peak. Smooths the load.
+Because peaks are charged, flattening the site's load profile is worth money independent of total kWh:
 
-Cost of implementing: £2,000–5,000 for controls to stagger loads. Savings: £5,000–20,000/year depending on your peak. Payback: often under 1 year.
+- **Stagger starts.** Motors, chillers and heaters all starting at 8:00 sharp create a peak no production requirement actually needs. Sequencing starts over half an hour can trim the monthly maximum.
+- **Shift discretionary load.** Anything tolerant of timing (water heating, charging, some batch processes) belongs outside the expensive network windows and off the site's own peak.
+- **Watch the coincidence.** Maximum demand is set by what runs *simultaneously*. The question is never "what is our biggest load?" but "which combination produces our peak half hour?", and half-hourly data answers it precisely.
+- **Correct the power factor.** Since capacity and many demand charges are in kVA, correction from 0.80 to 0.95 cuts those lines by roughly 16% at a stroke, exactly the 500-to-421 kVA arithmetic from the power factor lesson.
 
-<Callout variant="key" title="Demand management is often more valuable than energy reduction">
-Cutting peak demand by 10 kW saves ~£1,000/month. Cutting total energy by 10% (say, 5,000 kWh) saves ~£500/month at typical rates. Peak is more valuable.
+<Callout variant="key" title="Two different games on one bill">
+Energy charges reward using fewer kWh. Demand and capacity charges reward using them *evenly and with a good power factor*. The interventions are different, the evidence is different (annual totals versus half-hourly peaks), and a complete electrical cost strategy plays both games. Sites that only chase kWh routinely leave the demand lines, often 20 to 40% of the bill, untouched.
 </Callout>
 
-## Checking your bill
+Everything in this lesson depends on knowing the site's half-hourly shape, which is a metering question. The final lesson covers what the meters can tell you and how to build the monitoring habit around them.
 
-Look at:
-- **kWh** used (bottom of the bill)
-- **Demand** or **kW** peak (often labeled as "maximum demand" or "contracted capacity")
-- **Power factor charge** (if you have one; it's often hidden as a % adjustment to kWh rates)
+## Sources and further reading
 
-If your facility runs 24/7, demand management is less valuable (you're always at high load). If it's office hours only, demand spikes are common and very worth managing.
+- [Ofgem: network charging](https://www.ofgem.gov.uk/energy-policy-and-regulation) on how distribution and capacity charges are structured.
+- [Energy Networks Association](https://www.energynetworks.org/) for the distribution network operators who administer agreed capacities.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on demand management for organisations.

@@ -1,44 +1,49 @@
-Most buildings use **alternating current (AC)**, not DC. Understanding the difference, and why, matters for energy management.
+Batteries produce direct current. The grid delivers alternating current. Most modern equipment, from laptops to LED lights to variable-speed motors, secretly wants direct current again and converts the supply the moment it arrives. Understanding why the grid alternates, and what all that conversion means for efficiency, gives an energy manager a surprisingly practical mental model of every device on site.
 
-## AC vs DC: the core difference
+## Two kinds of flow
 
-**DC (direct current):** voltage and current flow in one direction only. Batteries deliver DC. Constant value over time.
+**Direct current (DC)** flows steadily in one direction, like water in a river. A battery does this: current runs from one terminal to the other at a constant push. It is simple and easy to reason about.
 
-**AC (alternating current):** voltage and current oscillate back and forth, reversing direction many times per second (50 times per second in the UK — 50 Hz).
+**Alternating current (AC)** reverses direction rhythmically. The voltage rises, falls, and swaps polarity in a smooth wave, and the current sloshes back and forth with it, like a tide rather than a river. In the UK the wave completes 50 full cycles every second (50 hertz), which means the current changes direction 100 times a second. Nothing seems to move overall, yet energy is delivered continuously, the same way you can warm your hands by rubbing them back and forth without your hands going anywhere.
 
-## Why buildings use AC
+## Why the grid alternates: the transformer
 
-1. **Transformers work only on AC**. To step voltage up or down efficiently, you need AC. High-voltage transmission (e.g., 400 kV) can reduce cable losses; transformers drop it back to 230 V for use. DC has no equivalent.
-2. **AC motors are simpler and more reliable** than DC motors. No brushes, less maintenance. Most industrial and HVAC motors are AC.
-3. **Distribution is efficient**. AC's ability to be transformed means power can travel long distances at high voltage (low current, low losses), then stepped down for use.
+AC won the historical argument for one reason: **transformers**. A transformer changes AC voltage up or down with no moving parts and very high efficiency, and it simply does not work on DC. That matters because of how transmission losses behave. The heat lost in a cable rises with the *square* of the current, and for a given power, higher voltage means proportionally lower current. So the grid steps voltage up to send power across the country with thin, economical cables, then steps it back down to safe levels near the user.
 
-## The RMS value
+<WorkedExample title="why transmission voltage matters so much">
+  <Given>
+    - 100 kW must be delivered down a long cable
+    - Option A: send it at 230 V. Option B: send it at 11,000 V (11 kV)
+    - Cable heat loss is proportional to current squared
+  </Given>
+  <Find>The currents involved, and how the losses compare.</Find>
+  <Solution>
+    At 230 V: current = 100,000 ÷ 230 ≈ **435 A**. At 11 kV: current = 100,000 ÷ 11,000 ≈
+    **9.1 A**.
 
-AC voltage varies sinusoidally: V(t) = V_peak × sin(2πft). But the **RMS (root mean square)** value is what we use in calculations.
+    The loss ratio is (11,000 ÷ 230)² ≈ **2,287 times lower** at 11 kV, for the same power
+    delivered. This single piece of arithmetic is why pylons run at hundreds of thousands
+    of volts, why large sites take their supply at 11 kV, and why AC, with its easy voltage
+    changing, built the modern grid.
+  </Solution>
+</WorkedExample>
 
-RMS is defined so that an AC signal at RMS voltage delivers the same power as a DC signal at that voltage.
+## Where DC lives now
 
-For a sinusoidal wave: V_RMS = V_peak / √2 ≈ 0.707 × V_peak
+DC never went away; it moved inside the equipment. Electronics, LED lighting, battery storage, solar panels and electric vehicles are all DC territory, and each needs a converter at its boundary with the AC world: a **rectifier** to turn AC into DC, or an **inverter** to turn DC back into AC. A variable-speed drive on a motor does both in one box, rectifying the incoming AC and then synthesising a new AC waveform at whatever frequency the motor speed requires, which is how the [drives covered in the motors course](/courses/motors-and-drives/why-vfds) achieve their savings.
 
-**Example:** UK mains is 230 V RMS. The peak voltage is 230 × √2 ≈ 325 V.
-
-When you see "230 V" on a label or meter, that's RMS. Use it directly in calculations; don't try to adjust for the sine wave.
-
-<Callout variant="key" title="RMS is the standard for AC measurements">
-All AC voltage and current values are RMS unless otherwise stated. A 5 A meter reading means 5 A RMS, which delivers the same power as 5 A DC would.
+<Callout variant="key" title="Every conversion has a toll">
+Each AC-to-DC or DC-to-AC step wastes a few percent as heat. One conversion is unremarkable; a chain of them adds up. A solar array (DC) feeding an inverter (to AC), charging a battery through a rectifier (back to DC), discharging through an inverter again (AC), to power a laptop's own power supply (DC again) can lose a meaningful slice of the energy along the way. When comparing system designs, count the conversions: fewer boxes between source and load nearly always means better efficiency.
 </Callout>
 
-## Frequency and benefits
+## What an energy manager takes from this
 
-UK frequency is **50 Hz** (Europe-wide standard). The US uses 60 Hz.
+Three practical habits follow. First, expect anything electronic to be a converter in disguise, warm to the touch for exactly that reason. Second, treat conversion equipment (UPS systems, drives, large rectifiers) as loads worth metering, because their losses run whenever they are energised. Third, when site voltage problems or equipment overheating come up, remember the square law: small increases in current mean disproportionately more heat in every cable and connection carrying it.
 
-At 50 Hz, a synchronous motor's speed is naturally related to frequency: a 2-pole motor runs at 3,000 rpm, a 4-pole at 1,500 rpm. This "free" speed control is handy for fixed-speed equipment.
+The next lesson tackles the AC-specific idea with the most money attached: why some of the current a site draws does no useful work at all, and what power factor means on a bill.
 
-Variable-frequency drives (VFDs) change the AC frequency to vary motor speed — a key energy management tool.
+## Sources and further reading
 
-## Practical implications
-
-- **AC lets transformers work** — essential for efficient long-distance distribution
-- **AC motors dominate** — boiler pumps, fan motors, compressor motors are almost always AC
-- **RMS values** are what you measure and use; the sine wave is handled automatically by the meter
-- **Frequency stability** is important — power grids maintain ±0.5 Hz to keep motors and controls running correctly
+- [National Grid: how electricity transmission works](https://www.nationalgrid.com/stories/energy-explained) explains the high-voltage grid for non-specialists.
+- [The IET](https://electrical.theiet.org/) for accessible material on AC supply and wiring in the UK.
+- [Energy Networks Association](https://www.energynetworks.org/) on how regional distribution networks deliver power to sites.

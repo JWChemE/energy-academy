@@ -1,47 +1,53 @@
-In AC systems, not all current is doing useful work. Some is **reactive** — oscillating back and forth without transferring energy. Power factor is the ratio of real (useful) to apparent (total) power, and improving it saves money.
+On an AC system, a site can draw more current than the useful work it performs can explain. The extra current is not stolen and not wasted as heat on site; it flows back and forth doing something necessary but unproductive, and the network still has to carry it. Power factor is the number that measures how much of what you draw is doing real work, and because networks charge for carrying the unproductive part, it is one of the few electrical concepts with its own line on the bill.
 
-## Real vs reactive power
+## Real, reactive and apparent power
 
-**Real power (P)** measured in watts: the power that does actual work (heating, light, motion).
+Motors, transformers and anything with a coil need a magnetic field to operate. Building and collapsing that field 50 times a second takes current that surges into the device and back out again, transferring no net energy. This gives AC systems three related quantities:
 
-**Reactive power (Q)** measured in VArs (volt-amps reactive): power that oscillates back and forth, driven by inductive and capacitive loads.
+- **Real power (kW):** the power doing actual work: turning shafts, making light and heat. This is what the [first lesson](/courses/electrical-science/voltage-current-power) called power.
+- **Reactive power (kVAr):** the back-and-forth flow sustaining magnetic fields. Necessary for the equipment, useless as output.
+- **Apparent power (kVA):** the total the network must be sized to carry, combining both.
 
-**Apparent power (S)** measured in VA: the total current × voltage = √(P² + Q²)
+The classic analogy is a glass of beer. The liquid is real power, the froth is reactive power, and the glass must be big enough for both. **Power factor** is the ratio of liquid to glass:
 
-**Power factor (PF)** = P / S = cosine of the phase angle between voltage and current.
+> Power factor = real power (kW) ÷ apparent power (kVA)
 
-For a resistive load (heater), current and voltage are in phase: PF = 1.0 (100%).
-For an inductive load (motor), current lags voltage: PF < 1.0.
+A power factor of 1.0 means every amp does useful work. Typical uncorrected industrial sites sit between 0.7 and 0.9, dragged down mainly by lightly loaded motors.
 
-## Why poor power factor costs money
+<WorkedExample title="what a poor power factor costs in capacity">
+  <Given>
+    - A site's real load: 400 kW
+    - Its power factor: 0.80
+    - Its supply is charged and sized in kVA
+  </Given>
+  <Find>The apparent power drawn, and what improving to 0.95 would free up.</Find>
+  <Solution>
+    Apparent power = 400 ÷ 0.80 = **500 kVA**.
 
-When PF is low (say, 0.7), you draw more current to deliver the same real power. Extra current means:
-- **Larger cables and switchgear** needed
-- **I² R losses in wiring** (copper loss is proportional to current squared)
-- **Utility penalties**: most commercial meters charge for kVA, not just kW. Low PF means you're charged for reactive power you're not using.
+    At a power factor of 0.95: 400 ÷ 0.95 ≈ **421 kVA**.
 
-<Callout variant="key" title="Power factor < 1 is expensive">
-A 100 kW motor at PF 0.85 draws apparent power of 100 / 0.85 = 118 kVA. At PF 0.95, it's 105 kVA. The utility charges for the higher value.
+    Correction frees about **79 kVA** of supply capacity without removing a single load.
+    The reactive component falls from 300 kVAr to about 131 kVAr. Same work done, a
+    substantially smaller electrical footprint.
+  </Solution>
+</WorkedExample>
+
+## Why it costs money
+
+Poor power factor is charged in up to three ways, depending on the tariff. Larger sites pay for their agreed supply **capacity in kVA**, so froth occupies capacity you are paying to reserve. Many tariffs add explicit **reactive power charges** once the kVArh drawn passes a threshold (commonly when power factor drops below about 0.95). And the extra current causes real, if modest, additional heating losses in the site's own cables and transformers. There is also a hard limit: a site near its agreed capacity may be refused new connections, and correction is often far cheaper than a supply upgrade.
+
+## How correction works
+
+The fix is elegantly passive. Capacitors draw reactive power in the *opposite* sense to motors and coils, so a capacitor bank sized to the site's reactive load cancels most of the froth locally. The reactive current then circulates between the capacitors and the motors instead of flowing through the meter and up the network. Automatic banks switch capacitance in steps as load changes, holding the site near a target power factor. Correction equipment is a mature, low-maintenance technology, and where reactive charges or kVA headroom are real problems, paybacks of one to three years are common; the site's actual half-hourly data and tariff make that case precisely, as the [demand lesson](/courses/electrical-science/demand-and-power-factor) later in this course shows.
+
+<Callout variant="key" title="Power factor saves charges, not energy">
+Be precise about what correction buys, because overstating it undermines credibility. It reduces kVA demand, reactive charges and cable losses; it does not meaningfully reduce the kWh your equipment consumes to do its work. The kettle boils no faster. Present it as a network-cost and capacity measure, sized from the bill, and the case stands on solid ground.
 </Callout>
 
-## Causes of low power factor
+With single-phase AC understood, the next module scales up to how real sites are actually supplied: three phases at once, and why that arrangement won.
 
-- **Induction motors and transformers** when lightly loaded or oversized
-- **Uncompensated reactive loads**
-- **Harmonic distortion** from VFDs, LED drivers, and switching power supplies
+## Sources and further reading
 
-## Improving power factor
-
-1. **Right-size motors** — oversized motors run at low load with poor PF
-2. **Capacitor banks** — add capacitors near inductive loads to cancel reactive power
-3. **Synchronous condensers** — rotary devices that inject reactive power
-4. **Active harmonic filters** — in facilities with heavy distortion
-
-Cost to install capacitors: £2,000–5,000 for a typical building. Savings: ~£500–1,000/year in reduced demand charges. Payback: 3–5 years.
-
-## Practical management
-
-- Check your utility bill — it will show demand (kVA or kW) and PF
-- If PF < 0.95, you're being charged for reactive power
-- Measure PF in key areas (motor rooms, HVAC plants) using a power-factor meter
-- A multi-meter or power analyser (£200–500) gives real-time PF
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) include practical guidance on power factor correction for organisations.
+- [The IET](https://electrical.theiet.org/) for technical grounding on reactive power and correction equipment.
+- [Ofgem: network charging](https://www.ofgem.gov.uk/energy-policy-and-regulation) on how distribution charges, including reactive elements, are structured.

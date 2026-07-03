@@ -393,18 +393,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Voltage, Current & Power",
                 summary: "Ohm's law, relationships between V, I, R, and how power is calculated.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "ac-vs-dc",
                 title: "AC vs DC",
                 summary: "Why buildings use AC, RMS values, and waveforms.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "power-factor",
                 title: "Power Factor & Reactive Power",
                 summary: "Real vs reactive power, why power factor matters, and how to improve it.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "ac-check",
@@ -423,12 +426,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "Three-Phase Basics",
                 summary: "Why three-phase is used, phase angles, and line vs phase voltages.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "three-phase-power",
                 title: "Power in Three-Phase Systems",
                 summary: "How to calculate power, and the advantages over single-phase.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "three-phase-check",
@@ -447,12 +452,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "Managing Demand & Power Factor",
                 summary: "How utilities charge for demand, and practical steps to reduce it.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "metering-and-monitoring",
                 title: "Metering & Electrical Monitoring",
                 summary: "What energy meters measure, power quality, and harmonic distortion.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "electrical-check",

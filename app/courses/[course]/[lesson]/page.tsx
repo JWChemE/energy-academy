@@ -9,6 +9,7 @@ import {
   getLessonSource,
 } from "@/lib/content";
 import { lessonExcerpt } from "@/lib/excerpt";
+import { AUTHOR, SITE_URL } from "@/lib/siteUrl";
 import { mdxComponents } from "@/components/mdx";
 import GatedLesson from "@/components/GatedLesson";
 import LessonOutline from "@/components/LessonOutline";
@@ -27,12 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${ctx.lesson.title} — ${ctx.course.title}`,
     description: ctx.lesson.summary,
+    authors: [{ name: AUTHOR.name, url: `${SITE_URL}/about` }],
     alternates: { canonical: `/courses/${course}/${lesson}` },
     openGraph: {
       title: ctx.lesson.title,
       description: ctx.lesson.summary,
       url: `/courses/${course}/${lesson}`,
       type: "article",
+      authors: [AUTHOR.name],
     },
   };
 }
@@ -111,6 +114,14 @@ export default async function LessonPage({ params }: Props) {
           <p className="mt-3 text-lg text-slate-600">{ctx.lesson.summary}</p>
           <p className="mt-3 text-sm text-slate-400">
             {ctx.lesson.minutes} min read
+            {" · "}
+            <Link
+              href="/about"
+              className="text-slate-500 underline decoration-slate-200 underline-offset-2 hover:text-slate-700"
+            >
+              {AUTHOR.name}
+            </Link>
+            , {AUTHOR.title}
             {ctx.lesson.reviewed && (
               <>
                 {" · "}

@@ -1,39 +1,64 @@
-Three-phase power calculations are straightforward if you remember the formula. It's the same concept as single-phase, just distributed across three lines.
+One formula turns a clamp meter reading at a panel into the power a machine is actually drawing, and it is the most-used piece of arithmetic in practical electrical energy work. This lesson builds the three-phase power calculation from the pieces the course has already covered, then applies it the way an energy manager actually would: estimating a motor's real consumption from a current reading, without trusting the nameplate.
 
-## The formula revisited
+## The formula
 
-**P = √3 × V_line × I_line × cos(φ)**
+For a balanced three-phase load, real power is:
 
-Where:
-- √3 ≈ 1.73
-- V_line is the voltage between two phase lines (400 V in UK)
-- I_line is the current in each line
-- cos(φ) is the power factor
+> P = √3 × V<sub>L</sub> × I<sub>L</sub> × PF
 
-If you measure two of these, you can find the third.
+where V<sub>L</sub> is the line-to-line voltage (400 V in the UK), I<sub>L</sub> is the current in each line, PF is the power factor from the [earlier lesson](/courses/electrical-science/power-factor), and √3 ≈ 1.732 is the same geometric factor that related 400 V to 230 V. Everything from the single-phase story carries over; the √3 simply accounts for three staggered phases sharing the work.
 
-## Example calculations
+<WorkedExample title="from clamp reading to kilowatts">
+  <Given>
+    - A three-phase supply at 400 V
+    - A clamp meter reads 100 A on each line
+    - The load's power factor is 0.85
+  </Given>
+  <Find>The real power being drawn.</Find>
+  <Solution>
+    P = 1.732 × 400 × 100 × 0.85 ≈ 58,890 W ≈ **58.9 kW**.
 
-**Example 1:** A motor on 400 V three-phase drawing 20 A per phase, PF 0.9.
-P = 1.73 × 400 × 20 × 0.9 = **12,456 W** ≈ **12.5 kW**
+    Note what ignoring power factor would do: 1.732 × 400 × 100 = 69.3 kVA of apparent
+    power. The 0.85 separates the work being done from the current being carried.
+  </Solution>
+</WorkedExample>
 
-**Example 2:** You have a 30 kW motor on 400 V, PF 0.85. What current?
-I = P / (√3 × V × PF) = 30,000 / (1.73 × 400 × 0.85) ≈ **51 A per phase**
+## The energy manager's version: what does this motor cost to run?
 
-## Balanced vs unbalanced loads
+Nameplates state what a motor can deliver, not what it is drawing right now. Real consumption depends on load, and the way to know it is to measure the current and work backwards. Two adjustments matter. First, a motor's nameplate rating is its *mechanical output*; the electrical input is higher by its inefficiency. Second, the running current tells you where it is operating.
 
-In a **balanced** system, all three phases have the same current. Power is smooth and you can use the simple formula.
+<WorkedExample title="a 15 kW motor, checked properly">
+  <Given>
+    - Nameplate: 15 kW output, 400 V, power factor 0.85, efficiency 90%
+    - You want its electrical draw at full load, and its annual cost at 4,000 running hours
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The input power, the expected full-load current, and the annual cost.</Find>
+  <Solution>
+    Input power = 15 ÷ 0.90 ≈ **16.7 kW** (the motor draws more than it delivers).
 
-In an **unbalanced** system (common in buildings where single-phase loads are split unevenly across phases), one phase carries more than others. This causes:
-- Neutral current (even though it should be zero)
-- Harmonic distortion
-- Heating in the neutral wire
-- Inefficiency
+    Expected full-load current = 16,700 ÷ (1.732 × 400 × 0.85) ≈ **28.3 A** per line.
 
-Most commercial buildings are reasonably balanced because they have many small loads spread across phases.
+    Annual cost = 16.7 kW × 4,000 h × £0.20 ≈ **£13,360 a year**. A clamp reading well
+    below 28 A says the motor is part-loaded; well above says overload or a problem.
+    Either way, the reading converts directly into kW and pounds with the same formula.
+  </Solution>
+</WorkedExample>
 
-## Energy from three-phase
+That £13,360 figure is why motor efficiency and control dominate industrial electricity strategy: a machine costing four figures a year to feed justifies real attention, and the [motors and drives course](/courses/motors-and-drives/why-vfds) shows how variable-speed control turns part-load operation into large savings.
 
-Energy (kWh) = Power (kW) × Time (hours), same as single-phase.
+## Balanced or not
 
-A 10 kW three-phase motor running 8 hours uses **80 kWh**.
+The formula assumes the three line currents are equal. In practice, read all three. Similar readings let you use the average with confidence. Distinctly unequal readings on a three-phase machine suggest a supply or winding problem worth an electrician's attention, and on a mixed panel they map how single-phase load is distributed, which the [previous lesson](/courses/electrical-science/three-phase-basics) flagged as a capacity and loss issue.
+
+<Callout variant="key" title="Current is the measurement; power is the conclusion">
+Current is cheap to measure non-invasively, which makes it the workhorse observation of electrical surveys. But amps alone mislead: without voltage and power factor they overstate small heavily-reactive loads and understate large well-corrected ones. The habit that keeps estimates honest is always the same multiplication: √3 × 400 × amps × power factor, then hours, then price.
+</Callout>
+
+The final module of this course moves from equipment to the bill itself: what a site pays for besides kilowatt hours, and how demand and metering shape the total.
+
+## Sources and further reading
+
+- [The IET](https://electrical.theiet.org/) for three-phase theory and measurement practice.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on motor and drive energy management.
+- [HSE: electrical safety at work](https://www.hse.gov.uk/electricity/) on safe measurement and who may perform it.

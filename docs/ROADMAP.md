@@ -23,11 +23,16 @@ content undermines its best. Nothing here needs new infrastructure.
 - [x] Last-reviewed date mechanism (manifest field, shown on lesson page) *(Jul 2026)*
 - [x] About page: the mission, editorial standards *(Jul 2026)*
 - [x] Terms of Use page *(Jul 2026)*
-- [ ] Custom domain purchased and configured (incl. NEXT_PUBLIC_SITE_URL,
-      Supabase redirect URLs)
+- [x] Custom domain purchased: energyacademyuk.org *(Jul 2026 — code fallback
+      updated; still to do in dashboards: point the domain at Vercel, set
+      NEXT_PUBLIC_SITE_URL, update Supabase Site URL + redirect URLs to
+      https://energyacademyuk.org/**)*
+- [ ] Google Search Console + Bing Webmaster Tools: verify the domain, submit
+      /sitemap.xml (five minutes, unlocks all search visibility data)
 - [ ] Fill identity placeholders: privacy policy + terms (organisation name,
       address, contact email, ICO number if registered)
-- [ ] Personal bio on the About page (who is behind this and why)
+- [x] Author identity: byline on every lesson, bio + Person structured data
+      on the About page, footer credit *(Jul 2026)*
 - [x] Rewrite Monitoring & Targeting course to the style-guide bar *(Jul 2026)*
 - [x] Rewrite UK Energy Regulation course to the style-guide bar *(Jul 2026)*
 
@@ -36,9 +41,17 @@ content undermines its best. Nothing here needs new infrastructure.
 Make it a reference, not just a course catalogue.
 
 **Content floor.** Rewrite the remaining pre-style-guide courses (avg words
-per lesson at review time; the bar is roughly 450+ of teaching prose with
-sources and a reviewed date). Order by how core the topic is to practitioners:
+per lesson at review time; the bar is roughly 600+ words of teaching prose
+with sources and a reviewed date; ~300 is the informal search-engine
+"thin content" floor).
 
+**SEO note on ordering (Jul 2026):** only Level 1 lesson bodies are fully
+public and indexable; gated courses expose ~120-word excerpts regardless of
+their true length. Public-and-thin therefore outranks gated-and-thin for
+rewrite priority. That put electrical-science (Level 1, 242 avg) to the top;
+the gated courses follow in practitioner-relevance order.
+
+- [x] electrical-science (242, Level 1 public) *(Jul 2026)*
 - [ ] energy-audits (241)
 - [ ] compressed-air (200)
 - [ ] steam-and-condensate (231)
@@ -48,7 +61,6 @@ sources and a reviewed date). Order by how core the topic is to practitioners:
 - [ ] control-systems-and-bms (187)
 - [ ] commissioning (190)
 - [ ] waste-heat-recovery (197)
-- [ ] electrical-science (242)
 - [ ] buildings-and-envelope (271)
 - [ ] insulation-systems (294)
 - [ ] lighting (305)

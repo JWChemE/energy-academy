@@ -1,40 +1,41 @@
-Most large buildings and all industrial sites use **three-phase AC**. It's more efficient and simpler than single-phase for high-power equipment.
+Walk into any plant room and the supply arriving at the main panel is not the single live wire of a domestic socket but three, working together. Three-phase power runs almost every commercial building and every industrial site, and the reasons are practical rather than historical: it delivers power more smoothly, uses less copper, and starts motors without help. This lesson explains what three-phase actually is, in plain terms, and decodes the numbers you will see on every UK nameplate: 230 V and 400 V.
 
-## Why three-phase?
+## Three waves, evenly spaced
 
-In single-phase AC, power oscillates: P = V × I × sin²(ωt). It dips to zero 50 times per second (at 50 Hz), causing flickering in lights and pulsing in motors.
+A single-phase AC supply is one voltage wave, rising and falling 50 times a second. At two moments in every cycle that wave passes through zero, so the power delivered pulses rather than flows steadily.
 
-In **three-phase**, three sine waves are 120° apart:
-- Phase A: 0°
-- Phase B: 120°
-- Phase C: 240°
+A three-phase supply is three such waves on three separate conductors, deliberately staggered by a third of a cycle each. When one phase is at zero, the other two are mid-swing. The result is that the *combined* power delivered never dips: something is always pushing. For anything converting electricity into rotation, that is the difference between a smooth pull and a series of jerks.
 
-They're offset so that power is delivered smoothly and constantly — no dips. P = 1.5 × V_phase × I × cos(φ) — constant!
+The three conductors are the **lines** (L1, L2, L3), and most supplies add a **neutral**, the return path that also lets single-phase loads hang off any one line.
 
-## Voltages and connections
+## Why sites use it
 
-**Phase voltage (V_phase)**: voltage between one phase and neutral (UK: ~230 V)
-**Line voltage (V_line)**: voltage between two phases = V_phase × √3 ≈ 400 V (UK standard)
+Three benefits explain its universality:
 
-In a **Y (star) connection**: neutral is the common point; phases are at 230 V from it.
-In a **Delta connection**: phases are 400 V apart with no neutral.
+- **Smooth, efficient power delivery.** Constant combined power means less vibration and stress in machines, and for the same power delivered, three-phase needs substantially less conductor material than the equivalent single-phase supply. Networks are cheaper to build in three-phase.
+- **Self-starting motors.** Three staggered phases create a naturally rotating magnetic field, so a three-phase motor starts and runs without any extra components. Single-phase motors need capacitors and starting mechanisms to fake this, which is why serious motors, effectively everything above a few kW, are three-phase. The [motors course](/courses/motors-and-drives/motor-basics) picks this up in depth.
+- **Flexibility.** Big loads connect across the three lines; small loads (sockets, lighting) connect between one line and neutral. One supply serves both.
 
-Most commercial buildings use **Y**: 400 V between phases, 230 V phase-to-neutral.
+## Decoding 230 V and 400 V
 
-## Power in three-phase
+UK low-voltage supplies quote two numbers, and they describe the same system measured two ways. Between any **line and neutral** you measure 230 V: that is what a socket sees. Between any **two lines** you measure 400 V. The two differ by a fixed factor, the square root of 3 (about 1.732), which comes from the geometry of three waves spaced a third of a cycle apart:
 
-Total power: **P = √3 × V_line × I_line × cos(φ)**
+> 400 V ÷ √3 ≈ 230.9 V
 
-or equivalently: **P = 3 × V_phase × I_phase × cos(φ)**
+So "a 400 V three-phase supply" and "230 V single-phase sockets" are the same installation. Nameplates on larger equipment quote 400 V because those machines connect across the lines; small appliances quote 230 V because they connect line to neutral.
 
-Example: A three-phase 400 V system with 10 A per phase and PF 0.95 delivers:
-P = √3 × 400 × 10 × 0.95 ≈ **6,600 W** (6.6 kW) from each phase, for a total of **19.8 kW**.
+<Callout variant="key" title="Balance matters">
+A three-phase supply works best when the load is spread evenly across the three lines. If one phase carries much more than the others, its cable and any shared neutral run hotter, voltage drops unevenly, and capacity is wasted: the supply is only as available as its most loaded phase. Checking phase balance, three clamp meter readings at the main panel, is one of the quickest health checks an energy manager can do, and unbalanced readings usually trace to how single-phase circuits were allocated over years of alterations.
+</Callout>
 
-## Advantages for motors and large loads
+<Callout variant="warning" title="Look, measure, but do not touch">
+Everything in this course supports reading nameplates, meters and clamp readings taken by competent persons. Work inside live panels is for qualified electricians operating under the site's safety rules. An energy manager's job is to know what the numbers mean, not to hold the screwdriver.
+</Callout>
 
-- **Smooth power delivery** — constant, no pulsing
-- **High torque** — motors start and run reliably
-- **Efficiency** — three-phase motors are 85–95% efficient; single-phase are 50–70%
-- **No neutral current** in a balanced system — saves wiring
+The next lesson adds the arithmetic: how to compute power in a three-phase system, and how to estimate what a motor really draws from a single current reading.
 
-This is why boiler pumps, HVAC fans, compressors, and industrial equipment are three-phase.
+## Sources and further reading
+
+- [The IET](https://electrical.theiet.org/) for accessible explanations of UK supply arrangements and wiring practice.
+- [Energy Networks Association](https://www.energynetworks.org/) on distribution network design and connection arrangements.
+- [HSE: electrical safety at work](https://www.hse.gov.uk/electricity/) for the legal framework around who may work on electrical systems.

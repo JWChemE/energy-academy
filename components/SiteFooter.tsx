@@ -48,7 +48,12 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-slate-100">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span>© {new Date().getFullYear()} Energy Academy. Built for learning.</span>
+          <span>
+            © {new Date().getFullYear()} Energy Academy · Written by{" "}
+            <Link href="/about" className="transition-colors hover:text-slate-700">
+              Jacob Willis
+            </Link>
+          </span>
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <Link href="/about" className="transition-colors hover:text-slate-700">
               About

@@ -1,5 +1,44 @@
-Your electricity meter shows what you're consuming. Modern meters measure kWh (energy), kW (power), power factor, and reactive power. Older meters just show kWh; newer ones transmit data wirelessly.
+Everything this course has covered, volts and amps, power factor, three-phase loads, demand charges, becomes manageable only when it is measured. This closing lesson maps the metering an energy manager actually has to work with on a UK site, what each layer can reveal, and how a first monitoring habit turns meter data into money.
 
-Data collection frequency matters: daily is basic, hourly is good for spotting anomalies. Install sub-meters (200-500 GBP each) on HVAC, lighting, and major loads to pinpoint waste.
+## The fiscal meter: the site's official record
 
-Power quality issues like harmonic distortion can waste energy and damage equipment. Plot consumption over time to find patterns, peaks, and anomalies.
+Every supply has a **fiscal meter**, the one the supplier bills from. On larger sites it records consumption every half hour, producing 48 readings a day and 17,520 a year, and this half-hourly (HH) data is the single most valuable free dataset in energy management. Suppliers provide it on request, often through an online portal. Modern fiscal metering also records the quantities earlier lessons introduced: maximum demand, and the reactive energy (kVArh) that reveals the site's power factor month by month. Smaller supplies increasingly have smart meters recording at similar resolution, so the same analysis is available well below industrial scale.
+
+The first habit with HH data costs nothing: look at one ordinary week as a chart. The working day should be visible as a plateau, nights and weekends as a floor. That floor is the **baseload**, and it is where investigations usually start.
+
+<WorkedExample title="pricing the overnight floor">
+  <Given>
+    - A site's half-hourly data shows the load never falls below 20 kW, even at 3 a.m. on Sundays
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>What the baseload costs per year, and why it deserves scrutiny.</Find>
+  <Solution>
+    20 kW × 8,760 hours = 175,200 kWh a year, costing about **£35,040**. Some of it is
+    legitimate (servers, fridges, security). The question worth a walkround on a quiet
+    evening is how much is not: ventilation serving empty rooms, compressors idling,
+    heaters left enabled. Sites doing this for the first time routinely find several kW
+    of the floor serves nobody, and each continuous kW wasted costs about £1,750 a year.
+  </Solution>
+</WorkedExample>
+
+## Sub-metering: seeing inside the total
+
+The fiscal meter lumps the whole site into one number. **Sub-meters** break it apart: a meter on the chiller plant, the compressed air system, a production line or a tenant area attributes consumption to the thing consuming it. Costs are modest (a few hundred pounds per point installed is typical), and modern units clamp around existing cables rather than requiring supply interruption.
+
+The guidance from the [meter data lesson](/courses/monitoring-and-targeting/meter-data) in the M&T course applies directly: sub-meter what you intend to manage, add points progressively where the whole-site analysis raises questions, and reconcile new meters against the fiscal record before trusting them. A handful of well-chosen sub-meters someone reviews weekly beats comprehensive coverage nobody looks at.
+
+## From meters to monitoring
+
+Data is only a saving when someone compares it to an expectation. The full discipline, baselines, normalisation for weather and activity, exception reports, is the subject of the [monitoring and targeting course](/courses/monitoring-and-targeting), which follows directly from this one. The starter version needs nothing but the HH portal and a spreadsheet: know your baseload, know your typical weekday peak, glance weekly, and ask "why?" whenever either moves. Most sites' first significant electrical finding comes from exactly that routine within a month or two of starting it.
+
+<Callout variant="key" title="The meter is the site's instrumentation, already installed">
+An energy manager inherits, free of charge, a measurement system recording the site's electrical behaviour every thirty minutes, together with demand and power factor history. Before any survey, any capital project or any consultant, the highest-value first step is simply claiming that data and looking at it. Everything else in electrical energy management builds on the habit.
+</Callout>
+
+That completes the electrical foundations: what the quantities mean, how AC systems behave, how three-phase sites are supplied and measured, and how the bill actually charges for it all. The course check that follows ties the threads together.
+
+## Sources and further reading
+
+- [Ofgem: getting your energy data](https://www.ofgem.gov.uk/energy-data-and-research) on rights of access to consumption data.
+- [GOV.UK: smart meters](https://www.gov.uk/government/collections/smart-meters) on the rollout and what the meters record.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for TM39 on metering strategy in buildings.

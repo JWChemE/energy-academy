@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AUTHOR, SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
   title: "About",
@@ -8,9 +9,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: AUTHOR.name,
+  jobTitle: AUTHOR.title,
+  url: `${SITE_URL}/about`,
+  worksFor: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+};
+
 export default function AboutPage() {
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <h1>About Energy Academy</h1>
 
       <p className="lead">
@@ -83,6 +97,16 @@ export default function AboutPage() {
           product.
         </li>
       </ul>
+
+      <h2>Who is behind this</h2>
+      <p>
+        Energy Academy is written and maintained by <strong>Jacob Willis</strong>,
+        a chemical engineer by training who works as a Net Zero Lead, helping
+        organisations cut their energy use and carbon emissions in practice.
+        The lessons here are the material he wishes had been affordable when he
+        was building the same skills: the physics, the numbers and the
+        judgement calls of real sites, written down properly.
+      </p>
 
       <h2>What this site is not</h2>
       <p>

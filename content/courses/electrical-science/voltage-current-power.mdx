@@ -1,70 +1,59 @@
-Electricity is everywhere in energy systems — powering motors, lighting, heaters, and controls. Before you can manage electrical energy, you need to understand the fundamentals: voltage, current, and power, and how they relate through Ohm's law.
+Every energy manager works with electricity, yet plenty of capable professionals reached their role without ever being taught what a volt actually is. This lesson fixes that from the ground up. No prior electrical knowledge is assumed: by the end you will know what voltage, current and resistance mean, how they connect through one simple law, and how they combine into power and cost, which is where energy management begins.
 
-## Voltage, current, and resistance
+## The water analogy
 
-**Voltage (V)** is the electrical pressure that pushes current around a circuit. Measured in volts.
+The easiest way into electricity is to picture water in a pipe.
 
-**Current (I)** is the flow of electrons. Measured in amperes (amps, A).
+**Voltage** is the pressure pushing the water along. It is measured in volts (V), and in the UK a standard socket supplies about 230 V. Higher voltage means a stronger push. On its own, though, pressure moves nothing: a closed tap has full pressure behind it and no flow.
 
-**Resistance (R)** is how much a component opposes the flow of current. Measured in ohms (Ω).
+**Current** is the flow itself: how much charge is actually moving. It is measured in amperes, always shortened to amps (A). A phone charger draws well under 1 A; a kettle draws about 13 A, which is why it gets the biggest fuse in the drawer.
 
-The relationship between them is **Ohm's law**:
+**Resistance** is how much the pipe fights the flow: a narrow pipe passes less water at the same pressure. It is measured in ohms (Ω). Every cable, heating element and appliance has resistance, and it is resistance that turns electrical energy into heat, deliberately in a kettle, wastefully in an undersized cable.
 
-> **V = I × R**
+## Ohm's law: the one equation to remember
 
-**Example:** If a heating element has 10 Ω of resistance and 20 amps of current flow through it, the voltage across it is 20 × 10 = 200 V.
+These three quantities are locked together by Ohm's law:
 
-<Callout variant="key" title="Ohm's law is foundational">
-Understanding V = I × R unlocks nearly all electrical calculations. If you know any two, you can find the third.
+> Current = Voltage ÷ Resistance, usually written I = V ÷ R
+
+Push harder (more volts) and more current flows. Add resistance and less current flows. A kettle element of about 17.7 Ω on a 230 V supply passes 230 ÷ 17.7 ≈ 13 A. That is not a coincidence of design; the element's resistance is chosen to draw exactly the current the plug and circuit can safely deliver.
+
+## From volts and amps to power
+
+Power is the rate at which energy is being used, and for simple loads it is voltage multiplied by current:
+
+> Power (watts) = Voltage × Current, or P = V × I
+
+<WorkedExample title="the kettle, from first principles">
+  <Given>
+    - UK supply voltage: 230 V
+    - Kettle current: 13 A
+    - It runs for 4 minutes to boil; electricity costs £0.20 per kWh
+  </Given>
+  <Find>The kettle's power, and the cost of one boil.</Find>
+  <Solution>
+    Power = 230 × 13 = 2,990 W, which is effectively a **3 kW appliance**.
+
+    Energy for one boil = 3 kW × (4 ÷ 60) h ≈ **0.2 kWh**, costing about **4 pence**.
+
+    The same arithmetic scales up without changing: a 3 kW immersion heater running for
+    2 hours uses 6 kWh and costs £1.20. Power times time gives energy; energy times price
+    gives cost. Every electrical bill on every site reduces to that chain.
+  </Solution>
+</WorkedExample>
+
+If the kWh as a unit feels shaky, the [units and conversions lesson](/courses/intro-to-energy-management/energy-units) covers it properly; the one-line version is that a kilowatt hour is the energy a 1 kW load uses in one hour, and it is the unit your bills are priced in.
+
+<Callout variant="key" title="Watts are the rate, kWh are the total">
+Confusing power (kW) with energy (kWh) is the most common electrical mistake in business, and it costs real money in misread bills and bad business cases. Power is how fast energy is being used right now, like the speedometer. Energy is how much has been used over time, like the odometer. A 2 kW heater is not "using 2 kWh"; it is using 2 kWh *per hour it runs*, and run hours are usually where the savings hide.
 </Callout>
 
-## Power in electrical systems
+## Why this matters for energy management
 
-**Power (P)** is the rate at which electrical energy is used. Measured in watts (W) or kilowatts (kW).
+Nearly every electrical saving on a site is one of these three moves: reduce the power a load draws (a more efficient motor, an LED instead of a discharge lamp), reduce the hours it runs (controls, switching things off), or both. Volts and amps are how you measure what a load actually draws, rather than trusting a nameplate, and a simple clamp meter reading of current is often the first hard evidence in an investigation. The rest of this course builds on exactly these quantities: first why the grid uses alternating current, then why some current does no useful work at all.
 
-Power is calculated as:
+## Sources and further reading
 
-> **P = V × I**
-
-or equivalently:
-
-> **P = I² × R** (from substituting Ohm's law)
-
-**Example:** A device with 230 V across it drawing 5 amps uses P = 230 × 5 = **1,150 W** (or 1.15 kW).
-
-This is the rate of energy consumption *right now*. If it runs for 1 hour, it uses 1.15 kWh.
-
-## Single-phase AC: the sine wave
-
-Household and office electricity is **single-phase AC** — the voltage and current oscillate sinusoidally at 50 Hz in the UK (50 cycles per second).
-
-The instantaneous voltage varies: V(t) = V_peak × sin(2πft)
-
-But what matters for practical power calculations is the **RMS value** (root mean square), which is what meters show. For a 230 V outlet, that's the RMS voltage; the peak is actually about 325 V.
-
-**Why RMS?** It's the equivalent DC voltage that would deliver the same power. A 230 V RMS AC source delivers the same power as a 230 V DC source of the same current.
-
-<Callout variant="tip">
-When you see "230 V" on a meter or spec sheet, that's always the RMS value, not the peak. You can use it directly in P = V × I without worrying about the sine wave.
-</Callout>
-
-## Resistive loads (heaters, lights, etc.)
-
-For a **resistive load** — one where current is in phase with voltage (a heating element, incandescent light) — the power is simply:
-
-**P = V × I = I² × R = V² / R**
-
-All three forms are equivalent.
-
-**Example:** An electric heater with 10 Ω resistance in a 230 V circuit draws I = V / R = 230 / 10 = 23 A, so P = 230 × 23 = **5,290 W** (5.29 kW).
-
-In energy management, you'll often see:
-- Heating elements, lighting (incandescent or LED), and resistive loads behave this way
-- Voltage is what the circuit provides (230 V single-phase, or a higher voltage in three-phase)
-- Current and power are what you measure; use them to calculate energy use
-
-## Practical implications for energy management
-
-- **Higher voltage = lower current for the same power** (P = V × I constant). This is why distribution systems use high voltages — it reduces current, which reduces losses in wires (P_loss = I² × R).
-- **Higher current = more heat in wires**. An undersized wire carrying high current gets hot and wastes energy. Proper cable sizing is crucial.
-- **Power (watts) is what you pay for**. Your electricity bill charges per kWh, which is power × time.
+- [The Institution of Engineering and Technology (IET)](https://electrical.theiet.org/) publishes accessible guidance on electrical fundamentals and UK wiring practice.
+- [Ofgem: energy explained](https://www.ofgem.gov.uk/information-consumers) covers how UK electricity supply and billing work for non-specialists.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) for practical guidance on reducing electrical consumption in organisations.
