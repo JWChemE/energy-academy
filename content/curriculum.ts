@@ -34,6 +34,13 @@ export type Lesson = {
   summary: string;
   /** Estimated reading/viewing time in minutes. */
   minutes: number;
+  /**
+   * ISO date (YYYY-MM-DD) the content was last checked for accuracy — shown
+   * on the lesson page as "Last reviewed". Set it on every new or rewritten
+   * lesson and update it whenever the content is re-verified; especially
+   * important for regulation lessons where facts drift.
+   */
+  reviewed?: string;
 };
 
 export type Module = {
@@ -473,18 +480,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Why Monitor & Target?",
                 summary: "The discipline of M&T and how it drives continuous energy improvement.",
                 minutes: 8,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "meter-data",
                 title: "Collecting Meter Data",
                 summary: "What to measure, frequency, accuracy, and data systems.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "normalisation",
                 title: "Normalisation: Dealing with Weather & Changes",
                 summary: "How to account for degree-days and business changes in baseline comparisons.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "mt-fundamentals-check",
@@ -503,18 +513,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Establishing Your Baseline",
                 summary: "What a baseline is and how to set one that's valid and useful.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "energy-signatures",
                 title: "Energy Signatures & Regression",
                 summary: "How energy use varies with external factors; regression analysis to quantify it.",
                 minutes: 11,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "decomposition",
                 title: "Decomposing Changes: What Changed & Why",
                 summary: "Separating energy savings from changes in weather, production, or occupancy.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "baselines-check",
@@ -533,18 +546,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Setting Realistic Targets",
                 summary: "How to set energy targets that are ambitious but achievable.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "exception-reporting",
                 title: "Exception Reporting: Finding the Anomalies",
                 summary: "How to spot when consumption is higher than it should be and investigate.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "dashboards",
                 title: "Dashboards & Communication",
                 summary: "How to visualise and communicate energy data to drive action.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "targeting-check",
@@ -572,12 +588,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "ESOS: Mandatory Energy Audits",
                 summary: "Who must comply, timing, scope, and what audits must cover.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "secr",
                 title: "SECR: Streamlined Energy & Carbon Reporting",
                 summary: "Who reports, what to report, and how to structure the disclosure.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "energy-legislation-check",
@@ -596,18 +614,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "The Climate Change Levy (CCL)",
                 summary: "How CCL works, exemptions, and the Climate Change Agreement.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "business-electricity-relief",
                 title: "Business Electricity Relief",
                 summary: "CRC Energy Efficiency Scheme history and current business electricity relief.",
                 minutes: 8,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "supplier-obligations",
                 title: "Supplier Obligations (EERS / ECO)",
                 summary: "What energy suppliers must do; the Energy Company Obligation.",
                 minutes: 8,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "costs-check",
@@ -626,18 +647,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Carbon Budgets & Targets",
                 summary: "The UK's carbon budgets, sectoral targets, and the path to net zero.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "epc-and-building-standards",
                 title: "EPCs, Building Standards & MEES",
                 summary: "Energy Performance Certificates, building regs, and Minimum Energy Efficiency Standards.",
                 minutes: 10,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "future-policy",
                 title: "Emerging Policy & Future Trends",
                 summary: "Heat pump mandates, methane regulations, and decarbonisation roadmaps.",
                 minutes: 9,
+                reviewed: "2026-07-03",
               },
               {
                 slug: "policy-check",

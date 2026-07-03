@@ -1,18 +1,50 @@
-What you collect, how often, and how you store it determines what insights you can get.
+Every insight this course promises depends on one thing: consumption data that arrives often enough, at fine enough resolution, and clean enough to trust. Before building models or setting targets, an energy manager needs to know what data the site already produces, what it can be made to produce, and where the traps lie. That is this lesson's job.
 
-## Meter types & Collection frequency
+## Resolution decides what you can see
 
-**Cumulative meters** — manual reading monthly. **Interval data** (30-min) — ideal for M&T. **Real-time** — spot anomalies instantly.
+A monthly meter reading gives you twelve numbers a year. It can confirm a trend and support a bill check, and not much more. Weekly data starts to reveal operational patterns. Half-hourly (HH) data, the standard for larger UK electricity supplies, gives you 48 readings a day, or 17,520 a year per meter, and that is where M&T becomes powerful.
 
-For M&T, **interval data (30-min or hourly) is ideal**. Frequency matters:
-- Monthly: rough trending only
-- Daily: good baseline
-- Hourly+: excellent, see daily cycles
+Half-hourly data answers questions that monthly data cannot even frame. What does the site draw at 3 a.m. when nearly everything should be off? Does consumption fall at weekends by as much as it should? Did the load drop when the last shift left, or two hours later? Larger electricity supplies in Great Britain are settled half-hourly, and suppliers can provide the data; smart and AMR meters extend similar visibility to smaller supplies and to gas.
 
-**Practical:** Start with daily or 30-minute from smart meters or wireless submeters.
+<WorkedExample title="what the overnight baseload is worth">
+  <Given>
+    - A site's half-hourly data shows a steady overnight draw of 40 kW
+    - Investigation finds 10 kW of that serves nothing: ventilation and small power left running for an empty building
+    - Electricity £0.20/kWh; the waste runs continuously
+  </Given>
+  <Find>The annual cost of the avoidable overnight load.</Find>
+  <Solution>
+    10 kW × 8,760 hours = 87,600 kWh a year. At £0.20/kWh that is **£17,520 a year**, from
+    equipment nobody was using. Overnight baseload is usually the first and cheapest finding
+    half-hourly data delivers.
+  </Solution>
+</WorkedExample>
 
-## Data storage & quality
+## The metering hierarchy
 
-Store in: spreadsheet (free but manual), utility portal (supplier access), data logger with cloud (£500–2,000), or BMS if available.
+Think of a site's metering as a pyramid. At the top sit the fiscal meters, the ones the supplier bills from. They are accurate and authoritative, but they lump the whole site into one number. Below them sit sub-meters on major systems or areas: the chiller plant, the compressed air system, a tenant floor, a production line. At the base sit circuit-level or machine-level meters where the value justifies them.
 
-Before analysis, clean: fill small gaps, flag outliers, verify against utility bills.
+You do not need the whole pyramid to start. A workable rule from CIBSE's metering guidance is that any load significant enough to manage separately deserves to be measured separately. In practice, sites usually add sub-meters progressively, guided by what the fiscal-level analysis flags as worth isolating. Resist the temptation to meter everything on day one: a handful of well-chosen sub-meters that someone actually reviews beats fifty that nobody looks at.
+
+## Data quality: the unglamorous foundation
+
+Meter data goes wrong in predictable ways, and a good M&T routine checks for them automatically:
+
+- **Gaps.** Loggers fail and communications drop. Decide how gaps are flagged and filled, and never let silent zeros masquerade as low consumption.
+- **Unit and factor errors.** Gas meters read volume, which needs a calorific value and correction factor to become kWh. Current transformer ratios on electricity sub-meters are a classic source of readings that are wrong by a clean factor of ten or a hundred.
+- **Meter rollovers and resets.** A cumulative register that wraps past its maximum, or a replaced meter that restarts from zero, creates a huge false spike or dip.
+- **Clock drift.** Half-hourly data with a wrong timestamp will misplace the working day and quietly corrupt any time-of-day analysis.
+
+A short automated sanity check on arrival, looking for gaps, negatives, spikes and impossible values, costs little and protects everything built on top.
+
+<Callout variant="tip">
+Before trusting any meter you have not worked with, reconcile it against the bill for one complete period. If the sub-meters under a fiscal meter add up to more than the fiscal meter records, at least one of them is lying, and it is better to learn that now than after a year of analysis.
+</Callout>
+
+The next lesson takes clean data and confronts the first analytical problem: consumption moves with the weather and with activity, so raw comparisons mislead. Normalisation is how we compare like with like.
+
+## Sources and further reading
+
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for TM39 on building energy metering strategy.
+- [Ofgem: getting your energy data](https://www.ofgem.gov.uk/energy-data-and-research) on access to consumption data from suppliers and smart meters.
+- [Elexon's guidance on half-hourly settlement](https://www.elexon.co.uk/) explains how HH electricity data is produced and settled in Great Britain.

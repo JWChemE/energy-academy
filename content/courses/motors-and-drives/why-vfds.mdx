@@ -1,42 +1,42 @@
-A **variable-frequency drive (VFD)** changes motor speed to match load, not just on/off or with dampers.
+Most pumps and fans don't need full output most of the time — yet without a drive, a motor only knows how to run flat-out. A **variable-frequency drive (VFD)** lets the motor slow down to match the actual demand, and because of one remarkable piece of physics, slowing down saves far more energy than intuition suggests.
 
 ## The cube law
 
-For pumps and fans, **power ∝ speed³**
+For centrifugal pumps and fans, the affinity laws say flow rises with speed, pressure with speed squared — and **power with speed cubed**. Run at 80% speed and you draw not 80% of the power but 0.8³ = **51.2%**. At half speed, power is 0.5³ = **12.5%** — one-eighth. A modest speed reduction is a huge power reduction.
 
-If a pump at full speed (100%) uses 100 kW, then:
-- 80% speed: 80³ / 100³ = 51.2% power = 51 kW
-- 60% speed: 60³ / 100³ = 21.6% power = 22 kW
-- 50% speed: 50³ / 100³ = 12.5% power = 13 kW
+The old alternative was to leave the motor at full speed and choke the excess with a damper or throttling valve. The motor barely notices: at 20% flow it still draws around 85% of rated power, with the difference simply destroyed across the damper as noise and heat. Drag the flow demand below and watch the two approaches diverge:
 
-**At half speed, power is 1/8.** This is why VFDs save so much energy.
+<AffinityLawsExplorer />
 
-## Old method: dampers and valves
+That green gap is the whole argument for VFDs. It is widest exactly where variable-load systems spend most of their time — the 40–80% flow range of mild days, part occupancy and reduced production.
 
-Conventional approach: Run motor at full speed, close a damper or valve to reduce flow.
+## What this is worth in practice
 
-**Problem:** Motor still draws 80–90% power even at 20% flow. The damper/valve wastes the excess energy as heat.
+Real systems don't follow the ideal cube all the way down — static head (a fixed pressure the pump must overcome regardless of flow) flattens the curve, and the drive itself adds 2–5% losses. In practice, well-applied VFDs on genuinely variable loads typically cut pump and fan energy by **30–50%**.
 
-**Example:** 100 kW motor at 20% flow with damper still draws 85 kW (15 kW lost in the damper), delivers only 13 kW to the load.
+<WorkedExample title="a 30 kW circulation pump">
+  <Given>
+    - 30 kW pump running 5,000 h/yr, currently at full speed against a control valve
+    - A VFD retrofit typically saves ~40% on a variable load like this
+    - Electricity £0.20/kWh; installed VFD cost ≈ £15,000
+  </Given>
+  <Find>The annual saving and simple payback.</Find>
+  <Solution>
+    Current use: 30 kW × 5,000 h = 150,000 kWh/yr.
 
-## VFD method
+    Saving: 150,000 × 0.40 = 60,000 kWh/yr → 60,000 × £0.20 = **£12,000/yr**.
 
-VFD slows the motor to match the required flow/pressure. At 20% flow, motor runs at ~50% speed, drawing 13 kW instead of 85 kW.
+    Payback: £15,000 ÷ £12,000 ≈ **1.3 years** — among the best paybacks of any
+    standard retrofit on this platform.
+  </Solution>
+</WorkedExample>
 
-**Energy saving: 72 kW (85% reduction!)**
+## Where VFDs earn their keep — and where they don't
 
-## When VFDs save the most
+The saving depends on two things: **variable demand** and **running hours**. The best candidates are pumps on heating/cooling loops that follow the weather, HVAC fans trimmed by dampers today, and compressors serving swinging demand. The worst candidates are loads that genuinely need full output whenever they run (a fully-loaded conveyor, a lift) — there's no excess speed to shed — or plant that only runs a few hundred hours a year, where even a large percentage saving is too few kWh to repay the drive.
 
-- **Pumps:** heating/cooling loops with variable load (warm days, reduced occupancy)
-- **Fans:** HVAC with dampers (economiser), or varying demand
-- **Compressors:** pressure-regulated (discharge to tank), with variable demand
+<Callout variant="key" title="Find the load profile before you size the saving">
+A VFD's business case lives in the hours spent *between* off and full load. Before recommending one, get the load profile — a week of logging, or even the [half-hourly data](/courses/monitoring-and-targeting/establishing-baseline) you already hold — and check how much time the system actually spends at part load. A pump that idles at 90% flow all year saves little; one averaging 60% flow is a goldmine, as the explorer above shows.
+</Callout>
 
-**Hours of operation matter:** VFD on a fan running 16 h/day pays for itself faster than one on a fan running 4 h/day.
-
-## Typical payback
-
-- Large pump/fan, 5,000+ h/year: 2–4 years
-- Medium load, 3,000 h/year: 4–6 years
-- Small, low-hours: 8+ years (may not be justified)
-
-A 30 kW pump on 16 h/day can save £10k+/year with a VFD at £15k cost = 1.5-year payback.
+The next lessons cover [where VFDs apply system by system](/courses/motors-and-drives/vfd-applications) and the [installation details](/courses/motors-and-drives/vfd-installation) — harmonics, cable lengths, motor compatibility — that decide whether the promised saving actually arrives.

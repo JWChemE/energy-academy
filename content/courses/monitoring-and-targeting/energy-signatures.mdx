@@ -1,20 +1,34 @@
-An **energy signature** shows consumption vs external drivers (temperature, occupancy, production).
+Plot a year of monthly gas consumption against that month's degree days and you get a scatter of twelve points. Fit a line through them and you have the site's **energy signature**: a compact picture of how the building responds to weather. The remarkable thing about this simple chart is how much diagnosis it supports. The slope, the intercept, the scatter and any change in them over time each say something specific about the building, and an energy manager who can read them can often name a fault without leaving the desk.
 
-## Temperature signature
+## Reading the three features
 
-Below 15.5°C: more heating, consumption rises. Above 21°C: more cooling, consumption rises. 15–21°C: minimal conditioning needed.
+**The intercept is the weather-independent load.** Where the fitted line crosses zero degree days is what the meter consumes in a month with no heating demand at all: hot water, catering, distribution losses, pilot losses, and any process load sharing the meter. For the model fitted in the [baseline lesson](/courses/monitoring-and-targeting/establishing-baseline), that is 8,000 kWh a month. If the intercept looks large against what the site can account for, something is running that should not be, and summer consumption data will confirm it.
 
-Scatterplot of daily consumption vs daily temperature shows this. Fit a line: **consumption = intercept + slope × temperature**.
+**The slope is the cost of coldness.** At 100 kWh per degree day, each unit of weather severity costs a predictable amount, and that number bundles together the building fabric, the efficiency of the boilers, and the quality of the heating control. Two similar buildings can be compared on slope directly: the one with the steeper slope loses more heat or converts fuel less efficiently.
 
-Slope = sensitivity (kWh per °C).
-Intercept = baseline (energy at 15.5°C).
+**The scatter is the control quality.** If the points hug the line (R² above roughly 0.9 for a weather-led gas meter), the building responds to weather consistently, which is what good control looks like. Wide scatter means consumption depends on something the model does not capture: erratic operation, a second driver such as production, or poor control that heats the building differently from one cold week to the next.
 
-## Using signatures
+## Diagnosis by change
 
-Once you have a signature, predict: "It's 8°C tomorrow, expect ~9,500 kWh." When actual is 10,500, something's wrong. Investigate.
+The signature earns its keep when it moves. Refit the line each year, or after any intervention, and compare:
 
-## Regression analysis
+- **Intercept up, slope unchanged.** Something weather-independent has been added or left running: new equipment, a hot water fault, plant running through shutdowns. Look at summer weeks first, where the base load stands alone.
+- **Slope up, intercept unchanged.** The building has become more expensive per degree of cold. Suspect fabric deterioration, a boiler efficiency problem, or heating control drift such as a raised flow temperature or extended run hours.
+- **Both up.** Either two faults, or a change of use. Ask operations before blaming the plant.
+- **Slope down after an insulation project, intercept down after a hot-water project.** The signature confirms the saving landed where the engineering said it should. This is exactly the evidence a savings claim needs.
 
-Fit a line to 365 daily points. R² tells you how well temperature explains consumption. R² > 0.9: temperature is the main driver. R² < 0.6: other factors matter.
+<Callout variant="key" title="Slope faults and intercept faults have different suspects">
+The signature does not just say "consumption is high". It says which kind of high: weather-proportional (fabric, boiler efficiency, heating control) or constant (base load, hot water, things left on). That single distinction cuts the list of suspects in half before anyone visits the plant room, and it is the fastest diagnostic habit in M&T.
+</Callout>
 
-Flattening suggests heating is limited (thermostat low, valve stuck). Steeper slope suggests over-heating or poor insulation.
+## Practical fitting notes
+
+Weekly points give more resolution than monthly ones, at the cost of more noise; both work. Exclude known-abnormal periods (shutdowns, strikes, extreme one-off events) and say so. If the site has meaningful cooling, fit heating and cooling seasons separately or use both HDD and CDD. And check the base temperature: if the scatter narrows noticeably when refitted at a 14 °C base instead of 15.5 °C, the building's true balance point is lower, which is itself useful information about its internal gains and insulation.
+
+The signature tells you a change happened and roughly where to look. The next lesson adds the discipline of decomposition: attributing a change in consumption, part by part, to weather, activity and genuine performance shift, so that nobody claims a mild winter as a management triumph.
+
+## Sources and further reading
+
+- [CIBSE TM41: Degree Days, Theory and Application](https://www.cibse.org/knowledge-research/knowledge-portal) covers regression against degree days and base temperature selection.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) show worked energy signature examples in the M&T guidance.
+- [ISO 50006](https://www.iso.org/standard/77425.html) frames signatures formally as energy performance indicators against relevant variables.

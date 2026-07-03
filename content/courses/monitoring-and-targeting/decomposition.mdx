@@ -1,27 +1,45 @@
-**Decomposition** answers: "Energy up 15%. How much was real savings vs. weather/occupancy?"
+"Gas is up 11% on last year." Sooner or later every energy manager has to explain a sentence like that to someone senior, and the honest answer is almost never a single cause. Some of the change is weather. Some is activity: more production, longer opening hours, higher occupancy. Some is price, if the complaint is about cost rather than kilowatt hours. And some, the part that actually reflects on site management, is a real change in performance. Decomposition is the discipline of splitting a headline change into those parts before anyone takes credit or assigns blame.
 
-Without it, you might claim a win that didn't happen.
+## The method: explain in layers
 
-## Framework
+The tool is the baseline model you already have. Take the two periods being compared and ask the model what consumption *should* have done given each driver's movement, one driver at a time. Whatever the drivers cannot explain is the real performance change.
 
-Total change = Structural (efficiency improvement) + Usage (occupancy/production) + Weather + Other
+<WorkedExample title="decomposing an 11% rise">
+  <Given>
+    - Baseline model: annual gas = 96,000 + 100 × HDD (kWh)
+    - Year 1: 2,100 HDD, consumption 306,000 kWh (on model)
+    - Year 2: 2,300 HDD, consumption 340,000 kWh
+  </Given>
+  <Find>How much of the rise is weather, and how much is real deterioration.</Find>
+  <Solution>
+    Expected Year 2 consumption at 2,300 HDD = 96,000 + 100 × 2,300 = **326,000 kWh**.
 
-## Example
+    Weather explains 326,000 − 306,000 = **20,000 kWh** of the rise.
 
-April 2024: 5,000 kWh. April 2025: 5,400 kWh (+8%).
+    The remaining 340,000 − 326,000 = **14,000 kWh (4.3% above expectation)** is real
+    deterioration, and worth investigating. The headline said 11%; the truth is that the
+    site got about 4% worse and the winter did the rest.
+  </Solution>
+</WorkedExample>
 
-Weather: 2°C colder → ~100 kWh increase expected.
-Occupancy: +10%, but not energy-proportional.
-Structural: LED retrofit (estimated -200 kWh/month).
+The same logic runs in the flattering direction. If consumption fell 11% but the winter was mild, the model may show that weather delivered most of the fall and the site's true performance barely moved. Claiming that as a management win invites embarrassment the following cold year, when consumption "mysteriously" rebounds.
 
-**Decomposition:** 5,400 = 5,000 + 100 (weather) + 300 (occupancy) − 200 (LED) + 200 (other)
+## Decomposing cost as well as consumption
 
-**True improvement: −200 kWh** (LEDs worked! Raw +8% hides a real win.)
+When the question is about the bill rather than the meter, add the price layer explicitly. A useful ordering: first compute what the old consumption would cost at the new price (the price effect), then apply the weather and activity corrections to consumption as above, and let the remainder be performance. Presenting these as a simple waterfall, from last year's cost to this year's in four labelled steps, is one of the most persuasive charts an energy manager can put in front of a board: it shows in one picture that the team distinguishes what it controls from what it does not.
 
-## Methods
+## Multi-driver sites
 
-1. Regression (fit before/after, compare)
-2. Degree-day adjustment
-3. End-use data (if submeters exist)
+Where consumption has two drivers, say production volume and weather, fit both in the baseline regression and decompose against each in turn. The [brewery capstone](/courses/breweries/brewery-audit-capstone) walks exactly this case: electricity that rises with hectolitres brewed and with cooling degree days, where a raw year-on-year comparison would be meaningless but a two-driver model cleanly separates a busy year from a hot one from a real efficiency change.
 
-Most use #1 or #2.
+<Callout variant="key" title="No attribution without decomposition">
+The rule that keeps an M&T programme honest: nobody claims a saving, and nobody accepts blame for a rise, until the change has been decomposed against the baseline's drivers. Weather and workload are not achievements or failures. What is left after removing them is.
+</Callout>
+
+Decomposition looks backward at what changed. The next lesson turns forward: using the same baseline machinery to set targets that are ambitious enough to matter and defensible enough to survive scrutiny.
+
+## Sources and further reading
+
+- [IPMVP, Efficiency Valuation Organization](https://evo-world.org/en/products-services-mainmenu-en/protocols/ipmvp): the formal treatment of baseline adjustments when attributing savings.
+- [ISO 50015](https://www.iso.org/standard/60883.html) covers measurement and verification of organisational energy performance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) for practical worked examples of normalised year-on-year comparison.

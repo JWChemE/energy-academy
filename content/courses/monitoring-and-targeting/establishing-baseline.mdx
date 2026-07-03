@@ -1,19 +1,53 @@
-Your **baseline** is the reference point. Usually a normalised average consumption over one full year (covers all seasons).
+A baseline is the answer to the question "compared with what?". It is a model of how the site consumed energy over a known reference period, expressed in terms of its drivers, so that any later period can be judged fairly against it. Get the baseline right and every subsequent claim, from a weekly exception report to a board-level savings figure, stands on solid ground. Get it wrong and the whole M&T programme inherits the error.
 
-## Good baseline qualities
+## What makes a good baseline period
 
-Representative (all seasons), normalised (adjusted for weather/occupancy), recent (reflects current use), documented (assumptions clear).
+Four qualities matter, and they pull against each other slightly:
 
-## Calculating
+- **Complete.** At least one full year, so every season appears. A baseline built from summer months will misjudge every winter.
+- **Representative.** The site operating normally: no extended shutdowns, no half-finished refurbishments, no COVID-empty buildings. If an odd event sits in the period, either exclude those weeks explicitly or choose another period.
+- **Recent.** The site as it is now, not as it was before the extension was built or the chiller replaced. Older data may be plentiful, but it describes a different building.
+- **Documented.** The period chosen, the data sources, the drivers used, any excluded weeks, and the fitted coefficients, all written down. A baseline nobody can reconstruct is a baseline nobody can defend.
 
-1. Gather 12 months of meter data
-2. Get HDD for each month
-3. Regress: kWh = a + b × HDD
-4. Normalise each month to average HDD (say, 100 HDD/month)
-5. Average the 12 months → baseline
+Twelve months is the usual choice. Twenty-four is better where the data is clean, because two winters constrain the weather relationship far better than one.
 
-Raw consumption varies 5,000–10,000 kWh/month seasonally. Normalised baseline: ~7,500 kWh/month.
+## From data to model
 
-## Baseline updates
+With the period chosen, fit the consumption against its drivers, exactly as the [normalisation lesson](/courses/monitoring-and-targeting/normalisation) set up. For a weather-led gas meter, that means regressing monthly (or weekly) kWh against degree days and reading off two numbers: the intercept, which is the base load, and the slope, the kWh each degree day costs.
 
-If building use changes (more occupancy, new equipment, extended HVAC hours), update the baseline. Don't compare apples-to-oranges.
+<WorkedExample title="fitting a baseline by hand">
+  <Given>
+    - June: 140 HDD, 22,000 kWh
+    - January: 350 HDD, 43,000 kWh
+    - (In practice you fit all twelve months by regression; two points show the mechanics)
+  </Given>
+  <Find>The slope and base load of the baseline model.</Find>
+  <Solution>
+    Slope = (43,000 − 22,000) ÷ (350 − 140) = 21,000 ÷ 210 = **100 kWh per HDD**.
+
+    Base load = 22,000 − (100 × 140) = **8,000 kWh per month**.
+
+    The baseline model is: expected kWh = 8,000 + 100 × HDD. Every future month is judged
+    against this expectation at that month's actual degree days.
+  </Solution>
+</WorkedExample>
+
+A real fit uses all the points and reports how well the line explains the data (the R² statistic). For a weather-dominated gas meter, an R² above about 0.9 says the model is trustworthy; a low R² says something else drives this meter and the model needs another driver or a rethink. The [energy signatures lesson](/courses/monitoring-and-targeting/energy-signatures) covers reading these fits in detail.
+
+## CUSUM: making the baseline work for a living
+
+Once a baseline exists, the most useful thing you can do with it is track the **cumulative sum of differences**, or CUSUM. Each period, compute actual minus expected consumption, and keep a running total. The power of the technique is in its shape: random scatter hovers around zero, but any systematic change bends the line. A downward bend dates the moment a saving began and measures its size; an upward bend catches a creeping fault long before any single month looks alarming on its own.
+
+CUSUM is the workhorse chart of M&T. It turns a pile of monthly figures into a story with dates: "flat until March, then saving roughly 2,000 kWh a month after the burner service". That is language a finance director can audit.
+
+<Callout variant="key" title="The baseline is a contract">
+Treat the baseline as a fixed reference that changes only for documented reasons: a major plant change, an extension, a change of use. If the baseline drifts casually, savings become unprovable and the programme loses the credibility that justifies its existence. The measurement and verification course covers the formal rules; the discipline starts here.
+</Callout>
+
+Next, energy signatures: reading the fitted model itself as a diagnostic, where the slope and intercept each tell their own story about the building.
+
+## Sources and further reading
+
+- [ISO 50006](https://www.iso.org/standard/77425.html) formalises energy baselines and performance indicators.
+- [IPMVP, from the Efficiency Valuation Organization](https://evo-world.org/en/products-services-mainmenu-en/protocols/ipmvp), the standard framework for baseline adjustments and savings verification.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) include worked CUSUM examples in the monitoring and targeting guidance.

@@ -1,21 +1,46 @@
-**Exception reporting** flags when consumption is abnormally high.
+An M&T programme lives or dies by one weekly habit: comparing what each meter recorded against what the baseline said to expect, and investigating the meters that disagree. That routine is exception reporting. Done well, it is short, boring, and occasionally worth thousands of pounds in a single line. Done badly, it either cries wolf until nobody reads it or stays so quiet that faults run for months. The difference is a threshold chosen with a little statistical care.
 
-## The rule
+## Expected, actual, and how far apart is "wrong"
 
-Compare actual to expected (based on baseline and drivers like weather).
+For each meter and period, the baseline model produces an expectation given the period's actual conditions. The residual, actual minus expected, will never be exactly zero: buildings are noisy. The question is how big a residual is worth a person's time.
 
-If actual > expected by >5–10%, flag and investigate.
+The standard answer borrows from statistical process control. When the baseline was fitted, the scatter of the historical residuals gives a standard deviation, σ. A residual within ±2σ is weather, noise, and ordinary variation; flag anything beyond it. At 2σ, roughly one clean period in twenty will false-alarm, which is a tolerable price for catching real faults quickly. Sites drowning in alerts can move to 2.5σ or add a persistence rule such as flagging only when two consecutive periods exceed the limit.
 
-## Example
+<WorkedExample title="is this month an exception?">
+  <Given>
+    - Baseline model: expected gas this month (at its actual 350 HDD) = 43,000 kWh
+    - Actual consumption: 49,500 kWh
+    - Standard deviation of baseline residuals: 2,000 kWh
+  </Given>
+  <Find>Whether this month should be flagged.</Find>
+  <Solution>
+    Residual = 49,500 − 43,000 = 6,500 kWh. In sigma terms: 6,500 ÷ 2,000 = **3.25σ**, far
+    beyond the 2σ control limit. This is not weather and not noise. Something changed, and
+    at £0.06/kWh the excess is costing about £390 a month while it runs. Investigate now.
+  </Solution>
+</WorkedExample>
 
-Baseline: 7,500 kWh/month at 100 HDD.
-October: 35 HDD → expected ≈ 2,625 kWh.
-October actual: 2,850 kWh (8.5% high).
+## Triage: from flag to finding
 
-**Investigate:** Chiller running? Controls working? Radiator valve stuck? Equipment left on?
+An exception is a symptom, not a diagnosis. A practical triage sequence for a flagged meter:
 
-Often you find: zone heated AND cooled simultaneously, fan running 24/7 when it should be off nights, or boiler at 70°C instead of 55°C.
+1. **Check the data first.** Meter faults, estimated reads and unit errors produce spectacular exceptions. Rule them out before dispatching an engineer.
+2. **Ask what changed operationally.** New equipment, changed hours, a production trial, a heating season switch-on. Operations often know the answer in one conversation.
+3. **Use the shape of the deviation.** Half-hourly data narrows the suspect list fast: an overnight rise points to something left running or a control failure; a working-hours rise points to load or setpoint changes; a step change dates the event precisely, which usually identifies it.
+4. **Close the loop.** Record the cause and the fix against the exception. A programme that logs its findings builds a site-specific fault library, and next year's investigation starts from experience instead of scratch.
 
-## Threshold & turnaround
+Low exceptions deserve the same attention as high ones. Consumption far below expectation sometimes means a genuine improvement, but it just as often means a failed meter, an estimated read, or a heating system that quietly failed in a way occupants will notice on Monday.
 
-Start at 10% threshold; refine after months. The faster you catch and fix, the less energy wasted. Real-time dashboards are most valuable.
+<Callout variant="key" title="Only exceptions get attention, and every exception gets attention">
+The discipline cuts both ways. Meters inside their control limits get no meeting time, however interesting their charts look; meters outside them always get a named investigator and a deadline. This is what keeps the routine short enough to survive contact with busy people, and reliable enough that a flag actually means something.
+</Callout>
+
+Multi-site organisations add one more layer: a league table of sites by normalised deviation from baseline, which concentrates central attention on the outliers and creates a useful, mildly competitive pressure among site managers.
+
+The final lesson in this course turns to communication: dashboards and reporting that turn all of this machinery into something the wider organisation can see, trust and act on.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): the M&T guidance covers control limits and exception-driven routines.
+- [ISO 50006](https://www.iso.org/standard/77425.html) on monitoring energy performance against indicators and baselines.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for guidance on using half-hourly data in building energy analysis.

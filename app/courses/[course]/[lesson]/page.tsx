@@ -111,6 +111,18 @@ export default async function LessonPage({ params }: Props) {
           <p className="mt-3 text-lg text-slate-600">{ctx.lesson.summary}</p>
           <p className="mt-3 text-sm text-slate-400">
             {ctx.lesson.minutes} min read
+            {ctx.lesson.reviewed && (
+              <>
+                {" · "}
+                <span title="The date this content was last checked for accuracy">
+                  Last reviewed{" "}
+                  {new Date(ctx.lesson.reviewed).toLocaleDateString("en-GB", {
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </span>
+              </>
+            )}
           </p>
         </header>
 

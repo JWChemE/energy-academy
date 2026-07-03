@@ -40,6 +40,8 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
   refreshUser: () => Promise<void>;
+  requestPasswordReset: (email: string) => Promise<void>;
+  updatePassword: (newPassword: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -154,8 +156,36 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setSession(null);
   }
 
+  async function requestPasswordReset(email: string) {
+    // The recovery link lands on our reset page (covered by the /** entry in
+    // Supabase's Redirect URLs list), where the user sets a new password.
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/auth/reset-password`,
+    });
+    if (error) throw error;
+  }
+
+  async function updatePassword(newPassword: string) {
+    // Requires an active session — on the reset page that session comes from
+    // the recovery link itself.
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) throw error;
+  }
+
   return (
-    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut, refreshUser }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        session,
+        loading,
+        signUp,
+        signIn,
+        signOut,
+        refreshUser,
+        requestPasswordReset,
+        updatePassword,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,19 +1,46 @@
-A 10% increase might mean nothing if it was unusually cold. **Normalisation** adjusts for weather/occupancy so you compare apples-to-apples.
+Gas consumption rose 10% this January compared with last. Is that a problem? On its own, the number cannot say. If this January was much colder, a 10% rise might actually represent an improvement; if it was milder, something has gone badly wrong. Normalisation is the technique that separates the part of consumption driven by conditions you do not control, chiefly weather and activity levels, from the part that reflects how well the site is actually running. Without it, every comparison in an M&T programme is vulnerable to the reply "but it was a cold month".
 
-## Degree-days
+## Degree days: putting a number on the weather
 
-**HDD** (heating degree-days) = max(0, 15.5°C − daily average temp)
+Heating demand depends on how far the outside temperature falls below the point where a building needs heat. UK practice captures this with **heating degree days (HDD)** against a base temperature, conventionally 15.5 °C. For each day, take the amount by which the average outside temperature fell short of the base, and sum those shortfalls over the month. A day averaging 10.5 °C contributes 5 degree days; a day at 18 °C contributes none. Cooling degree days (CDD) work the same way in reverse for air conditioning load, counting how far temperatures rise above a base.
 
-Cold month (5°C avg): HDD = 10.5/day × 30 = 315 HDD.
-Mild month (12°C avg): HDD = 3.5/day × 30 = 105 HDD.
+Degree day figures for every UK region are published monthly, so no site has to compute its own. The base temperature matters: 15.5 °C suits a typical heated building, but a well-insulated building with high internal gains needs heat only in colder weather and suits a lower base. The [energy signatures lesson](/courses/monitoring-and-targeting/energy-signatures) shows how to check the fit rather than assume it.
 
-Same building uses much more energy in the cold month. Normalising accounts for this.
+## The two-part model
 
-Heating load ≈ baseline + sensitivity × HDD.
+The reason degree days are so useful is that heating consumption follows a simple, testable shape:
 
-## Other normalisers
+> Consumption = base load + (slope × degree days)
 
-- Occupancy, production volume, hours of operation
-- Cooling season uses **cooling degree-days (CDD)** = max(0, temp − 21°C)
+The **base load** is what the site uses regardless of weather: hot water, catering, distribution losses, and any process load on the same meter. The **slope** is how much extra energy each degree day of coldness costs, which reflects the building fabric, the heating system's efficiency, and its control.
 
-Good M&T tracks these so you can decompose: "Energy up 5%, occupancy up 10%, so efficiency improved."
+<WorkedExample title="normalising a January comparison">
+  <Given>
+    - A site's gas model, fitted from history: monthly kWh = 8,000 + 100 × HDD
+    - Last January: 350 HDD, consumption 43,000 kWh, exactly on model
+    - This January: 310 HDD, consumption 44,600 kWh
+  </Given>
+  <Find>Whether this January's consumption is acceptable.</Find>
+  <Solution>
+    Expected consumption for 310 HDD = 8,000 + 100 × 310 = **39,000 kWh**. Actual was
+    44,600 kWh, which is 5,600 kWh (14%) above expectation, despite being only 3.7% above
+    last January's raw figure. The raw comparison hides the problem; the normalised one
+    exposes it. A milder month should have cost less, and it did not.
+  </Solution>
+</WorkedExample>
+
+## Normalising for activity
+
+Weather is not the only driver outside your control. A factory's consumption follows production volume; a hotel's follows occupancy; a school's follows term dates. The same two-part logic applies: fit consumption against the driver, separate the fixed component from the variable one, and judge performance against what the driver said to expect. The [brewery audit capstone](/courses/breweries/brewery-audit-capstone) works a full example where electricity depends on both production volume and cooling degree days at once, which is common in practice: real sites often need two drivers, and simple regression handles that comfortably.
+
+<Callout variant="key" title="Normalise before you compare, every time">
+Any energy comparison across time, across sites, or against a target is only as good as its normalisation. The question is never "did we use more than last year?" but "did we use more than the conditions justify?". Every technique in the rest of this course, from baselines to exception reports, assumes this correction has been made.
+</Callout>
+
+With normalisation in hand, the next step is to formalise the reference point: a baseline model fitted to a known period, against which all future performance is judged.
+
+## Sources and further reading
+
+- [Degree days for energy management, GOV.UK guidance](https://www.gov.uk/government/collections/degree-days-statistics) and the widely used [degreedays.net](https://www.degreedays.net/) data service.
+- [CIBSE TM41: Degree Days, Theory and Application](https://www.cibse.org/knowledge-research/knowledge-portal) is the standard UK reference on the method.
+- [ISO 50006](https://www.iso.org/standard/77425.html) covers energy baselines and energy performance indicators, the formal framing of normalised comparison.

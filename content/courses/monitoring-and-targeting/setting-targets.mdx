@@ -1,25 +1,50 @@
-A target is a commitment: "We will reduce energy to X by [date]."
+A target converts monitoring into management. Without one, an M&T programme can describe performance beautifully and change nothing; with a good one, every weekly report carries a quiet question: are we on track or not? The craft is in setting targets that are ambitious enough to drive action, credible enough that operations accept them, and normalised properly so that a cold winter cannot masquerade as failure or a mild one as success.
 
-## SMART targets
+## Anchor the target to the baseline, not to raw history
 
-Specific, Measurable, Achievable, Relevant, Time-bound.
+The naive target, "use 10% less than last year", fails the first time the weather differs from last year, which is always. The robust form applies the reduction to the **baseline model**, not the raw total:
 
-## How to set
+> Target consumption = (baseline expectation for the period's actual conditions) × (1 − reduction)
 
-1. Start with baseline
-2. Identify achievable improvements (audit + funding):
-   - Quick wins (controls, insulation, balancing): 5–10%
-   - Medium-term (equipment): 10–20%
-   - Long-term (fabric): 20–30%
-3. Phase over time:
-   - Year 1: −10%
-   - Year 3: −15%
-   - Year 5: −25%
+The target then travels with the weather. In a mild month it demands less in absolute terms, in a cold month more, and in every month it asks exactly the same thing: perform 10% better than the site's established relationship with its drivers.
 
-## Growth accounting
+<WorkedExample title="a degree-day-adjusted target">
+  <Given>
+    - Baseline model: annual gas = 96,000 + 100 × HDD, so a 2,100 HDD year expects 306,000 kWh
+    - The programme commits to a 10% reduction against baseline
+    - Gas £0.06/kWh
+  </Given>
+  <Find>The target and its value in a 2,100 HDD year.</Find>
+  <Solution>
+    Target = 306,000 × 0.90 = **275,400 kWh**, a saving of 30,600 kWh worth **£1,836 a year**
+    at reference prices. If the year turns out colder, say 2,300 HDD, the target becomes
+    326,000 × 0.90 = 293,400 kWh: a bigger absolute number, the same 10% demand on
+    performance. Nobody gets punished for the weather, and nobody gets to hide behind it.
+  </Solution>
+</WorkedExample>
 
-If occupancy is rising 5%, set absolute consumption flat (neutral) or +2%, while intensity target is −5% (kWh per person).
+## Choosing the number
 
-## Communicating
+Where should the 10% come from? Three defensible sources, in rising order of ambition:
 
-Post targets publicly, track monthly, celebrate hits, investigate misses. A public commitment (e.g., "50% by 2030") is powerful if backed by a detailed action plan.
+- **Recovered waste.** The exception reports and signature analysis have already quantified identified faults and avoidable base load. A target that simply commits to capturing what has been found is modest but nearly guaranteed, and a good first year.
+- **Benchmarks.** If comparable sites, or published sector benchmarks, run 15% leaner per unit of output or floor area, the gap is evidence of what is achievable without new technology. Compare like with like, as the sector benchmarking lessons stress.
+- **The project pipeline.** If funded projects (a burner replacement, LED lighting, heat recovery) have engineering estimates attached, the target can incorporate their predicted savings with their commissioning dates. This ties the M&T programme to the capital plan, which is where it earns senior attention.
+
+A structure that works well in practice: a firm annual target built from the first two sources, plus a stated stretch component contingent on the project pipeline landing.
+
+## Make it SMART, then make it visible
+
+The usual SMART tests apply: specific about which meters and what normalisation, measurable against the published baseline, achievable for the reasons above, relevant to a business priority (cost, carbon, or a corporate commitment), and time-bound with interim milestones rather than a single year-end cliff. Quarterly milestones expose drift early; the CUSUM chart from the [baseline lesson](/courses/monitoring-and-targeting/establishing-baseline) is the natural way to display progress against the target line, because it accumulates the story rather than resetting each month.
+
+<Callout variant="key" title="A target nobody owns is a wish">
+Every target needs a named owner with the authority to investigate deviations and commission fixes. The M&T analyst reports against the target; the owner answers for it. Where sub-meters exist, cascade ownership: the site target at the top, and each significant system or department accountable for its own share. Accountability, not analysis, is what moves the number.
+</Callout>
+
+With targets in place, the remaining machinery is the routine that polices them: exception reporting, the subject of the next lesson.
+
+## Sources and further reading
+
+- [ISO 50006](https://www.iso.org/standard/77425.html) on energy performance indicators and setting objectives against baselines.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on target-setting within an M&T programme.
+- [GOV.UK: Climate Change Agreements](https://www.gov.uk/guidance/climate-change-agreements--2) as an example of formal, negotiated sector targets tied to a financial incentive.

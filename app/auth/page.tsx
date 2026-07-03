@@ -17,7 +17,7 @@ import { COMMS_STREAMS } from '@/lib/profileOptions';
  * handle_new_user trigger with a full audit trail.
  */
 
-type Mode = 'signin' | 'signup';
+type Mode = 'signin' | 'signup' | 'forgot';
 type SignupStep = 'details' | 'comms' | 'done';
 
 const EMPTY_COMMS: CommsChoices = {
@@ -106,7 +106,9 @@ export default function AuthPage() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-brand-50 via-white to-sky-50 p-4">
       <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        {mode === 'signup' && step === 'done' ? (
+        {mode === 'forgot' ? (
+          <ForgotPassword initialEmail={email} onBack={() => switchMode('signin')} />
+        ) : mode === 'signup' && step === 'done' ? (
           <ConfirmEmailScreen email={email} />
         ) : mode === 'signup' && step === 'comms' ? (
           <CommsStep loading={loading} error={error} onBack={() => setStep('details')} onFinish={createAccount} />
@@ -151,9 +153,20 @@ export default function AuthPage() {
               </div>
 
               <div>
-                <label className="mb-1 block text-sm font-medium text-slate-700">
-                  Password
-                </label>
+                <div className="mb-1 flex items-center justify-between">
+                  <label className="block text-sm font-medium text-slate-700">
+                    Password
+                  </label>
+                  {mode === 'signin' && (
+                    <button
+                      type="button"
+                      onClick={() => switchMode('forgot')}
+                      className="text-xs font-medium text-brand-700 hover:text-brand-800 hover:underline"
+                    >
+                      Forgot password?
+                    </button>
+                  )}
+                </div>
                 <input
                   type="password"
                   value={password}
@@ -194,6 +207,114 @@ export default function AuthPage() {
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+/** Forgot-password: request a recovery email. */
+function ForgotPassword({
+  initialEmail,
+  onBack,
+}: {
+  initialEmail: string;
+  onBack: () => void;
+}) {
+  const { requestPasswordReset } = useAuth();
+  const [email, setEmail] = useState(initialEmail);
+  const [state, setState] = useState<'form' | 'sent'>('form');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      await requestPasswordReset(email);
+      setState('sent');
+    } catch (err) {
+      // Supabase doesn't reveal whether the email exists (good — no account
+      // enumeration); real errors here are config or rate-limit problems.
+      setError(friendlyError(err instanceof Error ? err.message : ''));
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (state === 'sent') {
+    return (
+      <div className="text-center">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-2xl">
+          ✉️
+        </div>
+        <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">
+          Check your inbox
+        </h1>
+        <p className="mt-2 text-sm leading-6 text-slate-600">
+          If an account exists for{' '}
+          <span className="font-semibold text-slate-900">{email}</span>, we&apos;ve
+          sent it a password-reset link. Click it and you&apos;ll be asked to choose
+          a new password.
+        </p>
+        <p className="mt-3 text-xs text-slate-400">
+          Nothing after a few minutes? Check your spam folder, or make sure you
+          typed the address you signed up with.
+        </p>
+        <button
+          onClick={onBack}
+          className="mt-6 inline-flex rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+        >
+          Back to sign in
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+        Reset your password
+      </h1>
+      <p className="mt-2 text-sm leading-6 text-slate-600">
+        Enter the email you signed up with and we&apos;ll send you a link to choose
+        a new password.
+      </p>
+
+      <form onSubmit={submit} className="mt-5 space-y-4">
+        <div>
+          <label className="mb-1 block text-sm font-medium text-slate-700">Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            autoComplete="email"
+            autoFocus
+            className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-brand-500"
+          />
+        </div>
+
+        {error && (
+          <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            {error}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-lg bg-brand-600 py-2.5 font-medium text-white transition hover:bg-brand-700 disabled:opacity-50"
+        >
+          {loading ? 'Sending…' : 'Send reset link'}
+        </button>
+      </form>
+
+      <button
+        onClick={onBack}
+        className="mt-4 w-full text-center text-sm text-slate-400 hover:text-slate-600"
+      >
+        ← Back to sign in
+      </button>
     </div>
   );
 }

@@ -50,11 +50,17 @@ export function SiteFooter() {
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span>© {new Date().getFullYear()} Energy Academy. Built for learning.</span>
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/about" className="transition-colors hover:text-slate-700">
+              About
+            </Link>
             <Link
               href="/resources/energy-audit-checklist"
               className="transition-colors hover:text-slate-700"
             >
               Free Audit Checklist
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-slate-700">
+              Terms of Use
             </Link>
             <Link href="/privacy" className="transition-colors hover:text-slate-700">
               Privacy Policy

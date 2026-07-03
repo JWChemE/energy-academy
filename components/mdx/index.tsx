@@ -5,6 +5,10 @@ import { Figure } from "./Figure";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 import { Quiz } from "./Quiz";
 import { PaybackCalculator } from "./PaybackCalculator";
+import { KeyFigures, KeyFigure } from "./KeyFigures";
+import { WorkedExample, Given, Find, Solution } from "./WorkedExample";
+import VapourCompressionCycle from "./diagrams/VapourCompressionCycle";
+import AffinityLawsExplorer from "./AffinityLawsExplorer";
 import SteamBoilerOptimizer from "../simulators/SteamBoilerOptimizer";
 import SteamSystemDiagnostics from "../simulators/SteamSystemDiagnostics";
 import HvacSystemDiagnostics from "../simulators/HvacSystemDiagnostics";
@@ -57,6 +61,14 @@ export const mdxComponents = {
   YouTubeEmbed,
   Quiz,
   PaybackCalculator,
+  KeyFigures,
+  KeyFigure,
+  WorkedExample,
+  Given,
+  Find,
+  Solution,
+  VapourCompressionCycle,
+  AffinityLawsExplorer,
   SteamBoilerOptimizer,
   SteamSystemDiagnostics,
   HvacSystemDiagnostics,

@@ -57,6 +57,19 @@ Registered in `components/mdx/index.tsx`:
   YouTube embeds; only this component changes when we self-host later.
 - `<Quiz id="some-quiz-id" />` — data from `content/quizzes.ts`.
 - `<PaybackCalculator defaultCost={8000} defaultSaving={2500} />`
+- `<KeyFigures><KeyFigure value="489 kWh" label="per batch" /></KeyFigures>` —
+  a stat strip lifting a lesson's headline numbers out of the prose.
+- `<WorkedExample title="…"><Given>…</Given><Find>…</Find><Solution>…</Solution></WorkedExample>`
+  — structured worked example; the solution sits behind a "try it first"
+  reveal. Slots take ordinary markdown.
+- `<VapourCompressionCycle />` — step-through SVG diagram (refrigeration /
+  heat pumps). To add a new step-through diagram: define its steps + SVG in a
+  component under `components/mdx/diagrams/`, render via `StepDiagramShell`,
+  register it, and use it as a no-prop tag (same registry principle as
+  quizzes — never pass complex data as MDX props).
+- `<AffinityLawsExplorer />` — interactive cube-law slider (VFD vs damper);
+  the template for future single-concept sliders. Chart colour pairs must
+  pass the dataviz palette validator (CVD separation + contrast).
 
 ## Content style guide — every lesson must meet this bar
 
@@ -86,6 +99,23 @@ guide and are being brought up to it incrementally.
    (what the next lesson builds on this). Target 8–12 minutes' reading.
 8. **Quizzes teach.** 4–5 questions, plausible distractors, and explanations
    that add understanding rather than restating the correct option.
+9. **Write like a person, not a model.** The tone is professional and
+   educational: a good tutor walking the reader through a problem. Avoid the
+   tics that mark machine-written text:
+   - **No em-dashes.** Use a comma, colon, brackets, or start a new sentence.
+   - No "it's not X, it's Y" reversals, no rule-of-three flourishes, no
+     paragraphs that all open the same way.
+   - No filler ("it's worth noting", "importantly", "in today's world") and
+     no bolding whole phrases for emphasis; bold is for terms being defined.
+   - Vary sentence length. Short sentences are fine. So are plain ones.
+10. **Credible and current.** Every lesson ends with a `## Sources and further
+    reading` section: 2–4 links to authoritative bodies (GOV.UK, Ofgem, HSE,
+    the Environment Agency, CIBSE, the Carbon Trust, BSI/ISO, BEIS/DESNZ
+    successor departments). Facts that change over time (rates, thresholds,
+    deadlines) are stated with their as-at date in the text. Every new or
+    rewritten lesson sets `reviewed` in its `content/curriculum.ts` entry
+    (ISO date, shown on the lesson page as "Last reviewed"); update it
+    whenever the content is checked, especially for regulation lessons.
 
 ## Routes (all statically generated via `generateStaticParams`)
 
@@ -108,9 +138,9 @@ guide and are being brought up to it incrementally.
 
 ## Roadmap
 
-Done: platform shell, all Level 1–3 courses with capstones, the Sectors
-section (Breweries), accounts/progress/comms-consent on Supabase, GDPR & cookie
-compliance, SEO (sitemap, previews, structured data). Next: an email service
-provider so the consented list is actually usable, lead magnets, rewriting the
-pre-style-guide courses up to the content bar, more sectors, then paid tiers
-and self-hosted video.
+The formal, phased plan lives in **`docs/ROADMAP.md`** — treat it as the
+single source of truth for what's next, and tick items off there as they land.
+Short version: Phase 1 credibility (identity, style guide, M&T + UK Regulation
+rewrites), Phase 2 knowledge-base turn (content floor, search, reference
+pages), Phase 3 audience (ESP, analytics, LinkedIn), Phase 4 commercialisation
+(certificates, payments), Phase 5 consultancy bridge.

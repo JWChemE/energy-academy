@@ -1,22 +1,33 @@
-A **dashboard** turns data into action. Show:
-1. Current consumption vs target
-2. 12-month trend (normalised)
-3. Consumption by system (if submeters)
-4. vs forecast (accounting for expected weather)
-5. Alerts (exceptions detected)
+All the machinery this course has built, baselines, signatures, decomposition, exceptions, produces its value only when somebody acts on it. Communication is therefore not an afterthought to M&T; it is the delivery mechanism. And the awkward truth about communicating energy data is that no single view works, because the people who need it want entirely different things from it.
 
-## Who uses it?
+## One programme, four audiences
 
-Facilities (daily check), Finance (monthly reporting), Leadership (annual progress), Whole building (public display).
+**The operations team needs this week.** Actual against expected for each significant meter, the current exceptions with their owners and status, and nothing else. Weekly cadence, one page. If the operations view takes more than five minutes to read, it will stop being read.
 
-## Tools
+**The energy manager needs the diagnostic layer.** CUSUM charts per meter, energy signatures with this year's points plotted over the baseline fit, exception history and close-out rates. This is the workbench view, and it is the one place where detail belongs.
 
-- Simple: spreadsheet (free, manual)
-- Mid: data logger + cloud (£2,000–5,000)
-- Advanced: BMS + M&T module (£10,000+)
+**Finance needs pounds against commitment.** Normalised performance against target, expressed in currency, with the decomposition made explicit: how much of the variance was weather and activity, how much was performance. The waterfall chart from the [decomposition lesson](/courses/monitoring-and-targeting/decomposition) earns its place here. Monthly or quarterly cadence, and never raw kWh without translation.
 
-Start simple, upgrade as you scale.
+**Leadership and staff need the story.** Progress against the public commitment, trend direction, and what happened because of the programme: faults caught, projects delivered, money saved. Sparingly detailed, honestly normalised.
 
-## Power
+<Callout variant="key" title="Report the gap, not the consumption">
+The single most useful design rule for any energy dashboard: lead with actual versus expected, not actual alone. A big number tells nobody anything. A gap tells everyone whether attention is needed. Every audience view above is, at heart, the same gap dressed for a different reader.
+</Callout>
 
-A visible dashboard (especially public) changes behaviour. People become aware, spot problems, take ownership. Simply displaying consumption (no commentary) reduces energy by 5–15%.
+## Visibility changes behaviour, modestly and honestly
+
+Public displays and staff-facing dashboards do influence consumption: awareness campaigns built on visible feedback are typically credited with savings in the low single digits of a percent, and the Carbon Trust's guidance on employee engagement collects the evidence. Two caveats keep the claim honest. The effect persists only while the feedback does, so a launch-month splash that fades achieves little. And behavioural savings should be claimed through the same normalised baseline as everything else, not asserted from enthusiasm. Where display is the goal, show something occupants can act on (this floor's electricity today against a typical day) rather than site totals no individual can influence.
+
+## Tooling, in ascending order of commitment
+
+A spreadsheet fed with monthly data can run a genuine M&T programme: baseline regression, CUSUM, exception flags and a one-page report are all comfortably within its reach, and starting here proves the routine before any spend. Dedicated M&T software (or an energy bureau service) adds automated data collection, alarm handling and multi-site league tables, typically justified once the meter count or site count outgrows manual handling. Building management systems can supply data but rarely replace the analytical layer: a BMS knows what the plant is doing, not what it should be costing.
+
+Whatever the tool, the test is the same: does an exception reliably reach a person with the authority to fix it, and does anyone check that it was fixed? A modest spreadsheet with that loop closed beats an expensive platform without it.
+
+This completes the M&T toolkit. The course check that follows tests the full chain: data, normalisation, baseline, signature, decomposition, target, exception. If you can run that chain on your own site's data, you have one of the highest-value capabilities in energy management.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools), including guidance on employee engagement and behaviour change evidence.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for TM39 on metering and reporting structures.
+- [ISO 50001](https://www.iso.org/iso-50001-energy-management.html), which requires exactly this reporting loop as part of a certified energy management system.
