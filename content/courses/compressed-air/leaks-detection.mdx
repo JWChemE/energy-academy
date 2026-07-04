@@ -1,25 +1,46 @@
-Leaks are the biggest waste in compressed air systems and often go undetected because they're silent.
+On a compressed air system that has never been surveyed, leaks are not a detail; they are commonly the largest single consumer of air on site. Industry guidance from the Carbon Trust and BCAS consistently puts leakage on unmanaged systems at 20 to 30% of everything generated, and every leaked litre was compressed at full cost before it escaped. The economics of finding and fixing leaks are among the best in energy management, and this lesson covers how to price them, find them and keep them fixed.
 
-## How much a leak costs
+## What a hole costs
 
-A 1 mm hole at 7 bar loses ~10 CFM (~0.3 m³/min) continuously.
+A leak is an orifice fed at system pressure around the clock, and its flow scales with the square of its diameter: a 3 mm hole passes roughly nine times the air of a 1 mm one. At 7 bar g, a 3 mm hole passes around 11 litres per second of free air.
 
-Energy cost: If a 50 kW compressor produces 200 CFM (typical), a 10 CFM leak is 5% of output = 2.5 kW × 24h × 365d × £0.10/kWh = £2,190/year for one small leak.
+<WorkedExample title="pricing a single 3 mm leak">
+  <Given>
+    - One 3 mm hole at 7 bar g leaks ≈ 11 L/s of free air
+    - The system's specific energy is 0.11 kWh per m³; compressors run 6,000 h/yr
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The compressor power feeding the leak, and its annual cost.</Find>
+  <Solution>
+    Flow = 0.011 m³/s, so compressor power ≈ 0.011 × 0.11 × 3,600 ≈ **4.4 kW**,
+    continuously, to feed one hole.
 
-A facility with 20 similar leaks wastes ~£44,000/year.
+    Over 6,000 hours: ≈ 26,100 kWh, about **£5,200 a year**. A hole you could cover with
+    a match head, costing a graduate salary's pension contribution. A typical unmanaged
+    site has dozens of smaller ones, which is how surveys so often find five-figure totals.
+  </Solution>
+</WorkedExample>
 
-## Detection methods
+A useful whole-system check needs no detector at all: run the compressors during a shutdown, when legitimate demand is zero, and watch them. Whatever they deliver, or however often they cycle to hold pressure, is the leak load, measured for free. The [capstone](/courses/compressed-air/diagnostics-capstone) uses exactly this test.
 
-**Listening:** Works in quiet areas only. Many leaks are too subtle to hear.
+## Finding them
 
-**Ultrasonic detector:** Handheld device (~£800-2,000) "listens" to the ultrasonic hiss of escaping air (30+ kHz). Finds leaks instantly in noisy environments.
+Leaks cluster where things move, vibrate or get disturbed: hose couplings and quick-connects, flexible hoses themselves, filter-regulator-lubricator sets, drain valves, and joints downstream of any recent maintenance. The fixed pipework itself is rarely the problem.
 
-**Soapy water test:** Apply soapy water to suspected spots. Bubbles indicate a leak. Slow but free.
+The workhorse instrument is the **ultrasonic leak detector**: escaping air produces ultrasound at around 40 kHz, which the detector hears through workshop noise that defeats human ears. A survey with one is fast (a competent surveyor covers a mid-size site in a day), works while production runs, and pinpoints leaks to the exact fitting. Soapy water remains the free confirmation tool for an accessible suspect joint. Modern acoustic cameras add a visual overlay and speed at a higher instrument cost; they change the economics of surveying large sites, not the principle.
 
-**Dye test:** Add dye tracer to the air; leaks show colored spray. Professional method.
+## Fixing, tagging, repeating
 
-## Repair ROI
+The survey is the easy half. The programme that captures the money is: **tag** every find with its estimated size and location; **fix** the cheap majority immediately (most leaks are a coupling re-seat, an O-ring, a hose clamp); **schedule** the few that need a shutdown; and **log** the lot, so the next survey measures progress. Then repeat, because leaks regrow: fittings wear, hoses age, maintenance disturbs joints. An annual survey is the standard cadence, six-monthly on hard-worked systems.
 
-Sealing a 5% leak costs ~£500-2,000 (technician + parts). Saves ~£11,000/year. **Payback: < 1 month.**
+<Callout variant="key" title="Leak management is a programme, not an event">
+The classic failure mode is the one-off survey: a triumphant report, a burst of repairs, and three years of silent regrowth back to 25% leakage. The fix is institutional, not technical. Put the survey on the maintenance calendar, track leakage as a percentage on the monthly [M&T report](/courses/monitoring-and-targeting/exception-reporting) using the shutdown test, and give the number an owner. Sites that manage leakage as a KPI hold it under 10%; sites that surveyed once do not.
+</Callout>
 
-Annual leak audit (with ultrasonic detector) is standard best practice. Cost: £1,000-2,000. Savings: typically £20,000-50,000.
+Leaks are demand the site never wanted. The next lesson covers the demand it does want but feeds carelessly: regulation, open blowing and the other point-of-use wastes.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on compressed air leakage costs and detection.
+- [BCAS](https://www.bcas.org.uk/) leakage reduction guidance and campaign material.
+- [ISO 11011](https://www.iso.org/standard/46580.html) on quantifying leakage within a system assessment.

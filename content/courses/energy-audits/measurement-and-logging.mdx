@@ -1,51 +1,45 @@
-Measurement and data collection are the heart of an audit. Without good data, your analysis is guessing.
+The walk-through produces suspicions; measurement turns them into numbers that survive scrutiny. This is the stage that separates a detailed audit from an expensive site tour, and it is where audit craft actually lives: choosing what to measure, for how long, with which instrument, so that every recommendation in the final report can point at data rather than judgement. The good news is that the toolkit is modest and the principles are few.
 
-## What to measure
+## Start with the data the site already has
 
-**Mandatory:**
-- Utility consumption (electricity kWh, gas m³, oil litres)
-- Utility cost/rate
-- Weather (outdoor temperature for baseline)
+Before deploying a single logger, exhaust the free sources. The fiscal meter's half-hourly data, covered in the [M&T course](/courses/monitoring-and-targeting/meter-data), maps the site's whole electrical behaviour: baseload, peaks, weekend discipline, and the shape of the working day. Gas bills give the heating story once [degree-day normalised](/courses/monitoring-and-targeting/normalisation). A building management system, where one exists, logs temperatures, run states and setpoints. An hour in these datasets tells you where the loggers should go, which is precisely the point: portable measurement is scarce and should be spent answering questions the free data cannot.
 
-**Highly recommended:**
-- Sub-metering on major loads (HVAC, lighting, process)
-- Thermal power (boiler output, chiller output) if not sub-metered
-- Equipment runtime (is the system on all night?)
+## The audit toolkit
 
-**Optional (for detailed audits):**
-- Indoor temperature and humidity (comfort, control quality)
-- Equipment voltage/current (power quality, efficiency)
-- Equipment runtime logs from BMS if available
+Four instruments cover most detailed audits. A **clamp power meter** reads the true power of any accessible circuit without disconnection, using the three-phase arithmetic from the [electrical science course](/courses/electrical-science/three-phase-power). **Plug-in or CT data loggers** record a load's profile over days or weeks: the difference between "the compressor seems busy" and a chart of exactly when and how hard it runs. An **infrared thermometer or camera** finds missing insulation, failed steam traps (hot where they should be cooler), fouled heat exchangers and overheating electrical connections. **Temperature loggers**, at a few pounds each, record what spaces and systems actually do overnight, which rarely matches what the controls claim.
 
-## Measurement tools
+<WorkedExample title="what a week of logging reveals">
+  <Given>
+    - The walk-through suspects the 90 kW air compressor is oversized for the load
+    - A CT logger records its power draw every minute for one week
+    - The log shows an average draw of 45 kW during production and long periods cycling at low load
+  </Given>
+  <Find>What the audit now knows that it could not before.</Find>
+  <Solution>
+    The compressor's average load factor is 45 ÷ 90 = **50%**, and the cycling pattern
+    identifies the control mode. That single week of data quantifies the case for a
+    variable-speed replacement or a smaller lead machine, turns "seems oversized" into a
+    sized, costed recommendation, and provides the before-baseline that will later prove
+    the saving. One £300 logger, one week, one defensible project.
+  </Solution>
+</WorkedExample>
 
-- **Power meter** (handheld clamp-on): ~£50–300, measures AC current/voltage/power
-- **Data logger** (wireless, sub-meter): £200–1,000, logs kWh every 15 min–hourly, uploads to cloud
-- **Thermometer** (non-contact infrared): £20–100, surface temperature
-- **Anemometer**: ~£100, air velocity in ducts
+## How long to log
 
-For a detailed audit, invest in 2–4 data loggers on major systems.
+Long enough to capture the pattern that drives the cost. A load that cycles hourly needs a day; anything with a weekly rhythm (which is most of a building) needs at least one full week including the weekend; weather-driven systems need weeks and a spread of outside temperatures, then regression rather than more logging. The audit baseline itself rests on twelve months of billing data; the loggers exist to explain that data, not replace it.
 
-## Frequency
+## Data quality, briefly but non-negotiably
 
-- **Monthly (or daily from smart meter)**: minimum for trending
-- **Hourly or 30-min intervals**: much better; reveals daily/weekly patterns
-- **Real-time**: excellent for spotting anomalies
+Every reading that will appear in the report needs three things recorded at capture: what exactly was measured (which circuit, which units, which CT ratio), when, and with what instrument. Cross-check loggers against the fiscal meter for a shared period before trusting them, exactly as the [meter data lesson](/courses/monitoring-and-targeting/meter-data) prescribes; a mis-set CT ratio produces confident numbers that are wrong by a factor of ten, and it happens to everyone once.
 
-## Logging duration
+<Callout variant="key" title="Measure to answer a question, not to have data">
+The discipline that keeps the measurement stage affordable: every logger deployed is attached to a written question ("does the AHU stop at 7 p.m.?", "what is the compressor's load factor?"), and any measurement without a question is dropped. Audits drown in aimless data more often than they starve of it. Questions come from the walk-through and the half-hourly analysis; instruments exist to close them.
+</Callout>
 
-- **Baseline:** 12 months (captures all seasons and weekly/seasonal patterns)
-- **Proof of savings:** at least 3–12 months post-retrofit (to account for seasonal variation)
+The instruments describe the machines. The next lesson covers the other essential dataset: what the people who run the building know.
 
-## Accuracy
+## Sources and further reading
 
-- Data loggers: ±1–2% accuracy (good enough)
-- Utility bills: ±0.5% (very accurate, but monthly resolution)
-- Portable meters: ±2–5% (acceptable for spot checks)
-
-## Quality checks
-
-Before analysis:
-- Verify cumulative meter readings against utility bills
-- Check for missing or obviously erroneous data (zero readings, huge spikes)
-- Interpolate small gaps (1–2 days) rather than losing the whole month
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on measurement approaches for energy assessments.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal), including TM39 on metering and monitoring practice.
+- [HSE: electrical safety at work](https://www.hse.gov.uk/electricity/) on who may take live electrical measurements and under what precautions.

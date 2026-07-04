@@ -1,34 +1,54 @@
-Compressor choice affects both efficiency and capital cost. The three main types have different energy profiles.
+Two questions decide most of a compressed air system's electricity bill: what kind of compressor it uses, and, far more importantly, how that compressor behaves when the site needs less than full output. Machines are rarely the problem at full load; the money disappears at part load, where most systems spend most of their lives. This lesson covers the main compressor types and the control modes that determine their part-load appetite.
 
-## Reciprocating (piston) compressors
+## The machines
 
-Pistons cycle up/down, drawing air in and compressing it. Simple, robust, effective.
+**Rotary screw compressors** dominate industrial supply from about 5 kW to several hundred kW: two meshing helical rotors compress air continuously, giving smooth delivery, moderate cost and long service intervals. Most site systems this course deals with are oil-injected screws.
 
-Pros: Cheap upfront, highest pressure (100+ bar possible), reliable.
-Cons: Lower efficiency at part-load, more noise, higher maintenance (valve wear).
+**Reciprocating (piston) compressors** survive at the small end (workshops, intermittent duty) and for very high pressures. Cheap and robust, but noisy, higher-maintenance, and inefficient when asked to run continuously.
 
-Efficiency: 70-80% typical.
+**Centrifugal and oil-free machines** serve very large or contamination-critical applications (pharmaceuticals, food, electronics) and bring their own economics; the principles in this course still apply, but selection is specialist territory.
 
-## Screw compressors
+For an energy manager the type matters less than the sizing and the control mode. An efficient machine badly controlled wastes more than an average machine well matched to its load.
 
-Rotating screws mesh together, progressively compressing air. Smooth, efficient.
+## Where part load eats the money
 
-Pros: Better part-load efficiency (70-85% across wide range), quieter, less maintenance.
-Cons: More expensive upfront, lower max pressure (typically under 13 bar), risk of oil carryover.
+A compressor sized for the site's peak spends most of its year below it. What it draws down there depends on its control:
 
-Efficiency: 75-85% typical.
+- **Load/unload** (the most common): the machine alternates between full power and "unloaded" running, where it compresses nothing but still draws typically 25 to 35% of full power. The average across a duty cycle is far worse than the load factor suggests.
+- **Modulation**: an inlet valve throttles the intake; power falls only weakly with output. Generally the worst mode for energy.
+- **Variable speed (VSD)**: the motor slows to match demand, so power tracks output closely, plus a few percent of drive losses. The same [cube-law economics as pumps and fans](/courses/motors-and-drives/why-vfds) does not apply directly (compression work is roughly proportional to flow, not its cube), but eliminating unloaded running is worth a great deal on a variable load.
 
-## Rotary vane compressors
+<WorkedExample title="load/unload vs variable speed">
+  <Given>
+    - A 75 kW screw compressor meets a demand averaging 60% of its capacity, 6,000 h/yr
+    - Load/unload: full power 60% of the time, 35% of full power while unloaded
+    - VSD alternative: tracks the 60% load with about 5% drive overhead
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The average draw of each and the annual difference.</Find>
+  <Solution>
+    Load/unload average = (0.60 × 75) + (0.40 × 0.35 × 75) = 45 + 10.5 = **55.5 kW**.
 
-Sliding vanes in a rotor compress air. Niche use.
+    VSD average ≈ 0.60 × 75 × 1.05 = **47.3 kW**.
 
-Pros: Compact, medium efficiency.
-Cons: Wear on vanes, lower efficiency than screw, not as versatile.
+    Difference ≈ 8.25 kW × 6,000 h = 49,500 kWh, about **£9,900 a year** on one machine.
+    The saving exists because the unloaded 10.5 kW bought nothing at all. The more the
+    demand varies, the bigger this gap becomes.
+  </Solution>
+</WorkedExample>
 
-Efficiency: 60-75% typical.
+## Multiple machines: sequencing
 
-## Selection rule
+Sites with several compressors add a second control layer. Left to their own pressure switches, three machines will happily all run part-loaded, each paying the unloaded penalty. A **sequencer** runs the fewest machines that meet demand, holds one VSD unit as the "trim" machine absorbing the variation, and base-loads the rest at their efficient full-load point. On multi-compressor sites, sequencing alone typically saves 5 to 15%, for a controller costing far less than any new machine.
 
-For most facilities: **screw compressor** is best (good part-load efficiency, low maintenance, moderate cost). Reciprocating for extreme pressure or budget constraint. Vane rarely chosen today.
+<Callout variant="key" title="Buy the control mode, not the nameplate">
+When specifying or reviewing a compressor installation, the load profile decides everything. A steady, near-constant demand suits a fixed-speed machine run at full load. A variable demand suits a VSD, or a fixed-speed base machine plus a VSD trim unit. Ask for the site's demand profile (a week of logging, as the [audit course](/courses/energy-audits/measurement-and-logging) prescribes) before anyone quotes hardware; the profile, not the brochure, determines which machine is cheap to own.
+</Callout>
 
-Right-sizing is critical: an oversized compressor running light (50% load) is inefficient. A properly sized screw at 50-80% load is better than an oversized reciprocating at 30% load.
+Whatever the machine, its appetite scales with the pressure it must reach, which is the next lesson's subject and the cheapest lever in the whole system.
+
+## Sources and further reading
+
+- [BCAS](https://www.bcas.org.uk/) publications on compressor selection and system control.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on compressed air system energy management.
+- [ISO 11011](https://www.iso.org/standard/46580.html), the standard for compressed air system energy assessments.

@@ -1,24 +1,42 @@
-Compressed air is often called the "most expensive utility" on-site because compressing air to 7 bar requires significant electrical work, yet most facilities leak 20-30% of output undetected.
+Compressed air has a fair claim to being the most expensive utility on any industrial site, and the least respected. It is generated from electricity at strikingly poor efficiency, leaks away silently through every worn fitting, and is treated by most of its users as free. An energy manager who understands why air costs what it does holds one of the most reliable saving opportunities in industry, because on a never-examined system, 30% reductions are routine. This lesson establishes the economics everything else in the course builds on.
 
-## The thermodynamics
+## Where the electricity goes
 
-Compressing air from atmospheric (1 bar) to 7 bar (typical workshop pressure) requires work proportional to pressure ratio. A 50 kW compressor uses ~50 kW electricity to produce ~50 kW of compressed air output (theoretical). In reality, efficiency is 60-80%, so actual input is 60-85 kW.
+Compressing air is thermodynamically expensive. Squeezing air to the standard 7 bar gauge heats it enormously, and nearly all of that heat is removed by the compressor's coolers and thrown away. By the time the air has been compressed, cooled, dried and delivered, only around **10 to 15% of the input electricity remains as useful energy at the tool**. The rest has left as heat.
 
-Compare to other utilities: a boiler at 85% efficiency is excellent. A compressor at 80% efficiency is average.
+Put another way: a pneumatic tool doing 1 kW of useful work is drawing roughly 8 to 10 kW at the compressor. Any job that can be done with a direct electric drive instead of an air tool usually should be; air earns its place only where its real virtues (simplicity, safety in wet or explosive atmospheres, power density in small tools) are actually needed.
 
-## Where the waste happens
+<WorkedExample title="what a site's air actually costs">
+  <Given>
+    - A 37 kW compressor runs 6,000 hours a year, broadly loaded
+    - Electricity £0.20/kWh
+    - A well-run system needs about 0.11 kWh of electricity per m³ of free air delivered at 7 bar
+  </Given>
+  <Find>The annual cost, and the cost of air as a "product".</Find>
+  <Solution>
+    Annual electricity ≈ 37 × 6,000 = 222,000 kWh, costing **£44,400 a year**, for one
+    modest compressor.
 
-A small 1 mm pinhole leak at 7 bar loses ~10 CFM continuously. Running 24/7 = 14,400 CFM/day × 365 days = 5.3 million CFM/year = **massive waste**.
+    Per unit: 1,000 m³ of air costs about 110 kWh, or **£22**. Sites that treat air as free
+    are consuming a manufactured product with a real unit price, and every open blow-gun
+    and leaking coupling is buying it around the clock.
+  </Solution>
+</WorkedExample>
 
-Cost: If electricity is £0.10/kWh, that single leak costs ~£5,000/year.
+## Why the waste survives
 
-A typical facility with 100+ connection points might have 20-30 leaks totalling 30-50% of compressor output escaping unused.
+Three features make compressed air uniquely prone to neglect. It is **invisible**: a leaking pipe drips, but a leaking air line just hisses, and in a noisy plant not even that. It is **unmetered** on most sites: the compressor's consumption hides inside the site's total electricity, so nobody owns the number. And it is **culturally free**: operators who would report a water leak will work next to an air leak for years, because "it's just air". Sector experience, collected in Carbon Trust and British Compressed Air Society guidance, consistently finds 20 to 30% of generated air lost to leaks alone on unmanaged systems, before counting over-pressure, inappropriate uses and idling compressors.
 
-## Efficiency paradox
+<Callout variant="key" title="Think of the compressor house as a factory making a product">
+The mental model that unlocks compressed air savings: the site manufactures a product called "7-bar air" at about £22 per thousand cubic metres, and that product deserves the same management as any other. It should be metered, its unit cost known, its scrap rate (leaks) surveyed, its specification (pressure) no higher than customers need, and its waste heat recovered. Every lesson in this course is one of those disciplines applied to air.
+</Callout>
 
-While boiler, chiller, and motor efficiency improvements are well-monitored, compressed air efficiency is often ignored:
-- No submeter (total consumption is known, but waste is invisible)
-- Leaks are silent (unlike HVAC or boiler noise)
-- "It's just air" (perceived as low-cost, so waste is tolerated)
+## The shape of the course
 
-Reality: Compressed air can be the largest electrical load after HVAC in a building.
+The lessons that follow work through the system in cost order: how compressors and their controls consume electricity, why pressure is the master variable, leaks and their detection, regulation and inappropriate uses, distribution and pipework, heat recovery, the maintenance that keeps efficiency from decaying, and finally the improvement programme that ties it together. The [diagnostics capstone](/courses/compressed-air/diagnostics-capstone) then hands you a misbehaving system to fix.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools), including its compressed air technology guidance.
+- [British Compressed Air Society (BCAS)](https://www.bcas.org.uk/) for UK best-practice publications and the 10% taskforce material on leakage.
+- [HSE guidance on compressed air safety](https://www.hse.gov.uk/) for the safe-use context around any survey work.

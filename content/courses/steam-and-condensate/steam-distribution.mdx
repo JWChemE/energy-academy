@@ -1,26 +1,45 @@
-Steam loses heat as it travels through pipes. Insulation is essential, and the economic thickness is where added insulation cost equals heat saved annually.
+Between the boiler and the process, steam travels through a network of mains and branches that can quietly consume a tenth of everything generated. Distribution losses come in two currencies: heat radiated from hot surfaces, which insulation controls, and steam condensed before it ever reaches a user, which drainage and layout control. Both are as unglamorous as engineering gets, and both pay back faster than almost anything else in this course.
 
-## Heat loss from pipes
+## Radiation: the case for lagging everything
 
-Uninsulated pipe at, say, 180°C in a 20°C room loses a lot of heat (roughly proportional to the temperature difference and pipe diameter).
+A steam main at 7 bar g sits at about 170 °C, and every square metre of bare hot surface radiates and convects heat continuously into the building. A bare 50 mm (DN50) steam pipe loses roughly **0.5 to 0.6 kW per metre** at that temperature; good insulation cuts the loss by around 90%. Pipe runs are usually lagged; the classic finds are the fittings: valves, flanges, strainers and pipework in awkward corners, stripped for maintenance years ago and never re-covered. A single bare DN50 valve loses about as much as a metre of bare pipe.
 
-**Insulation thickness** (mm of foam, mineral wool, etc.) reduces loss. Thicker = less loss, but at diminishing returns and increasing cost.
+<WorkedExample title="twenty bare metres, priced">
+  <Given>
+    - A survey finds 20 m of bare DN50 pipework and fittings at 7 bar g (≈0.55 kW/m loss)
+    - Insulation would retain 90% of the loss; system live 6,000 h/yr
+    - Boiler 85% efficient; gas £0.06/kWh; installed insulation ≈ £80/m
+  </Given>
+  <Find>The saving and payback from lagging it.</Find>
+  <Solution>
+    Heat loss = 20 × 0.55 = 11 kW; as fuel = 11 ÷ 0.85 ≈ 12.9 kW of gas.
 
-Economic thickness is where total cost (insulation cost amortised + energy cost of loss) is minimised.
+    Insulating recovers 90%: ≈ 70,000 kWh of gas a year, worth about **£4,200**. Cost ≈
+    20 × £80 = £1,600, so payback ≈ **5 months**. Removable insulation jackets solve the
+    maintenance objection for valves and flanges: they unclip in seconds, so "we need
+    access" is no longer a reason for bare metal. An infrared camera makes the survey a
+    one-hour job; everything glowing is billable.
+  </Solution>
+</WorkedExample>
 
-Rule of thumb: insulation thickness (mm) ≈ pipe diameter (mm) / 2, for new industrial steam lines. For existing, it's usually cost-effective to add 50–100 mm of foam.
+## Condensation in the mains: drainage and steam quality
 
-## Pipe sizing
+Even perfectly lagged mains condense some steam, and that condensate must be removed as it forms, for efficiency and, more urgently, for safety. Water lying in a steam main gets picked up by steam moving at 25 to 40 m/s and slammed into the next bend: **waterhammer**, which bursts fittings and injures people. Good practice falls out of a few rules: mains fall gently in the direction of flow; **drain pockets** with steam traps sit every 30 to 50 m and before every riser and control valve; branch connections leave the **top** of the main so they take dry steam rather than the water running along the bottom; and a **separator** protects any process that needs properly dry steam.
 
-Pipes must be large enough to deliver steam without excessive pressure drop (which causes flash losses) and small enough to avoid excessive heat loss and cost.
+Wet steam is also an efficiency loss in itself: the water fraction carries no latent heat, so a dryness of 0.95 means paying for 5% more steam mass than heat delivered, while eroding valve seats on the way. Persistent wetness traces back to boiler operation (priming, overload) or missing distribution drainage, both findable in the [efficiency assessment](/courses/steam-and-condensate/efficiency-assessment).
 
-**Pressure drop** is critical: a 10 bar steam line that loses 1 bar of pressure to friction is now at 9 bar — some of the high-temp energy is wasted. Modern sizing targets 0.3–0.5 bar drop per 30 m of pipe for steam.
+## Right-size and retire
 
-**Velocity** of steam in pipes should be around 20–30 m/s (too slow = larger, more expensive pipe; too fast = pressure drop and noise).
+Two layout habits complete the survey. Oversized mains (common after processes shrink) present more surface area than the duty needs, losing heat accordingly; a main sized for a departed load is a permanent surcharge on the remaining one. And **redundant legs**, still live and trapped but serving nothing, are pure loss: walking the network against an up-to-date process list routinely finds pipework kept hot for equipment removed years ago. Valve it off, drain it, and take it off the insulation survey entirely.
 
-## Condensate return
+<Callout variant="key" title="Distribution loss is proportional to area × temperature × hours">
+Every distribution decision reduces to those three factors: less hot surface (retire dead legs, right-size mains), lower surface temperature (insulate, and hold pressure no higher than needed per the [pressure lesson](/courses/steam-and-condensate/steam-pressure)), fewer live hours (summer regimes, weekend isolation). The infrared survey finds the area; the boiler log finds the hours; the project list writes itself.
+</Callout>
 
-Returning hot condensate (instead of letting it run to waste) saves energy:
-- Hot condensate is 80–90°C, vs. fresh cold water at 10–15°C
-- Reducing cold feed water means less fuel needed to re-boil
-- Flash steam from the condensate can be captured
+At every drain pocket and every user sits the component the next two lessons are devoted to: the steam trap, the system's most numerous and most failure-prone device.
+
+## Sources and further reading
+
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam) on distribution design, drainage and waterhammer.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on pipework insulation economics.
+- [TIPCHECK / EiiF](https://www.eiif.org/) for the standardised industrial insulation survey methodology.

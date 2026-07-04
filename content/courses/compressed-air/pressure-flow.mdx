@@ -1,27 +1,44 @@
-Compressed air is delivered in terms of **bar** (pressure) and **CFM** (flow rate). Both must be specified to understand the energy requirement.
+One number governs a compressed air system's running cost more than any other, and it is set by a screwdriver: the generation pressure. Every extra bar the compressor must reach costs energy across every cubic metre the site consumes, feeds every leak a little faster, and pushes more air through every unregulated use. Understanding the pressure-energy relationship, and the flow units the trade quotes, is the foundation for the cheapest saving in the whole course.
 
-## Pressure and system energy cost
+## The units, quickly
 
-Higher pressure = more work required. Compressing to 8 bar vs 6 bar is proportionally harder.
+Pressure is quoted in **bar gauge** (bar g): pressure above atmospheric. UK industrial systems conventionally generate at around 7 bar g. Flow is quoted as **free air delivered (FAD)** in litres per second or m³ per minute: the volume the air would occupy at atmospheric conditions, which is the honest way to compare machines and demands. (Older kit and American references use CFM; 1 m³/min ≈ 35.3 CFM.) A compressor's efficiency combines the two as **specific energy**: kWh per m³ of free air delivered, typically around 0.10 to 0.13 at 7 bar for a decent system. Tracking specific energy month by month, exactly as the [M&T course](/courses/monitoring-and-targeting/why-mt) tracks any performance indicator, is the single best health metric a system has.
 
-Rule: Every 1 bar of excess pressure wastes ~10% energy.
+## The 1 bar rule
 
-If a facility runs at 8 bar but only needs 6 bar, reducing to 6 bar saves ~20% of compressor energy.
+Compression work rises with the pressure ratio, and near normal operating points a reliable rule of thumb emerges, quoted in Carbon Trust and BCAS guidance alike: **each 1 bar of generation pressure costs roughly 7% of compressor energy**. The rule works in both directions, which is what makes it valuable: most systems run higher than any tool actually requires, usually because pressure was nudged up years ago to mask a problem nobody then diagnosed.
 
-**System pressure should match the highest downstream requirement**, no higher.
+<WorkedExample title="turning the setpoint down">
+  <Given>
+    - A site generates at 7.5 bar g; a survey finds the highest genuine requirement is 6 bar g, and 6.5 bar g gives a safe margin
+    - Compressed air plant: 90 kW average draw, 6,000 h/yr
+    - Rule of thumb: ~7% energy per bar; electricity £0.20/kWh
+  </Given>
+  <Find>The saving from reducing generation pressure by 1 bar.</Find>
+  <Solution>
+    Saving ≈ 0.07 × 90 kW × 6,000 h = 37,800 kWh a year, worth about **£7,560**.
 
-## Flow (CFM) and demand
+    The intervention is a setpoint change: no capital, no downtime, reversible in seconds
+    if anything complains. Done properly it follows a survey of what each use actually
+    needs, a staged reduction (0.2 bar at a time, a week at each step), and a note in the
+    log of which use sets the floor. Few savings in industry are this cheap.
+  </Solution>
+</WorkedExample>
 
-**CFM** = cubic feet per minute of air. A pneumatic tool might use 5-10 CFM; multiple tools running simultaneously demand 50+ CFM.
+The rule's corollary: pressure raised to compensate for a problem (a blocked filter, an undersized pipe, a failing regulator) converts that problem into a permanent 7%-per-bar tax. The [pipework lesson](/courses/compressed-air/pipe-sizing) returns to this.
 
-Peak demand = sum of simultaneous tool use (not sum of all possible tools).
+## Pressure also drives demand, not just supply cost
 
-Oversizing the compressor (to handle hypothetical peak) wastes money. Right-size to **actual peak demand**, with a buffer for growth.
+Higher pressure makes every unregulated consumer use more air. Leaks flow faster at higher pressure; open blowing and venting scale similarly; and any tool fed above its rated pressure simply wastes the excess. This effect, called **artificial demand**, means a pressure reduction saves twice: once in compression energy per m³, and again in m³ that were never needed. Systems with large leak loads see the double benefit most strongly, which is why pressure reduction and the [leak programme](/courses/compressed-air/leaks-detection) belong together.
 
-## Pressure drop and efficiency penalty
+<Callout variant="key" title="Generate at the minimum the neediest genuine use requires">
+The design rule for the whole system in one sentence: find the highest pressure any legitimate use actually needs, add the distribution losses between compressor and that use, add a small control margin, and set generation there. Anything above that figure is a recurring bill with no customer. And if one use needs 2 bar more than everything else, the question is not "raise the site" but "give that use its own booster", which is almost always cheaper.
+</Callout>
 
-Air loses pressure as it travels through pipes. **Every 0.1 bar drop costs ~1% energy.**
+Next: the demand side's biggest villain, leaks, and how to find and price them.
 
-Pipe diameter, length, and debris (moisture, oil, dust) cause drop. A 100m run of 0.5" pipe might drop 2 bar (20% energy waste). Upsizing to 1.5" pipe drops it to 0.5 bar (5% waste).
+## Sources and further reading
 
-Solution: Larger pipes, strategic drains, and filters.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on compressed air energy savings, including the pressure rule of thumb.
+- [BCAS](https://www.bcas.org.uk/) best-practice guidance on system pressure and specific energy.
+- [ISO 11011](https://www.iso.org/standard/46580.html) for assessment methodology covering pressure and demand analysis.

@@ -1,49 +1,47 @@
-Raw utility data can't be fairly compared across months or years without accounting for external factors like weather and occupancy. **Normalisation** adjusts the data.
+Every number in an audit report is a comparison in disguise. "The site uses too much gas" means: more than the weather justifies. "The lighting is inefficient" means: more watts per square metre than good practice needs. Before any opportunity can be quantified, the audit must establish the reference points those comparisons stand on: a normalised baseline of what the site should consume given its conditions, and benchmarks that say how similar sites perform. This lesson builds both.
 
-## Why normalise?
+## The baseline: the site compared with itself
 
-A building uses more gas in a cold winter than a mild one. A hospital uses more electricity if occupancy increases. Without normalisation, you can't tell if consumption actually rose (bad) or just varied with factors outside your control.
+The machinery here is exactly the machinery of the [monitoring and targeting course](/courses/monitoring-and-targeting/establishing-baseline), applied at audit speed. Take twelve months of consumption, regress the weather-dependent meters against [degree days](/courses/monitoring-and-targeting/normalisation), and read off the base load (the intercept) and the weather sensitivity (the slope). The fit itself is diagnostic before any comparison is made: a strong fit says the building responds to weather consistently; a weak one says something else drives consumption, and finding that something becomes an audit task.
 
-## Weather normalisation
+For an audit, the baseline serves three specific jobs. It converts the walk-through's suspicions into sized questions (a 40 kW electrical base load must be accounted for appliance by appliance). It provides the "before" against which every proposed measure's saving is estimated. And it becomes the yardstick the client uses after implementation, which is why its assumptions must be documented well enough for a stranger to reproduce, the standard the [M&V discipline](/courses/measurement-and-verification) formalises.
 
-**Degree-days** (HDD for heating, CDD for cooling) quantify how much heating/cooling is needed.
+## Benchmarks: the site compared with its peers
 
-HDD = max(0, 15.5°C − daily average temperature)
+Normalisation answers "is consumption consistent with the weather?"; benchmarking answers "is it consistent with good practice?". The standard currency is **energy intensity**: kWh per square metre per year for buildings, kWh per unit of output for industry. Published references (CIBSE's benchmarking guidance, sector bodies, the [platform's sector courses](/sectors)) tabulate typical and good-practice figures by building type.
 
-Sum across all days in a period.
+<WorkedExample title="benchmarking an office">
+  <Given>
+    - A 4,000 m² office consumes 600,000 kWh of electricity a year
+    - Published typical practice for its type is around 95 kWh/m²; good practice is lower still
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The site's intensity and what the gap is worth.</Find>
+  <Solution>
+    Intensity = 600,000 ÷ 4,000 = **150 kWh/m²**, roughly 58% above typical practice.
 
-**Example:** January has average 5°C, so HDD/day = 15.5 − 5 = 10.5. Over 31 days: 325 HDD for January.
+    Closing just the gap to typical is worth (150 − 95) × 4,000 = 220,000 kWh, about
+    **£44,000 a year**. The benchmark does not say which measures deliver it; it says the
+    prize is large and the audit should dig hard. A site near good practice warrants a
+    different, lighter audit than one 58% above typical, which is why benchmarking belongs
+    early in the analysis.
+  </Solution>
+</WorkedExample>
 
-If your consumption is ~8,000 kWh (January 2023) and HDD was 325, your **heating sensitivity** is ~24.6 kWh/HDD.
+Benchmark honestly: match building type, hours and function; state the source and year; and treat benchmarks as compasses rather than verdicts. A data centre in the basement can put a legitimate 40 points on an office's intensity, which is exactly the kind of context the [interviews](/courses/energy-audits/interview-stakeholders) supply.
 
-Next January: HDD is 280 (milder). Expected consumption: 280 × 24.6 ≈ 6,900 kWh.
+<Callout variant="key" title="No baseline, no believable savings">
+Every savings claim in the final report is the difference between two numbers, and the baseline is always one of them. A weak baseline silently corrupts every recommendation built on it, and it is the first thing a sceptical finance director, or a performance contractor's engineer, will attack. Spend the analysis time here; the opportunities lesson that follows is only as strong as this foundation.
+</Callout>
 
-**Actual consumption: 7,200 kWh.** Did you improve? 7,200 vs 6,900 = you used 300 kWh more than expected. No, you got slightly worse (or there's another factor).
+## Handling change during the data period
 
-## Occupancy normalisation
+If the site changed materially inside the twelve months (an extension, a new line, COVID-era occupancy), either model the change explicitly with a second driver, or baseline on the clean period and say so. Never average across a known discontinuity: a baseline that straddles a change describes neither the before nor the after, and recommendations priced against it inherit the confusion.
 
-If headcount increased 10%, energy proportionally should rise. Normalise by dividing consumption by headcount to get **intensity** (kWh per person).
+With the reference points established, the audit's centrepiece follows: converting everything gathered so far into a ranked list of quantified opportunities.
 
-## Production volume
+## Sources and further reading
 
-In a factory, more production = more energy. Divide by production volume to get intensity.
-
-## Baseline establishment
-
-**Method:**
-1. Gather 12 months of utility data (kWh monthly)
-2. Gather HDD for each month (from UK Met Office or online)
-3. Regress: kWh = intercept + slope × HDD
-4. The intercept is **base consumption** (what you'd use at 15.5°C average temperature — essentially non-heating, non-cooling uses)
-5. Normalise all 12 months to average HDD (say, 100 HDD/month)
-6. Average the 12 normalised months → your baseline
-
-**Example outcome:** Baseline = 7,500 kWh/month (normalised to average weather).
-
-This baseline is your "no-improvement" point. Any reduction below it is savings.
-
-## Living baseline
-
-As you implement improvements, establish a new baseline (after each major change) so future comparisons are valid.
-
-Do NOT use the original baseline indefinitely — equipment changes, occupancy shifts, buildings are expanded. Update when conditions change.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for energy benchmarking guidance for building types.
+- [ISO 50006](https://www.iso.org/standard/77425.html) on establishing energy baselines and performance indicators.
+- [Degree day data and guidance](https://www.degreedays.net/) for the weather series behind the regression.

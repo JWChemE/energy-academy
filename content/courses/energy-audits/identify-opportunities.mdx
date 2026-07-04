@@ -1,38 +1,54 @@
-Once you have your baseline, you can identify inefficiencies and rank them by payback.
+Everything an audit gathers converges here: the walk-through's suspicions, the loggers' evidence, the interviews' context and the baseline's reference points become a list of specific, costed, ranked opportunities. This is the intellectual centre of the audit and the part clients actually pay for. The craft has two halves: estimating each measure's saving honestly, and ranking the portfolio so the client knows exactly what to do first.
 
-## Analysis approach
+## Three ways to size a saving
 
-Compare to benchmarks: look up similar buildings' energy intensity (kWh/m²/year). If yours is much higher, inefficiency is obvious.
+Nearly every estimate uses one of three methods, in descending order of confidence.
 
-Plot consumption vs. weather/occupancy. Does the slope match expected? Steep slope suggests poor insulation or oversized heating.
+**Measured comparison** takes the logged data and applies the change arithmetically: the AHU logging showed 5,640 excess hours at 11 kW, so scheduling saves 62,040 kWh. Where the audit measured well, this method is close to unarguable.
 
-If you have sub-meters, what's using the most? Compare to standards (lighting should be 10–15 W/m²; if yours is 30, upgrades are obvious).
+**Engineering calculation** models the physics with stated assumptions: a boiler at 78% efficiency replaced by one at 92% cuts fuel in the ratio of efficiencies; an insulation measure is sized from surface areas and temperature differences, as the [insulation course](/courses/insulation-systems) shows. State every assumption, because the reviewer will test them.
 
-Combine visual inspection findings (uninsulated pipes, failed traps, oversized boilers, poor controls) with measurement data.
+**Vendor or literature figures** ("VSDs typically save 15 to 30% on variable loads") are the weakest tier and belong only where measurement was impossible, always at the conservative end of the published range, always attributed. An audit whose big numbers all rest on vendor claims is a brochure.
 
-## Quantifying savings
+Whatever the method, savings compound with prices and carbon: kWh saved × tariff = £ saved; kWh × the [government conversion factor](/courses/uk-energy-regulation/secr) = tCO₂e saved. Use the site's actual marginal prices, reliefs included, per the [regulation course](/courses/uk-energy-regulation/business-electricity-relief).
 
-For each opportunity, estimate:
+## Ranking the portfolio
 
-**Energy saved (kWh/year):**
-- Comparison method: "If we reduce HVAC run hours by 2 h/day, we save 2 h × 20 kW × 365 = 14,600 kWh/year"
-- Engineering: "Boiler efficiency 80% → 90% on 100,000 kWh/year input = 12,500 kWh/year saved"
-- Supplier data: "LED retrofit claimed to save 50% on lighting (currently 50 kW) = 25 kW × 8,760 h × 50%"
+Simple payback (cost ÷ annual saving) is the audit's working currency because everyone understands it, and the [economic analysis course](/courses/economic-analysis) adds NPV and IRR for the larger measures. The standard presentation groups measures into three tiers:
 
-**Cost saved (£/year)** = kWh saved × £/kWh rate. Electricity ~0.25 GBP/kWh, gas ~0.05 GBP/kWh equivalent.
+<WorkedExample title="a ranked shortlist">
+  <Given>
+    Three measures from a site's audit:
+    - Heating controls and scheduling: £2,000 cost, £3,000/yr saving
+    - VSD on the main extract fan: £15,000 cost, £12,000/yr saving
+    - LED lighting replacement: £24,000 cost, £8,000/yr saving
+  </Given>
+  <Find>The paybacks and the recommended order.</Find>
+  <Solution>
+    Controls: 2,000 ÷ 3,000 = **0.7 years**. VSD: 15,000 ÷ 12,000 = **1.25 years**.
+    LED: 24,000 ÷ 8,000 = **3.0 years**.
 
-**Project cost** — Material + labour. Get supplier quotes.
+    Recommended order follows payback, and the sequencing carries a message worth making
+    explicit to the client: the controls measure funds itself within the financial year,
+    and its savings then part-fund the VSD, whose savings part-fund the LEDs. A ranked
+    list is not just an ordering; it is a self-financing programme.
+  </Solution>
+</WorkedExample>
 
-**Payback (years)** = cost / annual savings. Target: less than 3–5 years.
+Two refinements keep the ranking honest. **Interactions**: measures overlap, so a heating-control saving shrinks once insulation reduces the heating load; estimate the combined programme, not the sum of isolated measures, or state that the figures assume independent implementation. **Risk**: attach a confidence note to each figure (measured / calculated / literature), so the client can see which numbers are load-bearing.
 
-**CO₂ saved (tonnes/year)** = kWh saved × 0.2 kg CO₂/kWh (UK grid average).
+<Callout variant="key" title="Underpromise: the audit's numbers will be checked">
+An audit's reputation is set eighteen months later, when someone compares the bills against the promises. Estimate conservatively: take the cautious end of ranges, degrade vendor claims, and round savings down and costs up. A report that promised £30,000 and delivered £35,000 makes the next project easy to fund. One that promised £50,000 and delivered £35,000 poisons the well, despite identical engineering.
+</Callout>
 
-## Ranking examples
+## Do not discard the non-energy benefits
 
-- Boiler cleaning: 5,000 kWh/year saved, 500 GBP cost, 0.4-year payback
-- LED retrofit: 25,000 kWh/year, 50,000 GBP cost, 8-year payback
-- Weather compensation: 15,000 kWh/year, 8,000 GBP cost, 2.1-year payback
-- Trap replacement: 20,000 kWh/year, 10,000 GBP cost, 2-year payback
-- Insulation: 10,000 kWh/year, 40,000 GBP cost, 16-year payback
+Many measures carry value beyond the meter: maintenance savings from LED lifetimes, comfort and productivity from controls, capacity freed by [power factor correction](/courses/electrical-science/power-factor), compliance value under [MEES](/courses/uk-energy-regulation/epc-and-building-standards). List them qualitatively alongside the energy numbers; boards frequently fund on the combination.
 
-Prioritise by payback. A 0.4-year payback (boiler cleaning) pays for itself in 5 months — a clear quick win.
+The list is built. The final lesson covers the document and the meeting that get it implemented.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on typical measure savings by technology.
+- [UK government greenhouse gas conversion factors](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) for the carbon arithmetic.
+- [ISO 50002](https://www.iso.org/standard/60088.html) on documenting opportunity evaluation within an audit.

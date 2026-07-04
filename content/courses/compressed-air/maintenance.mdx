@@ -1,24 +1,43 @@
-Compressed air systems lose efficiency steadily without maintenance. A neglected system can drift 20-30% above its baseline energy use within a couple of years.
+A compressed air system's efficiency is not a fixed property; it is a perishable one. Filters load, separators saturate, coolers foul, drains stick and leaks regrow, and each adds a little to the energy bill without tripping a single alarm. A system left alone drifts upward by percent after percent until, within a couple of years, it costs 20% more than it should for the same air. Maintenance is where that drift is caught, and on compressed air it pays better than almost any other plant-room activity.
 
-## Where efficiency leaks away
+## The components that tax the system as they age
 
-**Air intake filters** clog with dust. A blocked filter forces the compressor to work against extra suction resistance - every 25 mbar of pressure drop across the inlet costs roughly 2% in energy. Replace or clean filters on the manufacturer's schedule (often every 2,000-4,000 running hours).
+**Inlet filters** protect the airend from dust and pay a penalty as they load: restriction at the intake makes the machine work harder for the same output, costing roughly **2% of energy for every 25 mbar of pressure drop** across the element. A differential-pressure indicator, and replacement on ΔP rather than on the calendar, keeps the tax capped. On a 90 kW plant running 6,000 hours, each neglected 25 mbar is about £2,160 a year.
 
-**Oil separators** in lubricated screw compressors load up over time. A saturated separator adds back-pressure and lets oil carry over into the air, fouling downstream filters. Differential-pressure gauges tell you when to change them - typically at 0.8-1.0 bar drop.
+**Oil separators** in screw compressors add back-pressure as they saturate, with the same per-millibar arithmetic, plus oil carryover that fouls everything downstream when they fail. Change at the manufacturer's ΔP limit.
 
-**Coolers and heat exchangers** foul with dust and scale, raising discharge temperature. Hot air holds more moisture and stresses the compressor. Keep aftercoolers clean so approach temperature stays within spec.
+**Coolers** (oil and after-) foul with dust and raise operating temperatures. A hot compressor is less efficient, trips more, ages faster, and delivers warmer, wetter air that the [dryer](/courses/compressed-air/pipe-sizing) must then work harder on. Cleaning cooler cores is cheap and chronically postponed.
 
-## A practical maintenance schedule
+**Condensate drains** fail in the expensive direction: stuck open, a drain is simply a leak with a job title. A timer drain jammed open passes air like a 2 mm hole, roughly 1.9 kW of compressor power, about **£2,300 a year** at reference prices. Zero-loss drains eliminate the standing loss and repay their premium quickly on larger systems.
 
-| Interval | Task |
-|---|---|
-| Weekly | Drain condensate traps, listen for leaks, log discharge pressure and temperature |
-| Monthly | Inspect intake filter, check oil level and colour, verify drain operation |
-| Quarterly | Check belt tension, inspect couplings, review pressure-drop trends |
-| Annual | Change oil and separators, service motor bearings, calibrate pressure sensors, full leak survey |
+<WorkedExample title="the cost of a year's neglect">
+  <Given>
+    - A 90 kW system, 6,000 h/yr, £0.20/kWh (annual bill ≈ £108,000)
+    - After a year without attention: inlet filters at +50 mbar (≈4%), one drain stuck open (≈1.9 kW), leaks regrown by 5% of capacity (≈4.5 kW)
+  </Given>
+  <Find>The annual cost of the accumulated drift.</Find>
+  <Solution>
+    Filters: 0.04 × 108,000 ≈ £4,320. Drain: 1.9 × 6,000 × 0.20 ≈ £2,280.
+    Leak regrowth: 4.5 × 6,000 × 0.20 ≈ £5,400.
 
-## Why it pays
+    Total ≈ **£12,000 a year**, roughly 11% of the bill, from three quiet failures that a
+    routine would have caught for a few hundred pounds in parts and hours. Multiply by the
+    years since the last proper service to estimate what an unmanaged system is losing.
+  </Solution>
+</WorkedExample>
 
-A compressor running 6,000 hours/year at 50 kW costs around 30,000 GBP/year in electricity at 0.10 GBP/kWh. Restoring lost efficiency through maintenance - even 10% - saves 3,000 GBP/year against a maintenance cost of a few hundred pounds. Maintenance is one of the highest-return activities in the whole plant room.
+## A routine that holds the line
 
-Log key parameters (pressure, temperature, power) so you can spot gradual drift before it becomes expensive. A rising specific energy (kWh per m3 of air) is the clearest early warning.
+The schedule that keeps a system honest is modest. **Weekly**: log discharge pressure, temperature and (if metered) power; glance at drains; listen. **Monthly**: check filter and separator ΔPs, oil level and condition, and walk the highest-risk leak areas. **Annually**: full service to the manufacturer's schedule, cooler cleaning, and the formal [leak survey](/courses/compressed-air/leaks-detection). The single most valuable habit is trending **specific energy** (kWh per m³ delivered): it is the system's vital sign, and a rising trend flags trouble months before anything fails, exactly as an [M&T exception](/courses/monitoring-and-targeting/exception-reporting) should.
+
+<Callout variant="key" title="Maintain to a number, not a feeling">
+The difference between maintenance that saves energy and maintenance that merely happens is instrumentation: ΔP gauges on filters and separators, hours-run and power logging at the panel, and a specific-energy figure reviewed monthly. Each says precisely when attention pays and when it can wait, converting the schedule from ritual to economics. Ask of any compressed air maintenance contract: which numbers does it read, and who reviews them?
+</Callout>
+
+Everything the course has covered now assembles into one programme, ranked and sequenced, in the final lesson.
+
+## Sources and further reading
+
+- [BCAS](https://www.bcas.org.uk/) maintenance best-practice guidance for compressed air systems.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on maintaining compressed air efficiency.
+- Manufacturer service documentation for machine-specific ΔP limits and service intervals.

@@ -1,21 +1,45 @@
-System pressure must be controlled to prevent excess energy waste and equipment damage.
+Between the compressor house and the tools sits the demand side of the system: regulators, hoses, nozzles and habits. This is where well-made 7-bar air gets wasted at the point of use, through unregulated drops feeding tools that need far less, open pipes used as brooms, and applications that should never have used compressed air at all. Demand-side discipline costs almost nothing and typically returns several percent of the whole system's energy, and this lesson covers its three fronts.
 
-## How pressure is regulated
+## Regulate every use to its real requirement
 
-A compressor discharge valve opens/closes to maintain setpoint (e.g., 7 bar). As demand falls, the valve modulates or the compressor enters "load-unload" mode (compressor runs unloaded, wasting energy).
+Most pneumatic tools and machines are designed for around 6 bar or less, and many uses (blow-offs, air knives, instrument air) work well below that. Any point of use taking unregulated line pressure consumes more than it needs on every cycle, because flow through a tool or orifice rises with the pressure feeding it. This is the point-of-use face of **artificial demand**, introduced in the [pressure lesson](/courses/compressed-air/pressure-flow): air consumed only because it was offered.
 
-**Load-unload control:** Compressor runs at full power but supplies no pressure (energy wasted). Typical on reciprocating compressors.
+The fix is the humble **filter-regulator** set at each drop, dialled to the use's actual requirement and locked. A walk of the drops with a notebook, recording each regulator's setting against the tool's rating, is a standard audit task; finding half of them wide open at line pressure is a standard result.
 
-**Variable-displacement (modulating):** Compressor output adjusts smoothly to match demand. Typical on screw compressors. More efficient.
+## Open blowing: the expensive broom
 
-## Pressure drop in the system
+The costliest habit on most sites is using an open pipe or gun for cleaning, drying and moving swarf. An open orifice flows enormously compared with a working tool, and it tends to be used generously.
 
-System pressure = compressor discharge pressure minus pressure drop in pipes/hoses. If drop is 1 bar, you need 8 bar discharge to get 7 bar at the tool.
+<WorkedExample title="the open blow-off, priced">
+  <Given>
+    - A fixed blow-off is a 6 mm open pipe at 7 bar g, passing ≈ 43 L/s of free air
+    - It blows whenever the line runs: 6,000 h/yr
+    - Specific energy 0.11 kWh/m³; electricity £0.20/kWh
+  </Given>
+  <Find>The compressor power and annual cost behind it.</Find>
+  <Solution>
+    Power ≈ 0.043 × 0.11 × 3,600 ≈ **17 kW** of compressor output, continuously.
 
-Solution: Run at the minimum discharge pressure needed to overcome pipe drop, then maintain that setpoint (usually 6-8 bar for most facilities).
+    Annual cost ≈ 17 × 6,000 × £0.20 ≈ **£20,400 for one open pipe**. The engineered
+    alternatives are dramatically cheaper: a venturi amplifier nozzle does the same job on
+    a fraction of the air, an electric blower does it for perhaps a tenth of the energy,
+    and a solenoid interlock makes any remaining blow-off run only while product is
+    actually present. Ten-pound nozzles returning four figures a year are the norm here.
+  </Solution>
+</WorkedExample>
 
-## Reducing system pressure
+## The uses that should not be air at all
 
-If tools only need 5 bar but system is set to 8 bar, reducing setpoint saves ~30% energy. Test tools first to verify they work at lower pressure.
+Some jobs use compressed air only because a hose was nearby: cabinet cooling that a fan would do at a tenth of the cost, agitation and aeration that a blower serves better, vacuum generation that a dedicated pump beats easily, personnel "dusting down" that is both wasteful and a genuine safety hazard (never permitted; HSE guidance is emphatic). The audit habit is to ask of every air use: *what work is this doing, and what is the cheapest way to do that work?* Air should win only where its portability, safety or power density genuinely matters.
 
-Cost to adjust: None. Savings: 10-30% of compressor energy for each 2-bar reduction.
+<Callout variant="key" title="Survey the demand side like an asset register">
+The demand-side review is a half-day walk that lists every point of use, its purpose, its regulator setting against its real requirement, and whether air is the right utility for the job at all. Its output is a short table of reductions: settings turned down, nozzles fitted, interlocks added, uses converted to electric alternatives. Repeated annually alongside the [leak survey](/courses/compressed-air/leaks-detection), it keeps the demand side honest, and together the two typically hold total system waste to half what an unmanaged site tolerates.
+</Callout>
+
+Demand disciplined, the next lesson turns to the pipes between supply and demand: sizing, layout and the pressure drops that quietly raise the generation setpoint.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on demand-side compressed air savings.
+- [BCAS](https://www.bcas.org.uk/) guidance on efficient point-of-use practice and nozzle technology.
+- [HSE guidance on compressed air safety](https://www.hse.gov.uk/), including the prohibition on using air lines on people.

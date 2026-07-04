@@ -1,32 +1,45 @@
-Steam is a powerful heat-transfer medium because of its enormous latent heat. Understanding steam properties is key to managing steam systems efficiently.
+Steam has heated industry for two centuries and still carries the process heat of breweries, hospitals, laundries, food factories and chemical works, because it does something no other common medium matches: it delivers enormous amounts of heat, at a precisely controlled temperature, through a pipe that needs no pump. Understanding why, which comes down to one property called latent heat, is the foundation for every saving in this course, and it also produces the number every steam decision should be priced with: the cost of a tonne of steam.
 
-## Saturated vs superheated steam
+## Latent heat: the point of steam
 
-**Saturated steam** — at a given pressure, it coexists with liquid water. At 1 bar (atmosphere), 100°C. At 10 bar, 180°C. Higher pressure = higher saturation temperature.
+Heating water takes energy in two very different ways. Warming liquid water is cheap in energy terms: about 4.2 kJ per kilogram per degree. But converting water at its boiling point into steam *at the same temperature* absorbs a huge additional payload, the **latent heat of evaporation**: around 2,257 kJ/kg at atmospheric pressure. That energy hides in the vapour, and when the steam later condenses on a cold surface, all of it is released at once, at constant temperature.
 
-**Superheated steam** — heated further above saturation. 200°C at 1 bar is superheated. More energy, but less commonly used in buildings.
+That is steam's whole trick. A kilogram of condensing steam gives up roughly five times the heat of a kilogram of water cooling by 100 °C, and it delivers it at a fixed, predictable temperature set by one thing only: pressure. At atmospheric pressure steam condenses at 100 °C; at 7 bar gauge, at about 170 °C. Control the pressure and you control the temperature, with no valves modulating flow ever able to overshoot it. Latent heat also transfers extremely fast, so steam heat exchangers are compact.
 
-Most building steam systems use saturated steam (it's cheaper to generate and the high heat-transfer rate is sufficient).
+Two terms complete the vocabulary. **Saturated steam** is steam at exactly its boiling temperature for the pressure, the normal state for heating systems. **Dryness fraction** describes how much liquid mist the steam carries: dry saturated steam is all vapour, and wet steam (dryness below 1) carries water droplets that deliver less heat and erode pipework.
 
-## Latent heat
+## The number that runs the course: £ per tonne
 
-When water at 100°C becomes steam at 100°C (at 1 bar), an enormous amount of heat is absorbed: **2,257 kJ/kg**. This is latent heat.
+Steam is a manufactured product with a unit cost, exactly like [compressed air](/courses/compressed-air/why-expensive), and pricing it is the first calculation of any steam audit.
 
-When that steam condenses back to water, that heat is released. This is why steam is an excellent heating medium.
+<WorkedExample title="the cost of a tonne of steam">
+  <Given>
+    - Steam generated at 7 bar g (total heat content ≈ 2,769 kJ/kg)
+    - Feedwater arrives at 80 °C (heat content ≈ 335 kJ/kg)
+    - Boiler efficiency 85%; gas £0.06/kWh
+  </Given>
+  <Find>The fuel cost of one tonne of steam.</Find>
+  <Solution>
+    Heat added per kg = 2,769 − 335 = 2,434 kJ, so 2,434 MJ per tonne.
 
-Total energy in steam = sensible heat (heating water) + latent heat. Example: steam at 10 bar, 180°C:
-- Sensible: 180 × 4.19 = ~754 kJ/kg
-- Latent: ~1,888 kJ/kg
-- Total: ~2,642 kJ/kg
+    Gas required = 2,434 ÷ 0.85 ÷ 3.6 ≈ **795 kWh per tonne**, costing about
+    **£48 per tonne** at reference prices. Water, treatment and carbon add more. Every
+    later lesson prices its losses in these tonnes: a failed trap passing 29 kg/h, a bare
+    pipe condensing steam it never delivers, condensate poured down a drain at £48-worth
+    of heat per tonne of steam it came from.
+  </Solution>
+</WorkedExample>
 
-When this steam condenses, you recover ~1,888 kJ/kg (the latent part goes to the load you're heating; sensible heat comes out as hot condensate).
+Notice the split inside that 2,769 kJ/kg: at 7 bar g, roughly **74% of the steam's heat is latent**. Only the latent part does the useful heating; the sensible part remains in the condensate afterwards, which is why [returning condensate](/courses/steam-and-condensate/condensate-return) matters so much later in the course.
 
-## Steam tables
+<Callout variant="key" title="Pressure sets temperature; latent heat does the work">
+Two facts organise everything about steam. First, saturated steam's temperature is a function of pressure alone, which is why pressure selection (the next lesson) is really temperature selection. Second, the latent heat is the product being sold; everything else, the condensate's warmth, the flash steam, the blowdown, is packaging that a well-run system recovers rather than discards.
+</Callout>
 
-Steam tables list properties at different pressures: temperature, density, enthalpy, entropy. Used for calculations.
+Steam properties are tabulated in **steam tables** (printed or online), and every practitioner should be able to read off saturation temperature, sensible heat (hf), latent heat (hfg) and total heat (hg) at a given pressure; this course quotes them as needed. Next: what pressure to generate and distribute at, and what the choice costs.
 
-Key insight: **all saturated steam at the same pressure has the same temperature.** At 10 bar, saturation temp is always ~180°C (whether dry or wet).
+## Sources and further reading
 
-**Quality** — the fraction of steam that is vapor vs. liquid. Quality = 0.9 means 90% vapor, 10% liquid (wet steam). Quality = 1.0 is dry saturated steam; below that, you've got droplets.
-
-Wet steam drops efficiency — the liquid particles don't transfer heat as well and can damage equipment.
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam), the standard free reference for steam theory and tables.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on steam system energy management.
+- [Combustion Engineering Association](https://cea.org.uk/) for UK steam plant guidance and training.

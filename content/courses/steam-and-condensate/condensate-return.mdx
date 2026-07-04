@@ -1,34 +1,48 @@
-Returning hot condensate to the boiler saves significant fuel. Adding flash-steam capture makes it even better.
+When steam has given up its latent heat, what remains is condensate: distilled, chemically treated water at up to 100 °C, produced in exactly the quantity the boiler needs to feed. Every tonne poured down a drain must be replaced with cold mains water that has to be bought, treated, and heated from perhaps 10 °C, and it usually takes a drainage charge on the way out. Condensate return is consequently the largest single recovery available on most under-managed steam systems, and this lesson covers its value, its machinery and its pitfalls.
 
-## Why return condensate?
+## What a tonne of condensate is worth
 
-Fresh boiler feedwater is typically 10–15°C (from the cold mains or softener).
-Returned condensate is 80–90°C (from the load, after it condensed).
+Condensate carries value three ways. **Heat**: at 85 °C it holds around 314 kJ/kg more than 10 °C make-up water, energy the boiler would otherwise buy as gas. **Water**: a tonne of make-up avoided, plus its disposal. **Chemistry**: condensate is already softened and treated; make-up water consumes softener capacity and chemicals, and its dissolved solids drive extra [blowdown](/courses/steam-and-condensate/efficiency-assessment), compounding the loss.
 
-Raising feedwater temp from 15°C to 85°C reduces the energy the boiler must add:
-- From 15°C to saturation (say 180°C): needs 165 × specific heat ≈ 690 kJ/kg
-- From 85°C to 180°C: needs 95 × specific heat ≈ 398 kJ/kg
+<WorkedExample title="raising the return rate">
+  <Given>
+    - A 4 t/h steam system, 6,000 h/yr, currently returns 40% of condensate; 70% is achievable
+    - Condensate 85 °C (≈356 kJ/kg) versus make-up at 10 °C (≈42 kJ/kg); boiler 85% efficient; gas £0.06/kWh
+    - Water plus treatment plus disposal ≈ £3/tonne avoided
+  </Given>
+  <Find>The annual value of the extra 30% returned.</Find>
+  <Solution>
+    Extra return = 0.30 × 4,000 kg/h × 6,000 h = 7,200 tonnes a year.
 
-**Savings: ~42% of the heat needed for that unit of steam.**
+    Heat: 7,200 t × 314 MJ/t ÷ 0.85 ≈ 739,000 kWh of gas, worth ≈ **£44,300**.
+    Water and treatment: 7,200 × £3 ≈ **£21,600**.
 
-In a large system (say, 1,000 kg/h of steam), condensate return at 85°C vs 15°C saves roughly 430 kW — tens of thousands per year.
+    Total ≈ **£66,000 a year**, for pumps, pipework and a receiver: a project that very
+    commonly repays within a year. Steam systems are unusual in hiding savings this large
+    behind this little glamour.
+  </Solution>
+</WorkedExample>
 
-## Flash steam
+## The machinery of return
 
-When condensate at, say, 100°C returns through a restriction (pipe, valve), pressure drops, and some vaporises ("flashes") to steam at the lower pressure (say, atmospheric). About 5–15% by weight.
+Where condensate sits above and near the boiler house, gravity and the trap's own pressure push it home. Everywhere else needs **pumping**: electric centrifugal sets where power is convenient, or mechanical **pressure-powered pumps** (driven by steam itself) where condensate is hot enough to make electric pumps cavitate. Hot condensate boils readily at a pump inlet, so receivers, static head and pump selection are a real engineering exercise rather than a catalogue purchase.
 
-This flash steam can be captured in a **flash tank** (a simple receiver), separated from condensate, and sent to a low-pressure heating line (indirect radiators, process).
+The destination is the **feedwater tank (hotwell)**, and it is also where the [flash steam lesson's](/courses/steam-and-condensate/steam-pressure) recovery lands: a flash vessel on the high-pressure returns feeds its low-pressure steam into the hotwell through a sparge, heating the feedwater for free. A well-run hotwell sits at 85 to 95 °C, which saves fuel directly and strips dissolved oxygen from the water, cutting corrosion and treatment dosing.
 
-Savings: additional 5–15% energy from flash recovery, with minimal cost (just a tank and plumbing).
+## Why return rates fall, and the one honest caution
 
-## Condensate polishing
+Sites drift to low return rates for findable reasons: distant plant "temporarily" drained to gulley during a long-forgotten project; corroded return lines abandoned rather than repaired; receivers with failed pumps; new equipment installed without return pipework because the capital case ignored running cost. Walking the site against a condensate mass balance (steam metered out versus condensate metered or gauged back) locates the losses in an afternoon.
 
-Hot condensate is corrosive (contains dissolved oxygen and CO₂). A **deaerator** or **polishing unit** (small heater-degasser) removes dissolved gases, reducing boiler corrosion and extending boiler life.
+The caution: condensate from processes where steam contacts product, or where a heat exchanger leak could contaminate it (certain chemical duties), may be unreturnable or need conductivity monitoring before the hotwell. Food and brewery plants live with this rule daily, as the [brewery course](/sectors/breweries) shows. Contamination risk is a design constraint, not a reason to dump everything.
 
-Cost: ~5,000–15,000 GBP. Benefit: longer boiler life (10+ years) and lower maintenance.
+<Callout variant="key" title="Measure the return rate; it is the system's headline KPI">
+Condensate return percentage is to a steam system what [specific energy is to compressed air](/courses/compressed-air/pressure-flow): one number that summarises stewardship. Meter or gauge it monthly, target above 80% where processes allow, and treat any fall as an [exception to investigate](/courses/monitoring-and-targeting/exception-reporting), because a falling return rate is usually a new failure with a four-figure monthly cost.
+</Callout>
 
-## Return line pitfalls
+The course closes by assembling generation, distribution, traps and condensate into a single ranked programme.
 
-- **Low return pressure** — if condensate line is not pressurised, it can cavitate (boil), causing noise and loss of efficiency. Solution: pressurised return, booster pump, or adequate elevation.
-- **No strainer** — dirt in returned condensate clogs the boiler feedwater system. Always have a strainer upstream of the boiler.
-- **Long uninsulated return lines** — if condensate must travel far, insulate it to retain heat.
+## Sources and further reading
+
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam) on condensate recovery and pumping.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on condensate and flash recovery economics.
+- [Combustion Engineering Association](https://cea.org.uk/) guidance on feedwater systems and hotwell operation.

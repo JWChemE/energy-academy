@@ -1,43 +1,45 @@
-A **steam system audit** checks three main areas: boiler efficiency, steam quality/losses, and condensate recovery.
+Before improving a steam system you need to know where its energy currently goes, and the honest answer on most sites is: nobody has checked for years. A structured efficiency assessment follows the energy from the gas meter to the process and back, attributing losses to each stage: combustion, blowdown, distribution, traps and condensate. This lesson covers the generation end, where the first and largest losses live, and sets up the loss inventory the rest of the course fills in.
 
-## Boiler efficiency
+## Boiler efficiency: the flue tells the story
 
-Measure or estimate:
-- **Fuel input** (gas flow, oil consumption)
-- **Steam output** (calculated from condensate return + process steam, or steam flow meter)
-- **Efficiency** = (energy in steam) / (energy in fuel)
+A shell boiler in good order converts around 80 to 85% of its fuel's energy into steam; the balance leaves mostly up the flue. Flue gas analysis, a routine service measurement with a portable analyser, reads the two numbers that matter: **flue temperature** (heat leaving; every ~20 °C of excess roughly costs 1% efficiency) and **oxygen content** (excess air; air that was heated and discharged without burning anything). High flue temperature points to fouled heat transfer surfaces or an economiser opportunity; high oxygen points to burner tuning. The [boilers course](/courses/boilers-and-fired-systems) covers combustion in depth; for the steam assessment, the required output is simply the measured efficiency figure, dated, at typical load.
 
-Typical boiler efficiency: 80–85% for fire-tube, 85–90% for water-tube.
+Load matters as much as tune. Boilers are least efficient at low load, where standing losses dominate, and worst of all when cycling on and off against a small demand, each purge cycle throwing heated air up the stack. A boiler log showing hours and firing pattern belongs in every assessment.
 
-Compare to nameplate (what the boiler is rated for). If actual is much lower than nameplate, the boiler may be oversized, fouled, or poorly tuned.
+## Blowdown: necessary, but meterable
 
-## Steam distribution losses
+Boiler water concentrates dissolved solids as steam leaves, and the concentrate must be periodically **blown down** to drain to protect the boiler. Blowdown is hot boiler water at full pressure, so every kilogram discarded carries its full sensible heat. The assessment questions are: how much (as a percentage of steam make), controlled by what (a TDS controller, or a manually-opened valve and habit), and with any heat recovery (a flash vessel and heat exchanger on the blowdown line are standard kit on well-run plants).
 
-Walk the steam line and look for:
-- **Uninsulated or poorly insulated pipes** (feel for heat, or use infrared)
-- **Leaks** (hissing, visible steam)
-- **Pressure drop** (check inlet vs outlet pressure; excessive drop suggests undersized pipes or fouling)
+<WorkedExample title="what tighter blowdown control is worth">
+  <Given>
+    - A 4 t/h boiler at 7 bar g blows down 10% of its steam make; TDS control would achieve 5%
+    - Boiler water sensible heat ≈ 721 kJ/kg; feedwater ≈ 335 kJ/kg
+    - Boiler 85% efficient; 6,000 h/yr; gas £0.06/kWh
+  </Given>
+  <Find>The annual saving from halving the blowdown rate.</Find>
+  <Solution>
+    Blowdown flow reduced by 0.05 × 4,000 = 200 kg/h. Net heat in each kilogram discarded
+    = 721 − 335 = 386 kJ, so heat saved ≈ 200 × 386 ÷ 3,600 ≈ 21.4 kW.
 
-Estimate heat loss: small line (25 mm diameter, 100 m uninsulated, 10 bar steam, 20°C ambient) loses ~50 kW continuously. Serious waste.
+    As fuel: 21.4 ÷ 0.85 ≈ 25.2 kW of gas × 6,000 h ≈ 151,000 kWh, about **£9,100 a
+    year**, before counting the water and treatment chemicals saved with it. An automatic
+    TDS control system typically costs a fraction of that; this is one of the boiler
+    house's most reliable retrofits.
+  </Solution>
+</WorkedExample>
 
-Cost to insulate: ~£1,000 for that line. Savings: ~30 kW × 24 h × 365 = ~250 MWh/year ≈ £20,000–30,000 at typical steam cost. Payback: weeks.
+## Building the loss inventory
 
-## Steam quality & traps
+The assessment's product is a one-page energy balance: fuel in; steam out (metered, or inferred from feedwater make-up); and the losses attributed line by line: flue (from the analyser), blowdown (from TDS figures), distribution radiation (from the [insulation survey](/courses/steam-and-condensate/steam-distribution)), trap losses (from the [trap survey](/courses/steam-and-condensate/trap-failure)), and unreturned condensate (from the [return-rate measurement](/courses/steam-and-condensate/condensate-return)). Each line gets a £ figure at the site's [cost per tonne](/courses/steam-and-condensate/steam-basics), and the inventory becomes the ranked project list, exactly as an [audit](/courses/energy-audits/identify-opportunities) would produce.
 
-- **Test condensate** from the return line downstream of traps. If steam is present (condensate boils/flashes), traps are failing.
-- **Count and check traps** with infrared. A facility with 50 traps should have no more than 5–10% visibly failing.
-- **Listen** for hissing (stuck open), banging (stuck closed), or sluggish response.
+<Callout variant="key" title="Meter steam, or you are assessing blind">
+The single most valuable instrument on a steam system is a steam (or feedwater) flow meter. Without one, efficiency is a guess between two bills; with one, the site has a kWh-per-tonne figure to trend, exactly like [specific energy on compressed air](/courses/compressed-air/pressure-flow), and every project's saving becomes provable. If the assessment finds no metering, metering is recommendation one, because it converts every later recommendation from assertion to measurement.
+</Callout>
 
-## Condensate recovery
+Distribution is the next stop for the energy leaving the boiler house, and the next lesson follows it down the pipe.
 
-- **Is condensate being returned?** Measure if return line is active.
-- **What temp is it?** Should be 80–90°C. If it's below 60°C, it's losing heat to the environment.
-- **Is there a flash tank?** If not, flash steam is wasted. Adding one is a quick win.
+## Sources and further reading
 
-## Rough payback estimates
-
-- Insulating uninsulated pipes: payback often under 1 year
-- Replacing failed traps: payback 1–3 years
-- Installing flash recovery: payback 2–5 years
-- Boiler tuning/cleaning: payback under 1 year (but requires a technician)
-- Replacing an oversized boiler with a smaller, modern one: payback 3–7 years
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam) on boiler efficiency, blowdown and TDS control.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on steam and boiler energy assessment.
+- [Combustion Engineering Association](https://cea.org.uk/) and [HSE boiler guidance](https://www.hse.gov.uk/) for the safe-operation context (BG01) around any boiler-house work.

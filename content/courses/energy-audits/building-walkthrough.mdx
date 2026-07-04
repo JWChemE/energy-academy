@@ -1,59 +1,48 @@
-A **building walk-through** is a systematic visual inspection to understand how energy is used and identify obvious inefficiencies.
+The walk-through is the part of an audit no instrument can replace: a systematic tour of the site with a torch, a camera, a notebook and a practised eye. Its purpose is not to quantify anything yet. It is to build the list of suspicions that measurement will later confirm or dismiss, and to see the building as it actually operates rather than as its drawings claim. Experienced auditors find a large share of their eventual recommendations in this one day, and this lesson is the method behind that.
 
-## Before you arrive
+## Preparation doubles the value of the day
 
-- Obtain building plans (floor layout, major equipment)
-- Collect utility bills (last 12 months)
-- List any known issues (draft complaints, equipment failures, renovation plans)
-- Schedule access with facilities/operations
+Before arriving, get the last twelve months of bills and, ideally, half-hourly data; a floor plan marked with plant locations; the maintenance log if one exists; and a named escort who knows where the keys are. Study the consumption data first: if the [half-hourly profile](/courses/monitoring-and-targeting/meter-data) shows a heavy overnight load, the walk-through's job is to go and find it. Arriving with questions turns a tour into an investigation.
 
-## What to look for
+Timing matters more than most auditors admit. A site at 10 a.m. on a Tuesday shows you its best behaviour. The waste performs after hours, so where the data justifies it, walk the site at night or at the weekend too. What is running that should not be is the single most profitable question in auditing.
 
-**Envelope:**
-- Condition of windows (single, double, triple glazing; seals intact?)
-- Insulation visibility in attics, crawlspaces (present, adequate thickness?)
-- Air leakage points (gaps around doors, penetrations, cracks)
-- External shading (trees, adjacent buildings, blinds)
+<WorkedExample title="the after-hours walkround, priced">
+  <Given>
+    - An evening walkround finds an 11 kW air handling unit running continuously
+    - The area it serves is occupied 12 hours a day, 5 days a week (3,120 h/yr)
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The cost of the excess running, and the fix.</Find>
+  <Solution>
+    Running hours: 8,760 a year against 3,120 needed, so 5,640 excess hours.
 
-**Heating & cooling:**
-- Age and condition of boilers, chillers, heat pumps
-- Heat exchanger fouling (is it regularly cleaned?)
-- Pipe insulation (present? sufficient thickness?)
-- Control valves and actuators (visibly functional?)
-- Thermostat type and location (single for whole building? In occupied zone?)
+    Excess energy = 5,640 × 11 = 62,040 kWh, costing **£12,408 a year**. The fix is a time
+    schedule in the building management system, which likely exists already and costs
+    nothing to use. Findings of exactly this shape, plant serving nobody, are why
+    walk-throughs at unsociable hours pay for themselves many times over.
+  </Solution>
+</WorkedExample>
 
-**HVAC:**
-- Filters (clean or clogged?)
-- Fan operation (running continuously or on schedule?)
-- Ductwork insulation and sealing
-- VAV boxes and dampers (responsive?)
-- Ventilation dampers (are they open/closed as appropriate?)
+## A route that misses nothing
 
-**Lighting:**
-- Lamp type (incandescent, halogen, fluorescent, LED?)
-- Occupancy sensors (present? functional?)
-- Daylighting (are blinds/curtains blocking windows?)
-- Lights on in unoccupied areas?
+Walk the energy, not the corridors: follow each utility from where it enters to where it is used.
 
-**Controls & systems:**
-- BMS or basic thermostats?
-- Does the system match the occupation pattern? (office hours? 24/7?)
-- Setpoints (are they reasonable? 21°C in winter, 22°C in summer?)
-- Scheduling (does the system respond to weekends, holidays?)
+**Plant rooms first.** Note boiler and chiller age, nameplate ratings and visible condition; whether pipework and valves are insulated (bare flanges and valves are standard finds); what is running versus what the day's weather justifies; and the setpoints actually dialled in, not the ones in the O&M manual. Photograph every nameplate.
 
-**Maintenance:**
-- Maintenance logs available and current?
-- Equipment condition (rust, dirt, leaks?)
-- Last service dates (is equipment overdue?)
+**Then distribution.** Ducts and pipes: insulation condition, obvious leaks, dampers wedged with bits of wood (a genuine classic), abandoned runs still live.
 
-**Occupancy & operation:**
-- Talk to facilities staff: What's the biggest complaint? When do systems run? Any failures? What's been tried before?
-- Ask about future plans (refurbishment, expansion, downsizing)
+**Then the spaces.** Lighting type and whether it is on in empty rooms; local heaters fighting the air conditioning; blinds down with lights on; windows open above radiators, which usually signals control problems rather than user carelessness.
 
-## Documentation
+**Then the ends.** Compressed air drops hissing at the fittings, extract fans running into closed dampers, refrigeration condensers blocked with fluff, hot water at 70 °C where 60 °C would do.
 
-Take photos of equipment nameplates, controls, and visible issues. Record thermostat setpoints, equipment ages, and observations.
+Throughout, talk to whoever you meet; the [interviewing lesson](/courses/energy-audits/interview-stakeholders) formalises this, but the operator's aside ("that chiller has run flat out since the controls chap left") is walk-through gold.
 
-## Output
+<Callout variant="key" title="Record everything; conclude nothing yet">
+The walk-through's discipline is separation of observation from judgement. Photograph, note, and list; do not diagnose on the spot or promise savings to whoever is escorting you. Half of the walk-through's suspicions dissolve under measurement, and the other half get bigger. The output is a prioritised list of hypotheses for the logging plan, which is exactly what the next lesson takes up.
+</Callout>
 
-A list of potential improvements (rough, not yet quantified) and areas needing deeper investigation.
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools), including walk-round checklists for common building systems.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for guidance on building services condition assessment.
+- [ISO 50002](https://www.iso.org/standard/60088.html) on the site-work stage of the audit process.

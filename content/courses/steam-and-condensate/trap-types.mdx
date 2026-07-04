@@ -1,41 +1,29 @@
-A **steam trap** is an automatic valve that lets condensate (water) and air escape, while blocking steam. Proper trap selection and operation are crucial.
+Every point where steam gives up its heat produces condensate, and that condensate must leave immediately, without letting live steam escape with it. The device that performs this discrimination is the **steam trap**: an automatic valve that opens to water and air but closes to steam. A site may have dozens or hundreds of them, they are the most numerous active component in the system, and choosing the right type for each duty is what determines how well and how long they do it. This lesson covers the three families and the selection logic.
 
-## Thermostatic traps
+## Three ways to tell steam from water
 
-Work on temperature. **Filled with a wax or liquid that expands when warm, pushes a piston, opens the valve.**
+Traps distinguish steam from condensate by exploiting one of three physical differences, and the choice of mechanism defines the family.
 
-- **Advantage**: Simple, respond well to cold start-ups (let air and cold condensate through immediately)
-- **Disadvantage**: Can be damaged by thermal shock (sudden cold condensate following hot steam); can become sluggish
+**Mechanical traps** use density: condensate is water, steam is vapour, and a float can tell the difference. The **ball float trap** opens a valve as condensate lifts the float, discharging continuously at steam temperature the moment condensate forms. That immediacy makes it the default choice for heat exchangers and process equipment, where condensate lying inside the plant would blank off heating surface. The **inverted bucket** is its rugged sibling: an open-bottomed bucket sinks in condensate (valve open) and floats on steam (valve shut). It tolerates waterhammer and dirt better, at the cost of some air-handling ability.
 
-Good for: moderate-pressure, moderate-load lines.
+**Thermostatic traps** use temperature: condensate that has cooled a few degrees below saturation is provably not steam. A **balanced pressure** element (a capsule that boils and expands near steam temperature) or a **bimetallic** stack opens when contents cool. They hold condensate back until it sub-cools, which is ideal where you *want* the sensible heat used (tracing lines) and excellent at venting cold air on start-up, but wrong for process plant that must drain instantly.
 
-## Float traps
+**Thermodynamic traps** use velocity: flashing condensate and steam moving fast across a small disc create a pressure signature that snaps the disc shut on steam. The **TD trap** is compact, cheap, robust across a wide pressure range and indifferent to orientation, which makes it the workhorse for [steam main drain points](/courses/steam-and-condensate/steam-distribution); its weaknesses are poor air handling, dislike of very low pressure differentials, and an audible click-cycle as it works.
 
-**A small float ball floats on liquid condensate, its buoyancy opening a valve.**
+## Matching trap to duty
 
-- **Advantage**: Respond quickly to condensate buildup; tolerate some steam/air carryover
-- **Disadvantage**: The float can stick if condensate is dirty; require strainers upstream
+Selection follows the duty's priorities. **Process heat exchangers** (jackets, calorifiers, coils): ball float, for immediate discharge and best output. **Steam main drainage**: thermodynamic (or inverted bucket), for robustness outdoors and against waterhammer. **Tracing and low-priority lines**: thermostatic, to exploit condensate sub-cooling and save steam. **Anything with heavy air on start-up** (batch plant, autoclaves): float traps with integral thermostatic air vents, or added vent capacity.
 
-Good for: high-load, fast-draining applications (main returns, heat exchangers).
+Sizing then follows from the condensate load: the duty's heat rate divided by latent heat at the working pressure. A 100 kW heat exchanger at 3 bar g (latent heat ≈ 2,134 kJ/kg) produces 100 ÷ 2,134 × 3,600 ≈ **169 kg/h** of condensate; the trap is selected for that flow, times a start-up factor of two or three, at the actual pressure *differential* across it. Oversizing is not generosity: a grossly oversized trap cycles badly and fails early.
 
-## Inverted bucket traps
+<Callout variant="key" title="Fit strainers, and record what you fit">
+Two habits prevent most premature trap failures. First, a strainer immediately upstream of every trap (many float and TD failures are simply grit holding the valve off its seat). Second, an asset register: every trap tagged with its location, type, size, pressure and duty. The register turns the [trap survey in the next lesson](/courses/steam-and-condensate/trap-failure) from an annual scavenger hunt into a maintenance routine, and it is the first thing a good steam engineer asks to see.
+</Callout>
 
-**An inverted bucket in a chamber of condensate; as condensate fills, it pulls the bucket down, opening a drain valve. When steam enters, the bucket rises, closing the valve.**
+Traps fail more often than any other steam component, and failed traps are money in both directions, which is exactly where the course goes next.
 
-- **Advantage**: Very reliable, work at any pressure, tolerate large temperature swings
-- **Disadvantage**: Require proper installation (orientation) and occasional maintenance
+## Sources and further reading
 
-Good for: high-reliability, critical applications.
-
-## Thermodynamic (disc) traps
-
-**Use the principle that steam expands and cools as it passes through a small orifice. A disc valve oscillates, letting condensate through when cooled, sealing on steam.**
-
-- **Advantage**: Very compact, no moving parts to stick
-- **Disadvantage**: Sensitive to dirty steam; easy to damage during cleaning
-
-Good for: high-temperature, compact spaces.
-
-## Key rule
-
-**Never use a steam trap larger than the load requires.** An oversized trap (e.g., a large inverted-bucket on a small radiator) will be sluggish and fail prematurely. Match trap size to actual condensate flow (kW load ÷ latent heat).
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam), the definitive free reference on trap types and selection.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on steam trap management.
+- Manufacturer selection guides (Spirax Sarco, Gestra, TLV) for duty-specific sizing tables.

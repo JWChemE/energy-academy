@@ -1,21 +1,47 @@
-Operating pressure affects efficiency and losses significantly. Lower pressure reduces flash steam losses and boiler flue losses, but reduces heat-transfer rates (and may need larger equipment).
+Since saturated steam's temperature is fixed by its pressure, choosing system pressures is really choosing process temperatures, and it carries more energy consequence than any valve or trap decision. Run too high and every loss in the system (radiation, leaks, flash) grows with the extra temperature; run too low and processes starve or heat exchangers can't keep up. The standard answer is a deliberate split: generate and distribute high, use low, and understand the flash steam created at every pressure drop.
 
-## Flash steam and losses
+## Generate high, distribute high, use low
 
-When steam at, say, 10 bar (180°C) is reduced to 1 bar (100°C) through a pressure-reducing valve, some of the pressure drop is lost as "flash steam" — about 10% of the flow vaporises at the lower pressure.
+Three separate pressure decisions hide in a steam system, and they want different answers.
 
-This flash steam carries energy that was meant to heat your load. It's often vented or escapes unused.
+**Generation** happens at or near the boiler's design pressure, where its steam is driest and its controls behave; a boiler throttled far below design produces wetter steam and cycles badly.
 
-**Flash recovery** — capture this flash steam and use it for lower-pressure heating. A flash tank (atmospheric vessel) allows steam to separate from condensate; the steam goes to a low-pressure line, condensate to the return line.
+**Distribution** benefits from staying high: at higher pressure steam is denser, so the same mass flows through smaller pipes with lower velocity, and smaller pipes lose less heat per metre. Good practice keeps mains at generation pressure and reduces close to the point of use.
 
-## Optimising pressure
+**Use** wants the *lowest* pressure the process temperature allows, for solid thermodynamic reasons: lower-pressure steam carries **more latent heat per kilogram** (2,257 kJ/kg at atmospheric versus 2,048 at 7 bar g), condenses at the gentler temperature many products prefer, and produces less flash loss from its condensate afterwards. A **pressure reducing valve (PRV)** at each user makes the drop; a jacketed vessel needing 130 °C wants roughly 2 bar g at the jacket, not the 7 bar in the main.
 
-- **Operating at the lowest pressure that meets load requirements** reduces flash losses and boiler stack losses.
-- Example: if your load needs 5 bar steam, don't generate at 10 bar just because the boiler can.
-- Multi-pressure systems (high-pressure boiler feeding a pressure reducer to a secondary low-pressure header) can combine advantages: high-pressure for heavy users, flash recovery for light users.
+## Flash steam: the loss you can see
 
-## Seasonal variation
+When hot condensate at high pressure passes through a trap into a lower-pressure line, it suddenly holds more sensible heat than water can contain at the new pressure. The excess instantly re-evaporates as **flash steam**, the white plume above condensate receivers and vent pipes.
 
-In winter, steam demand is high. In summer, much lower (mostly hot water). Operating at lower summer pressure saves energy.
+<WorkedExample title="how much condensate flashes">
+  <Given>
+    - Condensate leaves a 7 bar g process at saturation (sensible heat ≈ 721 kJ/kg)
+    - It discharges to an atmospheric receiver (water holds ≈ 419 kJ/kg at 100 °C; latent heat there ≈ 2,257 kJ/kg)
+  </Given>
+  <Find>The fraction that flashes to steam.</Find>
+  <Solution>
+    Excess heat per kg = 721 − 419 = 302 kJ. Fraction flashing = 302 ÷ 2,257 ≈ **13.4%**.
 
-Some facilities have manual valves or automatic regulators to drop pressure seasonally.
+    One kilogram in every seven leaves as vapour, carrying latent heat with it. If the
+    receiver vents to roof, that is 13% of the condensate's mass, and a much larger share
+    of its remaining energy, thrown away. The plume is not "just steam venting"; it is the
+    fuel bill escaping at a rate you can now calculate.
+  </Solution>
+</WorkedExample>
+
+Flash steam is perfectly good low-pressure steam, and capturing it is a standard project: a **flash vessel** separates it from the condensate and pipes it into a low-pressure main serving any user content with atmospheric-or-so steam (feedwater tank heating is the classic customer). The [condensate lesson](/courses/steam-and-condensate/condensate-return) completes that story.
+
+<Callout variant="key" title="Every bar you don't need is a standing loss">
+Excess pressure taxes the system three ways at once: hotter pipes radiate more through the same insulation, every leak and failed trap passes more steam at higher pressure, and every trap discharge flashes a bigger fraction. Reviewing whether generation and distribution pressures still match the neediest genuine process, especially after processes have changed or been removed, is the steam equivalent of the [compressed air setpoint check](/courses/compressed-air/pressure-flow), and it is just as often rewarded. Reduce in agreed steps, watching the neediest user, exactly as you would with air.
+</Callout>
+
+Seasonal operation deserves the same scrutiny: a system sized for winter loads often idles through summer serving one small user, with the whole distribution network hot for a duty a local electric or point-of-use solution could serve. Pricing that summer standing loss, using the [£ per tonne figure](/courses/steam-and-condensate/steam-basics), regularly justifies a summer shutdown regime.
+
+Next: how to assess a boiler house's efficiency, and where generation loses its first 20%.
+
+## Sources and further reading
+
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam) on pressure selection, PRVs and flash steam.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on steam distribution efficiency.
+- [Combustion Engineering Association](https://cea.org.uk/) guidance on steam system operation.

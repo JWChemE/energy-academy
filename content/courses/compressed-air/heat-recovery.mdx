@@ -1,25 +1,45 @@
-Around 90% of the electrical energy a compressor consumes turns into heat. In most plants that heat is simply thrown away through the cooler. Recovering it is one of the best paybacks in compressed air.
+Almost every kilowatt a compressor draws becomes heat. Around 90% or more of the input electricity leaves through the oil cooler, the aftercooler and the machine's casing, at temperatures genuinely useful for space heating and hot water. On most sites this heat blows out of a louvre into the sky while a gas boiler heats the building next door. Compressor heat recovery is among the most reliable retrofits in industrial energy management, and this lesson covers where the heat is, the two ways to catch it, and the demand-matching that decides whether it pays.
 
-## Where the heat goes
+## Where the heat is
 
-For every 100 units of electrical energy into a compressor:
-- About 72 units end up in the cooling oil
-- About 13 units in the compressed air itself (removed by the aftercooler)
-- About 9 units radiate from the compressor body
-- Only a few units leave usefully in the air stream
+For an oil-injected screw compressor, the energy balance is remarkably consistent: roughly **72% of input power ends up in the cooling oil**, another 13% or so in the compressed air (removed by the aftercooler), a further few percent radiating from the package, and only a small fraction leaving as useful energy in the air itself. Practically, 70 to 90% of input power is recoverable, as warm air at 30 to 40 °C above ambient from the package cooling flow, or as hot water at up to 70 to 90 °C from the oil circuit with a suitable heat exchanger.
 
-That means roughly 80-94% of the input energy is theoretically recoverable as low-grade heat at 50-90 C.
+## Two recovery routes
 
-## Recovery methods
+**Ducted warm air** is the simple one: air-cooled packages already blow their heat somewhere, and ducting it into an adjacent workshop, warehouse or stores in winter (with a summer diverter flap) needs little more than sheet metal and a damper. Where the compressor house adjoins heated space, this is close to free heating and frequently the fastest payback on the entire site.
 
-**Air heating (simplest):** Duct the warm cooling air from an air-cooled compressor into an adjacent workshop or warehouse during winter. A damper diverts it outside in summer. Near-zero capital cost, immediate payback.
+**Hot water from the oil circuit** suits sites with a year-round thermal demand: process washing, boiler feed pre-heat, space heating circuits, showers. A plate heat exchanger in the oil loop (factory option on new machines, retrofit kit on most existing screws) delivers water at up to 70 to 90 °C without affecting the compressor's own cooling.
 
-**Water heating:** A heat exchanger on the oil circuit of a screw compressor produces hot water at 70-90 C for washrooms, process pre-heating, or boiler feed. This is the highest-value option where a hot-water demand exists.
+<WorkedExample title="heating the adjacent workshop">
+  <Given>
+    - A 90 kW compressor; 70% of input is practically recoverable as heat
+    - Recovery is useful during the heating season: about 3,000 of its 5,000 running hours
+    - Displaces gas heating at 85% boiler efficiency; gas £0.06/kWh
+  </Given>
+  <Find>The heat recovered and the annual saving.</Find>
+  <Solution>
+    Recoverable heat ≈ 90 × 3,000 × 0.70 = 189,000 kWh a year.
 
-## The economics
+    Displaced gas = 189,000 ÷ 0.85 ≈ 222,000 kWh, worth about **£13,300 a year**. Ducting
+    and dampers for an adjacent space typically cost a few thousand pounds, giving a
+    payback measured in months. Note what did the work in this example: not exotic
+    equipment, but the 3,000 hours of coincidence between compressor running and heating
+    demand.
+  </Solution>
+</WorkedExample>
 
-A 90 kW compressor running 5,000 hours/year rejects around 360 MWh of heat annually. Recovering even half of that displaces gas heating worth roughly 9,000 GBP/year (at 0.05 GBP/kWh, 85% boiler efficiency). Capital for a water-recovery package is often 5,000-10,000 GBP, giving a payback under 18 months.
+## Demand matching decides everything
 
-## Matching supply to demand
+Recovered heat is only worth what it displaces, so the project stands or falls on **coincidence of supply and demand**. Three questions size it honestly: When does the compressor actually run (a summer-only compressor cannot heat a winter building)? What temperature does the demand need (air heating and washwater are easy; anything above ~85 °C is not)? And how far away is it (ducted air travels metres, not buildings; hot water pipes cost money per metre)? The strongest candidates are compressors running long hours beside spaces heated by [gas or electric heating](/courses/boilers-and-fired-systems), or feeding processes with constant hot-water appetite, as in the [brewery sector course](/sectors/breweries).
 
-Heat recovery only pays when there is a genuine, time-coincident demand for low-grade heat. A compressor running through summer produces heat nobody needs. The best candidates run year-round and sit near a constant hot-water or space-heating load.
+<Callout variant="key" title="You paid for this heat once already">
+The framing that sells the project internally: the site has already bought this energy at electricity prices, roughly three times the gas price per kWh, and is currently throwing it away while buying the same kilowatt-hours again from the boiler. Recovery does not generate anything; it stops a double payment. On the platform's reference prices, every 10,000 kWh of compressor heat put to use against gas heating returns about £700 a year for hardware that mostly already exists.
+</Callout>
+
+Recovery closes the supply side of the course. What remains is keeping the whole system at its designed efficiency, which is the maintenance lesson, and assembling everything into a programme, which is the last.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on compressor heat recovery economics.
+- [BCAS](https://www.bcas.org.uk/) guidance on heat recovery options for screw compressors.
+- Manufacturer engineering data (Atlas Copco, Kaeser, Ingersoll Rand publish energy-balance figures) for machine-specific recovery fractions.

@@ -1,23 +1,46 @@
-Compressed air offers some of the most reliable energy savings in any facility. The improvements below are ranked roughly by payback, fastest first.
+Compressed air rewards a programme more than any single project. The measures in this course interact: fixing leaks lets the pressure come down, lower pressure shrinks the remaining leaks, better control converts both into electricity not drawn, and metering proves the lot. This closing lesson assembles the course into a sequenced improvement plan, with the numbers from earlier lessons gathered in one place for a reference 90 kW system spending about £108,000 a year.
 
-## Quick wins (payback under 1 year)
+## Sequence the work so each step funds the next
 
-**Fix leaks.** Leaks typically waste 20-30% of compressor output. A 3 mm hole at 7 bar leaks air worth around 1,500 GBP/year. An ultrasonic survey plus a tagging-and-repair programme is the single highest-return project available.
+**First, measure.** Sub-meter the compressor house, establish [specific energy](/courses/compressed-air/pressure-flow) (kWh/m³) as the KPI, and run the shutdown test to size the leak load. This week of work makes every later saving visible and defensible, and it is what the [audit course](/courses/energy-audits/measurement-and-logging) would prescribe anyway.
 
-**Lower the system pressure.** Every 1 bar reduction cuts compressor energy by about 7%. Many systems run at 7-8 bar when 6 bar would serve every tool. Find the genuine minimum and set there, with a small margin.
+**Then stop the bleeding (paybacks in weeks to months).** The [leak survey and repair](/courses/compressed-air/leaks-detection) programme; the [demand-side walk](/courses/compressed-air/pressure-regulation) (regulators down, nozzles on blow-offs, air-line misuse eliminated); switching compressors off outside production hours rather than letting them idle against the leak load overnight.
 
-**Switch off at night and weekends.** An idling compressor still consumes 20-40% of full-load power. A simple timer or interlock eliminates this. Check for "phantom" weekend running first - it is surprisingly common.
+**Then lower the pressure.** With leaks and misuse reduced, the [staged setpoint reduction](/courses/compressed-air/pressure-flow) captures its ~7% per bar across everything that remains, and usually reveals which single use was holding the whole site high.
 
-## Medium-term projects (1-3 years)
+**Then fix the control (paybacks of one to three years).** A [VSD trim machine or sequencer](/courses/compressed-air/compressor-types) to eliminate unloaded running; [distribution corrections](/courses/compressed-air/pipe-sizing) where drops force compensation; [heat recovery](/courses/compressed-air/heat-recovery) once running hours and a heat demand line up.
 
-**Fit a variable-speed drive (VSD).** Where demand varies, a VSD compressor matches output to load instead of cycling load/unload. Savings of 15-30% are typical on fluctuating systems.
+<WorkedExample title="the programme, totalled">
+  <Given>
+    The reference 90 kW system (6,000 h/yr, ≈£108,000/yr), applying this course's worked figures:
+    - Leak programme: several finds of the 3 mm class, net ≈ £8,000/yr after repairs
+    - Demand side: one open blow-off engineered out, ≈ £15,000/yr of its £20,400 retained after adding a proper nozzle
+    - Pressure: 1 bar off the setpoint ≈ £7,560/yr
+    - Control: VSD trim vs load/unload ≈ £9,900/yr
+    - Heat recovery to the adjacent workshop ≈ £13,300/yr
+  </Given>
+  <Find>The programme's annual value and scale.</Find>
+  <Solution>
+    Total ≈ **£53,800 a year**, roughly half the system's bill, though the honest figure
+    is lower because the measures overlap (lower pressure shrinks what the leaks and the
+    VSD each save). Even discounting interactions heavily, a 30 to 40% reduction is the
+    repeatedly observed outcome of a full programme on an unmanaged system, and most of
+    it comes from the early, near-free steps.
+  </Solution>
+</WorkedExample>
 
-**Sequence multiple compressors.** A central controller runs the most efficient combination of machines for the current demand, avoiding several part-loaded units. Savings of 5-15%.
+## Keep it saved
 
-**Recover the heat.** Reuse the 80-90% of input energy that becomes heat for space or water heating.
+The [maintenance lesson](/courses/compressed-air/maintenance) is the guarantee on everything above: leak surveys on the calendar, ΔP-driven filter changes, drains checked, and specific energy trended monthly with an owner, per the [M&T discipline](/courses/monitoring-and-targeting/setting-targets). Savings on compressed air do not stay captured by themselves; systems drift back toward waste at a few percent a year unless a number is watching.
 
-## Building the case
+<Callout variant="key" title="Demand first, supply second, always">
+The strategic order matters more than any individual measure: shrink the demand (leaks, misuse, pressure) before optimising the supply (machines, controls, recovery). Every m³ of demand eliminated saves its full generation cost and shrinks the machine the site needs next time it buys one. Sites that start with a shiny new VSD compressor and skip the demand work buy an efficient machine to feed their leaks.
+</Callout>
 
-Sub-meter the compressor house so savings are verifiable. Establish a baseline of specific energy (kWh per m3 of free air delivered), implement changes one at a time, and measure against the baseline. This both proves the saving and protects it from drifting back.
+That completes the compressed air course. The [diagnostics capstone](/courses/compressed-air/diagnostics-capstone) hands you a misbehaving system, its meter data and its symptoms, and asks you to find the money, using exactly the toolkit these lessons built.
 
-A combined leak-repair, pressure-reduction, and control programme commonly cuts a site's compressed-air energy by 30-50% with an average payback well under two years.
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): compressed air programme guidance and typical savings.
+- [BCAS](https://www.bcas.org.uk/) best-practice publications across the whole system.
+- [ISO 11011](https://www.iso.org/standard/46580.html) for structuring a formal compressed air energy assessment.

@@ -1,26 +1,42 @@
-Undersized pipes waste energy through pressure drop. Oversized pipes cost more upfront. Optimization is key.
+The pipework between compressor and tools is easy to ignore because it has no motor and no bill, yet it sets a floor under the whole system's energy use. Undersized or badly routed distribution creates pressure drop; pressure drop gets compensated by raising the generation setpoint; and the [1 bar rule](/courses/compressed-air/pressure-flow) then charges roughly 7% of compressor energy for every bar of compensation, forever. Air treatment (drying and filtration) adds its own drops and its own running cost. This lesson covers the distribution and treatment decisions an energy manager should check.
 
-## Pipe sizing rule
+## Pressure drop: the silent setpoint-raiser
 
-Pressure drop should not exceed 0.5 bar over the supply line (from compressor to first use point). For longer runs, 1 bar drop is acceptable.
+Air flowing through pipe loses pressure to friction, and the loss rises steeply with velocity: roughly with its square. Halving a pipe's diameter for a given flow multiplies the drop enormously, which is why the classic false economy (a long run of small-bore pipe to a new machine) costs so much over its life. Good practice targets a total drop of no more than about **0.3 to 0.5 bar** from compressor to the furthest point of use; well-designed systems achieve less.
 
-Velocity of air in pipes should be 4-6 m/s (good balance of cost and efficiency). Higher velocity increases drop.
+<WorkedExample title="what half a bar of pipe drop costs">
+  <Given>
+    - A site's distribution loses 1 bar to friction; good practice pipework would lose 0.5 bar
+    - The generation setpoint has been raised 0.5 bar to compensate
+    - Plant: 90 kW average, 6,000 h/yr; ~7% energy per bar; electricity £0.20/kWh
+  </Given>
+  <Find>The annual cost of the excess drop.</Find>
+  <Solution>
+    Excess compensation = 0.5 bar ≈ 3.5% of compressor energy.
 
-## Drying compressed air
+    Cost ≈ 0.035 × 90 × 6,000 × £0.20 ≈ **£3,780 a year**, paid continuously for
+    undersized pipe. Against that, upsizing a main or closing a ring costs a few thousand
+    pounds once. Distribution projects rarely headline an audit, but they unlock the
+    setpoint reduction that does.
+  </Solution>
+</WorkedExample>
 
-Air is compressed with moisture in it. Compressed air at 40°C and high pressure can hold water, which condenses and damages tools.
+Layout matters alongside diameter. A **ring main** feeds every drop from two directions, halving the effective distance and drop, and keeps pressure stable when demand moves around the site; long dead-end branches do the opposite. Isolation valves on branches let idle sections be shut off (a leak-control win), and takeoffs from the top of the main keep condensate out of the drops.
 
-**Refrigerated dryer:** Cools air to 3°C (dew point -5°C). Lower cost, lower maintenance. Typical: £3,000-10,000.
+## Treatment: necessary, but priced
 
-**Desiccant dryer:** Uses absorbent material to reach -40°C dew point. Higher energy (regeneration heats the dryer), higher cost. Typical: £10,000-20,000.
+Compressed air leaves the aftercooler saturated with water, and something must remove it before it corrodes pipework and tools. The choice is between two dryer families with very different energy price tags. A **refrigerant dryer** chills the air to around 3 °C dew point, condensing the moisture out; it suits general industrial use and costs relatively little to run. A **desiccant dryer** adsorbs moisture to reach dew points of −40 °C or below, but pays for it either in purge air (typically 15 to 20% of the compressed air throughput, itself a large hidden load) or in regeneration heat. The energy rule: **dry only as deep as the application requires**, and if one process genuinely needs −40 °C air, treat that stream alone rather than the whole site.
 
-Choice: Use refrigerated unless extreme dry air is needed (electronics manufacturing, etc.).
+Filters protect tools and product, and every filter element is a pressure drop that grows as it loads. A differential-pressure gauge on each filter, and replacement at the manufacturer's ΔP rather than on superstition, keeps treatment from quietly becoming another half-bar tax. The same logic governs the [maintenance lesson](/courses/compressed-air/maintenance) more broadly.
 
-## Filtration
+<Callout variant="key" title="Every fraction of a bar in the pipework is a permanent surcharge">
+Read the whole distribution system through one lens: the difference between generation pressure and the neediest tool's requirement is overhead, and pipework, dryers and filters are its line items. Measure the drops (gauges at the compressor, after treatment, and at the far end of the main tell the story), attack the biggest, and bank the result as a lower setpoint. That is the sequence that turns pipe into payback.
+</Callout>
 
-Air must pass through filters before use:
-- Intake filter (dirt, pollen)
-- After-cooler filter (moisture, oil)
-- Point-of-use filters (dust, debris)
+So far the course has minimised what the compressors must make. The next lesson recovers value from what they cannot help making: heat.
 
-Clogged filters increase pressure drop. Replace per maintenance schedule (~500-1000 hours of run).
+## Sources and further reading
+
+- [BCAS](https://www.bcas.org.uk/) installation and distribution best-practice guidance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on compressed air treatment energy costs.
+- [ISO 8573](https://www.iso.org/standard/46418.html), the air-quality classes that determine how much treatment an application actually needs.
