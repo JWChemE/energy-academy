@@ -1,49 +1,41 @@
-An **electric motor** converts electrical energy into mechanical motion. Understanding motor specifications and efficiency is key to energy management.
+Electric motors turn most of industry: pumps, fans, compressors, conveyors, machine tools. Collectively, motor-driven systems account for roughly two-thirds of industrial electricity use, which makes the humble induction motor the most financially important machine most sites own. This lesson covers how it works, how to read its nameplate, and the single fact that should reframe every motor decision: a working motor consumes its own purchase price in electricity every few weeks.
 
-## How motors work (simplified)
+## How an induction motor works
 
-AC induction motor: current flows through the stator (coils), creating a rotating magnetic field. This induces current in the rotor (cage), creating force that spins the shaft.
+Feed [three-phase supply](/courses/electrical-science/three-phase-basics) into a ring of stator windings and the three staggered currents create a magnetic field that rotates by itself, at a speed set by the supply frequency and the winding's pole count: a 4-pole winding at 50 Hz gives 120 × 50 ÷ 4 = **1,500 rpm**. The rotor, a cage of aluminium bars, chases this rotating field: the field induces currents in the bars, the currents feel a force, and the shaft turns. The chase is never quite caught: the rotor runs a few percent slower than the field (the **slip**, typically 2 to 4%, so a "1,500 rpm" motor actually turns at about 1,455), and that slip is what induces the currents that make torque. No brushes, no contacts, almost nothing to wear: this simplicity is why induction motors run for decades and dominate the installed base.
 
-Key parameters:
-- **Power (kW):** mechanical output power
-- **Voltage (V):** 230V single-phase, 400V three-phase (UK)
-- **Speed (rpm):** 1,450 or 2,900 rpm (at 50 Hz)
-- **Power factor:** typically 0.8–0.9 (lags voltage)
-- **Efficiency (%):** 85–96% depending on age and size
+## Reading the nameplate
 
-## Motor nameplate
+The nameplate is a dense little contract, and three entries do most of the work. **Rated power** is *mechanical output at the shaft*, not electrical input: a 15 kW motor at 90% efficiency draws 15 ÷ 0.9 ≈ 16.7 kW from the supply, the same output/input distinction as every efficiency in this platform. **Full-load current** is the amps at rated output, the reference point for the [clamp-meter load checks](/courses/electrical-science/three-phase-power) that reveal how hard a motor actually works. **Efficiency class** (IE2, IE3, IE4) is the standardised efficiency band, which gets the [next lesson](/courses/motors-and-drives/efficiency-classes) to itself.
 
-The nameplate lists:
-- **Rated power (kW):** continuous output the motor is designed for
-- **Rated voltage & current**
-- **Rated speed (rpm):** synchronous speed minus slip
-- **Service factor:** can briefly run above rated power (usually 1.15, meaning 115% is safe)
-- **Efficiency class (IE):** IE2, IE3, IE4, etc.
+<WorkedExample title="the fact that reframes everything">
+  <Given>
+    - A 15 kW motor, 90% efficient, running 4,000 hours a year
+    - Purchase price roughly £1,500; electricity £0.20/kWh
+  </Given>
+  <Find>Its annual electricity cost, and how quickly it "spends its own price".</Find>
+  <Solution>
+    Input power = 16.7 kW, so annual electricity = 16.7 × 4,000 ≈ 66,700 kWh ≈
+    **£13,300 a year**: the motor consumes its purchase price roughly every
+    **six weeks**. Over a 10-year life, energy is about **97% of total cost of
+    ownership**; purchase price is a rounding error. Every sensible motor policy
+    (efficiency classes, right-sizing, drives, rewind decisions) follows from this
+    one ratio, and every false economy in motor purchasing ignores it.
+  </Solution>
+</WorkedExample>
 
-**Important:** Rated power is output. Input power = output / efficiency. A 10 kW motor at 90% efficiency draws ~11.1 kW from the wall.
+## Where the losses live
 
-## Slip and losses
+The gap between input and output becomes heat in predictable places: resistance in the stator windings and rotor bars, magnetising losses in the iron core, friction in bearings, and windage from the cooling fan. Two practical consequences. Losses do not shrink proportionally at low load, which is why lightly-loaded motors are inefficient and [power factor sags](/courses/electrical-science/power-factor) with them: the topic of the [selection lesson](/courses/motors-and-drives/motor-selection). And heat is the enemy of motor life: every 10 K of extra winding temperature roughly halves insulation life, so blocked cooling fins and hot plant rooms are reliability problems wearing an energy disguise.
 
-**Slip** = (synchronous speed − actual speed) / synchronous speed
+<Callout variant="key" title="Treat motors as energy contracts with a shaft attached">
+The nameplate kW is not the motor's cost; hours × input power × tariff is. A site's motor list, with rated power, measured load and annual hours per machine, is one of the most valuable documents an energy manager can build, because it ranks where the £13,000-a-year contracts are hiding. Most sites have never written it down; the [audit course](/courses/energy-audits/measurement-and-logging) shows how cheaply logging fills it in.
+</Callout>
 
-At 50 Hz, a "four-pole" motor has synchronous speed 1,500 rpm. With 3% slip, it runs at 1,455 rpm.
+Next: what the IE efficiency classes mean, what regulation now mandates, and when paying for a better class repays.
 
-Slip causes losses in the rotor as heat. Higher slip = higher losses = lower efficiency.
+## Sources and further reading
 
-## Oversizing problem
-
-A 50 kW motor running a 25 kW load is oversized. It:
-- Draws more reactive power (poor power factor)
-- Has poor efficiency at part load (losses don't scale down with load)
-- Costs more upfront and draws more current
-
-Result: Same 10–15% energy waste at half load. Matching motor size to actual load is crucial.
-
-## Motor age and efficiency
-
-- **Before 1990:** ~85% efficiency, no standard
-- **2000s (IE2):** 87–91% efficiency, improving
-- **2010s (IE3):** 90–95% efficiency, good
-- **2020s (IE4):** 93–97% efficiency, best-in-class
-
-Upgrading an old motor to IE3/IE4 saves 2–4% energy, paying back in 3–8 years for motors running > 5,000 h/year.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on motor and drive energy management.
+- [The IET](https://electrical.theiet.org/) for motor fundamentals and installation practice.
+- [GOV.UK: Ecodesign requirements for electric motors](https://www.gov.uk/guidance/placing-energy-related-products-on-the-uk-market) for the regulatory framing developed in the next lesson.

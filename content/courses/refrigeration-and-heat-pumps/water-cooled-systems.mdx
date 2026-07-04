@@ -1,39 +1,43 @@
-**Water-cooled systems** use water (chilled or hot) as the heat transfer medium instead of air.
+The most efficient large cooling plants reject their heat into water, not air, and the reason is the single principle this course keeps returning to: temperature lift. A wet cooling tower can hand the condenser water cooler than the summer air an air-cooled machine must fight, and every degree shaved off the condensing side is compressor work avoided. This lesson covers the water-cooled chiller arrangement, why evaporative rejection wins degrees, and the maintenance duties (including legionella control) that come with the win.
 
-## Chiller (cooling)
+## The arrangement
 
-Evaporator cools chilled water (5–7°C typical). Condenser rejects heat to condenser water loop (usually 28–35°C).
+A water-cooled plant is two loops around the [refrigeration cycle](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle). The **chilled water loop** carries the product: water at typically 6 to 12 °C circulating to the building's cooling coils. The **condenser water loop** carries the waste: water leaving the condenser at perhaps 32 to 35 °C, cooled in a rooftop cooling tower and returned. The chiller sits between them, and its electricity bill is set by the gap between the two water temperatures it sees.
 
-Water is pumped to fan coils, radiators, or process cooling throughout the building.
+## Why the tower wins degrees
 
-Advantages: Quieter than air-cooled (no outdoor fan noise), more efficient (condenser water can be cooler), flexible distribution.
+An air-cooled condenser must reject heat to the air's **dry-bulb** temperature: on a 30 °C day, refrigerant may need to condense at 45 °C or higher. A cooling tower evaporates a little of the condenser water, so it cools toward the air's **wet-bulb** temperature, which in the UK rarely exceeds 21 °C even on hot days. A well-sized tower delivers condenser water within 3 to 5 K of wet-bulb, letting the refrigerant condense in the low 30s °C instead of the mid 40s.
 
-Disadvantages: Requires water treatment (corrosion inhibitor, biocide), more complex plumbing.
+<WorkedExample title="what cooler condensing is worth">
+  <Given>
+    - Rule of thumb: chiller power falls ≈ 2 to 3% per 1 K reduction in condensing temperature (use 2.5%)
+    - Water-cooled rejection runs ≈ 8 K cooler condensing than air-cooled on the same site
+    - A chiller plant consuming 80 MWh of electricity a year; £0.20/kWh
+  </Given>
+  <Find>The efficiency and cost difference the tower buys.</Find>
+  <Solution>
+    Saving ≈ 8 × 2.5% = **20% of chiller electricity**: on 80 MWh, about 16 MWh or
+    **£3,200 a year**. The same rule prices day-to-day operation: letting condenser water
+    setpoints float down on mild days (rather than pinning them at design values) buys
+    degrees for free, and every fouled tower pack or blocked nozzle that raises approach
+    temperature takes them back.
+  </Solution>
+</WorkedExample>
 
-## Heat pump water heater
+The rule cuts the other way on the chilled side: each degree of *warmer* chilled water saves similar percentages, which is why the [improvements lesson](/courses/refrigeration-and-heat-pumps/practical-improvements) treats setpoints on both loops as the first lever. And in cool weather, a **waterside economiser** can bypass the chiller entirely, cooling the building through the tower alone: free cooling for data rooms and processes through a British winter.
 
-Evaporator (outdoor) absorbs heat from air or ground. Condenser heats domestic hot water (DHW) to 50–60°C.
+## The duties that come with wet systems
 
-Used for DHW only, or integrated with space heating via water loops.
+Cooling towers trade electricity for water and stewardship. They consume water (evaporation plus blowdown to control dissolved solids, the same logic as [boiler blowdown](/courses/steam-and-condensate/efficiency-assessment)); they need chemical treatment against scale, corrosion and biological growth; and in the UK they carry statutory **legionella duties**: registration with the local authority, a written control scheme, monitoring and cleaning under HSE's ACOP L8 and HSG274. These are safety obligations first, but a well-run treatment regime is also an efficiency measure: scale on condenser tubes is exactly the [fouling penalty](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) the next lesson prices.
 
-Efficiency: COP 2–4 typical, saving 50–60% energy vs electric immersion heater.
+<Callout variant="key" title="Water-cooled plant is a system, and the tower is half of it">
+Sites habitually maintain the chiller (the expensive box) and neglect the tower (the wet one on the roof), yet the tower sets the condensing temperature that governs the chiller's appetite. Approach temperature, the gap between condenser water supply and ambient wet-bulb, is the tower's health metric: trend it on the [M&T report](/courses/monitoring-and-targeting/exception-reporting) alongside chiller COP, and a widening approach names the culprit (fouled pack, failed fan, poor water distribution) before the electricity bill does.
+</Callout>
 
-## Cooling tower
+Next: why machines that spend their lives at part load must be judged there, and what good part-load design looks like.
 
-Condenser water from chiller is cooled in a cooling tower (evaporative cooler: sprays water, fan draws air through, evaporation cools the water).
+## Sources and further reading
 
-Outdoor temp achievable: ~3–5°C above wet bulb (humidity-dependent). In dry climates, very efficient.
-
-Maintenance: Water treatment, regular cleaning to prevent algae and scale.
-
-## Ground-source heat pump (GSHP)
-
-Uses ground as heat source/sink instead of air.
-
-Loop in ground (borehole, horizontal, or pond) maintains ~10–15°C year-round.
-
-Advantages: Stable temperature = consistent COP (3.5–4.5 heating/cooling), works in any climate.
-
-Disadvantages: High installation cost (borehole £2,000–5,000+), long payback (8–15 years typically).
-
-Good for: New construction, long building life, high operating hours, space/noise constraints.
+- [HSE: Legionnaires' disease, ACOP L8 and HSG274](https://www.hse.gov.uk/legionnaires/) for the statutory duties on evaporative cooling.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on chilled water system design and free cooling.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on refrigeration and cooling plant efficiency.

@@ -1,39 +1,44 @@
-Motor efficiency is standardised in **IE classes.** Choosing the right class depends on motor size, hours of operation, and energy costs.
+Motor efficiency is standardised into internationally agreed bands, the IE classes, and UK law now sets a floor under them: most new three-phase motors must be at least IE3, and the mid-range sizes IE4. For an energy manager the classes turn efficiency from a brochure claim into a comparable, regulated number, and the interesting question becomes economic: when is a class above the legal floor worth paying for? The arithmetic in this lesson answers it.
 
-## IE classes (EU standard, UK aligned)
+## The classes and the law
 
-**IE1 (Standard Efficiency):** ~85%, being phased out
+The IEC scale runs from IE1 ("standard", long obsolete) through **IE2** (high), **IE3** (premium), **IE4** (super-premium) to the emerging IE5. Each step trims losses meaningfully: for a 15 kW 4-pole motor, indicative full-load efficiencies run roughly 90.6% (IE2), 92.1% (IE3), 93.6% (IE4), with the gaps larger for small motors and smaller for very large ones.
 
-**IE2 (High Efficiency):** 87-92%, common in new installations
+UK ecodesign rules (assimilated from EU Regulation 2019/1781; checked July 2026) set the floor: since July 2021, most three-phase motors from 0.75 kW to 1,000 kW placed on the market must meet **IE3**; since July 2023, motors from 75 to 200 kW must meet **IE4**. The regulations bind what can be *sold*, not what already runs, so the installed base remains full of IE1/IE2 machines whose replacement economics are exactly this lesson's subject.
 
-**IE3 (Premium Efficiency):** 91-96%, mandatory for many applications since 2017
+## What a class step is worth
 
-**IE4 (Super Premium Efficiency):** 94-97%, emerging, highest cost
+Efficiency differences look small (a point or two) until multiplied by the hours and the [six-week fact](/courses/motors-and-drives/motor-basics).
 
-## Energy cost over lifetime
+<WorkedExample title="IE2 to IE4 on a working motor">
+  <Given>
+    - A 15 kW motor running 4,000 h/yr at full load; electricity £0.20/kWh
+    - IE2 efficiency 90.6%; IE4 efficiency 93.6%; IE4 premium over a like-for-like IE2 replacement ≈ £500
+  </Given>
+  <Find>The annual saving and payback of choosing IE4.</Find>
+  <Solution>
+    Input power: 15 ÷ 0.906 = 16.56 kW versus 15 ÷ 0.936 = 16.03 kW: a difference of
+    0.53 kW. Annual saving ≈ 0.53 × 4,000 ≈ 2,120 kWh ≈ **£425 a year**.
 
-For a 15 kW motor, 7,500 h/year, £0.08/kWh:
+    Payback on the premium ≈ 500 ÷ 425 ≈ **1.2 years**, then £425 a year for a 15-to-20
+    year machine life. At 2,000 running hours the payback stretches to ~2.4 years; at
+    8,000 it drops to ~7 months. Hours decide, which is why the motor list from the
+    previous lesson matters: it tells you which machines earn the premium.
+  </Solution>
+</WorkedExample>
 
-- IE2 (90% efficiency): 7,500 h / 0.90 × 15 kW × £0.08 = £10k/year energy
-- IE3 (94% efficiency): 7,500 h / 0.94 × 15 kW × £0.08 = £9.6k/year energy
-- **Annual savings: £400/year**
-- **10-year savings: £4,000**
+## Policy, not purchase-by-purchase heroics
 
-If IE3 motor costs £500 more than IE2, payback is just 1.25 years. Over 15 years, IE3 saves £6,000.
+The gains compound only if they happen by default, so the practical instrument is a **motor purchase policy**: minimum IE4 for anything above a threshold of running hours (say 2,000 h/yr), decided once, applied by whoever raises the order, including at distress-purchase speed when a motor has failed and production is waiting. Failure-day decisions default to "same again, fastest delivery" unless the policy has already made the choice. The policy should also cover the failure decision itself, rewind versus replace, which the [next lesson](/courses/motors-and-drives/motor-selection) treats properly, and note that class labels assume full-load operation: a grossly oversized IE4 motor loafing at 30% load surrenders its advantage, which is the other half of that lesson.
 
-## Where efficiency drops most
+<Callout variant="key" title="Efficiency classes only pay at the hours you actually run">
+The IE arithmetic is linear in running hours, so one number from the motor list sorts the estate: machines above ~4,000 h/yr justify best-in-class on replacement, machines below ~1,000 h rarely repay any premium, and the band between takes the [payback arithmetic](/courses/economic-analysis) case by case. Classify once, write it into the policy, and the savings arrive without further meetings.
+</Callout>
 
-Efficiency varies with load and speed. IE3 is best over the full operating range.
+Next: sizing and the rewind-or-replace decision, where more money is won and lost than in any class choice.
 
-Oversized motors (25 kW motor on 15 kW load) lose this advantage — the "high efficiency" range is narrow.
+## Sources and further reading
 
-## Selection rule
-
-- **High hours (over 5,000 h/year):** IE3 mandatory (payback under 2 years in most cases)
-- **Medium hours (2,000–5,000 h/year):** IE3 preferred (payback 2–5 years)
-- **Low hours (under 2,000 h/year):** IE2 acceptable (payback over 5 years)
-- **Always:** Match motor size to load (see oversizing section)
-
-## Maintenance impact
-
-Well-maintained motors retain efficiency. Dirty (dust, cooling fins blocked), corroded, or hot motors lose efficiency. Annual maintenance is a free efficiency gain.
+- [GOV.UK: Ecodesign for energy-related products](https://www.gov.uk/guidance/placing-energy-related-products-on-the-uk-market), including the motor requirements.
+- [IEC 60034-30-1](https://www.iec.ch/) defining the IE efficiency classes.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on motor replacement economics.

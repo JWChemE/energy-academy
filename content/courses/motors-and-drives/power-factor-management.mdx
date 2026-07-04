@@ -1,58 +1,27 @@
-**Power factor** (PF) is the fraction of apparent power that does useful work. Low PF wastes energy and costs money.
+Motors are the reason most industrial sites have a power factor problem. An induction motor magnetises its iron through reactive power, and it draws that magnetising current almost regardless of load: a motor loafing at a quarter of its rating still magnetises like it means it, so its power factor collapses even as its useful work dwindles. Since motors dominate site load, motor practice largely *is* power factor practice, and this lesson covers the motor-specific half of a story the [electrical science course](/courses/electrical-science/power-factor) began.
 
-## Real, reactive, and apparent power
+## Why light-running motors are the villains
 
-- **Real power (P, kW):** does useful work (heating, motion)
-- **Reactive power (Q, kVAr):** oscillates, wasted in inductors (motors, transformers)
-- **Apparent power (S, kVA):** total = √(P² + Q²)
-- **Power factor** = P / S = cos(φ), where φ is the phase angle
+At full load a decent induction motor presents a power factor around 0.85. At half load it may fall to 0.7; at a quarter load, toward 0.5. The pattern follows from the physics: the reactive (magnetising) demand is roughly constant, while the real power falls with load, so the ratio worsens. This is the second bill the [oversized motors of the selection lesson](/courses/motors-and-drives/motor-selection) run up: they waste energy through low efficiency *and* burden the supply with reactive current that the site's [kVA-based charges](/courses/electrical-science/demand-and-power-factor) price by the month. Right-sizing is therefore power factor correction by other means, and the clamp-meter survey that finds lightly-loaded motors is doing double duty.
 
-At PF = 1.0 (resistive), all power is real. At PF = 0.7 (inductive motors), 30% is reactive (wasted).
+VFDs complicate the picture pleasantly and unpleasantly. A drive presents a high displacement power factor to the supply regardless of motor load (the drive's DC link decouples the motor's magnetising demand), which helps; but drives inject [harmonics](/courses/motors-and-drives/vfd-installation), which conventional capacitors can amplify. Sites with significant drive populations need their correction designed with that in mind: detuned (reactor-protected) capacitor stages or active filters, not bare capacitor banks from an older era.
 
-## Why poor PF costs money
+## Where to correct: central, group, or at the motor
 
-1. **Larger cables and switchgear needed** for the same real power
-2. **I² R losses in wiring** scale with total current (higher at poor PF)
-3. **Utility charges:** Most commercial tariffs charge for kVA, not just kW
-   - 100 kW motor at PF 0.85: draws 100 / 0.85 = 118 kVA
-   - Same motor at PF 0.95: draws 105 kVA
-   - Difference = 13 kVA, billed as higher demand charge
+**Central correction** (an automatic capacitor bank at the main switchboard) is the standard answer: one installation, stages switching automatically to track the site's aggregate reactive demand, easiest to maintain and to size from the bill's kVArh history. It fixes the tariff problem completely, though reactive current still flows within the site's own cables.
 
-**Example:** If demand is 500 kVA, improving from PF 0.85 to 0.95 reduces it to 474 kVA, saving demand charge on 26 kVA.
+**At-motor correction** (a capacitor switched with an individual large motor) relieves the site's internal cables too, and suits big, long-running, fixed-speed machines. Two firm rules: size the capacitor below the motor's magnetising demand (over-correction risks self-excitation as the motor spins down), and **never place a capacitor between a VFD and its motor**: the drive's output will destroy it.
 
-## Causes of low PF
+The sizing arithmetic and the worked example live in the [electrical science lesson](/courses/electrical-science/power-factor): correcting a 400 kW site from 0.80 to 0.95 frees about 79 kVA of capacity and cuts the reactive charges from the bill. What this lesson adds is the diagnosis path: the site-level number comes from the bill; the *causes* come from the motor room, and the survey that finds them is the same one the motor list already requires.
 
-- **Induction motors** — inherently inductive, especially when:
-  - Oversized (running light)
-  - Lightly loaded (20–50% of capacity)
-- **Transformers** — also inductive
-- **Ballasts in old fluorescent lights** — reactive
-- **VFDs and other power electronics** — non-linear, create harmonics
+<Callout variant="key" title="Fix the causes, then correct the remainder">
+The economical order: first remove reactive demand at source (right-size the chronically light-running motors as they fail, let drives carry the variable loads), then size central correction for what remains, detuned if the drive population warrants it. Correcting first and right-sizing later leaves the site owning more capacitor stages than it needs. Either way, check the bill's power factor or kVArh line quarterly on the [M&T routine](/courses/monitoring-and-targeting/exception-reporting): correction equipment fails silently (a blown stage fuse is invisible until the reactive charges return), and the bill is where it confesses.
+</Callout>
 
-## Improving PF
+The final lesson widens the lens from the motor to the system it drives, where the largest savings of the whole course usually live.
 
-**Method 1: Right-size motors**
-- An oversized motor at 50% load has poor PF
-- Replacing with a right-sized motor improves PF to 0.92+
+## Sources and further reading
 
-**Method 2: Capacitor banks**
-- Capacitors inject reactive power, opposing inductors
-- Sized to raise PF to 0.95 or better
-- Cost: 2,000–5,000 GBP for typical facility
-- Savings: 500–1,500 GBP/year
-- Payback: 3–5 years
-
-**Method 3: Active harmonic filters**
-- More expensive, but also reduce harmonics
-- Good if equipment with VFDs is causing poor PF and harmonics
-
-**Method 4: Load better** — if motors are lightly loaded, increase load (or right-size the motor).
-
-## Checking your facility
-
-Check the electricity bill:
-- If it shows PF, look at it monthly
-- If PF < 0.95, you're paying for reactive power
-- Target: PF > 0.95
-
-Use a power-factor meter (handheld clamp-on: £200–500) to check PF in motor rooms, HVAC plants, etc.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on power factor correction for industry.
+- [The IET](https://electrical.theiet.org/) on correction equipment design and drive interactions.
+- [BEAMA](https://www.beama.org.uk/) guidance on capacitors and harmonic-rich environments.

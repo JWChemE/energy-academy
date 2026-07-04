@@ -1,28 +1,51 @@
-A **pressure-enthalpy (P-h) diagram** is the refrigeration engineer's map of the cycle.
+Refrigeration engineers carry one picture in their heads: the pressure-enthalpy diagram, on which the entire vapour-compression cycle draws as a simple four-sided loop. Learn to read it and the cycle stops being a story and becomes arithmetic: every duty, every efficiency and every fault has a shape on the p-h chart. This lesson builds the diagram from scratch and reads a worked cycle off it.
 
-## How to read it
+## The chart itself
 
-- **Y-axis:** Pressure (log scale, bar)
-- **X-axis:** Enthalpy (kJ/kg) — the energy content of the refrigerant
-- **Saturation curve:** The boundary where liquid and vapour coexist. Left side = liquid, right side = vapour.
-- **Isotherms:** Lines of constant temperature. In the saturation region, all states at the same pressure have the same temperature.
+The axes are **pressure** (vertical, plotted logarithmically) and **enthalpy** (horizontal): the energy content of each kilogram of refrigerant, in kJ/kg. Dominating the chart is a dome-shaped curve. Inside the dome, refrigerant is a boiling mixture of liquid and vapour; left of it, pure liquid; right of it, pure vapour. Horizontal lines through the dome are lines of constant pressure, and because saturation temperature is fixed by pressure, they are also lines of constant temperature while inside the dome. That geometry is the whole trick: movement left-to-right inside the dome is evaporation (absorbing heat at constant temperature), right-to-left is condensation (rejecting it).
 
-## The cycle on a P-h diagram
+## The cycle as a rectangle
 
-**Point 1 (compressor inlet):** Low pressure, high enthalpy (dry gas). Example: 5 bar, 350 kJ/kg.
+The [four components](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle) draw as four lines:
 
-**Point 2 (compressor outlet):** High pressure, even higher enthalpy (compressed hot gas). Example: 20 bar, 420 kJ/kg.
+- **Evaporation (bottom edge, left to right):** at low pressure, the refrigerant crosses the dome absorbing heat. The horizontal distance crossed is the cooling done per kilogram.
+- **Compression (right edge, rising):** the compressor lifts pressure; enthalpy rises by exactly the work put in per kilogram.
+- **Condensation (top edge, right to left):** at high pressure, the refrigerant crosses back through the dome, rejecting everything: the absorbed heat plus the compressor work.
+- **Expansion (left edge, falling):** the expansion valve drops pressure at constant enthalpy (a vertical line straight down), trading pressure for the cold, partly-flashed mixture that re-enters the evaporator.
 
-**Point 3 (condenser exit):** High pressure, lower enthalpy (liquid). Example: 20 bar, 250 kJ/kg. Heat was rejected in the condenser: 420 - 250 = 170 kJ/kg per kg of refrigerant.
+<WorkedExample title="reading a cycle off the chart">
+  <Given>
+    An illustrative cycle read from a p-h chart (values rounded for clarity):
+    - Evaporator inlet h₄ = 250 kJ/kg; evaporator outlet h₁ = 400 kJ/kg
+    - Compressor outlet h₂ = 435 kJ/kg
+  </Given>
+  <Find>The cooling effect, compressor work, heat rejected and COP.</Find>
+  <Solution>
+    Cooling effect = h₁ − h₄ = **150 kJ/kg**. Compressor work = h₂ − h₁ = **35 kJ/kg**.
+    Heat rejected = h₂ − h₃ (and h₃ = h₄) = 435 − 250 = **185 kJ/kg**.
 
-**Point 4 (after expansion):** Low pressure, low enthalpy (cold liquid-vapour mix). Example: 5 bar, 250 kJ/kg.
+    Check the balance: 150 + 35 = 185 ✓, the same conservation the
+    [energy balance course](/courses/mass-and-energy-balances/conservation-laws) demands.
 
-**Back to point 1:** Low-pressure vapour boils in evaporator, heat absorbed: 350 - 250 = 100 kJ/kg per kg.
+    COP = 150 ÷ 35 ≈ **4.3**, read straight off the geometry: the bottom edge divided by
+    the right edge. A machine's whole performance, from four numbers on one picture.
+  </Solution>
+</WorkedExample>
 
-## Refrigerant types
+## Why practitioners bother
 
-Common: R410A (high pressure), R134a (medium), R22 (older, being phased out), R290/R600a (natural, flammable).
+The diagram's value is diagnostic: faults change the rectangle's shape in characteristic ways. A fouled condenser pushes the top edge upward (higher condensing pressure), visibly shrinking COP as the right edge lengthens. Low refrigerant charge drags the evaporator pressure down and stretches [superheat](/courses/refrigeration-and-heat-pumps/superheat-subcooling) along the bottom-right. Every "the machine feels wrong" conversation with a refrigeration contractor becomes precise when both parties sketch where the cycle is sitting. The service gauges' two pressures locate the top and bottom edges in seconds, and the [next lesson's](/courses/refrigeration-and-heat-pumps/superheat-subcooling) two temperature measurements finish the picture.
 
-Each has different P-h diagram (saturation curve shape, pressures for given temps).
+Each refrigerant has its own chart (its dome sits at different pressures and enthalpies), and charts for common fluids are freely available from manufacturers. The reasoning is identical on all of them.
 
-Reading P-h diagrams: Plot your four cycle points, read enthalpy values, calculate cooling/heating capacity.
+<Callout variant="key" title="Distances on the chart are duties per kilogram">
+Everything measurable about the cycle is a horizontal distance: cooling per kg (bottom edge), work per kg (right edge), rejection per kg (top edge). Multiply any of them by the refrigerant mass flow and you have the machine's duties in kW. The p-h diagram is not an academic nicety; it is the cycle's balance sheet, and reading it is the difference between operating a black box and managing a machine.
+</Callout>
+
+Next: the two field measurements, superheat and subcooling, that tell you where your real cycle sits on this chart without instruments beyond a thermometer and the service gauges.
+
+## Sources and further reading
+
+- [Institute of Refrigeration](https://ior.org.uk/) technical papers on cycle analysis.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for refrigeration fundamentals references.
+- Refrigerant property charts and tools from manufacturers (Honeywell, Chemours, Danfoss coolselector) for real p-h data.

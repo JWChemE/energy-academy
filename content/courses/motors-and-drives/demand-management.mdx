@@ -1,44 +1,29 @@
-**Demand charges** are based on peak power draw, not total energy. Managing peaks can save thousands per year.
+Motors do not just consume energy; they shape a site's electrical peaks, and peaks carry their own charges. A big motor starting direct-on-line briefly draws several times its running current, and a shift's worth of machines starting together can set the half-hourly maximum demand that prices the whole month. This lesson connects motor starting behaviour to the demand and capacity charges on the bill, and covers the levers: staggering, soft starting, and drives.
 
-## How it works
+## What starting really draws
 
-Utility measures demand in 30-minute intervals (or 15-minute in some areas). **The highest peak in the month sets your demand charge for the entire month.**
+An induction motor started **direct-on-line (DOL)** draws its locked-rotor current, typically **6 to 8 times full-load current**, until it accelerates. A 30 kW motor whose full-load current is about 57 A can momentarily pull around 400 A. The draw is brief (seconds), but it stresses the local network: voltage dips that flicker lights and trip sensitive kit, heating in cables and the motor itself, and mechanical shock through couplings and belts. Frequent DOL starting is also a maintenance bill: motors have limits on starts per hour precisely because each start deposits heat.
 
-Example:
-- Your facility typically draws 80 kW
-- At 3 PM on a Tuesday, two large motors start simultaneously → 110 kW peak
-- **You're billed for 110 kW demand for the whole month** (£1,000+ extra cost)
+**Star-delta** starters (the traditional compromise) cut starting current to roughly a third at the cost of reduced starting torque and a characteristic changeover thump. **Soft starters** ramp the voltage electronically for a smooth, adjustable start at modest cost, then usually bypass themselves for efficient running. **VFDs** start most gently of all, drawing little more than full-load current while accelerating on a controlled ramp, one of the secondary benefits the [applications lesson](/courses/motors-and-drives/vfd-applications) listed.
 
-## Demand vs. energy
+## Starting behaviour meets the bill
 
-- **Energy (kWh):** all the electricity you use (kW × hours)
-- **Demand (kW or kVA):** your peak power draw
+The [electrical science course](/courses/electrical-science/demand-and-power-factor) covered how larger sites pay for capacity (kVA) and maximum demand measured over half-hour windows. A single motor's seconds-long start barely moves a half-hour average; what sets the peaks is **coincidence**: many machines running (and starting) simultaneously, classically at shift start when everything from compressors to conveyors wakes at once.
 
-A facility might reduce energy by 10% but reduce demand by 30% through better scheduling — the demand savings are worth more.
+The lever is scheduling. Staggering large starts across even twenty minutes, by simple time-delay relays, a BMS sequence, or a written start-up procedure, can shave the morning peak, and where the site pays maximum-demand or agreed-capacity charges, every kVA shaved is money at the [rates that lesson worked through](/courses/electrical-science/demand-and-power-factor). The same logic governs which loads run *during* the site's peak window: a motor-driven process that can shift an hour (grinding, pumping to storage, charging) moves its contribution out of the expensive half-hours entirely, and time-of-use network charges reward the same shift.
 
-## Strategies to reduce demand
+The [half-hourly data](/courses/monitoring-and-targeting/meter-data) makes the whole exercise empirical: the site's peak half-hours are visible by inspection, and the motor list from [this course's first lesson](/courses/motors-and-drives/motor-basics) usually explains them line by line.
 
-**Load shifting:** Stagger equipment start-ups so they don't all turn on together
-- Boilers: Fire one at a time, not all simultaneously
-- HVAC: Stagger compressor starts
-- Production: Schedule heavy equipment use outside peak hours
+<Callout variant="key" title="Peaks are appointments, not accidents">
+A site's maximum demand almost always happens at a predictable, explainable moment: the cold Monday 8 a.m. start, the afternoon when the compressor test coincides with the ovens. Find it in the half-hourly data, name the machines behind it, and ask which of them genuinely needed to be simultaneous. Rescheduling costs procedure, not capital, and on capacity-charged supplies it is among the cheapest money in this course. It also frees headroom that can defer a supply upgrade, which is real capital avoided.
+</Callout>
 
-**Demand limiting:** Install a demand controller that prevents loads from exceeding a target (e.g., 100 kW max)
-- Cost: £2,000–5,000
-- Savings: Often £5,000–20,000/year
-- Payback: < 1 year
+One caution to keep claims honest: reducing *peaks* saves demand-related charges; it rarely saves many kWh (the shifted machine still runs). Present the two savings separately, exactly as the bill charges them, and the case will survive the finance director's scrutiny.
 
-**Soft starters:** Large motors draw 6–7× inrush current when hard-starting. Soft starters ramp voltage gradually, reducing inrush.
-- Cost: £1,000–3,000
-- Savings: Reduced demand charge, less voltage sag affecting other equipment
-- Payback: 1–3 years
+Motors also disturb the bill through their reactive appetite, and that is the next lesson: power factor at the motor scale.
 
-**Thermal storage / batteries:** Charge during off-peak, discharge during peak
-- More expensive but highly effective for large loads
+## Sources and further reading
 
-## Measurement
-
-Install a demand meter or data logger to see your real-time and peak demand. Often you'll find:
-- Unexpected peaks at specific times
-- Simultaneous start-ups you didn't realise
-- Opportunities for easy load shifting
+- [Ofgem: network charging](https://www.ofgem.gov.uk/energy-policy-and-regulation) on demand and capacity charge structures.
+- [The IET](https://electrical.theiet.org/) on motor starting methods and their electrical effects.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on demand management for industrial sites.

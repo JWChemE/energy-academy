@@ -1,43 +1,45 @@
-Heat pumps can operate in several modes depending on building need.
+Whether a heat pump beats a gas boiler is not a matter of opinion; it is four numbers: the electricity price, the gas price, the boiler's efficiency and the heat pump's seasonal COP. This lesson runs that comparison honestly at the platform's reference prices, shows where the breakeven sits, and covers the operating modes and design choices that decide which side of it a real installation lands on.
 
-## Heating-only
+## The cost-per-kWh-of-heat comparison
 
-Heat pump heating only, no cooling. Used where cooling is rarely needed (cold climates).
+Heat from a gas boiler costs the gas price divided by boiler efficiency. Heat from a heat pump costs the electricity price divided by COP.
 
-Pros: Simpler, cheaper.
-Cons: No summer cooling option (must add separately if later needed).
+<WorkedExample title="heat pump vs boiler at reference prices">
+  <Given>
+    - Gas £0.06/kWh; boiler seasonal efficiency 85%
+    - Electricity £0.20/kWh; heat pump SCOP 3.5
+  </Given>
+  <Find>The cost per delivered kWh of heat on each side, and the breakeven COP.</Find>
+  <Solution>
+    Boiler: 6 ÷ 0.85 ≈ **7.1p per kWh of heat**.
+    Heat pump: 20 ÷ 3.5 ≈ **5.7p per kWh of heat**, about 19% cheaper.
 
-## Heating + cooling (reversible)
+    Breakeven COP = 20 ÷ 7.06 ≈ **2.8**: above it the heat pump wins on running cost,
+    below it the boiler does. That single figure explains why installation quality
+    dominates this technology's economics, and why the ratio of electricity to gas
+    prices (currently ~3.3:1) is the policy lever everyone in the industry watches.
+  </Solution>
+</WorkedExample>
 
-Reversible heat pump switches between heating (winter) and cooling (summer) as needed.
+The carbon comparison is not close. With grid electricity around 0.207 kgCO₂e/kWh (the 2024 reporting factor; it falls each year) and gas at 0.183, the heat pump at SCOP 3.5 emits ≈ 0.06 kg per kWh of heat against the boiler's ≈ 0.22: roughly a **70% reduction today**, widening automatically as the [grid decarbonises](/courses/uk-energy-regulation/future-policy).
 
-Most common in modern systems. Single outdoor unit, can heat or cool.
+## What decides the real SCOP: flow temperature
 
-Pros: Year-round comfort, efficient.
-Cons: More complex (requires reversing valve), slightly more expensive.
+A heat pump's efficiency lives and dies on the [temperature lift](/courses/refrigeration-and-heat-pumps/cop-and-performance), and the installer controls the top of the lift through the **flow temperature** the heating circuit demands. Radiators sized for a boiler's 70 °C need replacing or supplementing to run at 45 °C; underfloor circuits at 35 °C are ideal. As working rules: every degree of flow temperature avoided is worth roughly 2 to 3% on COP, and **weather compensation** (letting flow temperature fall as outdoor temperature rises) captures those degrees automatically for most of the season. A system commissioned at a fixed 55 °C when 45 °C would heat the building has quietly surrendered a fifth of its advantage.
 
-## Defrost cycle (air-source)
+## Modes and configurations
 
-In winter, outdoor evaporator collects frost/ice, reducing efficiency. Periodic defrost cycle:
-1. Briefly reverse to heating (outdoor unit becomes condenser, melts frost)
-2. Duration: 5–15 minutes every 30–60 minutes of heating
-3. Energy cost: Lost heating for that period (3–10% seasonal penalty typical)
+**Space heating with domestic hot water**: standard practice heats the DHW cylinder in periodic boosted cycles (a higher, less efficient flow temperature for a short period) while space heating runs low and slow the rest of the time. **Hybrid (dual-fuel)** systems pair the heat pump with a retained boiler: the heat pump serves the mild majority of hours and the boiler covers cold-snap peaks and rapid reheats. Hybrids suit retrofits where radiators or supply capacity cannot yet support full electrification, and they cut most of the carbon at a fraction of the disruption. **High-temperature heat pumps** (cascade or CO₂ machines reaching 65 to 80 °C) remove the emitter problem at some COP cost, and are increasingly the pragmatic answer for older buildings and [process applications](/courses/waste-heat-recovery).
 
-Ground-source heat pumps don't need defrost (underground is above freezing).
+<Callout variant="key" title="Heat pumps run marathons; boilers run sprints">
+The operating habit that most damages heat pump economics is treating one like a boiler: deep overnight setbacks and a hard morning reheat. The reheat demands maximum output at maximum flow temperature, exactly where COP is worst, and often summons the backup heater. Heat pumps prefer long, steady running at the lowest adequate flow temperature: gentler setbacks, weather compensation, and patience. The same building, operated both ways, can differ by a full COP point, which the worked example above prices at hundreds of pounds a year.
+</Callout>
 
-## Electric backup (auxiliary heat)
+Where the heat comes from matters as much as where it goes, and the next two lessons compare sources: the ubiquitous air-source configuration and its steadier ground-source rival.
 
-On very cold days, heat pump alone may not meet demand. Backup electric heater (immersion or strip heater) supplements.
+## Sources and further reading
 
-Thermostat logic: Use heat pump up to, say, -5°C, then electric backup below that.
-
-Tradeoff: Backup is inefficient but necessary on extreme cold days. Overall seasonal COP still favours heat pump.
-
-## Dual-fuel systems
-
-Heat pump for mild weather (efficient), fossil boiler for cold (reliable, familiar).
-
-Logic: Heat pump when COP > 2 (typically -5°C and above), boiler when colder.
-
-Pros: Best of both (efficiency + reliability).
-Cons: Two systems to maintain, more complex control.
+- [GOV.UK: Boiler Upgrade Scheme](https://www.gov.uk/apply-boiler-upgrade-scheme) for current heat pump grant support.
+- [UK government greenhouse gas conversion factors](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) behind the carbon comparison.
+- [MCS](https://mcscertified.com/) installation standards, which set the design rules (flow temperatures, sizing) real SCOPs depend on.
+- [Heat Pump Association](https://www.heatpumps.org.uk/) guidance on system design and hybrids.

@@ -1,39 +1,49 @@
-Many facilities have **oversized systems** — undersized loads with equipment designed for much higher capacity. Optimising system-wide saves significantly.
+Everything in this course so far has improved the motor. The biggest savings usually live somewhere else: in the system the motor serves. A pump pushing against a half-closed valve, a fan feeding a duct run nobody redesigned when the layout changed, a conveyor moving air half the shift: no efficiency class or drive fully redeems a system that wastes the output. The systems view is the course's closing discipline, and it reorders where money gets spent.
 
-## Oversized systems
+## Follow the energy past the shaft
 
-Common in buildings retrofitted down (shrunk occupancy, process changes) or conservatively designed:
-- HVAC designed for 500-person building, now 200 occupants
-- Pump sized for 100 bar pressure; actual demand is 60 bar
-- Compressor capable of 10 bar; facility only needs 6 bar
+Trace a pumping system end to end and count the losses: motor (a few percent), transmission (belts can lose 3 to 5%), the pump itself (efficiency depends heavily on operating point), then the system: pipe friction, bends, strainers, and above all **throttling**: valves and dampers deliberately destroying output the motor paid to create. The same anatomy applies to fans and ducts, compressors and [air networks](/courses/compressed-air/pipe-sizing). The lesson of the chain is arithmetic: a kilowatt saved downstream saves everything upstream of it too, so demand-side fixes multiply back through every inefficiency in the chain.
 
-**Cost:** 15–25% more energy to run oversized equipment.
+<WorkedExample title="the throttled pump">
+  <Given>
+    - A 15 kW pump runs 6,000 h/yr against a valve permanently throttled to balance the circuit
+    - Logging shows ≈25% of pump power is being destroyed across the valve
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The waste, and the engineering options.</Find>
+  <Solution>
+    Waste ≈ 3.75 kW × 6,000 h = 22,500 kWh: about **£4,500 a year** spent creating
+    pressure and then shredding it. The options, in rising capital order: rebalance the
+    circuit properly; **trim the impeller** to match the real duty (power falls with the
+    cube of diameter: a trim from 250 to 220 mm cuts power to ≈68%); or fit a
+    [VFD](/courses/motors-and-drives/vfd-applications) and let speed replace the valve.
+    All three beat buying a more efficient motor to feed the same throttle.
+  </Solution>
+</WorkedExample>
 
-## Practical retrofit strategies
+## The optimisation order
 
-**Impeller trimming:** On centrifugal pumps/fans, slightly smaller impeller reduces output but improves efficiency
-- Cost: £500–2,000
-- Saving: 5–15% energy reduction for partial-flow applications
+The system discipline sequences every motor decision this course has covered:
 
-**Demand-based controls:** Instead of running at fixed setpoint, reduce capacity when demand drops
-- Boiler lead/lag: Fire largest boiler first; add smaller boilers only if needed
-- Compressor unload: Let compressor unload (not discharge to tank) when pressure is high enough
+1. **Question the demand.** Does the flow, pressure or throughput need to be what it is? Setpoints, [system pressure](/courses/compressed-air/pressure-flow), operating hours: the free tier.
+2. **Fix the system.** Remove throttles, rebalance, right-size impellers and pulleys, clean strainers, straighten the worst duct and pipe offenders.
+3. **Control what varies.** [Drives on the loads whose profile justifies them](/courses/motors-and-drives/vfd-applications), sequenced properly.
+4. **Then optimise the machine.** [Efficiency classes on replacement](/courses/motors-and-drives/efficiency-classes), the [rewind policy](/courses/motors-and-drives/motor-selection), [correction for the reactive remainder](/courses/motors-and-drives/power-factor-management).
 
-**Variable-speed drives:** Instead of fixed-speed motor + valve/damper, add VFD to match load
-- Cost: £5,000–15,000
-- Saving: 30–50% for variable-load equipment
-- Payback: 2–5 years
+Running the order backwards, gold-plating the motor before questioning the demand, is the classic pattern of money spent for modest result, and it is depressingly common because motors are catalogue items while systems require thought.
 
-**Retirement / right-sizing:** If a piece of equipment is oversized and rarely needed, consider removing it
-- Cost: labour only
-- Saving: eliminates standby losses, improves overall efficiency
+## Making it stick
 
-## System audit for oversizing
+The course's management artefacts assemble into a small, durable toolkit: the **motor list** (ratings, measured loads, hours, pre-made failure decisions), the **purchase and rewind policy**, the **drive specification paragraph** from the [installation lesson](/courses/motors-and-drives/vfd-installation), and motor-system KPIs on the [M&T report](/courses/monitoring-and-targeting/exception-reporting), where a creeping kW on a constant-duty system flags a strainer, a bearing or a throttle drifting shut. None of it is capital; all of it compounds.
 
-Check if:
-- Equipment runs cool (motor, pump outlet)
-- Setpoint is below normal (thermostat at 18°C instead of 21°C)
-- Throttling losses (dampers, valves, vents always partly open)
-- Intermittent duty (equipment runs a few hours/month but is sized for 24/7)
+<Callout variant="key" title="Buy shaft-hours of useful work, not kilowatts of motor">
+The systems view in one sentence: the site does not want motors running; it wants water moved, air changed, product conveyed, at the lowest electrical cost per unit of that service. Every audit question follows from it: is the service needed, is it over-delivered, is the delivery route efficient, is the machine matched and controlled? Answer in that order and the motor estate largely optimises itself.
+</Callout>
 
-These are red flags for oversizing.
+That completes the taught course. The [diagnostics capstone](/courses/motors-and-drives/diagnostics-capstone) hands you a site's motor systems, their data and their symptoms; the toolkit is now yours.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on motor-driven system optimisation.
+- [BPMA](https://www.bpma.org.uk/) on pump system assessment and impeller trimming.
+- [ISO 14414](https://www.iso.org/standard/78201.html), the pump system energy assessment standard.

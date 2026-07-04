@@ -1,33 +1,36 @@
-**Superheat** and **subcooling** are the two key parameters for commissioning and optimising refrigeration systems.
+Two temperature measurements, taken with a clamp-on probe and the service gauges, reveal more about a refrigeration system's health than any other test: superheat and subcooling. Between them they diagnose refrigerant charge, expansion valve behaviour, and how much of the machine's heat exchangers are actually doing their job. Anyone responsible for refrigeration plant, even without touching a spanner, should understand what these numbers mean and roughly where they should sit.
 
-## Superheat (at evaporator outlet)
+## Superheat: proof the evaporator finished its job
 
-Superheat = actual temperature - saturation temperature at that pressure.
+Inside the evaporator, refrigerant boils at the saturation temperature for its pressure. Once every drop has evaporated, the vapour keeps warming above that temperature as it absorbs further heat. **Superheat** is that excess: the measured suction-line temperature minus the saturation temperature the gauge pressure implies. If the gauge implies saturation at 0 °C and the suction line measures 6 °C, superheat is 6 K.
 
-Example: At 5 bar, saturation temp is -5°C. If actual temp is +5°C, superheat = 10°C.
+Superheat matters in both directions. **Too little** (below ~4 K) risks liquid droplets surviving to the compressor, and compressors are destroyed by liquid: this is the safety margin. **Too much** (say 12 K and above) means the refrigerant finished evaporating early, so the last portion of the evaporator is doing feeble vapour-warming instead of powerful boiling: capacity and efficiency wasted. The usual target sits around **5 to 8 K**, held automatically by the expansion valve, which exists precisely to keep superheat constant as load varies.
 
-**Why it matters:** Ensures all liquid has evaporated before reaching the compressor (prevents liquid slugging, which damages the compressor).
+## Subcooling: proof the condenser finished its job
 
-**Typical target:** 5–10°C. If superheat is too low (say, 2°C), risk of liquid reaching compressor. If too high (say, 20°C), not all evaporator is being utilised.
+The mirror measurement at the high-pressure side: after fully condensing, liquid refrigerant cools a few degrees below its saturation temperature. **Subcooling** is saturation temperature (from the discharge gauge) minus the measured liquid-line temperature; typical healthy figures are around **5 to 10 K**. Enough subcooling guarantees solid liquid reaches the expansion valve (bubbles through the valve mean lost capacity and hunting control); excessive subcooling suggests the condenser is over-committed or over-charged with refrigerant backing up into it.
 
-**Field adjustment:** Adjust expansion device (thermostatic valve or electronic expansion valve) to achieve target superheat.
+## The diagnostic grid
 
-## Subcooling (at condenser exit)
+Read together, the two numbers point at causes with satisfying precision:
 
-Subcooling = saturation temperature - actual temperature at that pressure.
+- **High superheat + low subcooling:** not enough refrigerant in circulation. The classic signature of a **leak** (or chronic undercharge): the evaporator runs out of liquid early, the condenser has little to hold back.
+- **Low superheat + high subcooling:** too much refrigerant; liquid floods back toward the compressor and stacks up in the condenser. The signature of overcharging after careless service.
+- **High superheat + normal/high subcooling:** the expansion valve is underfeeding: blocked, mis-adjusted, or its sensing bulb has lost contact.
+- **Both normal but COP poor:** look elsewhere: fouled heat exchangers or [condensing pressure held too high](/courses/refrigeration-and-heat-pumps/maintenance-and-faults), which the gauges will show directly.
 
-Example: At 20 bar, saturation temp is 46°C. If actual temp is 40°C, subcooling = 6°C.
+On the [p-h diagram](/courses/refrigeration-and-heat-pumps/ph-diagrams), superheat extends the cycle's bottom edge past the dome's right boundary, and subcooling extends the top edge past its left: the two measurements literally locate the cycle's corners.
 
-**Why it matters:** Ensures the liquid won't flash to vapour (flash = lost capacity). Also improves expansion device performance.
+<Callout variant="key" title="Charge is a measurement, not a top-up">
+The costly habit these numbers prevent: "it's not cooling well, add some gas." Refrigerant charge is correct when superheat and subcooling sit at their targets, and both symptoms of *undercharge and overcharge reduce efficiency* (each 10% of mis-charge typically costs several percent of COP, in either direction). A contractor who quotes superheat and subcooling readings before and after service is measuring; one who tops up by pressure alone is guessing at your expense. Ask for the two numbers on every service sheet.
+</Callout>
 
-**Typical target:** 5–15°C. Higher subcooling (cooling the liquid further) is good but requires more condenser area.
+Proper superheat and subcooling settings, restored during commissioning or service, are repeatedly found to recover **5 to 15%** of a neglected system's efficiency, which is why this pair of measurements anchors the [practical improvements lesson](/courses/refrigeration-and-heat-pumps/practical-improvements) later.
 
-## System tuning
+Next, the course turns from cooling machines to the same machine run backwards on purpose: the heat pump.
 
-Proper superheat and subcooling settings can improve efficiency by 5–15%:
-- Superheat too high: Evaporator is partly unused (wasted area, poor cooling)
-- Superheat too low: Risk of slugging and compressor damage
-- Subcooling too low: Flash losses in expansion
-- Subcooling too high: Extra cooling needed (more work)
+## Sources and further reading
 
-Commissioning includes measuring and adjusting superheat and subcooling.
+- [Institute of Refrigeration](https://ior.org.uk/) service and commissioning guidance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on refrigeration system maintenance savings.
+- Manufacturer service literature (Danfoss, Copeland/Emerson) for expansion valve and charge diagnostics.

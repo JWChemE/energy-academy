@@ -1,31 +1,29 @@
-Most refrigeration and heat pump systems don't run at full design capacity all the time. **Part-load performance** is critical for seasonal efficiency.
+Cooling plant is bought for the hottest afternoon of the decade and then spends its entire life somewhere else. A chiller sized for a heatwave peak runs at 30 to 70% load for almost every hour it ever operates, so the efficiency that matters is not the nameplate figure at full load but how gracefully the machine handles everything below it. Part-load behaviour separates well-designed cooling plant from expensive cooling plant more than any other single property.
 
-## Capacity control methods
+## How machines cope with less than full demand
 
-**On-off cycling:** Compressor runs full-speed until demand is met, then stops. Resumes when demand rises. Simple but inefficient at low load (cycling losses).
+**On-off cycling** is the crudest response: run flat out, stop, repeat. Every stop-start cycle wastes energy (pressure equalisation, oil management, restart transients) and each restart stresses the compressor; at low loads a cycling machine's effective COP can fall by a quarter or more below its steady rating.
 
-**Unloading valve (solenoid discharge):** High-pressure gas bypasses the evaporator back to suction. Compressor runs but no cooling. Wastes ~30% energy compared to stopping.
+**Staged capacity** improves on it: multiple compressors (or cylinders/slide valves within one) switch in steps, so the machine runs closer to the demand with less cycling.
 
-**Variable-capacity compressor:** Adjusts displacement (twin-screw, scroll with slides) to match load. Good efficiency down to 25–50% capacity.
+**Inverter (variable-speed) compressors** track the load continuously, and something better than proportionality happens: at part load the heat exchangers are oversized relative to the duty, so evaporating temperature rises and condensing temperature falls, shrinking the [temperature lift](/courses/refrigeration-and-heat-pumps/cop-and-performance). A good inverter chiller is *more* efficient at 50% load than at 100%: the opposite of the cycling machine, on the same physics that made the [VFD story](/courses/motors-and-drives/why-vfds) so strong.
 
-**Variable-frequency drive (VFD):** Slows compressor motor to match load. Excellent efficiency (COP improves at part-load if condenser water is cooler).
+The industry's metrics reflect this: **SEER** and **ESEER** weight efficiency across representative part-load points rather than quoting the full-load number, and they are the figures to compare when specifying. The gap is not subtle: between a cycling fixed-speed plant and a well-controlled inverter plant, seasonal consumption differences of **15 to 25%** are routine.
 
-## Part-load COP example
+## Multi-chiller plants: sequencing is the efficiency lever
 
-Full-load (100%): COP = 3.5
+Where several chillers share a load, *which machines run* matters as much as how each behaves. Two well-known failure modes: every chiller running lightly loaded (all paying their standing losses at their worst operating points), or one machine flogged at full load while others idle, missing the inverter sweet spot. Good sequencing runs the combination that puts inverter machines near their best-efficiency load band, base-loads any fixed-speed machines or lets them rest, and staggers enable/disable with dead-bands so machines do not hunt. The same principle as [compressor sequencing](/courses/compressed-air/compressor-types), with the same 5 to 15% typically available from a controller rather than new plant.
 
-At part-load:
-- 75% load with on-off cycling: COP ≈ 3.0 (cycling losses)
-- 75% load with VFD: COP ≈ 3.6 (compressor slows, superheat improves, cubing law works in reverse)
-- 25% load with on-off cycling: COP ≈ 2.0 (frequent cycling, inefficient)
-- 25% load with VFD: COP ≈ 3.2 (compressor runs at low speed, quite efficient)
+Oversizing compounds everything: a plant sized with generous margins on a load that never materialised lives even deeper in the part-load region than intended. The [audit habit](/courses/energy-audits/measurement-and-logging) of logging actual load against installed capacity regularly reveals plants whose "peak day" uses half of what was bought, an argument for right-sizing at replacement rather than like-for-like renewal.
 
-**Seasonal impact:** Systems with VFD can deliver 15–25% better seasonal COP vs on-off cycling.
+<Callout variant="key" title="Buy and operate for the thousands of mild hours, not the ten hot ones">
+Every specification decision, machine type, staging, sequencing, setpoints, should be tested against the load duration curve: how many hours a year the plant actually spends at each load. The ten extreme hours need capacity; the five thousand mild ones need part-load efficiency, and they are where the money is. A plant chosen on its ESEER and sequenced to keep inverters in their sweet band will beat a nominally "more efficient" full-load machine every year of its life.
+</Callout>
 
-## Condenser water temp
+Part-load performance decays when maintenance slips, and diagnosing that decay is the next lesson.
 
-For chiller: If condenser water is cooler (e.g., 26°C vs 32°C), COP improves ~2–3% per °C.
+## Sources and further reading
 
-Cool condenser water from cooling tower on mild days = better COP.
-
-Waterside economiser: On cold days, bypass chiller entirely and use cooling tower water directly.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on chiller part-load metrics (ESEER) and plant sequencing.
+- [Institute of Refrigeration](https://ior.org.uk/) papers on inverter compressor technology.
+- Manufacturer selection data (Daikin, Trane, Carrier, Mitsubishi) publishing part-load performance maps.

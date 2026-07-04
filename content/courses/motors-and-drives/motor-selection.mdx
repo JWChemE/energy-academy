@@ -1,35 +1,46 @@
-**Oversized motors are one of the largest hidden energy wastes.** Matching motor size to actual load can save 10–20% on motor energy.
+Two decisions shape a motor's lifetime cost more than its efficiency class: whether it is the right size for its load, and what happens on the day it fails. Both are usually made badly, for understandable reasons: oversizing feels safe, and failure-day decisions get made at speed with production waiting. This lesson gives both decisions their proper arithmetic.
 
-## Why oversizing happens
+## The oversizing problem
 
-1. **Safety margin:** "We might need more power someday," so engineers size up
-2. **Standard sizes:** Motors come in discrete sizes (11 kW, 15 kW, 22 kW), not custom
-3. **Part-load operation:** Many motors run well below nameplate (pump 50% of capacity, fan on damper)
-4. **Old equipment:** Original load may have been higher; load never came down
+Motors are efficient across a surprisingly wide band, typically from about 60% up to full load, but below half load efficiency starts sliding, and below a quarter load it falls off steeply while [power factor collapses](/courses/electrical-science/power-factor) with it. Oversizing happens innocently: a designer adds margin, the next engineer adds margin to the margin, the pump gets trimmed years later, and the site ends up with a 30 kW motor loafing along at 8 kW, deep in the inefficient zone, dragging the site's power factor down as it goes.
 
-## Cost of oversizing
+Finding these machines costs a clamp meter and an afternoon: measure running current against nameplate full-load current, per the [three-phase lesson](/courses/electrical-science/three-phase-power). A motor drawing under 40% of rated current is a candidate; under 25% is a finding. The remedy is rarely "replace immediately" (a running motor's sunk cost is sunk) but "replace right-sized when it next fails", recorded in the motor list so the failure-day decision is pre-made, or, where the load genuinely varies, a [drive](/courses/motors-and-drives/why-vfds) that lets one machine serve the whole range well.
 
-**Scenario:** Pump needs 10 kW, but installed motor is 15 kW (50% oversized)
+## Rewind or replace: the failure-day decision
 
-- Motor cost: 15 kW motor ~25% more than 10 kW
-- Energy cost: At 50% load, IE3 motor efficiency drops to ~85% vs 94% at rated load
-- Example: 10 kW demand at 85% efficiency = 11.8 kW input vs 10.6 kW for right-sized motor at 94%
+A failed motor can usually be rewound (new stator windings in the old frame) for roughly half the cost of a new machine, and same-day if the rewinder is local. The catches: a rewind preserves the old motor's efficiency class at best, and a poorly-controlled bake-and-strip process can cost half a point to two points of efficiency; a good rewinder working to the EASA/AEMT good-practice standard loses little or nothing, so the rewinder's process matters as much as the choice.
 
-**Annual cost of oversizing:** 1.2 kW × 7,500 h × £0.08 = £720/year wasted
+<WorkedExample title="rewind vs replace on a 55 kW motor">
+  <Given>
+    - A 55 kW IE2-era motor (93%) fails; it runs 6,000 h/yr at good load; electricity £0.20/kWh
+    - Rewind: ≈ £2,000, efficiency at best preserved, assume 1 point lost → 92%
+    - New IE4: ≈ £4,500 at 95.5% (indicative for this size)
+  </Given>
+  <Find>The running-cost difference and effective payback of replacing.</Find>
+  <Solution>
+    Input at 92%: 55 ÷ 0.92 = 59.8 kW. At 95.5%: 57.6 kW. Difference ≈ 2.2 kW ×
+    6,000 h ≈ 13,200 kWh ≈ **£2,640 a year**.
 
-**10-year cost:** £7,200 to run an oversized motor
+    The replacement premium over rewinding (£2,500) repays in **under a year**, then
+    pays every year for two decades. At 1,500 running hours the same premium takes
+    nearly four years, and the rewind wins. The rule that falls out: **high-hours
+    motors are replaced with best-in-class; low-hours motors are rewound**, with the
+    threshold around 2,000 to 3,000 h/yr at today's prices.
+  </Solution>
+</WorkedExample>
 
-## Solutions
+## Duty details that bite
 
-1. **Right-size on commissioning:** Measure actual load, select motor accordingly
-2. **Variable-speed drive (VFD):** If load varies, VFD lets one motor run efficiently at any load
-3. **Two smaller motors:** For intermittent operations, run only what's needed
-4. **Demand control:** Reduce peak load through scheduling or load management
+Three selection factors beyond size and class earn a check. **Duty cycle**: frequent starting heats motors (starting current is several times full-load current, per the [demand lesson](/courses/motors-and-drives/demand-management)), so high-start-frequency duties need motors and control gear rated for it. **Environment**: ambient temperature, dust and washdown ratings (IP class) decide real-world life; remember the 10 K insulation rule from [motor basics](/courses/motors-and-drives/motor-basics). **Drive compatibility**: motors destined for VFD service want inverter-rated insulation and, above ~75 kW, insulated bearings, a detail that belongs to the [installation lesson](/courses/motors-and-drives/vfd-installation) but is cheapest specified at purchase.
 
-## Checking if a motor is oversized
+<Callout variant="key" title="Pre-make the failure-day decision">
+Motor economics are decided in the worst possible meeting: an unplanned stop, a rewinder on the phone, and a spares list from 1998. The fix is the motor policy from the [previous lesson](/courses/motors-and-drives/efficiency-classes) extended with one column: for every significant motor, the pre-agreed action on failure (rewind to EASA standard / replace with specified IE4 model / replace right-sized to measured load). Ten minutes per motor now converts every future failure into an upgrade opportunity instead of a like-for-like reflex.
+</Callout>
 
-- Motor runs cool (temperature < 80°C under full load) → likely oversized
-- Power factor < 0.8 (poor) → likely oversized or running light
-- Motor sounds like it's "coasting" or not working hard → likely oversized
+Next, the technology that changes the whole load-matching question: where variable-speed drives genuinely apply, and where they do not.
 
-Measure actual current (should be close to nameplate current under typical load). If much lower, motor is oversized.
+## Sources and further reading
+
+- [AEMT](https://www.theaemt.com/) and the EASA/AEMT rewind good-practice study on efficiency retention.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on motor management policies.
+- [GOV.UK ecodesign guidance](https://www.gov.uk/guidance/placing-energy-related-products-on-the-uk-market) for what replacements must legally meet.

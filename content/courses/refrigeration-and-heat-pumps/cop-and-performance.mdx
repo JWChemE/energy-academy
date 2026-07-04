@@ -1,38 +1,46 @@
-**COP** (coefficient of performance) is the key efficiency metric for heat pumps and refrigeration.
+One number summarises everything that matters about a refrigeration system or heat pump: how many kilowatt-hours of heat it moves for each kilowatt-hour of electricity it consumes. That ratio, the **coefficient of performance (COP)**, is what you compare machines with, what you track to catch deterioration, and what every improvement in this course ultimately raises. This lesson defines the family of performance metrics properly, shows what physics limits them, and prices what a COP point is worth.
 
-## Definition
+## COP, and its seasonal cousins
 
-**COP** = useful output (heating or cooling) / compressor work input
+For cooling, COP is useful cooling delivered divided by electrical input: the chiller from the [vapour-compression lesson](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle) absorbing 100 kW with 30 kW of compressor work has a COP of 3.33. For heating, COP is heat delivered over electricity in, and it is always higher for the same machine and conditions, because the compressor's work also ends up in the delivered heat.
 
-- COP = 3 means 3 kW of heating for 1 kW of compressor work
-- COP = 4 is better (4 kW for 1 kW work)
-- COP varies with temperature conditions (outdoor temp for heat pump, chilled water temp for chiller)
+A machine's COP is not one number; it moves constantly with operating conditions, and mostly with one variable: the **temperature lift**, the gap between where heat is collected and where it is rejected. Because of that, single-point COPs flatter or slander machines depending on the test conditions, and the honest metrics average across a year: **SCOP** (seasonal COP, for heat pumps), **SEER/ESEER** (seasonal efficiency ratios for cooling). When comparing equipment, seasonal figures at conditions resembling yours are the only fair basis.
 
-## SCOP and seasonal variations
+## The physics: Carnot sets the ceiling
 
-**SCOP** (seasonal COP) = average COP over a heating or cooling season.
+Thermodynamics caps what any machine can achieve between two temperatures. For cooling, the ideal (Carnot) COP is the cold absolute temperature divided by the lift. Between a 0 °C evaporator (273 K) and a 40 °C condenser, the ceiling is 273 ÷ 40 ≈ **6.8**; real machines achieve perhaps 40 to 60% of their ceiling, hence real-world COPs around 3 for those conditions.
 
-Actual COP varies throughout the season:
-- Mild days: COP is high (small temperature lift, easy work)
-- Cold days: COP is low (large lift, hard work)
-- Peak heating/cooling demand: COP is typically worst (hardest working)
+The ceiling formula explains the single most important design fact in this field: **the smaller the lift, the higher the possible COP**. Every degree you avoid lifting is efficiency you keep, which is why so many lessons in this course reduce to "collect heat warmer, reject it cooler": raising a chilled-water setpoint, cleaning a condenser, using [water instead of air for heat rejection](/courses/refrigeration-and-heat-pumps/water-cooled-systems), choosing the [ground over winter air](/courses/refrigeration-and-heat-pumps/ground-source-heat-pumps) as a source.
 
-Example: Air-source heat pump SCOP 3 means average COP across the winter is 3, but on the coldest day it might drop to 2.
+<WorkedExample title="what one COP point is worth">
+  <Given>
+    - A site needs 500 MWh of cooling a year
+    - Its ageing chiller plant averages COP 3.0; a modern replacement (or a well-executed
+      improvement programme) achieves COP 4.0
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The annual electricity and cost difference.</Find>
+  <Solution>
+    At COP 3.0: 500 ÷ 3.0 ≈ 166.7 MWh of electricity. At COP 4.0: 125 MWh.
 
-## Comparison to electric heating
+    Difference ≈ 41.7 MWh, worth about **£8,300 a year** for identical cooling delivered.
+    This is the arithmetic behind every business case in the course: measures are valued
+    by the COP they add, applied to the annual duty.
+  </Solution>
+</WorkedExample>
 
-Electric resistance heater: COP = 1 (1 kW heat per 1 kW electrical input).
+## Measuring the real thing
 
-Heat pump COP = 3 is 3× more efficient (same heating with 1/3 the electricity).
+Nameplate COP describes a test rig; your machine's actual performance needs two measurements: electrical input (a [logged power reading](/courses/energy-audits/measurement-and-logging)) and thermal output (flow and temperature difference on the chilled or heated water circuit, or a reasonable proxy). Sites with both can trend COP monthly on the [M&T report](/courses/monitoring-and-targeting/exception-reporting), and a drifting COP is the earliest warning of the fouling, charge and control faults the [maintenance lesson](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) covers. Sites with neither are running their most complex plant blind.
 
-**Cost comparison:** 1 MWh heating from:
-- Electric heat (COP 1): 1 MWh electricity × £0.15/kWh = £150
-- Heat pump (COP 3): 0.33 MWh electricity × £0.15/kWh = £50
+<Callout variant="key" title="COP is a lift meter wearing an efficiency badge">
+When a COP disappoints, resist blaming the machine first. COP mostly reports the temperature lift you asked for: setpoints too cold, heat rejection too hot, fouling adding artificial lift on both sides. The machine converts conditions into performance; the conditions are usually where the money is. That principle, lift first, machine second, organises every practical lesson that follows.
+</Callout>
 
-Heat pump saves £100/MWh.
+Next, the engineer's map of the cycle: the pressure-enthalpy diagram, which turns these ratios into pictures you can diagnose from.
 
-## Improving COP
+## Sources and further reading
 
-1. **Lower temperature lift:** If heat pump heats to 45°C instead of 60°C (lower supply), COP improves ~5% per °C drop.
-2. **Higher source temperature:** For air-source, milder outdoor temps = higher COP. For ground-source, stable ground temp = consistently high COP.
-3. **Right-sizing load:** Oversized heat pump at part-load has poor COP. Match size to typical demand.
+- [Institute of Refrigeration](https://ior.org.uk/) for UK technical guidance and training standards.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on chiller and heat pump seasonal efficiency metrics.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on refrigeration energy management.

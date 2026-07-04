@@ -1,38 +1,29 @@
-VFDs are most effective on **pumps and fans with variable load.** Industrial applications (compressors, presses) may have less benefit.
+The [previous lesson's cube law](/courses/motors-and-drives/why-vfds) makes variable-speed drives look like magic, and on the right load they nearly are. On the wrong load they are an expensive box that adds losses. The difference is entirely in how the load's power demand changes with speed, and loads fall into three families that decide the answer before any vendor is called. This lesson sorts real site equipment into those families.
 
-## Pumps
+## The three load families
 
-**Heating/cooling loops:** Thermostats reduce demand in mild weather. With VFD, pump speed drops, saving energy.
-- Typical saving: 30–60% (mild seasons) to minimal (peak heating/cooling)
-- Annual average: 30–40% saving
+**Variable torque loads: pumps and fans.** Centrifugal machines obey the affinity laws: power falls with the cube of speed. These are the cube-law heroes of the previous lesson, and the savings are as large as the [interactive explorer](/courses/motors-and-drives/why-vfds) showed, *provided the system actually lets flow vary*. The qualifier matters: a pump filling a tank at fixed flow, or a fan that must always move design air, has no variation for the drive to exploit.
 
-**Chilled water:** Cold days → less cooling needed → pump slows
-- Typical saving: 20–40%
+**Constant torque loads: conveyors, screws, positive-displacement pumps and compressors.** Torque stays roughly constant as speed falls, so power falls in simple proportion to speed: run at 70%, draw about 70%. Worthwhile where throughput genuinely varies, but the savings are linear, not cubed, and the business case needs the running-hours arithmetic rather than cube-law enthusiasm. (The [compressed air course](/courses/compressed-air/compressor-types) showed the screw compressor version: the VSD's win there comes mostly from eliminating unloaded running.)
 
-**Booster/pressure pumps:** Pressure relief reduces flow in high-pressure situations. VFD lets motor back off instead.
+**Constant power loads: machine-tool spindles, winders, and anything already at full output whenever it runs.** Slowing them saves nothing by design. A drive may still earn its place for process control, but not on the energy line.
 
-## Fans
+## Where the site savings actually are
 
-**HVAC with economiser:** Cold days → outdoor air is sufficient → chiller off, fan remains at 100% (waste). VFD scales fan to actual load.
-- Typical saving: 30–50% in temperate climates
+Ranked by typical opportunity on UK sites: **heating and cooling pumps** whose demand follows the weather (the classic 30 to 50% saving against throttled or bypassed fixed-speed operation); **air handling and extract fans**, especially any fan owning a damper, per the [HVAC course](/courses/hvac-systems); **cooling tower and condenser fans**, where speed control also buys the [condensing-temperature gains](/courses/refrigeration-and-heat-pumps/water-cooled-systems); **secondary chilled/hot water circuits** with two-port valve systems that want variable flow; and **compressors** as trim machines. In each case the tell-tale is a fixed-speed motor whose *output is being wasted downstream*: a throttling valve, a damper, a bypass loop, a pressure relief. The drive does not create the saving; it harvests waste the system was already producing.
 
-**Dust collection, exhaust fans:** Ductwork resistance drops if dampers close. VFD matches motor to actual resistance.
+Two false positives deserve naming. A pump serving a mostly **static head** (lifting liquid a fixed height) sees far less than cube-law savings, because the head does not fall with flow: check the system curve before promising percentages. And equipment already fitted with efficient capacity control (an inverter chiller, a modern multi-stage pump set) has little left for a retrofit drive to capture.
 
-## Compressors
+<Callout variant="key" title="The evidence is a week of logging, not a rule of thumb">
+Every VFD business case reduces to a load profile: how many hours at what fraction of full output. A £300 logger for a week, per the [audit course](/courses/energy-audits/measurement-and-logging), turns "should save 30 to 50%" into a computed figure using the affinity laws, and it protects you from the two failure modes above. No profile, no purchase order: the discipline is cheap and the vendors respect it.
+</Callout>
 
-**Fixed-displacement compressor with pressure relief:** Motor runs at full speed; pressure relief vents excess (waste heat).
+A drive can also *create* savings indirectly: soft, controlled starts (the [demand lesson](/courses/motors-and-drives/demand-management) prices the alternative), precise process control reducing scrap and overshoot, and reduced mechanical stress on belts, seals and bearings. List these honestly as secondary benefits: they strengthen a case built on the energy arithmetic; they cannot substitute for it.
 
-**VFD on compressor:** Motor speed varies with demand.
-- Saving: 15–30% (less dramatic than pump/fan because of harder load)
+Next: the installation details, harmonics, cables, bearings, commissioning, that decide whether the promised saving actually arrives.
 
-## Where NOT to use VFD
+## Sources and further reading
 
-- **Constant-load equipment:** Motor always runs at full capacity. VFD doesn't help.
-- **Full-speed critical:** Some motors must run at exact speed (printing presses, synchronous equipment) — VFD adds cost without benefit
-- **High-inertia loads:** Heavy flywheels take time to accelerate; soft-starter may be better
-
-## Retrofit vs. new installation
-
-**Retrofit:** VFD on existing motor/pump system. Cost higher (retrofitting control, testing), but payback still good on high-run equipment.
-
-**New installation:** VFD often mandatory in modern building codes for HVAC/pump systems. Cost is lower because wiring is already sized appropriately.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on variable speed drive applications.
+- [BPMA](https://www.bpma.org.uk/) on pump system curves and variable-flow savings.
+- [The IET](https://electrical.theiet.org/) on drive application engineering.

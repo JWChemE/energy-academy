@@ -1,53 +1,46 @@
-Common refrigeration system faults and how to diagnose:
+Refrigeration plant rarely fails loudly. It degrades: a film of dirt on a condenser here, a few hundred grams of refrigerant lost there, a sensor drifting a degree over a summer. The cooling still arrives, so nobody complains, and the electricity meter quietly absorbs the cost. Managing that degradation is worth 10 to 20% of a typical system's consumption, and this lesson covers the faults that matter, how they announce themselves, and the legal duties that come with refrigerants.
 
-## Refrigerant leaks
+## The big four degradations
 
-**Symptom:** Cooling capacity drops, high superheat, high discharge pressure.
+**Fouled heat exchangers.** Dirt on an air-cooled condenser, scale on a water-cooled one, dust-blocked evaporator filters: all widen the [temperature lift](/courses/refrigeration-and-heat-pumps/cop-and-performance) the compressor must pump across. The pricing rule is the course's usual 2 to 3% per kelvin.
 
-**Cause:** Pinhole corrosion, vibration fatigue, damage during installation.
+<WorkedExample title="a dirty condenser, priced">
+  <Given>
+    - A fouled air-cooled condenser raises condensing temperature by 5 K
+    - Rule of thumb: ≈2.5% extra compressor energy per K
+    - The chiller uses 60 MWh of electricity a year; £0.20/kWh
+  </Given>
+  <Find>The annual cost of not cleaning it.</Find>
+  <Solution>
+    Penalty ≈ 5 × 2.5% = 12.5% of consumption ≈ 7.5 MWh, about **£1,500 a year**, against
+    a cleaning cost of a few hundred pounds. Condenser cleaning is the refrigeration
+    equivalent of [compressed air filter changes](/courses/compressed-air/maintenance):
+    unglamorous, cheap, and repaid several times over annually.
+  </Solution>
+</WorkedExample>
 
-**Fix:** Use refrigerant sniffer (electronic sensor), locate leak, repair/replace piping, recharge.
+**Refrigerant undercharge (leaks).** The signature is [high superheat with low subcooling](/courses/refrigeration-and-heat-pumps/superheat-subcooling): capacity falls, run-hours stretch, efficiency sags several percent per 10% of charge lost. Leaks are also a compliance matter, covered below.
 
-**Prevention:** Annual pressure check, leak-sealing oil additives.
+**Control and sensor drift.** A return-air sensor reading 1.5 K low makes the plant chase a setpoint nobody asked for; a failed changeover leaves [splits fighting](/courses/refrigeration-and-heat-pumps/split-systems); defrost stuck on a timer defrosts a dry coil hourly. Annual sensor verification against a reference thermometer is minutes per point.
 
-## Superheat/subcooling errors
+**Airflow and waterflow losses.** Failed fan motors on multi-fan condensers, slipping belts, blocked strainers and throttled valves all starve heat exchangers, and all present as the same thing: lift where it should not be.
 
-**Symptom:** Temperature control poor, compressor overheating (high superheat).
+## Reading the machine's vital signs
 
-**Cause:** Expansion device (TXV) stuck or misadjusted, refrigerant charge wrong.
+Four numbers, trended monthly, catch nearly everything early: **suction and discharge pressures** (the cycle's bottom and top edges on the [p-h diagram](/courses/refrigeration-and-heat-pumps/ph-diagrams)), **superheat and subcooling**, and where instrumented, **COP itself** through the [M&T routine](/courses/monitoring-and-targeting/exception-reporting). Rising discharge pressure at unchanged ambient names condenser trouble; falling suction with rising superheat names charge or expansion trouble. A one-page monthly log turns a service contract from insurance into diagnosis.
 
-**Fix:** Measure superheat/subcooling, adjust expansion device, recharge if needed.
+## The legal layer: F-gas duties
 
-## Oil circulation problems
+Most systems in this course contain HFC refrigerants regulated under the GB F-gas regime (checked July 2026; the GB rules were under review, so confirm current requirements on GOV.UK). The duties scale with the charge's CO₂-equivalent: systems of **5 tCO₂e and above need annual leak checks**, 50 tCO₂e six-monthly, 500 tCO₂e quarterly plus automatic leak detection; work on circuits requires certified personnel (F-gas certification), and records must be kept. Beyond compliance, the HFC phase-down keeps tightening supply of high-GWP refrigerants, so leak-prone plant on legacy gases faces rising recharge costs and, eventually, replacement decisions; new plant increasingly uses low-GWP alternatives (R-32, CO₂, propane) with their own handling requirements.
 
-Compressor needs oil for lubrication. If oil gets trapped in evaporator/condenser, bearing starves.
+<Callout variant="key" title="A leak-tight system is the cheapest efficiency measure and the law">
+Leak management is where compliance and economics point the same way: every kilogram kept in the circuit preserves efficiency, avoids recharge costs that rise with each phase-down step, and satisfies the statutory checks. Treat the F-gas log as an energy document: a system needing regular top-ups is telling you, in writing, that it is running below par between every service visit.
+</Callout>
 
-**Symptom:** Compressor overheating, noise, eventual failure.
+The course closes by assembling everything, setpoints, cleaning, charge, controls, sequencing, into a ranked improvement programme.
 
-**Fix:** Oil return line installer error. Ensure return line has proper slope, oil traps in place.
+## Sources and further reading
 
-## Sensor drift
-
-Thermostat or pressure sensor reads wrong = control is incorrect.
-
-**Symptom:** Setpoint never reached, erratic cycling, unnecessary auxiliary heating.
-
-**Fix:** Recalibrate sensor against reference, or replace if drifted beyond tolerance.
-
-## Scale/fouling
-
-Hard water in condenser loop deposits scale, reducing heat transfer.
-
-**Symptom:** Condenser pressure high, efficiency drops.
-
-**Fix:** Chemical descaling, water treatment (inhibitors, softening).
-
-## Electrical issues
-
-Contactor stuck, wiring loose, capacitor failed = compressor won't start.
-
-**Symptom:** No cooling, compressor hums but doesn't turn.
-
-**Fix:** Check electrical supply, capacitor, motor winding (megohm test).
-
-Most require a service technician. Budget £500–1,500 for major repairs.
+- [GOV.UK: F-gas regulations guidance](https://www.gov.uk/guidance/f-gas-in-great-britain) for current leak-check and certification duties.
+- [Institute of Refrigeration](https://ior.org.uk/) service standards and REAL alternatives guidance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on refrigeration maintenance savings.

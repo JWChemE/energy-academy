@@ -1,50 +1,49 @@
-**Ground-source heat pumps (GSHP)** use the stable subsurface temperature as a heat source/sink instead of fluctuating outdoor air.
+A few metres below the surface, UK ground holds a steady 8 to 12 °C all year: warmer than winter air exactly when heating demand peaks, cooler than summer air exactly when cooling demand peaks. A ground-source heat pump (GSHP) swaps the air-source machine's fickle outdoor coil for that stability, buying a consistently smaller temperature lift at the price of serious groundworks. This lesson covers how the ground loop works, what the stability is worth, and the honest economics of when the digging pays.
 
-## How it works
+## The ground loop
 
-Underground temperature is stable year-round: ~10–15°C UK (varies by latitude and depth).
+A GSHP collects heat through a closed loop of plastic pipe circulating a water-antifreeze mix. Three formats dominate. **Vertical boreholes** (typically 100 to 200 m deep, roughly one per 5 to 8 kW of capacity) suit constrained sites and give the steadiest temperatures; drilling is most of the project's cost. **Horizontal loops** buried 1 to 2 m deep need significant land (several hundred square metres for a house, proportionally more for larger buildings) but replace the drilling rig with an excavator. **Open-loop** systems pump groundwater directly through a heat exchanger and return it: the best temperatures of all where an aquifer allows, with abstraction licensing from the Environment Agency as part of the design.
 
-A closed-loop pipe filled with fluid circulates through the ground, absorbing (winter) or rejecting (summer) heat. The heat pump uses this fluid as the heat source.
+The loop's job is simply to present the heat pump with a source around 0 to 10 °C in winter, instead of air that may be −5 °C, wet, and demanding [defrost cycles](/courses/refrigeration-and-heat-pumps/reverse-cycle), which ground-source machines never need.
 
-Advantages over air-source:
-- Stable source temperature = consistent high COP (3.5–4.5) regardless of season
-- Works in any climate (cold, hot, variable)
-- Quieter (underground unit, no outdoor fan noise)
+## What the steadier source is worth
 
-## Installation types
+The smaller, steadier lift shows up directly in seasonal efficiency: well-designed GSHPs deliver SCOPs around **4.0 and above**, against roughly 3.0 for a good air-source installation on the same building.
 
-**Closed-loop borehole:** Drill 50–300 m deep holes, insert plastic pipe loops filled with glycol/water. Most common.
+<WorkedExample title="ground vs air on a 100 MWh heating load">
+  <Given>
+    - A building needs 100 MWh of heat a year
+    - Air-source SCOP 3.0; ground-source SCOP 4.0
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The running-cost difference, and what it says about payback.</Find>
+  <Solution>
+    Air-source: 100 ÷ 3.0 ≈ 33.3 MWh of electricity ≈ £6,670/yr.
+    Ground-source: 100 ÷ 4.0 = 25 MWh ≈ £5,000/yr.
 
-Cost: £2,000–5,000 per borehole. Multiple boreholes for large buildings.
+    Saving ≈ **£1,670 a year**. Against a ground-loop premium that can run £20,000 and
+    upward at this scale, the *efficiency alone* is a long payback. The honest GSHP case
+    is built on more than the SCOP gap: longer plant life (the loop outlives several
+    machines), no outdoor units (noise, space, planning), no defrost, and, where the
+    building also needs cooling, the ground doubling as a superb heat sink, sometimes
+    providing "free" passive cooling through the loop alone.
+  </Solution>
+</WorkedExample>
 
-**Horizontal loop:** Bury pipe 1–2 m deep across large land area (10–20m² per kW typical). Cheaper if land available, but large area needed.
+The scale economics matter: larger and longer-running loads amortise drilling far better, which is why GSHP shines on estates, heat networks and buildings with year-round balanced heating and cooling, where the same boreholes are charged in summer and discharged in winter.
 
-**Open-loop groundwater:** Pump groundwater, run through heat pump, return to aquifer. Very efficient but regulatory approval needed, risk of aquifer contamination.
+## Design realities
 
-## Economics
+Three factors decide whether a GSHP delivers its promise. **Ground thermal design**: loops sized too small cool the ground year on year, dragging the SCOP down; proper design uses thermal conductivity data (or a test borehole on larger schemes). **Balanced use**: buildings that only ever extract heat benefit from summer recharge (cooling rejection or solar thermal); balanced schemes are the technology at its best. And the same [flow temperature discipline](/courses/refrigeration-and-heat-pumps/heating-modes) as any heat pump: the ground fixes the bottom of the lift, but a 65 °C heating circuit squanders the advantage at the top.
 
-High installation cost (£20,000–100,000+ for a building).
+<Callout variant="key" title="GSHP buys certainty, not just efficiency">
+The air-source machine's SCOP is a bet on the weather; the ground-source machine's is close to a design parameter. For an energy manager, that predictability, capacity that does not sag in a cold snap, no defrost, performance that can be guaranteed in a contract, is often worth as much as the efficiency margin. Evaluate GSHP where its fixed costs spread over scale, long life or dual heating-and-cooling duty; evaluate air-source everywhere else, and let the [whole-life economics](/courses/economic-analysis) decide rather than enthusiasm for either.
+</Callout>
 
-Annual operating savings: 40–50% vs conventional boiler (high COP).
+Next, the configurations that dominate real commercial installations: splits, multi-splits and VRF.
 
-Payback: 8–15 years typical.
+## Sources and further reading
 
-**Good if:**
-- Long-term ownership (owner plans 15+ year horizon)
-- High operating hours (continuous or frequent heating/cooling)
-- Land available (for borehole or horizontal loop)
-- Electricity price low relative to fuel (makes COP 3.5 attractive)
-
-**Not good if:**
-- Short-term tenant (won't see the payback)
-- Shallow bedrock (borehole impossible)
-- High-cost electricity (reduces cost advantage)
-
-## Performance monitoring
-
-Monitor COP and source temp to verify system is working:
-- COP should be 3.5–4.5 year-round
-- Source temp should stay 8–15°C (if it drifts much, thermal short-circuit or loop problem)
-
-Annual maintenance: filter fluid, check for leaks.
-EOF
+- [Ground Source Heat Pump Association](https://www.gshp.org.uk/) for UK design guidance and standards.
+- [MCS](https://mcscertified.com/) ground-loop sizing and installation standards.
+- [Environment Agency](https://www.gov.uk/government/organisations/environment-agency) on open-loop abstraction licensing.

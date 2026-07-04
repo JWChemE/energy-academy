@@ -1,38 +1,29 @@
-A **heat pump** reverses the refrigeration cycle to provide heating instead of cooling.
+A heat pump is not a different machine from the chillers this course has covered; it is the same vapour-compression cycle with its purpose reversed. Where a chiller's product is the cold side and the rejected heat is waste, a heat pump's product is the hot side and the cold is collected outdoors for free. Understanding this identity, and the reversing valve that lets one machine do both jobs, demystifies the technology now central to UK heat decarbonisation.
 
-## Heat pump heating mode
+## The same loop, pointed the other way
 
-In cooling mode, the evaporator is inside (absorbs heat) and condenser is outside (rejects heat).
+Run the [vapour-compression cycle](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle) with the evaporator outside and the condenser inside, and heat flows from cold outdoors to warm indoors. The evaporator's trick is pressure: even at 0 °C outside, refrigerant held at low pressure boils at perhaps −10 °C, so heat flows from the "cold" air into the colder refrigerant willingly. The compressor lifts it to a pressure whose saturation temperature exceeds the heating circuit's, and the condenser delivers it. Outdoor air at 0 °C contains enormous thermal energy (absolute zero is 273 degrees further down); a heat pump is simply a machine for concentrating it.
 
-In heating mode, this reverses:
-- **Evaporator** is now outside (absorbs heat from outdoor air, ground, or water)
-- **Condenser** is now inside (rejects heat to space or hot water)
+The energy balance from the cooling lessons pays out here as a bonus: delivered heat equals collected heat *plus* compressor work, so the heating COP always exceeds the same machine's cooling COP at the same conditions. The [economics of that multiplier](/courses/refrigeration-and-heat-pumps/heating-modes) get their own lesson next.
 
-Compressor still does the same job: raise pressure and temperature of the low-pressure gas.
+## The reversing valve
 
-## Example: air-source heat pump in winter
+A **reversible** heat pump adds one component: a four-way valve at the compressor that swaps which coil receives hot discharge gas and which feeds suction. Flip it, and the indoor coil becomes the condenser (heating mode) or the evaporator (cooling mode); the outdoor coil takes the opposite role. One machine, both seasons: this is how almost every air-conditioning split sold today also heats, and why "air conditioning" installations are quietly one of the largest heat pump fleets in the country.
 
-- **Outdoor unit (now evaporator):** Even at 0°C, refrigerant boils at -10°C (due to low pressure). Absorbs heat from cold outdoor air.
-- **Compressor:** Raises pressure/temp to 50°C.
-- **Indoor unit (now condenser):** Rejects heat to space or hot water. Refrigerant condenses at 50°C.
-- **Expansion device:** Throttles back to low pressure.
-- Cycle repeats.
+## Defrost: the honest cost of cold, damp air
 
-Net result: Heat moved from outside (cold) to inside (warm), using compressor work.
+An outdoor coil running below roughly 0 to 5 °C in humid UK weather grows frost, which insulates the coil and throttles airflow. The machine's answer is periodic **defrost**: the reversing valve flips briefly, hot gas melts the frost from inside, and heating pauses for a few minutes. It is normal, automatic, and visible as steam rising from the outdoor unit; the seasonal energy penalty is typically **3 to 10%**, worst in damp climates hovering around 0 to 5 °C, which describes a British winter well. Modern demand-based defrost (initiating on measured coil conditions rather than a fixed timer) trims the penalty, and is worth asking about when comparing units.
 
-## Coefficient of performance (COP) in heating
+Very cold snaps raise a second issue: capacity falls just as demand peaks (colder source = bigger lift = less output, per the [COP lesson](/courses/refrigeration-and-heat-pumps/cop-and-performance)). Systems handle it with a supplementary electric element, or in **hybrid/dual-fuel** arrangements, an existing boiler that takes over below a changeover temperature. A few design responses, generous heat emitter sizing and lower flow temperatures, matter far more to real-world performance, and they belong to the [heating modes lesson](/courses/refrigeration-and-heat-pumps/heating-modes).
 
-Heat delivered / compressor work = COP
+<Callout variant="key" title="Judge heat pumps by seasonal figures, never cold-snap anecdotes">
+The recurring public argument ("do they work when it's freezing?") confuses capacity on the coldest hour with performance across a year. A UK heating season is overwhelmingly mild-and-damp hours, exactly where an air-source machine's COP is strong; design handles the rare extreme. The honest comparison metric is SCOP over the real climate, including defrost, and on that metric well-installed systems deliver three-plus units of heat per unit of electricity, which no fuel-burning appliance can approach.
+</Callout>
 
-Example: 10 kW heating delivered with 3 kW compressor work = COP 3.33
+Next: what that multiplier means in pounds and carbon against the gas boiler it typically replaces.
 
-At mild weather (outdoor 10°C), COP might be 4–5.
-At very cold (outdoor -15°C), COP might drop to 2–2.5 because the temperature lift is larger.
+## Sources and further reading
 
-COP > 1 is always good (moving heat is more efficient than generating heat electrically).
-
-## Challenges
-
-- **Defrost cycle:** In winter, evaporator (outdoor unit) accumulates frost. Periodically reverse cycle briefly to melt frost. Uses heat but necessary.
-- **Electric backup:** On very cold days, heat pump alone may not keep up; electric immersion heater provides supplementary heating.
-- **Part-load:** Heat demand is less than peak on mild days; COP is excellent at part-load (opposite of fossil boilers).
+- [Heat Pump Association](https://www.heatpumps.org.uk/) for UK technology guidance.
+- [Energy Saving Trust on heat pumps](https://energysavingtrust.org.uk/) for consumer-facing performance evidence.
+- [Institute of Refrigeration](https://ior.org.uk/) technical material on reverse-cycle operation and defrost.

@@ -1,44 +1,46 @@
-Practical steps to improve refrigeration/heat pump efficiency:
+Refrigeration improvements rarely need new machines. The course so far has shown that a cooling system's appetite is set mostly by conditions, lift, load, charge and control, and conditions can be changed with setpoints, hoses, brushes and small controls budgets. This closing lesson assembles the toolkit into a ranked programme, using the pricing rules the earlier lessons established.
 
-## Refrigerant charge optimization
+## The no-capital tier: setpoints and schedules
 
-Measure superheat and subcooling. Adjust charge (add/remove refrigerant) to achieve:
-- Superheat 5–8°C
-- Subcooling 5–10°C
+Work through the temperature lift from both ends. **Raise the cold side**: every degree of warmer chilled water or cold-room setpoint saves roughly 2 to 3% of plant energy, and audits routinely find setpoints a degree or three colder than any product or comfort requirement, usually as a legacy of some long-resolved complaint. **Lower the hot side**: float condenser water or head pressure setpoints down on mild days rather than pinning design values; the [water-cooled lesson](/courses/refrigeration-and-heat-pumps/water-cooled-systems) priced 8 K at about 20%. **Schedule ruthlessly**: cooling serving empty rooms, and [split estates without dead-band policies](/courses/refrigeration-and-heat-pumps/split-systems), fall to the same after-hours walk that catches every other system on site.
 
-Proper charge can improve COP by 5–10%.
+## The service-visit tier: restore the machine
 
-Cost: Service technician visit, £200–500.
-Savings: ~1–2% annual energy reduction on average.
+One properly instrumented service visit captures the middle tier: **clean the heat exchangers** (the [fouling example](/courses/refrigeration-and-heat-pumps/maintenance-and-faults): £1,500 a year for one dirty condenser), **verify charge by superheat and subcooling** (5 to 15% recovery on mischarged systems, per the [commissioning lesson](/courses/refrigeration-and-heat-pumps/superheat-subcooling)), and **verify sensors and defrost behaviour**. Insist the service sheet records the four vital signs before and after; the difference is the visit's measured value.
 
-## Cleaning condenser/evaporator
+## The small-capital tier: controls and recovery
 
-Heat exchanger fouling (scale, dust) reduces effectiveness.
+**Sequencing and inverter trim** on multi-machine plants (5 to 15%, per the [part-load lesson](/courses/refrigeration-and-heat-pumps/partload-efficiency)). **Floating head pressure control** where fixed-setting controls block the mild-day gains. **Free cooling** where winter loads persist (server rooms, process): a waterside economiser or dry-air cooler bypasses the compressor for thousands of hours a year. And **heat recovery**: a chiller is also a heat source, rejecting its cooling duty plus compressor work.
 
-Condenser cleaning: High-pressure water, chemical descaling.
-Cost: £500–2,000.
-Benefit: 3–8% efficiency recovery.
+<WorkedExample title="the chiller as a boiler substitute">
+  <Given>
+    - A chiller delivers 100 kW of cooling at COP 3.3, running against a simultaneous hot-water demand
+    - Heat rejected = cooling + compressor work = 100 + 30 = 130 kW
+    - A heat-recovery condenser captures 60% of rejection; displaces gas at 85% efficiency, £0.06/kWh; 2,000 coincident hours/yr
+  </Given>
+  <Find>The annual value of the recovered heat.</Find>
+  <Solution>
+    Recovered ≈ 130 × 0.60 = 78 kW × 2,000 h = 156,000 kWh of heat, displacing
+    156,000 ÷ 0.85 ≈ 183,500 kWh of gas: about **£11,000 a year**. As with
+    [compressor heat recovery](/courses/compressed-air/heat-recovery), the project lives
+    or dies on coincidence between rejection and demand; where a site cools and heats
+    simultaneously (food factories, leisure centres, [breweries](/sectors/breweries)),
+    this is the largest prize in the whole refrigeration programme.
+  </Solution>
+</WorkedExample>
 
-Schedule: Annual in dirty environments, every 2–3 years in clean.
+## Sequencing the programme
 
-## Sensor calibration
+Run it in the order above: conditions, then restoration, then controls and recovery, then, only with those exhausted, machine replacement, where the [part-load lesson's ESEER discipline](/courses/refrigeration-and-heat-pumps/partload-efficiency) and the [heat pump economics](/courses/refrigeration-and-heat-pumps/heating-modes) govern the specification. Each tier's savings shrink the duty the next tier serves, so honest programme totals account for interaction, exactly as the [audit course](/courses/energy-audits/identify-opportunities) prescribes. And every measure is protected by the same watch-keeping: COP, the four vital signs, and setpoints on the monthly [M&T report](/courses/monitoring-and-targeting/dashboards), because refrigeration savings decay through the same quiet drift that created them.
 
-Check thermostats, pressure transducers. Miscalibrated sensors cause control drift.
+<Callout variant="key" title="Sell lift reduction, not kit">
+The programme's internal pitch writes itself from the course's one principle: the plant's bill is proportional to the temperature lift it is asked to pump across, and most of that lift is policy, cleanliness and control rather than physics. Degrees are cheaper than machines. Buy them first.
+</Callout>
 
-Cost: £200–500.
-Benefit: Prevents part-load inefficiency, ensures proper defrost cycling (heat pump).
+That completes the taught course. The [diagnostics capstone](/courses/refrigeration-and-heat-pumps/diagnostics-capstone) presents a misbehaving refrigeration plant and its data; the vital signs, the pricing rules and the diagnostic grid from these lessons are the complete toolkit for finding the money.
 
-## Setpoint optimization
+## Sources and further reading
 
-Heating: Lower setpoint by 1°C = ~3% energy saving (less heat needed). Trade-off: comfort.
-
-Cooling: Raise setpoint by 1°C = ~3% saving. Trade-off: comfort.
-
-Condenser setpoint: Lower by 1°C (water-cooled chiller) = ~2% COP improvement. Cost: larger cooling tower (capital expense).
-
-## Maintenance
-
-Regular servicing (annually or per OEM): Replace filters, check for leaks, confirm oil circulation, verify electrical connections.
-
-Cost: £500–1,000/year.
-Benefit: Prevents gradual degradation, extends equipment life.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on refrigeration improvement programmes.
+- [Institute of Refrigeration](https://ior.org.uk/) guidance on heat recovery and floating head pressure.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on free cooling and heat-recovery chillers.

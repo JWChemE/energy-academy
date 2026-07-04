@@ -1,52 +1,47 @@
-Installing a VFD requires electrical knowledge. Key considerations:
+A variable-speed drive is power electronics, not a motor accessory, and installing one changes the electrical character of everything around it. Most disappointing drive projects fail not on the energy arithmetic but on installation details: harmonics upsetting neighbours, cable-induced voltage spikes eating motor insulation, bearings pitted by stray currents, or commissioning that left the promised control strategy switched off. This lesson is the checklist that protects the business case.
 
-## Electrical requirements
+## What a drive does to the supply: harmonics
 
-**Power supply:** VFD must match supply voltage (230V single-phase, 400V three-phase). Most industrial installations are three-phase.
+A VFD rectifies the incoming AC ([as the electrical course described](/courses/electrical-science/ac-vs-dc)), and rectifiers draw current in pulses rather than smooth sine waves. The distortion, **harmonics**, flows back into the site's supply, where it heats transformers and cables, disturbs sensitive equipment, and in bulk can breach the limits distribution operators enforce (G5/5 in the UK). One drive on a healthy supply is rarely a problem; a plant room full of them needs assessment. Mitigation is a menu with rising cost: line reactors (standard, cheap, fit by default), passive filters, low-harmonic or active-front-end drives for the heavy cases. Ask the supplier for a harmonic estimate against G5/5 as part of any multi-drive project.
 
-**Cable sizing:** VFD output is pulse-width modulated (PWM) — very high frequency switching. Standard cables can cause:
-- Motor winding damage (voltage spikes)
-- Electromagnetic interference (EMI)
+## What a drive does to the motor: cables, insulation, bearings
 
-Solution: **Shielded motor cable** and **reactor** (inductor) on VFD output to smooth waveform.
+The drive's output is not a sine wave but millions of sharp voltage pulses. Three consequences follow. **Cable length matters**: long motor cables let pulse reflections stack into voltage spikes at the motor terminals; stay within the drive maker's cable limit or fit an output filter. **Insulation matters**: modern motors rated for inverter duty (reinforced insulation) shrug this off; elderly motors may not, which belongs in the [rewind-or-replace decision](/courses/motors-and-drives/motor-selection). **Bearings matter**: pulse-induced stray currents can arc through bearing lubricant, machining tiny fluting into the races until the bearing screams; the standard defences (insulated non-drive-end bearings above ~75 kW, shaft grounding rings, correctly bonded screened cable) cost little at specification time and a rebuild later.
 
-Cost: adds ~20% to VFD cost, but essential.
+Screened (shielded) motor cable, glanded correctly at both ends, is non-negotiable: it contains the electromagnetic interference that otherwise finds the building's control wiring.
 
-## Harmonic distortion
+## The honest energy accounting
 
-VFD switching at ~16 kHz creates harmonics that can distort the voltage waveform, affecting:
-- Transformer heating (losses, shortened life)
-- Other equipment interference (sensitive controls, PLCs)
-- Utility penalties (if harmonics exceed allowed limits)
+A drive consumes 2 to 4% of throughput in its own losses, always, at every load. On a variable load this vanishes inside cube-law savings. On a load that runs at full speed, it is a pure new cost.
 
-**Solution:** Harmonic filter (active or passive) on VFD input. Cost: ~5–10% of VFD cost.
+<WorkedExample title="the drive that should not have been fitted">
+  <Given>
+    - A 90 kW motor drives a process fan that genuinely needs full output whenever it runs
+    - A drive is fitted anyway ("for flexibility"); drive losses ≈ 3%
+    - 6,000 h/yr; electricity £0.20/kWh
+  </Given>
+  <Find>The annual cost of the unnecessary drive.</Find>
+  <Solution>
+    Losses ≈ 0.03 × 90 × 6,000 ≈ 16,200 kWh: about **£3,240 a year**, forever, plus the
+    capital. The [applications lesson's](/courses/motors-and-drives/vfd-applications)
+    load-profile discipline exists precisely to prevent this purchase. Where full-speed
+    running dominates but a drive is justified for other reasons, specify one with a
+    **bypass contactor** so the motor runs direct-on-line at full speed.
+  </Solution>
+</WorkedExample>
 
-## Motor heating
+## Commissioning: where savings are switched on
 
-VFD's switching creates additional losses in the motor (core losses, cooling losses). Motor runs hotter than with mains supply.
+The drive saves nothing until its control strategy is configured: the feedback signal (pressure, temperature, flow) connected and scaled, the control curve set (a pump on a pressure signal wants proportional control with a sensible minimum speed, not a fixed 45 Hz someone chose on day one), ramps tuned, and **minimum speed** set with care (pumps need flow for cooling and to avoid dead-heading; motors on drives at very low speed lose their cooling fan's effect). Insist commissioning ends with a witnessed demonstration: the drive turning down as demand falls, and the [logged power data](/courses/energy-audits/measurement-and-logging) for the first weeks against the pre-installation baseline. That comparison is the project's proof, per the [M&V discipline](/courses/measurement-and-verification).
 
-**Impact:** Motor may overheat if:
-- Motor is already running hot
-- Ambient temperature is high
-- Motor cooling fan is blocked
+<Callout variant="key" title="Specify the boring details or pay for them twice">
+Every failure mode in this lesson is cheap at specification time and expensive afterwards: reactors and screened cable in the quote, inverter-rated motor or bearing protection named, harmonic assessment for multi-drive projects, bypass where full-speed hours dominate, commissioning with witnessed turndown and data. One paragraph in the purchase specification carries all of it. Write the paragraph.
+</Callout>
 
-**Solution:** Thermal sensor or slightly lower rated load. Well-ventilated motors are less affected.
+Next, the wider electrical picture: how motors set a site's peak demand and what starting them costs.
 
-## Installation cost
+## Sources and further reading
 
-- VFD unit: 2,000–10,000 GBP (depending on power)
-- Cable/reactor/filter: 1,000–3,000 GBP
-- Labour/commissioning: 1,000–2,000 GBP
-- **Total: 4,000–15,000 GBP for typical pump/fan installation**
-
-Payback on high-run motors (>5,000 h/year): 2–4 years.
-
-## Commissioning
-
-VFD must be tuned to the motor and load:
-- Acceleration ramps (how fast motor speeds up)
-- Deceleration ramps
-- Load sensing (is pressure/flow feedback available?)
-- Safety interlocks (what happens if VFD fails?)
-
-Poor commissioning leads to poor performance. Budget for a qualified technician.
+- [Energy Networks Association](https://www.energynetworks.org/) for G5/5 harmonic limits context.
+- [The IET](https://electrical.theiet.org/) on drive installation and EMC practice.
+- [GAMBICA](https://www.gambica.org.uk/) technical guides on VFD application and harmonics.

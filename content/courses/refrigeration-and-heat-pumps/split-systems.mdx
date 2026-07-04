@@ -1,36 +1,35 @@
-**Split units** are the most common air-source heat pump configuration: outdoor unit and one or more indoor units connected by refrigerant piping.
+Walk past any UK office, shop or surgery and count the outdoor units on the wall: split systems are how most commercial buildings actually meet their cooling, and increasingly their heating. They are cheap to install, efficient when done well, and chronically mismanaged in practice. This lesson covers the configurations (single splits to VRF), what decides their real-world efficiency, and the operating habits that cost multi-split estates a fortune.
 
-## Components
+## From single split to VRF
 
-**Outdoor unit:** Compressor, condenser/evaporator (switches between modes), fan.
+A **single split** pairs one outdoor unit (compressor and coil) with one indoor unit, connected by refrigerant pipework: the [vapour-compression loop](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle) stretched across a wall. A **multi-split** runs several indoor units from one outdoor unit, saving outdoor space and capital.
 
-**Indoor unit(s):** Air coil (evaporator in cooling, condenser in heating), fan, controls.
+**VRF (variable refrigerant flow)** scales the idea to whole buildings: one large outdoor system serves tens of indoor units, with inverter compressors modulating refrigerant flow to match the summed demand. **Heat-recovery VRF** adds the clever trick: when some zones call for cooling while others heat (a south-facing meeting room versus a north-facing office in spring), the system moves heat *between them*, and the reclaimed heat is close to free. Buildings with simultaneous heating and cooling demands are where VRF earns its premium; buildings without them mostly pay it.
 
-**Refrigerant lines:** Copper tubes carrying liquid and vapour refrigerant. Must be insulated (suction line) and may be charged on-site.
+## What decides real efficiency
 
-## Installation
+Modern splits carry impressive seasonal ratings, but three installation factors decide whether a building sees them.
 
-Refrigerant piping: Distance from outdoor to indoor should be under 30 m typical. Longer = pressure drop losses, efficiency penalty.
+**Pipework length and quality.** Every metre of refrigerant pipe between units costs a little capacity and efficiency; long, uninsulated or poorly-brazed runs cost a lot. Manufacturers publish limits; good installers stay well inside them.
 
-**Critical:** Proper charge (amount of refrigerant). Too little = low capacity, high superheat. Too much = high pressure, poor efficiency, risk of liquid slugging.
+**Correct charge.** Splits are charged on site, and the [superheat and subcooling lesson](/courses/refrigeration-and-heat-pumps/superheat-subcooling) is the whole story: field studies repeatedly find a large share of installed splits mischarged, quietly running 5 to 15% below rated efficiency. Commissioning records showing the measured values are the evidence to ask for.
 
-Installation is skilled work; poor charging ruins performance.
+**Sizing.** An oversized split short-cycles: bursts of full output, then off, repeatedly. Cycling wrecks efficiency and comfort alike, where a right-sized inverter unit would modulate smoothly at part load, the regime [the part-load lesson](/courses/refrigeration-and-heat-pumps/partload-efficiency) shows is actually a split's sweet spot.
 
-## Single vs multi-split
+## The estate problem: settings and fighting
 
-**Single split:** One indoor unit per outdoor unit. Simpler, lower cost.
+Splits multiply across buildings one meeting room at a time, usually with no central control, and the waste patterns are predictable. Units heating and cooling *the same air* in adjacent zones because their setpoints crossed. Remote controls set to 18 °C in summer meetings and never reset. Units running around the clock because nobody owns the off switch. The [walk-through lesson's](/courses/energy-audits/building-walkthrough) after-hours survey finds these in any multi-split estate, and the fixes are governance more than engineering: centralised control or simple lockable setpoint ranges, dead-bands so heating and cooling cannot overlap (19 to 24 °C works for most spaces), and schedules with local override rather than local sovereignty.
 
-**Multi-split:** One outdoor unit feeds 2–5 indoor units. More efficient if loads are balanced; can serve multiple rooms.
+<Callout variant="key" title="A dead-band policy is the cheapest efficiency measure splits have">
+Where individual room controls allow any setpoint, adjacent zones end up in thermal combat, each unit's waste counted as the other's load. Locking all units to heat only below 19 °C and cool only above 24 °C costs nothing, offends nobody's genuine comfort, and routinely cuts a multi-split estate's consumption by double-digit percentages. It is the single highest-return intervention this lesson can offer, and it needs a policy, not a purchase order.
+</Callout>
 
-## Advantages
+One regulatory note: split and VRF systems hold F-gas refrigerants, so the leak-check duties in the [maintenance lesson](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) apply estate-wide, and air-conditioning systems above 12 kW require periodic [TM44 inspections](/courses/uk-energy-regulation/epc-and-building-standards), whose reports are a free source of audit findings.
 
-- Compact (no ducts needed)
-- Efficient (no transmission loss)
-- Individual room control (each indoor unit can have own setpoint)
-- Quick installation (outdoor can be mounted on wall or ground)
+Next, the larger cousins: water-cooled systems, where heat rejection through a wet cooling tower buys chillers their best efficiencies.
 
-## Disadvantages
+## Sources and further reading
 
-- Outdoor unit visible/audible (noise ~50 dB at 1 m)
-- Refrigerant lines exposed (aesthetic concern)
-- Requires skilled commissioning (refrigerant charge)
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) for guidance on split/VRF design and TM44 inspections.
+- [Institute of Refrigeration](https://ior.org.uk/) on installation and commissioning standards.
+- Manufacturer engineering data (Daikin, Mitsubishi Electric, Toshiba) for pipework limits and seasonal ratings.
