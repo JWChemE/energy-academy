@@ -1,32 +1,27 @@
-Sizing CHP well demands a real understanding of how a site uses both heat and power across the day and year. Annual totals hide the patterns that make or break a scheme.
+Sizing CHP well demands a real understanding of how a site uses both heat and power across the day and the year. Annual totals hide the patterns that make or break a scheme: two buildings with identical yearly energy can suit CHP completely differently depending on when they use it. This lesson covers why profiles beat totals, how to build them, why coincidence matters, and how absorption cooling can rescue a summer-idle scheme.
 
 ## Why profiles, not totals
 
-Two buildings can use identical annual energy yet suit CHP very differently. One with steady, round-the-clock demand is ideal; one with sharp daytime peaks and idle nights is poor. Only the **load profile** - demand plotted against time - reveals which you have.
-
-## Building the profiles
-
-Gather half-hourly data for both heat and electricity:
-- **Electricity:** from half-hourly meter data, readily available for larger sites.
-- **Heat:** from boiler-house heat meters, or inferred from gas consumption and boiler efficiency.
-
-Plot daily profiles for representative days (summer weekday, winter weekday, weekend) and the annual load-duration curves. Look for:
-- The size and duration of the base load
-- How well heat and electricity demand coincide in time
-- Seasonal swing between summer and winter
+One building with steady, round-the-clock demand is an ideal CHP host; another with sharp daytime peaks and idle nights is a poor one, even with the same annual consumption. Only the **load profile**, demand plotted against time, reveals which you have. To build one, gather half-hourly data for both heat and electricity: electricity from [half-hourly meter data](/courses/monitoring-and-targeting/meter-data), heat from boiler-house heat meters or inferred from gas use and boiler efficiency. Then plot daily profiles for representative days (summer weekday, winter weekday, weekend) and the annual [load-duration curves](/courses/chp-and-cogeneration/heat-demand), looking for the size and duration of the base load, how well heat and electricity demand coincide, and the seasonal swing.
 
 ## Coincidence matters
 
-CHP produces heat and power together, at the same time. The value is highest when the site needs both simultaneously. A site that needs heat at night but power by day gets less benefit unless a thermal store or grid export bridges the gap. Overlaying the two profiles shows how often generation and demand actually coincide.
+CHP produces heat and power together, at the same time, so its value is highest when the site needs both simultaneously. A site that needs heat at night but power by day gets less benefit unless a [thermal store](/courses/chp-and-cogeneration/system-integration) or grid export bridges the gap. Overlaying the two profiles shows how often generation and demand actually coincide, which is what determines the real self-consumption of both outputs.
 
-## Seasonal swing
+## The summer problem, and absorption cooling
 
-Heat demand typically collapses in summer while electrical demand stays flat or rises (cooling). A heat-led unit therefore runs hard in winter and may shut down in summer - unless there is a summer heat sink such as domestic hot water, a pool, an absorption chiller, or a process load. Identifying a year-round heat use is often what lifts a marginal scheme into a viable one.
+Heat demand typically collapses in summer while electrical demand stays flat or rises with cooling. A heat-led unit therefore runs hard in winter and may shut down in summer, unless there is a summer heat sink. Finding a year-round heat use is often what lifts a marginal scheme into a viable one, and one option turns the problem into the solution.
 
-## Absorption cooling: turning summer heat into a load
-
-An **absorption chiller** uses CHP heat to drive cooling. This converts summer's surplus heat into useful air-conditioning, giving the unit a year-round heat sink and dramatically increasing run hours - the basis of "trigeneration" (combined cooling, heat, and power).
+<Callout variant="key" title="Absorption cooling turns summer heat into a load">
+An **absorption chiller** uses CHP heat to drive cooling, converting summer's surplus heat into useful air-conditioning. This gives a heat-led unit a year-round heat sink, dramatically increasing its run hours, and it is the basis of **trigeneration** (combined cooling, heat and power). On a site with significant summer cooling demand, adding absorption cooling can be the difference between a CHP unit that shuts down for a quarter of the year and one that runs profitably through it. Where the summer heat sink is a pool, a process load or absorption cooling, the scheme's run hours (and its whole economic case) transform.
+</Callout>
 
 ## From profile to specification
 
-With profiles in hand, the base-load heat demand sets the CHP thermal size; the prime mover's power-to-heat ratio then determines its electrical output; and the load-duration curve confirms the run hours that underpin the financial case in the next module.
+With profiles in hand, the specification falls out in order: the base-load heat demand sets the CHP thermal size, the prime mover's [power-to-heat ratio](/courses/chp-and-cogeneration/efficiency-metrics) then fixes its electrical output, and the load-duration curve confirms the run hours that underpin the [financial case](/courses/chp-and-cogeneration/cost-benefit). Skip the profile work and the sizing is guesswork, which is why disappointing CHP schemes so often trace back to a sizing done on annual totals rather than half-hourly patterns.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on load profiling for CHP.
+- [Elexon / half-hourly data guidance](https://www.elexon.co.uk/) on obtaining electrical profiles.
+- [ADE](https://www.theade.co.uk/) on trigeneration and absorption cooling.

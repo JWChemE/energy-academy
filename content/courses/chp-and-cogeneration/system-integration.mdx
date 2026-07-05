@@ -1,39 +1,33 @@
-A CHP unit rarely works alone. It sits within a plant room alongside boilers, pumps, controls, and the electrical supply. How it is integrated determines whether it achieves its design run hours.
+A CHP unit rarely works alone. It sits in a plant room alongside boilers, pumps, controls and the electrical supply, and how it is integrated determines whether it ever achieves its design run hours. Most disappointing CHP installations fail on integration, not on the unit itself, which is why this stage deserves as much attention as the sizing. This lesson covers hydraulic integration with boilers, the thermal store, electrical connection, and the controls that tie it together.
 
 ## Hydraulic integration with boilers
 
-CHP is the **lead heat source** - it runs first and continuously, with boilers as top-up and standby. The hydraulic design must ensure the CHP always gets first call on the heat demand:
+CHP is the **lead heat source**: it runs first and continuously, with boilers as top-up and standby. The hydraulic design must guarantee the CHP always gets first call on the heat demand. Three rules achieve it:
 
-- CHP connects to the return leg so it sees the coolest water, maximising heat recovery and (for condensing-style recovery) efficiency.
-- Boilers stage on only when CHP cannot meet demand.
-- A **low-loss header** or buffer vessel hydraulically separates CHP, boilers, and the building circuits so flow rates do not fight one another.
+- CHP connects to the **return leg** so it sees the coolest water, which maximises heat recovery (and, for condensing-style recovery, efficiency), the same low-return-temperature logic as a [condensing boiler](/courses/waste-heat-recovery/boiler-flue-recovery).
+- Boilers stage on only when CHP cannot meet demand, never competing with it.
+- A **low-loss header** or buffer vessel hydraulically separates CHP, boilers and the building circuits so their flow rates do not fight one another.
 
 ## The thermal store
 
-A buffer store is the single most valuable integration component. It:
-- Lets CHP run steadily through short demand dips instead of cycling on and off
-- Absorbs the morning heat-up surge so a smaller CHP can contribute
-- Lifts annual run hours and heat utilisation
-
-Stop-start cycling is the enemy of engine life and efficiency, so the store earns its space many times over.
+A buffer store is the single most valuable integration component. It lets CHP run steadily through short demand dips instead of cycling on and off, absorbs the morning heat-up surge so a smaller unit can contribute, and lifts annual run hours and heat utilisation. Stop-start cycling is the enemy of engine life and efficiency, so the store, sized on the same [thermal-storage principles](/courses/thermal-energy-storage/water-tanks) as any buffer, earns its space many times over.
 
 ## Electrical integration
 
-The generator connects to the site's electrical system, normally running in parallel with the grid:
-- **G99 (UK) protection** disconnects the unit safely if the grid fails, preventing dangerous islanding.
-- Most building schemes are sized to avoid export, so all power is used on site where it is most valuable (displacing imported power at retail price beats exporting at wholesale).
-- Where export is allowed, an export meter and agreement with the network operator are required.
+The generator connects to the site's electrical system, normally running in parallel with the grid. **G99 protection** disconnects the unit safely if the grid fails, preventing dangerous islanding (covered in the [grid-export lesson](/courses/chp-and-cogeneration/grid-export)). Most building schemes are sized to avoid export, so all power is used on site where it is most valuable, since displacing imported power at retail price beats exporting at wholesale. Where export is allowed, an export meter and an agreement with the network operator are required.
 
-## Controls and sequencing
+## Controls and the common failures
 
-The control system ties it together: it runs CHP as lead, stages boilers, manages the store's charge, and can shift operation to the most profitable hours where tariffs vary. Good controls also log run hours, heat utilisation, and efficiency so performance can be verified against design - the link to measurement and verification.
+The control system runs CHP as lead, stages the boilers, manages the store's charge, and can shift operation to the most profitable hours where tariffs vary. Good controls also log run hours, heat utilisation and efficiency so performance can be [verified against design](/courses/measurement-and-verification).
 
-## Common integration failures
+<Callout variant="key" title="CHP schemes usually fail on integration, not the engine">
+The recurring pattern in underperforming CHP: no thermal store, so the unit short-cycles; CHP plumbed into hot return water, starving its heat recovery; boilers allowed to compete with CHP rather than top it up; and controls left on default, running the unit at the wrong times. None of these is an engine fault, and all of them are cheaper to get right at design than to retrofit later. When a CHP scheme disappoints, look first at how it is integrated with the boilers, the store and the controls, because that is where the run hours are usually lost.
+</Callout>
 
-Schemes underperform when:
-- No thermal store is fitted, so the unit short-cycles
-- CHP is plumbed to hot return water, starving its heat recovery
-- Boilers are allowed to compete with CHP rather than top it up
-- Controls are left on default, so the unit runs at the wrong times
+Integration keeps the heat useful; the electrical side raises the question of what to do with the power, which the next lesson takes up.
 
-Most disappointing CHP installations fail on integration, not on the unit itself.
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on CHP system integration.
+- [Energy Networks Association: G99](https://www.energynetworks.org/) on parallel grid connection.
+- [ADE](https://www.theade.co.uk/) on hydraulic integration and thermal stores.

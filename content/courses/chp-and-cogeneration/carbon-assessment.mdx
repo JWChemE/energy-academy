@@ -1,36 +1,42 @@
-CHP has historically been promoted as a low-carbon technology, but whether it actually cuts emissions today depends entirely on what it displaces. As the grid decarbonises, the carbon case has shifted dramatically.
+CHP has historically been promoted as a low-carbon technology, but whether it actually cuts emissions today depends entirely on what it displaces, and as the grid has decarbonised, the carbon case has shifted dramatically. A scheme that clearly saved carbon in 2012 may increase it in 2026. This closing lesson works through the carbon arithmetic honestly, explains why grid decarbonisation changed everything, and shows where gas CHP still helps and where the renewable-fuel route leads.
 
-## The traditional carbon argument
+## The traditional argument, and why it weakened
 
-CHP saves carbon by using fuel more efficiently than separate generation. When the grid was dominated by coal and gas (high carbon intensity), generating power on site at 80-90% overall efficiency clearly beat importing high-carbon grid electricity plus burning gas for heat.
+CHP saves carbon by using fuel more efficiently than separate generation. When the grid was dominated by coal and gas (high carbon intensity), generating power on site at 80 to 90% overall efficiency clearly beat importing high-carbon grid electricity plus burning gas for heat. The carbon saving equals the grid emissions displaced minus the emissions of the gas burned, and the key variable is the **grid carbon intensity**, which has fallen fast.
 
-## How grid decarbonisation changed everything
-
-The carbon saving from CHP equals the grid emissions it displaces minus the emissions of the gas it burns. The key variable is the **grid carbon intensity**:
-
-- In 2012 the UK grid averaged around 500 gCO2/kWh - gas CHP easily beat it.
-- By the mid-2020s the grid fell below 200 gCO2/kWh and continues to drop as renewables grow.
-
-A gas engine generating at 38% efficiency emits roughly 480-530 gCO2 per kWh of electricity (before heat credit). Once the grid is cleaner than this, the **electricity** from gas CHP is more carbon-intensive than the grid it replaces. The heat credit still helps, but the overall carbon advantage shrinks and can vanish.
+<WorkedExample title="gas CHP versus a decarbonising grid">
+  <Given>
+    - A gas engine generating electricity at 38% efficiency; natural gas ≈ 0.183 kgCO₂ per kWh of gas
+    - UK grid intensity: ≈ 500 gCO₂/kWh in 2012, below 200 gCO₂/kWh by the mid-2020s and still falling
+  </Given>
+  <Find>The carbon intensity of the CHP electricity, and what it means.</Find>
+  <Solution>
+    Per kWh of electricity (before any heat credit): 0.183 ÷ 0.38 ≈ **0.482 kgCO₂/kWh**,
+    about 480 gCO₂/kWh. In 2012, against a 500 g grid, that comfortably won. Against a
+    sub-200 g grid, the *electricity* from gas CHP is now more carbon-intensive than the
+    grid it replaces. The heat credit still helps (displacing gas boilers), but the overall
+    carbon advantage shrinks and can vanish. A unit installed today will spend most of its
+    15-year life competing against an ever-cleaner grid, so the assessment must use
+    forward-looking, not historic, grid intensity.
+  </Solution>
+</WorkedExample>
 
 ## Counting it properly
 
-A fair carbon assessment compares:
-- **With CHP:** emissions from all the gas burned
-- **Without CHP:** grid emissions for the same electricity + boiler emissions for the same heat
+A fair carbon assessment compares emissions **with CHP** (all the gas burned) against emissions **without CHP** (grid emissions for the same electricity plus boiler emissions for the same heat). Crucially, use **marginal or forward-looking** grid intensity averaged over the asset's whole life, not today's average, because the grid the unit competes against gets cleaner every year, per the [carbon budgets](/courses/uk-energy-regulation/carbon-budgets).
 
-Crucially, use **marginal** or forward-looking grid intensity over the asset's 15-year life, not today's average. A unit installed now will spend most of its life competing against an ever-cleaner grid.
+## Where gas CHP still cuts carbon, and the renewable route
 
-## Where gas CHP still cuts carbon
+Gas CHP still helps on high-grade-heat industrial processes that would otherwise burn gas directly anyway, on sites displacing oil or coal heat, and on applications with very high heat utilisation and limited electrification options. But its low-carbon future lies in its fuel: running engines on [biogas or biomethane](/courses/chp-and-cogeneration/chp-technologies) makes the recovered energy renewable and the scheme genuinely low-carbon, and hydrogen-ready engines offer another path as low-carbon hydrogen emerges.
 
-- High-grade-heat industrial processes that would otherwise burn gas directly anyway
-- Sites displacing oil or coal heat
-- Applications with very high heat utilisation and limited electrification options
+<Callout variant="key" title="Treat gas CHP as transitional, and test cost and carbon separately">
+The honest position on gas CHP today: it is a transitional technology whose carbon case is closing as the grid decarbonises. Assess each scheme against the *decarbonising* grid over its whole life, value the heat displacement honestly, and look hard at renewable fuels before committing. Most importantly, test cost and carbon as two separate questions, because they no longer move together: a scheme that stacks up financially on the [spark spread](/courses/chp-and-cogeneration/cost-benefit) may now increase emissions, and credible [net-zero planning](/courses/renewable-energy/net-zero-pathway) must pass both tests, not just the financial one.
+</Callout>
 
-## The renewable route
+That completes the course: how CHP works, its metrics and technologies, sizing to heat, integration, grid connection, and the cost and carbon cases. The [diagnostics capstone](/courses/chp-and-cogeneration/diagnostics-capstone) puts a candidate CHP scheme in front of you to size, integrate and appraise.
 
-The carbon future of CHP lies in its fuel. Running engines on **biogas** (from anaerobic digestion) or **biomethane** transforms the assessment - the recovered energy is renewable, and such schemes can be genuinely low-carbon or near-neutral. **Hydrogen-ready** engines offer another path as low-carbon hydrogen emerges.
+## Sources and further reading
 
-## The verdict
-
-Treat gas CHP as a transitional technology. Assess each scheme against the decarbonising grid over its whole life, value the heat displacement honestly, and look hard at renewable fuels. A scheme that stacks up on cost may no longer stack up on carbon - and credible net-zero planning must test both.
+- [UK government greenhouse gas conversion factors](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) for grid and gas carbon intensities.
+- [Climate Change Committee](https://www.theccc.org.uk/) on grid decarbonisation trajectory.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on assessing CHP carbon savings.

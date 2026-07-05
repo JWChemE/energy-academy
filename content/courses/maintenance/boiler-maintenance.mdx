@@ -1,44 +1,41 @@
-Boilers and fired heating plant are among the largest energy consumers in most facilities, and among the most sensitive to maintenance. Small lapses translate directly into wasted fuel.
+Boilers and fired heating plant are among the largest energy consumers in most facilities, and among the most sensitive to maintenance: small lapses translate directly into wasted fuel, hour after hour. Because fuel is the dominant lifetime cost of a boiler, boiler maintenance repays itself many times over in saved energy. This lesson covers combustion, fireside fouling, waterside scale, heat recovery, controls, and a maintenance routine, complementing the [boilers and fired systems course](/courses/boilers-and-fired-systems) with the maintenance view.
 
 ## Combustion: the heart of efficiency
 
-A boiler's efficiency depends first on good combustion. Maintenance keeps the air-fuel ratio right:
-- **Too little air:** incomplete combustion, producing carbon monoxide and soot, wasting fuel and fouling surfaces
-- **Too much air:** the excess air is heated and thrown up the flue, carrying energy away
+A boiler's efficiency depends first on good combustion, and maintenance keeps the air-fuel ratio right. Too little air gives incomplete combustion (carbon monoxide and soot, wasting fuel and fouling surfaces); too much air means the excess is heated and thrown up the flue, carrying energy away. Regular **combustion testing** measures flue-gas oxygen and CO, and the burner is tuned to the optimum, typically 3 to 5% excess oxygen.
 
-Regular **combustion testing** measures flue-gas oxygen and CO, and the burner is tuned to the optimum - typically 3-5% excess oxygen. A boiler drifting to 8-10% oxygen can lose several percent efficiency. Annual (or more frequent) combustion tuning is one of the highest-return maintenance tasks available.
+<WorkedExample title="what combustion tuning is worth">
+  <Given>
+    - A boiler delivering 2 MW of heat, running 4,000 h/yr; gas £0.06/kWh
+    - Neglect has let it drift so its seasonal efficiency is 80%; tuning restores it to 83%
+  </Given>
+  <Find>The annual fuel saving from retuning.</Find>
+  <Solution>
+    At 80% the boiler burns 2,000 ÷ 0.80 = 2,500 kW of gas; at 83%, 2,000 ÷ 0.83 ≈ 2,410 kW,
+    a saving of ≈ 90 kW. Over 4,000 hours: 90 × 4,000 ≈ 360,000 kWh of gas, worth about
+    **£21,700 a year**, for a combustion-tuning visit costing a few hundred pounds. Annual
+    (or more frequent) combustion tuning is one of the highest-return maintenance tasks
+    available, which is why a boiler drifting to 8 to 10% excess oxygen should never be
+    left unattended.
+  </Solution>
+</WorkedExample>
 
-## Fireside fouling
+## Fouling, scale and heat recovery
 
-On the combustion side, **soot** accumulates on heat-transfer surfaces, insulating them so heat goes up the flue instead of into the water. The telltale sign is rising **flue-gas temperature**: every 20 C rise represents roughly a 1% efficiency loss. Regular fireside cleaning (sweeping or brushing tubes) restores heat transfer.
+On the combustion side, **soot** accumulates on heat-transfer surfaces, insulating them so heat goes up the flue; the telltale sign is rising **flue-gas temperature**, where every 20 °C rise represents roughly a 1% efficiency loss, and regular fireside cleaning restores it. On the water side, **scale** from hard water deposits on the tubes with the same insulating effect, and even 1 mm of scale can add 5 to 8% to fuel use, so prevention through proper **water treatment** and controlled [blowdown](/courses/steam-and-condensate/efficiency-assessment) is far cheaper than cure. Where **economisers** are fitted, keep their surfaces clean too, and on condensing boilers ensure the return temperature stays low enough to [keep them condensing](/courses/waste-heat-recovery/boiler-flue-recovery).
 
-## Waterside scale
+## Controls, insulation and routine
 
-On the water side, **scale** from hard water deposits on the tubes, with the same insulating effect. Even 1 mm of scale can add 5-8% to fuel use. Prevention through proper **water treatment** is far cheaper than cure:
-- Maintain treatment chemicals and softening
-- Control blowdown to manage dissolved solids without wasting heat
-- Descale if deposits have built up
+Verify the control system: [weather compensation](/courses/control-systems-and-bms/control-strategies) adjusting flow temperature, setpoints not crept up, sequencing running the right number of boilers rather than several part-loaded, and burner modulation tracking demand smoothly. Check that boiler casing, pipe, valve and flange [insulation](/courses/insulation-systems/pipe-installation) is intact.
 
-## Flue-gas heat recovery
+<Callout variant="key" title="Fuel is the boiler's dominant lifetime cost, so tuning pays like nothing else">
+A boiler's purchase price is small beside the fuel it burns over its life, so anything that holds it near design efficiency repays itself many times over. Build the routine around that fact: **weekly or monthly**, check flue temperature, pressures, water treatment and controls; **quarterly**, combustion-test and tune, inspect the fireside; **annually**, a full service (clean fireside and waterside, service the burner, test safety devices, recalibrate controls, inspect refractory and insulation). The £21,700 tuning example above is not exceptional; it is the normal return on catching a boiler that has quietly drifted, which is why boiler maintenance is one of the surest energy investments a facility can make.
+</Callout>
 
-Where fitted, **economisers** recover heat from flue gas to preheat feedwater. Keep their surfaces clean too - a fouled economiser stops recovering heat. On condensing boilers, ensure the return temperature stays low enough to keep them condensing.
+Chillers, the other large plant load, are next.
 
-## Controls and setpoints
+## Sources and further reading
 
-Verify the control system is working as intended:
-- **Weather compensation** adjusting flow temperature to outside conditions
-- **Setpoints** not crept up unnecessarily
-- **Sequencing** running the right number of boilers efficiently rather than several part-loaded
-- **Burner modulation** tracking demand smoothly
-
-## Insulation and distribution
-
-A well-maintained boiler feeding poorly insulated pipes still wastes energy. Check that boiler casing, pipe, valve, and flange insulation is intact - restoring missing lagging is a quick win (a link to the insulation course).
-
-## A boiler maintenance routine
-
-- **Regular (weekly/monthly):** check flue temperature, pressures, water treatment, visible leaks; verify controls
-- **Periodic (quarterly):** combustion testing and tuning, fireside inspection
-- **Annual:** full service - clean fireside and waterside, service burner, test safety devices, recalibrate controls, inspect refractory and insulation
-
-The reward is a boiler held near its design efficiency year-round. Given that fuel is the dominant lifetime cost of a boiler, this maintenance repays itself many times over in saved energy - while also ensuring safe, reliable operation.
+- The [Boilers and Fired Systems course](/courses/boilers-and-fired-systems) for combustion and efficiency in depth.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on boiler efficiency and maintenance.
+- [Combustion Engineering Association](https://cea.org.uk/) on boiler operation and BG01 safety.

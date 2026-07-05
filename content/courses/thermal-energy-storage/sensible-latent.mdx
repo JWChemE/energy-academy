@@ -1,36 +1,43 @@
-Thermal energy storage lets you separate when energy is generated from when it is used. The two fundamental ways to store heat or "coolth" are sensible and latent storage.
+Thermal energy storage lets you separate when heat (or "coolth") is generated from when it is used, which is what turns a cheap off-peak hour or a burst of midday solar into useful energy later. There are two fundamental ways to store thermal energy, sensible and latent, and the choice between them runs through every technology in this course. This lesson covers both, compares them, and explains why storage exists at all.
 
 ## Sensible heat storage
 
-**Sensible storage** raises the temperature of a material - you feel (sense) the temperature change. The energy stored is:
+**Sensible storage** raises the temperature of a material, so you literally feel (sense) the change. The energy stored is Q = m × c × ΔT, where m is mass (kg), c is specific heat capacity (J/kgK), and ΔT is the temperature change (K).
 
-Q = m x c x dT
-
-- m = mass (kg)
-- c = specific heat capacity (J/kgK)
-- dT = temperature change (K)
-
-Water is the classic medium: cheap, safe, and with a high specific heat of 4,180 J/kgK. Heating 1,000 litres of water by 40 C stores about 46 kWh. Other media include concrete, rock, and molten salts for high-temperature applications.
+<WorkedExample title="storing heat in water">
+  <Given>
+    - 1,000 litres of water (1,000 kg), specific heat 4,180 J/kgK
+    - Heated through a 40 °C band
+  </Given>
+  <Find>The energy stored.</Find>
+  <Solution>
+    Q = 1,000 × 4,180 × 40 = 167,200,000 J ≈ **46 kWh**. That is enough to ride a small
+    building through a demand peak or an off-peak charging window. Water is the classic
+    medium (cheap, safe, high specific heat), and this simple equation underpins the
+    [water-tank sizing](/courses/thermal-energy-storage/water-tanks) later in the course.
+    Other sensible media include concrete, rock, and molten salts for high-temperature use.
+  </Solution>
+</WorkedExample>
 
 ## Latent heat storage
 
-**Latent storage** uses the energy absorbed or released when a material changes phase - usually melting and freezing - at constant temperature. The **latent heat of fusion** is large compared with sensible heat, so far more energy is stored in a small temperature band.
-
-Melting ice absorbs 334 kJ/kg at 0 C - equivalent to heating the same water by about 80 C sensibly. This density is why ice storage is so compact for cooling, and why **phase-change materials (PCMs)** are attractive where space is limited.
+**Latent storage** uses the energy absorbed or released when a material changes phase, usually melting and freezing, at constant temperature. The **latent heat of fusion** is large compared with sensible heat, so far more energy is stored in a small temperature band. Melting ice absorbs 334 kJ/kg at 0 °C, equivalent to heating the same water by about 80 °C sensibly. That density is why ice storage is so compact for [cooling](/courses/thermal-energy-storage/cooling-storage) and why [phase-change materials](/courses/thermal-energy-storage/phase-change) are attractive where space is tight.
 
 ## Comparing the two
 
-- **Sensible:** simple, cheap, proven (a hot-water tank). But low energy density means large volumes, and the temperature falls as it discharges.
-- **Latent:** high energy density and near-constant temperature during discharge. But materials cost more, can be harder to charge/discharge (poor conductivity, phase separation), and must be matched to the right transition temperature.
+- **Sensible**: simple, cheap, proven (a hot-water tank). But low energy density means large volumes, and the temperature falls as it discharges.
+- **Latent**: high energy density and near-constant temperature during discharge. But materials cost more, can be harder to charge and discharge (poor conductivity, phase separation), and must be matched to the right transition temperature.
 
-## Choosing a medium
+The choice follows the application: sensible water storage for building heating and hot water (cheap and adequate); ice or PCM for cooling where space is tight; a PCM tuned to a target temperature for keeping a space comfortable; and molten salt or high-temperature PCM for industrial and solar heat.
 
-The choice follows the application:
-- Building heating/hot water: sensible water storage, cheap and adequate
-- Cooling with tight space: ice or PCM latent storage for density
-- Keeping a space at a set temperature: PCM tuned to that temperature
-- High-temperature industrial/solar: molten salt (sensible) or high-temperature PCM
+<Callout variant="key" title="Storage sells time, not energy">
+Storage does not create or save energy in itself; you put energy in and take slightly less out later. Its whole value comes from exploiting a difference in the *time-value* of energy: charge when energy is cheap, abundant, or being wasted, and discharge when it is expensive or scarce. That is why storage pays only where prices or availability vary in time, and why a flat tariff makes it pointless. The following lessons develop that economic logic, load shifting, peak reduction, and seasonal storage, and the technologies that deliver it.
+</Callout>
 
-## Why store at all
+The reason to store at all is time-value, which the next lesson develops into the core storage strategy: load shifting.
 
-Storage exists to exploit a difference in time-value: charge when energy is cheap, abundant, or being wasted; discharge when it is expensive or scarce. The following lessons explore that economic logic - load shifting, peak reduction, and seasonal storage - and the technologies that deliver it.
+## Sources and further reading
+
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on thermal storage fundamentals.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on thermal energy storage.
+- [IEA Energy Storage](https://www.iea.org/energy-system/electricity/grid-scale-storage) for the wider storage context.

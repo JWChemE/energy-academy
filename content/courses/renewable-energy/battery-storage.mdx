@@ -1,49 +1,25 @@
-Batteries store electrical energy for later use, transforming what renewables and smart tariffs can deliver. They are central to maximising self-consumption, shifting demand, and providing resilience.
+Batteries store electrical energy for later use, transforming what renewables and smart tariffs can deliver. They are central to maximising self-consumption, shifting demand, and providing resilience, and their falling cost is steadily widening the range of buildings where they pay. This lesson covers what batteries do, the dominant lithium-ion chemistry, the key metrics, the uses for buildings, the economics, and sizing.
 
 ## What batteries do
 
-A battery charges when energy is cheap or abundant and discharges when it is expensive or scarce. For a building this means:
-- Storing surplus PV generated at midday for use in the evening
-- Charging from the grid on cheap off-peak tariff, discharging at peak
-- Providing backup power during outages (with suitable inverter capability)
-- Avoiding peak demand charges by discharging at the daily peak
+A battery charges when energy is cheap or abundant and discharges when it is expensive or scarce. For a building this means storing surplus [PV](/courses/renewable-energy/pv-integration) generated at midday for use in the evening, charging from the grid on a cheap off-peak tariff and discharging at peak, providing backup power during outages (with suitable inverter capability), and avoiding peak [demand charges](/courses/motors-and-drives/demand-management) by discharging at the daily peak.
 
 ## The dominant chemistry: lithium-ion
 
-Most building and home batteries use **lithium-ion**:
-- High **round-trip efficiency** (85-95%) - little energy lost in the charge/discharge cycle
-- High energy density (compact)
-- Long cycle life (thousands of cycles)
-- Falling cost
+Most building and home batteries use **lithium-ion**, for its high round-trip efficiency (85 to 95%, so little energy is lost per cycle), high energy density (compact), long cycle life (thousands of cycles), and falling cost. Older **lead-acid** batteries are cheaper up front but have lower efficiency (70 to 80%), shorter life, and limited depth of discharge, now largely confined to niche or off-grid uses. Emerging chemistries (sodium-ion, flow batteries) target longer-duration and grid-scale roles.
 
-Older **lead-acid** batteries are cheaper upfront but have lower efficiency (70-80%), shorter life, and limited depth of discharge - now largely confined to niche or off-grid uses. Emerging chemistries (sodium-ion, flow batteries) target longer-duration and grid-scale roles.
+## Key metrics and uses
 
-## Key battery metrics
+The metrics that matter are **usable capacity** (kWh actually available, less than nameplate because of depth-of-discharge limits), **depth of discharge** (how much can be used without harming life; lithium tolerates 80 to 90%+), **round-trip efficiency** (energy out ÷ energy in; 90% means 10% is lost each cycle), **cycle life** (often 6,000 to 10,000 for lithium), and **power rating** (kW, how fast it charges or discharges, distinct from how much it stores). The building uses follow: **self-consumption** (the main one, banking daytime PV for the evening and lifting the fraction used on site from perhaps 40% to 70 to 80%), **time-of-use arbitrage** (charge off-peak, discharge on-peak), **peak shaving** (cut demand charges), **backup** (ride through outages), and **grid services** (aggregated into [virtual power plants](/courses/renewable-energy/microgrid) for revenue).
 
-- **Usable capacity (kWh):** the energy actually available, which is less than the nameplate because of depth-of-discharge limits
-- **Depth of discharge (DoD):** how much can be used without harming life - lithium tolerates 80-90%+, lead-acid far less
-- **Round-trip efficiency:** energy out divided by energy in - 90% for good lithium means 10% is lost each cycle
-- **Cycle life:** how many charge/discharge cycles before capacity degrades (often 6,000-10,000 for lithium)
-- **Power rating (kW):** how fast it can charge/discharge, distinct from how much it stores
+<Callout variant="key" title="Batteries pay where the value stacks; size to the real opportunity">
+Batteries remain capital-intensive, so they pay best where several values stack: a large self-consumption uplift (lots of PV surplus otherwise exported cheaply), a wide peak/off-peak tariff spread, high demand charges, and real value in resilience. Account for round-trip losses and capacity degradation over life, and appraise with [lifetime NPV/IRR](/courses/economic-analysis/npv-and-irr) rather than simple payback. Then size to the genuine opportunity: enough capacity to capture the typical daily PV surplus or ride the peak-tariff window, with a power rating suited to the loads. Oversizing wastes capital on capacity rarely used; undersizing leaves value on the table. As costs fall and tariffs grow more dynamic, the battery case strengthens year on year, so a system marginal today may be clearly worthwhile within its own lifetime.
+</Callout>
 
-## Uses for buildings
+Batteries are the electrical companion to the [thermal storage](/courses/thermal-energy-storage/sensible-latent) covered in its own course; together they are what turn variable renewables into a controllable supply. The final lesson sets all of this into a sequenced net-zero pathway.
 
-- **Self-consumption:** the main domestic/commercial use - bank daytime PV for the evening, lifting the fraction of generation used on site from perhaps 40% to 70-80%
-- **Time-of-use arbitrage:** charge off-peak, discharge on-peak, profiting from the tariff spread
-- **Peak shaving:** discharge during the site's demand peak to cut demand charges
-- **Backup/resilience:** keep critical loads running through grid outages
-- **Grid services:** aggregated into virtual power plants to earn revenue (see the microgrid lesson)
+## Sources and further reading
 
-## The economics
-
-Batteries remain capital-intensive, so they pay best where:
-- The self-consumption uplift is large (lots of PV surplus otherwise exported cheaply)
-- The peak/off-peak tariff spread is wide
-- Demand charges are high
-- Resilience has real value (critical operations)
-
-Account for round-trip losses and capacity degradation over life, and appraise with lifetime NPV/IRR. As costs continue to fall and tariffs become more dynamic, the battery business case is steadily strengthening.
-
-## Sizing
-
-Match the battery to the genuine opportunity: enough capacity to capture the typical daily PV surplus or to ride the peak tariff window, with a power rating suited to the loads. Oversizing wastes capital on capacity rarely used; undersizing leaves value on the table. The right size follows the building's load profile and the tariff structure - the same analytical discipline as all storage decisions.
+- [Energy Saving Trust: home batteries](https://energysavingtrust.org.uk/) on battery storage economics.
+- [MCS](https://mcscertified.com/) on battery installation standards.
+- [IEA: grid-scale storage](https://www.iea.org/energy-system/electricity/grid-scale-storage) for the wider battery context.

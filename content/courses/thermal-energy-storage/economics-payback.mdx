@@ -1,44 +1,41 @@
-Thermal storage stores energy, not money - it only pays when the value of shifting energy in time exceeds the cost of the store and its losses. This lesson sets out how to judge whether a storage project stacks up.
+Thermal storage stores energy, not money, and it only pays when the value of shifting energy in time exceeds the cost of the store and its losses. Because storage saves nothing on a flat tariff and its benefits are spread over years, the appraisal needs care. This closing lesson sets out the core economic logic, what to include on both sides, a worked cooling example, the plant-downsizing bonus that often clinches it, and how tariffs make or break the case.
 
 ## The core economic logic
 
-Storage has no energy saving in the simple sense - you put energy in and take (slightly less) out later. Its value comes entirely from **time arbitrage**: buying or making energy when it is cheap and using it when it would be expensive. The annual benefit is roughly:
-
-(price when discharging - price when charging) x energy shifted per year - cost of losses
-
-A wide price spread between peak and off-peak is the single biggest driver of viability. On a flat tariff, storage saves nothing.
+Storage has no energy saving in the simple sense: you put energy in and take slightly less out later. Its value comes entirely from **time arbitrage**, buying or making energy when it is cheap and using it when it would be expensive. The annual benefit is roughly (price when discharging − price when charging) × energy shifted per year − the cost of losses. A wide price spread between peak and off-peak is the single biggest driver of viability; on a flat tariff, storage saves nothing.
 
 ## What to include
 
-A proper appraisal weighs:
+A proper appraisal weighs benefits (energy cost saved by shifting from peak to off-peak, [demand-charge](/courses/motors-and-drives/demand-management) reduction from cutting peak load, avoided or downsized plant capital, efficiency gains such as [cooler night-time chiller operation](/courses/thermal-energy-storage/cooling-storage), and enabling cheap or renewable energy that would otherwise be wasted) against costs (capital for the store, controls, integration and space; round-trip losses; and maintenance and any auxiliary pumping).
 
-**Benefits**
-- Energy cost saved by shifting from peak to off-peak tariff
-- Demand-charge reduction from cutting peak load
-- Avoided or downsized plant capital (a smaller chiller or heat pump)
-- Efficiency gains (e.g. cooler night-time chiller operation)
-- Enabling cheap or renewable energy that would otherwise be wasted
+<WorkedExample title="an ice store's payback">
+  <Given>
+    - An ice store shifts 500 kWh of cooling per day from a £0.25/kWh peak period to £0.08/kWh off-peak
+    - A 260-day cooling season; store cost £60,000 to £90,000
+  </Given>
+  <Find>The annual arbitrage saving and rough payback.</Find>
+  <Solution>
+    Daily saving ≈ (0.25 − 0.08) × 500 = **£85**, or roughly **£22,000 a year** over a
+    260-day season, before counting the demand-charge saving and the smaller chiller it
+    allowed. Against a £60,000 to £90,000 store, that alone points to a payback of a few
+    years, and it is strengthened considerably by the plant downsizing below. The result
+    is entirely driven by the £0.17/kWh spread: halve the spread and the payback doubles,
+    which is why tariff structure dominates every storage decision.
+  </Solution>
+</WorkedExample>
 
-**Costs**
-- Capital: store, controls, integration, space
-- Round-trip losses: heat or coolth that leaks away before use
-- Maintenance and any auxiliary pumping
+## The plant-downsizing bonus, and tariffs
 
-## A worked cooling example
+The avoided capital from a smaller chiller or heat pump often transforms the economics. Because storage covers the peak, the plant is sized to the average rather than the maximum load, and this capital saving can offset much of the store's cost immediately, turning a marginal energy-arbitrage case into a clear winner. But everything hinges on the tariff: a large peak/off-peak spread or high demand charges make storage attractive, flat or narrow tariffs make it struggle, and the increasingly common dynamic time-of-use tariffs both improve the case and reward smart control.
 
-An ice store lets a building shift 500 kWh of cooling per day from a 0.25 GBP/kWh peak period to 0.08 GBP/kWh off-peak. The daily saving is around (0.25 - 0.08) x 500 = 85 GBP, or roughly 22,000 GBP over a 260-day cooling season - before counting the demand-charge saving and the smaller chiller it allowed. Against a store costing, say, 60,000-90,000 GBP, that points to a payback of a few years, strengthened considerably by the plant downsizing.
+<Callout variant="key" title="Appraise over the life, and verify how it is actually operated">
+Because storage is capital-heavy with benefits spread over years and utterly dependent on the tariff, judge it with [NPV and IRR](/courses/economic-analysis/npv-and-irr) over its life rather than simple payback alone, and run sensitivities on the price spread and utilisation. Then, crucially, verify the saving after installation with [measurement and verification](/courses/measurement-and-verification): unlike a boiler or a motor, a store's benefit depends entirely on *how it is operated*, charging at the right hours and discharging at the peak. A store controlled badly, charging at the wrong times or sitting half-used, delivers a fraction of its modelled value, so the control strategy is as much a part of the business case as the hardware.
+</Callout>
 
-## The plant-downsizing bonus
+That completes the course: the physics of sensible and latent storage, the technologies from water tanks to the ground, the everyday heating and cooling applications, and the economics. The [diagnostics capstone](/courses/thermal-energy-storage/diagnostics-capstone) puts a set of storage decisions in front of you to size and appraise.
 
-The avoided capital from a smaller chiller or heat pump often transforms the economics. Because storage covers the peak, the plant is sized to the average rather than the maximum load. This capital saving can offset much of the store's cost immediately, turning a marginal energy-arbitrage case into a clear winner.
+## Sources and further reading
 
-## Tariffs make or break it
-
-Storage economics live and die by the tariff structure:
-- Large peak/off-peak spread or high demand charges: storage is attractive
-- Flat or narrow tariffs: storage struggles to justify itself
-- Dynamic and time-of-use tariffs (increasingly common): improve the case and reward smart control
-
-## Using proper appraisal
-
-Because storage is capital-heavy with benefits spread over years, judge it with NPV and IRR over its life rather than simple payback alone, and run sensitivities on the price spread and utilisation - the methods from the Economic Analysis course apply directly. And verify the saving after installation with measurement and verification, since storage benefits depend entirely on how the system is actually operated.
+- The [Economic Analysis course](/courses/economic-analysis/npv-and-irr) for the appraisal methods applied here.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on thermal storage economics.
+- [Ofgem](https://www.ofgem.gov.uk/) on time-of-use tariffs and demand charges.

@@ -1,38 +1,29 @@
-A PV array has to connect into the building's electrical system and, usually, the grid. How it integrates - and whether it includes battery storage - determines how much of its value the building actually captures.
+A PV array has to connect into the building's electrical system and, usually, the grid, and how it integrates (and whether it includes battery storage) determines how much of its value the building actually captures. Two identical arrays can return very different amounts depending on how much of their output is used on site. This lesson covers grid-tied systems, the self-consumption goal, battery storage, off-grid and hybrid configurations, and the monitoring that protects the investment.
 
 ## Grid-tied systems
 
-The vast majority of building PV is **grid-tied**: it works in parallel with the mains supply.
-- PV supplies the building's load first
-- Any surplus exports to the grid
-- Any shortfall is drawn from the grid
-- When the grid fails, a grid-tied inverter shuts down for safety (anti-islanding) - so without batteries, a grid-tied system gives no power in an outage
-
-This is the simplest, cheapest configuration and suits most buildings where grid power is reliable.
+The vast majority of building PV is **grid-tied**, working in parallel with the mains supply: PV supplies the building's load first, any surplus exports to the grid, and any shortfall is drawn from the grid. When the grid fails, a grid-tied inverter shuts down for safety ([anti-islanding](/courses/renewable-energy/grid-codes)), so without batteries a grid-tied system gives no power in an outage. This is the simplest, cheapest configuration and suits most buildings where grid power is reliable.
 
 ## Self-consumption versus export
 
-The central integration goal is to maximise **self-consumption**, because on-site use is worth two to four times the export rate. Strategies:
-- Size the array to the daytime base load
-- Shift flexible loads (water heating, EV charging, pumping, cooling) into the sunny midday hours
-- Add storage to bank surplus for evening use
-
-A building that uses most of its own generation has a far better return than one exporting heavily at low midday prices.
+The central integration goal is to maximise **self-consumption**, because on-site use is worth two to four times the export rate. Three strategies achieve it: size the array to the daytime base load, shift flexible loads (water heating, EV charging, pumping, cooling) into the sunny midday hours, and add storage to bank surplus for the evening. A building that uses most of its own generation has a far better return than one exporting heavily at low midday prices.
 
 ## Battery storage
 
-A **battery** stores surplus daytime PV for use in the evening peak, sharply increasing self-consumption:
-- Typical home/building batteries: 5-30 kWh of usable capacity
-- Round-trip efficiency: 85-95% for lithium-ion
-- Benefits: more self-consumption, evening peak avoidance, and (with the right inverter) backup power during outages
+A [battery](/courses/renewable-energy/battery-storage) stores surplus daytime PV for use in the evening peak, sharply increasing self-consumption (typically lifting it from perhaps 40% to 70 to 80%). Typical building batteries hold 5 to 30 kWh usable, at 85 to 95% round-trip efficiency for lithium-ion, and they also enable evening peak avoidance and (with the right inverter) backup power during outages. Batteries add significant cost, so they pay best where the export rate is low, the self-consumption uplift is large, the tariff spread is wide, or resilience is valued.
 
-Batteries add significant cost, so they pay best where the export rate is low, the self-consumption uplift is large, the tariff has a wide peak/off-peak spread, or resilience is valued. They also enable charging from cheap off-peak grid power for arbitrage - covered in the storage module.
+## Off-grid, hybrid, and monitoring
 
-## Off-grid and hybrid systems
+**Off-grid** systems (PV plus substantial battery and often a backup generator, no grid connection) suit remote sites where connection is impractical. **Hybrid** systems (grid-tied with battery and the ability to island during outages) are increasingly popular for combining cost savings with resilience.
 
-- **Off-grid:** PV plus substantial battery (and often a backup generator) with no grid connection - for remote sites where connection is impractical
-- **Hybrid:** a grid-tied system with battery and the ability to island during outages - increasingly popular for combining cost savings with resilience
+<Callout variant="key" title="Monitor the array, or a dead string can cost you for months">
+Good integration always includes monitoring: tracking generation, consumption, self-consumption and export. It does three things. It verifies performance against expectation. It catches faults, and this matters more than it sounds, because a failed string or inverter can go unnoticed for months on an unmonitored system, quietly losing generation with no outward sign. And it informs the load-shifting and control that lift self-consumption, letting a smart energy management system automatically divert surplus PV to water heating, EV charging or the battery. Without monitoring you cannot tell whether the system is delivering, which is why [performance tracking](/courses/maintenance/performance-tracking) applies as much to generation as to consumption.
+</Callout>
 
-## Monitoring and control
+Integration decides how much value the array captures; the next lesson puts numbers on whether it pays.
 
-Good integration includes monitoring - tracking generation, consumption, self-consumption, and export. This verifies performance, catches faults (a failed string can go unnoticed for months otherwise), and informs load-shifting to lift self-consumption. Smart energy management systems can automatically divert surplus PV to water heating, EV charging, or batteries, squeezing maximum value from every generated unit.
+## Sources and further reading
+
+- [MCS](https://mcscertified.com/) on PV system integration and battery storage.
+- [Energy Saving Trust](https://energysavingtrust.org.uk/) on self-consumption and home batteries.
+- [Ofgem: Smart Export Guarantee](https://www.ofgem.gov.uk/environmental-and-social-schemes/smart-export-guarantee-seg) on export arrangements.

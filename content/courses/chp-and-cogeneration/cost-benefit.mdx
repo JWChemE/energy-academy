@@ -1,42 +1,43 @@
-A CHP scheme is a major capital investment that earns its return over many years. The financial case rests on one central idea: the value of the energy it produces versus the cost of the fuel it burns.
+A CHP scheme is a major capital investment that earns its return over many years, and the financial case rests on one central idea: the value of the two energy outputs versus the cost of the fuel it burns. This lesson works that case through with a full numerical example at the platform's reference prices, covers the whole-life costs beyond the unit, and lists what kills a scheme's economics.
 
-## The spark spread
+## The spark spread, quantified
 
-The heart of CHP economics is the **spark spread** - the gap between what the electricity is worth and what the gas costs to make it.
+The heart of CHP economics is the [spark spread](/courses/chp-and-cogeneration/efficiency-metrics): the gap between what the electricity is worth and what the gas costs to make it. For each kWh of electricity generated at, say, 38% efficiency, the unit burns 1 ÷ 0.38 ≈ 2.6 kWh of gas, but that same gas also yields useful heat that displaces boiler fuel. The net saving per operating hour is the electricity value displaced, plus the heat value displaced, minus the fuel cost and the maintenance cost.
 
-For each kWh of electricity generated at, say, 38% efficiency, the unit burns 1/0.38 = 2.6 kWh of gas. But that gas also yields useful heat that displaces boiler fuel. The net saving per operating hour is:
+<WorkedExample title="the economics of a 200 kWe engine">
+  <Given>
+    - A 200 kWe / 300 kWth gas engine, 38% electrical efficiency, running 7,000 h/yr
+    - Electricity displaced at £0.20/kWh; heat displaces gas at 85% boiler efficiency, gas £0.06/kWh
+    - Maintenance ≈ £0.012 per kWh of electricity generated
+  </Given>
+  <Find>The net annual benefit and the payback.</Find>
+  <Solution>
+    Electricity: 200 × 7,000 = 1,400 MWh, displacing grid power worth **£280,000**.
+    Heat: 300 × 7,000 = 2,100 MWh, which boilers would make by burning 2,100 ÷ 0.85 ≈
+    2,470 MWh of gas, worth **£148,000**.
+    Fuel: the engine burns 1,400 ÷ 0.38 ≈ 3,684 MWh of gas, costing **£221,000**.
+    Maintenance: 1,400,000 kWh × £0.012 ≈ **£16,800**.
 
-(electricity value displaced) + (heat value displaced) - (fuel cost) - (maintenance cost)
-
-A wide spark spread - expensive grid electricity, cheap gas - makes CHP highly profitable. A narrow spread can make even a technically excellent unit lose money.
-
-## A worked example
-
-A 200 kWe / 300 kWth gas engine:
-- Runs 7,000 hours/year
-- Generates 1,400 MWh electricity, displacing grid power at 0.20 GBP/kWh = 280,000 GBP
-- Recovers 2,100 MWh heat, displacing gas heat (at 85% boiler efficiency) worth around 124,000 GBP
-- Burns gas: total fuel around 3,680 MWh at 0.06 GBP/kWh = 221,000 GBP
-- Maintenance at around 0.012 GBP/kWhe = 17,000 GBP
-
-Net annual benefit: roughly 166,000 GBP. Against a capital cost of around 300,000-400,000 GBP, that is a payback of about 2-2.5 years.
+    Net annual benefit ≈ 280,000 + 148,000 − 221,000 − 16,800 ≈ **£190,000**. Against a
+    capital cost of around £350,000 to £400,000, that is a payback of roughly **2 years**.
+    Note that the heat credit (£148,000) is nearly as large as the electricity credit, and
+    it evaporates entirely if the heat is dumped, which is why heat utilisation dominates
+    the whole case.
+  </Solution>
+</WorkedExample>
 
 ## Capital and lifecycle costs
 
-Beyond the unit itself, budget for:
-- Installation, hydraulic and electrical connection, acoustic enclosure
-- The thermal store and controls
-- Grid-connection (G99) protection and any export agreement
-- Ongoing maintenance contracts (often per-kWh "operations and maintenance" deals)
-- Major overhauls at intervals (engine top-end and full rebuilds over the life)
+Beyond the unit itself, budget for installation, hydraulic and electrical connection, an acoustic enclosure, the [thermal store and controls](/courses/chp-and-cogeneration/system-integration), G99 grid-connection protection and any export agreement, ongoing maintenance contracts (often per-kWh "operations and maintenance" deals), and major overhauls at intervals (engine top-end and full rebuilds over the life). A whole-life view over 10 to 15 years, using [NPV and IRR](/courses/economic-analysis/npv-and-irr) rather than simple payback, gives the honest picture.
 
-A whole-life view over 10-15 years, using NPV and IRR rather than simple payback, gives the honest picture - the techniques from the Economic Analysis course apply directly.
+<Callout variant="key" title="Run a sensitivity on prices and run hours, because both swing the result">
+The two-year payback above is real but fragile: it assumes a wide spark spread and 7,000 run hours. Four things kill a CHP case, and all are worth stress-testing. Too few run hours (the heat is not needed enough of the year). A narrow spark spread (cheap grid power or expensive gas). Dumped heat (poor sizing or integration). And falling grid prices over the asset's life, which erode the electricity credit year on year. Because the result swings widely with energy prices and run hours, a sensitivity analysis on both is not optional; a scheme that only works at today's prices and optimistic run hours is a scheme that will disappoint.
+</Callout>
 
-## What kills the case
+A scheme that stacks up on cost may no longer stack up on carbon, which is the final lesson.
 
-- **Too few run hours** (heat not needed enough of the year)
-- **A narrow spark spread** (cheap grid power or expensive gas)
-- **Dumped heat** (poor sizing or integration)
-- **Falling grid prices** over the asset life
+## Sources and further reading
 
-Sensitivity analysis on energy prices and run hours is essential, because the result swings widely with both.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on the CHP business case.
+- [GOV.UK: CHPQA](https://www.gov.uk/guidance/combined-heat-and-power) on financial and tax benefits of quality-assured CHP.
+- The [Economic Analysis course](/courses/economic-analysis/npv-and-irr) for the appraisal methods applied here.

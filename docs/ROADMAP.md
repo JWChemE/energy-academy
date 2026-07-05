@@ -68,10 +68,16 @@ the gated courses follow in practitioner-relevance order.
       Retrofit & Design → Controls for a cleaner teaching sequence)*
 - [x] intro-to-energy-management (348) *(Jul 2026 — flagship Level 1; removed
       em-dashes, added sources, dropped a placeholder video embed)*
-- [ ] chp-and-cogeneration (310)
-- [ ] thermal-energy-storage (345)
-- [ ] renewable-energy (358)
-- [ ] maintenance (380)
+- [x] chp-and-cogeneration (310) *(Jul 2026)*
+- [x] thermal-energy-storage (345) *(Jul 2026)*
+- [x] renewable-energy (358) *(Jul 2026)*
+- [x] maintenance (380) *(Jul 2026)*
+
+**Content floor: COMPLETE (Jul 2026).** All pre-style-guide courses rewritten
+to the bar. Every content lesson on the platform now carries teaching prose,
+worked examples verified by calculation, a key callout, cross-links, a
+"Sources and further reading" section, and a reviewed date. ~250 lessons across
+five batches.
 
 **Citations backfill.** Lessons already at the prose bar but missing a
 "Sources and further reading" section and a reviewed date get both.

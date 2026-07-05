@@ -1,30 +1,42 @@
-The golden rule of CHP sizing: size to the heat demand, not the electrical demand. Get this wrong and the most efficient technology becomes a money pit.
+The golden rule of CHP sizing is one sentence: size to the heat demand, not the electrical demand. Get this wrong and the most efficient technology becomes a money pit, because a unit sized for peak electricity produces surplus heat it has to dump. This lesson explains why heat leads, how to read the heat load-duration curve, where the base-load sweet spot sits, and how a thermal store buffers the mismatch.
 
 ## Why heat leads
 
-CHP earns its efficiency only when its heat is used. If you size a unit to meet peak electrical demand, it will often produce more heat than the building needs, and that surplus heat is dumped through a radiator - turning the unit into an inefficient, expensive generator. Sizing to heat ensures (almost) every unit of recovered heat displaces real boiler fuel.
-
-Any electrical shortfall is simply topped up from the grid; any small electrical surplus can be exported. Electricity is easy to trade in both directions. Heat is not - dumped heat is pure waste.
+CHP earns its efficiency only when its heat is used. Size a unit to meet peak *electrical* demand and it will often produce more heat than the building needs, and that surplus is dumped through a radiator, turning the unit into the inefficient, expensive generator the [first lesson](/courses/chp-and-cogeneration/how-chp-works) warned about. Size to *heat*, and almost every unit of recovered heat displaces real boiler fuel. Any electrical shortfall is simply topped up from the grid, and any small surplus can be exported, because electricity is easy to trade in both directions. Heat is not: dumped heat is pure waste.
 
 ## Reading the heat load-duration curve
 
-The essential tool is the **annual heat load-duration curve**: the site's hourly heat demand sorted from highest to lowest across the 8,760 hours of the year. It reveals:
-- The peak demand (met by boilers, not CHP)
-- The **base load** - the demand present for most of the year
-- How many hours each level of demand persists
-
-CHP is sized to the base load, where demand is continuous, so the unit runs flat-out for thousands of hours.
+The essential tool is the **annual heat load-duration curve**: the site's hourly heat demand sorted from highest to lowest across the 8,760 hours of the year. It reveals the peak demand (met by boilers, not CHP), the **base load** present for most of the year, and how many hours each level of demand persists. CHP is sized to the base load, where demand is continuous, so the unit runs flat out for thousands of hours rather than cycling.
 
 ## The base-load sweet spot
 
-A common rule of thumb sizes the CHP unit to roughly the heat demand that is present for at least 4,500-5,000 hours per year. This typically corresponds to a unit covering 10-20% of peak heat capacity but supplying 40-60% of annual heat energy, because it runs almost constantly while boilers handle the peaks.
+A common rule of thumb sizes the CHP unit to roughly the heat demand present for at least 4,500 to 5,000 hours a year. This typically corresponds to a unit covering only 10 to 20% of peak heat capacity but supplying 40 to 60% of annual heat *energy*, because it runs almost constantly while boilers handle the short peaks.
 
-Oversizing is the classic mistake: a larger unit produces surplus heat in spring and autumn, forcing it to modulate down or dump heat, slashing run hours and ruining the payback.
+<WorkedExample title="sizing to base load, not peak">
+  <Given>
+    - A leisure centre with a 1,000 kW peak heat demand
+    - A steady 200 kW base load (pool heating, hot water) present nearly 24/7
+  </Given>
+  <Find>Why a 200 kWth unit beats a 600 kWth one.</Find>
+  <Solution>
+    A 200 kWth CHP unit runs around the clock against the base load, achieving 7,000+ run
+    hours and high heat utilisation, so almost all its heat is used. A 600 kWth unit would
+    meet more of the peak, but through spring and autumn it would produce far more heat
+    than the building wants, forcing it to modulate down or dump heat, slashing its run
+    hours and ruining the payback. The smaller unit is the better investment *despite* the
+    smaller nameplate, because run hours and heat utilisation, not capacity, drive the
+    return. Oversizing is the classic CHP mistake.
+  </Solution>
+</WorkedExample>
 
-## Worked illustration
+<Callout variant="key" title="A thermal store buys run hours">
+A hot-water buffer store is the single most valuable addition to a CHP scheme, because it smooths short-term mismatches: the unit charges the store when demand dips, then runs steadily instead of stopping and starting. Stop-start cycling wrecks engine life and efficiency, so the store lets a single well-sized unit ride through demand fluctuations and lifts its annual run hours, exactly the [thermal-storage](/courses/thermal-energy-storage/water-tanks) buffering principle applied to CHP. Size the unit to the base load, then add a store to protect its run hours; the two decisions together make or break the scheme.
+</Callout>
 
-A leisure centre has a 1,000 kW peak heat demand but a steady 200 kW base load (pool heating, hot water) present nearly 24/7. A 200 kWth CHP unit runs around the clock, achieving 7,000+ run hours and high heat utilisation. A 600 kW unit would meet more peak demand but spend much of the year dumping heat - a worse investment despite the bigger nameplate.
+Sizing well requires understanding not just the heat total but its pattern in time, which is the next lesson.
 
-## Thermal store as a buffer
+## Sources and further reading
 
-A hot-water buffer store smooths short-term mismatches: the CHP charges the store when heat demand dips, then runs steadily rather than stopping and starting. This lifts run hours and lets a single well-sized unit ride through demand fluctuations.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on CHP sizing and load-duration analysis.
+- [GOV.UK: CHP sizing guidance](https://www.gov.uk/guidance/combined-heat-and-power).
+- [ADE](https://www.theade.co.uk/) on matching CHP to heat demand.

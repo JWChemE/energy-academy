@@ -1,50 +1,41 @@
-Chillers and cooling systems are major electrical loads, and their efficiency is highly sensitive to maintenance. A neglected chiller can lose a large fraction of its COP - and run up big electricity bills - while still apparently working.
+Chillers and cooling systems are major electrical loads, and their efficiency is highly sensitive to maintenance: a neglected chiller can lose a large fraction of its COP, and run up big electricity bills, while still apparently working. Because they consume so much electricity and degrade so readily, chiller maintenance offers some of the largest energy savings in building services. This lesson covers the dominant factor (condenser cleanliness), refrigerant charge, the air side, cooling towers, controls, and the routine, complementing the [refrigeration course](/courses/refrigeration-and-heat-pumps/maintenance-and-faults).
 
 ## The dominant factor: condenser cleanliness
 
-The single most important maintenance item for a chiller is **condenser cleanliness**. The condenser rejects heat; if it is fouled, the chiller must work against a higher condensing temperature, and efficiency falls sharply:
-- **Air-cooled condensers:** dust and debris clog the fins, blocking airflow
-- **Water-cooled condensers:** scale and fouling build on the tubes
-- **Cooling towers:** fouled fill and poor water treatment raise condenser water temperature
+The single most important maintenance item for a chiller is **condenser cleanliness**. The condenser rejects heat; if it is fouled, the chiller must work against a higher [condensing temperature](/courses/refrigeration-and-heat-pumps/cop-and-performance) and efficiency falls sharply. Air-cooled condensers clog with dust and debris; water-cooled condensers scale on the tubes; cooling towers with fouled fill and poor water treatment raise the condenser water temperature.
 
-Every degree of raised condensing temperature costs roughly 2-3% in chiller efficiency. Regular condenser cleaning is the highest-return chiller maintenance task.
+<WorkedExample title="the cost of a fouled condenser">
+  <Given>
+    - Fouling raises the condensing temperature by 5 °C; rule of thumb ≈ 2.5% extra chiller energy per °C
+    - The chiller uses 60 MWh of electricity a year; £0.20/kWh
+  </Given>
+  <Find>The annual cost of not cleaning it.</Find>
+  <Solution>
+    Penalty ≈ 5 × 2.5% = 12.5% of consumption ≈ 7.5 MWh, about **£1,500 a year**, against a
+    cleaning cost of a few hundred pounds. Every degree of raised condensing temperature
+    costs roughly 2 to 3% in efficiency, so regular condenser cleaning is the
+    highest-return chiller maintenance task, exactly as the [refrigeration course](/courses/refrigeration-and-heat-pumps/maintenance-and-faults)
+    found. Multiply across a large chiller and the annual waste from a dirty condenser
+    reaches five figures.
+  </Solution>
+</WorkedExample>
 
-## Refrigerant charge and circuit health
+## Refrigerant charge, air side and cooling towers
 
-The refrigerant circuit must be correctly charged and leak-free:
-- **Undercharge (often from leaks):** reduces cooling capacity and efficiency, and risks compressor damage
-- **Overcharge:** raises condensing pressure and wastes energy
-- **Superheat and subcooling:** checking these confirms correct charge and expansion-device operation
+The refrigerant circuit must be correctly charged and leak-free: undercharge (often from leaks) reduces capacity and efficiency and risks compressor damage, overcharge raises condensing pressure and wastes energy, and checking [superheat and subcooling](/courses/refrigeration-and-heat-pumps/superheat-subcooling) confirms both. Refrigerant leaks also carry environmental penalties, since many refrigerants are potent greenhouse gases and subject to [F-gas leak-check duties](/courses/refrigeration-and-heat-pumps/maintenance-and-faults). Keep evaporator surfaces and cooling coils clean, replace air filters (clogged filters raise fan energy), and on water-cooled systems maintain tower water treatment (including [Legionella control](/courses/refrigeration-and-heat-pumps/water-cooled-systems)), clean the fill, and check fans and drift eliminators, because a lower condenser water temperature directly improves chiller COP.
 
-Refrigerant leaks also carry environmental penalties (many refrigerants are potent greenhouse gases), so leak detection and repair matter on two counts.
+## Controls and routine
 
-## Evaporator and air-side
+Verify chilled-water setpoints are not lower than necessary (raising the setpoint a degree saves energy), check sequencing runs the most efficient combination of chillers, enable free cooling in mild weather where available, and confirm pumps and drives modulate correctly. The routine: **regular** monitoring of temperatures, pressures and power; a **pre-season** service before the cooling season (clean condensers, check charge, test controls); and an **annual** full service including compressor checks, oil analysis where applicable, and control recalibration.
 
-- Keep **evaporator** surfaces clean for good heat transfer
-- Replace **air filters** in air-handling systems (clogged filters raise fan energy and reduce airflow)
-- Clean cooling coils
+<Callout variant="key" title="Neglected chillers hide 10 to 20% savings behind a working exterior">
+A chiller that still produces cold water looks fine, which is exactly why its efficiency loss goes unnoticed. A clean condenser, correct refrigerant charge, sensible setpoints and a well-maintained cooling tower together can recover 10 to 20% or more of a neglected chiller's energy, far exceeding the maintenance cost. Because the plant keeps working while it degrades, only [performance tracking](/courses/maintenance/performance-tracking) (trending the COP) reliably reveals the slide, which is why chiller maintenance and monitoring belong together.
+</Callout>
 
-## Cooling towers (water-cooled systems)
+Motors and the plant they drive are the third major load, and the next lesson.
 
-- Maintain **water treatment** to prevent scale, corrosion, and biological growth (including Legionella control)
-- Clean the **fill** to maintain heat rejection
-- Check **fans, drift eliminators, and distribution** for proper operation
+## Sources and further reading
 
-Lower condenser water temperature directly improves chiller COP, so tower maintenance pays back in chiller efficiency.
-
-## Controls and operation
-
-- Verify **chilled-water setpoints** are not lower than necessary (raising the setpoint a degree saves energy)
-- Check **sequencing** runs the most efficient combination of chillers
-- Enable **free cooling / economiser** operation in mild weather where available
-- Confirm **pumps and variable-speed drives** modulate correctly
-
-## Seasonal and routine maintenance
-
-- **Regular:** monitor temperatures, pressures, and power; check for leaks and unusual noise
-- **Pre-season:** service before the cooling season - clean condensers, check charge, test controls
-- **Annual:** full service including compressor checks, oil analysis (where applicable), electrical inspection, and control recalibration
-
-## The efficiency prize
-
-Because chillers consume so much electricity, and because their efficiency degrades so readily with fouling and poor charge, chiller maintenance offers some of the largest energy savings in building services. A clean condenser, correct refrigerant charge, sensible setpoints, and a well-maintained cooling tower together can recover 10-20% or more of a neglected chiller's energy - far exceeding the maintenance cost.
+- The [Refrigeration and Heat Pumps course](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) for chiller faults in depth.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on chiller maintenance savings.
+- [HSE: Legionnaires' disease (L8/HSG274)](https://www.hse.gov.uk/legionnaires/) on cooling-tower duties.

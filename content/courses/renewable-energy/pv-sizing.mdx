@@ -1,43 +1,45 @@
-Sizing a PV system means matching the array to the available space, the site conditions, and - crucially - the building's own electricity demand. A well-sized system maximises value; a poorly sized one exports cheap power it could have used.
+Sizing a PV system means matching the array to the available space, the site conditions, and, crucially, the building's own electricity demand. A well-sized system maximises value; a poorly sized one exports cheap power at midday that it could have used itself. This lesson covers capacity and yield, orientation and tilt, the disproportionate damage done by shading, and the sizing-to-demand decision that dominates the economics.
 
 ## Capacity and yield
 
-PV capacity is rated in **kilowatts-peak (kWp)** - the output under standard test conditions. Actual annual energy depends on location, orientation, and losses:
-
-Annual energy (kWh) = kWp x specific yield (kWh/kWp/year)
-
-In the UK, specific yield is around 800-1,000 kWh/kWp/year for a well-oriented system; sunnier climates reach 1,400-1,800. So a 10 kWp array in the UK generates roughly 8,500-9,500 kWh/year.
+PV capacity is rated in **kilowatts-peak (kWp)**, the output under standard test conditions. Actual annual energy depends on location, orientation and losses: annual energy (kWh) = kWp × specific yield (kWh/kWp/year). In the UK, specific yield is around 800 to 1,000 kWh/kWp/year for a well-oriented system; sunnier climates reach 1,400 to 1,800. So a 10 kWp array in the UK generates roughly 8,500 to 9,500 kWh a year.
 
 ## Orientation and tilt
 
-Output depends strongly on which way the panels face and their angle:
-- **Orientation:** south is optimal in the northern hemisphere; east or west typically lose 10-20% but spread generation across morning or afternoon
-- **Tilt:** around 30-40 degrees is optimal in the UK; flatter or steeper reduces annual yield modestly
-- **East-west split:** flat-roof systems often face panels east and west to flatten the generation curve and fit more capacity
+Output depends strongly on which way the panels face and their angle. **Orientation**: south is optimal in the northern hemisphere; east or west typically lose 10 to 20% but spread generation across morning or afternoon. **Tilt**: around 30 to 40 degrees is optimal in the UK, with flatter or steeper reducing annual yield modestly. **East-west split**: flat-roof systems often face panels east and west to flatten the generation curve and fit more capacity, which can suit a building's load better than a single south-facing peak.
 
 ## The enemy: shading
 
-Shading hurts PV disproportionately. Because cells are wired in series, shading even one cell can throttle a whole string - like a kink in a hosepipe. Survey for:
-- Chimneys, parapets, plant, and adjacent buildings
-- Trees (and their growth over time)
-- Self-shading between rows on flat roofs (set row spacing to avoid winter shading)
-
-Microinverters or optimisers mitigate shading by managing panels individually, recovering much of the lost output where shading is unavoidable.
+Shading hurts PV disproportionately. Because cells are wired in series, shading even one cell can throttle a whole string, like a kink in a hosepipe. Survey for chimneys, parapets, plant, adjacent buildings, trees (and their growth over time), and self-shading between rows on flat roofs (set row spacing to avoid winter shading). [Microinverters or optimisers](/courses/renewable-energy/pv-basics) mitigate shading by managing panels individually, recovering much of the lost output where shading is unavoidable.
 
 ## Sizing to demand: the key decision
 
-The most important sizing choice is matching generation to on-site consumption, because **self-consumed power is worth far more than exported power**:
-- Power used on site displaces grid electricity at the retail price (perhaps 0.25 GBP/kWh)
-- Power exported earns only the export rate (perhaps 0.05-0.15 GBP/kWh)
+<WorkedExample title="why self-consumption drives the sizing">
+  <Given>
+    - Power used on site displaces grid electricity at the retail price, ≈ £0.25/kWh
+    - Power exported earns only the export rate, ≈ £0.05 to £0.15/kWh
+  </Given>
+  <Find>What this means for how big to build.</Find>
+  <Solution>
+    A self-consumed kWh is worth two to four times an exported one, so the sizing goal is
+    to match generation to on-site consumption. Overlay the building's daytime load profile
+    on the expected generation: a system sized so most output is consumed on site (or
+    [stored](/courses/renewable-energy/battery-storage)) returns far more than one that
+    floods the grid with cheap exports at midday. For a building with low daytime demand, a
+    *smaller* array (or added battery storage) often makes better financial sense than
+    filling every square metre of roof, because the extra panels would only ever export at
+    the low rate. Size to the load, not to the roof.
+  </Solution>
+</WorkedExample>
 
-Overlay the building's daytime load profile on the expected generation. A system sized so most output is consumed on site (or stored) returns far more than one that floods the grid with cheap exports at midday. For a building with low daytime demand, a smaller array - or added battery storage - often makes better financial sense than filling every square metre of roof.
+<Callout variant="key" title="Fill the demand, not the roof">
+The instinct to cover every available square metre is usually wrong for a grid-tied building. Beyond the point where generation exceeds daytime demand, extra capacity exports its best midday energy at a fraction of its on-site value, so the marginal panels earn little. Final sizing reconciles the ideal with reality: available unshaded roof area and its structural capacity, the grid-connection and any export limit, budget, and the point of diminishing returns on self-consumption (inverters are often slightly undersized relative to array peak, since peak output is rare). The result is a system tuned to the building, large enough to capture the value, not so large that it gives its best energy away.
+</Callout>
 
-## Practical constraints
+Sizing sets the array; the next lesson connects it and decides whether to add storage.
 
-Final sizing reconciles the ideal with reality:
-- Available unshaded roof area and its structural load capacity
-- The size of the grid connection and any export limit
-- Budget and the point of diminishing returns on self-consumption
-- Inverter sizing (often slightly undersized relative to array peak, since peak output is rare)
+## Sources and further reading
 
-The result is a system tuned to the building - large enough to capture the value, not so large that it exports its best energy at a loss.
+- [MCS](https://mcscertified.com/) on PV sizing and yield estimation.
+- [Energy Saving Trust](https://energysavingtrust.org.uk/) on orientation, shading and self-consumption.
+- [PVGIS (European Commission)](https://re.jrc.ec.europa.eu/pvg_tools/en/) for location-specific yield data.
