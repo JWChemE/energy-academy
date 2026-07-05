@@ -1,4 +1,4 @@
-Every worked example so far has needed both a hot utility and a cold utility. That's typical, but not universal — some processes genuinely only need one. Designing for two utilities when a process only needs one wastes money on equipment (and sometimes energy) that was never necessary.
+Every worked example so far has needed both a hot utility and a cold utility. That's typical, but not universal: some processes genuinely only need one. Designing for two utilities when a process only needs one wastes money on equipment (and sometimes energy) that was never necessary.
 
 ## A process that only needs one utility
 
@@ -14,30 +14,35 @@ At ΔTmin = 20 °C, running the [problem table algorithm](/courses/pinch-analysi
 > **Minimum hot utility = 0 kW**
 > **Minimum cold utility = 45 kW**
 
-There is no pinch in the usual sense here — the cascade never dips negative at any point, so no hot utility is needed at all. H1 has more heat to give (135 kW) than C1 needs to receive (90 kW), and their temperature ranges overlap well enough that all of C1's demand can be met by H1 alone, with 135 − 90 = 45 kW of H1's heat left over and rejected to cold utility.
+There is no pinch in the usual sense here: the cascade never dips negative at any point, so no hot utility is needed at all. H1 has more heat to give (135 kW) than C1 needs to receive (90 kW), and their temperature ranges overlap well enough that all of C1's demand can be met by H1 alone, with 135 − 90 = 45 kW of H1's heat left over and rejected to cold utility.
 
 <Callout variant="key" title="This is called a threshold problem">
-A process needing only one utility — either hot or cold, never both — is a **threshold problem**. There's no pinch constraining the design from both sides; the constraint runs out entirely on one side before the other kicks in. The "golden rules" from earlier in this course still apply in spirit (don't waste the utility you do need), but there's no second utility to avoid crossing into.
+A process needing only one utility (either hot or cold, never both) is a **threshold problem**. There's no pinch constraining the design from both sides; the constraint runs out entirely on one side before the other kicks in. The "golden rules" from earlier in this course still apply in spirit (don't waste the utility you do need), but there's no second utility to avoid crossing into.
 </Callout>
 
 ## Why this happens
 
 A threshold problem typically shows up when:
 
-- **One stream's heat load substantially exceeds the other's**, as here (135 kW available versus only 90 kW needed) — there's simply more heat on offer than there is demand for it.
+- **One stream's heat load substantially exceeds the other's**, as here (135 kW available versus only 90 kW needed): there's simply more heat on offer than there is demand for it.
 - **The temperature ranges overlap generously**, so the surplus stream can supply the deficit stream across its whole range without running short at either end.
 
-As you tighten ΔTmin in a genuine two-utility problem, you may eventually reach a threshold — recall from the [ΔTmin economics lesson](/courses/pinch-analysis/choosing-delta-t-min) that the four-stream process there needed zero cold utility once ΔTmin was tightened to 10 °C. Push ΔTmin low enough on many processes and you'll eventually cross into threshold territory on one utility or the other.
+As you tighten ΔTmin in a genuine two-utility problem, you may eventually reach a threshold, recall from the [ΔTmin economics lesson](/courses/pinch-analysis/choosing-delta-t-min) that the four-stream process there needed zero cold utility once ΔTmin was tightened to 10 °C. Push ΔTmin low enough on many processes and you'll eventually cross into threshold territory on one utility or the other.
 
 ## The practical mistake to avoid
 
 The common error is assuming every process needs both a heater and a cooler, because that's the usual case, and installing both anyway "to be safe." For the process above, that would mean:
 
-- Installing a heater that will sit permanently unused (since minimum hot utility is genuinely zero) — wasted capital, and often a source of exactly the golden-rule violations covered earlier if someone eventually finds a reason to switch it on.
+- Installing a heater that will sit permanently unused (since minimum hot utility is genuinely zero), wasted capital, and often a source of exactly the golden-rule violations covered earlier if someone eventually finds a reason to switch it on.
 - Sizing the cold utility correctly at 45 kW, since that one *is* genuinely needed.
 
 <Callout variant="tip">
-Always run the problem table before assuming a process needs two-utility treatment. If the minimum utility target comes back as zero for one side, that's not a rounding artefact — it's telling you, precisely, that no amount of clever heat-exchanger design will ever make that utility necessary. Save the capital.
+Always run the problem table before assuming a process needs two-utility treatment. If the minimum utility target comes back as zero for one side, that's not a rounding artefact: it's telling you, precisely, that no amount of clever heat-exchanger design will ever make that utility necessary. Save the capital.
 </Callout>
 
-The final lesson in this module turns from designing new processes to auditing existing ones — using everything in this course to find the missed heat-recovery opportunity in a plant that's already built and running.
+The final lesson in this module turns from designing new processes to auditing existing ones, using everything in this course to find the missed heat-recovery opportunity in a plant that's already built and running.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): threshold problems in process integration.
+- [Energy Institute](https://www.energyinst.org/)

@@ -1,12 +1,12 @@
-Every fridge, freezer, chiller, air-conditioner and heat pump you will ever audit runs on the same trick: the **vapour-compression cycle**, a closed loop that pumps heat *uphill* — from somewhere cold to somewhere hot — by exploiting how a refrigerant's boiling point changes with pressure. Understand this one loop and you understand the machine behind most of a building's cooling bill and, increasingly, its heating too.
+Every fridge, freezer, chiller, air-conditioner and heat pump you will ever audit runs on the same trick: the **vapour-compression cycle**, a closed loop that pumps heat *uphill*, from somewhere cold to somewhere hot, by exploiting how a refrigerant's boiling point changes with pressure. Understand this one loop and you understand the machine behind most of a building's cooling bill and, increasingly, its heating too.
 
 ## Walk the loop
 
-Step through the four components below — each step highlights one part of the cycle and what the refrigerant is doing there.
+Step through the four components below: each step highlights one part of the cycle and what the refrigerant is doing there.
 
 <VapourCompressionCycle />
 
-The essential insight: a refrigerant boils at a temperature set by its pressure. Hold it at low pressure and it boils below 0 °C, greedily absorbing heat from anything warmer — that's the evaporator. Squeeze it to high pressure and its condensing temperature jumps above the outside air's — so the same heat pours back out at the condenser. The compressor is what buys that pressure difference, and it's the only place in the loop where you pay for energy.
+The essential insight: a refrigerant boils at a temperature set by its pressure. Hold it at low pressure and it boils below 0 °C, greedily absorbing heat from anything warmer: that's the evaporator. Squeeze it to high pressure and its condensing temperature jumps above the outside air's, so the same heat pours back out at the condenser. The compressor is what buys that pressure difference, and it's the only place in the loop where you pay for energy.
 
 ## The energy balance
 
@@ -19,26 +19,26 @@ The cycle obeys the same [conservation law](/courses/mass-and-energy-balances/co
   </Given>
   <Find>The heat rejected at the condenser, and the cycle's COP.</Find>
   <Solution>
-    Heat rejected = heat absorbed + work in = 100 + 30 = **130 kW** — this is why condenser
+    Heat rejected = heat absorbed + work in = 100 + 30 = **130 kW**: this is why condenser
     (heat-rejection) plant is always bigger than the cooling duty it serves.
 
-    COP = useful cooling ÷ electricity = 100 ÷ 30 ≈ **3.3** — every 1 kWh of electricity moves
+    COP = useful cooling ÷ electricity = 100 ÷ 30 ≈ **3.3**: every 1 kWh of electricity moves
     3.3 kWh of heat.
   </Solution>
 </WorkedExample>
 
 <KeyFigures>
-  <KeyFigure value="100 kW" label="heat absorbed" sublabel="evaporator — the useful cooling" />
-  <KeyFigure value="30 kW" label="electricity in" sublabel="compressor — the only energy you pay for" />
-  <KeyFigure value="130 kW" label="heat rejected" sublabel="condenser — absorbed + work" />
+  <KeyFigure value="100 kW" label="heat absorbed" sublabel="evaporator: the useful cooling" />
+  <KeyFigure value="30 kW" label="electricity in" sublabel="compressor: the only energy you pay for" />
+  <KeyFigure value="130 kW" label="heat rejected" sublabel="condenser, absorbed + work" />
 </KeyFigures>
 
 ## A refrigerator, concretely
 
-Your kitchen fridge runs exactly this loop at small scale. The evaporator (the cold plate inside) holds refrigerant boiling at around −20 °C, cold enough to pull heat out of 4 °C food. The compressor (the humming lump at the back) squeezes the vapour until it condenses at around 40–60 °C in the black grille — warmer than your kitchen, so the heat leaves. Net effect: heat moved from a 4 °C box into a 20 °C room, in defiance of where heat "wants" to flow, at the cost of the compressor's electricity.
+Your kitchen fridge runs exactly this loop at small scale. The evaporator (the cold plate inside) holds refrigerant boiling at around −20 °C, cold enough to pull heat out of 4 °C food. The compressor (the humming lump at the back) squeezes the vapour until it condenses at around 40–60 °C in the black grille, warmer than your kitchen, so the heat leaves. Net effect: heat moved from a 4 °C box into a 20 °C room, in defiance of where heat "wants" to flow, at the cost of the compressor's electricity.
 
 <Callout variant="key" title="The temperatures set the cost">
-The compressor's job — and its power draw — depends on how far apart the evaporator and condenser pressures are, which is set by the temperatures you ask for. Ask for a colder evaporator or a hotter condenser, and the compressor works harder for every kWh moved. This one fact drives most refrigeration efficiency work: raise the cold-side setpoint, lower the heat-rejection temperature, and the same machine delivers the same cooling for less electricity. The [COP lesson](/courses/refrigeration-and-heat-pumps/cop-and-performance) makes this quantitative.
+The compressor's job, and its power draw, depends on how far apart the evaporator and condenser pressures are, which is set by the temperatures you ask for. Ask for a colder evaporator or a hotter condenser, and the compressor works harder for every kWh moved. This one fact drives most refrigeration efficiency work: raise the cold-side setpoint, lower the heat-rejection temperature, and the same machine delivers the same cooling for less electricity. The [COP lesson](/courses/refrigeration-and-heat-pumps/cop-and-performance) makes this quantitative.
 </Callout>
 
-The next lesson takes the COP figure you just calculated and shows what drives it — and the [p-h diagram lesson](/courses/refrigeration-and-heat-pumps/ph-diagrams) redraws this same loop on the chart engineers actually use to analyse it.
+The next lesson takes the COP figure you just calculated and shows what drives it, and the [p-h diagram lesson](/courses/refrigeration-and-heat-pumps/ph-diagrams) redraws this same loop on the chart engineers actually use to analyse it.

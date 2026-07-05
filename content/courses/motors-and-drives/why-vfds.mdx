@@ -1,18 +1,18 @@
-Most pumps and fans don't need full output most of the time — yet without a drive, a motor only knows how to run flat-out. A **variable-frequency drive (VFD)** lets the motor slow down to match the actual demand, and because of one remarkable piece of physics, slowing down saves far more energy than intuition suggests.
+Most pumps and fans don't need full output most of the time, yet without a drive, a motor only knows how to run flat-out. A **variable-frequency drive (VFD)** lets the motor slow down to match the actual demand, and because of one remarkable piece of physics, slowing down saves far more energy than intuition suggests.
 
 ## The cube law
 
-For centrifugal pumps and fans, the affinity laws say flow rises with speed, pressure with speed squared — and **power with speed cubed**. Run at 80% speed and you draw not 80% of the power but 0.8³ = **51.2%**. At half speed, power is 0.5³ = **12.5%** — one-eighth. A modest speed reduction is a huge power reduction.
+For centrifugal pumps and fans, the affinity laws say flow rises with speed, pressure with speed squared, and **power with speed cubed**. Run at 80% speed and you draw not 80% of the power but 0.8³ = **51.2%**. At half speed, power is 0.5³ = **12.5%**: one-eighth. A modest speed reduction is a huge power reduction.
 
 The old alternative was to leave the motor at full speed and choke the excess with a damper or throttling valve. The motor barely notices: at 20% flow it still draws around 85% of rated power, with the difference simply destroyed across the damper as noise and heat. Drag the flow demand below and watch the two approaches diverge:
 
 <AffinityLawsExplorer />
 
-That green gap is the whole argument for VFDs. It is widest exactly where variable-load systems spend most of their time — the 40–80% flow range of mild days, part occupancy and reduced production.
+That green gap is the whole argument for VFDs. It is widest exactly where variable-load systems spend most of their time: the 40–80% flow range of mild days, part occupancy and reduced production.
 
 ## What this is worth in practice
 
-Real systems don't follow the ideal cube all the way down — static head (a fixed pressure the pump must overcome regardless of flow) flattens the curve, and the drive itself adds 2–5% losses. In practice, well-applied VFDs on genuinely variable loads typically cut pump and fan energy by **30–50%**.
+Real systems don't follow the ideal cube all the way down, static head (a fixed pressure the pump must overcome regardless of flow) flattens the curve, and the drive itself adds 2–5% losses. In practice, well-applied VFDs on genuinely variable loads typically cut pump and fan energy by **30–50%**.
 
 <WorkedExample title="a 30 kW circulation pump">
   <Given>
@@ -26,17 +26,17 @@ Real systems don't follow the ideal cube all the way down — static head (a fix
 
     Saving: 150,000 × 0.40 = 60,000 kWh/yr → 60,000 × £0.20 = **£12,000/yr**.
 
-    Payback: £15,000 ÷ £12,000 ≈ **1.3 years** — among the best paybacks of any
+    Payback: £15,000 ÷ £12,000 ≈ **1.3 years**, among the best paybacks of any
     standard retrofit on this platform.
   </Solution>
 </WorkedExample>
 
-## Where VFDs earn their keep — and where they don't
+## Where VFDs earn their keep, and where they don't
 
-The saving depends on two things: **variable demand** and **running hours**. The best candidates are pumps on heating/cooling loops that follow the weather, HVAC fans trimmed by dampers today, and compressors serving swinging demand. The worst candidates are loads that genuinely need full output whenever they run (a fully-loaded conveyor, a lift) — there's no excess speed to shed — or plant that only runs a few hundred hours a year, where even a large percentage saving is too few kWh to repay the drive.
+The saving depends on two things: **variable demand** and **running hours**. The best candidates are pumps on heating/cooling loops that follow the weather, HVAC fans trimmed by dampers today, and compressors serving swinging demand. The worst candidates are loads that genuinely need full output whenever they run (a fully-loaded conveyor, a lift), there's no excess speed to shed, or plant that only runs a few hundred hours a year, where even a large percentage saving is too few kWh to repay the drive.
 
 <Callout variant="key" title="Find the load profile before you size the saving">
-A VFD's business case lives in the hours spent *between* off and full load. Before recommending one, get the load profile — a week of logging, or even the [half-hourly data](/courses/monitoring-and-targeting/establishing-baseline) you already hold — and check how much time the system actually spends at part load. A pump that idles at 90% flow all year saves little; one averaging 60% flow is a goldmine, as the explorer above shows.
+A VFD's business case lives in the hours spent *between* off and full load. Before recommending one, get the load profile: a week of logging, or even the [half-hourly data](/courses/monitoring-and-targeting/establishing-baseline) you already hold, and check how much time the system actually spends at part load. A pump that idles at 90% flow all year saves little; one averaging 60% flow is a goldmine, as the explorer above shows.
 </Callout>
 
-The next lessons cover [where VFDs apply system by system](/courses/motors-and-drives/vfd-applications) and the [installation details](/courses/motors-and-drives/vfd-installation) — harmonics, cable lengths, motor compatibility — that decide whether the promised saving actually arrives.
+The next lessons cover [where VFDs apply system by system](/courses/motors-and-drives/vfd-applications) and the [installation details](/courses/motors-and-drives/vfd-installation) (harmonics, cable lengths, motor compatibility) that decide whether the promised saving actually arrives.

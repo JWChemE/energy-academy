@@ -5,7 +5,7 @@ The previous lesson's network was simple because there was only one hot stream a
 When several streams sit on the same side of the pinch, work outward from the pinch itself, and at each step:
 
 1. Identify which streams are still available to match, and check the [CP feasibility rule](/courses/pinch-analysis/matching-at-the-pinch) for any pair touching the pinch or an already-matched temperature.
-2. Match the pair with a feasible CP relationship, transferring heat until **one of the two streams is fully used up** — either it reaches its target temperature, or the other stream in the match does.
+2. Match the pair with a feasible CP relationship, transferring heat until **one of the two streams is fully used up**: either it reaches its target temperature, or the other stream in the match does.
 3. "**Tick off**" (remove from further consideration) whichever stream was exhausted, and repeat with whatever's left, plus utilities to mop up any remaining duty.
 
 This is exactly what the previous lesson's H1–C1 match did: H1 was ticked off the moment it reached its supply temperature (140 °C), leaving C1's remaining duty to be picked up by hot utility, since no other process stream was left above the pinch to use.
@@ -16,28 +16,33 @@ Sometimes the feasibility rule blocks every possible pairing. Take a hot stream 
 
 Check the rule against each cold stream individually:
 
-- Against the CP 1.0 stream: is 2.0 ≤ 1.0? **No — infeasible.**
-- Against the CP 1.5 stream: is 2.0 ≤ 1.5? **No — also infeasible.**
+- Against the CP 1.0 stream: is 2.0 ≤ 1.0? **No, infeasible.**
+- Against the CP 1.5 stream: is 2.0 ≤ 1.5? **No, also infeasible.**
 
 Neither single match works: the hot stream's CP is simply too large relative to either cold stream on its own.
 
 <Callout variant="key" title="Splitting creates two smaller streams from one">
-The fix is to **split the hot stream into two parallel branches**, each carrying part of its flow (and therefore part of its CP, since CP = mass flow × specific heat — splitting the flow splits the CP in direct proportion). Each branch can then be matched separately, so long as each branch's CP satisfies the rule against the stream it's paired with.
+The fix is to **split the hot stream into two parallel branches**, each carrying part of its flow (and therefore part of its CP, since CP = mass flow × specific heat, splitting the flow splits the CP in direct proportion). Each branch can then be matched separately, so long as each branch's CP satisfies the rule against the stream it's paired with.
 </Callout>
 
 Splitting the 2.0 kW/°C hot stream into a **0.8 kW/°C branch** and a **1.2 kW/°C branch** (which together still sum to the original 2.0):
 
-- Branch A (0.8 kW/°C) against the CP 1.0 cold stream: is 0.8 ≤ 1.0? **Yes — feasible.**
-- Branch B (1.2 kW/°C) against the CP 1.5 cold stream: is 1.2 ≤ 1.5? **Yes — feasible.**
+- Branch A (0.8 kW/°C) against the CP 1.0 cold stream: is 0.8 ≤ 1.0? **Yes, feasible.**
+- Branch B (1.2 kW/°C) against the CP 1.5 cold stream: is 1.2 ≤ 1.5? **Yes, feasible.**
 
-Both branches now satisfy the rule individually, even though the single, unsplit stream satisfied neither match on its own. Physically, this is nothing more exotic than diverting part of the flow down a parallel pipe with a control valve setting the split ratio — the two branches can be recombined afterwards if they end up at a common temperature, or kept separate if each feeds a different downstream match.
+Both branches now satisfy the rule individually, even though the single, unsplit stream satisfied neither match on its own. Physically, this is nothing more exotic than diverting part of the flow down a parallel pipe with a control valve setting the split ratio: the two branches can be recombined afterwards if they end up at a common temperature, or kept separate if each feeds a different downstream match.
 
 ## Choosing the split ratio
 
-Any split that satisfies both inequalities works in principle (here, the 0.8 branch needed to be somewhere between 0.5 and 1.0 kW/°C for both branches to end up feasible) — the exact ratio is then chosen on practical grounds: matching duties as closely as possible to minimise the number of separate exchangers, or fitting the split around existing pipework in a retrofit.
+Any split that satisfies both inequalities works in principle (here, the 0.8 branch needed to be somewhere between 0.5 and 1.0 kW/°C for both branches to end up feasible). The exact ratio is then chosen on practical grounds: matching duties as closely as possible to minimise the number of separate exchangers, or fitting the split around existing pipework in a retrofit.
 
 <Callout variant="tip">
-Splitting adds a control valve, extra pipework, and generally another heat exchanger to the network — real cost. It's used only where the feasibility rule genuinely blocks every unsplit match, not as a first resort. Always check whether a straightforward tick-off match works before reaching for a split.
+Splitting adds a control valve, extra pipework, and generally another heat exchanger to the network, real cost. It's used only where the feasibility rule genuinely blocks every unsplit match, not as a first resort. Always check whether a straightforward tick-off match works before reaching for a split.
 </Callout>
 
-With matches and splits both in your toolkit, the next lesson turns to a different question: not *which* matches are feasible, but *how many* heat exchangers a network genuinely needs — and how to spot when a design has more than that.
+With matches and splits both in your toolkit, the next lesson turns to a different question: not *which* matches are feasible, but *how many* heat exchangers a network genuinely needs, and how to spot when a design has more than that.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): stream splitting and network synthesis.
+- [Energy Institute](https://www.energyinst.org/)

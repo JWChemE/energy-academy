@@ -1,14 +1,14 @@
-Knowing the pinch temperature and the minimum utility targets tells you the best a design *could* achieve. Actually building a network of heat exchangers that hits those targets is the next step — and it turns out not every pairing of hot and cold streams is thermodynamically possible right at the pinch. This lesson gives you the rule that decides which matches work, and builds a complete, feasible network from it.
+Knowing the pinch temperature and the minimum utility targets tells you the best a design *could* achieve. Actually building a network of heat exchangers that hits those targets is the next step, and it turns out not every pairing of hot and cold streams is thermodynamically possible right at the pinch. This lesson gives you the rule that decides which matches work, and builds a complete, feasible network from it.
 
 ## The feasibility rule
 
-Right at the pinch, the temperature approach between any matched hot and cold stream is exactly ΔTmin — the tightest it's allowed to be anywhere in the design. Move away from the pinch (transfer more heat in that match) and the approach must not shrink any further, or the streams would cross and violate ΔTmin. Working through the arithmetic of how each stream's temperature changes per kilowatt transferred (its 1 ÷ CP) leads to one clean rule:
+Right at the pinch, the temperature approach between any matched hot and cold stream is exactly ΔTmin: the tightest it's allowed to be anywhere in the design. Move away from the pinch (transfer more heat in that match) and the approach must not shrink any further, or the streams would cross and violate ΔTmin. Working through the arithmetic of how each stream's temperature changes per kilowatt transferred (its 1 ÷ CP) leads to one clean rule:
 
 > **Immediately above the pinch:** for any match involving a stream at the pinch, **CP(hot stream) ≤ CP(cold stream)**.
-> **Immediately below the pinch:** the rule flips — **CP(hot stream) ≥ CP(cold stream)**.
+> **Immediately below the pinch:** the rule flips: **CP(hot stream) ≥ CP(cold stream)**.
 
 <Callout variant="key" title="Why the rule flips">
-Above the pinch, moving away from it means both streams are heading toward their hotter ends. If the hot stream's CP were larger than the cold stream's, the hot stream would cool per kilowatt transferred more slowly than the cold stream heats up — meaning the cold stream would catch up and cross it. Requiring CP(hot) ≤ CP(cold) keeps the gap growing, not shrinking, as you move away from the pinch. Below the pinch, the streams are heading toward their colder ends instead, and the same logic runs in reverse.
+Above the pinch, moving away from it means both streams are heading toward their hotter ends. If the hot stream's CP were larger than the cold stream's, the hot stream would cool per kilowatt transferred more slowly than the cold stream heats up, meaning the cold stream would catch up and cross it. Requiring CP(hot) ≤ CP(cold) keeps the gap growing, not shrinking, as you move away from the pinch. Below the pinch, the streams are heading toward their colder ends instead, and the same logic runs in reverse.
 </Callout>
 
 ## Checking it on a real match
@@ -19,11 +19,11 @@ Above the pinch, both streams touch it (H1 at 80 °C, C1 at 60 °C). Checking th
 
 ## Building the network
 
-**Above the pinch.** H1's duty in this region runs from its supply (140 °C) down to the pinch (80 °C): 1.0 × (140 − 80) = **60 kW**. Transfer that full 60 kW to C1, starting at the pinch (60 °C): C1 rises by 60 ÷ 1.1 = 54.5 °C, reaching **114.5 °C**. At that point H1 has reached its supply temperature and the match is finished — but C1 still needs to reach 150 °C, a remaining 150 − 114.5 = 35.5 °C, or 1.1 × 35.5 ≈ **39 kW**. With no other hot stream available above the pinch, that shortfall must come from **hot utility** — exactly the 39 kW targeted.
+**Above the pinch.** H1's duty in this region runs from its supply (140 °C) down to the pinch (80 °C): 1.0 × (140 − 80) = **60 kW**. Transfer that full 60 kW to C1, starting at the pinch (60 °C): C1 rises by 60 ÷ 1.1 = 54.5 °C, reaching **114.5 °C**. At that point H1 has reached its supply temperature and the match is finished, but C1 still needs to reach 150 °C, a remaining 150 − 114.5 = 35.5 °C, or 1.1 × 35.5 ≈ **39 kW**. With no other hot stream available above the pinch, that shortfall must come from **hot utility**: exactly the 39 kW targeted.
 
-Checking feasibility at both ends of the H1–C1 exchanger: at the pinch end, 80 − 60 = 20 °C (exactly ΔTmin); at the other end, 140 − 114.5 = 25.5 °C (comfortably above ΔTmin). Both ends check out — the match is feasible along its whole length.
+Checking feasibility at both ends of the H1–C1 exchanger: at the pinch end, 80 − 60 = 20 °C (exactly ΔTmin); at the other end, 140 − 114.5 = 25.5 °C (comfortably above ΔTmin). Both ends check out: the match is feasible along its whole length.
 
-**Below the pinch.** H1's remaining duty runs from the pinch (80 °C) down to its target (40 °C): 1.0 × (80 − 40) = **40 kW**. No cold stream exists below the pinch in this process, so this heat has nowhere to go but **cold utility** — exactly the 40 kW targeted.
+**Below the pinch.** H1's remaining duty runs from the pinch (80 °C) down to its target (40 °C): 1.0 × (80 − 40) = **40 kW**. No cold stream exists below the pinch in this process, so this heat has nowhere to go but **cold utility**: exactly the 40 kW targeted.
 
 ## The complete network
 
@@ -35,4 +35,9 @@ Checking feasibility at both ends of the H1–C1 exchanger: at the pinch end, 80
 
 Three units, hitting both utility targets exactly, with every match checked feasible. This is what a pinch-consistent network looks like: matches chosen at the pinch first (where the constraint is tightest), utilities used only where a golden rule says they belong, and every exchanger verified against the CP feasibility rule.
 
-The next lesson covers what to do when a straightforward match like this one isn't available — when no single stream satisfies the feasibility rule against what it needs to be matched with.
+The next lesson covers what to do when a straightforward match like this one isn't available: when no single stream satisfies the feasibility rule against what it needs to be matched with.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): network design at the pinch.
+- [Energy Institute](https://www.energyinst.org/)

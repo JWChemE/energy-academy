@@ -4,19 +4,19 @@ Every example in this course so far has designed a network from a blank sheet of
 
 The approach mirrors the [energy audit process](/courses/energy-audits/why-audit) you already know, with pinch analysis as the calculation engine at its centre:
 
-1. **Build the stream table from the real plant.** Measure (or take from process data) the supply temperature, target temperature, and flow rate of every stream that's heated or cooled anywhere on site — exactly the [stream classification](/courses/pinch-analysis/streams-and-approach-temperature) from earlier in this course.
+1. **Build the stream table from the real plant.** Measure (or take from process data) the supply temperature, target temperature, and flow rate of every stream that's heated or cooled anywhere on site, exactly the [stream classification](/courses/pinch-analysis/streams-and-approach-temperature) from earlier in this course.
 2. **Run the targeting calculation.** The [problem table algorithm](/courses/pinch-analysis/problem-table-algorithm) gives you the minimum hot and cold utility this process could ever need, at a sensible ΔTmin for the site.
-3. **Compare the target to what the site actually uses.** This is the number that matters: if the site currently burns fuel for 800 kW of hot utility but the target says 500 kW is achievable, there's a 300 kW gap — a quantified, defensible opportunity, in exactly the same spirit as the [opportunity-ranking table](/courses/energy-audits/identify-opportunities) from the audits course.
-4. **Look for existing golden-rule violations first.** Before proposing any new equipment, check whether the current network already has a cooler operating above the pinch, a heater operating below it, or an exchanger spanning across it — exactly the violations from [the golden rules lesson](/courses/pinch-analysis/the-golden-rules). These are often the cheapest fixes available: re-piping an existing connection, not buying a new exchanger.
-5. **Propose new matches only where the gap remains.** Once existing violations are corrected, whatever utility gap is left points to genuinely new heat-recovery opportunities — new exchangers, sized and matched using the [network design principles](/courses/pinch-analysis/matching-at-the-pinch) from earlier in this course.
+3. **Compare the target to what the site actually uses.** This is the number that matters: if the site currently burns fuel for 800 kW of hot utility but the target says 500 kW is achievable, there's a 300 kW gap: a quantified, defensible opportunity, in exactly the same spirit as the [opportunity-ranking table](/courses/energy-audits/identify-opportunities) from the audits course.
+4. **Look for existing golden-rule violations first.** Before proposing any new equipment, check whether the current network already has a cooler operating above the pinch, a heater operating below it, or an exchanger spanning across it, exactly the violations from [the golden rules lesson](/courses/pinch-analysis/the-golden-rules). These are often the cheapest fixes available: re-piping an existing connection, not buying a new exchanger.
+5. **Propose new matches only where the gap remains.** Once existing violations are corrected, whatever utility gap is left points to genuinely new heat-recovery opportunities, new exchangers, sized and matched using the [network design principles](/courses/pinch-analysis/matching-at-the-pinch) from earlier in this course.
 
 ## Why retrofit is different from new design
 
 A greenfield design can put any exchanger anywhere pipework allows. A retrofit inherits:
 
-- **Existing equipment with sunk capital** — an exchanger installed five years ago for a different reason may already (by luck) be doing useful heat recovery, or may be sitting exactly where the golden rules say it shouldn't be.
-- **Physical layout constraints** — the ideal match on paper might require running a pipe the length of the site, which the targeting calculation knows nothing about and a site visit will reveal immediately.
-- **A phased investment path.** Rather than one large project, retrofit opportunities are usually delivered as several smaller ones — fix the cheapest golden-rule violation first, then add the next most attractive new match — exactly the [portfolio approach](/courses/economic-analysis/portfolio-approach) to sequencing projects.
+- **Existing equipment with sunk capital**: an exchanger installed five years ago for a different reason may already (by luck) be doing useful heat recovery, or may be sitting exactly where the golden rules say it shouldn't be.
+- **Physical layout constraints**: the ideal match on paper might require running a pipe the length of the site, which the targeting calculation knows nothing about and a site visit will reveal immediately.
+- **A phased investment path.** Rather than one large project, retrofit opportunities are usually delivered as several smaller ones (fix the cheapest golden-rule violation first, then add the next most attractive new match) exactly the [portfolio approach](/courses/economic-analysis/portfolio-approach) to sequencing projects.
 
 <Callout variant="key" title="The target doesn't have to be hit all at once">
 A pinch study on an existing site rarely leads straight to a single "install this network" recommendation. More often it produces a ranked list: correct this misplaced cooler (near-zero cost, quick payback), add this new exchanger between these two streams (moderate cost, good payback), consider this larger network reconfiguration only if a major turnaround or expansion is already planned (higher cost, justified only alongside other work). The target from step 2 tells you the ceiling; the ranked list tells you how to climb toward it economically.
@@ -26,7 +26,13 @@ A pinch study on an existing site rarely leads straight to a single "install thi
 
 In practice, the biggest retrofit wins usually cluster around exactly the two things this course has spent the most time on:
 
-- **Golden-rule violations** — because fixing them can be nearly free (re-routing existing pipework) while the [cross-pinch penalty lesson](/courses/pinch-analysis/the-golden-rules) showed every misplaced kilowatt costs *two* kilowatts of utility.
-- **The largest hot-utility or cold-utility users on site**, because a percentage improvement there is worth far more in absolute terms than the same percentage anywhere else — the same significant-energy-use logic behind the [maintenance prioritisation lesson](/courses/maintenance/maintenance-plan) elsewhere on this platform.
+- **Golden-rule violations**: because fixing them can be nearly free (re-routing existing pipework) while the [cross-pinch penalty lesson](/courses/pinch-analysis/the-golden-rules) showed every misplaced kilowatt costs *two* kilowatts of utility.
+- **The largest hot-utility or cold-utility users on site**, because a percentage improvement there is worth far more in absolute terms than the same percentage anywhere else: the same significant-energy-use logic behind the [maintenance prioritisation lesson](/courses/maintenance/maintenance-plan) elsewhere on this platform.
 
 This closes the fundamentals of pinch analysis. The capstone that follows puts you in exactly this retrofit auditor's position: real stream data, an existing network with problems hiding in it, and the job of finding them.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): retrofit process integration.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): industrial site heat recovery.
+- [ISO 50002, energy audits](https://www.iso.org/standard/60088.html): structuring a retrofit energy assessment.

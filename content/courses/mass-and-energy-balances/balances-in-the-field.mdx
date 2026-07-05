@@ -6,34 +6,40 @@ Across this course, you've built three separate balances on the same 500 kW gas-
 
 1. **A combustion mass balance** ([lesson](/courses/mass-and-energy-balances/combustion-mass-balance)): 0.01 kg/s of fuel plus 0.206 kg/s of combustion air produces 0.216 kg/s of flue gas, exactly, with nothing unaccounted for.
 2. **A boiler energy balance** ([lesson](/courses/mass-and-energy-balances/boiler-energy-balance)): that 500 kW of fuel splits into 425 kW of useful heat, 60 kW up the flue, 10 kW through the casing, and 5 kW down the blowdown drain.
-3. **A steam-system energy balance** ([lesson](/courses/mass-and-energy-balances/steam-energy-balance)): widening the boundary to the distribution and condensate-return system reveals a further loss — heat that never makes it back because of uninsulated return pipework.
+3. **A steam-system energy balance** ([lesson](/courses/mass-and-energy-balances/steam-energy-balance)): widening the boundary to the distribution and condensate-return system reveals a further loss, heat that never makes it back because of uninsulated return pipework.
 
-A real energy audit of this plant room wouldn't treat these as three separate exercises — it would present them together, as one continuous account of where every unit of fuel energy ends up, from the gas meter to the process that actually needs the heat. That's precisely the ranking exercise the [identifying & quantifying opportunities lesson](/courses/energy-audits/identify-opportunities) describes: each loss you've quantified in this course — flue loss, casing loss, blowdown loss, return-line loss — becomes one row in that lesson's opportunity table, each with an estimated saving, a project cost, and a payback, ranked so the quickest win gets tackled first.
+A real energy audit of this plant room wouldn't treat these as three separate exercises: it would present them together, as one continuous account of where every unit of fuel energy ends up, from the gas meter to the process that actually needs the heat. That's precisely the ranking exercise the [identifying & quantifying opportunities lesson](/courses/energy-audits/identify-opportunities) describes: each loss you've quantified in this course (flue loss, casing loss, blowdown loss, return-line loss) becomes one row in that lesson's opportunity table, each with an estimated saving, a project cost, and a payback, ranked so the quickest win gets tackled first.
 
 <Callout variant="key" title="The balance produces the numbers; the audit report tells the story">
-Everything upstream of a £/kWh figure and a payback calculation — the kWh figure itself — comes from a mass and/or energy balance, done properly, on a clearly stated boundary. This course has been teaching you how to generate the numbers that go into an audit report; the audit course teaches what to do with them once you have them.
+Everything upstream of a £/kWh figure and a payback calculation, the kWh figure itself, comes from a mass and/or energy balance, done properly, on a clearly stated boundary. This course has been teaching you how to generate the numbers that go into an audit report; the audit course teaches what to do with them once you have them.
 </Callout>
 
 ## One more combined example: mass feeding directly into energy
 
-To see mass and energy balances work together in a single step, take the flue-gas mass flow you calculated back in the combustion mass balance lesson — **0.216 kg/s** — and use it directly in an energy calculation. Suppose fouling on the boiler's heat-transfer surfaces (the [combustion efficiency lesson's](/courses/boilers-and-fired-systems/combustion-efficiency) warning about surfaces losing their grip on heat) lets the flue gas leave 10 °C hotter than it should. Flue gas has a specific heat of roughly 1.05 kJ/kg·K, so the extra sensible heat this represents is:
+To see mass and energy balances work together in a single step, take the flue-gas mass flow you calculated back in the combustion mass balance lesson (**0.216 kg/s**) and use it directly in an energy calculation. Suppose fouling on the boiler's heat-transfer surfaces (the [combustion efficiency lesson's](/courses/boilers-and-fired-systems/combustion-efficiency) warning about surfaces losing their grip on heat) lets the flue gas leave 10 °C hotter than it should. Flue gas has a specific heat of roughly 1.05 kJ/kg·K, so the extra sensible heat this represents is:
 
 > Extra loss = ṁ_flue × cp × ΔT = 0.216 × 1.05 × 10 ≈ **2.3 kW**, continuously
 
-Notice what just happened: the **mass balance** (0.216 kg/s, derived from a stoichiometry calculation, not a direct flue-gas flow measurement) fed straight into an **energy balance** (the sensible-heat calculation) to produce a genuinely new, plant-specific number — without ever needing a flow meter on the flue itself. This is the payoff of doing both kinds of balance together: mass balances often give you a flow rate you can't easily measure directly, and energy balances turn that flow rate into a cost.
+Notice what just happened: the **mass balance** (0.216 kg/s, derived from a stoichiometry calculation, not a direct flue-gas flow measurement) fed straight into an **energy balance** (the sensible-heat calculation) to produce a genuinely new, plant-specific number, without ever needing a flow meter on the flue itself. This is the payoff of doing both kinds of balance together: mass balances often give you a flow rate you can't easily measure directly, and energy balances turn that flow rate into a cost.
 
 <Callout variant="tip" title="Generic rules of thumb are for screening; your own balance is for deciding">
-Industry rules of thumb ("a 10 °C flue-gas rise costs about 1% efficiency") are useful for a first, rapid screen of a site you don't know well yet. But they're built on assumptions about a *typical* boiler's fuel input and excess-air level. The moment you've measured this specific boiler's actual excess air and derived its actual flue-gas mass flow, your own balance — like the 2.3 kW figure above — is the more trustworthy number. Use rules of thumb to decide where to look first; use your own balance to decide what to actually recommend.
+Industry rules of thumb ("a 10 °C flue-gas rise costs about 1% efficiency") are useful for a first, rapid screen of a site you don't know well yet. But they're built on assumptions about a *typical* boiler's fuel input and excess-air level. The moment you've measured this specific boiler's actual excess air and derived its actual flue-gas mass flow, your own balance, like the 2.3 kW figure above, is the more trustworthy number. Use rules of thumb to decide where to look first; use your own balance to decide what to actually recommend.
 </Callout>
 
 ## The habit, one last time
 
-Every system-specific course on this platform — boilers, steam, HVAC, refrigeration, compressed air, and the rest — will hand you formulas and rules of thumb specific to that equipment. What this course has given you is the method underneath all of them:
+Every system-specific course on this platform (boilers, steam, HVAC, refrigeration, compressed air, and the rest) will hand you formulas and rules of thumb specific to that equipment. What this course has given you is the method underneath all of them:
 
 1. **Draw a boundary**, and state it explicitly.
-2. **List every stream** crossing it — inputs, useful outputs, and every loss mechanism you can think of.
+2. **List every stream** crossing it, inputs, useful outputs, and every loss mechanism you can think of.
 3. **Measure what you can**, and use conservation to solve for the rest.
-4. **Check that it closes** — and if it doesn't, go looking for the missing stream, because that's usually where the real finding is.
+4. **Check that it closes**: and if it doesn't, go looking for the missing stream, because that's usually where the real finding is.
 5. **Draw it** as a Sankey diagram if you need to communicate it, and **grade it** by exergy if you're comparing sources of different quality.
 
 You'll use this exact sequence in every deep-dive course on this platform, whether or not the word "balance" ever appears again. Go build one on something real.
+
+## Sources and further reading
+
+- [ISO 50002, energy audits](https://www.iso.org/standard/60088.html): energy audits, where balances become findings.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): site energy assessment methods.
+- [Energy Institute](https://www.energyinst.org/)

@@ -1,4 +1,4 @@
-The composite-curve picture from the last lesson is intuitive, but you don't need to draw it precisely to get an exact answer. The **problem table algorithm** finds the pinch temperature and the minimum hot and cold utility requirements through nothing but addition and subtraction — a cascade of numbers down a temperature scale. This lesson works it through in full, on a small two-stream example, so every step is visible.
+The composite-curve picture from the last lesson is intuitive, but you don't need to draw it precisely to get an exact answer. The **problem table algorithm** finds the pinch temperature and the minimum hot and cold utility requirements through nothing but addition and subtraction: a cascade of numbers down a temperature scale. This lesson works it through in full, on a small two-stream example, so every step is visible.
 
 ## The process
 
@@ -11,7 +11,7 @@ Take a minimum approach temperature of **ΔTmin = 20 °C**.
 
 ## Step 1: shift the temperatures
 
-This is the trick that makes the whole method work. Shift every **hot** stream's temperatures *down* by ΔTmin ÷ 2, and every **cold** stream's temperatures *up* by ΔTmin ÷ 2 (here, 10 °C each way). This creates a single shared "shifted temperature" scale where, if two streams' shifted ranges touch, they're exactly ΔTmin apart in reality — so you can now compare hot and cold streams directly, on one scale, without tracking the ΔTmin offset separately at every step.
+This is the trick that makes the whole method work. Shift every **hot** stream's temperatures *down* by ΔTmin ÷ 2, and every **cold** stream's temperatures *up* by ΔTmin ÷ 2 (here, 10 °C each way). This creates a single shared "shifted temperature" scale where, if two streams' shifted ranges touch, they're exactly ΔTmin apart in reality, so you can now compare hot and cold streams directly, on one scale, without tracking the ΔTmin offset separately at every step.
 
 | Stream | Actual range (°C) | Shifted range (°C) |
 | --- | --- | --- |
@@ -47,7 +47,7 @@ Starting at the top with (assumed) zero heat supplied from outside, run the surp
 
 ## Step 5: the most negative value is your minimum hot utility
 
-The cascade dips to **−39 kW** at its lowest point. A negative cascade is thermodynamically impossible on its own — it implies heat flowing somewhere it can't reach without help — so you must feed in exactly enough hot utility at the very top to bring that lowest point up to zero:
+The cascade dips to **−39 kW** at its lowest point. A negative cascade is thermodynamically impossible on its own, it implies heat flowing somewhere it can't reach without help, so you must feed in exactly enough hot utility at the very top to bring that lowest point up to zero:
 
 > **Minimum hot utility = 39 kW**
 
@@ -64,12 +64,17 @@ Add 39 kW at the top and cascade again:
 
 ## Reading off the answer
 
-- **The pinch** is exactly where the cascade touches zero: shifted temperature **70 °C**. Converting back: the pinch is at **80 °C on the hot-stream scale** (70 + 10) and **60 °C on the cold-stream scale** (70 − 10) — twenty degrees apart, exactly ΔTmin, as it must be.
+- **The pinch** is exactly where the cascade touches zero: shifted temperature **70 °C**. Converting back: the pinch is at **80 °C on the hot-stream scale** (70 + 10) and **60 °C on the cold-stream scale** (70 − 10), twenty degrees apart, exactly ΔTmin, as it must be.
 - **Minimum hot utility = 39 kW** (what you added at the top).
 - **Minimum cold utility = 40 kW** (whatever the cascade has left over at the very bottom).
 
 <Callout variant="key" title="Check it against the overall balance">
-H1 has a total heat load of 1.0 × (140 − 40) = 100 kW to give away. C1 needs 1.1 × (150 − 60) = 99 kW. The full balance: hot utility (39) + H1's load (100) = 139 kW in; C1's demand (99) + cold utility (40) = 139 kW out. It closes exactly — the same "everything must add up" discipline from the [first-balance lesson](/courses/mass-and-energy-balances/your-first-balance), now applied to a whole process's heat exchange.
+H1 has a total heat load of 1.0 × (140 − 40) = 100 kW to give away. C1 needs 1.1 × (150 − 60) = 99 kW. The full balance: hot utility (39) + H1's load (100) = 139 kW in; C1's demand (99) + cold utility (40) = 139 kW out. It closes exactly: the same "everything must add up" discipline from the [first-balance lesson](/courses/mass-and-energy-balances/your-first-balance), now applied to a whole process's heat exchange.
 </Callout>
 
-This two-stream cascade is small enough to do by hand in a few minutes. Real processes have dozens of streams and the same method applies without any conceptual change — just more rows in the interval table. The next lesson takes a larger, four-stream example and shows you the result the same algorithm gives, without re-deriving every step.
+This two-stream cascade is small enough to do by hand in a few minutes. Real processes have dozens of streams and the same method applies without any conceptual change: just more rows in the interval table. The next lesson takes a larger, four-stream example and shows you the result the same algorithm gives, without re-deriving every step.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): the problem table method.
+- [Energy Institute](https://www.energyinst.org/)

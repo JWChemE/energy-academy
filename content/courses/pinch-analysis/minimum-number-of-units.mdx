@@ -1,4 +1,4 @@
-A feasible network isn't automatically an economical one. Every heat exchanger, heater and cooler costs capital, so a network with more units than it needs is spending money for no extra energy saving. This lesson gives you a target for the fewest units a network can get away with — and a way to spot when an existing design has more than that.
+A feasible network isn't automatically an economical one. Every heat exchanger, heater and cooler costs capital, so a network with more units than it needs is spending money for no extra energy saving. This lesson gives you a target for the fewest units a network can get away with, and a way to spot when an existing design has more than that.
 
 ## The units-target formula
 
@@ -11,29 +11,34 @@ where **S** is the number of streams and utilities involved (counting hot stream
 > **N = S − 1**
 
 <Callout variant="tip" title="Why 'minus one', intuitively">
-Think of each stream and utility as a node, and each heat exchanger as a connection between two nodes. To link every node into one connected network — so heat can, directly or indirectly, get from any source to any sink that needs it — you need at least (number of nodes − 1) connections. Adding more than that creates a loop: a second, redundant path between nodes that are already connected.
+Think of each stream and utility as a node, and each heat exchanger as a connection between two nodes. To link every node into one connected network (so heat can, directly or indirectly, get from any source to any sink that needs it) you need at least (number of nodes − 1) connections. Adding more than that creates a loop: a second, redundant path between nodes that are already connected.
 </Callout>
 
 ## Applying it to the two-stream network
 
-Apply the formula separately above and below the pinch, since each side is really its own smaller problem (a consequence of the [golden rules](/courses/pinch-analysis/the-golden-rules) — heat, and therefore units, shouldn't cross between them).
+Apply the formula separately above and below the pinch, since each side is really its own smaller problem (a consequence of the [golden rules](/courses/pinch-analysis/the-golden-rules), heat, and therefore units, shouldn't cross between them).
 
-**Above the pinch:** the streams and utilities involved are H1, C1, and hot utility — **S = 3**, so **N = 3 − 1 = 2** units minimum.
+**Above the pinch:** the streams and utilities involved are H1, C1, and hot utility: **S = 3**, so **N = 3 − 1 = 2** units minimum.
 
-**Below the pinch:** the streams and utilities involved are H1 and cold utility — **S = 2**, so **N = 2 − 1 = 1** unit minimum.
+**Below the pinch:** the streams and utilities involved are H1 and cold utility: **S = 2**, so **N = 2 − 1 = 1** unit minimum.
 
 > **Total minimum units = 2 + 1 = 3**
 
-Check this against the network built in the [matching at the pinch lesson](/courses/pinch-analysis/matching-at-the-pinch): one exchanger (H1–C1), one heater (hot utility–C1), and one cooler (H1–cold utility) — **exactly 3 units**. That network isn't just feasible, it's already at the minimum-unit target — nothing to simplify.
+Check this against the network built in the [matching at the pinch lesson](/courses/pinch-analysis/matching-at-the-pinch): one exchanger (H1–C1), one heater (hot utility–C1), and one cooler (H1–cold utility), **exactly 3 units**. That network isn't just feasible, it's already at the minimum-unit target: nothing to simplify.
 
 ## Spotting an over-complicated network
 
-A retrofit site, built up over years, often has more units than this target suggests are needed — perhaps a fourth exchanger doing a small, marginal duty that duplicates what another unit could do instead. When a network has more units than **S − 1** for its region, it very likely contains a **loop**: a closed path where heat could reach the same point by two different routes.
+A retrofit site, built up over years, often has more units than this target suggests are needed, perhaps a fourth exchanger doing a small, marginal duty that duplicates what another unit could do instead. When a network has more units than **S − 1** for its region, it very likely contains a **loop**: a closed path where heat could reach the same point by two different routes.
 
-The fix is **loop breaking**: identify the loop, remove the smallest-duty exchanger in it, and re-balance the duties of the remaining exchangers in that loop to make up the difference (usually by adjusting one stream's split, or by accepting a slightly closer temperature approach somewhere). This typically costs a very small energy penalty — a few degrees of approach temperature given up here or there — in exchange for removing an entire piece of capital equipment.
+The fix is **loop breaking**: identify the loop, remove the smallest-duty exchanger in it, and re-balance the duties of the remaining exchangers in that loop to make up the difference (usually by adjusting one stream's split, or by accepting a slightly closer temperature approach somewhere). This typically costs a very small energy penalty: a few degrees of approach temperature given up here or there, in exchange for removing an entire piece of capital equipment.
 
 <Callout variant="key" title="Fewer units is usually cheaper, even at a small energy cost">
-A network sitting right at its minimum-utility target but with extra units beyond **S − 1** is over-engineered from a capital perspective. Because heat-exchanger capital cost roughly scales with the *number* of units at least as much as their total area, trimming a network down toward its minimum-unit target — even by accepting a slightly less-than-perfect approach temperature somewhere — is very often worth the trade. This is the same capital-versus-energy logic you'll meet in the next lesson, applied to ΔTmin itself rather than to individual units.
+A network sitting right at its minimum-utility target but with extra units beyond **S − 1** is over-engineered from a capital perspective. Because heat-exchanger capital cost roughly scales with the *number* of units at least as much as their total area, trimming a network down toward its minimum-unit target, even by accepting a slightly less-than-perfect approach temperature somewhere, is very often worth the trade. This is the same capital-versus-energy logic you'll meet in the next lesson, applied to ΔTmin itself rather than to individual units.
 </Callout>
 
 You now have the complete design toolkit: targeting the minimum utilities, matching streams at the pinch, splitting where needed, and sizing the network to its minimum sensible number of units. The final module turns to the economics behind these choices, and to processes that don't have a genuine two-utility pinch at all.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): network simplification and loop breaking.
+- [Energy Institute](https://www.energyinst.org/)

@@ -1,12 +1,12 @@
-If the wort boil sets the gas bill, fermentation and conditioning set the electricity bill. Both are refrigeration loads — cooling jackets on vessels, run by a glycol (or ammonia) chiller plant — but they have very different shapes, and it's easy to guess wrong about which one actually costs more over a year. This lesson uses the [refrigeration COP concept](/courses/refrigeration-and-heat-pumps/cop-and-performance) from the systems courses to find out.
+If the wort boil sets the gas bill, fermentation and conditioning set the electricity bill. Both are refrigeration loads (cooling jackets on vessels, run by a glycol (or ammonia) chiller plant) but they have very different shapes, and it's easy to guess wrong about which one actually costs more over a year. This lesson uses the [refrigeration COP concept](/courses/refrigeration-and-heat-pumps/cop-and-performance) from the systems courses to find out.
 
 ## Fermentation: short, intense
 
-Fermentation is exothermic — yeast converting sugar to alcohol releases real heat, and a cooling jacket has to remove it continuously to hold the target temperature (roughly 18–22 °C for ale, 7–13 °C for lager). For a 40 hL fermenter running at a typical peak rate of about 0.4 kW per hectolitre:
+Fermentation is exothermic, yeast converting sugar to alcohol releases real heat, and a cooling jacket has to remove it continuously to hold the target temperature (roughly 18–22 °C for ale, 7–13 °C for lager). For a 40 hL fermenter running at a typical peak rate of about 0.4 kW per hectolitre:
 
 > Peak cooling duty = 40 hL × 0.4 kW/hL = **16 kW**
 
-That peak doesn't hold for the whole fermentation — it's highest in the first few days as yeast activity peaks, then tapers off. Averaged across a 12-day active fermentation at roughly 6 kW:
+That peak doesn't hold for the whole fermentation: it's highest in the first few days as yeast activity peaks, then tapers off. Averaged across a 12-day active fermentation at roughly 6 kW:
 
 > Thermal load = 6 kW × 12 days × 24 h = **1,728 kWh** (thermal, to be removed)
 
@@ -16,7 +16,7 @@ At a glycol chiller COP of 3.5 (squarely in the range from the [heat pump perfor
 
 ## Conditioning: long, gentle
 
-Once fermentation finishes, the beer moves to a conditioning (or "lagering") tank, held near 0 °C for clarification and flavour development — far longer than active fermentation, but at a much gentler rate: mostly just holding against ambient heat gain through the tank and cellar insulation, say 2 kW for a comparable vessel:
+Once fermentation finishes, the beer moves to a conditioning (or "lagering") tank, held near 0 °C for clarification and flavour development, far longer than active fermentation, but at a much gentler rate: mostly just holding against ambient heat gain through the tank and cellar insulation, say 2 kW for a comparable vessel:
 
 > Thermal load = 2 kW × 14 days × 24 h = **672 kWh**
 > Electrical input = 672 ÷ 3.5 ≈ **192 kWh** per conditioning cycle
@@ -24,16 +24,22 @@ Once fermentation finishes, the beer moves to a conditioning (or "lagering") tan
 ## The non-obvious comparison
 
 <Callout variant="key" title="Short and intense beats long and gentle here">
-Despite running for less time, fermentation's electrical cost (≈494 kWh) is more than **2.5 times** conditioning's (≈192 kWh) for this vessel. It's tempting to assume the multi-week cold-conditioning period must be the bigger cost simply because it lasts longer — but intensity matters as much as duration, exactly the same lesson the [problem table algorithm](/courses/pinch-analysis/problem-table-algorithm) teaches about heat loads generally: you have to do the arithmetic, not just eyeball the schedule.
+Despite running for less time, fermentation's electrical cost (≈494 kWh) is more than **2.5 times** conditioning's (≈192 kWh) for this vessel. It's tempting to assume the multi-week cold-conditioning period must be the bigger cost simply because it lasts longer, but intensity matters as much as duration, exactly the same lesson the [problem table algorithm](/courses/pinch-analysis/problem-table-algorithm) teaches about heat loads generally: you have to do the arithmetic, not just eyeball the schedule.
 </Callout>
 
 ## Why this shapes the rest of the course
 
 Two consequences follow directly from these numbers, and both come back later in this course:
 
-- **The glycol plant is sized and run for fermentation's peak**, not conditioning's steady load — which is exactly why the glycol chiller's own condition (a fouled condenser, a poorly chosen setpoint) matters so much: it's working hardest during the highest-value part of the cycle.
-- **Refrigeration, not the brewhouse, is usually the single biggest electrical end use on a brewery site** — a fact worth confirming with sub-metering (covered in the compliance and benchmarking lessons ahead), since a whole-site electricity meter bundles it in with packaging, pumps and lighting and hides exactly how dominant it is.
+- **The glycol plant is sized and run for fermentation's peak**, not conditioning's steady load, which is exactly why the glycol chiller's own condition (a fouled condenser, a poorly chosen setpoint) matters so much: it's working hardest during the highest-value part of the cycle.
+- **Refrigeration, not the brewhouse, is usually the single biggest electrical end use on a brewery site**: a fact worth confirming with sub-metering (covered in the compliance and benchmarking lessons ahead), since a whole-site electricity meter bundles it in with packaging, pumps and lighting and hides exactly how dominant it is.
 
 <Callout variant="tip">
-When you next look at a brewery's electricity profile, expect it to look nothing like a typical office building's: instead of a daytime peak and a night-time trough, expect a fairly flat, continuous load — because fermentation and conditioning don't know or care what time it is.
+When you next look at a brewery's electricity profile, expect it to look nothing like a typical office building's: instead of a daytime peak and a night-time trough, expect a fairly flat, continuous load, because fermentation and conditioning don't know or care what time it is.
 </Callout>
+
+## Sources and further reading
+
+- [Brewers Association sustainability manuals](https://www.brewersassociation.org/): brewery refrigeration guidance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): refrigeration energy management.
+- [HSE (Health and Safety Executive)](https://www.hse.gov.uk/): ammonia and refrigeration plant safety.

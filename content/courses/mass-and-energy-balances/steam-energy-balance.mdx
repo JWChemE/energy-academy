@@ -1,4 +1,4 @@
-Widen the boundary from the last lesson to include the whole steam system — distribution, the point of use, and the condensate return — and a different loss appears: one that has nothing to do with the boiler at all. This is the clearest possible demonstration of why boundary choice matters, using nothing but the enthalpy figures you already met in the [steam properties lesson](/courses/steam-and-condensate/steam-basics) and the return-temperature figures from the [condensate return lesson](/courses/steam-and-condensate/condensate-return).
+Widen the boundary from the last lesson to include the whole steam system (distribution, the point of use, and the condensate return) and a different loss appears: one that has nothing to do with the boiler at all. This is the clearest possible demonstration of why boundary choice matters, using nothing but the enthalpy figures you already met in the [steam properties lesson](/courses/steam-and-condensate/steam-basics) and the return-temperature figures from the [condensate return lesson](/courses/steam-and-condensate/condensate-return).
 
 ## The streams crossing this wider boundary
 
@@ -7,21 +7,21 @@ Widen the boundary from the last lesson to include the whole steam system — di
 | Steam leaving the boiler | 754 + 1,888 = **2,642 kJ/kg** | Sensible + latent heat at 10 bar, 180 °C (steam properties lesson) |
 | Useful heat delivered to the process | **1,888 kJ/kg** | The latent heat released as steam condenses at the point of use |
 | Condensate returning to the boiler | **356 kJ/kg** | Sensible heat only, at the 85 °C the condensate return lesson quotes |
-| Loss along the way | ? | — |
+| Loss along the way | ? |: |
 
 ## Closing the balance
 
-Applying the same logic as every other lesson in this course — everything in must equal everything out:
+Applying the same logic as every other lesson in this course: everything in must equal everything out:
 
 > Steam energy in = Useful heat delivered + Condensate energy returned + Loss
 > 2,642 = 1,888 + 356 + Loss
 
 > **Loss = 2,642 − 1,888 − 356 = 398 kJ/kg**
 
-That 398 kJ/kg isn't a mystery — it's exactly explained by where the numbers came from. When steam gives up its latent heat at the point of use, it condenses to saturated liquid *at the same temperature the steam was* (180 °C, carrying its full 754 kJ/kg of sensible heat). But the condensate return lesson told you it arrives back at the boiler at only 85 °C, carrying just 356 kJ/kg. The difference — 754 − 356 = 398 kJ/kg — is sensible heat that radiated out of the condensate as it travelled back through the return pipework, exactly the **"long uninsulated return lines"** pitfall that lesson names directly.
+That 398 kJ/kg isn't a mystery: it's exactly explained by where the numbers came from. When steam gives up its latent heat at the point of use, it condenses to saturated liquid *at the same temperature the steam was* (180 °C, carrying its full 754 kJ/kg of sensible heat). But the condensate return lesson told you it arrives back at the boiler at only 85 °C, carrying just 356 kJ/kg. The difference, 754 − 356 = 398 kJ/kg, is sensible heat that radiated out of the condensate as it travelled back through the return pipework, exactly the **"long uninsulated return lines"** pitfall that lesson names directly.
 
 <Callout variant="key" title="A balance can point straight at the fix">
-This isn't a rounding error or an unavoidable loss — it's heat leaking from uninsulated (or poorly insulated) return pipework into whatever space it passes through. Insulating that pipework doesn't change the steam-generation side of the system at all; it simply lets more of the condensate's sensible heat survive the trip back, which is recovered value the boiler doesn't have to re-add.
+This isn't a rounding error or an unavoidable loss: it's heat leaking from uninsulated (or poorly insulated) return pipework into whatever space it passes through. Insulating that pipework doesn't change the steam-generation side of the system at all; it simply lets more of the condensate's sensible heat survive the trip back, which is recovered value the boiler doesn't have to re-add.
 </Callout>
 
 ## Putting a number on it
@@ -30,8 +30,14 @@ At a flow of 1,000 kg/h of steam (the same scale used in the condensate return l
 
 > Loss = 398 kJ/kg × 1,000 kg/h ÷ 3,600 s/h ≈ **110 kW**
 
-Over a year of continuous operation, that's a six-figure kWh total — heat that a well-insulated return line would deliver straight back to the boiler feed system, cutting how hard the boiler has to work to reheat that water from cold.
+Over a year of continuous operation, that's a six-figure kWh total, heat that a well-insulated return line would deliver straight back to the boiler feed system, cutting how hard the boiler has to work to reheat that water from cold.
 
 ## The boundary lesson, reinforced
 
-Go back to the [boiler energy balance](/courses/mass-and-energy-balances/boiler-energy-balance) lesson: that balance, drawn tightly around the boiler itself, said nothing about this 110 kW — because it's genuinely outside that boundary. Widen the boundary to include the distribution and return system, and the loss appears immediately, quantified, with its cause already identified by the numbers. This is exactly the habit the [boundaries lesson](/courses/mass-and-energy-balances/system-boundaries) asked you to build: before quoting an efficiency figure for "the steam system," know — and state — which boundary you actually balanced.
+Go back to the [boiler energy balance](/courses/mass-and-energy-balances/boiler-energy-balance) lesson: that balance, drawn tightly around the boiler itself, said nothing about this 110 kW, because it's genuinely outside that boundary. Widen the boundary to include the distribution and return system, and the loss appears immediately, quantified, with its cause already identified by the numbers. This is exactly the habit the [boundaries lesson](/courses/mass-and-energy-balances/system-boundaries) asked you to build: before quoting an efficiency figure for "the steam system," know, and state, which boundary you actually balanced.
+
+## Sources and further reading
+
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam): steam and condensate system energy reference.
+- [Combustion Engineering Association](https://cea.org.uk/): steam plant operation.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): steam system savings.

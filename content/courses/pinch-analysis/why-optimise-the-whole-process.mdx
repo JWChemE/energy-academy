@@ -1,24 +1,24 @@
-The [waste heat recovery course](/courses/waste-heat-recovery/economics-and-matching) taught you to find a waste heat source, find a nearby thermal load, and check whether supply, demand, temperature and timing all line up. That's the right method for one source and one load. But a real process — a factory, a refinery, a large plant room — has dozens of streams needing heating and dozens needing cooling, all at once. Match them one pair at a time and you'll find some good opportunities. You will not find the *best possible* answer, and you'll have no way of knowing how far short you fell.
+The [waste heat recovery course](/courses/waste-heat-recovery/economics-and-matching) taught you to find a waste heat source, find a nearby thermal load, and check whether supply, demand, temperature and timing all line up. That's the right method for one source and one load. But a real process (a factory, a refinery, a large plant room) has dozens of streams needing heating and dozens needing cooling, all at once. Match them one pair at a time and you'll find some good opportunities. You will not find the *best possible* answer, and you'll have no way of knowing how far short you fell.
 
-**Pinch analysis** (also called **process integration** or **heat integration**) is the method that fixes this: instead of matching streams one pair at a time, it looks at every hot and cold stream on the site simultaneously, and calculates the absolute minimum amount of external heating and cooling the process could ever need — a number no amount of clever one-at-a-time matching can beat.
+**Pinch analysis** (also called **process integration** or **heat integration**) is the method that fixes this: instead of matching streams one pair at a time, it looks at every hot and cold stream on the site simultaneously, and calculates the absolute minimum amount of external heating and cooling the process could ever need: a number no amount of clever one-at-a-time matching can beat.
 
 ## From one pair to a whole process
 
-Recall the [heat exchangers lesson's](/courses/waste-heat-recovery/heat-exchangers) approach temperature — the minimum temperature difference you must maintain between a hot stream giving up heat and a cold stream receiving it, so the exchanger stays a practical, affordable size. That single-pair idea is the seed of everything in this course. Pinch analysis asks: if every hot stream on site could, in principle, give up heat to every cold stream that needs it (subject to that same approach-temperature rule), what is the least amount of heating and cooling we'd have to buy in from outside?
+Recall the [heat exchangers lesson's](/courses/waste-heat-recovery/heat-exchangers) approach temperature: the minimum temperature difference you must maintain between a hot stream giving up heat and a cold stream receiving it, so the exchanger stays a practical, affordable size. That single-pair idea is the seed of everything in this course. Pinch analysis asks: if every hot stream on site could, in principle, give up heat to every cold stream that needs it (subject to that same approach-temperature rule), what is the least amount of heating and cooling we'd have to buy in from outside?
 
 <Callout variant="key" title="A one-at-a-time search can never prove it found the best answer">
-Matching streams by inspection — "that hot exhaust could probably preheat this cold feed" — finds *some* savings, but it can't tell you whether a smarter combination of matches would recover twice as much heat, because it never considers the process as a whole. Pinch analysis calculates the true minimum utility requirement mathematically, so you know exactly how much headroom is left, before you design a single heat exchanger.
+Matching streams by inspection, "that hot exhaust could probably preheat this cold feed", finds *some* savings, but it can't tell you whether a smarter combination of matches would recover twice as much heat, because it never considers the process as a whole. Pinch analysis calculates the true minimum utility requirement mathematically, so you know exactly how much headroom is left, before you design a single heat exchanger.
 </Callout>
 
 ## What "the pinch" actually is
 
-Every process has a temperature — the **pinch point** — where the available hot streams and the available cold streams come closest together. Above that temperature, there's more heat needed by cold streams than hot streams can supply, so external heating (**hot utility** — a boiler, a furnace) is unavoidable. Below it, there's more heat available from hot streams than cold streams need, so external cooling (**cold utility** — cooling water, a chiller) is unavoidable. Right at the pinch, supply and demand are exactly balanced — and this single point turns out to control the entire process's minimum energy bill.
+Every process has a temperature, the **pinch point**, where the available hot streams and the available cold streams come closest together. Above that temperature, there's more heat needed by cold streams than hot streams can supply, so external heating (**hot utility**: a boiler, a furnace) is unavoidable. Below it, there's more heat available from hot streams than cold streams need, so external cooling (**cold utility**: cooling water, a chiller) is unavoidable. Right at the pinch, supply and demand are exactly balanced, and this single point turns out to control the entire process's minimum energy bill.
 
 This isn't just an abstract curiosity. Once you know where the pinch is, three extremely practical things follow:
 
-1. **The minimum hot and cold utility your process could ever need** — a hard floor you can measure any existing design against.
-2. **The temperature above which any process stream should, in principle, be heated using recovered process heat rather than fresh utility** — and the mirror rule below the pinch.
-3. **A design rule** — never transfer heat across the pinch — that, if violated, wastes hot utility *and* cold utility simultaneously, by exactly the same amount. (You'll quantify this precisely in the [golden rules lesson](/courses/pinch-analysis/the-golden-rules).)
+1. **The minimum hot and cold utility your process could ever need**: a hard floor you can measure any existing design against.
+2. **The temperature above which any process stream should, in principle, be heated using recovered process heat rather than fresh utility**: and the mirror rule below the pinch.
+3. **A design rule**: never transfer heat across the pinch, that, if violated, wastes hot utility *and* cold utility simultaneously, by exactly the same amount. (You'll quantify this precisely in the [golden rules lesson](/courses/pinch-analysis/the-golden-rules).)
 
 ## Where this fits among the courses you already know
 
@@ -27,6 +27,12 @@ Pinch analysis sits on top of ideas you've already met:
 - The [Mass & Energy Balances course](/courses/mass-and-energy-balances/hvac-energy-balance) gave you the sensible-heat calculation (mass flow × specific heat × temperature change) that every stream in this course is built from.
 - [Waste Heat Recovery](/courses/waste-heat-recovery/sources-and-grades) taught you to grade heat by temperature and match individual sources to individual loads.
 - [CHP & Cogeneration](/courses/chp-and-cogeneration/chp-fundamentals) and [Boilers & Fired Systems](/courses/boilers-and-fired-systems/combustion-fundamentals) are the "hot utility" providers whose size this whole method is trying to minimise.
-- [Economic Analysis](/courses/economic-analysis/npv-and-irr) will reappear when you weigh the cost of a tighter approach temperature against the value of the extra heat recovery it buys — covered later in this course.
+- [Economic Analysis](/courses/economic-analysis/npv-and-irr) will reappear when you weigh the cost of a tighter approach temperature against the value of the extra heat recovery it buys, covered later in this course.
 
-What's new here is the *whole-process* view: instead of one stream at a time, every stream at once, and a target you can prove is the best achievable — not just a good one you happened to find.
+What's new here is the *whole-process* view: instead of one stream at a time, every stream at once, and a target you can prove is the best achievable, not just a good one you happened to find.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): process integration resources.
+- [Energy Institute](https://www.energyinst.org/): site-wide energy optimisation.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): industrial heat recovery.

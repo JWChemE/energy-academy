@@ -1,13 +1,12 @@
-The [previous lesson](/courses/pinch-analysis/reading-the-pinch) split every process into two regions: above the pinch (a net heat sink, needing only hot utility) and below the pinch (a net heat source, needing only cold utility). From that single fact, three design rules follow — and breaking any one of them carries a penalty you can calculate exactly.
+The [previous lesson](/courses/pinch-analysis/reading-the-pinch) split every process into two regions: above the pinch (a net heat sink, needing only hot utility) and below the pinch (a net heat source, needing only cold utility). From that single fact, three design rules follow, and breaking any one of them carries a penalty you can calculate exactly.
 
 ## The three golden rules
 
-1. **Never use cold utility above the pinch.** Above the pinch there's already a shortage of heat, not a surplus — cooling anything there with utility throws away heat the process itself needs, and someone downstream will have to make it up with extra hot utility.
-2. **Never use hot utility below the pinch.** Below the pinch there's already a surplus of heat, not a shortage — heating anything there with utility is adding energy to a region that already has more than enough, and the surplus now has to be rejected with extra cold utility.
-3. **Never transfer heat directly across the pinch** — from a hot stream above the pinch to a cold stream below it, or the reverse. This is really rules 1 and 2 happening at once for the same parcel of heat.
+1. **Never use cold utility above the pinch.** Above the pinch there's already a shortage of heat, not a surplus, cooling anything there with utility throws away heat the process itself needs, and someone downstream will have to make it up with extra hot utility.
+2. **Never use hot utility below the pinch.** Below the pinch there's already a surplus of heat, not a shortage, heating anything there with utility is adding energy to a region that already has more than enough, and the surplus now has to be rejected with extra cold utility.
+3. **Never transfer heat directly across the pinch**: from a hot stream above the pinch to a cold stream below it, or the reverse. This is really rules 1 and 2 happening at once for the same parcel of heat.
 
-<Callout variant="key" title="Why these are 'golden' — they follow from arithmetic, not judgement">
-These aren't rules of thumb or good practice — they're a direct consequence of the pinch being the point where heat supply and demand exactly balance. Any heat that crosses the pinch, in any direction, unbalances *both* sides of it at once, and the utilities have to absorb that imbalance on both sides simultaneously. The next section puts an exact number on that.
+<Callout variant="key" title="Why these are 'golden' (they follow from arithmetic, not judgement"> These aren't rules of thumb or good practice) they're a direct consequence of the pinch being the point where heat supply and demand exactly balance. Any heat that crosses the pinch, in any direction, unbalances *both* sides of it at once, and the utilities have to absorb that imbalance on both sides simultaneously. The next section puts an exact number on that.
 </Callout>
 
 ## Quantifying the penalty
@@ -17,14 +16,14 @@ Take the two-stream example from the [problem table lesson](/courses/pinch-analy
 Suppose an engineer, not knowing about the golden rules, cools 10 kW of H1's heat with plant cooling water *above* the pinch, instead of passing it to C1 as the optimal network does. Two things happen at once:
 
 - **C1 is now short by 10 kW above the pinch** (it no longer receives that heat from H1), so an extra 10 kW of hot utility has to make up the shortfall: hot utility rises from 39 kW to **49 kW**.
-- **That same 10 kW still has to go to cold utility** — it was cooled with cooling water instead of being usefully passed on — so cold utility rises from 40 kW to **50 kW**.
+- **That same 10 kW still has to go to cold utility**: it was cooled with cooling water instead of being usefully passed on, so cold utility rises from 40 kW to **50 kW**.
 
 > Total utility before: 39 + 40 = 79 kW
 > Total utility after the 10 kW violation: 49 + 50 = 99 kW
 > **Penalty: 20 kW of extra utility, for misplacing just 10 kW of heat.**
 
 <Callout variant="warning" title="The penalty is always double the crossing">
-This 2:1 relationship isn't a coincidence of this example — it's completely general. Every kilowatt of heat that crosses the pinch (in any of the three ways above) costs *two* kilowatts of extra utility: one extra kilowatt of hot utility to replace what the cold side of the pinch no longer receives, and one extra kilowatt of cold utility to reject what shouldn't have been cooled there in the first place.
+This 2:1 relationship isn't a coincidence of this example: it's completely general. Every kilowatt of heat that crosses the pinch (in any of the three ways above) costs *two* kilowatts of extra utility: one extra kilowatt of hot utility to replace what the cold side of the pinch no longer receives, and one extra kilowatt of cold utility to reject what shouldn't have been cooled there in the first place.
 </Callout>
 
 ## Why this happens so often in practice
@@ -36,7 +35,12 @@ Nobody designs a plant intending to break these rules. They creep in because:
 - **Utilities are added for control, not efficiency.** A hot-water trim heater "just in case" a process stream runs cold, sitting below the pinch where it shouldn't exist at all once the true minimum utility target is known.
 
 <Callout variant="tip">
-Auditing an existing plant for golden-rule violations is one of the highest-value uses of pinch analysis, precisely because the fix is often just re-piping an existing exchanger or utility connection — not new capital equipment. You'll practise exactly this kind of diagnosis in this course's capstone.
+Auditing an existing plant for golden-rule violations is one of the highest-value uses of pinch analysis, precisely because the fix is often just re-piping an existing exchanger or utility connection: not new capital equipment. You'll practise exactly this kind of diagnosis in this course's capstone.
 </Callout>
 
-With the golden rules established, you're ready to actually build a network of heat exchangers that respects them — the subject of the next module.
+With the golden rules established, you're ready to actually build a network of heat exchangers that respects them: the subject of the next module.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): pinch design rules.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): avoiding cross-pinch heat transfer in industry.

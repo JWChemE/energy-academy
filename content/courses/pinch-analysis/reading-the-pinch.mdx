@@ -1,4 +1,4 @@
-The two-stream cascade in the last lesson is small enough to trace by hand. Run the exact same algorithm on the four-stream process from the [composite curves lesson](/courses/pinch-analysis/building-composite-curves), and you get a result for a genuinely more realistic problem — this lesson gives you that answer, and shows how it connects back to the composite-curve picture.
+The two-stream cascade in the last lesson is small enough to trace by hand. Run the exact same algorithm on the four-stream process from the [composite curves lesson](/courses/pinch-analysis/building-composite-curves), and you get a result for a genuinely more realistic problem: this lesson gives you that answer, and shows how it connects back to the composite-curve picture.
 
 ## The result, for the four-stream process
 
@@ -18,7 +18,7 @@ Running the problem table algorithm (shift by ΔTmin ÷ 2 = 10 °C, build the in
 > **Pinch temperature = 50 °C (hot-stream scale) / 30 °C (cold-stream scale)**
 
 <Callout variant="tip">
-The mechanics are identical to the two-stream example — just seven temperature bands instead of three, since there are more streams entering and leaving across the shifted scale. Try building the interval table yourself from the stream data above and the method in the [previous lesson](/courses/pinch-analysis/problem-table-algorithm); you should land on exactly these three numbers.
+The mechanics are identical to the two-stream example: just seven temperature bands instead of three, since there are more streams entering and leaving across the shifted scale. Try building the interval table yourself from the stream data above and the method in the [previous lesson](/courses/pinch-analysis/problem-table-algorithm); you should land on exactly these three numbers.
 </Callout>
 
 ## Checking it against the overall balance
@@ -32,17 +32,22 @@ It closes, exactly as every balance in this course must.
 
 ## Connecting the number back to the picture
 
-The composite-curve picture from the previous lesson showed the hot composite curve running from (180 °C, 0 kW) to (40 °C, 555 kW), and the cold composite curve from (30 °C, 0 kW) to (190 °C, 840 kW). The pinch result tells you precisely how those two curves must be positioned relative to each other on the heat axis so that they never come closer than ΔTmin anywhere, while getting as close as possible at one point — the pinch.
+The composite-curve picture from the previous lesson showed the hot composite curve running from (180 °C, 0 kW) to (40 °C, 555 kW), and the cold composite curve from (30 °C, 0 kW) to (190 °C, 840 kW). The pinch result tells you precisely how those two curves must be positioned relative to each other on the heat axis so that they never come closer than ΔTmin anywhere, while getting as close as possible at one point: the pinch.
 
-At the pinch (50 °C hot / 30 °C cold), the vertical gap between the two composite curves shrinks to exactly ΔTmin (20 °C) — the tightest the design allows. Move up or down from there and the gap widens again. This is why the pinch is the *controlling* point: it's the bottleneck that limits how much heat exchange the whole process can achieve between its own streams, no matter how cleverly you arrange individual matches.
+At the pinch (50 °C hot / 30 °C cold), the vertical gap between the two composite curves shrinks to exactly ΔTmin (20 °C): the tightest the design allows. Move up or down from there and the gap widens again. This is why the pinch is the *controlling* point: it's the bottleneck that limits how much heat exchange the whole process can achieve between its own streams, no matter how cleverly you arrange individual matches.
 
 ## What "above" and "below" the pinch mean
 
 The pinch temperature splits the whole problem into two separate regions, and this split matters enormously for design (you'll use it directly in the [network design module](/courses/pinch-analysis/matching-at-the-pinch)):
 
-- **Above the pinch** (hotter than 50 °C on the hot scale / 30 °C on the cold scale): cold streams need more heat here than the hot streams can supply, so this region is a **net heat sink** — it needs hot utility, and only hot utility, to balance.
-- **Below the pinch**: hot streams have more heat to give up here than cold streams need, so this region is a **net heat source** — it needs cold utility, and only cold utility, to balance.
+- **Above the pinch** (hotter than 50 °C on the hot scale / 30 °C on the cold scale): cold streams need more heat here than the hot streams can supply, so this region is a **net heat sink**: it needs hot utility, and only hot utility, to balance.
+- **Below the pinch**: hot streams have more heat to give up here than cold streams need, so this region is a **net heat source**: it needs cold utility, and only cold utility, to balance.
 
 <Callout variant="key" title="The pinch divides the process into two self-contained problems">
-Above the pinch, you should never need cold utility — any cooling done up there is heat that a hot utility somewhere else in that region has to make up for. Below the pinch, you should never need hot utility — any heating done down there is heat that a cold utility somewhere else in that region has to remove again. This single idea — never let heat cross the pinch — is the most important design rule in the whole method, and it's the entire subject of the next lesson.
+Above the pinch, you should never need cold utility, any cooling done up there is heat that a hot utility somewhere else in that region has to make up for. Below the pinch, you should never need hot utility, any heating done down there is heat that a cold utility somewhere else in that region has to remove again. This single idea, never let heat cross the pinch, is the most important design rule in the whole method, and it's the entire subject of the next lesson.
 </Callout>
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): pinch interpretation and targeting.
+- [Energy Institute](https://www.energyinst.org/)

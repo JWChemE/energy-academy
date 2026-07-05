@@ -259,6 +259,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Why nothing is created or destroyed — the first law restated as a practical accounting tool, not just theory.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "system-boundaries",
@@ -266,6 +267,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Drawing the line around what you're analysing — open vs closed systems, steady-state vs transient — and why the boundary you choose changes the answer.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "your-first-balance",
@@ -273,6 +275,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The general balance equation, a black-box worked example, and the habit of always accounting for 100% of what goes in.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "conservation-check",
@@ -292,6 +295,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Mass in = mass out + accumulation; units, density and flow-rate conversions for steady-flow processes.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "combustion-mass-balance",
@@ -299,6 +303,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Balancing fuel and air for methane combustion — stoichiometric air, excess air, and why boilers never run at the theoretical ratio.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "psychrometric-mass-balance",
@@ -306,6 +311,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Tracking water vapour through an air-handling unit — where dehumidification energy actually goes.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "mass-balances-check",
@@ -325,6 +331,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Fuel in, useful heat out, and where the rest goes — flue losses, casing losses, blowdown.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "steam-energy-balance",
@@ -332,6 +339,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Enthalpy in, enthalpy out — tracking sensible and latent heat through generation, distribution and return.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "hvac-energy-balance",
@@ -339,6 +347,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Splitting a cooling load into sensible and latent components, and why over-dehumidifying wastes energy.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "energy-balances-check",
@@ -358,6 +367,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Turning a balance into a picture — reading and building a Sankey diagram from your own numbers.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "quality-of-energy",
@@ -365,6 +375,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Why a kWh of electricity and a kWh of lukewarm waste heat aren't worth the same — grading energy by its ability to do useful work.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "balances-in-the-field",
@@ -372,6 +383,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "A combined mass-and-energy balance on a real process, and how it becomes the backbone of an energy audit.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "practice-check",
@@ -934,18 +946,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "The Combustion Process",
                 summary: "Fuel, air, and ignition — stoichiometric and excess air.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "combustion-efficiency",
                 title: "Combustion Efficiency",
                 summary: "Complete vs incomplete combustion, and measuring flue-gas losses.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "boiler-types",
                 title: "Boiler Types & Design",
                 summary: "Firetube, watertube, and condensing boilers — efficiency implications.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
             ],
           },
@@ -958,18 +973,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Managing Excess Air",
                 summary: "The balance between combustion completeness and flue losses.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "blowdown",
                 title: "Boiler Blowdown & Water Treatment",
                 summary: "Why blowdown happens, its energy cost, and how to minimise it.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "controls-setpoints",
                 title: "Controls, Setpoints & Sequencing",
                 summary: "Weather compensation, load matching, and multi-boiler logic.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
             ],
           },
@@ -982,12 +1000,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "Assessing a Boiler Plant",
                 summary: "Age, efficiency, turndown, and fit to actual load.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "retrofit-options",
                 title: "Retrofit & Replacement Options",
                 summary: "Burner upgrades, condensing conversions, and replacement decisions.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "optimization-capstone",
@@ -1303,6 +1323,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "From matching one waste-heat source to one load, to matching every hot and cold stream on a site simultaneously — and finding the truly minimum energy bill.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "streams-and-approach-temperature",
@@ -1310,6 +1331,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Classifying every stream on a site as hot or cold, and the ΔTmin concept that governs how close they can approach each other.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "building-composite-curves",
@@ -1317,6 +1339,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Combining many streams into one hot curve and one cold curve — the graphical heart of pinch analysis.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "fundamentals-check",
@@ -1336,6 +1359,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The temperature-interval cascade that finds the pinch and the minimum hot and cold utility requirements by arithmetic alone.",
                 minutes: 12,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "reading-the-pinch",
@@ -1343,6 +1367,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Interpreting the graphical picture — where the curves come closest, and why that point sets the whole process's minimum energy target.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "the-golden-rules",
@@ -1350,6 +1375,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The three rules that keep a design at its true minimum utility — and the energy penalty of breaking each one.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "targeting-check",
@@ -1369,6 +1395,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The feasibility rule that decides which streams can be matched right at the pinch, and a fully worked network.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "tick-off-and-splitting",
@@ -1376,6 +1403,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Building a workable network match by match, and when a stream must be split to keep every match feasible.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "minimum-number-of-units",
@@ -1383,6 +1411,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Targeting the fewest heat exchangers a network needs, and simplifying an over-complicated design by breaking loops.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "network-design-check",
@@ -1402,6 +1431,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Why the minimum approach temperature is an economic choice, not a fixed constant — balancing utility cost against heat-exchanger capital cost.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "threshold-problems",
@@ -1409,6 +1439,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Processes that only ever need one utility, and why forcing a two-utility design onto them wastes money.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "retrofit-pinch-analysis",
@@ -1416,6 +1447,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Using targets from a pinch study to find the missed heat-recovery opportunities in a plant that already exists.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "economics-check",
@@ -1507,18 +1539,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Comfort Criteria & Psychrometrics",
                 summary: "Temperature, humidity, air movement, and the comfort envelope.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "system-types",
                 title: "System Types & Configurations",
                 summary: "All-air, air-water, heat pump, and multi-zone systems.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "hvac-components",
                 title: "Key Components & Operation",
                 summary: "Fans, coils, dampers, valves, and controls — how they work together.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
             ],
           },
@@ -1531,18 +1566,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Sensible vs Latent Loads",
                 summary: "Heating/cooling the air vs dehumidifying.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "thermal-loads",
                 title: "Sources of Thermal Load",
                 summary: "Envelope, occupancy, equipment, solar gain, and ventilation.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "free-cooling",
                 title: "Free Cooling & Heat Recovery",
                 summary: "Economisers, heat recovery ventilation, and thermal wheels.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
             ],
           },
@@ -1555,18 +1593,21 @@ export const curriculum: NumberedLevel[] = [
                 title: "Control Loops & Feedback",
                 summary: "Temperature, humidity, pressure, and sequence control.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "setpoints-scheduling",
                 title: "Setpoints, Scheduling & Occupancy",
                 summary: "Reset strategies, occupancy-based control, and night setback.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "vav-controls",
                 title: "VAV Box Control & Duct Static Pressure",
                 summary: "How VAV systems modulate to meet zone demands.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
             ],
           },
@@ -1579,12 +1620,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "HVAC Auditing & Commissioning",
                 summary: "Measuring performance, identifying drift, and balancing.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "common-issues",
                 title: "Common Faults & Failures",
                 summary: "Stuck dampers, failed sensors, thermostat drift, and control errors.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "diagnostics-capstone",
@@ -2430,9 +2473,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "mv-fundamentals",
             title: "M&V Fundamentals",
             lessons: [
-              { slug: "why-mv-matters", title: "Why Measure & Verify Savings?", summary: "Proving energy project ROI; building confidence for future investment; compliance & reporting.", minutes: 10 },
-              { slug: "baseline-concept", title: "Baseline Concept & Methodology", summary: "Pre-project consumption as baseline; adjustment for weather, occupancy, production volume.", minutes: 10 },
-              { slug: "ipmvp-options", title: "IPMVP Options A, B, C, D", summary: "Option A (whole-building), B (sub-metering), C (engineering calculations), D (deemed savings).", minutes: 11 },
+              { slug: "why-mv-matters", title: "Why Measure & Verify Savings?", summary: "Proving energy project ROI; building confidence for future investment; compliance & reporting.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "baseline-concept", title: "Baseline Concept & Methodology", summary: "Pre-project consumption as baseline; adjustment for weather, occupancy, production volume.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "ipmvp-options", title: "IPMVP Options A, B, C, D", summary: "Option A (whole-building), B (sub-metering), C (engineering calculations), D (deemed savings).", minutes: 11, reviewed: "2026-07-05" },
               { slug: "fundamentals-check", title: "M&V Fundamentals Check", summary: "Quiz on baseline, IPMVP options, and M&V methodology.", minutes: 5 },
             ],
           },
@@ -2440,9 +2483,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "baseline-adjustment",
             title: "Baseline & Adjustments",
             lessons: [
-              { slug: "baseline-development", title: "Baseline Development & Data Collection", summary: "12+ months pre-project data; eliminating anomalies; regression analysis; peak/average load.", minutes: 10 },
-              { slug: "weather-normalization", title: "Weather Normalization", summary: "Heating/cooling degree-days; correlation to energy; adjusting baseline for mild/cold years.", minutes: 10 },
-              { slug: "occupancy-production", title: "Occupancy & Production Adjustments", summary: "Normalizing for changes in headcount, hours of operation, production volume post-project.", minutes: 10 },
+              { slug: "baseline-development", title: "Baseline Development & Data Collection", summary: "12+ months pre-project data; eliminating anomalies; regression analysis; peak/average load.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "weather-normalization", title: "Weather Normalization", summary: "Heating/cooling degree-days; correlation to energy; adjusting baseline for mild/cold years.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "occupancy-production", title: "Occupancy & Production Adjustments", summary: "Normalizing for changes in headcount, hours of operation, production volume post-project.", minutes: 10, reviewed: "2026-07-05" },
               { slug: "adjustment-check", title: "Baseline & Adjustment Check", summary: "Quiz on baseline development and adjustment factors.", minutes: 5 },
             ],
           },
@@ -2450,9 +2493,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "savings-pitfalls",
             title: "Quantifying Savings & Avoiding Pitfalls",
             lessons: [
-              { slug: "calculating-savings", title: "Calculating Adjusted Savings", summary: "Savings = (Baseline - Adjusted Actual) with all adjustments; confidence intervals.", minutes: 10 },
-              { slug: "common-pitfalls", title: "Common Pitfalls & Overstatement", summary: "Boundary changes, occupancy underestimation, weather luck, rebound effects; how to avoid.", minutes: 10 },
-              { slug: "reporting-verification", title: "Reporting & Independent Verification", summary: "M&V plan, annual reports, independent third-party review for credibility.", minutes: 10 },
+              { slug: "calculating-savings", title: "Calculating Adjusted Savings", summary: "Savings = (Baseline - Adjusted Actual) with all adjustments; confidence intervals.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "common-pitfalls", title: "Common Pitfalls & Overstatement", summary: "Boundary changes, occupancy underestimation, weather luck, rebound effects; how to avoid.", minutes: 10, reviewed: "2026-07-05" },
+              { slug: "reporting-verification", title: "Reporting & Independent Verification", summary: "M&V plan, annual reports, independent third-party review for credibility.", minutes: 10, reviewed: "2026-07-05" },
               { slug: "savings-check", title: "Savings Calculation Check", summary: "Quiz on calculating savings and avoiding pitfalls.", minutes: 5 },
             ],
           },
@@ -2489,21 +2532,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "influence", title: "Influence & Stakeholder Engagement", lessons: [
-            { slug: "influencing-without-authority", title: "Influencing Without Authority", summary: "Credibility, coalition-building, persuasion tactics for energy advocates.", minutes: 11 },
-            { slug: "stakeholder-mapping", title: "Stakeholder Mapping & Engagement", summary: "Identifying allies, antagonists, fence-sitters; tailored messaging for each.", minutes: 10 },
-            { slug: "communication-skills", title: "Communication & Storytelling", summary: "Narrative, data presentation, emotion and logic balance in energy pitches.", minutes: 10 },
+            { slug: "influencing-without-authority", title: "Influencing Without Authority", summary: "Credibility, coalition-building, persuasion tactics for energy advocates.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "stakeholder-mapping", title: "Stakeholder Mapping & Engagement", summary: "Identifying allies, antagonists, fence-sitters; tailored messaging for each.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "communication-skills", title: "Communication & Storytelling", summary: "Narrative, data presentation, emotion and logic balance in energy pitches.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "influence-check", title: "Influence Check", summary: "Quiz on stakeholder engagement and influence tactics.", minutes: 5 },
           ] },
           { slug: "culture", title: "Building an Energy Culture", lessons: [
-            { slug: "culture-shift", title: "Culture Shift & Behaviour Change", summary: "From compliance to commitment; employee engagement in energy programmes.", minutes: 10 },
-            { slug: "incentives", title: "Incentives & Recognition", summary: "Rewards (financial, recognition) to reinforce energy-conscious behaviour.", minutes: 10 },
-            { slug: "embedding-governance", title: "Embedding Energy in Governance", summary: "Board-level sponsorship, energy in strategy, ESG reporting, accountability.", minutes: 10 },
+            { slug: "culture-shift", title: "Culture Shift & Behaviour Change", summary: "From compliance to commitment; employee engagement in energy programmes.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "incentives", title: "Incentives & Recognition", summary: "Rewards (financial, recognition) to reinforce energy-conscious behaviour.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "embedding-governance", title: "Embedding Energy in Governance", summary: "Board-level sponsorship, energy in strategy, ESG reporting, accountability.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "culture-check", title: "Culture Check", summary: "Quiz on culture, incentives, and governance integration.", minutes: 5 },
           ] },
           { slug: "leadership-practice", title: "Leadership Practice & Self", lessons: [
-            { slug: "self-leadership", title: "Self-Leadership & Personal Resilience", summary: "Managing energy project stress, building credibility over time, staying motivated.", minutes: 10 },
-            { slug: "team-dynamics", title: "Team Dynamics & Cross-Functional Work", summary: "Working with operations, finance, procurement; navigating silos.", minutes: 10 },
-            { slug: "transformation-journey", title: "The Transformation Journey", summary: "Stages of energy transformation; typical timelines, setbacks, celebrating wins.", minutes: 10 },
+            { slug: "self-leadership", title: "Self-Leadership & Personal Resilience", summary: "Managing energy project stress, building credibility over time, staying motivated.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "team-dynamics", title: "Team Dynamics & Cross-Functional Work", summary: "Working with operations, finance, procurement; navigating silos.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "transformation-journey", title: "The Transformation Journey", summary: "Stages of energy transformation; typical timelines, setbacks, celebrating wins.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "practice-check", title: "Practice Check", summary: "Quiz on self-leadership, teams, and transformation.", minutes: 5 },
           ] },
         ],
@@ -2515,21 +2558,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "ems-framework", title: "Energy Management System Framework", lessons: [
-            { slug: "iso-50001-overview", title: "ISO 50001 Overview & Requirements", summary: "Standard structure (PDCA), mandatory elements, certification path.", minutes: 11 },
-            { slug: "energy-policy-objectives", title: "Policy, Objectives & Targets", summary: "Defining energy policy; SMART objectives and targets aligned to business.", minutes: 10 },
-            { slug: "baseline-performance", title: "Baseline & Energy Performance Indicators", summary: "Baseline energy consumption; KPIs (kWh/m², £/unit output); improvement tracking.", minutes: 10 },
+            { slug: "iso-50001-overview", title: "ISO 50001 Overview & Requirements", summary: "Standard structure (PDCA), mandatory elements, certification path.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "energy-policy-objectives", title: "Policy, Objectives & Targets", summary: "Defining energy policy; SMART objectives and targets aligned to business.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "baseline-performance", title: "Baseline & Energy Performance Indicators", summary: "Baseline energy consumption; KPIs (kWh/m², £/unit output); improvement tracking.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "framework-check", title: "Framework Check", summary: "Quiz on ISO 50001 and EMS setup.", minutes: 5 },
           ] },
           { slug: "significant-energy", title: "Identifying & Managing Significant Energy Use", lessons: [
-            { slug: "seu-identification", title: "Significant Energy Uses (SEU) Analysis", summary: "Which processes/equipment use most energy; Pareto 80-20 rule.", minutes: 10 },
-            { slug: "seu-monitoring", title: "Monitoring & Measurement of SEU", summary: "Metering significant uses; real-time tracking; monthly/annual review.", minutes: 10 },
-            { slug: "seu-improvement", title: "Improvement Actions for SEU", summary: "Targeted projects on high-impact equipment; ROI and payback focus.", minutes: 10 },
+            { slug: "seu-identification", title: "Significant Energy Uses (SEU) Analysis", summary: "Which processes/equipment use most energy; Pareto 80-20 rule.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "seu-monitoring", title: "Monitoring & Measurement of SEU", summary: "Metering significant uses; real-time tracking; monthly/annual review.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "seu-improvement", title: "Improvement Actions for SEU", summary: "Targeted projects on high-impact equipment; ROI and payback focus.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "seu-check", title: "SEU Check", summary: "Quiz on identifying and improving significant energy uses.", minutes: 5 },
           ] },
           { slug: "implementation", title: "Implementation, Audit & Certification", lessons: [
-            { slug: "implementation-roadmap", title: "Implementation Roadmap", summary: "Rolling out EMS across organization; roles, responsibilities, timeline.", minutes: 10 },
-            { slug: "internal-audit", title: "Internal Audit & Non-Conformance", summary: "Regular audits; identifying gaps; corrective actions; continuous improvement.", minutes: 10 },
-            { slug: "certification-journey", title: "ISO 50001 Certification Journey", summary: "External audit, certification body, re-certification cycles.", minutes: 10 },
+            { slug: "implementation-roadmap", title: "Implementation Roadmap", summary: "Rolling out EMS across organization; roles, responsibilities, timeline.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "internal-audit", title: "Internal Audit & Non-Conformance", summary: "Regular audits; identifying gaps; corrective actions; continuous improvement.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "certification-journey", title: "ISO 50001 Certification Journey", summary: "External audit, certification body, re-certification cycles.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "implementation-check", title: "Implementation Check", summary: "Quiz on EMS rollout, audit, and certification.", minutes: 5 },
           ] },
         ],
@@ -2541,21 +2584,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "policy-design", title: "Policy Design & Structure", lessons: [
-            { slug: "policy-purpose", title: "Purpose & Scope of Energy Policy", summary: "What a policy is (commitments, not tactics); scope (operations, supply chain, product).", minutes: 10 },
-            { slug: "policy-pillars", title: "Policy Pillars (Efficiency, Renewable, Governance)", summary: "Three core pillars: operational efficiency, renewable energy, governance/targets.", minutes: 10 },
-            { slug: "policy-language", title: "Policy Language & Tone", summary: "Clear, actionable, ambitious but credible; avoiding waffle; linking to strategy.", minutes: 10 },
+            { slug: "policy-purpose", title: "Purpose & Scope of Energy Policy", summary: "What a policy is (commitments, not tactics); scope (operations, supply chain, product).", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "policy-pillars", title: "Policy Pillars (Efficiency, Renewable, Governance)", summary: "Three core pillars: operational efficiency, renewable energy, governance/targets.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "policy-language", title: "Policy Language & Tone", summary: "Clear, actionable, ambitious but credible; avoiding waffle; linking to strategy.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "design-check", title: "Design Check", summary: "Quiz on policy structure and language.", minutes: 5 },
           ] },
           { slug: "policy-content", title: "Policy Content & Commitments", lessons: [
-            { slug: "targets-timelines", title: "Targets, Timelines & Accountability", summary: "Quantified targets (% reduction by 2030); ownership (CFO, ops, procurement).", minutes: 10 },
-            { slug: "responsibilities", title: "Roles & Responsibilities", summary: "Who reports to whom; who approves investment; who drives culture.", minutes: 10 },
-            { slug: "supply-chain", title: "Supply Chain & Procurement Links", summary: "Supplier expectations; carbon contracts; sustainable procurement policy.", minutes: 10 },
+            { slug: "targets-timelines", title: "Targets, Timelines & Accountability", summary: "Quantified targets (% reduction by 2030); ownership (CFO, ops, procurement).", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "responsibilities", title: "Roles & Responsibilities", summary: "Who reports to whom; who approves investment; who drives culture.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "supply-chain", title: "Supply Chain & Procurement Links", summary: "Supplier expectations; carbon contracts; sustainable procurement policy.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "content-check", title: "Content Check", summary: "Quiz on targets, responsibilities, and supply chain.", minutes: 5 },
           ] },
           { slug: "policy-adoption", title: "Policy Adoption & Communication", lessons: [
-            { slug: "board-approval", title: "Getting Board Approval", summary: "Framing for executives; risk (climate, regulatory, reputational); benefits.", minutes: 10 },
-            { slug: "launch-cascade", title: "Policy Launch & Cascading to Employees", summary: "Communications strategy; training; embedding in job descriptions.", minutes: 10 },
-            { slug: "policy-review", title: "Policy Review & Renewal", summary: "Annual review; updating targets; responding to new regulation or tech.", minutes: 10 },
+            { slug: "board-approval", title: "Getting Board Approval", summary: "Framing for executives; risk (climate, regulatory, reputational); benefits.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "launch-cascade", title: "Policy Launch & Cascading to Employees", summary: "Communications strategy; training; embedding in job descriptions.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "policy-review", title: "Policy Review & Renewal", summary: "Annual review; updating targets; responding to new regulation or tech.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "adoption-check", title: "Adoption Check", summary: "Quiz on board engagement and policy communication.", minutes: 5 },
           ] },
         ],
@@ -2567,21 +2610,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "investment-basics", title: "Investment Case Fundamentals", lessons: [
-            { slug: "npv-irr", title: "NPV, IRR & Payback for Energy Projects", summary: "Time value of money; comparing projects; hurdle rate (typical 10-20%).", minutes: 11 },
-            { slug: "risk-assessment", title: "Risk & Sensitivity Analysis", summary: "Energy price uncertainty, technical risk (will it work?), occupancy/production change.", minutes: 10 },
-            { slug: "co-benefits", title: "Co-Benefits & Non-Energy Outcomes", summary: "Health, productivity, resilience, brand value; quantifying soft benefits.", minutes: 10 },
+            { slug: "npv-irr", title: "NPV, IRR & Payback for Energy Projects", summary: "Time value of money; comparing projects; hurdle rate (typical 10-20%).", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "risk-assessment", title: "Risk & Sensitivity Analysis", summary: "Energy price uncertainty, technical risk (will it work?), occupancy/production change.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "co-benefits", title: "Co-Benefits & Non-Energy Outcomes", summary: "Health, productivity, resilience, brand value; quantifying soft benefits.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "basics-check", title: "Investment Basics Check", summary: "Quiz on NPV, risk, and co-benefits.", minutes: 5 },
           ] },
           { slug: "case-development", title: "Building the Case", lessons: [
-            { slug: "energy-cost-baseline", title: "Energy Cost Baseline & Forecast", summary: "Current consumption and cost; price escalation assumption (2-3% p.a. typical).", minutes: 10 },
-            { slug: "project-savings", title: "Quantifying Project Savings", summary: "Conservative estimates; M&V plan; avoiding overstatement (critical!).", minutes: 10 },
-            { slug: "financial-structure", title: "Financial Structures (CAPEX, OPEX, ESCO)", summary: "On-balance vs off-balance options; ESCO trade-offs; blended cost of capital.", minutes: 10 },
+            { slug: "energy-cost-baseline", title: "Energy Cost Baseline & Forecast", summary: "Current consumption and cost; price escalation assumption (2-3% p.a. typical).", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "project-savings", title: "Quantifying Project Savings", summary: "Conservative estimates; M&V plan; avoiding overstatement (critical!).", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "financial-structure", title: "Financial Structures (CAPEX, OPEX, ESCO)", summary: "On-balance vs off-balance options; ESCO trade-offs; blended cost of capital.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "development-check", title: "Development Check", summary: "Quiz on baseline, savings, and financial structure.", minutes: 5 },
           ] },
           { slug: "case-presentation", title: "Presenting the Case & Portfolio", lessons: [
-            { slug: "presentation-structure", title: "Presentation Structure for Financiers", summary: "Executive summary, risk/return profile, timeline, governance.", minutes: 10 },
-            { slug: "portfolio-prioritisation", title: "Portfolio Prioritisation", summary: "Ranked projects by IRR, risk, strategic fit; bundling for cost-sharing.", minutes: 10 },
-            { slug: "board-approval", title: "Getting Board/Investment Committee Approval", summary: "Escalation path; key decision points; post-approval governance.", minutes: 10 },
+            { slug: "presentation-structure", title: "Presentation Structure for Financiers", summary: "Executive summary, risk/return profile, timeline, governance.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "portfolio-prioritisation", title: "Portfolio Prioritisation", summary: "Ranked projects by IRR, risk, strategic fit; bundling for cost-sharing.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "board-approval", title: "Getting Board/Investment Committee Approval", summary: "Escalation path; key decision points; post-approval governance.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "presentation-check", title: "Presentation Check", summary: "Quiz on case presentation and portfolio management.", minutes: 5 },
           ] },
         ],
@@ -2593,21 +2636,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "financing-options", title: "Financing Options Overview", lessons: [
-            { slug: "debt-equity", title: "Debt vs Equity Financing", summary: "Corporate loans (on-balance); equity investment; blend depending on risk profile.", minutes: 11 },
-            { slug: "green-finance", title: "Green Bonds, Green Loans & ESG Finance", summary: "Preferential rates for energy/environmental projects; ESG verification.", minutes: 10 },
-            { slug: "vendor-finance", title: "Vendor Financing & Lease-to-Own", summary: "Equipment suppliers offer financing; low upfront cost, higher total cost.", minutes: 10 },
+            { slug: "debt-equity", title: "Debt vs Equity Financing", summary: "Corporate loans (on-balance); equity investment; blend depending on risk profile.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "green-finance", title: "Green Bonds, Green Loans & ESG Finance", summary: "Preferential rates for energy/environmental projects; ESG verification.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "vendor-finance", title: "Vendor Financing & Lease-to-Own", summary: "Equipment suppliers offer financing; low upfront cost, higher total cost.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "options-check", title: "Financing Options Check", summary: "Quiz on debt, green finance, and vendor options.", minutes: 5 },
           ] },
           { slug: "epc-model", title: "Energy Performance Contracts (EPC) & ESCOs", lessons: [
-            { slug: "epc-structure", title: "EPC Structure & ESCO Model", summary: "ESCO funds project; is paid from energy savings; customer takes no capex risk.", minutes: 10 },
-            { slug: "epc-risks", title: "EPC Risks & Mitigants", summary: "Shortfall risk (savings < forecast); guaranteed savings clauses; M&V disputes.", minutes: 10 },
-            { slug: "shared-savings", title: "Shared-Savings Contracts", summary: "Customer and ESCO split savings (e.g., 50-50); alignment of interest.", minutes: 10 },
+            { slug: "epc-structure", title: "EPC Structure & ESCO Model", summary: "ESCO funds project; is paid from energy savings; customer takes no capex risk.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "epc-risks", title: "EPC Risks & Mitigants", summary: "Shortfall risk (savings < forecast); guaranteed savings clauses; M&V disputes.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "shared-savings", title: "Shared-Savings Contracts", summary: "Customer and ESCO split savings (e.g., 50-50); alignment of interest.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "epc-check", title: "EPC Check", summary: "Quiz on EPC structure and risk management.", minutes: 5 },
           ] },
           { slug: "emerging-finance", title: "Emerging Finance Models", lessons: [
-            { slug: "on-bill-finance", title: "On-Bill Financing & Utility Programs", summary: "Utility funds efficiency upgrades; repaid via lower energy bills.", minutes: 10 },
-            { slug: "vc-ppp", title: "Venture Capital & Public-Private Partnerships", summary: "Scaling innovation; government co-investment in transition projects.", minutes: 10 },
-            { slug: "carbon-finance", title: "Carbon Finance & Credits", summary: "Revenue from carbon savings (via carbon markets or internal pricing).", minutes: 10 },
+            { slug: "on-bill-finance", title: "On-Bill Financing & Utility Programs", summary: "Utility funds efficiency upgrades; repaid via lower energy bills.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "vc-ppp", title: "Venture Capital & Public-Private Partnerships", summary: "Scaling innovation; government co-investment in transition projects.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "carbon-finance", title: "Carbon Finance & Credits", summary: "Revenue from carbon savings (via carbon markets or internal pricing).", minutes: 10, reviewed: "2026-07-05" },
             { slug: "emerging-check", title: "Emerging Models Check", summary: "Quiz on on-bill, PPP, and carbon finance.", minutes: 5 },
           ] },
         ],
@@ -2619,21 +2662,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "procurement-basics", title: "Procurement Fundamentals", lessons: [
-            { slug: "tariff-structures", title: "Tariff Structures & Pricing", summary: "Fixed vs variable; day-ahead, forward markets; unit rates, standing charges.", minutes: 11 },
-            { slug: "contract-types", title: "Contract Types (Fixed, Index, Flexible)", summary: "Fixed price (budget certainty), index (spot-following), collar (min-max price).", minutes: 10 },
-            { slug: "risk-management", title: "Energy Price Risk Management", summary: "Hedging; price volatility; protecting against spikes; strategic reserves.", minutes: 10 },
+            { slug: "tariff-structures", title: "Tariff Structures & Pricing", summary: "Fixed vs variable; day-ahead, forward markets; unit rates, standing charges.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "contract-types", title: "Contract Types (Fixed, Index, Flexible)", summary: "Fixed price (budget certainty), index (spot-following), collar (min-max price).", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "risk-management", title: "Energy Price Risk Management", summary: "Hedging; price volatility; protecting against spikes; strategic reserves.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "basics-check", title: "Procurement Basics Check", summary: "Quiz on tariffs, contracts, and risk.", minutes: 5 },
           ] },
           { slug: "sustainable-procurement", title: "Sustainable & Clean Power Procurement", lessons: [
-            { slug: "ppas", title: "Power Purchase Agreements (PPAs)", summary: "Direct purchase of renewable power (long-term, fixed price); off-site wind/solar.", minutes: 10 },
-            { slug: "regos", title: "Renewable Energy Guarantees of Origin (REGOs)", summary: "Buying green certificates to offset grid consumption; additionality debate.", minutes: 10 },
-            { slug: "supplier-criteria", title: "Supplier Criteria & Procurement Leverage", summary: "Requiring suppliers meet carbon/efficiency targets; sustainability clauses.", minutes: 10 },
+            { slug: "ppas", title: "Power Purchase Agreements (PPAs)", summary: "Direct purchase of renewable power (long-term, fixed price); off-site wind/solar.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "regos", title: "Renewable Energy Guarantees of Origin (REGOs)", summary: "Buying green certificates to offset grid consumption; additionality debate.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "supplier-criteria", title: "Supplier Criteria & Procurement Leverage", summary: "Requiring suppliers meet carbon/efficiency targets; sustainability clauses.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "clean-check", title: "Clean Power Procurement Check", summary: "Quiz on PPAs, REGOs, and supplier engagement.", minutes: 5 },
           ] },
           { slug: "procurement-execution", title: "Procurement Strategy & Execution", lessons: [
-            { slug: "demand-forecasting", title: "Demand Forecasting & Bundling", summary: "Estimating future consumption; bundling small sites for scale.", minutes: 10 },
-            { slug: "tendering", title: "Tendering & Supplier Negotiation", summary: "RFP process; negotiating rates; multi-supplier vs single-supplier trade-off.", minutes: 10 },
-            { slug: "contract-management", title: "Contract Management & Compliance", summary: "Monitoring supplier performance; metering accuracy; billing disputes.", minutes: 10 },
+            { slug: "demand-forecasting", title: "Demand Forecasting & Bundling", summary: "Estimating future consumption; bundling small sites for scale.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "tendering", title: "Tendering & Supplier Negotiation", summary: "RFP process; negotiating rates; multi-supplier vs single-supplier trade-off.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "contract-management", title: "Contract Management & Compliance", summary: "Monitoring supplier performance; metering accuracy; billing disputes.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "execution-check", title: "Execution Check", summary: "Quiz on forecasting, tendering, and contract management.", minutes: 5 },
           ] },
         ],
@@ -2645,21 +2688,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "behaviour-change", title: "Behaviour Change Fundamentals", lessons: [
-            { slug: "psychology-of-change", title: "Psychology of Energy Behaviour", summary: "Habit, nudges, social norms, intrinsic vs extrinsic motivation.", minutes: 11 },
-            { slug: "change-model", title: "Change Management Model (Awareness → Habit)", summary: "Stages: awareness, trial, adoption, habit; typical timelines.", minutes: 10 },
-            { slug: "behaviour-metrics", title: "Measuring Behaviour Change", summary: "Engagement metrics; behaviour surveys; kWh saved; isolation from technical changes.", minutes: 10 },
+            { slug: "psychology-of-change", title: "Psychology of Energy Behaviour", summary: "Habit, nudges, social norms, intrinsic vs extrinsic motivation.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "change-model", title: "Change Management Model (Awareness → Habit)", summary: "Stages: awareness, trial, adoption, habit; typical timelines.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "behaviour-metrics", title: "Measuring Behaviour Change", summary: "Engagement metrics; behaviour surveys; kWh saved; isolation from technical changes.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "behaviour-check", title: "Behaviour Change Check", summary: "Quiz on psychology and change models.", minutes: 5 },
           ] },
           { slug: "campaigns", title: "Engagement Campaigns & Programs", lessons: [
-            { slug: "campaign-design", title: "Campaign Design & Themes", summary: "Seasonal campaigns (winter heating, summer cooling); co-worker competitions; teams.", minutes: 10 },
-            { slug: "communications", title: "Communications & Feedback", summary: "Newsletters, posters, email, social; real-time feedback (dashboard); monthly reporting.", minutes: 10 },
-            { slug: "champions", title: "Champion Network & Peer Leaders", summary: "Employee energy champions; training; recognition; grassroots ambassadors.", minutes: 10 },
+            { slug: "campaign-design", title: "Campaign Design & Themes", summary: "Seasonal campaigns (winter heating, summer cooling); co-worker competitions; teams.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "communications", title: "Communications & Feedback", summary: "Newsletters, posters, email, social; real-time feedback (dashboard); monthly reporting.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "champions", title: "Champion Network & Peer Leaders", summary: "Employee energy champions; training; recognition; grassroots ambassadors.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "campaigns-check", title: "Campaigns Check", summary: "Quiz on campaign design and communications.", minutes: 5 },
           ] },
           { slug: "incentives-culture", title: "Incentives & Sustaining Culture", lessons: [
-            { slug: "incentive-types", title: "Incentive Types (Financial, Non-Financial)", summary: "Bonuses, recognition, awards; team competitions; avoiding perverse incentives.", minutes: 10 },
-            { slug: "sustaining-habits", title: "Sustaining Habits & Avoiding Rebound", summary: "Initial change often reverts (rebound 20-30%); maintenance campaigns needed.", minutes: 10 },
-            { slug: "culture-integration", title: "Integration into Organizational Culture", summary: "Energy becoming 'how we do business'; embedded in performance reviews.", minutes: 10 },
+            { slug: "incentive-types", title: "Incentive Types (Financial, Non-Financial)", summary: "Bonuses, recognition, awards; team competitions; avoiding perverse incentives.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "sustaining-habits", title: "Sustaining Habits & Avoiding Rebound", summary: "Initial change often reverts (rebound 20-30%); maintenance campaigns needed.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "culture-integration", title: "Integration into Organizational Culture", summary: "Energy becoming 'how we do business'; embedded in performance reviews.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "incentives-check", title: "Incentives Check", summary: "Quiz on incentives and culture sustainability.", minutes: 5 },
           ] },
         ],
@@ -2671,21 +2714,21 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "net-zero-framework", title: "Net Zero Framework & Scopes", lessons: [
-            { slug: "scope-definitions", title: "Scope 1, 2, 3 Emissions & Organizational Boundaries", summary: "Direct (fuel), indirect (electricity), value chain; what to include in commitment.", minutes: 11 },
-            { slug: "carbon-accounting", title: "Carbon Accounting & Baseline", summary: "Measuring emissions; carbon factors (kgCO₂/kWh); historical baseline.", minutes: 10 },
-            { slug: "net-zero-definition", title: "What Net Zero Means (Reductions + Offsets)", summary: "Net zero = residual emissions balanced by removals/offsets; not 'net neutrality'.", minutes: 10 },
+            { slug: "scope-definitions", title: "Scope 1, 2, 3 Emissions & Organizational Boundaries", summary: "Direct (fuel), indirect (electricity), value chain; what to include in commitment.", minutes: 11, reviewed: "2026-07-05" },
+            { slug: "carbon-accounting", title: "Carbon Accounting & Baseline", summary: "Measuring emissions; carbon factors (kgCO₂/kWh); historical baseline.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "net-zero-definition", title: "What Net Zero Means (Reductions + Offsets)", summary: "Net zero = residual emissions balanced by removals/offsets; not 'net neutrality'.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "framework-check", title: "Net Zero Framework Check", summary: "Quiz on scopes and carbon accounting.", minutes: 5 },
           ] },
           { slug: "decarbonisation", title: "Decarbonisation Pathways", lessons: [
-            { slug: "macc-curves", title: "Marginal Abatement Cost (MAC) Curves", summary: "Ranking all abatement options by cost per tonne; visual roadmap.", minutes: 10 },
-            { slug: "electrification", title: "Electrification Strategy (Heat, Transport)", summary: "Replacing gas boilers with heat pumps; EVs for fleet; decoupling from fossil fuel.", minutes: 10 },
-            { slug: "renewable-transition", title: "Renewable Energy & System Transition", summary: "Solar/wind onsite or PPA; grid decarbonization; sector coupling.", minutes: 10 },
+            { slug: "macc-curves", title: "Marginal Abatement Cost (MAC) Curves", summary: "Ranking all abatement options by cost per tonne; visual roadmap.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "electrification", title: "Electrification Strategy (Heat, Transport)", summary: "Replacing gas boilers with heat pumps; EVs for fleet; decoupling from fossil fuel.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "renewable-transition", title: "Renewable Energy & System Transition", summary: "Solar/wind onsite or PPA; grid decarbonization; sector coupling.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "pathways-check", title: "Pathways Check", summary: "Quiz on MAC curves, electrification, and renewable strategy.", minutes: 5 },
           ] },
           { slug: "roadmap-delivery", title: "Roadmap Development & Delivery", lessons: [
-            { slug: "roadmap-phases", title: "Phasing Abatement (Quick Wins → Deep Cuts)", summary: "2025: efficiency & demand reduction. 2030: electrification. 2040+: residual + offsets.", minutes: 10 },
-            { slug: "offset-strategy", title: "Offsets & Removals Strategy", summary: "Reforestation, direct air capture (DAC), nature-based solutions; additionality & permanence.", minutes: 10 },
-            { slug: "credibility-reporting", title: "Credibility, Reporting & Accountability", summary: "Science-based targets (SBTi); annual progress reporting; reassessment if needed.", minutes: 10 },
+            { slug: "roadmap-phases", title: "Phasing Abatement (Quick Wins → Deep Cuts)", summary: "2025: efficiency & demand reduction. 2030: electrification. 2040+: residual + offsets.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "offset-strategy", title: "Offsets & Removals Strategy", summary: "Reforestation, direct air capture (DAC), nature-based solutions; additionality & permanence.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "credibility-reporting", title: "Credibility, Reporting & Accountability", summary: "Science-based targets (SBTi); annual progress reporting; reassessment if needed.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "delivery-check", title: "Delivery Check", summary: "Quiz on roadmap phasing, offsets, and credibility.", minutes: 5 },
           ] },
         ],
@@ -2728,6 +2771,7 @@ export const sectors: Level[] = [
                 summary:
                   "From milled grain to packaged beer — mashing, lautering, boiling, fermentation and conditioning — and where each stage draws its energy.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "steam-and-hot-water-demand",
@@ -2735,6 +2779,7 @@ export const sectors: Level[] = [
                 summary:
                   "Mashing, sparging and the wort boil are the single biggest thermal load in the building — quantifying it and why the boil dominates.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "refrigeration-and-cooling-demand",
@@ -2742,6 +2787,7 @@ export const sectors: Level[] = [
                 summary:
                   "Wort chilling, fermentation temperature control and cold conditioning — the brewery's other dominant load, this time electrical.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "fundamentals-check",
@@ -2761,6 +2807,7 @@ export const sectors: Level[] = [
                 summary:
                   "Typical thermal and electrical intensity benchmarks, why craft breweries run less efficiently than macro-breweries, and the water-energy link.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "cip-and-packaging-energy",
@@ -2768,6 +2815,7 @@ export const sectors: Level[] = [
                 summary:
                   "Clean-in-place cycles and pasteurisation are hidden hot-water heavyweights; the packaging line's own electrical and compressed-air demand.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "compressed-air-and-utilities",
@@ -2775,6 +2823,7 @@ export const sectors: Level[] = [
                 summary:
                   "Where compressed air is used in a brewery, and the ancillary loads (pumps, cold stores, lighting) that add up across the site.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "benchmarks-check",
@@ -2794,6 +2843,7 @@ export const sectors: Level[] = [
                 summary:
                   "Why brewery effluent is charged by strength as well as volume, and how heat and water recovery cut both the energy bill and the effluent charge together.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "food-safety-and-energy",
@@ -2801,6 +2851,7 @@ export const sectors: Level[] = [
                 summary:
                   "HACCP-driven CIP temperatures and cold-chain limits aren't negotiable — where safety, not efficiency, sets the minimum.",
                 minutes: 9,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "reporting-and-schemes",
@@ -2808,6 +2859,7 @@ export const sectors: Level[] = [
                 summary:
                   "Which UK schemes actually apply to a brewery your size, the sector's historic Climate Change Agreement, and the rising cost of packaging producer responsibility.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "compliance-check",
@@ -2827,6 +2879,7 @@ export const sectors: Level[] = [
                 summary:
                   "Capturing the wort boil's vapour and hot-wort heat, and why a brewery's steady, simultaneous steam-and-power demand often suits CHP unusually well.",
                 minutes: 11,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "refrigeration-and-glycol-optimisation",
@@ -2834,6 +2887,7 @@ export const sectors: Level[] = [
                 summary:
                   "Tuning fermentation and conditioning cooling — setpoints, glycol loop design and free cooling — for the cellar's round-the-clock load.",
                 minutes: 10,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "two-quick-diagnostics",
@@ -2841,6 +2895,7 @@ export const sectors: Level[] = [
                 summary:
                   "Two short, real brewery call-outs — a missed heat-recovery opportunity and a glycol system fault — calculate, diagnose and prescribe the fix.",
                 minutes: 12,
+                reviewed: "2026-07-05",
               },
               {
                 slug: "efficiency-check",
@@ -2868,6 +2923,7 @@ export const sectors: Level[] = [
     ],
   },
 ];
+
 
 
 

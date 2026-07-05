@@ -1,4 +1,4 @@
-Combustion is where mass balances earn their keep. You met the combustion reaction in the [boiler fundamentals](/courses/boilers-and-fired-systems/combustion-process) lesson — fuel plus air produces flue gas plus heat — but that lesson used the reaction to talk about efficiency. Here, you'll use exactly the same reaction to *build the mass balance behind it*, and see where the "10 volumes of air per volume of methane" figure actually comes from.
+Combustion is where mass balances earn their keep. You met the combustion reaction in the [boiler fundamentals](/courses/boilers-and-fired-systems/combustion-process) lesson, fuel plus air produces flue gas plus heat, but that lesson used the reaction to talk about efficiency. Here, you'll use exactly the same reaction to *build the mass balance behind it*, and see where the "10 volumes of air per volume of methane" figure actually comes from.
 
 ## The reaction, mass-checked
 
@@ -13,19 +13,19 @@ Using molar masses (C = 12, H = 1, O = 16), convert this to a mass statement:
 | In | 1 × CH₄ (16) + 2 × O₂ (2 × 32 = 64) | **80** |
 | Out | 1 × CO₂ (44) + 2 × H₂O (2 × 18 = 36) | **80** |
 
-The mass balance closes exactly: 80 in, 80 out. Notice what this confirms — individual *molecules* are destroyed and created (methane and oxygen molecules disappear; carbon dioxide and water molecules appear), but the total mass doesn't change by a single gram. This is the conservation-of-mass principle from the [previous lesson](/courses/mass-and-energy-balances/conservation-of-mass), holding true even through a chemical reaction.
+The mass balance closes exactly: 80 in, 80 out. Notice what this confirms, individual *molecules* are destroyed and created (methane and oxygen molecules disappear; carbon dioxide and water molecules appear), but the total mass doesn't change by a single gram. This is the conservation-of-mass principle from the [previous lesson](/courses/mass-and-energy-balances/conservation-of-mass), holding true even through a chemical reaction.
 
 ## From moles to mass: two ways to state the same air requirement
 
-The boilers course told you that methane needs about **2 molecules of oxygen** for every molecule of fuel, and because air is only ~21% oxygen by volume, that works out to roughly **10 volumes of air for every 1 volume of methane**. That's a volume (or, equivalently, a mole) ratio — perfectly useful for combustion chemistry, but not directly usable in a mass balance, because gas volumes change with temperature and pressure while mass doesn't.
+The boilers course told you that methane needs about **2 molecules of oxygen** for every molecule of fuel, and because air is only ~21% oxygen by volume, that works out to roughly **10 volumes of air for every 1 volume of methane**. That's a volume (or, equivalently, a mole) ratio, perfectly useful for combustion chemistry, but not directly usable in a mass balance, because gas volumes change with temperature and pressure while mass doesn't.
 
-To get a mass ratio, you need one more fact: **air is about 23.2% oxygen by mass** (not 21% — mass and volume/mole percentages differ because oxygen molecules are heavier than nitrogen molecules). Working it through:
+To get a mass ratio, you need one more fact: **air is about 23.2% oxygen by mass** (not 21%, mass and volume/mole percentages differ because oxygen molecules are heavier than nitrogen molecules). Working it through:
 
 - Stoichiometric oxygen needed: 64 kg O₂ per 16 kg CH₄ = **4 kg O₂ per kg of fuel**
 - Stoichiometric air needed: 4 kg O₂ ÷ 0.232 (mass fraction of O₂ in air) ≈ **17.2 kg air per kg of fuel**
 
-<Callout variant="key" title="Same physics, two ratios — don't mix them up">
-"10 volumes of air per volume of fuel" and "17.2 kg of air per kg of fuel" describe exactly the same stoichiometric requirement. They differ because air is a lighter gas mixture per mole than methane is (roughly 29 g/mol for air vs 16 g/mol for methane), so the same *mole* ratio becomes a bigger number once you convert to *mass*. A mass balance always needs the mass version — this is a common source of a factor-of-two error when people quote a volumetric ratio into a mass calculation without converting.
+<Callout variant="key" title="Same physics, two ratios: don't mix them up">
+"10 volumes of air per volume of fuel" and "17.2 kg of air per kg of fuel" describe exactly the same stoichiometric requirement. They differ because air is a lighter gas mixture per mole than methane is (roughly 29 g/mol for air vs 16 g/mol for methane), so the same *mole* ratio becomes a bigger number once you convert to *mass*. A mass balance always needs the mass version: this is a common source of a factor-of-two error when people quote a volumetric ratio into a mass calculation without converting.
 </Callout>
 
 ## Worked example: sizing the flue gas from a 500 kW boiler
@@ -44,16 +44,22 @@ Take the 500 kW boiler used elsewhere on this platform, and work out how much fl
 
 > Actual air = 0.172 × 1.20 = **0.206 kg/s**
 
-**Flue gas mass — found entirely from the balance, no separate measurement needed.** Everything that enters the combustion chamber (fuel + air) must leave it as flue gas (plus whatever tiny mass stays behind as ash or soot, negligible for gas firing):
+**Flue gas mass, found entirely from the balance, no separate measurement needed.** Everything that enters the combustion chamber (fuel + air) must leave it as flue gas (plus whatever tiny mass stays behind as ash or soot, negligible for gas firing):
 
 > Flue gas mass flow = Fuel in + Air in = 0.01 + 0.206 = **0.216 kg/s**
 
-That last step is the entire point of doing the mass balance: you now know the mass of hot flue gas leaving the stack every second — the exact figure needed to calculate how much sensible heat it's carrying away — without ever having measured it directly.
+That last step is the entire point of doing the mass balance: you now know the mass of hot flue gas leaving the stack every second, the exact figure needed to calculate how much sensible heat it's carrying away, without ever having measured it directly.
 
 <Callout variant="tip" title="This is why excess air matters so much for mass, not just chemistry">
-Look at where that 0.206 kg/s of air went: only the oxygen (about 23%) actually reacts. The rest — mostly nitrogen — passes straight through the flame unreacted and out the flue, carrying its share of the extra mass (and the sensible heat that comes with it) with it. Every bit of excess air you add is extra flue-gas mass you're heating up and throwing away, which is precisely why the [excess air lesson](/courses/boilers-and-fired-systems/excess-air) quantifies it as a direct efficiency penalty (roughly 0.1% efficiency lost per 1% of excess air).
+Look at where that 0.206 kg/s of air went: only the oxygen (about 23%) actually reacts. The rest, mostly nitrogen, passes straight through the flame unreacted and out the flue, carrying its share of the extra mass (and the sensible heat that comes with it) with it. Every bit of excess air you add is extra flue-gas mass you're heating up and throwing away, which is precisely why the [excess air lesson](/courses/boilers-and-fired-systems/excess-air) quantifies it as a direct efficiency penalty (roughly 0.1% efficiency lost per 1% of excess air).
 </Callout>
 
 ## The pattern to reuse
 
-Notice the shape of this worked example: you calculated *two* of the three boundary streams (fuel, air) from known ratios, and got the *third* (flue gas) for free from mass conservation, without measuring it. This "measure some, calculate the rest" pattern is the single most useful move in practical mass-balance work, and you'll use it again — on water vapour instead of combustion gases — in the next lesson.
+Notice the shape of this worked example: you calculated *two* of the three boundary streams (fuel, air) from known ratios, and got the *third* (flue gas) for free from mass conservation, without measuring it. This "measure some, calculate the rest" pattern is the single most useful move in practical mass-balance work, and you'll use it again, on water vapour instead of combustion gases, in the next lesson.
+
+## Sources and further reading
+
+- [Combustion Engineering Association](https://cea.org.uk/): combustion fundamentals and flue-gas composition.
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): stoichiometry and combustion calculations.
+- [HSE (Health and Safety Executive)](https://www.hse.gov.uk/): safe operation of combustion plant.

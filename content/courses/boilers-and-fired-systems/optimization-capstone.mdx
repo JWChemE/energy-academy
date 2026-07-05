@@ -1,9 +1,9 @@
-You've learned how combustion works, where boilers waste energy, and the practical levers for efficiency. This capstone puts you in the boiler house as the auditor — not to wiggle sliders until a light goes green, but to **diagnose what's actually wrong** with a real industrial steam boiler and prove your fix works.
+You've learned how combustion works, where boilers waste energy, and the practical levers for efficiency. This capstone puts you in the boiler house as the auditor: not to wiggle sliders until a light goes green, but to **diagnose what's actually wrong** with a real industrial steam boiler and prove your fix works.
 
 The simulator has two modes:
 
-- **🩺 Diagnose** (the main event) — six call-out cases, each with a different underlying fault. Read the control panel, walk the plant, work out the true root cause, prescribe the fix, and verify the boiler recovers. You're scored on your diagnosis, your prescription, and whether the boiler actually improves.
-- **🎛️ Learn** — the guided tuning sandbox from your studies, for refreshing how each lever moves the losses before you tackle the cases.
+- **🩺 Diagnose** (the main event), six call-out cases, each with a different underlying fault. Read the control panel, walk the plant, work out the true root cause, prescribe the fix, and verify the boiler recovers. You're scored on your diagnosis, your prescription, and whether the boiler actually improves.
+- **🎛️ Learn**: the guided tuning sandbox from your studies, for refreshing how each lever moves the losses before you tackle the cases.
 
 <SteamBoilerOptimizer />
 
@@ -11,10 +11,10 @@ The simulator has two modes:
 
 Each case is a four-step loop, just like a real investigation:
 
-1. **Investigate** — read the instruments (combustion gases, stack and economiser temperatures, and the water-side chemistry) **and** inspect the installation. Crucially, some things you're told; others you must infer. Click each plant component to see what you'd find on site — the readings give you the symptoms, the plant tells you why.
-2. **Diagnose** — select the root cause(s). The same symptom can have several causes, so cross-reference. Picking a wrong cause costs you.
-3. **Prescribe** — choose the corrective actions. They're applied to the boiler.
-4. **Verify** — see whether the boiler actually recovers, get your score, and read a debrief that walks the real fault chain.
+1. **Investigate**: read the instruments (combustion gases, stack and economiser temperatures, and the water-side chemistry) **and** inspect the installation. Crucially, some things you're told; others you must infer. Click each plant component to see what you'd find on site: the readings give you the symptoms, the plant tells you why.
+2. **Diagnose**: select the root cause(s). The same symptom can have several causes, so cross-reference. Picking a wrong cause costs you.
+3. **Prescribe**: choose the corrective actions. They're applied to the boiler.
+4. **Verify**: see whether the boiler actually recovers, get your score, and read a debrief that walks the real fault chain.
 
 ## The skill: differential diagnosis
 
@@ -23,23 +23,23 @@ The whole point is that a single symptom rarely has a single cause. A **hot stac
 - too much excess air (you'll see it in high O₂ / low CO₂),
 - a fouled or bypassed economiser (the economiser's gas-in and gas-out temperatures will be almost the same),
 - scaled tubes (the water side will show high TDS and a history of poor treatment),
-- or simply no economiser fitted at all (by design — not a fault).
+- or simply no economiser fitted at all (by design: not a fault).
 
-You tell them apart by reading the *other* instruments and inspecting the plant — exactly what a real energy auditor does.
+You tell them apart by reading the *other* instruments and inspecting the plant, exactly what a real energy auditor does.
 
 <Callout variant="key" title="Read the whole plant, not one gauge">
-The commonest diagnostic mistake is to fixate on one reading and reach for the obvious lever. High gas bill? "Must be the burner." Hot stack? "Must be scaling." The cases are built to punish that. The discipline is to gather *all* the evidence — combustion gases, stack and economiser temperatures, feedwater TDS and treatment, blowdown control, load versus capacity — and let the pattern point to the root cause. Sometimes the right answer isn't a tune at all; it's "regenerate the softener", "the economiser is fouled", or "this boiler is the wrong size for the load".
+The commonest diagnostic mistake is to fixate on one reading and reach for the obvious lever. High gas bill? "Must be the burner." Hot stack? "Must be scaling." The cases are built to punish that. The discipline is to gather *all* the evidence, combustion gases, stack and economiser temperatures, feedwater TDS and treatment, blowdown control, load versus capacity, and let the pattern point to the root cause. Sometimes the right answer isn't a tune at all; it's "regenerate the softener", "the economiser is fouled", or "this boiler is the wrong size for the load".
 </Callout>
 
 ## What the cases teach
 
 Between them, the six cases cover the faults you'll meet most often in a real boiler house:
 
-- **Combustion** — burners running with too much air, and the dangerous opposite: air-starved, sooting, incomplete combustion.
-- **Heat recovery** — spotting whether an economiser is fitted at all, and whether a fitted one is actually working.
-- **Water treatment** — telling softened from RO feedwater, reading TDS, and understanding how poor treatment and slack blowdown lead to scale (and how over-blowing wastes heat).
-- **Blowdown control** — matching blowdown to the water quality, and why it must be re-set after a treatment upgrade.
-- **Sizing** — recognising when poor efficiency is a load/sizing problem, not a tuning one.
+- **Combustion**: burners running with too much air, and the dangerous opposite: air-starved, sooting, incomplete combustion.
+- **Heat recovery**: spotting whether an economiser is fitted at all, and whether a fitted one is actually working.
+- **Water treatment**: telling softened from RO feedwater, reading TDS, and understanding how poor treatment and slack blowdown lead to scale (and how over-blowing wastes heat).
+- **Blowdown control**: matching blowdown to the water quality, and why it must be re-set after a treatment upgrade.
+- **Sizing**: recognising when poor efficiency is a load/sizing problem, not a tuning one.
 
 ## After you finish
 
@@ -47,11 +47,11 @@ For each case, ask yourself the questions a real auditor would:
 
 - Did I gather all the evidence before committing to a diagnosis, or did I jump to the obvious lever?
 - Which instrument reading was the *decisive* clue that ruled the red herrings out?
-- What would I write in my report — and how would I justify any capital spend (descale, new economiser, water treatment upgrade)?
+- What would I write in my report, and how would I justify any capital spend (descale, new economiser, water treatment upgrade)?
 
 ## Related lessons
 
-- [Combustion Efficiency](/courses/boilers-and-fired-systems/combustion-efficiency) — the physics behind the flue-gas readings
-- [Managing Excess Air](/courses/boilers-and-fired-systems/excess-air) — Cases 1 and 4
-- [Boiler Blowdown & Water Treatment](/courses/boilers-and-fired-systems/blowdown) — Cases 2 and 6
-- [Retrofit & Replacement Options](/courses/boilers-and-fired-systems/retrofit-options) — turning a diagnosis into a costed recommendation
+- [Combustion Efficiency](/courses/boilers-and-fired-systems/combustion-efficiency): the physics behind the flue-gas readings
+- [Managing Excess Air](/courses/boilers-and-fired-systems/excess-air): Cases 1 and 4
+- [Boiler Blowdown & Water Treatment](/courses/boilers-and-fired-systems/blowdown): Cases 2 and 6
+- [Retrofit & Replacement Options](/courses/boilers-and-fired-systems/retrofit-options), turning a diagnosis into a costed recommendation

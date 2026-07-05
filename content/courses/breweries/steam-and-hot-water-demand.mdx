@@ -12,29 +12,35 @@ Take a typical 30 hL batch and follow its heat demand through the brewhouse:
 
 > 3,000 kg × 4.18 kJ/kg·K × (100 − 68) °C ÷ 3,600 ≈ **111.5 kWh**
 
-**3. Maintaining the boil.** A traditional 60–90 minute boil evaporates around 8% of the batch volume — for 30 hL, that's 240 kg of water driven off as vapour, absorbing its full latent heat of vaporisation (2,257 kJ/kg, the same figure from the steam properties lesson):
+**3. Maintaining the boil.** A traditional 60–90 minute boil evaporates around 8% of the batch volume, for 30 hL, that's 240 kg of water driven off as vapour, absorbing its full latent heat of vaporisation (2,257 kJ/kg, the same figure from the steam properties lesson):
 
 > 240 kg × 2,257 kJ/kg ÷ 3,600 ≈ **150.5 kWh**
 
 <Callout variant="key" title="Add it up, and the boil dominates">
-Total process heat per batch: 227.6 + 111.5 + 150.5 ≈ **489.5 kWh**. Notice that raising and maintaining the boil (111.5 + 150.5 ≈ 262 kWh) is a bigger share than heating the mash liquor alone — the boil isn't just "the last step before cooling," it's the single largest heat demand in the whole brewhouse, batch after batch.
+Total process heat per batch: 227.6 + 111.5 + 150.5 ≈ **489.5 kWh**. Notice that raising and maintaining the boil (111.5 + 150.5 ≈ 262 kWh) is a bigger share than heating the mash liquor alone: the boil isn't just "the last step before cooling," it's the single largest heat demand in the whole brewhouse, batch after batch.
 </Callout>
 
 ## From process heat to gas meter reading
 
-That 489.5 kWh is useful heat delivered to water and wort — it isn't what the gas meter records, because the boiler itself isn't 100% efficient. At a typical 85% boiler efficiency (squarely in the range from the [boiler efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency)):
+That 489.5 kWh is useful heat delivered to water and wort: it isn't what the gas meter records, because the boiler itself isn't 100% efficient. At a typical 85% boiler efficiency (squarely in the range from the [boiler efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency)):
 
 > Gas input per batch = 489.5 ÷ 0.85 ≈ **575.9 kWh**
 
-Scale that to 1,200 batches a year (a plausible schedule for a mid-size regional brewery) and the brewhouse alone accounts for roughly **691,000 kWh/year** of gas — before counting CIP, pasteurisation or space heating, covered in the next module.
+Scale that to 1,200 batches a year (a plausible schedule for a mid-size regional brewery) and the brewhouse alone accounts for roughly **691,000 kWh/year** of gas, before counting CIP, pasteurisation or space heating, covered in the next module.
 
 ## Where the energy actually goes
 
-Look back at the three steps: mashing (227.6 kWh) is straightforward sensible heating — hard to avoid, though not impossible to trim with better insulation and faster liquor transfer. The boil (262 kWh combined) is where the real leverage sits:
+Look back at the three steps: mashing (227.6 kWh) is straightforward sensible heating, hard to avoid, though not impossible to trim with better insulation and faster liquor transfer. The boil (262 kWh combined) is where the real leverage sits:
 
-- **Boil-off rate** is a direct dial on energy use — a modern low-boil-off kettle achieving 4% evaporation instead of 8% roughly halves the latent-heat component of the boil, a substantial, provable saving.
-- **The evaporated vapour itself carries that 150.5 kWh/batch away** — venting it to atmosphere wastes exactly the heat you just paid to put into it. Capturing it (vapour condensing) is one of the two heat-recovery opportunities covered later in this course, alongside cooling the boiled wort back down.
+- **Boil-off rate** is a direct dial on energy use: a modern low-boil-off kettle achieving 4% evaporation instead of 8% roughly halves the latent-heat component of the boil, a substantial, provable saving.
+- **The evaporated vapour itself carries that 150.5 kWh/batch away**: venting it to atmosphere wastes exactly the heat you just paid to put into it. Capturing it (vapour condensing) is one of the two heat-recovery opportunities covered later in this course, alongside cooling the boiled wort back down.
 
 <Callout variant="tip">
 Whenever you're sizing or auditing a brewhouse boiler, work from the batch-level heat demand upward (as this lesson just did), not from a nameplate rating downward. It tells you not just how big the boiler needs to be, but exactly which of the three heating steps is worth attacking first.
 </Callout>
+
+## Sources and further reading
+
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam): steam system reference.
+- [Brewers Association sustainability manuals](https://www.brewersassociation.org/): brewhouse energy usage benchmarks.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): food and drink sector energy.

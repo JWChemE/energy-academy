@@ -1,4 +1,4 @@
-A single stream, plotted as temperature against the heat it carries, is just a straight line. The power of pinch analysis comes from combining *all* the hot streams into one curve, and *all* the cold streams into another — the **composite curves** — so you can see the whole process's heating and cooling needs on one picture.
+A single stream, plotted as temperature against the heat it carries, is just a straight line. The power of pinch analysis comes from combining *all* the hot streams into one curve, and *all* the cold streams into another: the **composite curves**, so you can see the whole process's heating and cooling needs on one picture.
 
 ## The process to combine
 
@@ -21,7 +21,7 @@ List every temperature at which a hot stream starts or ends (180, 150, 60, 40), 
 | 150 → 60 °C | H1 + H2 | 4.5 | 4.5 × 90 = 405 | 495 |
 | 60 → 40 °C | H1 only | 3.0 | 3.0 × 20 = 60 | 555 |
 
-The **hot composite curve** is this cumulative-heat column plotted against temperature: it starts at (180 °C, 0 kW) and ends at (40 °C, 555 kW) — matching the two streams' combined total load exactly. Notice the curve gets *steeper* in the middle band, where both hot streams are releasing heat at once (a bigger combined CP means more heat per degree).
+The **hot composite curve** is this cumulative-heat column plotted against temperature: it starts at (180 °C, 0 kW) and ends at (40 °C, 555 kW), matching the two streams' combined total load exactly. Notice the curve gets *steeper* in the middle band, where both hot streams are releasing heat at once (a bigger combined CP means more heat per degree).
 
 ## Building the cold composite curve
 
@@ -33,16 +33,21 @@ Exactly the same process, for the cold streams:
 | 170 → 50 °C | C1 + C2 | 6.0 | 6.0 × 120 = 720 | 760 |
 | 50 → 30 °C | C2 only | 4.0 | 4.0 × 20 = 80 | 840 |
 
-The **cold composite curve** runs from (30 °C, 0 kW) up to (190 °C, 840 kW) — the two cold streams' combined heating requirement.
+The **cold composite curve** runs from (30 °C, 0 kW) up to (190 °C, 840 kW): the two cold streams' combined heating requirement.
 
 <Callout variant="key" title="Two curves, one picture">
-Plot both composite curves on the same axes — temperature up the side, cumulative heat along the bottom. The hot composite curve sits somewhere above the cold composite curve everywhere (heat can only flow from hot to cold), and the vertical gap between them at any point is the temperature difference available for heat exchange there. Where that gap is at its *narrowest*, you've found the pinch — the tightest constraint in the whole process.
+Plot both composite curves on the same axes, temperature up the side, cumulative heat along the bottom. The hot composite curve sits somewhere above the cold composite curve everywhere (heat can only flow from hot to cold), and the vertical gap between them at any point is the temperature difference available for heat exchange there. Where that gap is at its *narrowest*, you've found the pinch: the tightest constraint in the whole process.
 </Callout>
 
 ## Reading the picture, qualitatively
 
-Look at where the two curves' cumulative-heat ranges overlap: the cold composite needs heat from 0 up to 840 kW; the hot composite supplies heat from 0 up to 555 kW. Because the cold demand (840 kW) is bigger than the hot supply (555 kW), the curves can't be lined up so that heat exchange alone satisfies everything — some external heating (hot utility) and, depending on exactly where the curves sit relative to each other, possibly some external cooling (cold utility) too, will be unavoidable. Exactly how much of each, and exactly where the curves come closest together, is what the next lesson calculates precisely.
+Look at where the two curves' cumulative-heat ranges overlap: the cold composite needs heat from 0 up to 840 kW; the hot composite supplies heat from 0 up to 555 kW. Because the cold demand (840 kW) is bigger than the hot supply (555 kW), the curves can't be lined up so that heat exchange alone satisfies everything: some external heating (hot utility) and, depending on exactly where the curves sit relative to each other, possibly some external cooling (cold utility) too, will be unavoidable. Exactly how much of each, and exactly where the curves come closest together, is what the next lesson calculates precisely.
 
 <Callout variant="tip">
-You don't need to draw the composite curves with a ruler to get a correct pinch analysis — the numerical method in the next lesson gives you the exact same answer through arithmetic alone. But the picture is invaluable for building intuition and for presenting a result to someone who'd rather see a chart than a cascade table — much like the [Sankey diagram](/courses/mass-and-energy-balances/sankey-diagrams) you met earlier makes an energy balance easy to communicate at a glance.
+You don't need to draw the composite curves with a ruler to get a correct pinch analysis: the numerical method in the next lesson gives you the exact same answer through arithmetic alone. But the picture is invaluable for building intuition and for presenting a result to someone who'd rather see a chart than a cascade table, much like the [Sankey diagram](/courses/mass-and-energy-balances/sankey-diagrams) you met earlier makes an energy balance easy to communicate at a glance.
 </Callout>
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): composite curve construction.
+- [Energy Institute](https://www.energyinst.org/)

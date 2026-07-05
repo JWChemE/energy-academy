@@ -1,13 +1,13 @@
-The [first lesson of this course](/courses/mass-and-energy-balances/conservation-laws) mentioned the second law of thermodynamics only in passing: energy degrades in quality with every real conversion. Every balance you've built so far has treated a kilowatt as a kilowatt, full stop — and for finding out *where* energy goes, that's exactly the right level of detail. But it hides an important question a good energy manager should always ask next: is this particular kilowatt actually worth as much as that one?
+The [first lesson of this course](/courses/mass-and-energy-balances/conservation-laws) mentioned the second law of thermodynamics only in passing: energy degrades in quality with every real conversion. Every balance you've built so far has treated a kilowatt as a kilowatt, full stop, and for finding out *where* energy goes, that's exactly the right level of detail. But it hides an important question a good energy manager should always ask next: is this particular kilowatt actually worth as much as that one?
 
 ## Not all kilowatts are equal
 
-A kilowatt of electricity can be converted, in principle, almost entirely into useful mechanical work, light, or high-temperature heat. A kilowatt of heat sitting in lukewarm water at 30 °C can do almost none of those things — it can warm something even cooler, and not much else. Both are genuinely "a kilowatt" by the conservation-of-energy accounting you've spent this whole course building. But they are not remotely interchangeable, because one can do far more *useful work* than the other.
+A kilowatt of electricity can be converted, in principle, almost entirely into useful mechanical work, light, or high-temperature heat. A kilowatt of heat sitting in lukewarm water at 30 °C can do almost none of those things: it can warm something even cooler, and not much else. Both are genuinely "a kilowatt" by the conservation-of-energy accounting you've spent this whole course building. But they are not remotely interchangeable, because one can do far more *useful work* than the other.
 
-This distinction — the *usefulness*, not just the quantity, of energy — is called **exergy** (sometimes "availability"). Where an energy balance answers "how much energy is there," an exergy analysis answers "how much of that could actually be turned into useful work, given the temperature of everything around it."
+This distinction (the *usefulness*, not just the quantity, of energy) is called **exergy** (sometimes "availability"). Where an energy balance answers "how much energy is there," an exergy analysis answers "how much of that could actually be turned into useful work, given the temperature of everything around it."
 
 <Callout variant="key" title="Energy is conserved; exergy is not">
-This is the whole content of the second law in one line: every real process conserves energy exactly, but destroys some exergy — some of the energy's *capacity to do useful work* is irreversibly lost, usually as heat spreading into the surroundings at close to ambient temperature. You can never get that usefulness back, even though the energy itself is still "there" by any first-law accounting.
+This is the whole content of the second law in one line: every real process conserves energy exactly, but destroys some exergy. Some of the energy's *capacity to do useful work* is irreversibly lost, usually as heat spreading into the surroundings at close to ambient temperature. You can never get that usefulness back, even though the energy itself is still "there" by any first-law accounting.
 </Callout>
 
 ## A simple way to see it: temperature sets the ceiling
@@ -18,21 +18,26 @@ Applying this idea (with a 20 °C ambient reference) to the three heat grades fr
 
 | Grade (from the waste heat course) | Typical temperature | Maximum theoretical work fraction |
 | --- | --- | --- |
-| **High-grade** — boiler flue gas | ~200 °C | **~38%** |
-| **Medium-grade** — chiller condenser water | ~80 °C | **~17%** |
-| **Low-grade** — building exhaust air | ~35 °C | **~5%** |
+| **High-grade**: boiler flue gas | ~200 °C | **~38%** |
+| **Medium-grade**: chiller condenser water | ~80 °C | **~17%** |
+| **Low-grade**: building exhaust air | ~35 °C | **~5%** |
 
-The numbers don't matter as exact figures — what matters is the *shape* of the result. A 200 °C flue gas stream carries real potential to generate electricity or do mechanical work (which is exactly why some large boiler plants recover it through a steam turbine or organic Rankine cycle). A 35 °C exhaust air stream can barely do any work at all — its only sensible use is direct heating of something even cooler, which is precisely why the waste heat course frames low-grade heat recovery around finding a nearby heating *demand* rather than trying to generate power from it.
+The numbers don't matter as exact figures: what matters is the *shape* of the result. A 200 °C flue gas stream carries real potential to generate electricity or do mechanical work (which is exactly why some large boiler plants recover it through a steam turbine or organic Rankine cycle). A 35 °C exhaust air stream can barely do any work at all: its only sensible use is direct heating of something even cooler, which is precisely why the waste heat course frames low-grade heat recovery around finding a nearby heating *demand* rather than trying to generate power from it.
 
 ## Why this matters for decisions, not just physics
 
 This is the practical payoff of an otherwise abstract idea: **match the grade of energy to the grade of the job.**
 
-- Using high-exergy electricity to run a resistance heater for space heating is using a source capable of ~100% work conversion to do a job — low-temperature heating — that barely needs any exergy at all. A heat pump, by contrast, uses a little high-grade electricity to *move* several times as much low-grade heat from outside — a far better match of quality to task, and the entire economic case behind the [heat pump courses](/courses/refrigeration-and-heat-pumps/reverse-cycle) on this platform.
+- Using high-exergy electricity to run a resistance heater for space heating is using a source capable of ~100% work conversion to do a job, low-temperature heating, that barely needs any exergy at all. A heat pump, by contrast, uses a little high-grade electricity to *move* several times as much low-grade heat from outside: a far better match of quality to task, and the entire economic case behind the [heat pump courses](/courses/refrigeration-and-heat-pumps/reverse-cycle) on this platform.
 - Recovering 200 °C flue-gas heat to preheat combustion air or feedwater (a same-grade, high-temperature job) captures its value well. Using that same 200 °C stream just to gently warm a 35 °C ventilation air stream wastes most of its exergy on a job a much lower-grade source could have done just as well.
 
 <Callout variant="tip" title="Ask 'what grade does this job actually need?'">
-Before proposing a waste-heat recovery project or an electrification measure, ask what temperature the *demand* genuinely requires. Matching a low-grade source to a low-grade demand (or reserving high-grade energy for jobs that truly need it) is often worth more than the raw kWh numbers in a first-law energy balance would suggest — which is exactly why professional practice increasingly reports both an energy balance *and* an exergy view for major decisions.
+Before proposing a waste-heat recovery project or an electrification measure, ask what temperature the *demand* genuinely requires. Matching a low-grade source to a low-grade demand (or reserving high-grade energy for jobs that truly need it) is often worth more than the raw kWh numbers in a first-law energy balance would suggest, which is exactly why professional practice increasingly reports both an energy balance *and* an exergy view for major decisions.
 </Callout>
 
-This is a first taste, not the full second-law toolkit — but it's enough to change how you read every energy balance from here on. The final lesson puts everything in this course together on one combined worked example.
+This is a first taste, not the full second-law toolkit, but it's enough to change how you read every energy balance from here on. The final lesson puts everything in this course together on one combined worked example.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): thermodynamics and exergy analysis references.
+- [Energy Institute](https://www.energyinst.org/): energy quality and second-law thinking.

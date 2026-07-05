@@ -1,13 +1,13 @@
-Before you can find a pinch, you need to describe every stream in the process the same simple way — and understand the one parameter, the minimum approach temperature, that governs how close any of them can get to each other.
+Before you can find a pinch, you need to describe every stream in the process the same simple way, and understand the one parameter, the minimum approach temperature, that governs how close any of them can get to each other.
 
 ## Classifying every stream: hot or cold
 
 Every stream that needs a temperature change is one of exactly two types:
 
-- A **hot stream** needs to be *cooled* — its supply temperature is higher than the temperature it needs to leave at. A reactor effluent going from 180 °C down to 40 °C for storage is a hot stream.
-- A **cold stream** needs to be *heated* — its supply temperature is lower than the temperature it needs to reach. Cold feedwater going from 30 °C up to 170 °C before it enters a reactor is a cold stream.
+- A **hot stream** needs to be *cooled*: its supply temperature is higher than the temperature it needs to leave at. A reactor effluent going from 180 °C down to 40 °C for storage is a hot stream.
+- A **cold stream** needs to be *heated*: its supply temperature is lower than the temperature it needs to reach. Cold feedwater going from 30 °C up to 170 °C before it enters a reactor is a cold stream.
 
-That's the entire classification. It doesn't matter what the stream physically *is* — water, air, a process fluid, flue gas — only whether it needs heating or cooling to get from where it is to where it needs to be.
+That's the entire classification. It doesn't matter what the stream physically *is* (water, air, a process fluid, flue gas): only whether it needs heating or cooling to get from where it is to where it needs to be.
 
 ## Heat capacity flow rate: one number per stream
 
@@ -15,7 +15,7 @@ Every stream's importance to the balance is captured in a single number, its **h
 
 > CP = mass flow rate × specific heat capacity
 
-This is exactly the same quantity you met as "ṁ × cp" in the [Mass & Energy Balances course](/courses/mass-and-energy-balances/hvac-energy-balance) — just given its own symbol because you'll use it constantly in this course. A stream's total heat load, from its supply temperature to its target, is simply:
+This is exactly the same quantity you met as "ṁ × cp" in the [Mass & Energy Balances course](/courses/mass-and-energy-balances/hvac-energy-balance): just given its own symbol because you'll use it constantly in this course. A stream's total heat load, from its supply temperature to its target, is simply:
 
 > Heat load = CP × (Supply Temperature − Target Temperature)
 
@@ -27,21 +27,26 @@ CP doesn't have to stay constant across a stream's whole temperature range in re
 
 ## The minimum approach temperature: ΔTmin
 
-Two streams exchanging heat can never reach the same temperature — heat only flows from hot to cold, and needs a temperature difference to drive it, and a real heat exchanger needs a sensible amount of surface area to work at all. The [heat exchangers lesson](/courses/waste-heat-recovery/heat-exchangers) introduced **approach temperature** for a single exchanger; in pinch analysis, you fix one number — the **minimum approach temperature, ΔTmin** — as a rule that applies everywhere in the whole process: no hot stream and cold stream anywhere in the design may come closer together than ΔTmin.
+Two streams exchanging heat can never reach the same temperature, heat only flows from hot to cold, and needs a temperature difference to drive it, and a real heat exchanger needs a sensible amount of surface area to work at all. The [heat exchangers lesson](/courses/waste-heat-recovery/heat-exchangers) introduced **approach temperature** for a single exchanger; in pinch analysis, you fix one number, the **minimum approach temperature, ΔTmin**, as a rule that applies everywhere in the whole process: no hot stream and cold stream anywhere in the design may come closer together than ΔTmin.
 
-A smaller ΔTmin (say 10 °C) lets you recover more heat between streams — but demands a bigger, more expensive heat exchanger to transfer it, because a smaller temperature difference drives heat transfer more slowly for a given exchanger size. A larger ΔTmin (say 30 °C) needs smaller, cheaper exchangers, but forces more heat out to costly utilities instead of being recovered between process streams. Typical values in industrial practice run **10–20 °C** for liquids and gases, though it genuinely varies by application — and choosing it well is itself an economic decision, covered fully in the [ΔTmin economics lesson](/courses/pinch-analysis/choosing-delta-t-min) later in this course.
+A smaller ΔTmin (say 10 °C) lets you recover more heat between streams, but demands a bigger, more expensive heat exchanger to transfer it, because a smaller temperature difference drives heat transfer more slowly for a given exchanger size. A larger ΔTmin (say 30 °C) needs smaller, cheaper exchangers, but forces more heat out to costly utilities instead of being recovered between process streams. Typical values in industrial practice run **10–20 °C** for liquids and gases, though it genuinely varies by application, and choosing it well is itself an economic decision, covered fully in the [ΔTmin economics lesson](/courses/pinch-analysis/choosing-delta-t-min) later in this course.
 
 <Callout variant="key" title="ΔTmin is a design choice, not a fixed constant">
-There's no universally "correct" ΔTmin. It's chosen — usually the same value applied across the whole process for a first analysis — to balance how much heat you want to recover against how much you're willing to spend on exchanger area. Every number you calculate from here on (the pinch temperature, the minimum utilities) depends on whichever ΔTmin you pick, which is exactly why it's the first thing you must decide before running the method.
+There's no universally "correct" ΔTmin. It's chosen, usually the same value applied across the whole process for a first analysis, to balance how much heat you want to recover against how much you're willing to spend on exchanger area. Every number you calculate from here on (the pinch temperature, the minimum utilities) depends on whichever ΔTmin you pick, which is exactly why it's the first thing you must decide before running the method.
 </Callout>
 
 ## Setting up a stream table
 
-The standard way to record this information, ready for analysis, is a simple table — one row per stream:
+The standard way to record this information, ready for analysis, is a simple table: one row per stream:
 
 | Stream | Type | Supply temp (°C) | Target temp (°C) | CP (kW/°C) | Heat load (kW) |
 | --- | --- | --- | --- | --- | --- |
 | H1 | Hot | 180 | 40 | 3.0 | 420 |
 | C1 | Cold | 50 | 190 | 2.0 | 280 |
 
-Every pinch analysis in this course starts from a table exactly like this. The next lesson shows how to combine several such streams into **composite curves** — the graphical picture that makes the pinch visible.
+Every pinch analysis in this course starts from a table exactly like this. The next lesson shows how to combine several such streams into **composite curves**: the graphical picture that makes the pinch visible.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): stream data and approach temperatures in process integration.
+- [Energy Institute](https://www.energyinst.org/)

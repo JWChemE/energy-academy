@@ -1,4 +1,4 @@
-A boiler is the cleanest possible illustration of an energy balance, because every stream crossing its boundary has a name you already know from the [boiler efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency): fuel in, useful heat out, and a short list of named losses. This lesson turns that list into an actual balance — and shows how to find the one loss nobody measures directly.
+A boiler is the cleanest possible illustration of an energy balance, because every stream crossing its boundary has a name you already know from the [boiler efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency): fuel in, useful heat out, and a short list of named losses. This lesson turns that list into an actual balance, and shows how to find the one loss nobody measures directly.
 
 ## Drawing the boundary
 
@@ -10,7 +10,7 @@ Following the [system boundaries lesson](/courses/mass-and-energy-balances/syste
 | Useful heat (to water/steam) | Out | Measured by flow rate and temperature rise |
 | Flue-gas loss | Out | Sensible heat in hot exhaust gases |
 | Casing loss | Out | Radiation and convection from the boiler shell |
-| Blowdown loss | Out | Heat carried away in drained boiler water — see the [blowdown lesson](/courses/boilers-and-fired-systems/blowdown) |
+| Blowdown loss | Out | Heat carried away in drained boiler water: see the [blowdown lesson](/courses/boilers-and-fired-systems/blowdown) |
 
 The balance equation is just the general form from earlier in this course, applied to this specific list:
 
@@ -20,25 +20,31 @@ The balance equation is just the general form from earlier in this course, appli
 
 Take the boiler from the [combustion mass balance](/courses/mass-and-energy-balances/combustion-mass-balance) lesson, burning fuel at a rate delivering 500 kW of chemical energy. Three of the four output streams can be measured or estimated directly:
 
-- **Useful heat output** — measured from water flow rate and temperature rise: **425 kW**
-- **Flue loss** — estimated from flue-gas temperature and O₂ reading, exactly as the [combustion efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency) describes: **60 kW** (12% of input, in the middle of the "10–15% of input" range that lesson quotes)
-- **Blowdown loss** — calculated from blowdown flow rate and temperature, per the [blowdown lesson](/courses/boilers-and-fired-systems/blowdown): **5 kW**
+- **Useful heat output**: measured from water flow rate and temperature rise: **425 kW**
+- **Flue loss**: estimated from flue-gas temperature and O₂ reading, exactly as the [combustion efficiency lesson](/courses/boilers-and-fired-systems/combustion-efficiency) describes: **60 kW** (12% of input, in the middle of the "10–15% of input" range that lesson quotes)
+- **Blowdown loss**: calculated from blowdown flow rate and temperature, per the [blowdown lesson](/courses/boilers-and-fired-systems/blowdown): **5 kW**
 
-That leaves the fourth stream — **casing loss** — as the one term nobody wants to measure directly. Doing so properly would need a full thermal-imaging survey of the boiler shell. Instead, solve for it from the balance, exactly as you practised in the [first-balance lesson](/courses/mass-and-energy-balances/your-first-balance):
+That leaves the fourth stream, **casing loss**, as the one term nobody wants to measure directly. Doing so properly would need a full thermal-imaging survey of the boiler shell. Instead, solve for it from the balance, exactly as you practised in the [first-balance lesson](/courses/mass-and-energy-balances/your-first-balance):
 
 > Casing loss = Fuel In − Useful Heat Out − Flue Loss − Blowdown Loss
 > Casing loss = 500 − 425 − 60 − 5 = **10 kW**
 
-10 kW on a 500 kW input is 2% — right in the middle of the "1–3%" casing-loss range the combustion efficiency lesson quotes, and a good sign your other three measurements are trustworthy (if the calculated residual had come out negative, or absurdly large, that would be the signal to go back and re-check your instruments).
+10 kW on a 500 kW input is 2%, right in the middle of the "1–3%" casing-loss range the combustion efficiency lesson quotes, and a good sign your other three measurements are trustworthy (if the calculated residual had come out negative, or absurdly large, that would be the signal to go back and re-check your instruments).
 
 <Callout variant="key" title="Efficiency, restated as a balance">
-This boiler's efficiency is 425 ÷ 500 = **85%** — a single number, but one that only means something because you can show exactly where the other 15% went: 12% up the flue, 2% through the casing, 1% down the blowdown drain. That breakdown is what turns "the boiler is 85% efficient" from a fact into a work list — the flue loss alone (60 kW, the biggest single term) is where you'd focus a retuning effort first.
+This boiler's efficiency is 425 ÷ 500 = **85%**. That is a single number, but one that only means something because you can show exactly where the other 15% went: 12% up the flue, 2% through the casing, 1% down the blowdown drain. That breakdown is what turns "the boiler is 85% efficient" from a fact into a work list: the flue loss alone (60 kW, the biggest single term) is where you'd focus a retuning effort first.
 </Callout>
 
 ## Why the boundary choice still matters here
 
-Notice this balance says nothing about the *distribution system* the boiler feeds — the pipework, the point of use, the condensate return. That's a deliberate boundary choice, and it's the right one if your question is "how well does this boiler convert fuel to heat." It's the *wrong* boundary if your question is "how much of that heat actually reaches the process" — for that, you need to widen the boundary, which is exactly what the next lesson does for a full steam system.
+Notice this balance says nothing about the *distribution system* the boiler feeds: the pipework, the point of use, the condensate return. That's a deliberate boundary choice, and it's the right one if your question is "how well does this boiler convert fuel to heat." It's the *wrong* boundary if your question is "how much of that heat actually reaches the process", for that, you need to widen the boundary, which is exactly what the next lesson does for a full steam system.
 
 <Callout variant="tip">
-Two different, correct, useful numbers can come from two different boundaries around the same equipment. A boiler quoted at 85% (its own combustion efficiency) sitting inside a steam system that loses another 15% to uninsulated distribution pipework is, overall, only about 72% efficient from fuel to point of use. Neither number is wrong — they're answers to different questions, and a good energy manager always knows which one they're quoting.
+Two different, correct, useful numbers can come from two different boundaries around the same equipment. A boiler quoted at 85% (its own combustion efficiency) sitting inside a steam system that loses another 15% to uninsulated distribution pipework is, overall, only about 72% efficient from fuel to point of use. Neither number is wrong: they're answers to different questions, and a good energy manager always knows which one they're quoting.
 </Callout>
+
+## Sources and further reading
+
+- [Combustion Engineering Association](https://cea.org.uk/): boiler efficiency and losses.
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam): boiler heat balance reference.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): boiler energy assessment.

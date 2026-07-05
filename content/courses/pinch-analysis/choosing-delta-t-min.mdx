@@ -1,4 +1,4 @@
-The [streams lesson](/courses/pinch-analysis/streams-and-approach-temperature) told you ΔTmin is a design choice, not a fixed constant, and asked you to take it on faith for a while. This lesson shows exactly why it's a choice — by running the same process through the problem table algorithm at three different ΔTmin values and pricing the result.
+The [streams lesson](/courses/pinch-analysis/streams-and-approach-temperature) told you ΔTmin is a design choice, not a fixed constant, and asked you to take it on faith for a while. This lesson shows exactly why it's a choice, by running the same process through the problem table algorithm at three different ΔTmin values and pricing the result.
 
 ## The same process, three approach temperatures
 
@@ -10,11 +10,11 @@ Take the four-stream process from earlier in this course (H1 180→40 °C CP 3.0
 | 20 °C | 315 kW | 30 kW |
 | 30 °C | 355 kW | 70 kW |
 
-Every column comes from exactly the same method as before — only the ΔTmin fed into the temperature-shifting step has changed. The pattern is unmistakable: **tightening ΔTmin always reduces both utilities** (more heat can be recovered between process streams instead of bought in), and **loosening it always increases both** (less recovery, more utility). At ΔTmin = 10 °C here, the process is even self-sufficient in cold utility — needing none at all.
+Every column comes from exactly the same method as before: only the ΔTmin fed into the temperature-shifting step has changed. The pattern is unmistakable: **tightening ΔTmin always reduces both utilities** (more heat can be recovered between process streams instead of bought in), and **loosening it always increases both** (less recovery, more utility). At ΔTmin = 10 °C here, the process is even self-sufficient in cold utility, needing none at all.
 
 ## Why tighter isn't automatically better
 
-If minimising utility were the only goal, you'd always choose the smallest ΔTmin possible. But a smaller approach temperature means a smaller temperature difference driving heat transfer at every exchanger in the network, which means more heat-transfer area — bigger, more expensive exchangers — is needed to move the same amount of heat. Somewhere between "wastefully loose" and "unaffordably tight" sits an economic optimum.
+If minimising utility were the only goal, you'd always choose the smallest ΔTmin possible. But a smaller approach temperature means a smaller temperature difference driving heat transfer at every exchanger in the network, which means more heat-transfer area (bigger, more expensive exchangers) is needed to move the same amount of heat. Somewhere between "wastefully loose" and "unaffordably tight" sits an economic optimum.
 
 ## Pricing the trade-off
 
@@ -26,7 +26,7 @@ Using gas at £0.06/kWh for hot utility, a low-cost cooling source at £0.01/kWh
 | 20 °C | 315 × 8,000 × £0.06 = £151,200 | 30 × 8,000 × £0.01 = £2,400 | £153,600/yr |
 | 30 °C | 355 × 8,000 × £0.06 = £170,400 | 70 × 8,000 × £0.01 = £5,600 | £176,000/yr |
 
-Now add a typical (illustrative) annualised capital cost for the heat-exchanger network at each ΔTmin — rising steeply as the approach temperature tightens, because area requirements grow sharply as the temperature driving force shrinks:
+Now add a typical (illustrative) annualised capital cost for the heat-exchanger network at each ΔTmin, rising steeply as the approach temperature tightens, because area requirements grow sharply as the temperature driving force shrinks:
 
 | ΔTmin | Annualised capital cost | Total annual cost (utility + capital) |
 | --- | --- | --- |
@@ -35,11 +35,16 @@ Now add a typical (illustrative) annualised capital cost for the heat-exchanger 
 | 30 °C | £35,000/yr | £176,000 + £35,000 = **£211,000** |
 
 <Callout variant="key" title="The classic U-shaped trade-off">
-Here, 20 °C gives the lowest total annual cost — cheaper than both the tighter (10 °C) and looser (30 °C) alternatives. This is the shape you should expect: utility cost falls steadily as ΔTmin tightens, capital cost rises steadily, and the sum has a minimum somewhere in between. The exact optimum depends entirely on your site's utility prices and exchanger costs — there is no universal "correct" ΔTmin, only the one that minimises total cost for *your* numbers.
+Here, 20 °C gives the lowest total annual cost, cheaper than both the tighter (10 °C) and looser (30 °C) alternatives. This is the shape you should expect: utility cost falls steadily as ΔTmin tightens, capital cost rises steadily, and the sum has a minimum somewhere in between. The exact optimum depends entirely on your site's utility prices and exchanger costs: there is no universal "correct" ΔTmin, only the one that minimises total cost for *your* numbers.
 </Callout>
 
 ## The practical takeaway
 
-Run this comparison with your own site's utility prices and a rough capital-cost estimate (even a simple "cost roughly doubles as ΔTmin halves" rule of thumb is enough for a first pass) before committing to a ΔTmin for a detailed design. The [Economic Analysis course](/courses/economic-analysis/npv-and-irr) covers the rigorous way to compare options like these over a project's life using NPV rather than a simple annual-cost snapshot — worth applying here if the numbers are close, exactly as you'd apply it to any other capital-versus-running-cost decision.
+Run this comparison with your own site's utility prices and a rough capital-cost estimate (even a simple "cost roughly doubles as ΔTmin halves" rule of thumb is enough for a first pass) before committing to a ΔTmin for a detailed design. The [Economic Analysis course](/courses/economic-analysis/npv-and-irr) covers the rigorous way to compare options like these over a project's life using NPV rather than a simple annual-cost snapshot, worth applying here if the numbers are close, exactly as you'd apply it to any other capital-versus-running-cost decision.
 
 The next lesson looks at a special case: processes where this whole discussion turns out to be moot, because only one utility is ever needed at all.
+
+## Sources and further reading
+
+- [IChemE (Institution of Chemical Engineers)](https://www.icheme.org/): the capital-energy trade-off in heat exchanger networks.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): heat recovery project economics.
