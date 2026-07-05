@@ -1,28 +1,42 @@
-**Simple payback** — cost divided by annual savings — is the most-used energy metric. It's simple, but limited.
+Simple payback, the project cost divided by its annual saving, is the most-used number in energy management, and for good reason: everyone understands it, it needs no assumptions about interest rates, and it sorts obvious winners from obvious losers in seconds. It is also the number that quietly kills good projects and waves through bad ones, because it ignores everything that happens after the money comes back. This lesson covers where payback earns its place and where it misleads, so you know when to reach for the heavier tools in the rest of the course.
 
-## When payback works
+## What payback does well
 
-Payback is useful for:
-- Quick screening: "Will this project pay for itself in under 5 years?"
-- Comparing projects of similar size and lifetime
-- When all you need is a rough answer
-- Building intuition: "£10k cost, £2.5k/year savings = 4-year payback"
+Payback answers one question honestly: how long until I get my money back? For screening, that is often enough. A measure repaying in under two or three years is almost always worth doing, and no amount of discounted-cash-flow arithmetic will change that conclusion, so running it would be wasted effort. Payback also communicates: a board that glazes over at "net present value" understands "it pays for itself in eighteen months" immediately. The [audit course](/courses/energy-audits/identify-opportunities) uses payback as its working currency for exactly these reasons.
 
-## When payback misleads
+The rule of thumb most practitioners carry: under three years, just do it; over seven years, look harder before committing; between three and seven, the fuller analysis earns its keep.
 
-Payback ignores:
-- **Time value of money** — it treats £1 saved in year 1 the same as year 10 (wrong)
-- **Project lifetime** — a 5-year payback on a 20-year project is great; on a 5-year project, you've only just recovered your cost
-- **Inflation and interest rates** — over 10+ years, these matter a lot
-- **Residual value** — does the equipment have scrap value? Can it be reused?
+## Where payback misleads
 
-## Example: LED vs halogen
+The metric has one fatal blind spot: it stops counting the moment the cost is recovered, so it is completely blind to what a project does over its life.
 
-- Halogen: £50 upfront, 60W, 2,000-hour life (~3 years). Cost: 50 GBP + (60 W × 3 yr × operating hours × £/kWh) = ~£200 total
-- LED: £200 upfront, 10W, 50,000-hour life (~15 years). Cost: 200 GBP + (10 W × 15 yr × operating hours × £/kWh) = ~£250 total
+<WorkedExample title="two projects, same payback, very different value">
+  <Given>
+    - Project A: an LED lighting scheme, £6,000, saving £3,000 a year, 15-year life
+    - Project B: a niche control gadget, £6,000, saving £3,000 a year, but obsolete and scrapped after 3 years
+  </Given>
+  <Find>What payback says, and what it misses.</Find>
+  <Solution>
+    Both show a **2-year simple payback**, so payback rates them identically.
 
-Simple payback: (200 − 50) / (annual energy saving) = only 1–2 years. But the LED's **true value** is that it lasts 5× longer and uses 85% less energy over 15 years. Life-cycle costing captures this; simple payback doesn't.
+    Yet Project A goes on to save £3,000 a year for thirteen more years after paying for
+    itself (roughly £39,000 of pure benefit); Project B recovers its cost just as its life
+    ends and delivers almost nothing beyond. Payback saw two identical projects; they are
+    worlds apart. The blind spot is always the same: **payback ignores project life**, and
+    life is where the value lives.
+  </Solution>
+</WorkedExample>
 
-## Rule of thumb
+Payback's other omissions compound this. It treats a pound saved in year ten as equal to a pound saved in year one, which the [time value of money](/courses/economic-analysis/time-value-of-money) shows is wrong. It ignores residual value, rising fuel prices, and the pattern of savings over time. For a quick win none of that matters; for a large, long-lived capital decision, all of it does.
 
-Use payback for screening. If payback < 3 years, the project is almost certainly worth doing. If payback > 7 years, be careful — use NPV to verify. For 3–7 years, NPV and IRR give you the full picture.
+<Callout variant="key" title="Use payback to screen, not to decide the big ones">
+The discipline is to match the tool to the stake. Screen every opportunity on payback: it is fast and it is right about the extremes. But once a measure is large, long-lived, or competing against other calls on the same capital, payback has told you all it can, and the decision moves to [NPV and IRR](/courses/economic-analysis/npv-and-irr). The classic expensive mistake is a "10-year payback on a 15-year boiler" that looks acceptable on payback and turns out, on the numbers, to destroy value. The next two lessons build the tools that catch it.
+</Callout>
+
+The reason a pound tomorrow is worth less than a pound today, and how to put a precise figure on the gap, is where the course turns next.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on appraising energy efficiency investments.
+- [HM Treasury Green Book](https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government) for the UK public-sector standard on project appraisal and discounting.
+- [IPMVP, Efficiency Valuation Organization](https://evo-world.org/en/products-services-mainmenu-en/protocols/ipmvp) on verifying the savings any payback claim rests on.

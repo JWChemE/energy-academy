@@ -1,41 +1,25 @@
-Control sequence testing verifies that the BMS (or control system) executes logic correctly.
+A building's plant can be perfectly installed and balanced and still waste energy, because the controls that drive it are programmed wrongly. Control commissioning verifies that the [BMS or control system](/courses/control-systems-and-bms/bms-architecture) executes its intended logic: that each mode does what it should, that sensors trigger the right response, and that the system fails safe when something breaks. This is where the most common and most expensive control faults are caught, above all heating and cooling running at once. This lesson covers the on-site testing of control sequences.
 
-## Manual sequence walk-through
+## Walking the sequences
 
-Step through each control mode and verify actuator response:
+The core technique is a manual walk-through of every control mode, forcing the system into each state and confirming the plant responds correctly. For heating, drive the room temperature below setpoint and verify the heating valve opens (or the boiler fires), the supply temperature rises, the room recovers toward setpoint, and, critically, that heating *stops* when the setpoint is reached. Then repeat for cooling: force the room above setpoint, confirm the cooling response, and confirm it stops cleanly. Testing each mode in turn, and the transitions between them, exposes the classic programming faults: sequences left incomplete, dampers driven to the wrong position, and heating and cooling both active in the same zone because no [dead band](/courses/control-systems-and-bms/multi-loop-control) was set. That last one is worth hunting specifically, since it is invisible in normal operation and quietly doubles the conditioning cost of the zones it affects.
 
-**Heating mode (winter, cold):**
-1. Lower room temp below setpoint (e.g., 16°C)
-2. Check that heating valve opens (or boiler fires)
-3. Verify supply temp rises
-4. Confirm room temp rises toward setpoint
-5. Verify heating stops when setpoint reached
+## Sensor response and failsafe testing
 
-**Cooling mode (summer, warm):**
-1. Raise room temp above setpoint (e.g., 26°C)
-2. Check that chiller starts (if it should)
-3. Verify supply temp drops
-4. Confirm room temp drops toward setpoint
-5. Verify cooling stops when setpoint reached
+Beyond the normal sequences, commissioning tests how the system reacts to sensor inputs and to failure. Simulate a sensor input (warm or cool a temperature sensor, or inject a signal) and confirm the BMS responds correctly, which also confirms the sensor is wired to the point the logic thinks it is, a surprisingly common mismatch. Then test the failure modes: if a sensor disconnects, does the system default to a safe, non-wasteful state rather than, say, full dehumidification or full cooling? If the BMS loses power, do manual overrides work and does plant fail to a safe condition (heating available on a cold day, not locked off)? Failsafe behaviour is both a safety and an energy matter, because a system that fails to "everything on" can waste enormously until someone notices.
 
-Many systems have logic errors: heating and cooling both active, dampers in wrong position, logic incomplete.
+## Recording it all
 
-## Sensor response testing
+Every test is logged: date and time, system, the pass or fail result, any fault found, the corrective action, and the result of retesting after the fix. This commissioning log is not bureaucracy; it is the evidence that each sequence was proven, the record that feeds the [handover documentation](/courses/commissioning/handover-documentation), and the baseline that later [re-commissioning](/courses/commissioning/recommissioning) checks against. A sequence marked "pass" with a dated test behind it is commissioned; one assumed correct because "it should be" is not.
 
-Simulate sensor inputs and verify BMS responds:
-- Block a temperature sensor (simulate cold); verify BMS increases heating
-- Disconnect a humidity sensor; verify BMS defaults to safe mode (not full dehumidification)
+<Callout variant="key" title="Force every mode; never assume a sequence works because it compiled">
+Control logic that looks right on screen routinely behaves wrong in the plant: a reversed damper, a mislabelled sensor, a missing dead band, an incomplete mode. The only way to know is to force the system into each state and watch what the plant actually does, including the failure states. The highest-value single test is proving that heating and cooling can never run together, because that fault is both common and invisible, and catching it at commissioning saves the doubled conditioning cost for the life of the building. Test behaviour, not intentions.
+</Callout>
 
-## Failsafe verification
+Sequences prove the controls tell the plant the right thing. Performance testing, next, proves the plant can actually deliver what it is told to.
 
-If BMS loses power, can manual overrides work? If a sensor fails, does the system default to safe (heating on cold day, not cooling)?
+## Sources and further reading
 
-## Documentation
-
-Record all test results in a commissioning log:
-- Date, time, system tested
-- Pass/fail and any issues found
-- Corrective action taken
-- Retesting results
-
-This becomes the handover documentation.
+- [CIBSE Commissioning Code C (automatic controls)](https://www.cibse.org/knowledge-research/knowledge-portal) for control commissioning procedures.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on sequence and failsafe verification.
+- [BSRIA](https://www.bsria.com/uk/) guidance on controls commissioning and functional testing.

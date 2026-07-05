@@ -1,34 +1,42 @@
-Modern BMS systems do far more than just control. Data analytics, alarming, and scheduling are powerful tools for energy management.
+A Building Management System's real value to an energy manager is not that it controls plant but that it watches, records and reports on everything the building does. The [thousands of points](/courses/control-systems-and-bms/bms-architecture) it logs turn hunches into evidence: instead of "the chillers feel like they run too much", you get a chart proving they run at 150 kW through an empty building every night. Three functions do this work: trending, alarming and scheduling. This lesson covers each and the discipline that makes them useful rather than ignored.
 
-## Data trending
+## Trending: turning data into findings
 
-Collect time-series data (kWh, temperature, runtime) and plot over time (daily, weekly, monthly).
+Trending plots any point over time (energy, temperature, run state) so patterns emerge that no single reading shows. It is the [monitoring and targeting](/courses/monitoring-and-targeting/meter-data) toolkit applied at the plant level, and it is where most control-related savings are first spotted: equipment running out of hours, plant cycling far too often, a valve that never fully closes, a seasonal shift that never got scheduled.
 
-Trends reveal: equipment cycling (are pumps running 24/7?), seasonal changes (cooling season vs heating), anomalies (sudden spikes).
+<WorkedExample title="what an overnight trend reveals">
+  <Given>
+    - A BMS trend shows a chiller drawing 150 kW overnight, every night, in a building unoccupied 7 pm to 7 am
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The annual cost of the unnecessary overnight running.</Find>
+  <Solution>
+    12 hours a night × 365 nights × 150 kW = 657,000 kWh, about **£131,000 a year**,
+    cooling an empty building because nobody scheduled the plant off. No instrument was
+    installed and no survey commissioned; the finding was sitting in data the BMS had been
+    logging all along. This is the recurring lesson of trending: the evidence for the
+    biggest savings is usually already recorded, waiting for someone to plot it.
+  </Solution>
+</WorkedExample>
 
-Example: BMS plot of chiller kW over 4 weeks shows it running 150 kW overnight when building is empty. Opportunity: occupancy-based scheduling.
+## Alarming: flagging the exceptions
 
-## Alarming
+Alarms fire when a point crosses a threshold or behaves impossibly: a chiller running but not cooling (a sensor or plant fault), a zone below 18 °C (heating failure), a supply temperature changing faster than physics allows (a stuck actuator). Good alarming turns the BMS from a passive recorder into an early-warning system, catching faults in hours rather than at the next audit.
 
-Flag when a variable exceeds a threshold or doesn't behave as expected.
+The discipline that makes it work is restraint. A system that cries wolf, hundreds of nuisance alarms a day, trains operators to ignore all of them, and the one real fault drowns with the noise. **Alarm fatigue** is the reason many alarm systems are worse than none. Thresholds must be meaningful, prioritised, and few enough that a fired alarm means "act", exactly the [exception-reporting discipline](/courses/monitoring-and-targeting/exception-reporting) the M&T course sets out.
 
-Example alarms:
-- High: Chiller running but not producing cold (sensor or equipment failure)
-- Low: Zone temperature below 18°C (heating failure or setpoint error)
-- Rate-of-change: Supply air temperature rising 2°C in 1 minute (actuator stuck, control failure)
+## Scheduling: the biggest easy saving
 
-**Alarm fatigue:** Too many alarms → operators ignore real problems. Thresholds should be meaningful.
+Scheduling matches conditioning to occupancy: full setpoints during occupied hours, setback (or off) when the building is empty, and seasonal changeovers handled automatically. It is often the single largest saving a BMS can deliver, because unscheduled plant conditioning empty space, as the overnight chiller above shows, is pure waste. Buildings with variable occupancy (offices, schools, places of worship) can save 20 to 40% on conditioning through scheduling alone, and the [energy-optimised strategies lesson](/courses/control-systems-and-bms/control-strategies) builds further reset and occupancy logic on top of it.
 
-## Scheduling
+<Callout variant="key" title="The savings are already in the trend logs; go and plot them">
+Most buildings run a BMS that has been quietly recording the evidence of its own waste for years: the out-of-hours running, the plant that never stops, the season that never changed over. The scarce resource is not data or sensors, it is someone plotting the trends and acting on them. Start any control investigation by pulling a week of overnight and weekend trends for the major plant; the overnight-chiller finding above is more the rule than the exception, and it costs nothing but attention to find.
+</Callout>
 
-Automatically adjust setpoints based on time:
-- Weekdays: 8 AM–6 PM occupied, setpoint 21°C. Evenings/weekends: unoccupied, setpoint 16°C.
-- Summer: cooling setpoint 24°C. Winter: heating setpoint 19°C.
+Trending, alarming and scheduling report and time-switch the building. The final lesson layers active energy strategies on top: reset, occupancy control and load sequencing.
 
-Scheduling saves significant energy by not conditioning unoccupied spaces.
+## Sources and further reading
 
-## Reporting
-
-BMS can generate reports: energy consumption by system, cost, efficiency metrics, seasonal analysis.
-
-Useful for energy audits, utility benchmarking, identifying efficiency projects.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on BMS trending, alarms and scheduling.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on using BMS data to find savings.
+- [BCIA](https://bcia.co.uk/) on effective alarm management and avoiding alarm fatigue.

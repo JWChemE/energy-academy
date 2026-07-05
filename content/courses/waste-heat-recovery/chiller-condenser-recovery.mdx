@@ -1,23 +1,41 @@
-A **chiller produces two temperatures:** cold water for cooling and hot condenser water rejected to the atmosphere (usually wasted).
+A chiller is usually thought of as a cooling machine, but it is equally a heat source: everything it removes from the cooled space, plus the electricity its compressor draws, comes out of the condenser as warm water, and on most sites that heat is dumped to a cooling tower and lost. Recovering it, instead of rejecting it, turns a chiller into a simultaneous cooling and heating machine, and where a site needs both at once it is one of the best recovery projects available. This lesson covers the opportunity, the timing constraint that governs it, and the storage that can loosen it.
 
-## The opportunity
+## Why the condenser rejects more than the chiller uses
 
-Chiller: 10 MW cooling capacity with 3 MW compressor work = 13 MW heat rejected at the condenser (50–60°C).
+The [refrigeration cycle](/courses/refrigeration-and-heat-pumps/vapour-compression-cycle) moves heat from the cold side to the hot side and adds the compressor's work along the way, so the condenser always rejects the cooling duty *plus* the compressor input. A chiller removing 500 kW of cooling at a COP of 3.3 draws about 150 kW of electricity, so its condenser rejects roughly 650 kW of heat, at 50 to 60 °C, warm enough for hot water, space heating or process pre-heat. Standard practice throws all 650 kW away in a cooling tower and then, frequently, a boiler next door makes hot water from scratch.
 
-Standard practice: Cool this to ~35°C in a cooling tower, release to air.
+<WorkedExample title="recovering condenser heat to hot water">
+  <Given>
+    - A 500 kW chiller at COP 3.3 rejects ≈ 650 kW at the condenser
+    - A recovery heat exchanger captures 60% of that during hours when a hot-water load coincides
+    - Coincident hours ≈ 2,000/yr; displaces gas at 85% boiler efficiency, gas £0.06/kWh
+  </Given>
+  <Find>The annual value of the recovered heat.</Find>
+  <Solution>
+    Recovered ≈ 0.60 × 650 = 390 kW during coincident operation. Over 2,000 hours: 780,000
+    kWh of heat, displacing 780,000 ÷ 0.85 ≈ 918,000 kWh of gas, worth about
+    **£55,000 a year**. Against a recovery package costing tens of thousands, this repays
+    fast, and it is the same heat the chiller was paying a cooling tower and its fans to
+    throw away. Note what did the work: the 2,000 hours of coincidence between cooling and
+    a hot-water demand, exactly the [matching](/courses/waste-heat-recovery/economics-and-matching)
+    condition that governs every recovery project.
+  </Solution>
+</WorkedExample>
 
-Better: Use the 50–60°C condenser water for domestic hot water, space heating (in mild seasons), or pool heating.
+## The timing constraint, and how to loosen it
 
-**Cost:** Plumbing, heat exchanger, controls. ~£20,000–50,000.
-**Savings:** 3 MW × 8,760 h × £0.08/kWh = £2,112,000/year (if fully utilised). Realistically, 30–50% utilisation = £600,000–1,000,000/year.
-**Payback: < 1 year** (for large chillers) to 2–3 years (for smaller systems).
+The catch is seasonal. Chillers work hardest in summer, when space-heating demand is lowest, so the obvious sink (heating) is out of phase with the source. The projects that work best find a load that runs when the chiller does: **year-round hot water** (offices, hotels, leisure centres), **process heat** in continuous industry, or **reheat** on air systems that cool and then gently reheat air on the same day. Two moves improve a poor match: schedule the heat load to the chiller's hours where possible (daytime hot-water generation while the chiller runs, cooling tower for the overnight remainder), and add **thermal storage**, a hot buffer tank that soaks up condenser heat when it is plentiful and releases it when the load appears. The [thermal storage lesson](/courses/waste-heat-recovery/thermal-storage-recovery) generalises this bridging role.
 
-## Challenge: Load timing
+The very best case removes the timing problem entirely: a site with **simultaneous cooling and heating demand**, where the chiller cools one part of the building while its recovered condenser heat warms another, or feeds a process. Food factories, leisure centres and [breweries](/sectors/breweries) fit this pattern, and there a heat-recovery chiller (or the reversible arrangement in the [refrigeration course's improvements lesson](/courses/refrigeration-and-heat-pumps/practical-improvements)) does two jobs with one energy input.
 
-Chiller runs summer (peak cooling). DHW demand may be year-round but lower in summer. Utilisation determines payback.
+<Callout variant="key" title="A chiller is a heat pump you already own; stop rejecting its output">
+Every chiller is already lifting heat from a cold space and delivering it, hot, to a condenser, which is precisely what a [heat pump](/courses/refrigeration-and-heat-pumps/reverse-cycle) does on purpose. Rejecting that heat to a tower while buying gas to make hot water is paying twice and throwing away the machine's most valuable by-product. Wherever cooling and a heat demand coincide, recover the condenser heat; where they nearly coincide, use storage or scheduling to close the gap. The heat is free, warm, and already plumbed, it just needs somewhere useful to go instead of the sky.
+</Callout>
 
-**Solution 1:** Use condenser heat for daytime DHW (office building, peak occupancy), cooling tower for evening/overnight.
+The final lesson widens from single machines to whole processes, the largest concentrated waste heat sources on any industrial site.
 
-**Solution 2:** Add thermal storage (hot tank) to absorb excess condenser heat for later use.
+## Sources and further reading
 
-**Best case:** Simultaneous cooling demand (chiller) and heating demand (DHW, reheating coil on cool days) = maximum utilisation.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on chiller heat recovery.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on heat-recovery chillers and simultaneous heating and cooling.
+- [Institute of Refrigeration](https://ior.org.uk/) on condenser heat recovery design.

@@ -1,31 +1,33 @@
-A **Building Management System (BMS)** centralises control of all building systems: HVAC, lighting, power, security, fire.
+A single building can run hundreds of [control loops](/courses/control-systems-and-bms/feedback-control), and a Building Management System (BMS) is what ties them together: the central nervous system that monitors, coordinates and records HVAC, lighting, and often power, metering and more. For an energy manager the BMS is the most powerful tool in the building, because it is both the place waste is created (through bad configuration) and the place it is found (through the data it holds). This lesson covers how a BMS is structured and how its parts talk, so the later lessons on what it can do have somewhere to stand.
 
-## Centralised vs distributed
+## Centralised, distributed, and the modern middle
 
-**Centralised:** All control logic in one computer (traditional). Pros: one place to manage everything. Cons: single point of failure.
+Early building automation put all the intelligence in one central computer. Simple to manage, but a single point of failure: lose the central machine and the whole building loses control. The reaction was **distributed** intelligence, local controllers on each plant item (a VAV box controller, a chiller controller) making their own decisions, more robust and faster-responding but harder to integrate.
 
-**Distributed:** Intelligence spread across local controllers (VAV controllers, chiller controller, etc.) talking to a central BMS. Pros: more robust, faster local response. Cons: complex integration.
+Modern practice is the middle ground: distributed controllers doing the real-time work locally, with a central BMS supervising, coordinating and recording above them. Each system keeps running if the network drops, while the supervisor provides the single pane of glass, the trend logging, and the cross-system strategies that individual controllers cannot see. This is the architecture most commercial buildings now run, and understanding the split matters, because a local controller overridden at the panel will quietly ignore whatever the central BMS thinks it has commanded.
 
-**Modern approach:** Distributed with central oversight — each system has a controller, but BMS monitors and coordinates.
+## How the pieces talk: protocols
 
-## Network protocols
+Controllers from different manufacturers only cooperate if they share a language. Three dominate:
 
-**BACnet:** Open standard, widely supported, popular in building automation.
+- **BACnet**: the open, widely supported standard, the default for new building automation and the safest bet for multi-vendor integration.
+- **Modbus**: older and simpler, still common on plant and meters.
+- **LonWorks**: capable, historically common on larger systems.
 
-**Modbus:** Simpler, older, still widely used.
+Alongside these, some manufacturers run **proprietary** protocols that lock a building into one supplier's controllers and front end, which makes future integration and competitive maintenance harder and is worth resisting at procurement. The current direction of travel adds cloud connectivity on top, so that trend data and remote management reach beyond the building, which is powerful for [monitoring and targeting](/courses/monitoring-and-targeting/dashboards) but brings its own security considerations.
 
-**LonWorks:** Proprietary but powerful, common in larger systems.
+## Data points: the hidden asset
 
-**Proprietary:** Manufacturers lock systems (e.g., Honeywell, Johnson Controls). Integration is harder.
+A typical building BMS reads and logs thousands of **points**: every zone temperature, every valve and damper position, equipment run states, alarms, and increasingly [metered energy](/courses/monitoring-and-targeting/meter-data). This archive, often kept for one to five years, is the raw material for almost every efficiency investigation in the building, and most sites barely touch it.
 
-**Trend:** Cloud-based systems (Amazon, Microsoft) growing in adoption for data analysis and remote management.
+<Callout variant="key" title="Open protocols keep a building's controls competitive for decades">
+A BMS outlives several rounds of controls contractors, so the protocol decision made at install echoes for twenty years. Open standards (BACnet above all) let the next engineer, the next meter, and the next analytics tool connect without paying the incumbent's ransom; proprietary lock-in quietly taxes every future change. When specifying or extending a BMS, insist on open protocols and documented points, because the alternative is a capable system nobody but its original installer can economically touch.
+</Callout>
 
-## Data points
+Architecture is the skeleton; the next lesson covers the functions that make a BMS an energy tool rather than just a controller: trending, alarming and scheduling.
 
-A typical building BMS logs thousands of points:
-- Room temperatures (hundreds)
-- Damper positions, valve positions
-- Equipment runtimes, alarms
-- Energy consumption (kWh)
+## Sources and further reading
 
-Data archival: 1–5 years typical; longer for compliance (utility contracts, audits).
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on BMS architecture and integration.
+- [BCIA](https://bcia.co.uk/) on open protocols and avoiding vendor lock-in.
+- [NCSC guidance on building management systems](https://www.ncsc.gov.uk/) for the security of networked and cloud-connected controls.

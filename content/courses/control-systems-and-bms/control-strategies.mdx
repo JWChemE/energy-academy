@@ -1,37 +1,46 @@
-**Energy-optimised strategies** use BMS intelligence to reduce waste.
+Once a Building Management System is [scheduling plant to occupancy](/courses/control-systems-and-bms/bms-functions), the next layer of saving comes from strategies that continuously adjust setpoints to match real demand rather than holding fixed values chosen for the worst case. These strategies cost little more than configuration time, because the sensors and controllers are already installed, and they are among the highest-return interventions an energy manager can make. This closing lesson covers the four that matter most: setpoint reset, demand-based control, occupancy control, and load sequencing.
 
-## Setpoint reset (or reset control)
+## Setpoint reset (weather compensation)
 
-Rather than fixed setpoint, adjust based on external driver:
+Rather than heat to a fixed flow temperature all winter, reset the setpoint against the outside temperature: hot flow on cold days, cooler flow on mild ones. A simple compensation curve might set flow temperature high at 0 °C outside and much lower at 15 °C, so the system only ever makes water as hot as the weather demands. Because [lower flow temperatures cut losses and raise plant efficiency](/courses/refrigeration-and-heat-pumps/heating-modes) (decisively so for heat pumps), reset typically saves 10 to 20% of heating energy against a fixed setpoint, for a control change and no capital. The [duct static pressure reset](/courses/control-systems-and-bms/other-sensors) from the sensors lesson is the same idea on the air side.
 
-**Heating setpoint reset:** Raise setpoint on cold days, lower on mild days.
-- Formula: Setpoint = 15 + (21 − outdoor temp)
-- If outdoor = 0°C: setpoint = 15 + 21 = 36°C (high, needed)
-- If outdoor = 15°C: setpoint = 15 + 6 = 21°C (moderate)
-- If outdoor = 18°C: setpoint = 15 + 3 = 18°C (low, minimal heating)
+## Demand-based control
 
-Savings: 10–20% heating energy vs fixed setpoint.
+Reset can also follow the load rather than the weather. In cooling, hold the chilled-water setpoint up until a zone actually approaches its limit, then trim it down only as far as needed. This stops the plant over-cooling on mild days when every zone is comfortable, capturing the [refrigeration course's lift-reduction principle](/courses/refrigeration-and-heat-pumps/cop-and-performance): a warmer chilled-water setpoint is a smaller lift and a higher COP.
 
-## Demand-reset (load-based)
+## Occupancy control
 
-For cooling: Lower setpoint only if demand is high (zone temp near limit). If buildings are mostly comfortable, raise setpoint slightly.
-
-Savings: Prevents over-cooling on mild days.
-
-## Occupancy-based control
-
-If building is unoccupied, disable conditioning (or use lower setpoint). Modern buildings use keycard/app data or CO₂ sensors to detect occupancy.
-
-Savings: 20–40% in buildings with variable occupancy (offices, schools, churches).
+The largest savings come from not conditioning empty space. Beyond fixed schedules, modern buildings sense real occupancy (via CO₂ sensors, keycard or booking data, or presence detection) and pull back conditioning and ventilation zone by zone as people come and go. In buildings with genuinely variable occupancy, offices with hybrid working, schools, halls, savings of 20 to 40% are realistic, because the fixed schedule always over-provides for the average empty room.
 
 ## Load sequencing
 
-For multi-boiler or multi-chiller systems, BMS decides which units to run:
-- Run only necessary units (avoid part-load inefficiency on oversized equipment)
-- Rotate duty (each unit gets equal runtime, even wear)
+For multi-boiler or multi-chiller plant, the BMS chooses which units run and when, running the fewest machines needed and keeping each near its efficient load rather than several at inefficient part load, exactly the [chiller sequencing](/courses/refrigeration-and-heat-pumps/partload-efficiency) and [compressor sequencing](/courses/compressed-air/compressor-types) logic seen elsewhere. Rotating duty across units also evens the wear. Sequencing typically saves 5 to 15% on multi-unit plant.
 
-Savings: 5–15% by avoiding part-load operation.
+<WorkedExample title="setpoint reset on a small office">
+  <Given>
+    - A small office uses 150,000 kWh/yr of gas for heating at £0.06/kWh
+    - Weather-compensated setpoint reset saves ≈ 12%
+    - Configuring and tuning the strategy costs a controls engineer ≈ £800
+  </Given>
+  <Find>The annual saving and payback.</Find>
+  <Solution>
+    Saving ≈ 0.12 × 150,000 × £0.06 ≈ **£1,080 a year**, against an £800 one-off cost:
+    payback under a year, then a decade or more of the same saving. No plant was bought;
+    the boiler, sensors and controller were already there, waiting to be told to make
+    water only as hot as the day required. This is why control strategies sit at the top
+    of almost every [ranked opportunity list](/courses/energy-audits/identify-opportunities):
+    high return, low cost, fast payback.
+  </Solution>
+</WorkedExample>
 
-## Economic impact
+<Callout variant="key" title="These strategies are configuration, not capital">
+Setpoint reset, demand control, occupancy pull-back and sequencing all run on plant and sensors the building already owns; the cost is engineering time, not equipment. That makes them the cheapest large savings available, and it makes their absence, or their quiet defeat by an operator override, one of the first things to check in any building with a capable BMS. The catch is persistence: these strategies drift, get overridden, and are switched off during a fault and never switched back, which is exactly why [re-commissioning](/courses/commissioning/recommissioning) exists.
+</Callout>
 
-Setpoint reset on a 500 m² office building: ~£1,000–2,000/year savings. Cost to implement (BMS tuning): £500–1,000. Payback: < 1 year.
+That completes the course: loops and modes, sensors and actuators, the BMS that ties them together, and the strategies that make it save. The [diagnostics capstone](/courses/control-systems-and-bms/diagnostics-capstone) hands you a misconfigured building's controls and data to put it right.
+
+## Sources and further reading
+
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on optimised control strategies.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on heating controls, compensation and occupancy control savings.
+- [BCIA](https://bcia.co.uk/) on energy-optimised control and strategy persistence.

@@ -1,30 +1,25 @@
-Three technologies capture and redistribute waste heat:
+Not every recovery duty suits a plain heat exchanger. Some need to transfer heat between two air streams compactly, some need to move heat passively with no moving parts, and some need to bridge a gap in time between when heat is available and when it is wanted. This lesson covers three technologies that handle these cases: thermal wheels, heat pipes, and, for steam systems, flash recovery. Each solves a specific matching problem the previous lessons raised.
 
-## Thermal wheels (rotating heat exchangers)
+## Thermal wheels
 
-A rotating, porous core (silica gel or ceramic) absorbs heat from exhaust air on one side, releases it to supply air on the other as it rotates.
-
-Pros: High effectiveness (80-90%), compact, simultaneous cooling/heating possible.
-Cons: Some cross-contamination of odours/particles, requires rotating mechanism.
-
-Common in: HVAC systems with high ventilation loads (offices, hospitals).
+A thermal wheel is a slowly rotating porous disc (a matrix of metal, ceramic or silica gel) that sits across two adjacent air ducts. As it turns, one half absorbs heat from the warm exhaust stream, then rotates into the cold supply stream and releases it. Because the same surface alternately touches both flows, effectiveness is high, 80 to 90%, and a wheel coated with a desiccant recovers latent heat too, making it the rotating form of the [ERV](/courses/waste-heat-recovery/air-to-air-recovery). The trade-offs are the rotating mechanism to maintain and a small amount of cross-contamination between the streams, which rules them out where the exhaust carries odours or contaminants that must not reach the supply. They are common in offices, hospitals and other buildings with high ventilation loads.
 
 ## Heat pipes
 
-A sealed tube containing refrigerant. Heat at one end vaporises it; condensation at the other releases heat. Gravity and capillary action return liquid to the hot end.
+A heat pipe is a sealed tube part-filled with a refrigerant. Heat at one end boils the refrigerant; the vapour travels to the cooler end, condenses, releases its latent heat, and the liquid returns (by gravity or a wick) to start again. The result is a passive heat mover with no moving parts, no power, and high reliability, ideal where maintenance access is poor. Its limits are orientation (gravity-return types must be mounted the right way up) and a preference for moderate temperature differences. Banks of heat pipes are widely used in industrial exhaust ducts and stack recovery, quietly shifting heat from a hot flue to an incoming stream for years without attention.
 
-Pros: No moving parts, passive (no power), very reliable.
-Cons: Only works in one orientation, limited to medium temperature differences.
+## Flash steam recovery
 
-Common in: Industrial process heat recovery, exhaust stacks.
+In steam systems the timing and pressure problem takes a specific form, and the [steam course](/courses/steam-and-condensate/steam-pressure) covers it in depth. When hot high-pressure condensate passes to a lower pressure, part of it instantly re-evaporates as flash steam, perfectly good low-pressure steam that is usually vented and wasted. A flash vessel captures it and pipes it to a low-pressure load (feedwater heating is the classic sink), recovering energy for the cost of a tank and some pipework. It is one of the highest-return recovery measures on any steam site, which is why it appears in both courses.
 
-## Flash tanks (condensate recovery)
+<Callout variant="key" title="Match the technology to the matching problem">
+These three exist because heat recovery is not one problem but several. A thermal wheel is the answer when you need compact, high-effectiveness air-to-air transfer (and possibly latent recovery) and can tolerate a little cross-mixing. A heat pipe is the answer when you need passive, maintenance-free transfer in an awkward or inaccessible duct. Flash recovery is the answer when the "waste" is pressurised condensate with usable steam trapped in it. Diagnose which matching problem you actually have, source grade, air-versus-liquid, timing, access, before reaching for a technology, and the right one usually picks itself.
+</Callout>
 
-When high-pressure steam/hot condensate passes through a pressure-reducing valve, some flash to lower-pressure steam.
+With the technologies covered, the final lessons work through the biggest concentrated sources on a typical site: boiler flues, chiller condensers and industrial processes.
 
-Example: 10 bar condensate flashing to 1 bar releases ~10% of flow as steam, which is captured and used for low-pressure heating.
+## Sources and further reading
 
-Pros: Simple, high payback.
-Cons: Requires steam/condensate system to exist.
-
-Common in: Industrial plants with steam systems (refineries, food processing, breweries).
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on thermal wheels and heat-pipe recovery.
+- [Spirax Sarco: Steam Engineering Tutorials](https://www.spiraxsarco.com/learn-about-steam) on flash steam recovery.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on heat recovery technology selection.

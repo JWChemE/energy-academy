@@ -1,34 +1,49 @@
-A **heat exchanger** transfers heat from one fluid (waste heat source) to another (thermal load). Selecting the right type and sizing it correctly is critical.
+Every waste heat recovery scheme comes down to one component doing the actual work: a heat exchanger, transferring heat from the waste stream to the load without mixing the two. Choosing the right type and sizing it correctly decides how much of the available heat you actually capture and how close you get to the temperature the load needs. This lesson covers the main types, the two numbers that describe how well an exchanger performs, and the fouling that quietly erodes both.
 
-## Types of heat exchangers
+## The main types
 
-**Plate (brazed or gasketed):** Two fluids separated by thin metal plates. Pros: compact, high effectiveness, easy cleaning. Cons: lower pressure rating than shell-and-tube. Best for liquid-to-liquid.
+Three families cover most recovery duties, trading compactness against robustness:
 
-**Shell-and-tube:** One fluid in tubes, other in shell around tubes. Pros: robust, handles high pressure/temperature. Cons: larger, lower effectiveness. Best for high-pressure or high-temperature applications.
-
-**Finned tube (air-cooled):** Tubes with fins for air-side heat transfer. Example: HVAC coils. Pros: good for air-side. Cons: fins collect dust (fouling).
+- **Plate exchangers** (brazed or gasketed) stack thin metal plates with the two fluids in alternate gaps. Compact, highly effective, and easy to clean (gasketed ones open up), they are the default for liquid-to-liquid duty, limited mainly by pressure and temperature rating.
+- **Shell-and-tube** run one fluid through tubes and the other around them in a shell. Bulkier and less effective per unit size, but robust and happy at high pressures and temperatures, so they suit steam, high-grade process heat, and dirty fluids.
+- **Finned-tube (air-side)** exchangers add fins to boost heat transfer to or from air, the form of most HVAC coils and [flue economisers](/courses/waste-heat-recovery/boiler-flue-recovery). Effective on the air side, but the fins collect dust and foul.
 
 ## Effectiveness and approach temperature
 
-**Effectiveness (ε):** Fraction of maximum possible heat transfer actually achieved.
-- ε = (actual temp rise) / (max possible temp rise)
-- Example: waste heat at 100°C, cold inlet at 20°C, exit at 50°C. Max possible rise = 80°C. Actual = 30°C. ε = 30/80 = 37.5%.
+Two numbers describe how good an exchanger is at its job. **Effectiveness (ε)** is the fraction of the theoretically available temperature change that the exchanger actually delivers.
 
-**Approach temperature:** The temperature difference between fluid exit and thermal load requirement.
-- If DHW needs 60°C and HX can only deliver 55°C (5°C approach), HX is too small or effectiveness too low.
+<WorkedExample title="reading effectiveness off temperatures">
+  <Given>
+    - Waste heat source enters at 100 °C; the cold stream being heated enters at 20 °C
+    - The cold stream leaves at 50 °C
+  </Given>
+  <Find>The exchanger's effectiveness.</Find>
+  <Solution>
+    The most the cold stream could theoretically be raised is up to the source inlet:
+    100 − 20 = 80 °C of potential. It actually rose 50 − 20 = 30 °C.
 
-Larger (more expensive) HX increases effectiveness and lowers approach temperature.
+    Effectiveness ε = 30 ÷ 80 = **37.5%**. Fine for a cheap, small exchanger; a larger
+    (more expensive) one would recover more of the 80 °C potential and push the outlet
+    higher. Effectiveness is the dial you buy with heat-transfer area, and it trades
+    directly against capital, which is why exchangers are sized to the [economics](/courses/waste-heat-recovery/economics-and-matching),
+    not to some ideal.
+  </Solution>
+</WorkedExample>
 
-## Fouling and maintenance
+**Approach temperature** is the gap left between the exchanger's output and what the load actually needs. If the hot water load wants 60 °C and the exchanger can only deliver 55 °C, the 5 °C approach means it is too small or too fouled for the duty. Closing the approach means more area, so there is always a size-versus-performance trade to make.
 
-Dirty heat exchangers lose effectiveness. Water scaling, dust on fins, or corrosion reduce heat transfer.
+## Fouling: the slow leak of performance
 
-**Solution:** Regular cleaning (chemical, mechanical, or both). Budget 5% of capital cost per year for maintenance.
+An exchanger's effectiveness is not fixed; it decays as surfaces foul. Water-side scaling, air-side dust, and corrosion all insulate the transfer surface and cut heat recovery, exactly the mechanism that fouls [condensers](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) and [compressor coolers](/courses/compressed-air/maintenance) elsewhere. The defences are the same: design for slightly more area than the minimum so there is margin, choose materials to suit the fluid (stainless for corrosive streams, copper-brass for general duty, titanium for seawater), and budget for regular cleaning, roughly 5% of capital a year is a reasonable maintenance provision.
 
-## Selection and sizing
+<Callout variant="key" title="Buy effectiveness deliberately, then keep it clean">
+An exchanger's effectiveness and approach temperature are design choices bought with area and capital, so size them against the project's economics rather than reaching for the biggest or the cheapest. Then protect what you bought: fouling silently erodes effectiveness over time, so a scheme commissioned at 40% effectiveness can be recovering far less within a couple of years if nobody cleans it. Select for the duty, allow margin for fouling, pick the right material, and maintain it, or the recovered heat quietly drains away through a dirty surface.
+</Callout>
 
-1. Define waste heat supply: temperature, flow rate (kg/s or m³/h)
-2. Define load demand: inlet temperature, outlet temperature, flow rate
-3. Use effectiveness-NTU relationships or software to size HX
-4. Specify materials (stainless steel for corrosive, copper-brass for most, titanium for seawater)
-5. Account for fouling (design for slightly larger effective area than minimum)
+The next lessons apply exchangers to specific recovery duties, starting with the ubiquitous one: recovering heat from a building's own ventilation exhaust.
+
+## Sources and further reading
+
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on heat exchanger selection and effectiveness.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on heat recovery equipment.
+- Manufacturer selection tools (Alfa Laval, Kelvion, SWEP) for effectiveness-NTU sizing.

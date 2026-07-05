@@ -1,30 +1,47 @@
-**Air-to-air heat recovery** (ERV / HRV) recovers energy from exhaust ventilation air, reducing the energy needed for incoming fresh air.
+Every building that ventilates throws warm air outside and pulls cold air in, then spends energy heating the cold air back up to the temperature of the air it just expelled. Air-to-air heat recovery closes that loop: it captures heat from the outgoing exhaust and uses it to pre-warm the incoming fresh air, without the two streams mixing. On mechanically ventilated buildings it is often the single largest heat recovery opportunity, and modern Building Regulations effectively require it on new systems. This lesson covers how it works, the HRV-versus-ERV choice, and what it saves.
 
-## HRV vs ERV
+## HRV and ERV
 
-**HRV (heat recovery ventilator):** Recovers sensible heat (temperature) only. Good for dry climates.
+Two variants, distinguished by what they recover:
 
-**ERV (energy recovery ventilator):** Recovers sensible AND latent heat (humidity). Better for humid climates where dehumidification is costly.
+- **HRV (heat recovery ventilation)** recovers **sensible** heat only, the temperature of the exhaust air. Simple and effective, and the right choice in most UK applications.
+- **ERV (energy recovery ventilation)** recovers **sensible and latent** heat, capturing humidity as well as temperature. It earns its extra cost where managing moisture is expensive: humid climates, or spaces where the [dehumidification load](/courses/control-systems-and-bms/other-sensors) is significant.
 
-In both, exhaust air (usually warm/moist in winter) passes through a core, warming/humidifying incoming fresh air without mixing.
+In both, the two air streams pass through a core (a plate exchanger, or a rotating [thermal wheel](/courses/waste-heat-recovery/thermal-storage-recovery)) that transfers heat from one to the other while keeping them separate. Sensible effectiveness is typically 70 to 85%, so most of the heat in the exhaust is handed to the incoming air.
 
-## Typical performance
+## What it saves
 
-- ERV/HRV sensible effectiveness: 70–85%
-- Latent effectiveness (ERV only): 60–75%
+<WorkedExample title="recovery on an office ventilation system">
+  <Given>
+    - An office ventilates 100 people at 10 L/s each = 1 m³/s of fresh air
+    - Winter: outdoor air at 0 °C, exhaust air at 20 °C; air density 1.2 kg/m³, specific heat ≈ 1.005 kJ/kg·K
+    - An HRV at 80% sensible effectiveness; heating season ≈ 2,000 hours; gas heating at £0.06/kWh
+  </Given>
+  <Find>The heat the HRV recovers and its annual value.</Find>
+  <Solution>
+    Heating the fresh air from 0 to 20 °C without recovery needs 1 × 1.2 × 1.005 × 20 ≈
+    **24.1 kW**. The HRV at 80% recovers 0.8 × 24.1 ≈ **19.3 kW**, pre-warming the incoming
+    air to about 16 °C so the heating system only makes up the last few degrees.
 
-If exhaust is 22°C and outdoor is 0°C, an 80% effective HRV pre-heats incoming to ~18°C (saving heating energy).
+    Over 2,000 heating hours: ≈ 38,600 kWh of gas saved, worth about **£2,300 a year** on
+    this modest system, and proportionally more on higher ventilation rates or longer
+    hours. The recovery scales directly with ventilation rate and climate, which is why it
+    dominates on high-fresh-air buildings like [laboratories and hospitals](/courses/hvac-systems).
+  </Solution>
+</WorkedExample>
 
-## Applications
+## Where it fits, and its upkeep
 
-**Office buildings:** Fresh air requirement (ASHRAE 62.1: 10 CFM/person) in winter waste energy. HRV recovers it.
+Air-to-air recovery pays wherever a building moves significant conditioned air: offices and other buildings meeting fresh-air requirements in winter, airtight dwellings needing balanced ventilation (where ERV recovers heat and humidity together), and data centres, where cold outdoor air can be used with recovery to cut cooling. The maintenance is straightforward but non-negotiable: the core and filters foul with dust and pollen, so filters need regular changing and the core periodic cleaning, or effectiveness, and therefore the saving, quietly falls, the same [fouling](/courses/waste-heat-recovery/heat-exchangers) that afflicts every exchanger. A dirty recovery unit also raises fan pressure, adding an energy penalty on top of the lost recovery.
 
-**Residential:** Tight homes require balanced ventilation. ERV recovers heat and humidity.
+<Callout variant="key" title="Recover the heat you are about to throw out the vent">
+Ventilation is a genuine dilemma made cheap by recovery: fresh air is needed for health and comfort, but heating it from cold is expensive, and air-to-air recovery resolves the tension by reclaiming 70 to 85% of the heat that would otherwise leave with the exhaust. On any mechanically ventilated building it is usually the largest single heat recovery measure available, it is now standard practice on new systems, and its only real enemy is neglected filters. Keep the core clean and it delivers its saving quietly for decades.
+</Callout>
 
-**Datacenters:** Cold outdoor air in winter goes to waste. Recovery reduces cooling demand.
+The next lessons move from building ventilation to the concentrated waste heat of plant: boiler flues, chiller condensers, and industrial processes.
 
-## Maintenance
+## Sources and further reading
 
-Air-side fouling (dust, pollen) is common. Clean filters monthly, core annually (or chemical wash every 3-5 years).
-
-**Cost:** £3,000–10,000 installed. Savings: 10–20% of heating/cooling energy (depends on climate and ventilation rate).
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on ventilation heat recovery and effectiveness.
+- [GOV.UK: Building Regulations Approved Document F (ventilation) and L (energy)](https://www.gov.uk/government/collections/approved-documents) on ventilation and heat recovery requirements.
+- [BSRIA](https://www.bsria.com/uk/) on heat recovery ventilation commissioning and maintenance.

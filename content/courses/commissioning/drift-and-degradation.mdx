@@ -1,33 +1,31 @@
-**Commissioning drift** is the gradual degradation of system performance after commissioning.
+A building leaves commissioning at its peak, and from that moment its performance begins to slip. Sensors drift, operators nudge setpoints, heat exchangers foul, maintenance slides, and the building's use changes underneath control logic that was tuned for a different reality. This gradual erosion, commissioning drift, is why a building that performed well at handover can be wasting 10 to 15% within a couple of years. Understanding how it happens, and how to spot it, is what makes the [re-commissioning](/courses/commissioning/recommissioning) in the next lesson worth doing. This lesson covers the causes, the symptoms, and the economics of prevention.
 
-## Common causes
+## How performance erodes
 
-**Sensor drift:** Temperature sensors lose calibration over time (0.5–2% per year typical). After 2 years, a Pt100 sensor may be ±1–2°C off.
+Drift comes from five directions, all mundane, all cumulative:
 
-**Control tuning drift:** Operators manually adjust setpoints over time; original tuning is lost.
+- **Sensor drift.** [Temperature sensors lose calibration](/courses/control-systems-and-bms/temperature-sensors) at 0.5 to 2% a year, so a control that was accurate at handover is holding the wrong value within a couple of years, silently and precisely.
+- **Control tuning drift.** Operators adjust setpoints to answer complaints, disable strategies that seemed to "hunt", and override schedules during faults and never restore them. The careful commissioned tuning is gone within a year on many sites.
+- **Equipment fouling.** Heat exchangers scale, filters clog, coils dust over, and [efficiency falls](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) with each, exactly the degradations the plant courses priced.
+- **Maintenance neglect.** Belts loosen, bearings wear, refrigerant slowly leaks, and deferred servicing compounds.
+- **Load and use change.** Occupancy grows or shrinks, spaces change purpose, and control logic tuned for the original use no longer fits.
 
-**Equipment fouling:** Heat exchangers scale, filters clog, coils get dusty. Efficiency drops.
+## Catching it
 
-**Maintenance neglect:** Belts loosen, bearings wear, refrigerant slowly leaks.
+Drift is dangerous precisely because it is gradual and invisible: nothing breaks, the building stays roughly comfortable, and the extra energy leaks away unremarked. The symptoms have to be looked for. Rising heating or cooling energy with no matching change in weather or occupancy is the clearest sign, which is exactly why [degree-day-normalised monitoring](/courses/monitoring-and-targeting/normalisation) catches drift that raw bills hide. Setpoint creep (thermostats quietly wandered from their commissioned values), comfort complaints, and sensor readings that fail a sanity check (an outdoor sensor on a sunny wall reading 5 °C high) all point the same way. The [BMS trend logs](/courses/control-systems-and-bms/bms-functions) reveal most of this within weeks to months, if anyone is watching them.
 
-**Load changes:** Building occupancy increases, use pattern changes. Original control logic no longer optimal.
+## The economics of prevention
 
-## Detection
+The arithmetic overwhelmingly favours catching drift early. Routine prevention, annual sensor recalibration, a quarterly controls check, regular plant maintenance, and a light annual re-commissioning, costs on the order of £500 to £1,500 a year for a typical building. Letting drift run unchecked commonly wastes 5 to 15% of energy, which on a building spending £250,000 a year is £12,500 to £37,500 annually. The prevention costs a fraction of a single percentage point of the waste it avoids, which makes it one of the clearest-cut spends in energy management, and one of the most routinely skipped, because nothing is visibly broken.
 
-Watch for:
-- Rising energy consumption (heating or cooling) without occupancy/weather explanation
-- Setpoint creep (thermostat slowly drifted from original)
-- Comfort complaints (room too hot/cold)
-- Sensor readings inconsistent with intuition (outdoor temp sensor on sunny wall reads 5°C high)
+<Callout variant="key" title="Drift is silent, which is exactly why it must be monitored, not noticed">
+The defining feature of commissioning drift is that it never announces itself: no alarm, no breakdown, no complaint loud enough to trace, just a slowly rising bill. That is why it cannot be left to be "noticed" and must instead be watched, through normalised energy tracking, trend review and scheduled sensor checks. The building that only investigates when something breaks will drift for years between breakages, paying for the drift the whole time. Watching for it is the difference between commissioning that lasts and commissioning that quietly undoes itself.
+</Callout>
 
-Trending data (from BMS) reveals these issues within weeks to months.
+Knowing why buildings drift sets up the remedy: re-commissioning, the periodic restoration of performance, which is the final lesson.
 
-## Prevention
+## Sources and further reading
 
-- Annual sensor recalibration
-- Quarterly controls audit (check setpoints, verify sequences)
-- Regular equipment maintenance (cleaning, bearing lubrication, filter changes)
-- Annual re-commissioning (quick check of key parameters)
-
-Cost to prevent: ~£500–1,500/year for a typical building.
-Cost of not preventing: 5–15% energy waste = £5,000–50,000/year (depending on building size).
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on performance persistence and ongoing commissioning.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on detecting and preventing performance drift.
+- [BSRIA](https://www.bsria.com/uk/) on building performance evaluation and aftercare.

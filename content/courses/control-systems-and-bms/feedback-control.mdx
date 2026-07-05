@@ -1,26 +1,30 @@
-All automatic controls work on the **feedback principle:** measure actual value, compare to desired (setpoint), adjust until error is zero.
+Almost every automatic control in a building works on one idea: measure what is actually happening, compare it to what you want, and adjust until the two agree. That loop, running continuously, is what holds a room at temperature, a duct at pressure, or a tank at level, and understanding it is the foundation for every energy-saving control strategy in this course. Controls that waste energy almost always turn out to be feedback loops behaving badly, so this lesson starts with how a good one behaves.
 
-## The feedback loop
+## The loop, step by step
 
-1. **Sensor** measures actual value (e.g., room temperature = 22°C)
-2. **Setpoint** is desired value (e.g., 21°C)
-3. **Error** = setpoint − actual = 21 − 22 = −1°C (too warm)
-4. **Controller** computes what adjustment to make
-5. **Actuator** makes the adjustment (e.g., close heating valve)
-6. **Loop repeats:** Sensor measures new value, adjusts again if needed
+A feedback control loop cycles through four roles, over and over:
 
-This happens continuously (many times per second for fast systems, every few minutes for HVAC).
+- **The sensor** measures the actual value, the room at 22 °C.
+- **The setpoint** is the target, say 21 °C.
+- **The controller** computes the error (actual minus setpoint, here +1 °C, too warm) and decides how to respond.
+- **The actuator** carries out the response, closing the heating valve.
 
-## Stability and response
+Then the sensor reads the new value and the cycle repeats, many times a second for a fast electronic loop, every few minutes for a sluggish heating system. The [sensors](/courses/control-systems-and-bms/temperature-sensors) and [actuators](/courses/control-systems-and-bms/actuators-valves) that make up the loop's senses and muscles get their own lessons; here the focus is the behaviour of the loop as a whole.
 
-A good control loop is **stable** (no oscillation) and **responsive** (reaches setpoint quickly without overshooting too much).
+## Stable, responsive, and why it matters for energy
 
-Poor control: On-off thermostat bangs on/off repeatedly, temperature swings 20°C → 24°C → 20°C (unstable).
+Two qualities define a good loop. It is **stable**: it settles at the setpoint without endless oscillation. And it is **responsive**: it reaches the setpoint reasonably quickly without wild overshoot. The two pull against each other, and balancing them is the art the [control modes lesson](/courses/control-systems-and-bms/control-modes) covers.
 
-Good control: PID loop gently adjusts, temperature smoothly approaches 21°C and stays within ±0.5°C (stable).
+The energy consequence is direct. A loose or unstable loop overshoots: it heats a room to 23 °C chasing a 21 °C target, then coasts back down, then overshoots again, and every degree of overshoot is energy bought and thrown away. A crude on-off thermostat swinging between 19 and 23 °C wastes far more than a well-tuned loop holding 21 ± 0.3 °C, because [each degree of average overheating costs roughly 8% of heating energy](/courses/control-systems-and-bms/temperature-sensors). Tight control is not just a comfort nicety; it is an efficiency measure, and it is why the difference between control algorithms shows up on the fuel bill.
 
-## Key insight for energy
+<Callout variant="key" title="Bad control is usually a loop overshooting, not a machine misbehaving">
+When a system uses more energy than it should, the instinct is to blame the boiler or chiller. More often the plant is fine and the loop around it is overshooting, hunting, or fighting a neighbour, so it delivers more heating or cooling than the space actually needs. Before replacing plant, watch the loop: does the controlled value settle cleanly at setpoint, or does it swing? A swinging value is money leaving through the actuator, and it is usually fixed with tuning rather than capital, which is the cheapest saving in this whole course.
+</Callout>
 
-Tight control (±0.5°C) uses less energy than loose control (±2°C) because the system doesn't overshoot. But tighter control requires more advanced controllers (more cost).
+The loop's behaviour depends heavily on which control algorithm the controller runs, from crude on-off switching to smooth PID. That is the next lesson.
 
-Energy balance: cost of better controller vs. savings in avoided overshoot.
+## Sources and further reading
+
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal), including Guide H on building control systems.
+- [BCIA (Building Controls Industry Association)](https://bcia.co.uk/) for UK controls guidance and training.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on heating controls and their savings.

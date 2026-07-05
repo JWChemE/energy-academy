@@ -1,40 +1,52 @@
-A waste heat recovery project works when **supply, demand, temperature, and timing all align.**
+A waste heat recovery project succeeds only when four things line up: a source, a sink, compatible temperatures, and coincident timing. Miss any one and the economics collapse, however hot the source or however green the intent. This lesson turns that into a repeatable appraisal: the four conditions as a checklist, worked through with numbers that show how decisively the timing match, in particular, governs payback.
 
 ## The four conditions
 
-**1. Supply exists:** Is there measurable waste heat, continuously or during operating hours?
+Every project must pass all four:
 
-**2. Demand exists:** Is there a thermal load (heating, cooling, DHW) that can use the heat?
+1. **Supply exists.** Measurable waste heat, continuously or across known operating hours: temperature, flow, and hours a year.
+2. **Demand exists.** A real thermal load (heating, hot water, process, or preheat) that can actually use the heat.
+3. **Temperature matches.** The source is hot enough for the load, per the [grading rule](/courses/waste-heat-recovery/sources-and-grades): you cannot serve a 60 °C load from a 30 °C source without a heat pump.
+4. **Timing overlaps.** Supply and demand happen at the same time, or storage bridges the gap.
 
-**3. Temperature match:** Is the supply temperature useful for the demand? (You can't heat DHW at 80°C with 30°C waste heat.)
+The first three are usually easy to check. The fourth is where projects quietly fail, because it is the one that depends on operating patterns rather than physics.
 
-**4. Timing overlap:** Do supply and demand happen at the same time?
+## Why timing dominates the economics
 
-## Examples
+The energy recovered, and therefore the saving, is proportional to the hours that supply and demand actually coincide. Two projects with identical equipment and identical peak recovery can have wildly different paybacks purely because of overlap.
 
-**GOOD match:** Chiller running (summer, daytime) + domestic hot water demand (summer, daytime). Payback: 2–4 years.
+<WorkedExample title="the same project, good timing and bad">
+  <Given>
+    - A recovery scheme costs £50,000 to install
+    - At full overlap it recovers 500 MWh of useful heat a year; displaced energy costs £0.05/kWh
+    - A poorly matched version of the same scheme achieves only 100 MWh (supply and demand rarely coincide)
+  </Given>
+  <Find>The payback in each case.</Find>
+  <Solution>
+    Well matched: saving = 500,000 × £0.05 = £25,000/yr, so payback = 50,000 ÷ 25,000 =
+    **2 years**. A clear yes.
 
-**POOR match:** Industrial process (5–8 PM weekdays) + space heating (overnight, winter). Timing mismatch means recovery equipment idle most of the time. Payback: 15+ years.
+    Poorly matched: saving = 100,000 × £0.05 = £5,000/yr, so payback = **10 years**. The
+    same hardware, now marginal at best. Nothing changed but the overlap between when the
+    heat is available and when it is wanted. Timing is not a detail of a recovery project;
+    it is the main variable in its economics, which is why the [chiller condenser](/courses/waste-heat-recovery/chiller-condenser-recovery)
+    and [thermal storage](/courses/waste-heat-recovery/thermal-storage-recovery) lessons
+    spend so long on it.
+  </Solution>
+</WorkedExample>
 
-## Economics
+## Improving the match
 
-For a project with:
-- Recovery cost: £50,000
-- Annual energy recovered: 500 MWh
-- Energy cost: £0.05/kWh
-- Annual saving: 500 × 0.05 = £25,000
-- **Payback: 2 years** ✓
+When timing is the problem, three moves help. **Shift the load** to when the heat is available (run a process, or reheat storage, during the source's operating hours). **Store the heat** to bridge a gap between availability and demand, the [thermal storage](/courses/waste-heat-recovery/thermal-storage-recovery) approach. Or **find a different sink** whose timing fits better. The appraisal steps follow directly: measure the source (temperature, flow, hours), identify nearby loads, estimate the overlap hours honestly, size the equipment to the overlap rather than the peak, and calculate payback, proceeding under about five years (or eight if the project is strategically important).
 
-But if annual energy recovered drops to 100 MWh (poor timing):
-- Annual saving: £5,000
-- **Payback: 10 years** (marginal, maybe not worth it)
+<Callout variant="key" title="Size the equipment to the coincident load, not the peak source">
+The expensive mistake is to size recovery kit for how much heat the source *could* give, when the payback depends on how much a sink actually *takes*, at the same time. Estimate the coincident hours first, then size to them; oversized recovery equipment chasing heat that has nowhere to go is capital earning nothing. And be honest about the overlap: optimistic timing assumptions are the single most common reason a recovery project underperforms its business case. Where the natural overlap is poor, fix the timing (shift load or add storage) before, not after, sizing the hardware.
+</Callout>
 
-**Lesson:** Improve timing match and utilisation to improve payback. Run processes when waste heat is available, or store heat for later use.
+The rest of the course applies this framework to specific technologies and sources: heat exchangers, air-to-air recovery, and the recovery opportunities on flues, chillers and processes.
 
-## Practical steps
+## Sources and further reading
 
-1. Measure waste heat source (temperature, flow rate, hours/year)
-2. Identify nearby thermal loads
-3. Estimate overlap (hours both are running)
-4. Size recovery equipment
-5. Calculate payback; proceed if under 5 years (or 8 years if strategic)
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on appraising heat recovery projects.
+- [GOV.UK: Industrial Energy Efficiency](https://www.gov.uk/government/collections/industrial-energy-efficiency) on matching recovery to demand.
+- [IPMVP, Efficiency Valuation Organization](https://evo-world.org/en/products-services-mainmenu-en/protocols/ipmvp) on verifying recovered-energy savings.

@@ -1,36 +1,47 @@
-Different control **modes** (algorithms) describe how the controller adjusts the actuator.
+The controller in a [feedback loop](/courses/control-systems-and-bms/feedback-control) has to decide, given an error, how hard to push the actuator. The rule it uses is the control mode, and the choice runs from the crude on-off switch in a domestic thermostat to the smooth PID algorithm running most commercial plant. The mode determines how tightly the loop holds its setpoint, and therefore how much energy it wastes in overshoot. This lesson walks the three modes in order of sophistication and the energy each costs.
 
-## On-Off (Bang-Bang) Control
+## On-off (bang-bang) control
 
-Actuator is either fully on or fully off.
+The simplest mode: the actuator is either fully on or fully off, switching at the edges of a small dead band around the setpoint. A basic thermostat fires the boiler below 20.5 °C and cuts it above 21.5 °C. It is cheap and it is everywhere, but it inherently oscillates: the controlled value cannot settle at setpoint, only swing across it, overshooting on the way. That swing wastes energy (every overshoot is heat or cooling bought and shed) and wears equipment through frequent starts. On-off is fine for loads where a bit of swing does not matter (a water tank, a fridge); it is a poor choice wherever tight control saves money.
 
-Example: Thermostat at 21°C setpoint. If T < 20.5°C, heating on fully. If T > 21.5°C, heating off fully.
+## Proportional (P) control
 
-Pros: Simple, cheap.
-Cons: Causes oscillation, energy waste (overshoots setpoint), noise.
+A step up: the actuator opens in proportion to the error. Small error, small opening; large error, large opening. This smooths the wild switching of on-off into gentle modulation, greatly reducing oscillation. Its weakness is a persistent **offset**: proportional control alone tends to settle slightly off the setpoint, because it needs *some* error to hold the actuator open at all. For many duties that small permanent offset is tolerable; where it is not, the next term fixes it.
 
-## Proportional (P) Control
+## Proportional-integral-derivative (PID) control
 
-Actuator position is proportional to error.
+The commercial standard, PID adds two more terms to the proportional response:
 
-If error = 0, actuator is at neutral. If error = 2°C too cold, actuator is 50% on (example).
+- **Integral** accumulates past error and nudges the output until the offset is gone, so the loop actually reaches setpoint rather than settling near it.
+- **Derivative** watches the rate of change and eases off as the value approaches setpoint, damping overshoot before it happens.
 
-Pros: Smoother than on-off, less oscillation.
-Cons: Offset (doesn't always reach setpoint exactly). Dead band required to prevent chatter.
+Well tuned, PID gives the best of everything: no offset, minimal overshoot, quick response. The catch is the tuning: gains set too aggressively make the loop oscillate, too conservatively make it sluggish, and getting them right is a genuine skill (and a common [commissioning](/courses/commissioning/controls-commissioning) failure when skipped).
 
-## Proportional-Integral-Derivative (PID) Control
+<WorkedExample title="what tight control saves">
+  <Given>
+    - An office heating system on crude on-off control swings roughly 19–23 °C
+    - Retuned to PID it holds 21 ± 0.3 °C, cutting average overshoot
+    - Annual heating: 300,000 kWh of gas at £0.06/kWh; tighter control saves ≈ 7%
+  </Given>
+  <Find>The annual saving from the control mode alone.</Find>
+  <Solution>
+    Saving ≈ 0.07 × 300,000 × £0.06 ≈ **£1,260 a year**, for a tuning exercise that costs a
+    controls engineer a day or two and no capital. The saving is real because on-off
+    control spends much of its time above the target it is supposed to hold, and every
+    degree of that overshoot is [about 8% of heating energy](/courses/control-systems-and-bms/temperature-sensors).
+    Multiply across every loop in a building and control-mode quality becomes a
+    meaningful line on the fuel bill.
+  </Solution>
+</WorkedExample>
 
-- **P:** Proportional to error (same as P above)
-- **I:** Integral (accounts for past error; if you're always 0.2°C too cold, I gradually increases output to compensate)
-- **D:** Derivative (looks at rate of change; if temperature is rising fast, D reduces output to prevent overshoot)
+<Callout variant="key" title="Match the mode to the duty, then tune it">
+The rule of thumb: on-off for loads that tolerate swing and where simplicity wins; PID for anything where holding a tight setpoint saves energy or protects comfort, which is most heating, cooling and ventilation control. But a PID loop left at factory-default gains, or detuned by an operator who found it "hunting", can perform worse than honest on-off. The saving in the example comes not from PID existing but from PID *tuned*, which is why controls commissioning and re-tuning recur throughout this course.
+</Callout>
 
-PID is the industry standard for good control: no offset, minimal overshoot, fast response.
+Single loops rarely act alone in a real building; the next lesson covers how loops are stacked and coordinated so they help rather than fight each other.
 
-Tuning PID is an art: too aggressive (high gains) causes oscillation; too conservative causes slow response.
+## Sources and further reading
 
-## Energy impact
-
-PID: tight control without oscillation = less energy wasted.
-On-off: oscillation = overshooting setpoint, wasting energy.
-
-Example: Office with on-off heat: temp swings 19–23°C. PID maintains 21±0.2°C. PID saves ~5–10% heating energy.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on control modes and loop tuning.
+- [BCIA](https://bcia.co.uk/) guidance on control strategy selection.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on the energy impact of heating and cooling controls.

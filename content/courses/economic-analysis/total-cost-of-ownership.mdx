@@ -1,35 +1,49 @@
-**Total cost of ownership (TCO)** captures capital, operating, maintenance, and disposal costs over the equipment's lifetime.
+Purchase price is the cost everyone sees and the one that matters least. For energy-using equipment, the money spent buying it is usually dwarfed by the money spent running it: the [motors course](/courses/motors-and-drives/motor-basics) showed a motor consuming its own purchase price in electricity every few weeks. Total cost of ownership (TCO) is the discipline of counting every pound a piece of equipment costs across its whole life, and it routinely overturns the decision that purchase price alone would make. This lesson builds a TCO and shows why the cheap option so often turns out to be the expensive one.
 
-## Components
+## The five components
 
-**Capital cost:** equipment purchase price + installation
-**Operating cost:** energy (the main driver for most equipment)
-**Maintenance cost:** servicing, cleaning, repairs, spare parts
-**Replacement cost:** if major components fail mid-life
-**Residual value:** scrap/resale value at end of life (negative cost)
+A complete TCO adds up, over the equipment's life:
 
-## Example: Boiler comparison
+- **Capital**: purchase plus installation, the only cost purchase-price thinking sees.
+- **Energy**: fuel or electricity to run it, normally the dominant term for pumps, fans, motors, boilers and chillers.
+- **Maintenance**: servicing, cleaning, spares, and the labour to fit them.
+- **Replacement**: any major component expected to fail and be renewed mid-life.
+- **Residual value**: scrap or resale at end of life, a credit that reduces the total.
 
-**Conventional boiler (85% efficient):**
-- Capital: £30k
-- Annual fuel: 100,000 kWh ÷ 0.85 = 117,647 kWh × £0.05/kWh = £5,882/year
-- Maintenance: £500/year (annual service, minor repairs)
-- 15-year TCO: 30k + (5,882 + 500) × 15 − 2k (scrap) = **£97k**
+For a rigorous comparison each future cost is discounted to present value, exactly as in the [NPV lesson](/courses/economic-analysis/npv-and-irr); for a first pass, undiscounted lifetime totals already tell most of the story, because the energy term is usually so large that discounting changes the ranking rarely.
 
-**Condensing boiler (92% efficient, higher capital):**
-- Capital: £45k
-- Annual fuel: 100,000 kWh ÷ 0.92 = 108,696 kWh × £0.05/kWh = £5,435/year
-- Maintenance: £600/year (more frequent flue cleaning, corrosion checks)
-- 15-year TCO: 45k + (5,435 + 600) × 15 − 3k (scrap) = **£90k**
+## Where TCO changes the decision
 
-**Winner: Condensing boiler saves £7k over 15 years despite 15k higher capital cost.** Simple payback would show: (45k − 30k) / (5,882 − 5,435) = 10k / 447 = 22.4 years (misleading!). TCO shows the true picture: 2.3-year effective payback.
+<WorkedExample title="the boiler that costs more to buy and less to own">
+  <Given>
+    - Both boilers deliver 400,000 kWh of useful heat a year; gas £0.06/kWh
+    - Old-style boiler: 80% efficient, £8,000 capital, £500/yr maintenance
+    - Condensing boiler: 92% efficient, £20,000 capital, £700/yr maintenance
+    - 15-year life
+  </Given>
+  <Find>The annual fuel bills and the 15-year TCO of each.</Find>
+  <Solution>
+    Fuel: old-style burns 400,000 ÷ 0.80 = 500,000 kWh ≈ **£30,000/yr**; condensing burns
+    400,000 ÷ 0.92 ≈ 434,800 kWh ≈ **£26,100/yr**. The condensing boiler saves ≈ £3,900 a
+    year in fuel alone.
 
-## Application to energy projects
+    15-year TCO: old-style ≈ £8,000 + (30,000 + 500) × 15 = **£465,500**; condensing ≈
+    £20,000 + (26,100 + 700) × 15 = **£422,000**. The condensing boiler costs £12,000 more
+    to buy and about **£43,500 less to own**. Purchase price pointed at the wrong boiler;
+    TCO points at the right one, and the £12,000 premium repays in roughly three years.
+  </Solution>
+</WorkedExample>
 
-Always ask:
-- How long does equipment last?
-- What does maintenance cost?
-- Can components be refurbished or reused?
-- What's the residual value?
+The pattern is general: whenever the energy term dominates (which for most powered plant it does), paying more up front for efficiency almost always wins on TCO, and the higher the running hours, the more decisively. This is why the [motor efficiency](/courses/motors-and-drives/efficiency-classes) and [VFD](/courses/motors-and-drives/vfd-applications) cases came out so strongly, and why "cheapest to buy" is the most expensive procurement rule an energy-using organisation can adopt.
 
-A high-efficiency, low-maintenance option often wins TCO even if capital cost is higher.
+<Callout variant="key" title="Ask four questions of any purchase before the price">
+Before comparing price tags, ask: how long will it last, what will it cost to run, what will it cost to maintain, and what is it worth at the end? Those four answers, multiplied by the running hours, usually swamp the difference in purchase price. Write the TCO into the procurement specification so the whole-life number, not the sticker, decides, exactly as the [motor purchase policy](/courses/motors-and-drives/efficiency-classes) does for one equipment class.
+</Callout>
+
+TCO is life-cycle thinking applied to one piece of kit. The next lesson works through fuller life-cycle examples where the gap between purchase price and lifetime cost is at its most dramatic.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on life-cycle costing for energy equipment.
+- [BS ISO 15686-5](https://www.iso.org/standard/61148.html) on life-cycle costing for buildings and constructed assets.
+- [HM Treasury Green Book](https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government) on whole-life cost appraisal.

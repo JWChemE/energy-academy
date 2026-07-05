@@ -57,10 +57,11 @@ the gated courses follow in practitioner-relevance order.
 - [x] steam-and-condensate (231) *(Jul 2026)*
 - [x] refrigeration-and-heat-pumps (224) *(Jul 2026)*
 - [x] motors-and-drives (269) *(Jul 2026)*
-- [ ] economic-analysis (242)
-- [ ] control-systems-and-bms (187)
-- [ ] commissioning (190)
-- [ ] waste-heat-recovery (197)
+- [x] economic-analysis (242) *(Jul 2026)*
+- [x] control-systems-and-bms (187) *(Jul 2026)*
+- [x] commissioning (190) *(Jul 2026 — also fixed a fabricated "ETICS" framework;
+      lesson renamed to Retro-Commissioning Existing Buildings)*
+- [x] waste-heat-recovery (197) *(Jul 2026)*
 - [ ] buildings-and-envelope (271)
 - [ ] insulation-systems (294)
 - [ ] lighting (305)

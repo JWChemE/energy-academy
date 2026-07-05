@@ -1,40 +1,31 @@
-**Handover documentation** is what's left behind after commissioning for the building operator.
+Commissioning can find every fault, tune every loop and prove every rating, and still fail, if the knowledge it generated leaves the site in the commissioning agent's head. Handover documentation is what turns a commissioned building into an operable one: the record of how the systems are set up, how to run them, and how to keep them performing. Poor handover is why so many well-commissioned buildings drift back to waste within a year, because the operators who inherit them never learn how they were meant to work. This lesson covers what a good handover package contains and why each part matters.
 
-## Essential documents
+## What the package must contain
 
-**1. Commissioning report:**
-- Executive summary (key findings, defects found/fixed, energy baseline)
-- Detailed test results (all systems, pass/fail, issues)
-- As-built drawings (marked with actual installed layout, setpoints, configurations)
-- Lessons learned
+A complete handover leaves the operator five things:
 
-**2. Operation manuals:**
-- One per major system (boiler, chiller, HVAC, BMS)
-- How to start, stop, adjust setpoints
-- Typical operation modes (heating season, cooling season, unoccupied)
-- Emergency procedures (what to do if it fails)
-- Contact info for service providers
+- **The commissioning report**: an executive summary (findings, defects fixed, the performance baseline), the detailed test results, and the [as-built information](/courses/commissioning/performance-testing), including the setpoints and configurations actually left in place. This is the record that the building was proven, and the reference for detecting later drift.
+- **Operation manuals**, one per major system: how to start, stop and adjust it, its normal operating modes across the seasons, emergency procedures, and who to call. Written for the person who will run the building at 6 am, not for the engineer who designed it.
+- **A maintenance schedule**: the annual tasks (filter changes, [sensor calibration](/courses/control-systems-and-bms/temperature-sensors), cleaning) and longer-cycle servicing, with responsibilities named.
+- **Control documentation**: how to use the BMS, the control sequences in plain form (so the next engineer can understand the logic without reverse-engineering it), and what each alarm means.
+- **Training sign-off**: a record that the operators were actually trained, on what, and confirmed they understood it.
 
-**3. Maintenance schedule:**
-- Annual tasks (filter changes, sensor calibration, cleaning)
-- 5-year tasks (major servicing, replacement)
-- Contact info for maintenance contractors
+## Why each part earns its place
 
-**4. Control documentation:**
-- BMS user guide (how to log in, view data, change setpoints)
-- Control sequences (pseudocode or flowcharts showing how each system responds)
-- Alarm thresholds and what they mean
+Every gap in the package becomes a running cost. Without clear operation manuals, operators run systems by guesswork, override strategies they do not understand, and waste energy while chasing comfort complaints. Without a maintenance schedule, service is deferred or done wrong, and the plant [degrades](/courses/commissioning/drift-and-degradation). Without documented control sequences, the next controls contractor cannot safely change anything, so improvements stall and faults linger. And without recorded setpoints and a baseline, no one can ever tell whether performance has drifted, because there is nothing to compare against. The documentation is not the tail-end formality it is often treated as; it is the mechanism by which everything commissioning achieved actually persists.
 
-**5. Training sign-off:**
-- Operator attended training: Yes/No, date
-- Topics covered (how to operate, emergency procedures, efficiency tips)
-- Operator signature confirming understanding
+## Training: the part most often skipped
 
-## Importance
+Documentation only works if the people inheriting the building can use it, which is why the training sign-off matters as much as the manuals. A handover meeting that walks the operators through the systems, the strategies, the alarms and the emergency procedures, and confirms they followed it, is what connects the paperwork to practice. It is also the moment to hand over the [monitoring and targeting](/courses/monitoring-and-targeting/why-mt) baseline, so the operators start tracking performance against the commissioned numbers from day one.
 
-Poor documentation leads to:
-- Operators not knowing how to use systems (waste energy, comfort complaints)
-- Maintenance contractors guessing at service procedures (poor upkeep)
-- New building managers unable to troubleshoot (inefficiency persists)
+<Callout variant="key" title="Handover is where commissioning either persists or evaporates">
+The performance a building leaves commissioning with is the best it will ever have, and how long it holds that performance depends almost entirely on handover. A thorough package (recorded setpoints and baseline, plain-language sequences, a real maintenance schedule, trained operators) lets the building be run and maintained as intended for decades. A thin one (a box of manufacturer manuals and no training) guarantees drift, because nobody who runs the building knows how it was meant to work. Invest in the documentation and the training: it is the cheapest insurance on the whole commissioning spend.
+</Callout>
 
-Invest in clear, concise documentation. It pays dividends over the building's 20-30 year life.
+Even a perfect handover cannot stop performance drifting over time. The final lessons cover why buildings degrade and how re-commissioning keeps them honest.
+
+## Sources and further reading
+
+- [CIBSE Commissioning Codes and Guide M](https://www.cibse.org/knowledge-research/knowledge-portal) on handover, O&M documentation and Soft Landings.
+- [BSRIA Soft Landings framework](https://www.bsria.com/uk/) on handover and aftercare that closes the performance gap.
+- [Government Soft Landings guidance, GOV.UK](https://www.gov.uk/) on structured handover for public projects.

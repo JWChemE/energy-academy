@@ -1,39 +1,58 @@
-Real-world examples where life-cycle thinking changes decisions.
+The gap between purchase price and lifetime cost is easiest to feel through worked examples, so this lesson takes two of the most common energy decisions, a lighting choice and a pump choice, and follows the money all the way through. In both, the option that looks expensive on the shelf is dramatically the cheaper one to own, and in both, simple payback and life-cycle costing tell such different stories that the contrast is the lesson.
 
-## Example 1: LED vs halogen lighting
+## Example 1: LED versus halogen, over the life
 
-| | Halogen | LED |
-| --- | --- | --- |
-| Upfront cost | 5 GBP | 50 GBP |
-| Power | 60 W | 10 W |
-| Lifespan | 2,000 hours (~3 years) | 50,000 hours (~15 years) |
-| Annual energy cost (8 h/day) | 175 GBP | 29 GBP |
+<WorkedExample title="the £45 bulb that saves hundreds">
+  <Given>
+    - A fitting runs 8 hours a day (≈ 2,920 h/yr); electricity £0.20/kWh
+    - Halogen lamp: £5, 60 W, lasts ~2,000 hours (roughly one year here)
+    - LED lamp: £50, 10 W, lasts ~50,000 hours (well beyond the 15-year horizon)
+  </Given>
+  <Find>The 15-year cost of each, per fitting.</Find>
+  <Solution>
+    Energy per year: halogen 60 W × 2,920 h = 175 kWh ≈ £35; LED 10 W × 2,920 h = 29 kWh
+    ≈ £6.
 
-**15-year TCO (8 h/day operation):**
-- Halogen: 5×5 (replacements) + 175×15 = 2,625 + 2,625 = **5,250 GBP**
-- LED: 50 + 29×15 = 50 + 435 = **485 GBP**
+    Over 15 years the halogen also needs replacing roughly every year (≈ 15 lamps, £75),
+    so its total ≈ £75 + £35 × 15 = **£600**. The LED needs one lamp: £50 + £6 × 15 =
+    **£140**. The LED costs ten times as much to buy and saves about **£460 per fitting**
+    over its life. Multiply by a few hundred fittings and the LED scheme is one of the
+    largest, safest savings any building holds.
+  </Solution>
+</WorkedExample>
 
-LED wins dramatically. Simple payback: (50 − 5) / (175 − 29) = 45 / 146 = 0.31 years (3.7 months). TCO shows LED saves 90% over 15 years.
+Simple payback here is about four months, so this is a case where payback and life-cycle costing happen to agree: the project is a screaming yes on any metric. The life-cycle view adds the scale of the prize (the £460 that keeps accruing long after payback), which is what justifies doing the whole building at once rather than one failed lamp at a time.
 
-## Example 2: Variable-speed pump vs fixed + valve
+## Example 2: variable-speed pump versus fixed pump and valve
 
-**Fixed pump with damper:**
-- Capital: 5k GBP (pump + damper)
-- Average load: 50% (damper closes half the time, wasting power)
-- Annual energy (100 kW at 50% avg load): 50 kW × 8,760 h = 438 MWh × £0.05/kWh = **21,900 GBP/year**
+Here payback and life-cycle costing agree on the direction but the life-cycle number reveals just how large the stakes are, because the [cube law](/courses/motors-and-drives/why-vfds) makes the running-cost gap enormous.
 
-**Variable-speed pump (VFD):**
-- Capital: 15k GBP (pump + VFD)
-- Same average load: 50%, but speed drops, so power ∝ flow³
-- Annual energy: ~6.25 kW × 8,760 h = 54.75 MWh × £0.05/kWh = **2,738 GBP/year**
-- Maintenance (VFD): 200 GBP/year
+<WorkedExample title="the drive that saves more than it costs, many times over">
+  <Given>
+    - A pumping duty averages 50% flow; electricity £0.20/kWh; 6,000 running hours a year
+    - Fixed pump throttled by a valve: £5,000 capital, draws ≈ 30 kW throughout (the valve wastes the surplus)
+    - Variable-speed pump: £15,000 capital, power follows flow³, so ≈ 30 × 0.5³ ≈ 3.75 kW; £200/yr extra maintenance
+  </Given>
+  <Find>The annual running cost of each, and the 15-year totals.</Find>
+  <Solution>
+    Running cost: fixed ≈ 30 kW × 6,000 h × £0.20 = **£36,000/yr**; variable ≈ 3.75 kW ×
+    6,000 h × £0.20 = **£4,500/yr**. The drive cuts the bill by £31,500 a year.
 
-**15-year TCO:**
-- Fixed: 5k + 21,900×15 = **333.5k**
-- VFD: 15k + (2,738 + 200)×15 = **46,170**
+    15-year TCO: fixed ≈ £5,000 + £36,000 × 15 = **£545,000**; variable ≈ £15,000 +
+    (£4,500 + £200) × 15 = **£85,500**. The drive costs £10,000 more up front and about
+    **£460,000 less to own**. Payback on the premium is under four months. The cube law,
+    not the price tag, decides this, and the price tag pointed the wrong way.
+  </Solution>
+</WorkedExample>
 
-**VFD wins by £287k!** Payback: (15k − 5k) / (21,900 − 2,938) = 10k / 18,962 = 0.53 years.
+<Callout variant="key" title="When running cost dominates, buy efficiency and never look back">
+Both examples share one shape: a large annual running cost and a small capital difference, so the efficient option wins by a landslide over any realistic life. That shape describes most energy decisions, which is why "high capital for high efficiency" is the default that pays, and why life-cycle costing, not the purchase order, should hold the pen. The rare exceptions (very low running hours, genuinely short equipment life) are exactly the cases the [portfolio lesson](/courses/economic-analysis/portfolio-approach) flags for a second look.
+</Callout>
 
-## Key lesson
+Knowing a project is worth doing is only half the decision; the other half is how to pay for it, which the next lesson takes up.
 
-When operating cost dominates (as in energy projects), high upfront cost for efficiency is almost always justified. TCO, not simple payback, tells the truth.
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on lighting and pump system life-cycle costs.
+- [Energy Saving Trust](https://energysavingtrust.org.uk/) for lamp efficiency and running-cost data.
+- [BS ISO 15686-5](https://www.iso.org/standard/61148.html) on the life-cycle costing method behind these comparisons.

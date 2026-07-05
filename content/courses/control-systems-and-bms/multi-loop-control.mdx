@@ -1,32 +1,25 @@
-**Multi-loop control** coordinates multiple control loops working together (e.g., chiller, boiler, pump speed, damper position).
+A real building runs dozens of [control loops](/courses/control-systems-and-bms/feedback-control) at once: valves, dampers, pump speeds, boiler and chiller stages, zone temperatures. Left uncoordinated they interfere, and the most expensive interference of all is heating and cooling running in the same space at the same time, each fighting the other while both meters spin. Multi-loop control is the discipline of stacking and coordinating loops so they cooperate. This lesson covers the two structures that matter: cascade control, which stacks loops, and coordination, which stops them fighting.
 
-## Cascade control
+## Cascade control: fast loop inside slow loop
 
-Inner loop: Controls fast-responding variable (valve position, damper angle, pump speed).
-Outer loop: Controls slower-responding variable (room temperature, supply water temp, pressure).
+Some things respond quickly (a valve position, a supply-water temperature); others respond slowly (a room warming up). Trying to control a slow variable directly by wagging a fast actuator gives clumsy, laggy control. Cascade control splits the job: an **inner loop** holds a fast intermediate variable steady, while an **outer loop** sets that inner loop's target based on the slow variable it really cares about.
 
-Example: BMS sets heating supply water setpoint (60°C). Lower-level loop controls valve to maintain 60°C. This is faster and more stable than BMS directly controlling valve.
+The classic example is heating. The outer loop decides the building needs, say, 60 °C flow water; a fast inner loop then works the valve to hold exactly 60 °C at the boiler outlet. Because the inner loop absorbs disturbances (a pump kicking in, a load changing) before they ever reach the rooms, the whole system is faster and far more stable than one loop trying to swing a valve directly off room temperature. Cascade structures underpin most good HVAC control, and getting the inner loop faster than the outer is the rule that makes them work.
 
-## Precedent hierarchy
+## Coordination: stopping loops from fighting
 
-When multiple control loops conflict, a hierarchy determines priority.
+The costly failure mode of independent loops is contradiction. A heating loop, seeing a slightly cool room, cracks its valve open; a cooling loop in the same zone, seeing a slightly warm reading a moment later, starts its chiller. Now the building is heating and cooling the same air simultaneously, paying twice to stand still. This is not a rare pathology; the [audit walk-through](/courses/energy-audits/building-walkthrough) finds it constantly, especially in [split-system estates](/courses/refrigeration-and-heat-pumps/split-systems) where each unit controls itself.
 
-Example: Building with cooling and heating:
-1. **Highest priority:** Safety (prevent freeze-up, overpressure)
-2. **Next:** Comfort (maintain setpoint)
-3. **Next:** Energy efficiency (minimize consumption)
-4. **Lowest:** Convenience (nice-to-have features)
+The fix is a **dead band**: a temperature range in which neither heating nor cooling acts. Heat only below 19 °C, cool only above 24 °C, and between the two do nothing. The gap guarantees the two services can never run at once, and the few degrees of drift it allows cost nothing while saving the entire simultaneous-conditioning waste. A priority hierarchy backs it up: safety interlocks (freeze protection, overpressure) override everything, comfort overrides efficiency, and efficiency overrides convenience, so that when loops do conflict the resolution is predictable rather than a race.
 
-If cooling and heating both demand action, comfort (temperature) overrides energy efficiency.
+<Callout variant="key" title="A dead band is the cheapest coordination there is">
+Simultaneous heating and cooling is one of the most common and most expensive control faults in commercial buildings, and it is invisible without trending because each service looks like it is just doing its job. Setting a dead band between the heating and cooling setpoints (a 19–24 °C neutral zone works for most spaces) eliminates it for the cost of a setpoint change. Well-coordinated multi-loop control routinely saves 10 to 20% against independent loops left to fight, and the dead band is the single highest-value piece of that. Look for it first in any building with both heating and cooling.
+</Callout>
 
-## Coordination
+Loops need something to sense before they can control, and the quality of that sensing sets a ceiling on everything above it. The next lessons turn to sensors and actuators.
 
-Loops must not fight each other.
+## Sources and further reading
 
-Bad: Heating loop opens valve; cooling loop simultaneously opens chiller. Result: simultaneous heating and cooling (waste).
-
-Good: Heating disabled when cooling is active. Or, use a setpoint "deadband": heating at 18°C, cooling only if temp > 24°C. In between, neither acts.
-
-## Practical benefit
-
-Well-coordinated multi-loop control can save 10–20% energy compared to independent, poorly coordinated loops.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on cascade control and loop coordination.
+- [BCIA](https://bcia.co.uk/) on control strategy and avoiding simultaneous heating and cooling.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on HVAC control coordination savings.

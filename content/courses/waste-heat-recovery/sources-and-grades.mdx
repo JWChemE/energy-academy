@@ -1,40 +1,33 @@
-**Waste heat** is thermal energy that would otherwise be lost. Not all waste heat is equally valuable — it depends on temperature, availability, and whether there's a nearby thermal load.
+Every site that burns fuel or runs machinery throws heat away, and a large fraction of it is warm enough to be useful. A typical industrial facility loses 20 to 30% of its fuel input as waste heat up flues, off condensers, and out of exhausts. Recovering it is nearly free energy, but only if the heat is the right temperature, arrives when it is needed, and has somewhere to go. This opening lesson sorts waste heat by its two properties that decide its value, temperature and timing, and sets up the matching problem that every project in the course turns on.
 
-## Common waste heat sources
+## Where the heat is, by temperature
 
-**High-temperature (150–350°C):**
-- Boiler flue gas
-- Industrial furnace exhaust
-- Incinerator stack
+Waste heat is graded by temperature, because temperature decides what it can usefully do:
 
-**Medium-temperature (50–150°C):**
-- Chiller condenser water
-- Process steam condensate
-- Air compressor discharge
+- **High grade (roughly 150 to 350 °C+)**: boiler and furnace flue gases, kiln and incinerator exhausts. Hot enough to raise steam, preheat combustion air, or drive almost any load.
+- **Medium grade (about 50 to 150 °C)**: [chiller and compressor](/courses/compressed-air/heat-recovery) discharge, steam condensate, engine jacket water. Ideal for hot water, space heating and process pre-heat.
+- **Low grade (about 20 to 50 °C)**: refrigeration condensers, ventilation exhaust air, warm effluent. Useful for pre-heating and ventilation, or as a source for a [heat pump](/courses/refrigeration-and-heat-pumps/reverse-cycle) that lifts it to something more useful.
 
-**Low-temperature (20–50°C):**
-- Refrigeration system condenser
-- Building exhaust air (ventilation)
-- Wastewater
-- Equipment cooling water
+The rule that governs everything downstream: you cannot heat a load with a source colder than it needs. Thirty-degree condenser water cannot make sixty-degree hot water directly; it can only preheat toward it, or feed a heat pump. Matching source grade to load requirement is the first test any project must pass.
 
-## Grading heat by value
+## The other axis: quantity, continuity and a sink
 
-**High-grade heat:** High temperature, large quantity, stable supply. Example: 200°C boiler flue, continuous generation.
+Temperature alone does not make a project. Three more conditions matter as much:
 
-**Medium-grade heat:** Moderate temperature (60–100°C), decent quantity, intermittent. Example: chiller condenser, daytime only.
+- **Quantity**: enough kilowatts to be worth the equipment.
+- **Continuity**: a steady or predictable supply beats an intermittent trickle, because recovery kit sized for a source that rarely flows sits idle.
+- **A sink**: a genuine thermal load that wants the heat, at a compatible temperature, at the same time it is available.
 
-**Low-grade heat:** Low temperature, small quantity, variable. Example: warm exhaust air in mild weather.
+That last point is where most waste-heat projects live or die, and it gets its own lesson on [matching and economics](/courses/waste-heat-recovery/economics-and-matching). A foundry rejecting furnace heat all summer while the only heating demand is in winter has abundant high-grade heat and no viable project, because supply and demand never coincide. A chiller running through summer beside a summer hot-water demand has a modest source and an excellent project, because everything lines up.
 
-Value depends on **finding a thermal sink** (a process or space that needs heating) at the same time.
+<Callout variant="key" title="Grade the heat, then find the sink; a source without a matched load is not a project">
+The beginner's mistake is to get excited about a hot exhaust and stop there. Waste heat is only worth its displaced fuel, and it displaces nothing without a load that wants it, at a temperature it can serve, at the time it flows. Assess every potential source on all four counts, temperature, quantity, continuity, and a time-coincident sink, before costing any equipment. The best projects are rarely the hottest sources; they are the ones where a steady source of adequate grade sits next to a matched, simultaneous demand.
+</Callout>
 
-## Matching supply to demand
+With the grading framework in place, the next lesson makes the business case concrete: what recovered heat is worth and what the typical projects pay back.
 
-The best waste heat project has:
-1. **Supply:** Continuous or predictable waste heat generation
-2. **Demand:** Nearby thermal load at compatible temperature
-3. **Timing match:** Supply and demand aligned (not supply in summer, demand in winter)
+## Sources and further reading
 
-Example of poor match: foundry furnace heat in summer, heating need in winter only.
-
-Example of good match: Chiller running summer, space cooling + condenser heat recovery for DHW (same season, same building).
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on industrial waste heat recovery.
+- [GOV.UK: Industrial Energy Efficiency and heat recovery guidance](https://www.gov.uk/government/collections/industrial-energy-efficiency) on identifying recoverable heat.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on heat recovery in building services.

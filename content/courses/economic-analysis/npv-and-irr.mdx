@@ -1,49 +1,53 @@
-**NPV** and **IRR** are the rigorous tools for comparing energy projects.
+Net present value and internal rate of return are the two numbers a finance director actually expects to see on a capital request, and between them they answer the two questions payback cannot: does this project create value, and what return does it earn? Both are built directly on the [discounting](/courses/economic-analysis/time-value-of-money) from the previous lesson. This lesson defines them, works the example that catches a payback-approved loser, and settles when to use which.
 
-## Net Present Value (NPV)
+## Net present value: does it create value?
 
-**NPV = sum of all discounted future cash flows − initial cost**
+**NPV** is the sum of every future cash flow, each discounted to today, minus the up-front cost. The decision rule is as simple as it is powerful:
 
-Example: 50k GBP boiler retrofit, 5k GBP savings/year for 15 years, 5% discount rate:
-- Year 0: -50k
-- Year 1: 5k / 1.05 = 4,762
-- Year 2: 5k / 1.0576 = 4,530
-- ... (and so on)
-- Total discounted cash flows: ~62.3k
+> NPV positive → the project earns more than your discount rate → do it.
+> NPV negative → it earns less → reject it, however tempting the payback looked.
 
-NPV = 62.3k − 50k = **+12.3k**
+<WorkedExample title="the 10-year payback that destroys value">
+  <Given>
+    - A boiler upgrade costs £40,000 and saves £4,000 a year for its 15-year life
+    - The organisation's discount rate (hurdle rate) is 8%
+    - Annuity factor, 15 years at 8%: 8.56
+  </Given>
+  <Find>Simple payback, NPV, and the verdict.</Find>
+  <Solution>
+    Simple payback = 40,000 ÷ 4,000 = **10 years**. On a 15-year life that might scrape
+    through a payback screen.
 
-**If NPV > 0, the project earns more than your discount rate and should be done.** If NPV < 0, reject it.
+    NPV: present value of savings = £4,000 × 8.56 ≈ £34,240; minus the £40,000 cost gives
+    **NPV ≈ −£5,760**. The project *destroys* about £5,800 of value. The savings, spread
+    over fifteen years and discounted at 8%, never add up to the £40,000 they cost.
 
-## Internal Rate of Return (IRR)
+    Payback said "acceptable"; NPV says "reject". NPV is right, because it counts the time
+    value payback ignores. This is the exact trap the [payback lesson](/courses/economic-analysis/simple-payback-revisited)
+    warned about, now shown in numbers.
+  </Solution>
+</WorkedExample>
 
-**IRR is the discount rate at which NPV = 0.** In other words, it's the project's true rate of return.
+## Internal rate of return: what return does it earn?
 
-For the boiler above, if NPV = 0 at 8% discount rate, then IRR = 8%.
+**IRR** is the discount rate at which NPV comes out exactly zero, so it is the project's own built-in rate of return, expressed as a percentage. The rule mirrors NPV:
 
-**Decision rule: If IRR > hurdle rate, accept the project.**
+> IRR above your hurdle rate → accept. IRR below it → reject.
 
-If your hurdle rate is 6% and IRR is 8%, the project earns 2% more than required — worth doing.
+The boiler above earns an IRR of about **5.6%**: below the 8% hurdle, which is simply another way of seeing the negative NPV. A strong efficiency measure looks very different: the £15,000 VFD saving £12,000 a year from the [motors course](/courses/motors-and-drives/why-vfds) has an NPV near £88,000 at 8% and an IRR well above 50%. IRR appeals to finance because it speaks their language: "this project returns 50%" lands harder than "its NPV is £88,000".
 
-## NPV vs IRR
+## Which to use
 
-**Use NPV when:**
-- Comparing projects of different sizes (NPV shows absolute gain, IRR can mislead)
-- Projects are mutually exclusive (pick the highest NPV)
-- Discount rate is known and fixed
+The two usually agree, and where they diverge, **NPV wins** because it measures value in pounds rather than a percentage. Two cases show why. When projects differ in size, IRR can flatter the small one: a 60% return on £5,000 (NPV maybe £4,000) is worth less in absolute terms than a 20% return on £100,000 (NPV maybe £40,000), yet IRR ranks them backwards; for mutually exclusive choices, pick the highest NPV. IRR also misbehaves arithmetically when a project has unusual cash-flow patterns (a mid-life replacement cost can produce two IRRs or none). Use IRR to communicate and to test against a hurdle; use NPV to choose.
 
-**Use IRR when:**
-- Comparing projects on equal footing (both must exceed hurdle rate)
-- Uncertainty about discount rate (IRR is independent)
-- Reporting to finance (IRR feels familiar to investors)
+<Callout variant="key" title="Screen on payback, decide on NPV, communicate with IRR">
+The three tools are a division of labour, not rivals. Payback filters the pipeline in seconds. NPV makes the actual accept-or-reject and rank decisions, in pounds, accounting for time. IRR carries the result into the finance conversation as a single familiar percentage. A capital request that shows all three, with the [savings themselves verified](/courses/measurement-and-verification) rather than assumed, is one a finance function can approve with confidence.
+</Callout>
 
-**Caution:** IRR assumes reinvestment at the IRR rate, which may not be realistic. NPV is more theoretically sound.
+Numbers this far assume you know the full cost. The next lesson widens the lens from purchase price to the total cost of owning equipment over its life, where efficiency usually wins even when it looks expensive up front.
 
-## Typical energy project IRR
+## Sources and further reading
 
-- LED retrofit: 50–100%+ IRR (payback under 1 year)
-- VFD retrofit: 15–30% IRR (payback 2–4 years)
-- Boiler replacement: 8–15% IRR (payback 5–10 years)
-- Building insulation: 5–10% IRR (payback 10–20 years)
-
-If your hurdle rate is 6%, all these are worthwhile (except possibly insulation in cooler climates).
+- [HM Treasury Green Book](https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government) on NPV-based appraisal in UK practice.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on building the investment case for efficiency.
+- [BSI PAS 2080](https://www.bsigroup.com/en-GB/insights-and-media/insights/brochures/pas-2080-carbon-management-in-buildings-and-infrastructure/) for whole-life value including carbon in infrastructure decisions.

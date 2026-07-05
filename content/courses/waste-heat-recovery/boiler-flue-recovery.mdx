@@ -1,31 +1,40 @@
-**Condensing boiler retrofit** or **condensing boiler replacement** is one of the fastest-payback waste heat projects.
+A boiler's flue is the most reliable waste heat source on most sites: hot, continuous whenever the boiler fires, and concentrated in one accessible duct. A conventional boiler sends its combustion gases up the stack at 150 to 200 °C, carrying away energy that was paid for as fuel. Two measures reclaim it: an economiser recovers the sensible heat, and condensing operation goes further by reclaiming the latent heat in the flue's water vapour. This lesson covers both, their economics, and the practical catches that decide whether they work.
 
-## How it works
+## Economisers: the sensible heat
 
-Standard boiler: flue gas ~200°C, mostly sensible heat. Some heat is lost to the stack.
+An economiser is a heat exchanger in the flue that transfers the gases' sensible heat to the boiler's feed or return water, cooling the flue and pre-warming the water so the burner has less work to do. It typically recovers around 5 to 6% of fuel input on a non-condensing boiler, and because the source is hot and continuous it is a straightforward retrofit where flue access allows. The [overview lesson's](/courses/waste-heat-recovery/heat-recovery-overview) example priced one at around £1,800 a year on a 500,000 kWh/yr boiler: modest for a small site, and scaling straight up with boiler size.
 
-Condensing boiler: flue gas is cooled until water vapour in the gas condenses, releasing latent heat (~2,250 kJ/kg). Flue gas leaves at 50–60°C instead of 180°C.
+## Condensing: the latent heat
 
-Energy recovered: ~10–15% of fuel input (most commonly 10%).
+Cooling the flue far enough (below about 55 °C) condenses the water vapour that combustion produces, releasing its **latent heat**, the same large latent payload that makes [steam](/courses/steam-and-condensate/steam-basics) such a good heat carrier, around 2,250 kJ per kg of water. Condensing operation recovers roughly 10% of fuel input, more than a plain economiser, and leaves the flue at 50 to 60 °C instead of 180 °C.
 
-## Economics
+<WorkedExample title="condensing recovery on the same boiler">
+  <Given>
+    - The same boiler burning 500,000 kWh/yr of gas; gas £0.06/kWh
+    - Condensing operation recovers about 10% of fuel input
+  </Given>
+  <Find>The annual saving from full condensing recovery.</Find>
+  <Solution>
+    Recovered ≈ 0.10 × 500,000 = 50,000 kWh a year, worth about **£3,000 a year**, against
+    roughly £1,800 for the sensible-only economiser. The extra £1,200 is the latent heat
+    that only condensing captures. Whether it pays depends on the return-water condition
+    below, but where a boiler is being replaced anyway, condensing is close to standard
+    specification now.
+  </Solution>
+</WorkedExample>
 
-Fuel input: 100,000 kWh/year (85% efficiency = 85,000 kWh useful heat).
-Latent recovery: 10% of 100,000 = 10,000 kWh/year.
-Cost: £0.05/kWh × 10,000 = **£500/year savings**.
+## The catches that decide it
 
-Condensing boiler retrofit cost: £3,000–8,000.
-**Payback: 6–16 years.**
+Condensing recovery only works if the boiler actually condenses, and two conditions govern that. First, the **return water must be cool enough**, below about 55 °C, or the flue never drops to its dew point and no condensation (hence no latent recovery) happens. This is why condensing boilers pair so well with [low-temperature heating](/courses/refrigeration-and-heat-pumps/heating-modes) and underfloor systems, and why a condensing boiler feeding an old high-temperature circuit often never condenses and delivers little more than a standard one. Second, the condensate is mildly **acidic** (carbonic acid from dissolved CO₂), so the boiler and flue components in the condensing zone must be stainless steel or acid-resistant, and the condensate must drain safely. Get either wrong and the recovery either fails to happen or corrodes the plant.
 
-Payback is longer than flash tanks or chiller recovery, but condensing is sometimes worth it for longevity and carbon reduction.
+<Callout variant="key" title="A condensing boiler that never condenses is just an expensive boiler">
+The commonest disappointment in flue recovery is a condensing boiler installed on a heating system whose return water is too hot for it to condense, so it captures the sensible heat any economiser would and none of the latent heat it was bought for. The recovery lives entirely in the return-water temperature: keep it below the flue dew point (favouring lower-temperature emitters and [weather compensation](/courses/control-systems-and-bms/control-strategies)) and the latent heat is yours; let the circuit run hot and the premium is wasted. Specify the recovery and the heating system together, never in isolation.
+</Callout>
 
-## Installation requirements
+The next lesson turns to a source that is a heat pump in reverse: the chiller condenser, which rejects more heat than the chiller consumes in electricity.
 
-- Flue gas condensation produces acidic condensate (carbonic acid from CO₂); must drain to floor drain
-- Boiler and piping should be stainless steel or acid-resistant
-- Feedwater return should be hot enough to avoid condensation on boiler surfaces (typically >40°C)
+## Sources and further reading
 
-## Limitations
-
-- Works best in buildings where return water is already moderately warm (district heating loop, high base load)
-- Not ideal if return water is very cold (risk of internal boiler condensation, corrosion)
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on boiler economisers and condensing recovery.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on flue gas heat recovery and return-temperature requirements.
+- [Combustion Engineering Association](https://cea.org.uk/) on boiler efficiency and economiser retrofits.

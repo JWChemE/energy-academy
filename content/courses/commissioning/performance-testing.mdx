@@ -1,42 +1,42 @@
-**Performance testing** measures whether equipment delivers designed capacity and efficiency.
+Balanced flows and correct control sequences prove a system is set up right; performance testing proves the plant itself delivers the capacity and efficiency it was specified for. A chiller that should make 100 kW of cooling but manages only 85 is a fault the sequence tests would never reveal, because the controls are behaving perfectly, calling for cooling the plant cannot supply. This lesson covers how capacity and efficiency are measured on the two workhorses, chillers and boilers, and why the results become the building's performance baseline.
 
-## Chiller performance
+## Measuring what plant actually delivers
 
-Design: 100 kW cooling at 6°C outlet, 12°C inlet (6°C approach).
+The method is the same for any water-side plant: measure the flow and the temperature change, and the heat transferred follows from a conservation balance, the same arithmetic as the [mass and energy balances course](/courses/mass-and-energy-balances/conservation-laws). For water, power (kW) ≈ flow (kg/s) × 4.18 × temperature difference (°C).
 
-Test procedure:
-1. Run chiller at full load (simulate peak cooling demand)
-2. Measure supply temp, return temp, flow rate
-3. Calculate actual cooling: flow × Cp × ΔT
-4. Compare to design
+<WorkedExample title="testing a chiller against its rating">
+  <Given>
+    - A chiller is rated to deliver 100 kW of cooling, chilled water off at 6 °C, back at 12 °C (a 6 °C rise across the load)
+    - Water specific heat 4.18 kJ/kg·°C
+  </Given>
+  <Find>The design flow, and how a fault would show.</Find>
+  <Solution>
+    Rearranging, design flow = 100 ÷ (4.18 × 6) ≈ **4.0 kg/s** (about 4 litres/second).
 
-Acceptable range: ±10% of design.
+    In the test you run the chiller at full load and measure the actual flow and the actual
+    6 °C-versus-12 °C temperatures. If the numbers multiply out to only 85 kW, the chiller
+    is delivering **15% below rating**, and the shortfall names its own likely causes: a
+    fouled condenser or evaporator, low refrigerant charge, or a tired compressor, exactly
+    the faults the [refrigeration course](/courses/refrigeration-and-heat-pumps/maintenance-and-faults)
+    diagnoses. Acceptance is typically within ±10% of design; 15% low is a defect to
+    resolve before handover, not after.
+  </Solution>
+</WorkedExample>
 
-If chiller delivers 85 kW instead of 100 kW (15% low), it's fouled, refrigerant charge is low, or the compressor is weak.
+Boilers are tested the same way for output (flow × 4.18 × temperature rise) and additionally for **efficiency**, by measuring fuel input against useful heat out, ideally with a [flue gas analysis](/courses/steam-and-condensate/efficiency-assessment) to read combustion quality directly. Efficiency well below nameplate points to a boiler that is fouled, badly tuned (excess air), or degraded, all correctable, all cheaper to fix now than later.
 
-## Boiler performance
+## Test across the load range, not just at full output
 
-Design: 500 kW heat output.
+Plant behaves differently at part load, and since most plant spends most of its life there (the [part-load lesson](/courses/refrigeration-and-heat-pumps/partload-efficiency) made this the central fact of chiller economics), testing only at full output misses how the building will actually run. Good performance testing samples multiple conditions: peak load on a design day, and part load in milder weather, where oversized plant tends to cycle inefficiently. Seasonal testing is more work but it verifies the behaviour that dominates the annual bill.
 
-Test procedure:
-1. Measure fuel input (gas flow, oil consumption)
-2. Measure outlet temp, flow rate, return temp
-3. Calculate output: flow × Cp × ΔT
-4. Calculate efficiency: output / input
+<Callout variant="key" title="Performance tests become the baseline you defend the building against">
+The numbers from performance testing are not just a pass/fail gate; they are the reference the building's future is measured against. A chiller proven at 100 kW and a boiler proven at its rated efficiency, recorded with their test conditions, are the baseline that [re-commissioning](/courses/commissioning/drift-and-degradation) and [monitoring and targeting](/courses/monitoring-and-targeting/establishing-baseline) later compare against to catch drift. Skip the testing and there is no baseline, so no one can ever say whether the plant has deteriorated or was simply never any good. Measure it once, properly, at handover, and every later investigation has a firm number to stand on.
+</Callout>
 
-Acceptable: Within 2–5% of nameplate efficiency.
+Testing produces numbers; those numbers, and everything else commissioning found, are only useful if they reach the people who run the building, which is the handover lesson next.
 
-If efficiency is poor, boiler may be fouled (scale), tuned poorly (excess air), or degraded.
+## Sources and further reading
 
-## Seasonal variation
-
-Equipment performance varies with outdoor conditions. Test in multiple seasons:
-- Heating: coldest day
-- Cooling: hottest day
-- Mild: spring/fall (part-load performance)
-
-Part-load performance is often worse than full-load because equipment is oversized and cycles inefficiently.
-
-## Documentation
-
-Record all test results in a commissioning log. These become the baseline for future performance monitoring.
+- [CIBSE Commissioning Codes B (boilers) and R (refrigeration)](https://www.cibse.org/knowledge-research/knowledge-portal) for plant performance testing.
+- [BSRIA](https://www.bsria.com/uk/) guidance on performance verification and measurement.
+- [IPMVP, Efficiency Valuation Organization](https://evo-world.org/en/products-services-mainmenu-en/protocols/ipmvp) on establishing measured baselines.

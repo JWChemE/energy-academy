@@ -1,41 +1,46 @@
-**A pound today is worth more than a pound tomorrow.** This is the cornerstone of financial decision-making.
+A pound in your hand today is worth more than a pound promised next year, and not because of inflation. It is worth more because you could put today's pound to work: invest it, repay debt with it, or fund another project that earns a return. That single idea, the time value of money, is the foundation every rigorous project comparison stands on, and it is the reason a long stream of energy savings is worth less than its naive total. This lesson makes the idea precise with two tools: discounting, and the discount rate itself.
 
-## Why?
+## Discounting: moving money through time
 
-Because money today can be invested and earn a return. If you invest £100 at 5% interest, you have £105 in one year. So £100 today and £105 in one year are equivalent (at 5% discount rate).
+If money can earn a return, then a future sum must be worth less than the same sum today, by exactly the return it could have earned in between. Reversing that gives the **present value** of a future amount:
 
-Working backwards: if you're promised £105 in one year, and you require a 5% return, that's worth £100 today.
+> Present value = future amount ÷ (1 + discount rate)^years
 
-## Present value and discount rate
+At an 8% discount rate, £1,000 arriving in three years is worth £1,000 ÷ 1.08³ ≈ **£794 today**. You would be indifferent between £794 now and £1,000 in three years, because £794 invested at 8% grows to £1,000 over those three years. The further away the money, and the higher the rate, the harder the discounting bites.
 
-**Present Value (PV)** = Future Value / (1 + discount rate)^years
+Energy projects deliver savings every year for years, so the useful shortcut is the **annuity factor**: the present value of £1 a year for a run of years. At 8% over 15 years the factor is about 8.56, meaning a steady £1/year for 15 years is worth £8.56 today, not £15.
 
-Example: Money in year 3 at 5% discount rate:
-- PV = £1,000 / (1.05)^3 = £1,000 / 1.1576 = £864
+<WorkedExample title="what a savings stream is really worth">
+  <Given>
+    - A measure saves £5,000 a year for 15 years
+    - The organisation's discount rate is 8%
+  </Given>
+  <Find>The naive total versus the present value.</Find>
+  <Solution>
+    Naive total: £5,000 × 15 = **£75,000**. This is the number that makes long-payback
+    projects look better than they are.
 
-So £1,000 in 3 years is worth £864 today (at 5% discount rate).
+    Present value: £5,000 × 8.56 ≈ **£42,800**. Discounting has erased more than £32,000
+    of apparent value, because most of those savings arrive years away. A project costing
+    £60,000 looks like a winner against the £75,000 total and a clear loser against the
+    £42,800 present value. Only the second comparison is honest.
+  </Solution>
+</WorkedExample>
 
-## Discount rate (hurdle rate)
+## Choosing the discount rate
 
-Your **discount rate** is your required rate of return. For a company, it might be:
-- Cost of borrowing (5–8%)
-- Cost of capital (weighted average of debt and equity costs)
-- Minimum required return (company policy, 8–12%)
-- Risk-adjusted: a risky project might require 12%+
+The discount rate is the return the organisation requires before it will tie up capital, sometimes called the hurdle rate. It usually reflects the cost of the money: the interest on borrowing, or the weighted average cost of capital for a business that funds itself with a mix of debt and equity. Typical commercial hurdle rates land around 8 to 12%; UK central government appraisal uses a standard 3.5% real rate under the [Green Book](https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government). Riskier projects are held to higher rates, a point the [portfolio lesson](/courses/economic-analysis/portfolio-approach) develops.
 
-A typical energy project might use 6–10%.
+The rate matters enormously. The same £5,000-a-year, 15-year saving is worth about £51,900 at 5% but only £42,800 at 8%: the choice of rate can move a project's worth by a fifth. So the rate is not a technicality to be waved through; it is a decision, and using the organisation's actual, agreed figure (rather than one you assumed) is the difference between analysis and advocacy.
 
-## Why this matters for energy decisions
+<Callout variant="key" title="Real rates with real savings, or nominal with nominal, never mixed">
+Two consistent ways to handle inflation. Work in **nominal** terms (a discount rate that includes inflation, and savings that grow with fuel prices), or work in **real** terms (strip inflation out of both). A real 8% is roughly a nominal 8% minus expected inflation. The one thing you must never do is discount inflation-free savings at a rate that includes inflation, which silently understates every energy project, since energy savings tend to grow with the very fuel prices inflation is driving. Pick one frame and hold it across the whole comparison.
+</Callout>
 
-A 20-year boiler retrofit with savings of £5k/year is NOT worth £100k (20 × 5). Discounting that:
-- At 5% rate: PV = £5k × 12.46 = £62,300
-- At 10% rate: PV = £5k × 9.19 = £45,950
+With discounting in hand, the next lesson assembles it into the two decision tools finance actually expects: net present value and internal rate of return.
 
-The same project is worth very different amounts depending on your discount rate and how you account for time.
+## Sources and further reading
 
-## Real vs nominal
-
-- **Nominal**: doesn't account for inflation (5% discount rate in a world with 2% inflation)
-- **Real**: accounts for inflation (5% − 2% = 3% real return)
-
-Energy savings typically grow with inflation (fuel prices rise). Using a real discount rate and real savings is more rigorous.
+- [HM Treasury Green Book](https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government) on discounting and the social time preference rate.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on the financial appraisal of efficiency measures.
+- [ISO 50001](https://www.iso.org/iso-50001-energy-management.html) on embedding investment appraisal in an energy management system.

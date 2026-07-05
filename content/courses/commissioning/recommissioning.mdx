@@ -1,31 +1,33 @@
-**Re-commissioning** is repeating key commissioning tasks to restore performance.
+Because performance [drifts](/courses/commissioning/drift-and-degradation) the moment a building opens, commissioning is not a one-off event but a cycle. Re-commissioning is the periodic repetition of the key checks that restore a building to its intended performance, and continuous commissioning is the modern approach that catches drift as it happens rather than years later. This closing lesson covers when to re-commission, the quick checklist that recovers most of the lost performance, and the shift to continuous monitoring that makes drift a matter of days rather than years.
 
 ## When to re-commission
 
-- After 1–2 years (detect early drift)
-- After major equipment replacement or renovation
-- After control system reprogramming
-- If energy consumption unexpectedly rises
-- Before major energy audit or investment decision
+Re-commissioning earns its place at predictable moments: after the first year or two, to catch early drift; after any major plant replacement, renovation or control reprogramming, which routinely undoes previous tuning; whenever [normalised energy](/courses/monitoring-and-targeting/normalisation) rises without an occupancy or weather explanation; and before a significant energy audit or investment decision, so the baseline is honest. A building on a two-year re-commissioning cycle rarely drifts far; one left untouched for a decade is usually wasting double digits.
 
-## Quick re-commissioning checklist
+## The quick re-commissioning checklist
 
-- **Sensors:** Calibrate key temperature, humidity, pressure sensors
-- **Setpoints:** Verify thermostat setpoints unchanged from design
-- **Sequences:** Walk through control logic; verify correct response
-- **Equipment:** Check boiler/chiller efficiency; measure flow; listen for unusual noise
-- **Maintenance:** Review maintenance logs; identify deferred items
+Full commissioning is not needed to recover most lost performance; a focused check of the things that drift fastest does most of the work:
 
-Quick re-commissioning: 2–5 days, £2,000–5,000 cost.
-Savings detected: Usually 5–10% energy reduction from correcting drift.
-Payback: Often immediate (savings exceed cost in first year).
+- **Sensors**: recalibrate the key temperature, humidity and pressure sensors against a reference.
+- **Setpoints**: confirm they still match the design, and reset the ones that crept.
+- **Sequences**: walk the [control logic](/courses/commissioning/controls-commissioning) and confirm correct response, checking for overrides never restored and dead bands lost.
+- **Plant**: spot-check boiler and chiller performance, measure flows, and listen for the obvious.
+- **Maintenance**: review the logs and flush out deferred items.
+
+A quick re-commissioning of this kind typically takes two to five days, and routinely recovers 5 to 10% of energy by correcting accumulated drift, so it usually pays for itself within the first year, exactly the [retro-commissioning economics](/courses/commissioning/retro-commissioning-existing) applied on a repeating cycle.
 
 ## Continuous commissioning
 
-Rather than wait 1–2 years, monitor continuously:
-- Daily: BMS trending (energy, setpoints, equipment runtime)
-- Monthly: Review alarms and anomalies
-- Quarterly: Sensor spot-checks
-- Annually: Full re-commissioning
+Rather than wait a year or two and then investigate, continuous (or [monitoring-based](/courses/commissioning/retro-commissioning-existing)) commissioning watches the building's own data all the time: daily trend review of energy, setpoints and runtimes; monthly review of alarms and anomalies; periodic sensor spot-checks; and a fuller annual re-commissioning. It costs more to set up but catches faults in days instead of years, preventing the slow accumulation of waste that periodic checks only find after the fact. This is the point where commissioning merges completely with [monitoring and targeting](/courses/monitoring-and-targeting/why-mt): the same trend data, the same exception thresholds, the same discipline of investigating the anomaly, applied to keep a commissioned building commissioned.
 
-Continuous commissioning costs more upfront but catches issues immediately, preventing months of wasted energy.
+<Callout variant="key" title="Commissioning is a cycle, not an event, and persistence is the whole point">
+The performance a building leaves commissioning with is worthless if it lasts a year. What makes commissioning pay over a twenty-year life is persistence: the discipline of re-checking, whether on a periodic cycle or continuously through monitoring, so that drift is caught and corrected before it accumulates into a large, invisible bill. The quick re-commissioning checklist is cheap and repays fast; continuous commissioning is the gold standard. Either beats the common default, which is to commission once, hand over, and never look again while the building quietly forgets everything it was taught.
+</Callout>
+
+That completes the course: what commissioning is, planning it, retro-commissioning existing buildings, the on-site work, handover, and keeping performance alive. The [diagnostics capstone](/courses/commissioning/diagnostics-capstone) presents a drifted building and asks you to find and fix what commissioning would have caught.
+
+## Sources and further reading
+
+- [ASHRAE Guideline 0.2, Commissioning of Existing Systems](https://www.ashrae.org/technical-resources) on re-commissioning and ongoing commissioning.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on commissioning persistence and building performance evaluation.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on continuous commissioning and maintaining savings.

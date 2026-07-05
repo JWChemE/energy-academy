@@ -1,73 +1,42 @@
-How you fund a project affects its attractiveness and true cost.
+A project worth doing still has to be paid for, and how it is funded changes both its true cost and whether it happens at all. Many good efficiency measures die not because they fail the [NPV test](/courses/economic-analysis/npv-and-irr) but because there is no capital in the budget this year. Understanding the funding routes, and their real costs, is what turns a sound business case into an installed project. This lesson covers the four main options and how to compare them.
 
-## Cash purchase
+## The four routes
 
-**Pros:**
-- No interest cost
-- Simple, no paperwork
-- Own the equipment outright
+**Cash** is simplest: no interest, no paperwork, outright ownership. Its cost is the opportunity cost, the other projects that capital could have funded, and its limit is obvious, since a fixed budget funds only so much before it runs out.
 
-**Cons:**
-- Large upfront capital outlay
-- Opportunity cost (that money could have been invested elsewhere)
-- No leverage (can't do multiple projects)
+**A bank loan** spreads the cost over time so more projects can run in parallel, at the price of interest.
 
-**TCO:** Full cost upfront.
+<WorkedExample title="what a loan really costs">
+  <Given>
+    - £50,000 borrowed at 7% over 5 years, repaid monthly
+  </Given>
+  <Find>The monthly payment and total interest.</Find>
+  <Solution>
+    The monthly payment works out to about **£990**, so total repaid ≈ £990 × 60 ≈
+    **£59,400**, of which about **£9,400 is interest**. Borrowing added roughly 19% to the
+    headline cost. That is worth paying whenever the project's [IRR](/courses/economic-analysis/npv-and-irr)
+    comfortably exceeds the 7% loan rate (as most efficiency measures do) and the freed
+    capital lets you run other worthwhile projects at the same time. Debt is leverage:
+    good projects multiply it, marginal ones are sunk by it.
+  </Solution>
+</WorkedExample>
 
-## Bank loan
+**Leasing** hands you the equipment for a fixed monthly fee without owning it. It converts capital expenditure into a predictable operating cost, useful when capital is scarce or when the technology dates quickly, but a lease typically costs more over its term than buying outright, and you own nothing at the end.
 
-**Typical terms:** 5–10 year term, 4–8% interest
+**A performance contract (an ESCO arrangement, or in the UK often an Energy Performance Contract)** is the route for organisations with no capital and low appetite for risk. An Energy Services Company designs, funds and installs the improvements, and is repaid from the verified savings, frequently with a guaranteed minimum: if the savings fall short, the ESCO makes up the difference. You take little up-front risk and share the savings rather than keeping them all, and the contract can run ten to fifteen years. The saving verification is done to a formal standard, usually [IPMVP](/courses/measurement-and-verification), because the payments depend on it.
 
-Example: 50k GBP at 6% over 5 years = ~966 GBP/month
-- Total paid: 966 × 60 = 57,960 GBP
-- Interest cost: 7,960 GBP
-- Effective cost: higher than cash purchase, but you can do other projects in parallel
+## Choosing between them
 
-**Good if:** IRR > loan rate and you have other worthy projects.
+The comparison is not "which is cheapest in total" but "which fits the organisation's capital, risk appetite and portfolio". Cash suits a well-funded body doing a handful of high-return measures. A loan suits an organisation with a pipeline of good projects and access to cheap borrowing, wanting to do several at once. A lease suits fast-moving technology or genuinely capital-constrained budgets. An ESCO suits large, complex retrofits where the organisation wants the savings guaranteed and the risk transferred, and is willing to share the upside to get both.
 
-## Lease
+<Callout variant="key" title="The right question is 'what unlocks the project', not 'what is cheapest'">
+On a strict pounds basis, cash usually beats borrowing beats leasing beats an ESCO, because each route in turn buys something (parallelism, flexibility, risk transfer) with margin. But a project financed at a small premium and actually built beats a cheaper one that never gets funded. When capital is the binding constraint, the financing question is really "which route gets this saving installed this year", and a good measure funded by an ESCO still returns far more than the same measure sitting unbuilt in a business case. Match the route to the constraint, not to a spreadsheet ideal.
+</Callout>
 
-**Typical terms:** 5–10 year lease, 100–150% of equipment cost
+Financing decides how individual projects get paid for. The final lesson steps up to the whole pipeline: how to prioritise across many competing measures when NPV alone does not settle it.
 
-Advantage: Predictable monthly cost, no maintenance surprise, technology refresh at lease end.
+## Sources and further reading
 
-Disadvantage: No ownership, leases are usually 20–50% more expensive than buying.
-
-**Good if:** You want flexibility and predictability, or equipment becomes obsolete quickly.
-
-## Performance contract (ESCO)
-
-**How it works:**
-1. Energy Service Company (ESCO) finances and installs improvements
-2. You pay from the energy savings (usually 50–70% of savings go to ESCO, 30–50% to you)
-3. ESCO guarantees a minimum savings level; if not met, they pay the difference
-
-**Pros:**
-- No upfront capital
-- Guaranteed savings (risk on ESCO)
-- ESCO handles design and commissioning
-
-**Cons:**
-- More expensive than cash purchase or loan (ESCO takes a cut)
-- Longer payback (you get only 30–50% of savings)
-- Contracts can be complex, locking you in for 10–15 years
-
-**Good if:**
-- You lack upfront capital
-- You want to de-risk the project
-- Project is complex and needs professional guarantees
-
-## Comparing methods
-
-**Cash: 50k cost → 50k NPV at 5% discount rate**
-
-**Loan (5 years, 6%): Effective cost 57.96k, but spread over 5 years**
-- Each year: 11,592 GBP (loan + interest)
-- If savings exceed this and continue post-loan, net benefit over 15 years is still positive
-
-**ESCO (you get 40% of 5k/year savings): 2k/year to you**
-- ESCO gets 3k/year
-- 15-year cost: ESCO collects 45k, you pay 30k, but saved 75k in energy
-- Net to you: -30k (paid) + 75k (saved) = +45k
-
-Choose based on: available capital, risk tolerance, project complexity, and long-term strategy.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on financing energy efficiency projects.
+- [GOV.UK: public sector energy financing](https://www.gov.uk/guidance/salix-finance) (Salix and related schemes) for low-cost public-sector routes.
+- [Energy Services and Technology Association / ESCO guidance](https://www.esta.org.uk/) on Energy Performance Contracting in the UK.

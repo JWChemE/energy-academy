@@ -1,39 +1,39 @@
-A **commissioning protocol** defines the scope, procedures, roles, schedule, and acceptance criteria.
+Commissioning that is not planned is just a hopeful walk round the plant room. A commissioning protocol turns the intent of the [previous lesson](/courses/commissioning/what-is-commissioning) into a defined exercise: what will be checked, how, against what pass mark, by whom, and recorded in what form. Without it, disputes are guaranteed ("that was not in scope"), acceptance is subjective, and the findings vanish because nobody wrote them down. This lesson covers the elements of a commissioning plan and the standards that give it authority.
 
-## Plan elements
+## The elements of a plan
 
-**1. Scope:** Which systems will be commissioned? HVAC only, or also lighting, controls, DHW?
+A workable protocol pins down six things before anyone touches plant:
 
-**2. Procedures:** How will each system be tested? (e.g., HVAC: measure static pressure, flow rate, setpoints; verify control sequences)
+- **Scope**: which systems are commissioned, HVAC only or lighting, controls, hot water and metering too. Ambiguity here is the classic source of grief.
+- **Procedures**: how each system is tested, for example measuring duct static pressure, zone flows and control-sequence response for an air system.
+- **Acceptance criteria**: the pass/fail thresholds, stated as numbers. Flow within ±10% of design, temperature within ±1 °C of setpoint, all sensors calibrated. A criterion that cannot be measured cannot be accepted.
+- **Roles**: who does what (below).
+- **Schedule**: how long it takes and where it sits in the programme (two to eight weeks is typical for a new building, and it must not be squeezed into the final week before handover, which is where commissioning goes to die).
+- **Documentation**: what gets recorded and handed over, which the [handover lesson](/courses/commissioning/handover-documentation) covers in full.
 
-**3. Acceptance criteria:** What's the pass/fail threshold? (e.g., flow ±10% of design, temperature ±1°C setpoint, all sensors calibrated)
+## Who does what
 
-**4. Team roles:**
-- **Commissioning agent:** Independent third party, leads testing
-- **Contractor:** Provides equipment info, assists with adjustments
-- **Designer:** Clarifies design intent if tests don't match
-- **Owner/operator:** Observes, learns system, signs off
+Four roles keep commissioning honest, and the independence of the first is what gives the results credibility:
 
-**5. Schedule:** How long will commissioning take? (2–8 weeks typical for new building, depending on size)
+- **The commissioning agent** (ideally independent of the installer) leads the testing and owns the verdict.
+- **The contractor** provides equipment information and makes adjustments.
+- **The designer** clarifies design intent when a test result and the drawings disagree.
+- **The owner or operator** observes, learns the systems, and signs off.
 
-**6. Documentation:** What will be recorded? Test results, as-built drawings, manual settings, operator training.
+The independence matters because a contractor commissioning their own work has every incentive to record a pass. A separate agent, answerable to the client, is why findings get raised rather than buried.
 
-## Common procedures
+## Standards give the protocol authority
 
-- **Flow balancing:** Measure and adjust flows at each terminal to match design
-- **Sensor verification:** Check calibration, response time, location
-- **Control sequence testing:** Step through each mode (heating, cooling, occupied, unoccupied) and verify correct response
-- **Equipment performance:** Measure output (cooling capacity, heating capacity) vs. nameplate
-- **Safety interlocks:** Verify emergency stops, failsafes work correctly
+A protocol that follows recognised standards inherits their rigour and settles arguments by reference rather than opinion. In UK practice the **CIBSE Commissioning Codes** (Codes A to W, covering air, water, boilers, refrigeration, lighting and more) are the definitive procedures for each system type, and **BSRIA** publishes the practical guidance that sits alongside them. Internationally, **ASHRAE Guideline 0** defines the overall commissioning *process*. Citing the applicable code in the plan means "commissioned" has an agreed, defensible meaning rather than a negotiable one.
 
-## Documentation package
+<Callout variant="key" title="Write the acceptance criteria as numbers, before testing starts">
+The single discipline that makes a commissioning plan work is quantified, pre-agreed acceptance criteria: flow within ±10%, temperature within ±1 °C, every sensor calibrated, every sequence demonstrated. Set them before testing, in the plan, referencing the relevant CIBSE Code, so that pass and fail are matters of measurement rather than of who is in the room. Vague criteria ("systems operating satisfactorily") let defects through and turn sign-off into a negotiation; numbers make the building prove itself.
+</Callout>
 
-After commissioning:
-- Commissioning report (findings, defects, resolutions)
-- As-built drawings (actual installed layout)
-- Operation manuals (how to run each system)
-- Maintenance schedule
-- Operator training sign-off
-- Warranty information
+With scope, criteria and roles agreed, the next lessons put them to work: first on the special case of existing buildings, then on the on-site testing of HVAC, controls and performance.
 
-This package is handed over to the building owner/manager.
+## Sources and further reading
+
+- [CIBSE Commissioning Codes](https://www.cibse.org/knowledge-research/knowledge-portal) (A–W) for system-by-system procedures.
+- [BSRIA commissioning guidance](https://www.bsria.com/uk/) on planning and managing commissioning.
+- [ASHRAE Guideline 0](https://www.ashrae.org/technical-resources), the commissioning process standard.

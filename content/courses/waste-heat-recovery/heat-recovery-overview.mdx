@@ -1,28 +1,51 @@
-**Why recover waste heat?** Because it's "free" energy you're currently throwing away. A typical industrial facility loses 20-30% of fuel input as waste heat.
+Waste heat recovery has a simple appeal: the energy has already been paid for once, at full fuel price, and recovering it means not buying the same heat again from a boiler. That is why well-matched recovery projects show some of the best paybacks in the whole field, often under two years and sometimes under one. This lesson makes the business case concrete, works a flue-gas example at the platform's reference prices, and sets out the typical paybacks and the practical obstacle (space and integration) that most often complicates them.
 
-## Business case
+## The value of recovered heat
 
-**Boiler flue gas example:**
-- Fuel input: 1,000 kW
-- Boiler efficiency: 85%
-- Waste heat in flue: 150 kW (at 180°C)
-- Recoverable heat (condensing boiler conversion): 30 kW (latent heat)
-- Energy cost (assume £0.05/kWh): 30 kW × 8,760 h × £0.05 = £13,140/year
-- Project cost (condenser retrofit): £20,000
-- **Payback: 1.5 years**
+Recovered heat displaces fuel, so its value is the fuel it saves, at the boiler's efficiency. Displacing gas heating at £0.06/kWh and 85% boiler efficiency, every 100 kW of usefully recovered heat running continuously is worth roughly £62,000 a year. The scale is what makes recovery compelling: because the heat is a by-product the site is currently throwing away, almost all of that value is margin.
 
-## Typical payback timescales
+<WorkedExample title="a boiler-flue economiser">
+  <Given>
+    - A building burns 500,000 kWh of gas a year in its boiler; gas £0.06/kWh
+    - A flue economiser recovers about 6% of fuel input as useful heat (preheating feed or return water)
+    - Economiser installed cost ≈ £15,000
+  </Given>
+  <Find>The annual saving and payback.</Find>
+  <Solution>
+    Recovered heat ≈ 0.06 × 500,000 = 30,000 kWh a year, worth ≈ **£1,800 a year** in gas
+    not burned. Payback ≈ 15,000 ÷ 1,800 ≈ **8 years**. Respectable rather than dramatic,
+    which is honest for a modest source: the flue is only a fraction of the fuel, and this
+    building is not large. Scale the same measure to a site burning several million kWh, or
+    push the recovery deeper with [condensing](/courses/waste-heat-recovery/boiler-flue-recovery),
+    and the payback shortens sharply. The lesson is that recovery economics track the size
+    and grade of the source, so the biggest, hottest, steadiest sources are where to look
+    first.
+  </Solution>
+</WorkedExample>
 
-- **Flash tank recovery** (steam condensate): 1–3 years
-- **Boiler flue condensing retrofit**: 1.5–4 years
-- **Chiller condenser heat recovery**: 2–5 years
-- **Heat exchanger on process exhaust**: 3–8 years
-- **Ground-source heat pump** (using shallow ground as heat source): 8–15 years (long, but GSHP is very efficient)
+## Typical paybacks
 
-Fast payback projects (under 3 years) are almost always worth doing.
+Recovery projects span a wide range, roughly in this order:
 
-## Challenge: Size and integration
+- **Steam flash and condensate recovery**: 1 to 3 years (covered in the [steam course](/courses/steam-and-condensate/condensate-return)).
+- **Boiler flue condensing/economisers**: 2 to 8 years, depending on source size and how deep the recovery goes.
+- **[Chiller condenser recovery](/courses/waste-heat-recovery/chiller-condenser-recovery)**: under 1 to 3 years where a simultaneous heat load exists.
+- **[Process exhaust recovery](/courses/waste-heat-recovery/process-heat-recovery)**: often under 2 years on continuous, high-grade sources.
 
-Waste heat equipment takes up space. A heat exchanger or recovery unit needs fitting into tight mechanical rooms. Integration with existing systems (plumbing, electrical, controls) adds cost.
+Anything under three years is almost always worth doing; the [economics and matching lesson](/courses/waste-heat-recovery/economics-and-matching) shows how to appraise the rest.
 
-**Key insight:** Even modest waste heat recovery (recovering 10-20% of the waste stream) often has acceptable payback if the sink is close by.
+## The practical obstacle: space and integration
+
+The commonest reason a good-on-paper project stalls is physical. Recovery equipment (heat exchangers, ducts, pipework, pumps, controls) has to fit into plant rooms and duct routes that were never designed for it, and connecting it to the existing hydraulic, electrical and control systems adds cost the energy calculation alone misses. This is why proximity between source and sink matters so much: a sink a few metres away is a cheap pipe run, while one across the site can cost more in pipework and pumping than the heat is worth. Realistic projects budget for the integration, not just the exchanger.
+
+<Callout variant="key" title="You already paid for this heat; recovery just stops you buying it twice">
+The framing that carries recovery projects through a finance committee: the site is not generating new energy, it is declining to pay twice for energy it already bought. Every kWh recovered and used is a kWh not purchased from the boiler, at full fuel price, which is why even modest recovery from a nearby source pays. The discipline is to chase the sources where the heat is large, warm and steady and the sink is close, because there the "free" energy is genuinely cheap to capture, and to let the space-and-integration cost, not just the energy, decide the marginal cases.
+</Callout>
+
+The next lesson turns the "close, simultaneous sink" condition into a formal appraisal method.
+
+## Sources and further reading
+
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on waste heat recovery economics.
+- [GOV.UK: Industrial Energy Efficiency](https://www.gov.uk/government/collections/industrial-energy-efficiency) on recovery opportunities and support.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on heat recovery integration in buildings.

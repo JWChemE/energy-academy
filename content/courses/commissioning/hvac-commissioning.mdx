@@ -1,38 +1,25 @@
-HVAC commissioning focuses on flow, pressure, temperature, and control response.
+HVAC commissioning is where the plan meets the plant. It verifies four things about a heating, ventilation and air conditioning system: that the right amount of air and water reaches every space, that pressures match design, that sensors read true, and that setpoints are what the design intended. Each has a standard procedure and a numeric acceptance criterion, and each catches a class of fault that would otherwise cost energy and comfort for the building's life. This lesson walks the on-site HVAC checks in the order they are usually done.
 
 ## Flow balancing
 
-Measure actual flow at each zone terminal (VAV box, radiator, diffuser) and adjust control valves to match design.
+A ventilation or hydronic system delivers its design performance only if each zone gets its design flow. Left unbalanced, low-resistance zones greedily take more than their share and starve the ones furthest from the plant, which then run cold (or hot) and generate complaints that get "solved" by cranking up the whole system. Balancing measures the flow at each terminal (VAV box, radiator, diffuser) and adjusts the regulating valves or dampers until every zone matches design, usually to within ±10%. The procedure works from the main flow inward: confirm the total at the fan or pump, then set each branch so the parts sum to the whole. It is patient, unglamorous work, and it is the foundation everything else rests on, since no control strategy rescues a system that cannot physically deliver flow where it is needed.
 
-Typical procedure:
-1. Measure supply flow at main fan outlet
-2. Measure return flow at main return
-3. Measure zone flows (sum should equal main)
-4. Adjust zone balancing valves so each zone gets design flow
-5. Verify no excessive pressure drop at any valve
+## Pressure verification
 
-Without balancing, low-resistance zones starve others, causing comfort complaints and control difficulty.
+Pressures are measured at key points and compared to design: fan discharge, duct static pressure (commonly a target of around 25 to 40 Pa at the sensor), and the pressure drops across chillers and boilers. Readings well above design point to undersized ducts or pipes, fouling, or badly sized control valves; readings that do not match at all often reveal a sensor in the wrong place. The duct static pressure figure matters doubly because it sets how hard the [supply fan must run](/courses/control-systems-and-bms/other-sensors), and a setpoint left unnecessarily high is a permanent fan-energy tax.
 
-## Pressure drop verification
+## Sensor calibration and setpoint verification
 
-Measure pressure at key points and compare to design:
-- Supply fan discharge pressure
-- Duct static pressure (should be ~25–40 Pa target)
-- Chiller inlet/outlet pressure drop
-- Boiler inlet/outlet pressure drop
+Every control sensor is checked against a reference instrument, a calibrated thermometer for temperature, because a sensor reading 2 °C high makes the system control 2 °C wrong, permanently and silently, exactly the [drift](/courses/control-systems-and-bms/temperature-sensors) the controls course priced. Any sensor out of tolerance is recalibrated or replaced, and the corrected values recorded. Finally, every zone's setpoints are walked and confirmed against the design intent, because the single most common finding is a setpoint never moved from its factory default, or quietly adjusted by an occupant to 19 °C for cooling in July. All as-found and as-left setpoints are documented, so drift can be spotted later.
 
-Excessive drop suggests undersized pipes, fouling, or control valve sizing issues.
+<Callout variant="key" title="Balance the flows first; no control can fix a starved zone">
+The temptation on an underperforming HVAC system is to reach straight for the controls, but a system that is not hydraulically or aerodynamically balanced cannot be controlled into behaving, because the physical flow is not there to command. Balancing is the base of the pyramid: get design flow to every terminal, verify pressures, calibrate the sensors, then, and only then, tune the [control sequences](/courses/commissioning/controls-commissioning). Skipping straight to controls on an unbalanced system produces loops that hunt forever chasing a problem no algorithm can reach.
+</Callout>
 
-## Sensor calibration
+With flows, pressures and sensors verified, the system can physically do its job. The next lesson checks that the controls actually tell it to.
 
-Check temperature sensors against a reference thermometer:
-- Handheld pyrometer (surface temp)
-- Calibrated immersion thermometer (fluid temp)
+## Sources and further reading
 
-If sensor reads 2°C high, control is off by 2°C. Recalibrate or replace.
-
-## Setpoint verification
-
-Walk through each zone and confirm thermostat setpoints match design. Common errors: setpoints never adjusted from default, or occupants cranked them up/down (19°C instead of 21°C).
-
-Document all setpoints as-built.
+- [CIBSE Commissioning Code A (air) and Code W (water)](https://www.cibse.org/knowledge-research/knowledge-portal) for the balancing procedures.
+- [BSRIA commissioning guidance](https://www.bsria.com/uk/) on flow balancing and pressure testing.
+- [CIBSE Guide H](https://www.cibse.org/knowledge-research/knowledge-portal) on sensor and setpoint verification.

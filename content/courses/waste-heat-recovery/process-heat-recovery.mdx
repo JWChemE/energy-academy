@@ -1,36 +1,47 @@
-Industrial and commercial processes generate enormous waste heat: foundries, breweries, food processing, laundries, etc.
+Industrial processes are the richest waste heat sources of all: ovens, dryers, furnaces, kilns and washing plant reject heat by the hundreds of kilowatts, often continuously, often at high grade. On a manufacturing site the process exhausts frequently dwarf the boiler flue and the chiller condenser combined, and because many processes run around the clock, the timing match that troubles other recovery projects is often already solved. This closing lesson covers the main process sources, works two industrial examples, and gathers the variables that decide whether a process recovery project pays.
 
-## Types of process waste heat
+## The main process sources
 
-**Exhaust air:** Ovens, dryers, furnaces. Temps: 100–400°C. Can heat water, DHW, or pre-condition incoming air.
+Three streams recur across industry:
 
-**Cooling water:** Compressors, reactors, machinery. Temps: 30–60°C. Lower value, but easy to recover.
+- **Hot exhaust air** from ovens, dryers, kilns and furnaces, at 100 to 400 °C. High grade and often continuous, it can preheat the process's own combustion or intake air, raise hot water, or pre-warm incoming product.
+- **Cooling water** from compressors, reactors and machinery, at 30 to 60 °C. Lower grade but easy to capture and plentiful, ideal for pre-heating or feeding a [heat pump](/courses/refrigeration-and-heat-pumps/reverse-cycle).
+- **Steam condensate**, high-value if captured hot and returned, wasted if allowed to cool, the domain of the [steam and condensate course](/courses/steam-and-condensate/condensate-return).
 
-**Steam condensate:** Return from process steamer. High value if captured at high temperature; lost if cooled to ambient.
+## Two worked examples
 
-## Retrofits
+<WorkedExample title="bakery oven exhaust and a brewery cooling loop">
+  <Given>
+    - Bakery: an oven exhausts at 180 °C; a heat exchanger recovers ≈ 100 kW average to preheat intake air, 8,000 h/yr
+    - Both examples displace gas at 85% boiler efficiency, gas £0.06/kWh
+    - Brewery: a warm cooling loop yields ≈ 50 kW average of recoverable heat for cleaning hot water, 8,000 h/yr
+  </Given>
+  <Find>The annual value of each recovery scheme.</Find>
+  <Solution>
+    Bakery: 100 kW × 8,000 h = 800,000 kWh of heat, displacing 800,000 ÷ 0.85 ≈ 941,000 kWh
+    of gas, worth about **£56,000 a year**. Against £15,000 to £30,000 of exchanger,
+    ductwork and controls, payback is well under a year.
 
-**Example: Bakery with 180°C oven exhaust**
+    Brewery: 50 kW × 8,000 h = 400,000 kWh, displacing ≈ 470,000 kWh of gas ≈
+    **£28,000 a year**, again repaying in under a year. Both work because the processes run
+    almost continuously, so the source is steady and the timing match is close to
+    automatic, the single biggest reason process recovery so often out-performs building
+    recovery.
+  </Solution>
+</WorkedExample>
 
-Recover heat to preheat incoming air (combustion air for the oven or fresh air for the space).
+## The variables that decide it
 
-Cost: £15,000–30,000 (air-to-air heat exchanger, ductwork, controls).
-Savings: 100 kW average, 8,000 h/year = 800 MWh/year × £0.05 = **£40,000/year**.
-**Payback: < 1 year.**
+Every process recovery project comes down to the same four factors from the [matching lesson](/courses/waste-heat-recovery/economics-and-matching), and process sources tend to score well on all four: **temperature** (higher is more useful, and process exhausts are often hot), **continuity** (24/7 processes make steady sources, which is why continuous industry is such fertile ground), **proximity** (a sink near the source keeps pipework and pumping cheap), and **timing** (the load must coincide with the source, or be bridged by storage). The best candidates are continuous, high-grade sources sitting close to a matched, simultaneous demand, exactly the bakery and brewery patterns above, and industrial plants with those characteristics routinely find process recovery projects paying back inside two years.
 
-**Example: Brewery with warm water cooling loop**
+<Callout variant="key" title="On continuous process sites, waste heat recovery is usually the biggest easy win">
+Because process exhausts are often hot, large and continuous, they solve the timing problem that limits building-scale recovery, and they concentrate enough heat in one place to justify proper equipment. On any manufacturing site running continuous processes, mapping the major heat rejections against the site's heat demands is one of the highest-return exercises an energy manager can do, and it belongs in every [industrial audit](/courses/energy-audits/identify-opportunities). The heat is already there, already paid for, and on a 24/7 process it is available exactly when the site's other heat loads want it.
+</Callout>
 
-Recover 50°C condenser water for cleaning hot water (normally heated by steam or boiler).
+That completes the course: grading heat, matching supply to demand, the exchangers and technologies that capture it, and the recovery opportunities on flues, chillers and processes. The [diagnostics capstone](/courses/waste-heat-recovery/diagnostics-capstone) presents a site's waste streams and heat demands and asks you to build the recovery scheme.
 
-Cost: £10,000–20,000.
-Savings: 50 kW average = 400 MWh/year × £0.05 = **£20,000/year**.
-**Payback: < 1 year.**
+## Sources and further reading
 
-## Key variables
-
-1. **Temperature:** Higher = more valuable
-2. **Continuity:** 24/7 processes > intermittent
-3. **Load proximity:** Adjacent buildings = lower piping cost
-4. **Timing match:** Thermal load must align with supply
-
-Industrial plants with continuous processes often find waste heat recovery projects with payback under 2 years.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on industrial process heat recovery.
+- [GOV.UK: Industrial Energy Efficiency](https://www.gov.uk/government/collections/industrial-energy-efficiency) and the Industrial Energy Transformation Fund for process heat projects.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on process heat recovery integration.

@@ -1,44 +1,45 @@
-Temperature sensors are the eyes of the control system. Accuracy, response time, and placement determine control quality.
+A control loop can only be as good as the measurement it acts on. A sensor reading a degree high does not cause a small error; it causes the whole system to hold the wrong temperature, precisely and reliably, wasting energy around the clock while every dial says everything is fine. Temperature sensors are the most numerous measurement in any building, and understanding their types, their placement, and above all their drift is how you keep the loops honest. This lesson covers all three.
 
-## RTD (Resistance Temperature Detector)
+## The three sensor types
 
-**Principle:** Resistance of a metal (usually platinum) changes with temperature.
+**RTDs (resistance temperature detectors)** are the workhorses of building control. A platinum element changes resistance predictably with temperature (a Pt100 reads 100 Ω at 0 °C, a Pt1000 reads 1,000 Ω), giving accurate (±0.5 °C or better), stable, near-linear readings. They dominate HVAC and comfort control for good reason, the main cost being careful wiring, since long cable runs need compensation to stay accurate.
 
-Common types: Pt100 (0°C = 100Ω), Pt1000 (0°C = 1,000Ω).
+**Thermistors (NTC type)** drop in resistance as temperature rises. They are cheap, small and fast, which suits mass-produced equipment and simple devices, but they are non-linear and drift more than RTDs, so they trade accuracy for cost.
 
-Pros: Accurate (±0.5–1°C typical), linear, long-term stable, not affected by vibration.
-Cons: Needs 4-wire wiring for accuracy, slower response than thermocouple.
+**Thermocouples** generate a tiny voltage from the junction of two dissimilar metals. They respond in seconds and survive extreme temperatures (up to ~1,800 °C), which makes them the choice for furnaces, ovens and [flue gas](/courses/waste-heat-recovery/boiler-flue-recovery), but their low output needs amplification and they are less accurate for the gentle temperatures of comfort control. In short: RTDs for buildings, thermocouples for industrial heat, thermistors where cost rules.
 
-Best for: HVAC, building automation, most comfort control.
+## Placement: the free way to ruin a good sensor
 
-## Thermistor (NTC = Negative Temperature Coefficient)
+An accurate sensor in the wrong place lies. A room sensor in direct sun reads the sun, not the room, and the heating backs off while occupants shiver. One near a doorway reads every draught. One high on a wall or ceiling reads the warm air that has risen there, so the occupied zone runs colder than the dial claims. One buried in stagnant air behind a cabinet responds late to everything. Best practice is dull and important: mount in the occupied zone, at roughly 1.2 to 1.5 m, away from direct sun, draughts, and heat sources, where it reads the air people actually breathe.
 
-**Principle:** Resistance drops as temperature rises (opposite of RTD).
+## Drift: the silent tax
 
-Pros: Cheap, fast response, small.
-Cons: Non-linear, less accurate, drifts over time.
+Every sensor drifts as it ages, typically 0.5 to 2% a year, and the drift is invisible because the reading still looks plausible. The cost is not.
 
-Best for: Simple applications, low-cost devices.
+<WorkedExample title="one drifted sensor, priced">
+  <Given>
+    - A space-heating sensor has drifted to read 1.5 °C low
+    - The loop therefore holds the room 1.5 °C warmer than intended
+    - Space heating 200,000 kWh/yr of gas at £0.06/kWh; rule of thumb ≈ 8% more heating per °C
+  </Given>
+  <Find>The annual cost of the drift.</Find>
+  <Solution>
+    Overheating ≈ 1.5 °C × 8%/°C = 12% extra heating. Cost ≈ 0.12 × 200,000 × £0.06 ≈
+    **£1,440 a year**, from a single sensor reading wrong, in a building where every
+    display shows "21 °C" and nothing alarms. Recalibrating it costs minutes. This is why
+    drift is the most under-appreciated waste in building controls: it is precise,
+    persistent, and completely silent.
+  </Solution>
+</WorkedExample>
 
-## Thermocouple
+<Callout variant="key" title="Calibrate sensors on a schedule, or the loops slowly lie">
+Because drift is invisible from the reading alone, the only defence is routine: check key temperature, and the [humidity, pressure and flow sensors](/courses/control-systems-and-bms/other-sensors), against a reference instrument annually (every two years for non-critical points), and recalibrate or replace anything out of tolerance. A morning's work holds every downstream loop honest and pays for itself many times over on a single drifted heating sensor. Sensor calibration is a recurring theme in [commissioning](/courses/commissioning/drift-and-degradation) precisely because it is so cheap and so neglected.
+</Callout>
 
-**Principle:** Two different metals at different temperatures produce voltage (Seebeck effect).
+Temperature is the most common measurement but not the only one; the next lesson covers the humidity, pressure and flow sensors that round out a building's senses.
 
-Pros: Fast response (seconds), works at very high temp (up to 1800°C), simple.
-Cons: Low output voltage (needs amplification), non-linear, reference junction errors.
+## Sources and further reading
 
-Best for: Industrial high-temperature (furnaces, ovens).
-
-## Placement errors
-
-**Window-mounted sensor:** Affected by direct sun, cold from outside. Reading unrepresentative.
-
-**Sensor in stagnant air:** Doesn't respond to room conditions; control lags.
-
-**Ceiling-mounted sensor:** Reads higher temp (warm air rises).
-
-**Best practice:** Mount in active space, away from drafts, direct sun, and radiators. Wall height (1.2–1.5 m), centrally located.
-
-## Calibration drift
-
-Sensors drift over time (1–2% per year typical). Recalibrate annually or every 2 years for critical systems.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on sensor selection and placement.
+- [BCIA](https://bcia.co.uk/) guidance on sensor calibration and maintenance.
+- [BSRIA](https://www.bsria.com/uk/) for building services measurement and commissioning practice.

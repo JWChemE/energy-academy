@@ -1,35 +1,32 @@
-**Actuators** are the muscles of the control system — they do the actual adjusting.
+If sensors are a control system's senses, actuators are its muscles: the valves, dampers and drives that turn a controller's decision into a physical change in flow. A loop with perfect sensing and a perfect algorithm still controls badly if its actuator is the wrong type, poorly sized, or mechanically bound. The subtlest and most common of these faults is a valve with the wrong **authority**, which makes an otherwise sound loop sluggish and unstable. This lesson covers actuator types and the authority concept that governs valve control.
 
-## Valve authority
+## Valve authority: why a correctly working valve controls badly
 
-**Authority** = pressure drop across valve / total system pressure drop.
+A control valve shares the system's pressure drop with everything else in the circuit (pipes, coils, fittings). **Authority** is the fraction of the total circuit pressure drop that falls across the valve itself when it is fully open:
 
-Example: Heating loop with 60 kPa total drop. If proportional valve has 50 kPa drop, authority = 50/60 = 0.83 (very good).
+> Authority = valve pressure drop ÷ total circuit pressure drop
 
-If valve has only 5 kPa drop, authority = 5/60 = 0.08 (poor).
-
-**Why it matters:** Low authority = small changes in valve position have little effect. Control is sluggish and can oscillate.
-
-**Target:** Authority 0.3–0.5 for good control.
+The number matters because it decides whether moving the valve actually changes the flow. In a circuit with 60 kPa total drop, a valve taking 50 kPa has an authority of 50/60 ≈ 0.83, and moving it produces a smooth, proportional change in flow. The same valve taking only 5 kPa has an authority of 5/60 ≈ 0.08, and now most of the flow is decided by the fixed resistances around it, so the valve does almost nothing until it is nearly shut, then slams the flow off. The loop hunts, overshoots, and controls poorly, not because the sensor or algorithm is wrong but because the valve has no leverage. Good practice targets an authority of roughly 0.3 to 0.5, which is a valve-*sizing* decision made at design or [commissioning](/courses/commissioning/hvac-commissioning): an oversized valve, counterintuitively, controls worse than a correctly sized smaller one.
 
 ## Actuator types
 
-**Solenoid valve:** Electric coil pulls a plunger; on/off only. Fast response, cheap. Used for simple switching.
+The actuator that drives the valve or damper trades speed, cost and precision:
 
-**Proportional solenoid valve:** Coil current controls plunger position; can modulate flow smoothly. More sophisticated.
+- **Solenoids** snap fully open or shut for simple on-off duties: fast and cheap, but no modulation.
+- **Proportional (modulating) actuators**, electric or electronic, position the valve anywhere across its range, which is what continuous [PID control](/courses/control-systems-and-bms/control-modes) needs.
+- **Pneumatic actuators** use air pressure on a diaphragm; common in older buildings, reliable, but slower and dependent on a compressed-air supply.
+- **Electric motor actuators** drive over 10 to 30 seconds: slow but robust and precise, the mainstay of modern HVAC.
 
-**Pneumatic actuator:** Air pressure moves a diaphragm; opens/closes a valve. Common in older systems, slower response.
+For dampers, the same logic applies plus a mechanical one: the **linkage** between actuator and damper blade must move freely. Friction, binding or a slipped linkage stops a damper reaching full stroke, which quietly limits the control range and can leave a damper that "reads" closed actually passing air, wasting fan energy and defeating any [economiser](/courses/hvac-systems) strategy. Free movement is a standard commissioning check for a reason.
 
-**Electric motor actuator:** Motor opens/closes a valve over 10–30 seconds. Slow but reliable.
+<Callout variant="key" title="A sluggish loop is often a valve problem, not a tuning problem">
+When a loop hunts or responds poorly, the reflex is to retune the controller, but the cause is frequently mechanical: a valve with too little authority, an oversized valve, a bound damper linkage, or a slow actuator missing fast changes. No amount of PID tuning rescues a valve that has no control leverage over its circuit. Check the actuator (right type, right size, moving freely, full stroke) before blaming the algorithm. Getting valve authority right at sizing is far cheaper than living with a loop that never settles.
+</Callout>
 
-## Damper linkage
+Sensors, controllers and actuators are the pieces of a single loop. The next lessons zoom out to how a Building Management System ties thousands of these loops together.
 
-In ductwork, dampers control airflow. **Linkage** connects the actuator to the damper blade.
+## Sources and further reading
 
-Poor linkage design (excessive friction, binding) prevents full stroke, limits control range, and wastes energy.
-
-Always verify damper moves freely (test at commissioning).
-
-## Energy efficiency
-
-Actuator choice affects response speed and energy consumption. A slow (pneumatic) actuator may miss setpoint adjustments, causing overshoot. A fast (electric, proportional solenoid) actuator tracks setpoint better with less waste.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on valve authority and actuator selection.
+- [BCIA](https://bcia.co.uk/) guidance on control valve sizing and commissioning.
+- [BSRIA](https://www.bsria.com/uk/) on damper and actuator commissioning checks.

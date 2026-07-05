@@ -1,39 +1,42 @@
-Beyond temperature, modern buildings need humidity, pressure, and flow measurement.
+Temperature is the measurement buildings take most, but it is not the only one that drives energy use. Humidity decides how hard air conditioning works on the latent load, duct and pipe pressures decide how fast fans and pumps must run, and flow measurements underpin how boilers and chillers modulate. Each of these sensors, placed or calibrated badly, drives waste just as surely as a [drifted temperature sensor](/courses/control-systems-and-bms/temperature-sensors) does, and the pressure ones in particular sit on top of one of the largest saving opportunities in the building. This lesson covers the three.
 
-## Humidity (RH - Relative Humidity)
+## Humidity
 
-**Sensors:** Capacitive (most common), resistive, or psychrometric.
+Most building humidity sensors are **capacitive**: cheap, reasonably accurate (±2 to 5% RH), and adequate for comfort and ventilation control. Their weaknesses matter, though. They drift, they are sensitive to temperature, and condensation destroys them, so placement away from supply diffusers and out of any condensation zone is essential. Humidity control earns its keep where the latent load is expensive to manage: close control spaces, laboratories, archives, and any air-conditioning system doing significant dehumidification. A humidity sensor stuck reading high (a common failure in a damp location) makes the system dehumidify continuously against a problem that is not there, a pure round-the-clock waste that no comfort complaint will ever flag.
 
-Pros: Capacitive sensors are cheap and reasonably accurate (±2–5%).
-Cons: Drift over time, affected by temperature, condensation kills them.
+## Pressure: small sensor, large saving
 
-Applications: HVAC latent load control, datacenter humidity management, laboratory environments.
+Pressure sensors (usually diaphragm or strain-gauge types, ±1 to 2% of full scale) measure duct static pressure for fan control, pump pressures for system monitoring, and refrigerant pressures on [chillers](/courses/refrigeration-and-heat-pumps/ph-diagrams). The duct-pressure one deserves special attention because it controls a fan, and fan power follows the [cube law](/courses/motors-and-drives/why-vfds).
 
-Placement: Away from supply diffusers, not in condensation zones.
+<WorkedExample title="duct static pressure reset">
+  <Given>
+    - A variable-air-volume system runs its supply fan to hold a fixed high duct static pressure
+    - A pressure-reset strategy lets the setpoint fall when zones are satisfied, dropping fan speed to ≈ 85% for much of the day
+    - Fan motor 30 kW, 6,000 h/yr; electricity £0.20/kWh
+  </Given>
+  <Find>The saving from resetting the pressure setpoint.</Find>
+  <Solution>
+    Fan power at 85% speed ≈ 0.85³ ≈ 61% of full, so the reset saves ≈ 30 × (1 − 0.61) ≈
+    11.6 kW while it applies. Over 6,000 hours: ≈ **£13,900 a year** from letting a
+    pressure setpoint float instead of pinning it high. The saving exists because the fan
+    was maintaining pressure that the zones did not need, and the cube law turns a modest
+    speed reduction into a large power one. The whole strategy lives or dies on a
+    correctly reading, well-placed pressure sensor.
+  </Solution>
+</WorkedExample>
 
-## Pressure sensors
+## Flow
 
-**Applications:** Duct static pressure (fan speed control), chiller pressure (flow), pump pressure (system monitoring).
+Flow sensors (turbine, magnetic, or non-invasive ultrasonic) meter chilled and hot water for plant control and air for [VAV](/courses/hvac-systems) boxes. The recurring problem with mechanical types is fouling: scale and debris in pipework plug turbines and bias readings, which is why ultrasonic clamp-on meters, reading through the pipe wall, are increasingly preferred. A flow sensor reading low is quietly expensive: a pump told it is delivering half the flow it really is will run harder to "compensate", burning energy to correct a fault that exists only in the instrument.
 
-Types: Diaphragm (most common), capacitive, strain gauge.
+<Callout variant="key" title="Every sensor is a control decision waiting to go wrong">
+The theme across all of these is the same as for temperature: a mismeasurement does not announce itself as an error, it just makes the system do the wrong thing confidently and forever. A humidity sensor stuck high dehumidifies 24/7; a flow sensor reading low overworks a pump; a mispositioned pressure sensor defeats the reset strategy that would have saved five figures. Budget for the calibration and placement of every sensor that drives a loop, not just the thermostats, because the pressure and flow sensors often sit on the largest savings of all.
+</Callout>
 
-Typical accuracy: ±1–2% of full scale.
+Sensors tell the loop what is happening; actuators are how it acts. The next lesson covers valves, dampers and the authority that decides whether they control well.
 
-Energy impact: Low duct static pressure = fans can run slower (VFD on fan) = big energy savings.
+## Sources and further reading
 
-## Flow sensors
-
-**Types:** Turbine (mechanical rotation counted), magnetic (Coriolis, very accurate), ultrasonic (non-invasive).
-
-Applications: Chilled water flow (chiller control), hot water flow (boiler modulation), air flow (VAV box damper control).
-
-Challenge: Pipe scale and debris plug mechanical sensors. Ultrasonic avoids this.
-
-## Integration errors
-
-A poorly placed or uncalibrated sensor ruins control. Examples:
-
-- Humidity sensor in condensation zone reads 100% year-round; dehumidification runs 24/7 (waste).
-- Flow sensor reading 50% of actual flow → pump runs 2× harder to compensate (energy waste).
-
-Budget for sensor maintenance and annual recalibration.
+- [CIBSE Guide H, building control systems](https://www.cibse.org/knowledge-research/knowledge-portal) on sensor types and duct pressure reset.
+- [ASHRAE](https://www.ashrae.org/technical-resources) guidance on static pressure reset for VAV systems.
+- [BSRIA](https://www.bsria.com/uk/) on measurement and sensor commissioning in building services.
