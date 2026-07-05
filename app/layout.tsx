@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { AuthProvider } from "@/app/auth-context";
 import { ProgressProvider } from "@/app/progress-context";
 import CookieConsent from "@/components/CookieConsent";
+import ConsentedAnalytics from "@/components/ConsentedAnalytics";
 import { SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <SiteFooter />
             <CookieConsent />
+            <ConsentedAnalytics />
           </ProgressProvider>
         </AuthProvider>
       </body>

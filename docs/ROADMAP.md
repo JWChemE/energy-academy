@@ -79,28 +79,41 @@ worked examples verified by calculation, a key callout, cross-links, a
 "Sources and further reading" section, and a reviewed date. ~250 lessons across
 five batches.
 
-**Citations backfill.** Lessons already at the prose bar but missing a
-"Sources and further reading" section and a reviewed date get both.
+**Citations backfill.**
+- [x] Sources + reviewed dates added to all 136 remaining lessons (the six
+      pre-style-guide technical courses + all eight Level 3 courses); also
+      removed every em-dash left in content (999 platform-wide) *(Jul 2026)*
 
 **Reference features.**
-- [ ] Site search (client-side index over titles, summaries, headings;
-      gated lessons surface title + excerpt only)
-- [ ] /tools index page surfacing the calculators and diagnostics already
-      built but buried inside lessons
-- [ ] Quick-reference data pages (conversion factors, typical plant
-      efficiencies, benchmark tables — much of this data already exists in
-      lib/*Tables.ts)
-- [ ] Glossary
+- [x] Site search — build-time index, gating respected (gated lessons expose
+      title + excerpt only; headings indexed for Level 1 only); /search is
+      noindex *(Jul 2026)*
+- [x] /tools index — 3 free standalone tool pages (payback, affinity laws,
+      vapour-compression cycle) + directory of all 22 gated diagnostics
+      *(Jul 2026)*
+- [x] Quick-reference data pages — energy units, saturated steam, motor
+      efficiency, typical plant efficiencies, prices & carbon factors, built
+      from the same lib/*Tables.ts data the simulators use *(Jul 2026)*
+- [x] Glossary — 118 terms, each linked to its owning lesson *(Jul 2026)*
 - [ ] Continue the visuals rollout (step-through diagrams, concept sliders,
-      WorkedExample/KeyFigures) as each course is rewritten
+      WorkedExample/KeyFigures) as courses evolve
+
+**Phase 2 is complete** apart from the ongoing visuals rollout *(Jul 2026)*.
 
 ## Phase 3 — Audience
 
 - [ ] Choose an email service provider; wire the consented streams and the
       leads table to it (nothing sends today)
 - [ ] Monthly newsletter: what's new plus one worked insight
-- [ ] Privacy-friendly analytics (Plausible/Fathom), loaded only behind the
-      existing consent banner
+- [x] Privacy-friendly analytics *(Jul 2026 — architecture: Vercel Web
+      Analytics for anonymous traffic (cookieless, first-party, mounted only
+      after consent via ConsentedAnalytics), Supabase for signed-in behaviour
+      (progress was already recorded; quiz results now persist via
+      saveQuizResult wired into Quiz.tsx), Google Search Console for search
+      queries. Policy pages updated. OWNER TASK: enable Web Analytics for the
+      project in the Vercel dashboard or no data will arrive. Deferred to
+      later: internal-search query logging; funnel events such as gate-hit
+      → signup, which need Vercel Pro custom events or Plausible)*
 - [ ] Repurpose best lessons as LinkedIn posts (audience + personal
       credibility compound together)
 - [ ] Second and third lead magnets (benchmark cheat-sheets, degree-day
@@ -111,6 +124,15 @@ five batches.
 ## Phase 4 — Commercialisation
 
 Do not start until the content floor (Phase 2) is substantially done.
+
+**Decision (Jul 2026): no display ads.** The economics don't work below tens
+of thousands of sessions/month, and ads would undercut the professional-
+reference positioning, hurt Core Web Vitals, and cannibalise the real funnel
+(email list → paid tier → consultancy), where one engaged professional is
+worth orders of magnitude more than their ad impressions. If pre-Phase-4
+revenue is ever wanted at real traffic, direct sponsorship from relevant
+vendors beats programmatic ads. Revisit only if traffic becomes large AND
+Phase 4/5 monetisation fails.
 
 - [ ] Completion certificates (professionals need CPD evidence; "log this
       course as CPD" uses the professional bodies' own system rather than

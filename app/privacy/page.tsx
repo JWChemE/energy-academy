@@ -83,8 +83,17 @@ export default function PrivacyPolicy() {
         </li>
       </ul>
       <p>
-        We do not currently use analytics, advertising or other non-essential tracking cookies. If we
-        ever do, we will ask for your consent first and update this policy.
+        <strong>Analytics (only with your consent).</strong> If you accept non-essential cookies in
+        our banner, we use Vercel Web Analytics to understand which pages are visited and where
+        visitors come from. It is cookieless and aggregate: it does not store your IP address or
+        identify you, and it never loads if you reject or ignore the banner. Lawful basis:{" "}
+        <em>your consent</em>. We do not use advertising or any other tracking.
+      </p>
+      <p>
+        If you have an account, we also store your lesson progress and quiz results (score and
+        answers) so your dashboard works and you can pick up where you left off. These live in our
+        database alongside your account, are visible only to you (and to us as the operator), and
+        are deleted with your account.
       </p>
 
       <h2>Marketing communications and your choices</h2>
@@ -109,7 +118,8 @@ export default function PrivacyPolicy() {
           data). Hosting region: West EU (Ireland), <code>eu-west-1</code>.
         </li>
         <li>
-          <strong>Vercel</strong> — website hosting and delivery.
+          <strong>Vercel</strong> — website hosting and delivery, and (only if you consent)
+          cookieless, aggregate web analytics.
         </li>
       </ul>
       <p>

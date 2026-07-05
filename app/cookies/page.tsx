@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: "The cookies and similar storage Energy Academy uses, and how to manage them.",
 };
 
-// NOTE FOR THE OWNER: keep this accurate. It currently reflects a site that uses
-// only strictly-necessary storage and no analytics. If you add analytics or
-// other non-essential cookies, list them here and make sure they only load
-// after the visitor accepts.
+// NOTE FOR THE OWNER: keep this accurate. It reflects a site using
+// strictly-necessary storage plus one consent-gated analytics tool (Vercel Web
+// Analytics, cookieless, loaded only after Accept). If you add further
+// non-essential cookies, list them here and gate them the same way.
 
 export default function CookiePolicy() {
   return (
@@ -61,11 +61,15 @@ export default function CookiePolicy() {
         </table>
       </div>
 
-      <h2>Analytics and other non-essential cookies</h2>
+      <h2>Analytics (consent-gated)</h2>
       <p>
-        We <strong>do not currently use</strong> any analytics, advertising or other non-essential
-        cookies. If we add them in future, they will only be set after you select{" "}
-        <strong>Accept</strong> in our cookie banner, and we&apos;ll list them here.
+        If, and only if, you select <strong>Accept all</strong> in our cookie banner, we load{" "}
+        <strong>Vercel Web Analytics</strong> to count page views and see which content is useful.
+        It is deliberately privacy-light: it sets <strong>no cookies</strong>, does not store your
+        IP address, and identifies neither you nor your device across sites; requests go to this
+        site&apos;s own domain. If you select <strong>Reject non-essential</strong> (or make no
+        choice), it never loads. We do not use advertising or any other non-essential cookies, and
+        if that ever changes we will list them here first.
       </p>
 
       <h2>Managing your choice</h2>

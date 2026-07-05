@@ -35,7 +35,8 @@ export default function CookieConsent() {
   function choose(choice: "accepted" | "rejected") {
     window.localStorage.setItem(STORAGE_KEY, choice);
     setVisible(false);
-    // If/when analytics is added, initialise it here only when choice === "accepted".
+    // Notify listeners (ConsentedAnalytics mounts/unmounts on this signal).
+    window.dispatchEvent(new CustomEvent("energy:cookie-consent", { detail: choice }));
   }
 
   if (!visible) return null;
