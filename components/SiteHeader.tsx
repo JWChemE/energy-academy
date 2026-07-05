@@ -63,6 +63,25 @@ export function SiteHeader() {
           >
             <span className="text-slate-400">🏭</span> Sectors
           </Link>
+          <Link
+            href="/search"
+            aria-label="Search"
+            className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              className="h-4 w-4"
+              aria-hidden
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            Search
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -146,6 +165,30 @@ export function SiteHeader() {
             className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
           >
             Sectors
+          </Link>
+          <Link
+            href="/search"
+            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Search
+          </Link>
+          <Link
+            href="/tools"
+            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Tools
+          </Link>
+          <Link
+            href="/reference"
+            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Quick reference
+          </Link>
+          <Link
+            href="/glossary"
+            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Glossary
           </Link>
 
           <div className="mt-2 border-t border-slate-100 pt-2">

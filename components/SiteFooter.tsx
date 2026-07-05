@@ -58,6 +58,18 @@ export function SiteFooter() {
             <Link href="/about" className="transition-colors hover:text-slate-700">
               About
             </Link>
+            <Link href="/search" className="transition-colors hover:text-slate-700">
+              Search
+            </Link>
+            <Link href="/tools" className="transition-colors hover:text-slate-700">
+              Tools
+            </Link>
+            <Link href="/reference" className="transition-colors hover:text-slate-700">
+              Quick Reference
+            </Link>
+            <Link href="/glossary" className="transition-colors hover:text-slate-700">
+              Glossary
+            </Link>
             <Link
               href="/resources/energy-audit-checklist"
               className="transition-colors hover:text-slate-700"
