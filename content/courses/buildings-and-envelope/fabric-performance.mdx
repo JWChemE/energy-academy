@@ -1,31 +1,55 @@
-The building fabric - walls, roof, floor, and windows - determines how much heat escapes in winter and enters in summer. Controlling losses at the fabric is almost always cheaper than oversizing the heating and cooling plant to compensate.
+The building fabric, its walls, roof, floor and windows, decides how much heat escapes in winter and enters in summer, and therefore how large the heating and cooling systems have to be to compensate. Controlling losses at the fabric is almost always cheaper over a building's life than oversizing the plant to fight them, which is why "fabric first" is the founding principle of low-energy building. This lesson introduces the U-value, the fabric-first logic, and where a building's heat actually goes.
 
 ## The U-value
 
-A **U-value** measures how readily heat passes through a building element, in watts per square metre per kelvin (W/m2K). Lower is better.
+A **U-value** measures how readily heat passes through a building element, in watts per square metre per kelvin (W/m²K). Lower is better. It is the single most useful number in fabric work, and the [insulation-systems course](/courses/insulation-systems/heat-loss-calculation) covers how it is calculated from the layers of a construction.
 
-- A solid Victorian brick wall: around 2.0 W/m2K
-- An uninsulated cavity wall: around 1.5 W/m2K
-- A modern insulated wall: 0.18-0.28 W/m2K
-- Best-practice (Passivhaus) wall: below 0.15 W/m2K
+- A solid Victorian brick wall: around 2.0 W/m²K
+- An uninsulated cavity wall: around 1.5 W/m²K
+- A modern insulated wall: 0.18 to 0.28 W/m²K
+- Best-practice (Passivhaus) wall: below 0.15 W/m²K
 
-Heat loss through an element is simply U x Area x temperature difference. A 100 m2 wall at 2.0 W/m2K loses four times as much as the same wall at 0.5 W/m2K for the same indoor-outdoor temperature gap.
+Heat loss through an element is simply U × area × temperature difference, so the U-value scales the loss directly.
+
+<WorkedExample title="what the U-value is worth on one wall">
+  <Given>
+    - A 50 m² wall; indoor-outdoor temperature difference 20 °C
+    - Before insulation U = 1.5 W/m²K; after, U = 0.3 W/m²K
+  </Given>
+  <Find>The heat-loss rate before and after.</Find>
+  <Solution>
+    Before: 1.5 × 50 × 20 = **1,500 W**. After: 0.3 × 50 × 20 = **300 W**, an **80%
+    reduction** in the heat leaking through that wall, hour after hour, all winter. Every
+    fabric decision reduces to this arithmetic: lower the U-value, and the loss falls in
+    exact proportion. The [retrofit lessons](/courses/buildings-and-envelope/insulation-retrofit)
+    turn this rate into annual pounds.
+  </Solution>
+</WorkedExample>
 
 ## Fabric first
 
-The "fabric first" principle says: reduce demand through the building envelope before investing in efficient systems or renewables. A well-insulated building needs a smaller boiler, smaller radiators, less pipework, and less renewable generation to reach net zero. The savings compound.
+The "fabric first" principle says: reduce demand through the building envelope before investing in efficient systems or renewables. A well-insulated building needs a smaller boiler, smaller radiators, less pipework, and less renewable generation to reach net zero, and it holds its temperature through a power cut or a price spike. The savings compound, and low fabric heat loss is also what makes low-temperature [heat pumps](/courses/refrigeration-and-heat-pumps/heating-modes) viable, since a leaky building needs hot radiators that wreck a heat pump's efficiency.
 
 ## Where heat is lost
 
 In a typical uninsulated house, heat escapes roughly as:
+
 - 35% through walls
 - 25% through the roof
 - 15% through draughts and ventilation
 - 15% through floors
 - 10% through windows
 
-The proportions shift as you insulate - once walls and roof are dealt with, draughts and windows dominate. This is why a retrofit follows a sequence rather than tackling everything at once.
+The proportions shift as you insulate: once walls and roof are dealt with, draughts and windows come to dominate. This is why a retrofit follows a [sequence](/courses/buildings-and-envelope/retrofit-approach) rather than tackling everything at once, and why the biggest single element (walls) usually leads.
 
-## Diminishing returns
+<Callout variant="key" title="Diminishing returns set the economic limit">
+Each added layer of insulation saves less than the last. Cutting a wall from U = 2.0 to U = 0.5 removes 1.5 units of loss; going further to 0.3 removes only 0.2 more. There is an economic optimum where more insulation no longer justifies its cost, the subject of [economic thickness](/courses/insulation-systems/economic-thickness). Fabric-first does not mean insulate without limit; it means insulate to the point where the next pound is better spent elsewhere, then move on.
+</Callout>
 
-Each added layer of insulation saves less than the last. Going from U=2.0 to U=0.5 saves 1.5 units of loss; going from 0.5 to 0.3 saves only 0.2. There is an economic optimum where the cost of more insulation no longer justifies the marginal saving - the subject of economic thickness, covered later.
+The rest of this course works through the fabric element by element: thermal bridges, airtightness, solar gain and glazing, then the retrofit strategy that ties them together.
+
+## Sources and further reading
+
+- [GOV.UK: Approved Document L (conservation of fuel and power)](https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l) for UK fabric standards.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on fabric performance and U-values.
+- [Passivhaus Trust](https://www.passivhaustrust.org.uk/) on fabric-first, low-energy design.

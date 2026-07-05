@@ -1,26 +1,49 @@
-A thermal bridge is a localised path where heat bypasses the insulation - through a more conductive material or a geometric weak point. Even a well-insulated building can lose significant heat, and suffer condensation, through neglected bridges.
+A building can hit excellent U-values on every wall, roof and floor and still lose significant heat, because heat does not only flow through the middle of an element. It finds the weak points: the junctions, the more conductive materials, the geometric corners where the insulation is interrupted. These are thermal bridges, and beyond wasting energy they chill inner surfaces enough to grow mould. This lesson covers the two kinds of bridge, why they matter beyond energy, and how they are designed out.
 
 ## Two kinds of bridge
 
-**Repeating bridges** occur regularly across an element: timber or steel studs in a framed wall, mortar joints, joist ends. Their effect is averaged into the element U-value.
+**Repeating bridges** occur regularly across an element: timber or steel studs in a framed wall, mortar joints, joist ends. Their effect is averaged into the element's U-value, so a well-calculated U-value already includes them.
 
-**Non-repeating (linear) bridges** occur at junctions: where a wall meets a floor, around window reveals, at balconies, lintels, and wall-roof junctions. These are quantified by a **psi-value** (linear thermal transmittance, W/mK) and can add 10-30% to the calculated fabric heat loss if ignored.
+**Non-repeating (linear) bridges** occur at junctions: where a wall meets a floor, around window reveals, at balconies, lintels, and wall-roof junctions. These are quantified by a **psi-value** (linear thermal transmittance, W/mK) and are *not* captured in the element U-values, so a fabric calculation that ignores them understates the real heat loss. Neglected linear bridges can add 10 to 30% to a building's calculated fabric loss.
 
 ## Why bridges matter beyond energy
 
-Where a bridge chills the inner surface, two problems follow:
-- **Condensation and mould.** If the inner surface drops below the dew point, moisture condenses. Cold corners behind furniture are classic mould sites.
-- **Comfort.** Cold inner surfaces radiate away body heat, making a room feel colder than the air temperature suggests.
+Where a bridge chills the inner surface, two problems follow. **Condensation and mould**: if the inner surface drops below the dew point, moisture condenses on it, and cold corners behind furniture are classic mould sites. **Comfort**: cold inner surfaces radiate away body heat, making a room feel colder than the air temperature suggests, which prompts occupants to turn the thermostat up and burn more energy. The condensation risk is captured by the **temperature factor (fRsi)**, the ratio describing how warm the inner surface stays relative to conditions; UK guidance requires fRsi above about 0.75 to keep surfaces clear of mould.
 
-The risk is captured by the **temperature factor (fRsi)** - the ratio describing how warm the inner surface stays. Building standards require fRsi above about 0.75 to avoid mould.
+## Why retrofit makes bridges worse
+
+Adding insulation to the main surfaces makes any untreated bridge *relatively* colder, because the surrounding fabric is now warm while the bridge still conducts. A junction that was harmless in an uninsulated wall can become a condensation and mould risk once the wall around it is insulated. This is one of the [unintended consequences](/courses/buildings-and-envelope/retrofit-approach) that makes careless retrofit dangerous, and it is why bridges deserve explicit attention rather than being left to look after themselves.
 
 ## Designing them out
 
-- Maintain a continuous insulation layer - draw it as an unbroken line around the section without lifting the pen.
-- Use insulated lintels, cavity closers, and thermal breaks at balconies and parapets.
-- Specify accredited construction details with known psi-values.
-- In framed walls, add a continuous layer of external or internal insulation to interrupt the repeating stud bridge.
+- Keep the insulation layer **continuous**: you should be able to trace it around a section drawing without lifting the pen.
+- Use **thermal breaks**: insulated lintels, cavity closers, low-conductivity structural connectors at balconies and parapets.
+- Insulate window reveals and carry wall insulation onto the frame.
+- Specify **accredited construction details** with known psi-values, the simplest route to safe junctions.
 
-## A worked sense of scale
+<WorkedExample title="the scale of neglected junctions">
+  <Given>
+    - A house with poorly detailed junctions loses, through linear bridges alone, the equivalent of an extra ≈ 0.1 to 0.2 W/m²K averaged over its whole envelope
+    - The insulated walls themselves might be ≈ 0.3 W/m²K
+  </Given>
+  <Find>What that means in proportion.</Find>
+  <Solution>
+    An extra 0.15 W/m²K averaged over the envelope is comparable to leaving a meaningful
+    fraction of the walls effectively uninsulated, and it can rival the loss through the
+    insulated walls themselves. Yet good junction detailing is nearly free at design stage
+    and close to impossible to fix later. Bridges are the clearest case in fabric work
+    where getting the drawing right beats any product you can buy.
+  </Solution>
+</WorkedExample>
 
-A typical house with poorly detailed junctions can lose the equivalent of an extra 0.1-0.2 W/m2K averaged over its whole envelope through linear bridges alone - comparable to leaving a small portion of the walls uninsulated. Good detailing is cheap at design stage and almost impossible to fix later.
+<Callout variant="key" title="Draw the insulation line without lifting the pen">
+The single test that catches most thermal bridges is a drawing exercise: on a section through the building, trace the insulation layer continuously around every junction. Wherever you have to lift the pen, heat has a bypass, and probably a condensation risk too. Continuity of insulation is worth more than raw thickness, because a thick layer with a gap at every junction underperforms a thinner one that is unbroken.
+</Callout>
+
+Bridges let heat sidestep the insulation through the solid fabric. Air leakage lets it escape through the gaps, which is the next lesson.
+
+## Sources and further reading
+
+- [GOV.UK: Approved Document L](https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l) on thermal bridging and accredited details.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal) on junction detailing and condensation risk.
+- [BRE](https://www.bregroup.com/) on thermal bridging calculation and temperature factors.

@@ -1,38 +1,54 @@
-Before you can justify insulation, you have to quantify the heat being lost. The calculations are straightforward and underpin every insulation decision.
+Before you can justify insulation, you have to quantify the heat being lost, and turn that rate into pounds a year. The calculations are straightforward, they underpin every insulation decision, and they are the difference between "this pipe feels hot" and "this pipe is costing £19,000 a year". This lesson builds the method from the U-value up to an annual energy figure ready for a payback calculation, and points to where curved surfaces such as pipes need a different approach.
 
 ## The U-value
 
-The **U-value** measures how readily heat passes through a construction, in W/m2K. It is the reciprocal of the total thermal resistance of all the layers:
+The **U-value** measures how readily heat passes through a construction, in W/m²K. It is the reciprocal of the total thermal resistance of all the layers:
 
-U = 1 / (Rsi + R1 + R2 + ... + Rso)
+> U = 1 / (Rsi + R₁ + R₂ + ... + Rso)
 
-where each R is a layer's resistance (thickness / conductivity) and Rsi, Rso are the inside and outside surface resistances. Lower U means better insulation.
+where each R is a layer's resistance (its thickness divided by its thermal conductivity) and Rsi and Rso are the inside and outside surface resistances. Lower U means better insulation. The [materials lesson](/courses/insulation-systems/insulation-materials) covers the conductivities that feed this, and the [buildings-and-envelope course](/courses/buildings-and-envelope/fabric-performance) applies U-values at whole-building scale.
 
 ## Heat loss through a surface
 
 The steady-state heat loss through any element is:
 
-Q = U x A x dT
+> Q = U × A × ΔT
 
-- Q = heat loss (watts)
-- U = U-value (W/m2K)
-- A = area (m2)
-- dT = temperature difference inside to outside (K)
+with Q the heat loss (watts), U the U-value (W/m²K), A the area (m²), and ΔT the inside-to-outside temperature difference (K).
 
-A 50 m2 wall at U = 1.5 W/m2K with a 20 K difference loses 1,500 W. Insulate it to U = 0.3 and the loss drops to 300 W - an 80% reduction.
+<WorkedExample title="from U-value to heat-loss rate">
+  <Given>
+    - A 50 m² wall with a 20 K temperature difference across it
+    - Before insulation U = 1.5 W/m²K; after, U = 0.3 W/m²K
+  </Given>
+  <Find>The heat-loss rate before and after.</Find>
+  <Solution>
+    Before: 1.5 × 50 × 20 = **1,500 W**. After: 0.3 × 50 × 20 = **300 W**, an **80%
+    reduction**. That 1,200 W is being lost continuously whenever the temperature
+    difference holds, so the next step is to turn a rate in watts into energy over a year.
+  </Solution>
+</WorkedExample>
 
 ## Annual energy from degree-days
 
-To turn a heat-loss rate into annual energy, use **degree-days**, which capture how cold the year is. Annual loss through an element is approximately:
+To turn a heat-loss rate into annual energy, use **degree-days**, which capture how cold the year actually is (the same [degree-day method](/courses/monitoring-and-targeting/normalisation) used in monitoring). The annual loss through an element is approximately:
 
-Energy (kWh) = U x A x degree-days x 24 / 1000
+> Energy (kWh) = U × A × degree-days × 24 ÷ 1,000
 
-This lets you convert a fabric improvement directly into kWh and pounds saved per year, ready for a payback calculation.
+This converts a fabric improvement directly into kWh, and then into pounds at the fuel price and into carbon at the emission factor, ready for the payback and [economic-thickness](/courses/insulation-systems/economic-thickness) calculations that follow.
 
 ## Pipework and curved surfaces
 
-Heat loss from pipes and vessels uses the same principle but cylindrical geometry, so loss is expressed per metre of pipe at a given temperature and insulation thickness. Standards such as BS 5422 tabulate these directly, avoiding hand calculation - covered in the pipework module.
+Heat loss from pipes and vessels uses the same physics but cylindrical geometry, so the loss is expressed per metre of pipe at a given temperature and insulation thickness rather than per square metre. Because the maths is fiddlier for cylinders, standards such as **BS 5422** tabulate the losses and economic thicknesses directly by pipe size and temperature, avoiding hand calculation. The [pipe-sizing lesson](/courses/insulation-systems/pipe-sizing) uses these tables.
 
-## Putting it to work
+<Callout variant="key" title="Every insulation business case is the same four steps">
+Whatever the surface, the method never changes: establish the current U-value (or pipe loss), calculate the improved value with insulation added, find the difference in annual energy via degree-days or running hours, and weigh it against the cost. Get comfortable with these four steps and you can price any insulation opportunity on site in minutes, which is exactly what turns a hunch about a hot surface into a funded project.
+</Callout>
 
-The method is always the same: establish the current U-value (or pipe loss), calculate the improved value with insulation added, find the difference in annual energy, and weigh it against the cost. Every insulation business case starts here.
+With the heat-loss method in hand, the next lesson uses it to find the economically optimal amount of insulation, the point where more stops paying.
+
+## Sources and further reading
+
+- [BS 5422](https://www.bsigroup.com/) for tabulated insulation thicknesses on pipes and ductwork.
+- [CIBSE knowledge portal](https://www.cibse.org/knowledge-research/knowledge-portal), including Guide A on heat loss calculation.
+- [Degree day data and guidance](https://www.degreedays.net/) for the weather series behind the annual estimate.

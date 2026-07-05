@@ -62,13 +62,14 @@ the gated courses follow in practitioner-relevance order.
 - [x] commissioning (190) *(Jul 2026 — also fixed a fabricated "ETICS" framework;
       lesson renamed to Retro-Commissioning Existing Buildings)*
 - [x] waste-heat-recovery (197) *(Jul 2026)*
-- [ ] buildings-and-envelope (271)
-- [ ] insulation-systems (294)
-- [ ] lighting (305)
+- [x] buildings-and-envelope (271) *(Jul 2026)*
+- [x] insulation-systems (294) *(Jul 2026)*
+- [x] lighting (305) *(Jul 2026 — also reordered modules to Fundamentals →
+      Retrofit & Design → Controls for a cleaner teaching sequence)*
+- [x] intro-to-energy-management (348) *(Jul 2026 — flagship Level 1; removed
+      em-dashes, added sources, dropped a placeholder video embed)*
 - [ ] chp-and-cogeneration (310)
 - [ ] thermal-energy-storage (345)
-- [ ] intro-to-energy-management (348) — flagship Level 1 course, worth an
-      early pass despite the middling count
 - [ ] renewable-energy (358)
 - [ ] maintenance (380)
 

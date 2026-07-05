@@ -1,34 +1,43 @@
-Some of the simplest lighting savings come from a clock: ensuring lights are on only during the hours a space is actually used. Time scheduling, especially integrated with the building management system, catches the lights that occupancy and daylight controls miss.
+Some of the simplest lighting savings come from a clock: ensuring lights are on only during the hours a space is actually used. Time scheduling, especially integrated with the building management system, catches the lights that [occupancy](/courses/lighting/occupancy-sensors) and [daylight](/courses/lighting/daylight-harvesting) controls miss, and it forms the outer layer of a good control hierarchy. This lesson covers the wasteful default it replaces, basic and BMS-integrated scheduling, the cleaning problem, and how the control layers stack together.
 
 ## The wasteful default
 
-Without scheduling, lights tend to follow human memory - which fails. Cleaners switch everything on at 5am and it stays on; a display stays lit all weekend; external lighting burns through bright mornings. Scheduling replaces unreliable memory with a reliable timetable.
+Without scheduling, lights tend to follow human memory, which fails reliably. Cleaners switch everything on at 5 am and it stays on all day; a display stays lit all weekend; external lighting burns through bright mornings. Scheduling replaces unreliable memory with a reliable timetable, and it is often the cheapest lighting saving available because it needs no new hardware where a BMS already exists.
 
 ## Basic time control
 
-A **time switch or astronomical timer** turns circuits on and off to a schedule. Astronomical timers track sunrise and sunset by date and location - ideal for external and security lighting, which should follow daylight rather than a fixed clock through the changing seasons.
+A **time switch or astronomical timer** turns circuits on and off to a schedule. Astronomical timers track sunrise and sunset by date and location, ideal for external and security lighting, which should follow daylight rather than a fixed clock through the changing seasons, so it never burns through a bright summer morning or switches off before a dark winter afternoon.
 
 ## BMS integration
 
-Connecting lighting to the **building management system** unlocks far more:
-- **Occupancy-based schedules** aligned with the building's working hours, with separate weekday, weekend, and holiday patterns
+Connecting lighting to the [building management system](/courses/control-systems-and-bms/bms-functions) unlocks far more than a simple timer:
+
+- **Occupancy-based schedules** aligned with the building's working hours, with separate weekday, weekend and holiday patterns
 - **Zone-by-zone control** so unoccupied wings stay dark while occupied areas are lit
-- **Override with timeout:** an occupant working late presses a button for an extra hour or two, after which the lights revert to off - preventing all-night burning
+- **Override with timeout**: an occupant working late presses a button for an extra hour or two, after which the lights revert to off, preventing all-night burning
 - **Integration with security and HVAC** so the whole building powers down together out of hours
 
 ## Cleaning and out-of-hours strategy
 
-A common waste is whole floors lit for a single cleaner. Better strategies:
-- Schedule cleaning during occupied hours where possible
-- Use occupancy sensing so only the cleaner's current area is lit
-- Provide "clean lighting" - a reduced set of luminaires - rather than full illumination
+A common and large waste is whole floors lit for a single cleaner. Better strategies: schedule cleaning during occupied hours where possible; use occupancy sensing so only the cleaner's current area is lit; or provide "clean lighting", a reduced set of luminaires, rather than full illumination of an empty floor.
 
 ## Layering the controls
 
-Time scheduling is the outer layer of a good control hierarchy:
-1. **Schedule** sets when lighting is permitted at all
-2. **Occupancy sensing** switches within those hours based on presence
-3. **Daylight harvesting** dims based on available daylight
-4. **Manual override** lets occupants adapt, with automatic timeout
+Time scheduling is the outer layer of a control hierarchy where each layer catches waste the others miss:
 
-Each layer catches waste the others miss. Together they ensure lights are on only where, when, and as brightly as genuinely needed - the foundation of an efficient lighting installation.
+1. **Schedule** sets when lighting is permitted at all.
+2. **Occupancy sensing** switches within those hours based on presence.
+3. **Daylight harvesting** dims based on available daylight.
+4. **Manual override** lets occupants adapt, with automatic timeout.
+
+<Callout variant="key" title="Layer the controls; each catches what the others miss">
+No single control strategy is enough on its own. Scheduling stops lights burning out of hours but cannot tell whether an occupied-hours room is empty; occupancy sensing catches the empty room but cannot tell whether daylight already suffices; daylight harvesting dims for the sun but cannot switch off an empty space. Stacked together, schedule then occupancy then daylight, with a timed manual override, they ensure lights are on only where, when, and as brightly as genuinely needed. This layered hierarchy is the foundation of an efficient lighting installation, and combined with an [LED retrofit](/courses/lighting/led-retrofit) it is where the largest, most reliable lighting savings come from.
+</Callout>
+
+That completes the lighting course: how light is measured and produced, the LED retrofit, and the controls that ensure efficient lamps are only on when needed. The [diagnostics capstone](/courses/lighting/diagnostics-capstone) puts a building's lighting, its levels, lamps, hours and controls, in front of you to survey and improve.
+
+## Sources and further reading
+
+- [Society of Light and Lighting (CIBSE)](https://www.cibse.org/society-of-light-and-lighting) on lighting control strategies.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on scheduling and lighting controls.
+- [BCIA](https://bcia.co.uk/) on integrating lighting with building controls.

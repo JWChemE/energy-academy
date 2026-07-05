@@ -1,30 +1,50 @@
-Bare hot pipes and vessels bleed heat continuously, often in plant rooms where nobody notices. Pipe insulation (lagging) is one of the cheapest, fastest-payback measures in any facility.
+Bare hot pipes and vessels bleed heat continuously, usually in plant rooms where nobody sees the cost, and pipe insulation (lagging) is one of the cheapest, fastest-payback measures in any facility. The heat is being lost every hour the system runs, the fix is well-understood, and the payback is often under a year. This lesson covers the scale of the loss, how thickness is chosen from standards, which material suits which service, and why cold pipes need a completely different approach.
 
 ## The scale of the loss
 
-A bare 100 mm steam pipe at 150 C loses roughly 400-600 W per metre to a 20 C room. Over a 100 m run, that is 40-60 kW lost continuously - tens of thousands of pounds a year. Lagging it cuts the loss by 90% or more.
+A bare 100 mm steam pipe at 150 °C loses roughly 0.4 to 0.6 kW per metre into a 20 °C room. That sounds small until you multiply it by the length of a real run.
+
+<WorkedExample title="what a bare steam main costs">
+  <Given>
+    - 100 m of bare 100 mm steam pipe losing ≈ 0.5 kW/m
+    - System runs 6,000 h/yr; heat from a boiler at 85% efficiency, gas £0.06/kWh
+    - Lagging cuts the loss by ≈ 90%
+  </Given>
+  <Find>The annual value of lagging the run.</Find>
+  <Solution>
+    Bare loss ≈ 100 × 0.5 = 50 kW, continuously. Lagging saves ≈ 45 kW, which as fuel is
+    45 × 6,000 ÷ 0.85 ≈ 318,000 kWh of gas a year, worth about **£19,000 a year**. Against
+    a lagging cost of a few thousand pounds, the payback is a matter of weeks. This is why
+    a [thermal-imaging survey](/courses/insulation-systems/pipe-installation) of any plant
+    room, glowing bare pipe everywhere, so often reveals five-figure savings sitting in
+    plain sight.
+  </Solution>
+</WorkedExample>
 
 ## Choosing thickness
 
-Pipe insulation thickness is selected from standards such as **BS 5422**, which tabulate the economic thickness by:
-- Pipe diameter
-- Operating temperature
-- Ambient conditions
-
-Higher temperatures and larger pipes justify thicker insulation. Typical values run from 25-30 mm on small low-temperature pipes up to 80-120 mm on large high-temperature mains. The standard balances the insulation cost against the value of heat saved over the payback period - the economic-thickness principle applied to cylinders.
+Pipe insulation thickness is selected from standards such as **BS 5422**, which tabulate the [economic thickness](/courses/insulation-systems/economic-thickness) by pipe diameter, operating temperature and ambient conditions. Higher temperatures and larger pipes justify thicker insulation. Typical values run from 25 to 30 mm on small low-temperature pipes up to 80 to 120 mm on large high-temperature mains. The standard is simply the economic-thickness principle applied to cylinders, pre-calculated so you do not have to.
 
 ## Choosing material
 
-- **Mineral/rock wool sections:** the workhorse for hot pipes, rated to high temperatures, non-combustible.
-- **Calcium silicate:** for very high temperatures (steam, exhaust), rigid and durable.
-- **Phenolic/PIR:** efficient on lower-temperature heating and chilled pipes.
-- **Elastomeric (closed-cell rubber):** flexible, vapour-tight - the standard for chilled and refrigeration lines where condensation control matters.
-- **Aerogel:** very thin for its performance, used where space is tight.
+- **Mineral / rock wool sections**: the workhorse for hot pipes, rated to high temperatures, non-combustible.
+- **Calcium silicate**: for very high temperatures (steam, exhaust), rigid and durable.
+- **Phenolic / PIR**: efficient on lower-temperature heating and chilled pipes.
+- **Elastomeric (closed-cell rubber)**: flexible and vapour-tight, the standard for chilled and refrigeration lines where condensation control matters.
+- **Aerogel**: very thin for its performance, used where space is tight.
 
 ## Cold pipes are different
 
-On chilled-water and refrigeration pipes, the enemy is not just heat gain but **condensation**. The insulation must include a continuous vapour barrier on its outer surface; any breach lets moist air reach the cold pipe, condensing water that soaks the insulation, destroys its performance, and corrodes the pipe. Closed-cell elastomeric materials with sealed joints are specified for this reason.
+On chilled-water and refrigeration pipes, the enemy is not just heat gain but **condensation**. Because the pipe is colder than the surrounding air, any moisture that reaches it condenses, so the insulation must include a continuous **vapour barrier** on its *outer* surface. Any breach lets moist air reach the cold pipe, condensing water that soaks the insulation, destroys its performance, and corrodes the pipe underneath, often invisibly until the pipe fails. Closed-cell elastomeric materials with fully sealed joints are specified for exactly this reason, and the vapour barrier's integrity matters more than the raw thickness.
 
-## Don't forget the fittings
+<Callout variant="key" title="Hot pipes leak heat; cold pipes drink water">
+The two failure modes are opposites and demand opposite defences. On a hot pipe, the vapour is inside and escaping, so you insulate to keep heat in and safe-touch temperatures down. On a cold pipe, the vapour is outside and trying to get in, so the *vapour barrier* is the critical component and any gap in it is progressive: condensation soaks the insulation, which then conducts better, which makes it colder and wetter still. Specify closed-cell material with sealed joints on anything below ambient, and never treat a cold line like a warm one.
+</Callout>
 
-Valves, flanges, and bends are often left bare because they are awkward to lag - yet a single bare valve can lose as much heat as several metres of pipe. Removable insulation jackets cover them while still allowing maintenance access, and they are covered next.
+Valves, flanges and bends are often left bare because they are awkward, yet a single bare valve can lose as much heat as several metres of pipe. Removable jackets solve this, and installation quality generally is the next lesson.
+
+## Sources and further reading
+
+- [BS 5422](https://www.bsigroup.com/) for pipe insulation thicknesses by size and temperature.
+- [TIMSA](https://www.timsa.org.uk/) guidance on pipework insulation and condensation control.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on pipe insulation savings.

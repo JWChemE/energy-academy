@@ -163,6 +163,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Forms of energy, energy quality, and the two laws of thermodynamics that govern every system you'll ever manage.",
                 minutes: 8,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "energy-units",
@@ -170,6 +171,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Joules, watts, kWh, therms and tonnes of CO2 — the units you'll meet every day and how to move between them.",
                 minutes: 10,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "energy-vs-power",
@@ -177,6 +179,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The single distinction that trips up newcomers — and why your energy bill has two very different kinds of charge.",
                 minutes: 8,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "energy-fundamentals-check",
@@ -197,6 +200,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The business, environmental, and reliability case — and why energy is one of the most controllable costs an organisation has.",
                 minutes: 7,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "the-energy-management-cycle",
@@ -204,6 +208,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Plan-Do-Check-Act: the continual-improvement loop at the heart of ISO 50001 and every effective energy programme.",
                 minutes: 9,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "energy-management-check",
@@ -224,6 +229,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Turn an energy saving into a financial decision with the most-used metric in the industry — and learn where it misleads.",
                 minutes: 10,
+                reviewed: "2026-07-04",
               },
               {
                 slug: "course-check",
@@ -1444,9 +1450,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "envelope-design",
             title: "Envelope Design & Heat Loss",
             lessons: [
-              { slug: "fabric-performance", title: "Fabric Performance & U-Values", summary: "How building elements lose heat; U-value targets for new and retrofit; cost-benefit.", minutes: 11 },
-              { slug: "airtightness", title: "Air-Tightness & Infiltration", summary: "Air leakage routes; testing (blower door); infiltration losses; design strategies to minimize.", minutes: 10 },
-              { slug: "thermal-bridging", title: "Thermal Bridging in Buildings", summary: "Cold spots at structure, fixtures; impact on temperature, condensation, and overall efficiency.", minutes: 10 },
+              { slug: "fabric-performance", title: "Fabric Performance & U-Values", summary: "How building elements lose heat; U-value targets for new and retrofit; cost-benefit.", minutes: 11, reviewed: "2026-07-04" },
+              { slug: "airtightness", title: "Air-Tightness & Infiltration", summary: "Air leakage routes; testing (blower door); infiltration losses; design strategies to minimize.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "thermal-bridging", title: "Thermal Bridging in Buildings", summary: "Cold spots at structure, fixtures; impact on temperature, condensation, and overall efficiency.", minutes: 10, reviewed: "2026-07-04" },
               { slug: "design-check", title: "Envelope Design Check", summary: "Quiz on fabric, air-tightness, and thermal bridging.", minutes: 5 },
             ],
           },
@@ -1454,9 +1460,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "glazing-solar",
             title: "Windows, Glazing & Solar Performance",
             lessons: [
-              { slug: "window-types", title: "Window Types & Frame Performance", summary: "Single, double, triple glazing; frame materials (uPVC, aluminium, wood); U-value ranges.", minutes: 10 },
-              { slug: "glazing-coatings", title: "Low-E Coatings & Solar Control", summary: "Low-E to reduce radiative heat loss; solar control coatings; seasonal strategy (winter vs summer).", minutes: 10 },
-              { slug: "solar-gain", title: "Solar Heat Gain & g-Value", summary: "Solar factor (g-value); east/west/south orientation; shading strategies (blinds, overhangs).", minutes: 10 },
+              { slug: "window-types", title: "Window Types & Frame Performance", summary: "Single, double, triple glazing; frame materials (uPVC, aluminium, wood); U-value ranges.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "glazing-coatings", title: "Low-E Coatings & Solar Control", summary: "Low-E to reduce radiative heat loss; solar control coatings; seasonal strategy (winter vs summer).", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "solar-gain", title: "Solar Heat Gain & g-Value", summary: "Solar factor (g-value); east/west/south orientation; shading strategies (blinds, overhangs).", minutes: 10, reviewed: "2026-07-04" },
               { slug: "glazing-check", title: "Glazing Check", summary: "Quiz on glazing types, coatings, and solar performance.", minutes: 5 },
             ],
           },
@@ -1464,9 +1470,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "retrofit-envelope",
             title: "Retrofit Strategies & Sequencing",
             lessons: [
-              { slug: "retrofit-approach", title: "Energy Retrofit Approach", summary: "Insulation first, then systems; payback-driven sequencing; cost-benefit analysis.", minutes: 10 },
-              { slug: "insulation-retrofit", title: "Adding Insulation to Existing Buildings", summary: "Internal vs external; solid wall vs cavity; cost and disruption trade-offs.", minutes: 10 },
-              { slug: "window-replacement", title: "Window & Door Replacement", summary: "Payback for single to double/triple conversion; cost per m²; bundling with other work.", minutes: 10 },
+              { slug: "retrofit-approach", title: "Energy Retrofit Approach", summary: "Insulation first, then systems; payback-driven sequencing; cost-benefit analysis.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "insulation-retrofit", title: "Adding Insulation to Existing Buildings", summary: "Internal vs external; solid wall vs cavity; cost and disruption trade-offs.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "window-replacement", title: "Window & Door Replacement", summary: "Payback for single to double/triple conversion; cost per m²; bundling with other work.", minutes: 10, reviewed: "2026-07-04" },
               { slug: "retrofit-check", title: "Retrofit Strategy Check", summary: "Quiz on retrofit approaches and economics.", minutes: 5 },
             ],
           },
@@ -1607,9 +1613,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "insulation-fundamentals",
             title: "Insulation Fundamentals",
             lessons: [
-              { slug: "heat-loss-calculation", title: "Heat Loss Calculation & U-Values", summary: "How heat flows, U-value definition, calculating losses through walls, roofs, windows.", minutes: 11 },
-              { slug: "insulation-materials", title: "Insulation Materials & Properties", summary: "Conductivity (W/mK), R-value, density, moisture resistance, fire rating.", minutes: 10 },
-              { slug: "economic-thickness", title: "Economic Thickness & Payback", summary: "Optimal thickness balances cost and energy savings; typical payback 3-7 years.", minutes: 10 },
+              { slug: "heat-loss-calculation", title: "Heat Loss Calculation & U-Values", summary: "How heat flows, U-value definition, calculating losses through walls, roofs, windows.", minutes: 11, reviewed: "2026-07-04" },
+              { slug: "insulation-materials", title: "Insulation Materials & Properties", summary: "Conductivity (W/mK), R-value, density, moisture resistance, fire rating.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "economic-thickness", title: "Economic Thickness & Payback", summary: "Optimal thickness balances cost and energy savings; typical payback 3-7 years.", minutes: 10, reviewed: "2026-07-04" },
               { slug: "fundamentals-check", title: "Insulation Fundamentals Check", summary: "Quiz on heat loss, U-values, materials, and economic thickness.", minutes: 5 },
             ],
           },
@@ -1617,9 +1623,9 @@ export const curriculum: NumberedLevel[] = [
             slug: "building-envelope",
             title: "Building Envelope & Thermal Bridging",
             lessons: [
-              { slug: "walls-roofs-floors", title: "Walls, Roofs, Floors & Layering", summary: "Multi-layer construction, vapour barriers, condensation risk, detail design.", minutes: 10 },
-              { slug: "thermal-bridges", title: "Thermal Bridges & Heat Loss", summary: "Cold bridges at joints, studs, fasteners; how to minimize; impact on overall U-value.", minutes: 10 },
-              { slug: "windows-glazing", title: "Windows & Glazing", summary: "Double/triple glazing, low-E coatings, frame U-values, solar heat gain (g-value).", minutes: 10 },
+              { slug: "walls-roofs-floors", title: "Walls, Roofs, Floors & Layering", summary: "Multi-layer construction, vapour barriers, condensation risk, detail design.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "thermal-bridges", title: "Thermal Bridges & Heat Loss", summary: "Cold bridges at joints, studs, fasteners; how to minimize; impact on overall U-value.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "windows-glazing", title: "Windows & Glazing", summary: "Double/triple glazing, low-E coatings, frame U-values, solar heat gain (g-value).", minutes: 10, reviewed: "2026-07-04" },
               { slug: "envelope-check", title: "Envelope & Bridges Check", summary: "Quiz on building envelope design and thermal bridging.", minutes: 5 },
             ],
           },
@@ -1627,10 +1633,10 @@ export const curriculum: NumberedLevel[] = [
             slug: "pipe-and-equipment",
             title: "Pipe Insulation & Equipment Lagging",
             lessons: [
-              { slug: "pipe-sizing", title: "Pipe Insulation: Thickness & Material", summary: "Pipe diameter, temperature, ambient, and economic insulation thickness.", minutes: 10 },
-              { slug: "pipe-installation", title: "Installation & Maintenance", summary: "Fitting insulation at bends, joints, valves; protection from moisture and damage.", minutes: 9 },
-              { slug: "vessel-lagging", title: "Tank & Vessel Lagging", summary: "Boiler, chiller, thermal storage tanks; lagging thickness, access doors, heat loss calculation.", minutes: 10 },
-              { slug: "safety-surface-temp", title: "Surface Temperature Safety", summary: "Maximum safe touch temperature (60°C), insulation to meet regulations, guarding.", minutes: 8 },
+              { slug: "pipe-sizing", title: "Pipe Insulation: Thickness & Material", summary: "Pipe diameter, temperature, ambient, and economic insulation thickness.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "pipe-installation", title: "Installation & Maintenance", summary: "Fitting insulation at bends, joints, valves; protection from moisture and damage.", minutes: 9, reviewed: "2026-07-04" },
+              { slug: "vessel-lagging", title: "Tank & Vessel Lagging", summary: "Boiler, chiller, thermal storage tanks; lagging thickness, access doors, heat loss calculation.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "safety-surface-temp", title: "Surface Temperature Safety", summary: "Maximum safe touch temperature (60°C), insulation to meet regulations, guarding.", minutes: 8, reviewed: "2026-07-04" },
               { slug: "lagging-check", title: "Pipe & Lagging Check", summary: "Quiz on pipe sizing, vessel lagging, and safety.", minutes: 5 },
             ],
           },
@@ -1813,30 +1819,30 @@ export const curriculum: NumberedLevel[] = [
             slug: "lighting-fundamentals",
             title: "Lighting Fundamentals",
             lessons: [
-              { slug: "lux-and-efficacy", title: "Lux, Lumens & Colour Temperature", summary: "Light levels, efficacy (lm/W), colour temp (K), and visual comfort.", minutes: 10 },
-              { slug: "lamp-types", title: "Lamp Types: Incandescent, Fluorescent, LED", summary: "Lifespan, efficacy, cost, colour rendering; why LEDs dominate.", minutes: 10 },
-              { slug: "ballasts-drivers", title: "Ballasts, Drivers & Circuit Design", summary: "How lamps are powered; ballast losses and LED driver efficiency.", minutes: 9 },
+              { slug: "lux-and-efficacy", title: "Lux, Lumens & Colour Temperature", summary: "Light levels, efficacy (lm/W), colour temp (K), and visual comfort.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "lamp-types", title: "Lamp Types: Incandescent, Fluorescent, LED", summary: "Lifespan, efficacy, cost, colour rendering; why LEDs dominate.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "ballasts-drivers", title: "Ballasts, Drivers & Circuit Design", summary: "How lamps are powered; ballast losses and LED driver efficiency.", minutes: 9, reviewed: "2026-07-04" },
               { slug: "fundamentals-check", title: "Lighting Fundamentals Check", summary: "Quiz on lux, lamp types, and efficacy.", minutes: 5 },
-            ],
-          },
-          {
-            slug: "controls-daylight",
-            title: "Controls & Daylighting",
-            lessons: [
-              { slug: "occupancy-sensors", title: "Occupancy Sensors & Motion Control", summary: "PIR, microwave sensors; false-off delays and energy savings.", minutes: 9 },
-              { slug: "daylight-harvesting", title: "Daylight Harvesting & Dimming", summary: "Using natural light, photosensors, dimming ballasts, glare control.", minutes: 10 },
-              { slug: "time-scheduling", title: "Time Scheduling & Integration with BMS", summary: "Scheduled on/off, seasonal adjustment, linking to occupancy sensors.", minutes: 9 },
-              { slug: "controls-check", title: "Controls & Daylight Check", summary: "Quiz on occupancy sensors, daylight harvesting, and scheduling.", minutes: 5 },
             ],
           },
           {
             slug: "retrofit-design",
             title: "LED Retrofit & Design",
             lessons: [
-              { slug: "led-retrofit", title: "LED Retrofit Strategy & Payback", summary: "Replacing fluorescent/halogen with LED; typical payback, quality concerns.", minutes: 10 },
-              { slug: "design-integration", title: "Lighting Design for Energy & Comfort", summary: "Task lighting, avoiding over-illumination, visual comfort, glare.", minutes: 10 },
-              { slug: "measurements", title: "Measuring Lighting Performance", summary: "Lux meter use, power draw verification, energy auditing.", minutes: 9 },
+              { slug: "led-retrofit", title: "LED Retrofit Strategy & Payback", summary: "Replacing fluorescent/halogen with LED; typical payback, quality concerns.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "design-integration", title: "Lighting Design for Energy & Comfort", summary: "Task lighting, avoiding over-illumination, visual comfort, glare.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "measurements", title: "Measuring Lighting Performance", summary: "Lux meter use, power draw verification, energy auditing.", minutes: 9, reviewed: "2026-07-04" },
               { slug: "retrofit-check", title: "Retrofit & Design Check", summary: "Quiz on LED retrofits, design principles, and performance measurement.", minutes: 5 },
+            ],
+          },
+          {
+            slug: "controls-daylight",
+            title: "Controls & Daylighting",
+            lessons: [
+              { slug: "occupancy-sensors", title: "Occupancy Sensors & Motion Control", summary: "PIR, microwave sensors; false-off delays and energy savings.", minutes: 9, reviewed: "2026-07-04" },
+              { slug: "daylight-harvesting", title: "Daylight Harvesting & Dimming", summary: "Using natural light, photosensors, dimming ballasts, glare control.", minutes: 10, reviewed: "2026-07-04" },
+              { slug: "time-scheduling", title: "Time Scheduling & Integration with BMS", summary: "Scheduled on/off, seasonal adjustment, linking to occupancy sensors.", minutes: 9, reviewed: "2026-07-04" },
+              { slug: "controls-check", title: "Controls & Daylight Check", summary: "Quiz on occupancy sensors, daylight harvesting, and scheduling.", minutes: 5 },
             ],
           },
           {
@@ -2862,4 +2868,5 @@ export const sectors: Level[] = [
     ],
   },
 ];
+
 
