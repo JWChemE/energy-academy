@@ -82,9 +82,9 @@ export const BREWERY_CASES: BreweryCase[] = [
         worked: "195.1 × 1,200 × £0.06 ≈ £14,045/yr — currently running down the drain, batch after batch.",
       },
     ],
-    candidateCauseIds: ["no-heat-recovery", "fouled-condenser", "correct-operation"],
+    candidateCauseIds: ["no-heat-recovery", "correct-operation", "fouled-condenser"],
     correctCauseIds: ["no-heat-recovery"],
-    candidateActionIds: ["install-heat-recovery", "clean-condenser", "accept-as-is"],
+    candidateActionIds: ["install-heat-recovery", "accept-as-is", "clean-condenser"],
     correctActionIds: ["install-heat-recovery"],
     improvementActionIds: [],
     debrief:
@@ -159,9 +159,9 @@ export const BREWERY_CASES: BreweryCase[] = [
         worked: "15 − 11.25 = 3.75 kW short — enough to let the vessel run warm during peak fermentation, risking off-flavours as well as wasting compressor energy that's no longer being used effectively.",
       },
     ],
-    candidateCauseIds: ["fouled-condenser", "no-heat-recovery", "correct-operation"],
+    candidateCauseIds: ["fouled-condenser", "correct-operation", "no-heat-recovery"],
     correctCauseIds: ["fouled-condenser"],
-    candidateActionIds: ["clean-condenser", "add-more-glycol-capacity", "accept-as-is"],
+    candidateActionIds: ["clean-condenser", "accept-as-is", "add-more-glycol-capacity"],
     correctActionIds: ["clean-condenser"],
     improvementActionIds: [],
     debrief:

@@ -97,8 +97,14 @@ guide and are being brought up to it incrementally.
 6. **UK voice and units** — £, kWh, °C, UK regulation, en-GB spelling.
 7. **Shape:** lead paragraph → 3–5 `##` sections → close by pointing forward
    (what the next lesson builds on this). Target 8–12 minutes' reading.
-8. **Quizzes teach.** 4–5 questions, plausible distractors, and explanations
-   that add understanding rather than restating the correct option.
+8. **Quizzes teach — and give nothing away.** 4–5 questions, plausible
+   distractors, and explanations that add understanding rather than restating
+   the correct option. No answer tells: the correct option must not be
+   predictable by position (vary it; a seeded shuffle script normalised the
+   registry in Jul 2026) or by length — keep options comparable in length and
+   detail, and let a distractor be the longest at least as often as the answer.
+   Same rule for capstone candidate lists in `lib/*Cases.ts`: never list the
+   correct causes/actions first.
 9. **Write like a person, not a model.** The tone is professional and
    educational: a good tutor walking the reader through a problem. Avoid the
    tics that mark machine-written text:
