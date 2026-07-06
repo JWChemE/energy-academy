@@ -86,7 +86,7 @@ export default function AffinityLawsExplorer() {
     <div className="not-prose my-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div className="border-b border-slate-100 bg-slate-50 px-5 py-2.5">
         <span className="text-sm font-bold text-slate-800">
-          The cube law, live — VFD vs damper
+          The cube law, live: VFD vs damper
         </span>
       </div>
 
@@ -122,7 +122,7 @@ export default function AffinityLawsExplorer() {
             </text>
           ))}
           <text x={(X0 + X1) / 2} y={312} textAnchor="middle" fontSize="11" fill="#475569" fontWeight="600">
-            Flow demand (% of design) — drag anywhere on the chart
+            Flow demand (% of design): drag anywhere on the chart
           </text>
           <text
             x={13} y={(Y0 + Y1) / 2} fontSize="11" fill="#475569" fontWeight="600"
@@ -188,7 +188,7 @@ export default function AffinityLawsExplorer() {
 
         <p className="mt-3 text-xs leading-5 text-slate-400">
           Reference example: {RATED_KW} kW pump or fan running {HOURS.toLocaleString()} h/yr at this
-          flow, electricity £{PRICE.toFixed(2)}/kWh. Ideal cube law — real drives add roughly 2–5%
+          flow, electricity £{PRICE.toFixed(2)}/kWh. Ideal cube law; real drives add roughly 2–5%
           losses, which barely dents the saving.
         </p>
       </div>

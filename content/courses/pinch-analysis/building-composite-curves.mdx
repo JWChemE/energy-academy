@@ -39,6 +39,10 @@ The **cold composite curve** runs from (30 °C, 0 kW) up to (190 °C, 840 kW): t
 Plot both composite curves on the same axes, temperature up the side, cumulative heat along the bottom. The hot composite curve sits somewhere above the cold composite curve everywhere (heat can only flow from hot to cold), and the vertical gap between them at any point is the temperature difference available for heat exchange there. Where that gap is at its *narrowest*, you've found the pinch: the tightest constraint in the whole process.
 </Callout>
 
+Try it yourself: the curves below are exactly the four-stream example above. Slide the cold composite along the heat axis and watch the pinch, ΔTmin, and both minimum utilities respond, the same three-row table the next lessons calculate numerically.
+
+<CompositeCurvesExplorer />
+
 ## Reading the picture, qualitatively
 
 Look at where the two curves' cumulative-heat ranges overlap: the cold composite needs heat from 0 up to 840 kW; the hot composite supplies heat from 0 up to 555 kW. Because the cold demand (840 kW) is bigger than the hot supply (555 kW), the curves can't be lined up so that heat exchange alone satisfies everything: some external heating (hot utility) and, depending on exactly where the curves sit relative to each other, possibly some external cooling (cold utility) too, will be unavoidable. Exactly how much of each, and exactly where the curves come closest together, is what the next lesson calculates precisely.

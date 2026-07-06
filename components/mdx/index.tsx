@@ -9,6 +9,10 @@ import { KeyFigures, KeyFigure } from "./KeyFigures";
 import { WorkedExample, Given, Find, Solution } from "./WorkedExample";
 import VapourCompressionCycle from "./diagrams/VapourCompressionCycle";
 import AffinityLawsExplorer from "./AffinityLawsExplorer";
+import CompositeCurvesExplorer from "./CompositeCurvesExplorer";
+import PowerFactorTriangle from "./PowerFactorTriangle";
+import ExcessAirExplorer from "./ExcessAirExplorer";
+import EconomicThicknessExplorer from "./EconomicThicknessExplorer";
 import SteamBoilerOptimizer from "../simulators/SteamBoilerOptimizer";
 import SteamSystemDiagnostics from "../simulators/SteamSystemDiagnostics";
 import HvacSystemDiagnostics from "../simulators/HvacSystemDiagnostics";
@@ -69,6 +73,10 @@ export const mdxComponents = {
   Solution,
   VapourCompressionCycle,
   AffinityLawsExplorer,
+  CompositeCurvesExplorer,
+  PowerFactorTriangle,
+  ExcessAirExplorer,
+  EconomicThicknessExplorer,
   SteamBoilerOptimizer,
   SteamSystemDiagnostics,
   HvacSystemDiagnostics,
