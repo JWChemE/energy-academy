@@ -545,7 +545,7 @@ export const curriculum: NumberedLevel[] = [
                 title: "Energy Signatures & Regression",
                 summary: "How energy use varies with external factors; regression analysis to quantify it.",
                 minutes: 11,
-                reviewed: "2026-07-03",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "decomposition",

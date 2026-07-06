@@ -98,7 +98,12 @@ five batches.
 - [ ] Continue the visuals rollout (step-through diagrams, concept sliders,
       WorkedExample/KeyFigures) as courses evolve. Live so far: affinity laws,
       vapour-compression cycle, power triangle, composite curves, excess air,
-      economic thickness *(Jul 2026)*
+      economic thickness, boiler Sankey, PDCA cycle, Ohm's law triangle,
+      AC vs DC waves, three-phase progression, boiler boundaries, motor
+      black-box balance, energy signature *(Jul 2026)*. Every Level 1
+      course except UK Regulation now has at least one visual; next
+      passes: remaining mass-balance lessons (combustion, psychrometrics,
+      steam/HVAC balances), CUSUM chart for M&T, Level 2 sliders
 
 **Phase 2 is complete** apart from the ongoing visuals rollout *(Jul 2026)*.
 

@@ -15,6 +15,7 @@ import BoilerBoundaries from "./diagrams/BoilerBoundaries";
 import BoilerSankey from "./BoilerSankey";
 import MotorEnergyBalance from "./MotorEnergyBalance";
 import OhmsLawTriangle from "./OhmsLawTriangle";
+import EnergySignatureExplorer from "./EnergySignatureExplorer";
 import AffinityLawsExplorer from "./AffinityLawsExplorer";
 import CompositeCurvesExplorer from "./CompositeCurvesExplorer";
 import PowerFactorTriangle from "./PowerFactorTriangle";
@@ -86,6 +87,7 @@ export const mdxComponents = {
   BoilerSankey,
   MotorEnergyBalance,
   OhmsLawTriangle,
+  EnergySignatureExplorer,
   AffinityLawsExplorer,
   CompositeCurvesExplorer,
   PowerFactorTriangle,
