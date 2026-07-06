@@ -96,7 +96,9 @@ five batches.
       from the same lib/*Tables.ts data the simulators use *(Jul 2026)*
 - [x] Glossary — 118 terms, each linked to its owning lesson *(Jul 2026)*
 - [ ] Continue the visuals rollout (step-through diagrams, concept sliders,
-      WorkedExample/KeyFigures) as courses evolve
+      WorkedExample/KeyFigures) as courses evolve. Live so far: affinity laws,
+      vapour-compression cycle, power triangle, composite curves, excess air,
+      economic thickness *(Jul 2026)*
 
 **Phase 2 is complete** apart from the ongoing visuals rollout *(Jul 2026)*.
 
