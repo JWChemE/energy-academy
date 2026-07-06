@@ -9,7 +9,7 @@ import {
   getLessonSource,
 } from "@/lib/content";
 import { lessonExcerpt } from "@/lib/excerpt";
-import { AUTHOR, SITE_URL } from "@/lib/siteUrl";
+import { AUTHOR, SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 import { mdxComponents } from "@/components/mdx";
 import GatedLesson from "@/components/GatedLesson";
 import LessonOutline from "@/components/LessonOutline";
@@ -59,8 +59,46 @@ export default async function LessonPage({ params }: Props) {
   const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
   const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
+  // schema.org markup: Article (with author + review date, matching the visible
+  // byline) and a breadcrumb trail so search results can show Level → Course →
+  // Lesson instead of a bare URL.
+  const lessonJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: ctx.lesson.title,
+    description: ctx.lesson.summary,
+    url: `${SITE_URL}/courses/${course}/${lesson}`,
+    author: { "@type": "Person", name: AUTHOR.name, url: `${SITE_URL}/about` },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    isAccessibleForFree: !gated,
+    isPartOf: {
+      "@type": "Course",
+      name: ctx.course.title,
+      url: `${SITE_URL}/courses/${ctx.course.slug}`,
+    },
+    timeRequired: `PT${ctx.lesson.minutes}M`,
+    ...(ctx.lesson.reviewed && { dateModified: ctx.lesson.reviewed }),
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: `${levelLabel}: ${level.title}`, item: `${SITE_URL}${levelHref}` },
+      { "@type": "ListItem", position: 2, name: ctx.course.title, item: `${SITE_URL}/courses/${ctx.course.slug}` },
+      { "@type": "ListItem", position: 3, name: ctx.lesson.title, item: `${SITE_URL}/courses/${course}/${lesson}` },
+    ],
+  };
+
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[260px_1fr]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(lessonJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Outline sidebar */}
       <aside className="hidden lg:block">
         <LessonOutline
