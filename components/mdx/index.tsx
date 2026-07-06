@@ -8,6 +8,13 @@ import { PaybackCalculator } from "./PaybackCalculator";
 import { KeyFigures, KeyFigure } from "./KeyFigures";
 import { WorkedExample, Given, Find, Solution } from "./WorkedExample";
 import VapourCompressionCycle from "./diagrams/VapourCompressionCycle";
+import PdcaCycle from "./diagrams/PdcaCycle";
+import AcVsDcWaves from "./diagrams/AcVsDcWaves";
+import ThreePhaseWaves from "./diagrams/ThreePhaseWaves";
+import BoilerBoundaries from "./diagrams/BoilerBoundaries";
+import BoilerSankey from "./BoilerSankey";
+import MotorEnergyBalance from "./MotorEnergyBalance";
+import OhmsLawTriangle from "./OhmsLawTriangle";
 import AffinityLawsExplorer from "./AffinityLawsExplorer";
 import CompositeCurvesExplorer from "./CompositeCurvesExplorer";
 import PowerFactorTriangle from "./PowerFactorTriangle";
@@ -72,6 +79,13 @@ export const mdxComponents = {
   Find,
   Solution,
   VapourCompressionCycle,
+  PdcaCycle,
+  AcVsDcWaves,
+  ThreePhaseWaves,
+  BoilerBoundaries,
+  BoilerSankey,
+  MotorEnergyBalance,
+  OhmsLawTriangle,
   AffinityLawsExplorer,
   CompositeCurvesExplorer,
   PowerFactorTriangle,

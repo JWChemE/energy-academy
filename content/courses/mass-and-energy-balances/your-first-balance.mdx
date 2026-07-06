@@ -36,6 +36,10 @@ Applying the balance:
 
 So Losses = 100 − 92 = **8 kW**. This motor is 92% efficient (92 ÷ 100), and every one of those 8 kW is real: it leaves the motor as heat, warming the room it sits in. Nothing is unaccounted for; the balance closes exactly.
 
+Drawn with the flows to scale, the whole balance fits in one picture:
+
+<MotorEnergyBalance />
+
 <Callout variant="key" title="A balance that doesn't close is telling you something">
 In practice, when you measure a real piece of equipment, your numbers rarely add up perfectly on the first try. If you measured 100 kW in, 92 kW of useful output, and only 6 kW of heat loss by direct measurement, you'd have a 2 kW gap. That gap is not a mistake in arithmetic. It's a signal that something crossing the boundary hasn't been measured yet: perhaps a small amount of noise and vibration, a slightly warm bearing you didn't put a thermometer on, or a measurement error in one of your instruments. Chasing that gap to zero is often exactly how you find the fault nobody had noticed.
 </Callout>

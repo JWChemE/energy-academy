@@ -68,9 +68,10 @@ function pinch(x0: number): { dtmin: number; at: number } {
   return { dtmin, at };
 }
 
-// Plot geometry: x = heat 0–720 kW, y = temp 20–200 °C.
+// Plot geometry: x = heat 0–1000 kW (the cold curve ends at x0 + 840, up to
+// 990 at full slider travel), y = temp 20–200 °C.
 const X0 = 46, X1 = 548, Y0 = 14, Y1 = 262;
-const H_MAX = 720, T_MIN = 20, T_MAX = 200;
+const H_MAX = 1000, T_MIN = 20, T_MAX = 200;
 const xScale = (h: number) => X0 + (h / H_MAX) * (X1 - X0);
 const yScale = (t: number) => Y1 - ((t - T_MIN) / (T_MAX - T_MIN)) * (Y1 - Y0);
 
@@ -117,7 +118,7 @@ export default function CompositeCurvesExplorer() {
               </text>
             </g>
           ))}
-          {[0, 200, 400, 600].map((h) => (
+          {[0, 200, 400, 600, 800, 1000].map((h) => (
             <text key={h} x={xScale(h)} y={Y1 + 16} textAnchor="middle" fontSize="10.5" fill="#64748b">
               {h}
             </text>

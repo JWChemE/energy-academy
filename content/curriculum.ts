@@ -208,7 +208,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Plan-Do-Check-Act: the continual-improvement loop at the heart of ISO 50001 and every effective energy programme.",
                 minutes: 9,
-                reviewed: "2026-07-04",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "energy-management-check",
@@ -267,7 +267,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Drawing the line around what you're analysing — open vs closed systems, steady-state vs transient — and why the boundary you choose changes the answer.",
                 minutes: 10,
-                reviewed: "2026-07-05",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "your-first-balance",
@@ -275,7 +275,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "The general balance equation, a black-box worked example, and the habit of always accounting for 100% of what goes in.",
                 minutes: 10,
-                reviewed: "2026-07-05",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "conservation-check",
@@ -367,7 +367,7 @@ export const curriculum: NumberedLevel[] = [
                 summary:
                   "Turning a balance into a picture — reading and building a Sankey diagram from your own numbers.",
                 minutes: 9,
-                reviewed: "2026-07-05",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "quality-of-energy",
@@ -411,14 +411,14 @@ export const curriculum: NumberedLevel[] = [
                 title: "Voltage, Current & Power",
                 summary: "Ohm's law, relationships between V, I, R, and how power is calculated.",
                 minutes: 10,
-                reviewed: "2026-07-03",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "ac-vs-dc",
                 title: "AC vs DC",
                 summary: "Why buildings use AC, RMS values, and waveforms.",
                 minutes: 9,
-                reviewed: "2026-07-03",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "power-factor",
@@ -444,7 +444,7 @@ export const curriculum: NumberedLevel[] = [
                 title: "Three-Phase Basics",
                 summary: "Why three-phase is used, phase angles, and line vs phase voltages.",
                 minutes: 10,
-                reviewed: "2026-07-03",
+                reviewed: "2026-07-06",
               },
               {
                 slug: "three-phase-power",
