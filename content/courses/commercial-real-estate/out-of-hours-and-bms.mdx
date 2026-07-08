@@ -1,0 +1,47 @@
+The cheapest energy project in commercial property is almost always the same one: make the building's operating hours match the occupants' hours. An office is empty around 103 of the week's 168 hours, and the [load-profile lesson](/courses/commercial-real-estate/where-the-energy-goes) showed that what a building draws at 3 a.m. is the fastest test of how well it is run. This lesson turns that observation into method: how to read out-of-hours waste from half-hourly data, the BMS fixes that eliminate it for little or nothing, and why these savings quietly evaporate unless someone owns them.
+
+## Reading the waste from half-hourly data
+
+Pull one ordinary week of half-hourly electricity for the landlord supply and extract three numbers: the **daytime plateau**, the **overnight base**, and the **start-up time**. Then interrogate each. Is the overnight base explicable? List what genuinely must run (security, lifts on standby, emergency lighting, tenant IT) and estimate its load; in a mid-size office that legitimate idle is often 25 to 40 kW. Every kilowatt above it is plant serving nobody. Does the building start earlier than it needs to? Plant enabled at 04:00 for a 08:00 building burns four unnecessary hours a day. Does the weekend look like the weeknight? It should; a Saturday that looks like Tuesday means schedules are not switching anything.
+
+<WorkedExample title="pricing the gap">
+  <Given>
+    - Overnight and weekend demand: steady 75 kW
+    - Legitimate idle load, itemised with the site team: about 35 kW
+    - Unoccupied hours: 103 h/week, so 5,356 h/year; electricity £0.20/kWh
+  </Given>
+  <Find>What the excess is worth per year.</Find>
+  <Solution>
+    Excess = 75 − 35 = **40 kW**, running whenever the building is empty.
+
+    Energy = 40 × 5,356 = **214,240 kWh/yr**; cost = 214,240 × £0.20 ≈ **£42,848 a year**.
+    Findings this size are routine, not exceptional: surveys of multi-let offices repeatedly
+    show 20 to 30% of electricity consumed outside occupied hours. The arithmetic takes ten
+    minutes once you have the half-hourly data and an honest list of what must run.
+  </Solution>
+</WorkedExample>
+
+## The BMS fixes, in rising order of effort
+
+Most out-of-hours waste traces to a handful of control failures, all covered mechanically in the [controls course](/courses/control-systems-and-bms/control-strategies) and all cheap to fix:
+
+1. **Restore time schedules.** The classic fault: plant switched to 24/7 for some forgotten reason and never switched back. Restoring schedules costs nothing.
+2. **Use optimum start, not fixed early starts.** A fixed 04:00 start covers the coldest morning of the year, every day. Optimum start learns how long the building actually takes to warm and starts as late as it dares.
+3. **Re-establish dead bands and setbacks.** Heating to 21 °C and cooling from 24 °C when occupied; setback limits (say 12 °C frost protection) when empty. Overlapping setpoints make plant fight itself, a fault one of this module's diagnostic cases prices at nearly £28,000 a year.
+4. **Interlock and zone.** Windows-open interlocks, occupancy-based control of meeting-room AHUs and toilet extract, and lighting on [presence and daylight](/courses/lighting/occupancy-sensors) rather than the wall switch by the door.
+
+None of this is capital work. The commercial wrapper is usually a **BMS recommissioning** engagement: a controls specialist walks every schedule, setpoint and sensor against how the building is actually used, typically for £20,000 to £40,000 in a mid-size office, against savings that regularly repay it within a year.
+
+<Callout variant="key" title="Savings decay unless somebody owns them">
+Schedule and setpoint savings are behavioural, and buildings drift back: a tenant works one weekend, security overrides the AHUs, and two years later the override is the new normal. The fix that lasts pairs the recommissioning with a monitoring habit, a monthly glance at the overnight base load against its target, exactly the [exception-reporting discipline](/courses/monitoring-and-targeting/exception-reporting) from the M&T course. One number, once a month, is the difference between a saving and a story about a saving.
+</Callout>
+
+## The multi-let complication
+
+In a multi-let building the landlord controls the central plant schedules but tenants drive the demand for them, and one tenant's occasional late working can end up justifying whole-building operation. The technical answer is granularity (zone the plant so one floor's overtime doesn't run six), and the commercial answer is out-of-hours charging: leases commonly let tenants request extended services at a charge that reflects the true cost. Making that charge honest, using the £/hour arithmetic above, aligns everyone's incentives in exactly the way the [split-incentive lesson](/courses/commercial-real-estate/the-split-incentive) prescribes. The next lesson moves from operating the plant well to replacing it well.
+
+## Sources and further reading
+
+- [CIBSE Guide F](https://www.cibse.org/knowledge-research/knowledge-portal): operational energy management in buildings.
+- [Carbon Trust: buildings energy efficiency guides](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [BSRIA guidance on building controls and commissioning](https://www.bsria.com/).

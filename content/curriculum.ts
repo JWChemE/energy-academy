@@ -2922,6 +2922,183 @@ export const sectors: Level[] = [
       },
     ],
   },
+  {
+    kind: "sector",
+    slug: "commercial-real-estate",
+    title: "Commercial Real Estate",
+    tagline: "Energy in the landlord-tenant world: offices, ratings and retrofit",
+    description:
+      "Apply Levels 1 and 2 to the sector where the person paying for efficiency is rarely the person who benefits from it. Commercial buildings answer to a web of parties (landlord, managing agent, tenants) and a thickening stack of regulation: MEES minimum standards, EPCs and operational ratings, and from 2026 a regulated heat-network regime. The engineering is familiar (HVAC, lighting, controls); the challenge is making it happen across a lease.",
+    accent: sectorAccent,
+    courses: [
+      {
+        slug: "commercial-real-estate",
+        title: "Energy Management in Commercial Real Estate",
+        summary:
+          "How multi-let buildings use energy and who pays for it, the benchmarks and ratings the sector runs on, the landlord regulation that now has teeth, and the retrofit and controls opportunities that survive the split incentive: capped with a full office-building energy audit.",
+        status: "available",
+        modules: [
+          {
+            slug: "cre-fundamentals",
+            title: "The Commercial Building & Where Energy Goes",
+            lessons: [
+              {
+                slug: "the-commercial-landscape",
+                title: "The Commercial Real Estate Landscape",
+                summary:
+                  "Who owns, manages and occupies UK commercial buildings, which meters belong to whom, and why the service charge shapes every energy decision.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "where-the-energy-goes",
+                title: "Where the Energy Goes in an Office Building",
+                summary:
+                  "HVAC, lighting, small power and the base load that never switches off: the load profile of a multi-let office, and what drives each slice.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "the-split-incentive",
+                title: "The Split Incentive & Green Leases",
+                summary:
+                  "Why the party paying for efficiency is rarely the one who saves, and the lease clauses, service-charge mechanisms and data-sharing terms that fix it.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Fundamentals Check",
+                summary: "Quiz on the CRE landscape, office energy breakdown and the split incentive.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "benchmarks-and-ratings",
+            title: "Benchmarks, Ratings & the Performance Gap",
+            lessons: [
+              {
+                slug: "kwh-per-m2-benchmarks",
+                title: "Benchmarking: kWh per Square Metre",
+                summary:
+                  "REEB and CIBSE benchmarks for offices, the NLA vs GIA trap, and how to tell whether a building is genuinely good or just quietly typical.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "epcs-decs-and-nabers",
+                title: "EPCs, DECs and NABERS UK",
+                summary:
+                  "Asset ratings versus operational ratings, the performance gap between them, and why the sector is shifting to measured, in-use performance.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "metering-and-tenant-billing",
+                title: "Sub-Metering & Tenant Billing",
+                summary:
+                  "Landlord and tenant supplies, the sub-meter hierarchy a multi-let building needs, and apportioning energy fairly through the service charge.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "ratings-check",
+                title: "Benchmarks & Ratings Check",
+                summary: "Quiz on office benchmarks, EPCs vs DECs vs NABERS, and sub-metering.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "regulation-and-compliance",
+            title: "Regulation & Compliance for Landlords",
+            lessons: [
+              {
+                slug: "mees-minimum-standards",
+                title: "MEES: The Minimum Standards That Bite",
+                summary:
+                  "The EPC E floor for lettings, the June 2026 shift to EPC B by 2031 for larger buildings, exemptions, enforcement and what a prudent landlord does now.",
+                minutes: 11,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "esos-secr-and-tm44",
+                title: "ESOS, SECR & TM44 for Property Companies",
+                summary:
+                  "Which reporting and inspection schemes catch a property business, how landlord and tenant consumption split across them, and the TM44 air-conditioning inspection cycle.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "heat-network-regulation",
+                title: "Heat Networks: The New Regulated Utility",
+                summary:
+                  "From January 2026 Ofgem regulates heat networks, and a landlord selling heat to tenants is now an energy supplier with obligations to match.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "compliance-check",
+                title: "Regulation & Compliance Check",
+                summary: "Quiz on MEES, ESOS/SECR/TM44 and the new heat-network regime.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "efficiency-in-practice",
+            title: "Efficiency Opportunities in Practice",
+            lessons: [
+              {
+                slug: "out-of-hours-and-bms",
+                title: "Out-of-Hours Waste & BMS Quick Wins",
+                summary:
+                  "A building is empty two-thirds of its hours: reading the overnight base load, and the scheduling, setpoint and dead-band fixes that cost nothing.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "retrofit-and-plant-replacement",
+                title: "Retrofit Planning: Lighting, Plant & Heat Pumps",
+                summary:
+                  "Sequencing LED, chiller and boiler replacements around lease events and MEES deadlines, and when a heat-pump conversion stacks up.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short office call-outs: a building burning £50,000 a year out of hours, and an air-handling unit heating and cooling the same air. Calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on out-of-hours waste, BMS quick wins and retrofit sequencing.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "cre-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "office-audit-capstone",
+                title: "Capstone: Audit an Office Building",
+                summary:
+                  "A full, staged energy audit of a fictional multi-let office: scope it around the landlord boundary, walk the plant rooms, normalise a year of data, and rank what you find.",
+                minutes: 35,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 

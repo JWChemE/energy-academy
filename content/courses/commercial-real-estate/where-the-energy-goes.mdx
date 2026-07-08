@@ -1,0 +1,48 @@
+An office building has no product to make, no wort to boil, no cold store to hold at temperature. Its entire energy bill exists to keep people comfortable and equipment running for roughly 65 hours a week, which makes the other 103 hours the most revealing part of its load profile. This lesson breaks an air-conditioned office's consumption into its major slices, shows what drives each one, and introduces the single number this course will use again and again: the overnight base load.
+
+## The slices of an office's energy
+
+For a typical UK air-conditioned office, whole-building energy splits roughly like this (the exact shares vary with age, glazing and density, but the ranking is stable):
+
+- **HVAC, 40 to 50%.** Heating (usually gas), cooling (electric chillers), and the fans and pumps that move air and water around. Fans and pumps are the quiet giants: they run whenever the building is "on", whatever the weather, exactly as the [affinity laws](/courses/motors-and-drives/why-vfds) would predict for oversized, unthrottled systems.
+- **Lighting, 15 to 25%.** Falling fast where LED retrofits have happened, still a top-three load where they haven't. The [lighting course](/courses/lighting/lux-and-efficacy) covers the technology; here what matters is who controls it (tenant areas vs common parts) and whether it switches off.
+- **Small power, 15 to 20%.** Desks, monitors, kitchenettes and the tenant server cupboards that run all night. Mostly on tenant supplies, so mostly outside the landlord's direct reach.
+- **Lifts, DHW and catering, 5 to 10%.** Individually small, collectively a steady base.
+
+Heating dominates the gas meter and follows the weather; almost everything else is electricity and follows the *clock*. That distinction, weather-led versus schedule-led, is the analytical key to this whole sector.
+
+## The load profile: a building breathing
+
+Plot a week of half-hourly electricity for a healthy office and you see a rectangular pulse: demand climbs steeply from about 06:00 as plant starts, holds a daytime plateau, falls away through the evening, and idles flat overnight and all weekend. The two numbers that matter are the **daytime plateau** and the **overnight base**, and the ratio between them is the fastest health check in commercial property.
+
+A well-run office idles at 20 to 30% of its daytime demand: lifts on standby, security, emergency lighting, the tenants' IT. A building idling at 50% or more is running plant for nobody, and it is astonishingly common: schedules overridden and never restored, AHUs set to run continuously, chillers enabled year-round.
+
+<WorkedExample title="what one forgotten load costs overnight">
+  <Given>
+    - 20 kW of plant (a couple of AHU fans, say) left running outside occupied hours
+    - The building is occupied 65 h/week, so unoccupied 103 h/week, which is 5,356 h/year
+    - Electricity at £0.20/kWh
+  </Given>
+  <Find>The annual cost of that one forgotten load.</Find>
+  <Solution>
+    Energy = 20 kW × 5,356 h = **107,120 kWh a year**, consumed entirely while the building is empty.
+
+    Cost = 107,120 × £0.20 ≈ **£21,424 a year**, for two fans nobody is there to feel. Loads
+    like this hide inside the base load precisely because nothing is broken: the building runs
+    perfectly, all night, for no one.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="Judge an office by its overnight base load">
+An office is empty for roughly 60% of its hours, so every kilowatt in the overnight base costs more per year than a kilowatt used only in the working day. Before benchmarks, before ratings, before any retrofit: pull a week of half-hourly data and look at what the building draws at 3 a.m. It is the highest-value single number in commercial property energy work, and later in this course you'll use it to find a £51,000 saving in one case study.
+</Callout>
+
+## Why offices drift
+
+Nobody designs an office to waste energy; buildings drift into it. Tenants churn and their fit-outs add fan coils and setpoint changes. "Temporary" BMS overrides outlive the people who made them. Plant is replaced like-for-like without questioning the original sizing. The [commissioning course](/courses/commissioning/drift-and-degradation) calls this drift and degradation, and multi-let buildings suffer it worse than most because no single occupant feels the whole bill. The rest of this course is about counteracting that drift: measuring it (benchmarks and ratings), regulating it (MEES and friends), and fixing it (controls and retrofit).
+
+## Sources and further reading
+
+- [CIBSE Guide F: Energy Efficiency in Buildings](https://www.cibse.org/knowledge-research/knowledge-portal): end-use breakdowns and design benchmarks for offices.
+- [Better Buildings Partnership, Real Estate Environmental Benchmarks](https://www.betterbuildingspartnership.co.uk/our-priorities/measuring-reporting/real-estate-environmental-benchmark): measured whole-building office data.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): office energy management guidance.

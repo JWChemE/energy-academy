@@ -1,0 +1,51 @@
+Every rating, recharge and retrofit case in commercial property ultimately rests on metering, and multi-let buildings need more of it than any other building type because the energy must not only be measured but *attributed*: this floor, that tenant, this chiller, that riser. A building with one fiscal meter and twelve tenants cannot bill fairly, cannot rate its base building, and cannot tell whether a saving came from the landlord's plant or a tenant moving out. This lesson maps the metering hierarchy a multi-let building needs, and how the numbers turn into tenant bills through the service charge.
+
+## The metering hierarchy
+
+Think of a multi-let building's metering as three tiers, echoing the meter map you built in the [M&T course](/courses/monitoring-and-targeting/meter-data):
+
+1. **Fiscal (settlement) meters.** The supplier-billed meters: the landlord's supply (or supplies), and any tenants with their own direct contracts. Half-hourly data from these is the backbone of everything in this course.
+2. **Tenant sub-meters.** Landlord-owned meters on each demise's electricity (and sometimes heat, cooling and water), used to recharge tenants for what they actually use. Where these are used for billing they must be appropriate for purpose and, for heat, they fall under specific regulations covered in the next lesson.
+3. **Plant sub-meters.** Meters on chillers, AHU boards, lifts and lighting circuits that attribute the *landlord's* consumption to systems. Without these, "the service charge is up 30%" has no next sentence. CIBSE TM39 is the standard reference for designing this layer.
+
+Older buildings usually have tier 1 only. One of the most cost-effective recommendations an auditor can make in commercial property is simply completing tiers 2 and 3, because it converts every future question from an argument into a lookup.
+
+## Apportionment: floor area versus meters
+
+Where sub-meters don't exist, the service charge apportions shared costs by **floor area**: your share of the lettable area is your share of the bill. It is simple, contractual and profoundly blunt.
+
+<WorkedExample title="what floor-area apportionment hides">
+  <Given>
+    - A building's landlord energy costs: £202,020/yr (869,500 kWh electricity at £0.20, 468,660 kWh gas at £0.06)
+    - Tenant A occupies 1,200 m² of the 7,000 m² net lettable area
+    - Tenant A is a 9-to-5 professional services firm; a neighbouring tenant of identical size runs a 24/7 operations floor
+  </Given>
+  <Find>Tenant A's energy recharge, and the problem with it.</Find>
+  <Solution>
+    Share = 1,200 ÷ 7,000 = 17.14%. Recharge = 0.1714 × £202,020 ≈ **£34,632 a year**.
+
+    The 24/7 neighbour pays exactly the same per square metre despite driving the central plant
+    (cooling, AHU hours) far harder. Floor-area apportionment taxes the frugal to subsidise the
+    intensive, and it deletes the price signal that would reward tenants for using less. Only
+    metering restores that signal.
+  </Solution>
+</WorkedExample>
+
+## Rules that touch tenant billing
+
+Recharging tenants is not a regulatory free-for-all. Three regimes matter. For **heat and cooling** supplied from central plant, the Heat Network (Metering and Billing) Regulations 2014 already require suppliers (which includes landlords) to install meters where viable and bill on actual consumption, and from 2026 the broader [heat-network regime](/courses/commercial-real-estate/heat-network-regulation) adds consumer-protection duties on top. For **electricity**, resale to tenants is capped by Ofgem's maximum resale price rules: a landlord may not profit on the unit rate. And the **lease and the RICS service charge code** govern what may be recharged at all; energy for the landlord's own vacant units, for instance, is the landlord's cost, not the tenants'.
+
+<Callout variant="key" title="Sub-metering is the audit that never leaves">
+A consultant's survey describes one week of a building's life; a completed sub-meter hierarchy describes every week from now on. It settles recharge disputes with data, exposes out-of-hours waste per floor, attributes savings to the measure that caused them (the M&V evidence a [green lease](/courses/commercial-real-estate/the-split-incentive) cost-recovery clause needs), and feeds the base-building rating that lets the landlord prove performance. If a multi-let building can fund only one energy project this year, metering is usually the one that multiplies the value of all the others.
+</Callout>
+
+## Getting the data flowing
+
+Hardware is half the job; the other half is making the data land somewhere useful. Sub-meters should be connected to the BMS or an AMR platform, not read manually off a dial in a riser cupboard four times a year. Aim for half-hourly resolution on anything used for billing or diagnostics, automatic validation (gaps and stuck meters flagged, exactly the discipline from [meter data](/courses/monitoring-and-targeting/meter-data)), and tenant access to their own consumption, which green-lease data-sharing clauses increasingly require anyway. With the measurement layer in place, this course can turn to the regulation that has been circling it: the module ahead covers MEES, the reporting schemes, and the new heat-network regime.
+
+## Sources and further reading
+
+- [CIBSE TM39: Building Energy Metering](https://www.cibse.org/knowledge-research/knowledge-portal): the sub-metering design reference.
+- [GOV.UK: Heat networks metering and billing](https://www.gov.uk/guidance/heat-networks): the 2014 regulations and guidance.
+- [Ofgem: maximum resale price for gas and electricity](https://www.ofgem.gov.uk/information-consumers): the rules on reselling energy to tenants.
+- [RICS professional standard: Service charges in commercial property](https://www.rics.org/).

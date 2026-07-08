@@ -29,8 +29,9 @@ content undermines its best. Nothing here needs new infrastructure.
       https://energyacademyuk.org/**)*
 - [x] Google Search Console: domain verified, sitemap submitted *(Jul 2026)*
 - [ ] Bing Webmaster Tools: same (can import the verified GSC property)
-- [ ] Fill identity placeholders: privacy policy + terms (organisation name,
-      address, contact email, ICO number if registered)
+- [x] Fill identity placeholders: privacy policy + terms (Energy Management
+      Academy, contact email) *(Jul 2026 — ICO number + postal address still
+      to add once registered/trading)*
 - [x] Author identity: byline on every lesson, bio + Person structured data
       on the About page, footer credit *(Jul 2026)*
 - [x] Rewrite Monitoring & Targeting course to the style-guide bar *(Jul 2026)*
@@ -125,8 +126,9 @@ five batches.
       credibility compound together)
 - [ ] Second and third lead magnets (benchmark cheat-sheets, degree-day
       normalisation walkthrough)
-- [ ] More sectors (data centres and commercial offices are the obvious next
-      two)
+- [x] Commercial Real Estate sector course — 13 lessons, 4 quizzes, two-case
+      diagnostics and an office audit capstone *(Jul 2026)*
+- [ ] More sectors (data centres are the obvious next one)
 
 ## Phase 4 — Commercialisation
 

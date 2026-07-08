@@ -1,0 +1,51 @@
+"Is this building any good?" is the first question every landlord, buyer and incoming tenant asks, and the sector answers it in kilowatt-hours per square metre per year. Benchmarking a commercial building looks like the simplest arithmetic on this platform, one division, yet it is riddled with traps: which floor area you divide by changes the answer by 20% or more, "typical" performance is a very long way from "good", and a building can beat the average while wasting a quarter of its energy. This lesson gives you the current UK reference numbers and teaches you to use them without fooling yourself.
+
+## The reference numbers: REEB
+
+The most useful measured benchmark set for UK commercial property is the Better Buildings Partnership's **Real Estate Environmental Benchmark (REEB)**, built annually from the actual consumption of institutional landlords' portfolios. The 2024 benchmarks (drawn from 2022/23 and 2023/24 data, over 700 offices) put whole-building energy intensity for offices at:
+
+| Office type | Typical practice (median) | Good practice (top quartile) |
+| --- | --- | --- |
+| Air-conditioned | 163 kWh/m²/yr | 119 kWh/m²/yr |
+| Naturally ventilated / mixed mode | 119 kWh/m²/yr | 88 kWh/m²/yr |
+
+Both figures are total energy (gas plus electricity) per square metre of **gross internal area (GIA)**, covering the whole building: landlord plant, common parts and tenant space together. Two things jump out. Air conditioning costs roughly 40 kWh/m² a year compared with natural ventilation, and in both categories the top quartile uses about 25 to 27% less than the median. That gap between typical and good is where the money is: it is not exotic engineering, it is the same buildings run better.
+
+## The floor-area trap
+
+Divide by the wrong area and the benchmark comparison is meaningless. **Gross internal area (GIA)** measures everything inside the external walls, plant rooms and cores included. **Net lettable area (NLA)** counts only the space tenants pay rent on, typically 80 to 85% of GIA in an office. REEB publishes some metrics per m² NLA and others per m² GIA, and mixing them flatters or damns a building by the difference.
+
+<WorkedExample title="same building, two answers">
+  <Given>
+    - An air-conditioned office consuming 1,338,160 kWh/yr in total
+    - GIA 8,500 m²; NLA 7,000 m²
+  </Given>
+  <Find>The building's intensity on each floor-area basis.</Find>
+  <Solution>
+    Per GIA: 1,338,160 ÷ 8,500 = **157 kWh/m²/yr**, a little better than REEB's typical 163 for
+    air-conditioned offices.
+
+    Per NLA: 1,338,160 ÷ 7,000 = **191 kWh/m²/yr**, a number 21% higher for the identical
+    building. Quote the NLA figure against a GIA benchmark and a slightly-better-than-typical
+    building suddenly looks like a poor one. Always state the basis, and always check the
+    benchmark's basis before comparing.
+  </Solution>
+</WorkedExample>
+
+## Reading a benchmark comparison honestly
+
+A benchmark tells you *whether* to dig, not *where*. Use it in three steps. First, normalise fairly: whole-building energy, correct floor area, and note anything abnormal the benchmark set excludes (REEB strips out data centres and dealing floors, so should you). Second, place the building: the 157 kWh/m² office above is "typical", which sounds comfortable until you notice good practice is 119, so about 326,000 kWh/yr, roughly a quarter of its consumption, separates it from the top quartile. Third, decompose the gap using the methods from [monitoring and targeting](/courses/monitoring-and-targeting/energy-signatures): how much of the excess is base load (schedule-led) versus weather response (plant-led)? That decomposition converts a league-table position into an action list.
+
+<Callout variant="key" title="Typical is not good">
+The most dangerous benchmark outcome is landing near the median, because it feels like a pass. REEB's own data says the top quarter of comparable offices use 25% less energy than the median one, with the same climate, similar occupants and no different physics. Treat "typical" as a quantified statement of how much is on the table, not as reassurance. In this course's capstone you'll benchmark a building at 157 kWh/m² and then go and find exactly where its 38 kWh/m² gap to good practice is hiding.
+</Callout>
+
+## Beyond the average: design benchmarks
+
+REEB describes the stock as it is. For what buildings *should* achieve, design-stage targets are far tougher: the UKGBC's net-zero pathway and the design-for-performance targets behind [NABERS UK](/courses/commercial-real-estate/epcs-decs-and-nabers) point new offices towards 70 to 90 kWh/m²/yr, roughly half of today's good practice. The direction of travel matters for retrofit planning: a building refurbished today to merely "typical" standards will be below-average stock within a decade. The next lesson covers the ratings that make these numbers public.
+
+## Sources and further reading
+
+- [Better Buildings Partnership, Real Estate Environmental Benchmarks 2024](https://www.betterbuildingspartnership.co.uk/our-priorities/measuring-reporting/real-estate-environmental-benchmark): the measured office benchmarks used above.
+- [CIBSE Guide F and TM46](https://www.cibse.org/knowledge-research/knowledge-portal): design and operational benchmarking methods.
+- [UKGBC net zero whole life carbon roadmap](https://ukgbc.org/): design-stage energy-intensity targets.

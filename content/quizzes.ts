@@ -2913,4 +2913,237 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "A fouled condenser can't reject heat effectively, forcing a warmer glycol supply, which shrinks the approach temperature driving heat transfer in the jacket and cuts its capacity.",
     },
   ],
+
+  // ---------------------------------------------------------------- CRE sector
+  "cre-fundamentals-check": [
+    {
+      question: "In a standard multi-let office, the landlord's supplies typically feed:",
+      options: [
+        "Each tenant's desks, monitors, kitchenettes and server cupboards within its own demised floor space",
+        "Only the lifts and the fire alarm panel, with everything else on tenant meters",
+        "The central plant and common parts: boilers, chillers, AHUs, lifts and lobby lighting",
+        "Whichever circuits the electricity supplier happened to connect first",
+      ],
+      answer: 2,
+      explanation: "The landlord buys energy for what it is contractually obliged to provide: the shared services and common areas. Tenant demises normally sit on the tenants' own supplies or on recharged sub-meters, which is why any analysis starts by mapping which meter belongs to whom.",
+    },
+    {
+      question: "Landlord energy costs reach the tenants through:",
+      options: [
+        "The service charge, apportioned between tenants (usually by floor area)",
+        "A statutory levy collected alongside business rates by the local authority",
+        "The rent review, which adjusts rent to cover the previous year's utility bills",
+        "Direct invoices from the energy supplier to each tenant in proportion to headcount",
+      ],
+      answer: 0,
+      explanation: "The service charge pools the landlord's running costs (energy, cleaning, security, maintenance) and divides them between tenants under the lease's apportionment rules. Economically the landlord's energy bill is the tenants' bill, which is what creates the split incentive.",
+    },
+    {
+      question: "An office is occupied 65 hours a week. Roughly what fraction of the year's 8,760 hours is it empty?",
+      options: [
+        "About a quarter, since weekends account for most of the empty time",
+        "About half, because nights and weekends roughly cancel out the working day",
+        "Almost none, once cleaning, security and early starts are counted in",
+        "Around 60%, which is why the overnight base load matters so much",
+      ],
+      answer: 3,
+      explanation: "Unoccupied time is 103 of 168 hours a week, about 61% of the year. Every kilowatt running in those hours consumes more energy annually than a kilowatt used only in the working day, which is why the 3 a.m. demand is the fastest health check in commercial property.",
+    },
+    {
+      question: "The 'split incentive' in commercial property means:",
+      options: [
+        "Landlords and tenants split the cost of any efficiency project equally by convention",
+        "The party able to fund an improvement is often not the party whose bills would fall",
+        "Energy suppliers offer different tariffs to landlords and tenants for the same building",
+        "Efficiency incentives from government are shared between the freeholder and leaseholder",
+      ],
+      answer: 1,
+      explanation: "The lease boundary cuts the cash flows: a landlord funding an LED retrofit in a tenant's demise sees none of the saving, and a tenant improving the landlord's asset hands the benefit back at lease expiry. Projects with perfectly good paybacks die in that gap unless the lease rewires it.",
+    },
+    {
+      question: "A green lease typically addresses the split incentive by:",
+      options: [
+        "Obliging the landlord to fund all efficiency works from its own profits with no recovery",
+        "Requiring the tenant to accept any works the landlord proposes without consultation",
+        "Setting a fixed annual energy price for the tenant regardless of consumption",
+        "Adding cost-recovery, data-sharing and cooperation clauses that make efficiency investable",
+      ],
+      answer: 3,
+      explanation: "Model green-lease clauses let landlords recover improvement costs through the service charge where tenants' total outgoings genuinely fall, oblige both sides to share consumption data, and commit both to consider efficiency at plant replacement, converting a stand-off into a mechanism.",
+    },
+  ],
+
+  "cre-ratings-check": [
+    {
+      question: "The fundamental difference between an EPC and a DEC is that:",
+      options: [
+        "An EPC applies to whole buildings while a DEC applies only to individual floors",
+        "An EPC models the building as an asset; a DEC grades its measured, in-use energy",
+        "An EPC is voluntary in the commercial sector while a DEC is required at every sale",
+        "An EPC is renewed annually while a DEC lasts for ten years from issue",
+      ],
+      answer: 1,
+      explanation: "The EPC is an asset rating built from standardised modelling of fabric and plant; occupant behaviour is deliberately excluded. A DEC does the opposite, grading actual metered consumption against a benchmark, which is why the two can flatly disagree about the same building.",
+    },
+    {
+      question: "REEB 2024 puts typical and good practice for air-conditioned offices (whole building, GIA) at about:",
+      options: [
+        "500 and 350 kWh/m² per year",
+        "50 and 25 kWh/m² per year",
+        "300 and 240 kWh/m² per year",
+        "163 and 119 kWh/m² per year",
+      ],
+      answer: 3,
+      explanation: "The Better Buildings Partnership's 2024 benchmarks, from over 700 measured offices, put the median air-conditioned office at 163 kWh/m² GIA and the top quartile at 119. The 27% gap between them is the practical size of the prize in typical stock.",
+    },
+    {
+      question: "A building consumes 1,338,160 kWh/yr; its GIA is 8,500 m² and NLA 7,000 m². Quoting intensity per NLA instead of per GIA:",
+      options: [
+        "Raises the reported figure from about 157 to about 191 kWh/m², a 21% difference",
+        "Lowers the reported figure, because NLA includes plant rooms that GIA excludes",
+        "Makes no difference, since benchmark sets accept either basis interchangeably",
+        "Roughly halves the reported figure, because NLA counts only occupied floors",
+      ],
+      answer: 0,
+      explanation: "NLA is the smaller denominator (it excludes cores and plant), so the same energy produces a bigger number: 1,338,160 ÷ 7,000 ≈ 191 versus ÷ 8,500 ≈ 157. Compare an NLA figure against a GIA benchmark and a fine building looks poor, so always state and match the basis.",
+    },
+    {
+      question: "The 'performance gap' refers to buildings:",
+      options: [
+        "Performing worse in winter than in summer because heating dominates UK consumption",
+        "Losing efficiency steadily with age as plant wears out and warranties expire",
+        "Using far more energy in operation than their design-stage ratings imply",
+        "Underperforming their rental valuations in the years following construction",
+      ],
+      answer: 2,
+      explanation: "Measured consumption routinely lands at two to three times the design-stage assessment, driven by commissioning shortfalls, control drift and real occupancy differing from assumptions. It is why the sector is shifting weight from modelled ratings to measured ones like NABERS.",
+    },
+    {
+      question: "NABERS UK's 'base building' rating is particularly useful in multi-let stock because it:",
+      options: [
+        "Replaces the EPC, removing the need for MEES compliance in rated buildings",
+        "Isolates the landlord-controlled services from tenant consumption when scoring",
+        "Rates only the tenants' fit-out quality, which other schemes ignore entirely",
+        "Applies a flat national benchmark so every office competes on identical terms",
+      ],
+      answer: 1,
+      explanation: "By rating the landlord's services separately from whole-building consumption, the base-building rating solves the attribution problem that muddies multi-let comparisons: the landlord is scored on exactly what the landlord controls, however its tenants behave.",
+    },
+  ],
+
+  "cre-compliance-check": [
+    {
+      question: "Under MEES, since 1 April 2023 a landlord of non-domestic property in England and Wales may not:",
+      options: [
+        "Charge tenants for energy through the service charge without an annual audit",
+        "Sell a building rated below EPC C without first registering an exemption",
+        "Advertise floor space without publishing five years of consumption data",
+        "Continue to let a building rated F or G without a valid registered exemption",
+      ],
+      answer: 3,
+      explanation: "The 2023 milestone extended MEES from new lettings to continuing ones: an F or G building may not be let at all unless an exemption (7-year payback, consent refused, or devaluation) is on the public register. Penalties scale with rateable value up to £150,000 per property.",
+    },
+    {
+      question: "The government's interim response of June 2026 changed the non-domestic MEES trajectory to:",
+      options: [
+        "EPC C for all commercial buildings by 2027 and B by 2030, exactly as the original consultations proposed",
+        "EPC B by 2031 for buildings over 1,000 m², with smaller buildings staying at the E floor",
+        "EPC A for all new leases from 2030, with existing leases exempt indefinitely",
+        "No change at all: the consultation was closed with the existing rules confirmed",
+      ],
+      answer: 1,
+      explanation: "The interim response dropped the 2027 EPC C milestone and moved the B requirement to 2031, scoped to buildings over 1,000 m² where cost-effective. It still needs secondary legislation, so treat it as the planning basis and check GOV.UK before advising on it.",
+    },
+    {
+      question: "In a multi-let building, a landlord's ESOS assessment covers:",
+      options: [
+        "Every kilowatt-hour used in the building, whoever holds the supply contract",
+        "Only the energy used by the managing agent's own head-office operations",
+        "The energy the landlord itself purchases: central plant and common parts",
+        "Nothing, because ESOS applies only to manufacturers and industrial sites",
+      ],
+      answer: 2,
+      explanation: "ESOS responsibility follows who buys the energy. The landlord audits its own supplies (even where costs are recharged to tenants); tenants that qualify for ESOS audit their own contracted supplies separately. Assembling the portfolio supply list is half the compliance battle.",
+    },
+    {
+      question: "TM44 inspections are required for:",
+      options: [
+        "Air-conditioning systems over 12 kW effective rated output, at least every five years",
+        "Gas boilers over 20 kW rated output, inspected annually by a Gas Safe registered engineer under Part L",
+        "All electrical distribution boards, every ten years, under the wiring regulations",
+        "Lifts and escalators in buildings over 1,000 m², every three years",
+      ],
+      answer: 0,
+      explanation: "The Energy Performance of Buildings regime requires five-yearly accredited inspections of air conditioning above 12 kW, lodged on the national register. Compliance is historically poor, which is a shame: a good TM44 report is effectively a subsidised mini-audit of the biggest electrical load in the building.",
+    },
+    {
+      question: "Since 27 January 2026, a landlord supplying heat to tenants from a communal boiler is:",
+      options: [
+        "Exempt from regulation provided the building contains fewer than ten tenants",
+        "Required only to display the boiler's efficiency rating in the building lobby",
+        "Obliged to transfer ownership of the boiler plant to a licensed utility company",
+        "A regulated heat supplier under Ofgem, with billing, fairness and redress duties",
+      ],
+      answer: 3,
+      explanation: "The Energy Act 2023 framework brought heat networks under Ofgem from January 2026: authorisation conditions, accurate metered billing, standards of conduct and escalation to the Energy Ombudsman. The definition is functional, so a communal boiler counts even if the landlord never thought of itself as an energy company.",
+    },
+  ],
+
+  "cre-efficiency-check": [
+    {
+      question: "A building idles at 75 kW overnight when 35 kW would cover its genuine needs. Over 5,356 unoccupied hours a year at £0.20/kWh, the waste is worth about:",
+      options: [
+        "£43,000 a year",
+        "£4,300 a year",
+        "£11,000 a year",
+        "£86,000 a year",
+      ],
+      answer: 0,
+      explanation: "The excess is 40 kW; 40 × 5,356 h = 214,240 kWh, and at £0.20/kWh that is £42,848 a year, roughly a quarter of a typical mid-size office's electricity bill, spent while the building is empty. The fix (restoring schedules) is usually close to free.",
+    },
+    {
+      question: "Optimum start control saves energy compared with a fixed early start because it:",
+      options: [
+        "Runs the plant at reduced capacity all night instead of starting it in the morning",
+        "Preheats the building only on days when the weather forecast predicts frost",
+        "Learns how long the building takes to warm and starts plant as late as it dares",
+        "Delegates the start decision to whichever tenant arrives earliest each day",
+      ],
+      answer: 2,
+      explanation: "A fixed start time must cover the worst morning of the year, so it wastes hours on every mild day. Optimum start uses the building's measured warm-up behaviour and the actual internal and outside temperatures to hit the target at occupancy time with the shortest possible preheat.",
+    },
+    {
+      question: "Heating setpoint 22.5 °C, cooling setpoint 21.5 °C on the same air handler. The consequence is:",
+      options: [
+        "Nothing unusual: a 1 °C overlap sits within the normal control tolerance of a commercial AHU's sensors",
+        "The building pays twice for the same air as heating and cooling run simultaneously",
+        "The AHU trips on its safety interlock and delivers no conditioning at all",
+        "Comfort improves slightly, at the cost of marginally higher fan energy only",
+      ],
+      answer: 1,
+      explanation: "With the heating target above the cooling trigger there is no dead band: the heating coil warms the air (gas), and the cooling coil removes that heat again (chiller electricity). Re-establishing a proper dead band, say heat to 21 °C and cool from 24 °C, removes the entire cost.",
+    },
+    {
+      question: "The best moment to buy a step-change in chiller efficiency is:",
+      options: [
+        "Immediately after a new tenant signs its lease, to demonstrate the landlord's commitment to sustainability",
+        "Mid-lease, when the service charge budget has the most headroom in it",
+        "During the coldest month, when the chillers are least needed by the building",
+        "At plant end-of-life, when only the increment over like-for-like needs justifying",
+      ],
+      answer: 3,
+      explanation: "When the machine must be replaced anyway, the efficient option costs only the difference over the default, and that increment is judged against the full saving: a COP 3 to COP 5 replacement saving £8,000 a year justifies a £40,000 premium four times over across a 20-year life.",
+    },
+    {
+      question: "At current UK prices (electricity £0.20/kWh, gas £0.06/kWh), a SCOP-3 heat pump replacing an 85%-efficient gas boiler typically:",
+      options: [
+        "Roughly breaks even on running cost while cutting the heating's carbon by about two-thirds",
+        "Cuts the heating bill by around two-thirds while leaving the building's emissions broadly unchanged overall",
+        "Triples the running cost, which is why no commercial conversions are proceeding",
+        "Halves both the running cost and the emissions simultaneously in most buildings",
+      ],
+      answer: 0,
+      explanation: "Electricity's price premium (about 3.3×) nearly cancels the efficiency gain (about 3.5×), so the bill barely moves, but the carbon falls by roughly two-thirds and keeps falling as the grid decarbonises. Office conversions are currently driven by MEES trajectory and net-zero positioning more than by the energy bill.",
+    },
+  ],
 };
