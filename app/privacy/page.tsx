@@ -6,19 +6,19 @@ export const metadata: Metadata = {
   description: "How Energy Academy collects, uses and protects your personal data under UK GDPR.",
 };
 
-// NOTE FOR THE OWNER: this is a template covering the standard UK GDPR / Data
-// Protection Act 2018 requirements. Replace every [BRACKETED] placeholder with
-// your real details and have it reviewed before you rely on it. It is not legal
-// advice.
+// NOTE FOR THE OWNER: covers the standard UK GDPR / Data Protection Act 2018
+// requirements; have it reviewed before relying on it — it is not legal advice.
+// Still to add when they exist: ICO registration number ("Who we are") and a
+// postal address (required once the Service starts trading).
 
 export default function PrivacyPolicy() {
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1>Privacy Policy</h1>
-      <p className="text-sm text-slate-500">Last updated: [ADD DATE]</p>
+      <p className="text-sm text-slate-500">Last updated: 8 July 2026</p>
 
       <p>
-        This policy explains how <strong>[YOUR ORGANISATION NAME]</strong> (&quot;we&quot;,
+        This policy explains how <strong>Energy Management Academy</strong> (&quot;we&quot;,
         &quot;us&quot;) collects and uses your personal data when you use Energy Academy (the
         &quot;Service&quot;), and your rights under the UK General Data Protection Regulation (UK GDPR)
         and the Data Protection Act 2018.
@@ -26,10 +26,9 @@ export default function PrivacyPolicy() {
 
       <h2>Who we are</h2>
       <p>
-        The data controller for your personal data is <strong>[YOUR ORGANISATION NAME]</strong>,
-        [REGISTERED ADDRESS]. You can contact us about privacy at{" "}
-        <strong>[PRIVACY CONTACT EMAIL]</strong>. [If applicable: our ICO registration number is
-        [ICO NUMBER].]
+        The data controller for your personal data is <strong>Energy Management Academy</strong>,
+        operated by Jacob Willis. You can contact us about privacy at{" "}
+        <strong>jacob.willis@energyacademyuk.org</strong>.
       </p>
 
       <h2>The data we collect</h2>
@@ -158,7 +157,7 @@ export default function PrivacyPolicy() {
         <li>withdraw consent at any time, where we rely on consent.</li>
       </ul>
       <p>
-        To exercise any of these, email <strong>[PRIVACY CONTACT EMAIL]</strong>. We will respond within
+        To exercise any of these, email <strong>jacob.willis@energyacademyuk.org</strong>. We will respond within
         one month. You also have the right to complain to the UK&apos;s Information Commissioner&apos;s
         Office (ICO) at{" "}
         <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">
@@ -182,8 +181,7 @@ export default function PrivacyPolicy() {
 
       <h2>Contact</h2>
       <p>
-        Questions about your privacy? Email <strong>[PRIVACY CONTACT EMAIL]</strong> or write to us at
-        [REGISTERED ADDRESS].
+        Questions about your privacy? Email <strong>jacob.willis@energyacademyuk.org</strong>.
       </p>
     </article>
   );

@@ -16,7 +16,7 @@ export default function CookiePolicy() {
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1>Cookie Policy</h1>
-      <p className="text-sm text-slate-500">Last updated: [ADD DATE]</p>
+      <p className="text-sm text-slate-500">Last updated: 8 July 2026</p>
 
       <p>
         This policy explains how Energy Academy uses cookies and similar technologies (such as your

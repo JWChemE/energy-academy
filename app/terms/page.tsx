@@ -7,19 +7,20 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
 };
 
-// NOTE FOR THE OWNER: as with the privacy policy, replace every [BRACKETED]
-// placeholder with your real details and have the document reviewed before
-// relying on it. It is a sensible starting template, not legal advice.
+// NOTE FOR THE OWNER: have this reviewed before relying on it — it is a
+// sensible starting template, not legal advice. Add a postal address to the
+// contact section once the Service starts trading, and a paid-tier section
+// (Consumer Contracts Regulations) before anything is sold.
 
 export default function TermsPage() {
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1>Terms of Use</h1>
-      <p className="text-sm text-slate-500">Last updated: [ADD DATE]</p>
+      <p className="text-sm text-slate-500">Last updated: 8 July 2026</p>
 
       <p>
         These terms govern your use of Energy Academy (the &quot;Service&quot;), operated by{" "}
-        <strong>[YOUR ORGANISATION NAME]</strong> (&quot;we&quot;, &quot;us&quot;). By using the
+        <strong>Energy Management Academy</strong> (&quot;we&quot;, &quot;us&quot;). By using the
         Service you agree to them. If you do not agree, please do not use the Service.
       </p>
 
@@ -141,8 +142,7 @@ export default function TermsPage() {
 
       <h2>12. Contact</h2>
       <p>
-        Questions about these terms: <strong>[CONTACT EMAIL]</strong>, or write to us at
-        [REGISTERED ADDRESS].
+        Questions about these terms: <strong>jacob.willis@energyacademyuk.org</strong>.
       </p>
     </article>
   );
