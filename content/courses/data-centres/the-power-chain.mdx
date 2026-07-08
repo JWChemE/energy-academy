@@ -1,0 +1,45 @@
+Before a data centre executes a single instruction, its electricity has already been transformed, switched, converted to DC, converted back to AC, distributed and converted again, and every one of those stages takes a cut. The power chain exists for good reason: servers need clean, uninterruptible power, and the availability guarantees that define the sector are delivered here. But the chain's losses run 24 hours a day at the site's full load, and, less obviously, the redundancy that protects uptime quietly pushes every stage toward its least efficient operating point. This lesson follows the electricity from the grid to the chip and shows where the percent-after-percent goes.
+
+## The stages, and their cuts
+
+A typical path: **HV transformer** (99% or better, but never 100%), **switchgear and distribution** (small resistive losses in every cable and busbar), the **UPS** (the big one, examined below), **power distribution units** (another transformation, another percent or two), and finally the **server's own power supply** converting to the voltages silicon wants (anywhere from 80% to 96% efficient depending on age and quality, though that loss sits on the IT side of the meter). Multiply the chain together and even a well-run facility delivers perhaps 88 to 94% of what it draws; a poor one, less. The difference between those figures, applied to a megawatt-scale continuous load, is a six-figure annual sum.
+
+## The UPS: where the percent lives
+
+The uninterruptible power supply bridges the gap between a mains failure and the generators taking over, and in the classic **double-conversion** design, all the IT power flows through two full conversions (AC to DC to AC) all the time. That buys the cleanest possible supply at the price of a continuous efficiency toll, and the toll depends heavily on loading: a typical older fleet manages around 89% at 15% load, 94% at 30%, and only reaches its best (around 96%) above half load.
+
+<WorkedExample title="four points of UPS efficiency, priced">
+  <Given>
+    - 1,000 kW of IT load flowing through the UPS continuously
+    - Fleet A runs at 96% efficiency; fleet B at 92%
+    - 8,760 h/yr; electricity £0.20/kWh
+  </Given>
+  <Find>What four percentage points of UPS efficiency are worth.</Find>
+  <Solution>
+    Fleet A input: 1,000 ÷ 0.96 ≈ 1,041.7 kW. Fleet B input: 1,000 ÷ 0.92 ≈ 1,087.0 kW. The
+    difference is **45.3 kW, continuously**: about 396,700 kWh and **£79,300 a year**.
+
+    And that is only the first invoice. UPS losses become heat in the UPS room, which the
+    cooling plant must then remove, adding roughly another 25 to 35% on top depending on the
+    facility's overhead. In a data centre, every wasted watt is billed twice: once at the
+    meter, once at the chiller.
+  </Solution>
+</WorkedExample>
+
+## Redundancy: the efficiency tax nobody itemises
+
+Availability targets are met with spare capacity: **N+1** (one spare unit) or **2N** (a full duplicate path). The arithmetic consequence is that no unit ever runs near full load: in a 2N design, each path carries at most half the load by definition, and if the facility is also only partly filled, modules can idle at 10 to 20% of rating, exactly the worst region of the efficiency curve. The resilience is contractual and non-negotiable; the *configuration* usually is not. Modern responses include modular UPS systems that switch conversion stages in and out to keep the active modules well loaded, and high-efficiency "eco" modes that bypass double conversion under normal conditions: both deliver the same protection at materially better efficiency, and one of this course's [diagnostic cases](/courses/data-centres/two-quick-diagnostics) prices the difference on a real fleet.
+
+<Callout variant="key" title="Watts here are the most expensive on site">
+Power-chain losses have three multipliers working against them: they run 8,760 hours a year, they scale with the whole IT load, and they are paid twice because the cooling plant removes them again as heat. A percentage point of chain efficiency at megawatt scale is tens of thousands of pounds a year, which is why the audit question is never "is the UPS working?" but "at what fraction of its rating, on which part of its curve, and could the same redundancy be delivered higher up it?"
+</Callout>
+
+## What an auditor checks
+
+Four things, none requiring an outage: the **loading fraction** of each UPS module against its efficiency curve (nameplate and manufacturer data suffice); whether **eco or high-efficiency modes** exist and why they are not enabled (often a decade-old policy nobody revisited); the **as-built topology** versus the load actually present, since facilities filled slower than designed are systematically over-redundant per module; and **battery room conditioning**, occasionally cooled far below the 20 to 25 °C batteries actually want. The [electrical fundamentals](/courses/electrical-science/voltage-current-power) behind all of this are Level 1 material; the sector twist is simply that the load never sleeps. Next: the other half of the overhead, the cooling chain that carries every one of these watts back out of the building.
+
+## Sources and further reading
+
+- [Uptime Institute](https://uptimeinstitute.com/): tier topologies and efficiency survey data.
+- [The Green Grid](https://www.thegreengrid.org/): power chain measurement and PUE methodology.
+- [BCS Data Centre Specialist Group](https://www.bcs.org/membership-and-registrations/member-communities/data-centre-specialist-group/): UK practitioner community.

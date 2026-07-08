@@ -3305,4 +3305,182 @@ export const sectors: Sector[] = [
       },
     ],
   },
+  {
+    kind: "sector",
+    slug: "data-centres",
+    category: "buildings",
+    title: "Data Centres",
+    tagline: "PUE, uptime and the grid: energy where every kilowatt runs twice",
+    description:
+      "Apply Levels 1 and 2 to the fastest-growing energy consumer in the country. A data centre turns electricity into computation and heat, around the clock, behind resilience guarantees that make every change a negotiation. This is where the power chain, refrigeration, free cooling and the affinity laws meet a sector the UK has designated critical national infrastructure, with its own CCA, a planning regime in flux, and a bill measured in gigawatt-hours.",
+    accent: sectorAccent,
+    courses: [
+      {
+        slug: "data-centres",
+        title: "Energy Management in Data Centres",
+        summary:
+          "How a data centre uses energy from grid to chip and chip to sky, PUE and the metrics that matter more, the CCA, uptime and grid landscape, and the airflow, temperature and power-chain fixes that survive a change-control board: capped with a full facility energy audit.",
+        status: "available",
+        modules: [
+          {
+            slug: "dc-fundamentals",
+            title: "The Data Centre & Where Energy Goes",
+            lessons: [
+              {
+                slug: "inside-the-data-centre",
+                title: "Inside the Data Centre",
+                summary:
+                  "Enterprise, colocation and hyperscale; halls, racks and rising densities; and why the load profile is a flat line that never sleeps.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "the-power-chain",
+                title: "The Power Chain: Grid to Chip",
+                summary:
+                  "Transformers, UPS and distribution take their cut before a single instruction executes, and redundancy quietly pushes every stage to its least efficient loading.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "the-cooling-chain",
+                title: "The Cooling Chain: Chip to Sky",
+                summary:
+                  "Every IT kilowatt becomes a kilowatt of heat that must leave the building: air, chilled water, economisers and the liquid-cooling shift AI densities are forcing.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Fundamentals Check",
+                summary: "Quiz on data centre types, the power chain and the cooling chain.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dc-benchmarks",
+            title: "PUE, Metrics & Measurement",
+            lessons: [
+              {
+                slug: "pue-explained",
+                title: "PUE: The Number Everyone Quotes",
+                summary:
+                  "Power usage effectiveness defined, measured and worked; what good looks like; and the ways the industry's favourite metric flatters and misleads.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "beyond-pue",
+                title: "Beyond PUE: Utilisation, Water & Carbon",
+                summary:
+                  "PUE ignores whether the IT is doing anything useful: server utilisation, zombie servers, and the water and carbon metrics rising alongside it.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "metering-the-data-centre",
+                title: "Metering & Monitoring the Data Centre",
+                summary:
+                  "The measurement points a trustworthy PUE needs, branch-circuit monitoring, and turning a DCIM system into an energy tool rather than an alarm console.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "benchmarks-check",
+                title: "Metrics & Measurement Check",
+                summary: "Quiz on PUE, its limits, and data centre metering.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dc-regulation",
+            title: "Regulation, Resilience & the Grid",
+            lessons: [
+              {
+                slug: "uptime-sets-the-floor",
+                title: "Uptime Sets the Floor",
+                summary:
+                  "SLAs, tier levels and redundancy are the sector's HACCP: where availability genuinely constrains efficiency, and where it is just the excuse.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "cca-esos-and-reporting",
+                title: "The Data Centre CCA, ESOS & Reporting",
+                summary:
+                  "The sector's own Climate Change Agreement (14.5% improvement on a 2022 baseline by 2030), the reporting schemes, and F-gas on the chiller fleet.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "grid-planning-and-heat-reuse",
+                title: "The Grid, Planning & Heat Reuse",
+                summary:
+                  "Critical national infrastructure status, AI growth zones, connection queues, and the push to stop rejecting a town's worth of low-grade heat.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "compliance-check",
+                title: "Regulation & Resilience Check",
+                summary: "Quiz on uptime constraints, the data centre CCA and the grid landscape.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dc-efficiency",
+            title: "Efficiency in Practice",
+            lessons: [
+              {
+                slug: "airflow-and-temperature",
+                title: "Airflow & Temperature: The Cheap Kilowatts",
+                summary:
+                  "Containment, blanking plates and setpoints raised to what the servers actually allow: the fixes that cut cooling energy without touching resilience.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "free-cooling-and-ups",
+                title: "Free Cooling & the Power Chain",
+                summary:
+                  "The UK climate gives economisers most of the year for free, and the UPS fleet gives back percent after percent once someone checks its loading.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short facility call-outs: a hall whose fans fight their own bypass airflow, and a UPS fleet idling at the worst point on its efficiency curve. Calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on airflow, temperature, free cooling and UPS optimisation.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dc-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "dc-audit-capstone",
+                title: "Capstone: Audit a Data Centre",
+                summary:
+                  "A full, staged energy audit of a fictional colocation facility: scope it around the resilience constraints, build the IT-and-weather model, compute an honest PUE, and rank what you find.",
+                minutes: 35,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];

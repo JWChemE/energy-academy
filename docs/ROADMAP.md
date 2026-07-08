@@ -131,8 +131,11 @@ five batches.
 - [x] Food Manufacturing sector course — same shape (13 lessons, 4 quizzes,
       diagnostics, factory audit capstone); sectors page now grouped into
       Industrial / Buildings / Transportation categories *(Jul 2026)*
-- [ ] More sectors (data centres next; Fleet Electrification & Depot Charging
-      to open the Transportation category)
+- [x] Data Centres sector course — same shape (13 lessons, 4 quizzes,
+      diagnostics, facility audit capstone); balances the Buildings
+      category *(Jul 2026)*
+- [ ] More sectors (Fleet Electrification & Depot Charging to open the
+      Transportation category; hospitals, retail, cold storage candidates)
 
 ## Phase 4 — Commercialisation
 

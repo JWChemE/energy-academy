@@ -3379,4 +3379,237 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Blast chillers are designed for rapid heat extraction; storage rooms are designed to hold temperature. Moving unfinished cooling work into the store means slower cooling (a food safety concern) and heat removed at storage conditions, in a freezer at the plant's worst COP.",
     },
   ],
+
+  // ---------------------------------------------------------------- Data centres sector
+  "dc-fundamentals-check": [
+    {
+      question: "In a colocation facility, the operator controls:",
+      options: [
+        "The customers' servers, storage and operating systems, but not the building's mechanical and electrical plant",
+        "Everything on site, including the workloads running on the hosted equipment",
+        "The building systems (power chain, cooling, controls), while customers own and run the IT in their racks",
+        "Only the security and reception functions, with all plant outsourced to the utility",
+      ],
+      answer: 2,
+      explanation: "Colocation sells space, power and cooling; the IT belongs to the customers. That split shapes the audit boundary the same way a lease does in commercial property: the operator can fix the overhead directly but can only influence the IT load through engagement and data.",
+    },
+    {
+      question: "A data centre's half-hourly load profile typically looks like:",
+      options: [
+        "A nearly flat line around the clock, through nights, weekends and holidays",
+        "A sharp daytime plateau that falls to almost nothing overnight, like an office",
+        "A weather-led curve that peaks in winter mornings and summer afternoons",
+        "A sawtooth following the batch schedule of the largest customer's workloads",
+      ],
+      answer: 0,
+      explanation: "Servers idle hot and cooling follows the IT, so the site runs at essentially constant load. That constancy is the sector's defining arithmetic: every steady kilowatt is 8,760 kWh a year, which makes a data centre kilowatt worth roughly five office kilowatts.",
+    },
+    {
+      question: "Double-conversion UPS efficiency is worst when:",
+      options: [
+        "The modules run above 90% of their rated capacity for long periods",
+        "The incoming grid supply is at the upper end of its voltage tolerance",
+        "Ambient temperature in the UPS room falls below 20 °C in winter",
+        "The modules run far below their rated load, as 2N redundancy encourages",
+      ],
+      answer: 3,
+      explanation: "The efficiency curve collapses at low load: a typical older fleet manages ~89% at 15% load against ~96% above half load. Redundancy plus slower-than-planned fill parks fleets exactly there, which is why configuration reviews find continuous losses nobody itemised.",
+    },
+    {
+      question: "The cooling load of a data hall equals:",
+      options: [
+        "Roughly half the IT load, since modern servers convert most electricity to computation",
+        "The electrical load dissipated inside the envelope, watt for watt, continuously",
+        "The design capacity of the installed chillers, regardless of what the IT draws",
+        "The building's fabric heat gains, which dwarf the internal equipment loads",
+      ],
+      answer: 1,
+      explanation: "Electricity in is heat out, one for one: computation is not an energy sink. A hall drawing 1,500 kW of IT power is a 1,500 kW heater that never switches off, and the cooling chain's job is to move exactly that heat from the chips to the sky.",
+    },
+    {
+      question: "AI training clusters are forcing a shift to liquid cooling primarily because:",
+      options: [
+        "Liquid-cooled halls need no security zoning, simplifying multi-customer layouts",
+        "Water is cheaper per kWh of heat removed than electricity in most UK regions",
+        "GPU racks are legally required to be liquid-cooled under the 2024 CNI designation",
+        "Rack densities of 40 to 100+ kW exceed what air can practically remove",
+      ],
+      answer: 3,
+      explanation: "Air struggles beyond roughly 20 to 30 kW per rack, and AI clusters demand several times that. The energy silver lining: liquid captures heat at higher temperatures, slashing compressor lift and transforming the heat-reuse prospects that low-grade warm air never offered.",
+    },
+  ],
+
+  "dc-benchmarks-check": [
+    {
+      question: "PUE is defined as:",
+      options: [
+        "IT equipment energy divided by cooling system energy over any representative week",
+        "Total facility energy divided by IT equipment energy, measured over a full year",
+        "The percentage of facility energy that comes from renewable supply contracts",
+        "Peak facility demand divided by the site's contracted grid connection capacity",
+      ],
+      answer: 1,
+      explanation: "PUE = total facility ÷ IT energy, annually, with the IT conventionally metered at the UPS output. A PUE of 1.30 means every kWh of computing carries 0.30 kWh of overhead, and the measurement boundary and period matter as much as the number.",
+    },
+    {
+      question: "A facility's monthly PUE improves the month a large new customer's IT load comes online, with no plant changes. This is:",
+      options: [
+        "Evidence the cooling plant runs more efficiently at higher loads",
+        "A sign the new customer's servers are more efficient than the existing estate's",
+        "A reporting error, since PUE cannot change without an efficiency change",
+        "Arithmetic dilution: fixed overheads spread over a larger IT denominator",
+      ],
+      answer: 3,
+      explanation: "PUE rewards filling the building as much as running it well: the fixed base divides by more IT and the ratio falls. Any PUE trend must be read alongside the load that produced it, which is why the audit model separates coefficient changes from load growth.",
+    },
+    {
+      question: "Switching off 100 zombie servers (powered, cooled, doing nothing) would typically:",
+      options: [
+        "Cut total energy substantially while slightly worsening the facility's PUE",
+        "Improve PUE substantially while leaving total energy roughly unchanged",
+        "Breach most colocation SLAs, which guarantee minimum IT power draws",
+        "Save nothing, since idle servers draw negligible power in modern estates",
+      ],
+      answer: 0,
+      explanation: "Idle servers draw 30 to 60% of peak power, so the saving is real (about £80,000 a year for 100 typical machines through a 1.3 overhead). But less IT under the same fixed overhead nudges PUE up: the clearest demonstration that the wrapper metric and the right decision can point opposite ways.",
+    },
+    {
+      question: "The conventional meter point for PUE's IT-energy denominator is:",
+      options: [
+        "The utility intake, since that is the only fiscal-grade meter on site",
+        "The chilled-water plant's electrical supply board",
+        "The UPS output, so that power-chain losses count as facility overhead",
+        "Each server's internal power supply, summed across the estate",
+      ],
+      answer: 2,
+      explanation: "Measuring IT energy at the UPS output puts the UPS losses on the overhead side of the ratio, where they belong. Meter placement moves PUE by whole points: an undercounted IT meter made the worked example's 1.30 facility report 1.357, so 'measured where?' is always the first question.",
+    },
+    {
+      question: "WUE (water usage effectiveness) matters alongside PUE because:",
+      options: [
+        "Evaporative cooling can buy electrical efficiency by spending large volumes of water",
+        "Water leaks are the leading cause of data centre outages in UK facilities",
+        "Planning law caps data centre water use at a fixed litres-per-rack allowance",
+        "Chilled-water systems consume large volumes of make-up water continuously through normal operation",
+      ],
+      answer: 0,
+      explanation: "Evaporative and adiabatic systems trade water for compressor energy, and at facility scale the volumes are material enough to be a live planning issue in water-stressed regions. Optimising PUE at WUE's expense is easy and invisible unless both are reported together.",
+    },
+  ],
+
+  "dc-compliance-check": [
+    {
+      question: "Under the renewed Climate Change Agreement scheme, the data centre sector's target is:",
+      options: [
+        "A fixed PUE of 1.3 or better for every participating facility by 2028",
+        "Carbon neutrality across all participating facilities by the end of 2030",
+        "A 25% reduction in absolute electricity consumption across all participating facilities by March 2033",
+        "A 14.5% energy-efficiency improvement on a 2022 baseline by the end of 2030",
+      ],
+      answer: 3,
+      explanation: "techUK holds the sector umbrella agreement, with target periods 7 to 9 running 2026 to 2030 and reduced CCL rates for compliant participants until 31 March 2033. The metric is intensity-based, so genuine overhead reduction counts and load-growth dilution should not.",
+    },
+    {
+      question: "Running only one path of a contracted 2N UPS system to save its losses is:",
+      options: [
+        "A sensible summer measure, provided the second path can restart within an hour",
+        "Not an energy measure at all: it breaches the availability product the customers are paying for",
+        "Standard practice in facilities that have already enabled high-efficiency eco modes on their UPS fleets, since the risk profiles are equivalent",
+        "Acceptable if the saving exceeds the value of any SLA penalty that results",
+      ],
+      answer: 1,
+      explanation: "Contracted redundancy is the product, and no saving survives breaching it. The legitimate versions of the same idea preserve the redundancy level: rebalancing module loading, modular systems that keep active units well loaded, and properly risk-assessed eco modes.",
+    },
+    {
+      question: "The September 2024 CNI designation and the 2024–2025 planning reforms mean that:",
+      options: [
+        "Data centres are now exempt from ESOS, SECR and Climate Change Levy obligations",
+        "New facilities can only be built inside the designated AI Growth Zones",
+        "Policy now favours data centre development, with scrutiny shifting to PUE, water and heat-reuse plans",
+        "Local authorities gained significant new powers to refuse data centre planning applications specifically on energy-consumption grounds",
+      ],
+      answer: 2,
+      explanation: "The state wants these buildings built: councils must consider the need for them, large projects can opt into the NSIP regime, and AI Growth Zones coordinate power and planning. The practical consequence is that applications now compete on energy performance, making efficiency skills growth skills.",
+    },
+    {
+      question: "In grid-constrained regions, a kilowatt of facility overhead eliminated is often worth more than its energy saving because:",
+      options: [
+        "It frees contracted capacity for revenue-earning IT load under the existing connection",
+        "The distribution network operator pays facilities directly for every kilowatt saved",
+        "It reduces the facility's Climate Change Levy liability at the marginal rate",
+        "Overhead kilowatts are billed at a premium tariff compared with IT kilowatts",
+      ],
+      answer: 0,
+      explanation: "Connection queues make grid capacity the binding constraint on growth, so overhead reduction converts directly into sellable IT capacity, often worth many times the £1,752/yr a steady kilowatt costs in energy. Efficiency has become how facilities grow, not just how they save.",
+    },
+    {
+      question: "A facility's rejected heat is hard to reuse today mainly because:",
+      options: [
+        "Heat networks are prohibited from taking heat from commercial sources under Ofgem's rules",
+        "Air-cooled facilities produce low-grade heat, and a network must exist within economic reach",
+        "The volumes involved are too small to interest any district heating operator",
+        "Data centre heat is contaminated and requires treatment before it can be distributed",
+      ],
+      answer: 1,
+      explanation: "Legacy facilities reject 30 to 40 °C air, which needs heat pumps to reach network temperatures, and the offtake network must be nearby. Liquid cooling changes the grade, regulated heat networks are professionalising the demand side, and zoning is mapping facilities as anchor sources. The direction is one-way.",
+    },
+  ],
+
+  "dc-efficiency-check": [
+    {
+      question: "The correct sequence for cutting a legacy hall's cooling energy is:",
+      options: [
+        "Fix the airflow separation first, then slow the fans, then raise temperatures stepwise",
+        "Raise the temperatures first to prove the concept, then invest in containment",
+        "Replace the existing CRAH units with larger, more modern models, then optimise whatever loads remain afterwards",
+        "Lower the chilled-water setpoint to create margin, then fit blanking plates",
+      ],
+      answer: 0,
+      explanation: "Raising temperatures in a poorly separated hall creates hotspots at the worst-placed server and gets programmes cancelled. Blank and contain until the rack-inlet spread is tight, harvest the cube law on the fans, then walk the setpoints up with monitoring: each step makes the next one safe.",
+    },
+    {
+      question: "Eight CRAH units totalling 32 kW of fan power are commissioned down to 70% speed after containment. The cube law puts the new fan power at about:",
+      options: [
+        "22.4 kW",
+        "16.0 kW",
+        "11.0 kW",
+        "25.6 kW",
+      ],
+      answer: 2,
+      explanation: "Power scales with speed cubed: 32 × 0.7³ = 32 × 0.343 ≈ 11 kW. A 30% speed reduction becomes a 66% power reduction, worth about £36,800 a year at 8,760 hours: the arithmetic that makes airflow remediation the sector's most reliable retrofit.",
+    },
+    {
+      question: "Each degree of chilled-water setpoint raised is typically worth:",
+      options: [
+        "Nothing directly, though it improves the dehumidification performance of the coils",
+        "Around 2 to 4% of chiller energy, plus extended free-cooling hours",
+        "Around 15 to 20% of chiller energy, which is why one big step is preferred",
+        "A fixed 1% of whole-facility energy regardless of the cooling design",
+      ],
+      answer: 1,
+      explanation: "The compressor's lift shrinks by a degree, worth roughly 2 to 4% of chiller energy, and the same degree raises the outdoor temperature below which economisers can carry the load, which in the UK climate is often worth as much again. Setpoints and free cooling are one programme.",
+    },
+    {
+      question: "An installed economiser that never runs is most often explained by:",
+      options: [
+        "Undersized dry coolers that cannot reject the hall's full heat load during the warmer months of the year",
+        "UK weather being too humid for economiser operation most of the year",
+        "A missing utility approval that most facilities never obtained",
+        "Conservative changeover setpoints or an old lockout that nobody has revisited",
+      ],
+      answer: 3,
+      explanation: "The kit is usually fine; the configuration is the fault. Changeover thresholds set cautiously at commissioning, or lockouts from some ancient nuisance trip, quietly hand the load back to the chillers. Trending achieved economiser hours against what the weather offered makes the gap visible.",
+    },
+    {
+      question: "Rebalancing a UPS fleet so modules run at 30% load instead of 15% saves energy because:",
+      options: [
+        "Modules at higher load run cooler, reducing the UPS room's ventilation demand",
+        "Fewer modules means lower maintenance costs, which the site rebates as energy",
+        "Double-conversion efficiency rises steeply between those loadings (roughly 89% to 94%)",
+        "The battery strings charge more efficiently when the fleet's load is concentrated onto fewer modules",
+      ],
+      answer: 2,
+      explanation: "The efficiency curve is the whole story: carrying 300 kW at 89% loses 37 kW continuously; at 94% it loses 19 kW. The reconfiguration preserves the contracted redundancy and pays about £31,400 a year, plus the cooling energy behind every recovered watt.",
+    },
+  ],
 };

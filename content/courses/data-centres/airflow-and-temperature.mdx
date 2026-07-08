@@ -1,0 +1,43 @@
+The cheapest kilowatt-hours in a data centre are hiding in plain sight: in the gaps between racks where cold air leaks home unused, and in setpoints chosen when servers were fragile and electricity was cheap. Neither fix needs new plant. Airflow management is hardware-shop material (blanking plates, brushes, containment panels) and temperature is a number in the BMS, yet together they routinely cut a legacy facility's cooling energy by a third. This lesson works both, in the only order that works: fix the air first, then raise the temperatures the fixed air makes safe.
+
+## Step one: make the air do its job once
+
+The [cooling-chain lesson](/courses/data-centres/the-cooling-chain) named the two failure modes: **bypass** (cold air returning to the CRAH without passing through a server) and **recirculation** (hot exhaust curling back into server inlets). Both force the same expensive compensations: more fan speed and colder supply, to guarantee the worst-placed server despite the mixing. The remedies are unglamorous and cumulative: **blanking plates** in every unused rack slot, brush grommets on cable cut-outs, **aisle containment** (rigid or curtain) completing the hot/cold separation, and floor-tile placement actually matched to load. The measurement that drives it all is the humble **rack-inlet temperature survey**: the spread between the coolest and warmest inlet is the direct gauge of mixing, and shrinking that spread is what buys everything in step two. With the air paths fixed, fan speeds come down, and the [cube law](/courses/motors-and-drives/why-vfds) turns modest speed reductions into dramatic power savings; one of this course's [diagnostic cases](/courses/data-centres/two-quick-diagnostics) walks that exact arithmetic on a legacy hall.
+
+## Step two: raise the temperatures
+
+The industry's thermal reference (ASHRAE's guidelines for IT environments) has loosened repeatedly as hardware proved robust: the recommended envelope for standard equipment now runs to a **27 °C rack inlet**, with allowable ranges wider still, and manufacturers warrant far beyond old habits. Yet halls held at 18 to 20 °C remain everywhere, burning compressor energy to overshoot what the silicon needs.
+
+Every degree matters twice. Warmer rack inlets permit warmer **chilled-water setpoints**, and each degree of chilled water is typically worth 2 to 4% of chiller energy (the [refrigeration course's lift arithmetic](/courses/refrigeration-and-heat-pumps/cop-and-performance)). More powerfully, warmer setpoints extend how many hours a year the [economisers](/courses/data-centres/free-cooling-and-ups) can carry the load without compressors at all: in the UK climate, a few degrees of setpoint can mean over a thousand extra free-cooling hours.
+
+<WorkedExample title="a staged setpoint programme">
+  <Given>
+    - A facility's chillers consume 1,600,000 kWh/yr at a 7 °C chilled-water setpoint
+    - Airflow remediation has shrunk the rack-inlet spread, allowing chilled water at 13 °C while every inlet stays inside the ASHRAE recommended envelope
+    - Each degree of chilled-water temperature is worth ≈3% of chiller energy
+  </Given>
+  <Find>The saving from the setpoint programme alone.</Find>
+  <Solution>
+    Six degrees × 3% ≈ **18% of chiller energy: about 288,000 kWh, £57,600 a year** at £0.20/kWh,
+    before counting the extended free-cooling hours, which are usually worth as much again.
+
+    The route matters as much as the destination: 1 °C per fortnight, rack-inlet monitoring
+    against agreed thresholds, and a written rollback trigger, all through
+    [change control](/courses/data-centres/uptime-sets-the-floor). Six months of patient steps,
+    zero capital, and a saving that repeats every year.
+  </Solution>
+</WorkedExample>
+
+## The politics of a degree
+
+The obstacles are human, not thermal. "Cold means safe" is folk memory from hardware generations ago; a hall that *feels* warm alarms visitors who equate chill with competence; and no individual ever got fired for leaving the setpoint alone. The counters are the ones this platform teaches everywhere: data (the inlet survey showing margin), incrementalism (steps small enough that nothing can go visibly wrong), and co-authorship (the site engineers design the staging, so the win is theirs). In colocation there is a contractual layer too: some customer SLAs specify temperatures tighter than ASHRAE, usually because a decade-old template said so, and renegotiating those clauses at renewal is an energy measure worth tens of thousands of pounds that no BMS can deliver.
+
+<Callout variant="key" title="Air first, then temperature, never the reverse">
+Raising setpoints in a hall with poor airflow separation is how hotspots happen and how efficiency programmes get cancelled: the worst-placed server hits its limit while the average looks fine. Sequence is everything: blank and contain until the inlet spread is tight, let the fans slow, then walk the temperatures up with monitoring at every step. Done in that order, the same physics that punished sloppiness now compounds the savings: tighter air allows warmer water, warmer water extends free cooling, and the compressors become seasonal visitors rather than permanent residents.
+</Callout>
+
+## Sources and further reading
+
+- [ASHRAE TC 9.9 thermal guidelines](https://www.ashrae.org/): the equipment envelopes that define "safe".
+- [The Green Grid](https://www.thegreengrid.org/): airflow management and containment guidance.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools): server room and data centre efficiency basics.

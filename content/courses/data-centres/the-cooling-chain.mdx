@@ -1,0 +1,49 @@
+Every watt the IT and power chain consume becomes a watt of heat, immediately and continuously, and the cooling chain's job is to move all of it from a silicon die a few millimetres across to the sky outside. That journey (chip to air, air to water, water to atmosphere) is the second-largest energy consumer in most facilities and the first place an auditor looks, because unlike the IT it serves, the cooling chain is entirely the operator's to fix. This lesson follows the heat out of the building and sets up the module-four lessons on making the journey cheap.
+
+## One-for-one: the load that mirrors the IT
+
+There is no mystery about a data centre's cooling load: it equals the electrical load inside the envelope, watt for watt. A hall drawing 1,500 kW of IT power is a 1,500 kW heater, all day, every day.
+
+<WorkedExample title="the cooling bill behind 1,500 kW of IT">
+  <Given>
+    - 1,500 kW of IT heat to remove, continuously
+    - The whole cooling chain (fans, pumps, chillers, heat rejection) achieves a seasonal "system COP" of about 4
+    - 8,760 h/yr; electricity £0.20/kWh
+  </Given>
+  <Find>The cooling plant's annual consumption and cost.</Find>
+  <Solution>
+    Cooling electricity ≈ 1,500 ÷ 4 = **375 kW continuous**, which is 375 × 8,760 ≈
+    **3.29 million kWh a year: about £657,000**.
+
+    Every improvement in this lesson and module four attacks one of the two terms: reduce the
+    heat that must move (there is little scope; the IT is the product) or raise the system COP
+    (there is enormous scope: airflow, temperatures and free cooling routinely move it from 3
+    to 6 or beyond).
+  </Solution>
+</WorkedExample>
+
+## Chip to air: the hall
+
+Traditional halls cool with air: servers pull cold air through their fronts and exhaust hot air behind, while **CRAC or CRAH units** (refrigerant or chilled-water coils with fans) recondition it. The hall's efficiency is decided by whether cold and hot air stay separated. **Hot-aisle/cold-aisle layout**, **containment** (physical barriers completing the separation), and humble **blanking plates** in unused rack slots are the difference between air doing its job once and air being cooled twice. Poor separation shows up as *bypass* (cold air returning unused) and *recirculation* (hot exhaust re-entering server inlets), and the operational response, cranking fans and lowering setpoints, is exactly the expensive spiral one of this course's [diagnostic cases](/courses/data-centres/two-quick-diagnostics) unwinds with the [affinity laws](/courses/motors-and-drives/why-vfds).
+
+## Air to water to sky: the plant
+
+Behind the hall sits the heat's onward journey: **chilled water** (in larger facilities) moving heat from CRAH coils to **chillers**, whose compressors lift it to a temperature the outside air will accept, then **dry coolers or cooling towers** rejecting it. Everything from the [refrigeration course](/courses/refrigeration-and-heat-pumps/cop-and-performance) applies: COP falls as the lift grows, so the two temperatures that bound the lift (chilled-water supply below, ambient above) decide the bill. The UK's mild climate is a structural advantage here: for most of the year, outside air is cold enough to cool a data centre with little or no compressor work at all, via **economisers** (free cooling). How much of the year depends on one design choice, the temperature the IT actually requires, which is why the sector's cheapest kilowatt-hours come from [raising setpoints](/courses/data-centres/airflow-and-temperature) rather than buying plant.
+
+## The liquid-cooling shift
+
+Air struggles beyond roughly 20 to 30 kW per rack, and AI clusters now demand several times that, so heat is increasingly captured in liquid: **direct-to-chip** cold plates or full **immersion** cooling. For energy purposes liquid changes two things fundamentally. It removes heat at *higher* temperatures (30 to 50 °C coolant rather than 20-something air), which slashes or eliminates compressor lift and extends free cooling to nearly the whole year; and it produces warm water rather than tepid air, transforming the [heat-reuse prospects](/courses/data-centres/grid-planning-and-heat-reuse) this course returns to. A sector being forced to re-plumb for density is getting an efficiency and heat-recovery upgrade almost as a side effect.
+
+<Callout variant="key" title="Cooling is a temperature negotiation, not a fixed cost">
+The cooling chain's energy is set by two negotiable temperatures: how warm the IT will genuinely tolerate (warmer than most legacy setpoints assume) and how effectively the design exploits the cool UK outdoors between them. Every degree conceded at either end shrinks the compressor's job, and the best facilities have negotiated it nearly to zero for most of the year. The plant is rarely the problem; the setpoints wrapped around it usually are.
+</Callout>
+
+## What's next
+
+You now have the full energy anatomy: IT, power chain, cooling chain, fixed residual. The next module builds the measurement layer, starting with the metric the whole industry quotes and half the industry misuses: PUE.
+
+## Sources and further reading
+
+- [ASHRAE Technical Committee 9.9](https://www.ashrae.org/): the thermal guidelines that define what IT actually tolerates.
+- [The Green Grid](https://www.thegreengrid.org/): cooling metrics and economiser guidance.
+- [Institute of Refrigeration](https://ior.org.uk/): the refrigeration engineering underneath.

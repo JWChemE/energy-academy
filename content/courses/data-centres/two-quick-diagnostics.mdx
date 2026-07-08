@@ -1,0 +1,18 @@
+Time to put the last two lessons to work on two short, concrete call-outs: the same investigate → calculate → diagnose → prescribe → verify loop as every other deep-dive capstone on this platform, just two cases instead of eight, sized for a quick check of what you've just learned rather than a full assessment.
+
+<DcSystemDiagnostics />
+
+## What these two cases test
+
+**Case 1** is the airflow spiral from the [previous lessons](/courses/data-centres/airflow-and-temperature), met in the wild: a legacy hall whose fans run flat out against their own bypass air, with the [cube law](/courses/motors-and-drives/why-vfds) waiting to pay out once someone fixes the air paths instead of adding more fans. **Case 2** is the [power chain's](/courses/data-centres/the-power-chain) signature waste: a healthy, contract-compliant UPS fleet parked at the worst point on its efficiency curve, where the fix is configuration, not equipment.
+
+<Callout variant="key" title="Same method, data-centre numbers">
+Both cases use only arithmetic you already have: the fan affinity law for the first, input = load ÷ efficiency for the second, each multiplied by the sector's relentless 8,760 hours. What they add is the judgement layer this sector demands: in both buildings the seductive wrong answer is *more equipment*, the right answer preserves every resilience commitment, and nothing proceeds except through change control.
+</Callout>
+
+This course's capstone, next, scales the same discipline up to a whole facility: a full colocation site, audited stage by stage, from scoping around the SLA constraints through to a ranked list of recommendations and an honest PUE story.
+
+## Sources and further reading
+
+- [ISO 50002, energy audits](https://www.iso.org/standard/60088.html): structured assessment method.
+- [Carbon Trust guides and tools](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools)

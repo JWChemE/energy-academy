@@ -1,0 +1,34 @@
+Every sector on this platform has a constraint that outranks energy: food factories have HACCP, offices have the lease. In data centres it is availability. Customers buy uptime, contracts guarantee it with penalties attached, and the whole facility (dual power paths, redundant chillers, generators, batteries) is architected around never going dark. That architecture genuinely costs energy, and it also shelters a great deal of waste that merely *dresses* as resilience. The professional skill this lesson teaches is telling those apart, because in this sector, an efficiency measure that cannot pass a change-control board does not exist.
+
+## The machinery of uptime
+
+**SLAs** (service level agreements) define what customers are owed: availability percentages whose decimal places are eloquent. 99.9% allows nearly nine hours of downtime a year; 99.99% under an hour; 99.999% about five minutes. **Tier classifications** (the Uptime Institute's I through IV being the reference) describe what the infrastructure can survive: Tier III facilities are concurrently maintainable (any component can be serviced without stopping the IT), Tier IV fault-tolerant. Delivering that means **redundancy**: N+1 spare units, 2N duplicate paths, generators, and batteries or flywheels bridging the gap. All of it consumes energy while doing, most of the time, nothing: this is the sector's genuine resilience overhead, and the [power-chain lesson](/courses/data-centres/the-power-chain) showed its signature mechanism, equipment held at inefficient part-load by design.
+
+## The genuine floors
+
+Some efficiency ideas really do die on the resilience floor, and the audit must say so plainly. Contracted redundancy levels are not the operator's to trade: running one path of a 2N system to save UPS losses breaches the product itself. Temperatures must stay inside the envelope the *customer contracts* specify, which is sometimes tighter than what the [equipment tolerates](/courses/data-centres/airflow-and-temperature), and renegotiating that is commercial work, not a BMS change. And maintenance regimes that keep generators and batteries ready (test runs, conditioning) are the price of the product, however untidy they look on a load profile.
+
+## The costume department
+
+Around those genuine floors sits a wardrobe of habits wearing resilience as a costume, and they are where this course's savings live:
+
+- **Setpoints from another decade.** Halls held at 18 to 20 °C because "cold is safe", against thermal guidelines the IT vendors themselves have loosened repeatedly. Cold beyond the requirement is pure compressor spend, protecting nothing.
+- **Redundancy configured lazily.** The contracted level fixes *what* must survive, not *how* the fleet is arranged: modular UPS systems and sensible pairing deliver identical protection at double the module loading, as one of the [diagnostics cases](/courses/data-centres/two-quick-diagnostics) prices.
+- **"Temporary" bypasses and overrides.** Economisers locked out after a decade-old humidity scare; every fan at fixed full speed since a commissioning shortcut. The [drift mechanism](/courses/commissioning/drift-and-degradation) is universal; the data centre twist is that fear of change preserves it indefinitely.
+- **Testing theatre.** Generators exercised weekly at full load where monthly satisfies both the warranty and the risk assessment, fuel and maintenance included.
+
+The test mirrors the food course's: **"show me where the SLA or the risk assessment requires this."** If it does, the cost is the product's. If nobody can, then "we've always run it that way" is not a resilience argument, and the measure proceeds, through change control, with the site's engineers as co-authors rather than obstacles.
+
+<Callout variant="key" title="Change control is the route, not the obstacle">
+In a facility where an uncontrolled change can trigger contractual penalties, the change-management process is how good ideas earn trust: staged implementation, defined rollback, monitoring at each step. Auditors who propose "raise the setpoint 5 °C" get refused; auditors who propose "raise it 1 °C per fortnight with rack-inlet monitoring and an agreed rollback threshold" get scheduled. In this sector, the engineering is usually the easy half of a measure; the governance design is the half that decides whether it happens.
+</Callout>
+
+## Why this module continues into regulation
+
+Uptime is the sector's internal law; the next two lessons cover the external kind: the Climate Change Agreement that prices the sector's efficiency progress, the reporting schemes around it, and the grid and planning landscape that now treats these facilities as critical national infrastructure.
+
+## Sources and further reading
+
+- [Uptime Institute](https://uptimeinstitute.com/): tier classifications and operational sustainability guidance.
+- [BCS Data Centre Specialist Group](https://www.bcs.org/membership-and-registrations/member-communities/data-centre-specialist-group/): UK operational practice.
+- [EN 50600 series](https://www.bsigroup.com/): the European data centre design and operation standard.

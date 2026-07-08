@@ -14,7 +14,7 @@ tiers aligned to how the profession develops expertise, plus sector courses:
 - **Level 3 – Leadership & Strategy:** policy, finance, procurement, net zero.
 - **Sectors:** a peer section (not a fourth tier) applying Levels 1–2 to one
   industry at a time, grouped into Industrial / Buildings / Transportation
-  categories (Breweries, Commercial Real Estate, Food Manufacturing so far).
+  categories (Breweries, Commercial Real Estate, Food Manufacturing, Data Centres so far).
   Sector lessons assume the Level 1/2 grounding and cross-link back rather
   than re-teach.
 

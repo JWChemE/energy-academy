@@ -1,0 +1,47 @@
+A facility can have an exemplary PUE and still be one of the most wasteful buildings in the country, because PUE only judges the wrapper around the IT, never the IT itself. Whether those servers are doing anything useful, how much water the cooling consumes, and what carbon sits behind each kilowatt-hour are separate questions with their own metrics, and they are increasingly the questions customers, regulators and planning authorities actually ask. This lesson covers the three that matter most: utilisation, water and carbon.
+
+## Utilisation: the elephant PUE ignores
+
+Servers have a dirty secret: an idle server draws a large fraction of its peak power (30 to 60% is typical), so a machine doing nothing still runs its fans, chipsets and memory around the clock. Meanwhile industry surveys have repeatedly found average server utilisation languishing between 10 and 25%, and a persistent population of **zombie servers**: powered, cooled, and doing no useful work at all, their original purpose forgotten, kept alive because switching off an unidentified machine feels riskier than paying for it.
+
+<WorkedExample title="the zombie tax">
+  <Given>
+    - An enterprise estate audit finds 100 servers with no identifiable workload (a typical ~10% of a 1,000-server estate)
+    - Average draw 350 W each; facility overhead multiplies IT energy by 1.3 (PUE)
+    - 8,760 h/yr; electricity £0.20/kWh
+  </Given>
+  <Find>What the zombies cost per year.</Find>
+  <Solution>
+    IT energy = 100 × 0.35 kW × 8,760 ≈ **306,600 kWh**, worth £61,320.
+
+    Through the facility's 1.3 overhead: 306,600 × 1.3 ≈ 398,600 kWh, about **£79,700 a year**,
+    to power and cool machines that do nothing. Notice PUE's blindness cuts both ways: turning
+    these off would slightly *worsen* the facility's PUE (less IT under the same fixed overhead)
+    while saving nearly £80,000, the clearest possible demonstration that the wrapper metric
+    and the right decision can point in opposite directions.
+  </Solution>
+</WorkedExample>
+
+The remedies are IT-governance work rather than plant work (asset registers, decommissioning processes, virtualisation and consolidation), which is why the [colocation boundary](/courses/data-centres/inside-the-data-centre) matters: a colo operator can only report and encourage, while an enterprise can act directly. Either way, the energy manager's role is to make the cost visible; £1,752 per steady kilowatt per year concentrates minds.
+
+## Water: the metric planning committees read
+
+Evaporative cooling saves electricity by spending water, and at data centre scale the quantities are material: **WUE (water usage effectiveness)** measures litres consumed per kWh of IT energy. A large evaporatively cooled facility can consume hundreds of millions of litres a year, and in water-stressed regions of the UK this has become a live planning and public-acceptance issue alongside grid capacity. The engineering trade is explicit: dry coolers use no water but more electricity; evaporative systems the reverse; hybrid designs switch modes by season. An auditor should treat WUE and PUE as a pair, because optimising one at the other's expense is easy and often invisible in the headline numbers.
+
+## Carbon: when and where, not just how much
+
+**CUE (carbon usage effectiveness)** ties facility energy to emissions, and for a UK grid-connected site the story is increasingly *temporal*: the grid's carbon intensity swings several-fold between windy nights and still winter evenings. Facilities with flexibility (scheduled workloads, thermal storage, battery assets) can shift consumption toward cleaner hours, and operators' renewable claims deserve the same scrutiny as any [procurement claim](/courses/energy-procurement/ppas): a facility-level power purchase agreement is a different animal from an annual certificate match. The sector's own [CCA](/courses/data-centres/cca-esos-and-reporting) target is energy-based, but customer and investor questionnaires are overwhelmingly carbon-based, and the gap between the two framings is where careless reporting gets caught.
+
+<Callout variant="key" title="PUE, WUE, CUE and utilisation: one dashboard, four questions">
+Is the overhead lean (PUE)? Is the cooling buying its efficiency with water (WUE)? What carbon sits behind the load, and when (CUE)? And is the IT itself doing useful work (utilisation)? A facility can score well on any three while failing the fourth, so an honest assessment reports all four together. The sector's best operators already do; the audit skill is noticing which number a site prefers not to discuss.
+</Callout>
+
+## From metrics to measurement
+
+Every metric in this module is only as trustworthy as the meters beneath it. The next lesson gets practical about that: the measurement points a defensible PUE needs, branch-circuit monitoring, and turning a DCIM system from an alarm console into an energy tool.
+
+## Sources and further reading
+
+- [The Green Grid](https://www.thegreengrid.org/): WUE and CUE definitions alongside PUE.
+- [Uptime Institute](https://uptimeinstitute.com/): server utilisation and zombie-server research.
+- [National Grid ESO carbon intensity data](https://carbonintensity.org.uk/): the UK grid's real-time and forecast carbon intensity.

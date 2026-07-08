@@ -1,0 +1,41 @@
+In September 2024 the UK government designated data centres critical national infrastructure, putting them in the same category as power stations and water treatment works. Within eighteen months, planning rules had been rewritten to favour them, AI growth zones had been mapped, and the electricity system operator was modelling scenarios in which the sector's demand quadruples by 2030. Energy management in this sector now extends beyond the meter: where facilities can connect, what the grid can supply, and what happens to the river of low-grade heat they reject are strategic questions, and this lesson covers the landscape as it stands in mid-2026.
+
+## The grid: the sector's real constraint
+
+UK data centres consume roughly 2.5% of national electricity, and the National Energy System Operator's scenarios see demand growth of tens of terawatt-hours over the coming decades, with a several-fold rise plausible by 2030 on the strength of AI build-out alone. The practical consequence is that **grid connection, not land or capital, is the binding constraint** on new capacity: connection queues in favoured regions stretch years, and connection dates increasingly decide site selection. For operators this pushes three energy-management themes up the agenda: making *existing* capacity go further (every kilowatt of [overhead saved](/courses/data-centres/airflow-and-temperature) is a kilowatt of sellable IT capacity, often worth far more than the energy saving itself), on-site generation and storage as connection sweeteners, and demand flexibility, since a facility whose batteries and generators can support the grid at peak becomes a more welcome neighbour.
+
+## Planning: from nuisance to national priority
+
+The policy shift has been rapid. The **CNI designation** (September 2024) signalled the change of status. **December 2024 reforms to the National Planning Policy Framework** require English local authorities to consider the need for data centres in their plans, and large facilities can now opt into the **Nationally Significant Infrastructure Projects** regime, taking decisions to the Secretary of State. The **AI Growth Zones** policy (published November 2025, with initial zones in Oxfordshire, South and North Wales and the North East) goes further, coordinating power pricing, grid access and planning friction in designated locations. For energy professionals the reading is simple: the state now wants these buildings built, and the scrutiny has shifted from *whether* to *how well*: applications lead with PUE, WUE, heat-reuse plans and grid-flexibility offers, which makes this course's content literally planning material.
+
+## Heat reuse: the town's worth of warmth on the roof
+
+A 10 MW facility rejects roughly 10 MW of heat, continuously: the space-heating demand of a small town, currently given to the sky. The obstacles are real: legacy air-cooled facilities produce *low-grade* heat (30 to 40 °C air) that needs [heat pumps](/courses/refrigeration-and-heat-pumps/heating-modes) to reach district-heating temperatures, and a heat network needs to exist within economic reach. But the direction of travel is firm. The [liquid-cooling shift](/courses/data-centres/the-cooling-chain) driven by AI densities produces water at 40 to 50 °C or better, transforming the economics; the [regulated heat-network regime](/courses/commercial-real-estate/heat-network-regulation) live since January 2026 is professionalising the offtake side; and government heat-network zoning is explicitly mapping data centres as anchor heat sources. European precedents (Stockholm's district system famously pays data centres for heat) show the end state.
+
+<WorkedExample title="the heat a modest facility rejects">
+  <Given>
+    - A colocation facility rejects a steady 1,870 kW of heat (its entire electrical input, transformed)
+    - A district heat network would displace gas boilers at 85% efficiency; gas at £0.06/kWh
+    - Suppose heat pumps and network losses let 60% of the rejected heat be usefully delivered
+  </Given>
+  <Find>The scale of the resource being thrown away.</Find>
+  <Solution>
+    Useful heat ≈ 1,870 × 0.60 ≈ 1,122 kW continuous ≈ **9.8 million kWh a year**.
+
+    Displaced gas ≈ 9,830,000 ÷ 0.85 ≈ 11.6 million kWh, worth roughly **£694,000 a year** at
+    £0.06/kWh, before carbon. The engineering and commercial details are genuinely hard (grade,
+    distance, demand matching, who invests), but the resource is not marginal: it is most of a
+    £3.3M electricity bill leaving through the roof as warmth, and policy is converging on the
+    view that new facilities should plan for its capture from day one.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="Capacity is the new currency">
+Grid scarcity inverts the sector's old arithmetic: a kilowatt of overhead eliminated is no longer worth just £1,752 a year in energy, it is a kilowatt of contracted IT capacity freed under an existing connection, often worth many times more in revenue. Efficiency, flexibility and heat reuse have stopped being sustainability garnish and become how facilities get built, connected and approved at all. The energy manager's skills are now the sector's growth skills.
+</Callout>
+
+## Sources and further reading
+
+- [House of Commons Library: data centres, planning policy, sustainability and resilience](https://commonslibrary.parliament.uk/research-briefings/cbp-10315/).
+- [GOV.UK: Delivering AI Growth Zones](https://www.gov.uk/government/publications/delivering-ai-growth-zones/delivering-ai-growth-zones) (November 2025).
+- [NESO Future Energy Scenarios](https://www.neso.energy/): the demand outlook the grid is planning around.

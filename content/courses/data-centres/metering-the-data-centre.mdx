@@ -1,0 +1,51 @@
+Data centres are simultaneously the best-instrumented and worst-measured buildings in the UK. A typical facility has thousands of sensor points feeding a BMS or DCIM platform, every rack's power is visible somewhere, and yet ask for a defensible annual PUE, or which hall drove last month's increase, and many operators are reduced to estimates. The gap is never hardware; it is measurement *structure*: knowing which meters define which boundary, and turning a wall of trend data into the handful of ratios that manage the site. This lesson sets out the metering hierarchy a data centre needs and how to make the data earn its keep.
+
+## The hierarchy: three boundaries, then detail
+
+The [meter-map discipline](/courses/monitoring-and-targeting/meter-data) applies with a data centre twist, because the metrics of the [last two lessons](/courses/data-centres/pue-explained) are defined by specific boundaries:
+
+1. **The intake.** Utility metering at the point of supply: total facility energy, the PUE numerator, already half-hourly and fiscal-grade.
+2. **The IT boundary.** Energy delivered to computing, conventionally at the UPS output: the PUE denominator. This is the meter most often missing or mistrusted; without it, PUE is arithmetic on assumptions.
+3. **The system level.** Sub-meters on the major overhead consumers: chillers, CRAH/fan groups, pumps, UPS losses (input minus output), and the fixed residual. This layer converts "PUE worsened" into "chiller energy per CDD rose 15%", the difference between a number and a diagnosis.
+4. **Branch and rack level.** PDU and rack-strip metering that attributes IT load to halls, rows and customers: essential for colocation billing, invaluable for spotting stranded capacity and [zombie loads](/courses/data-centres/beyond-pue).
+
+<WorkedExample title="what one missing meter does to PUE">
+  <Given>
+    - A facility meters its intake (16,412,000 kWh/yr) but not its UPS output
+    - IT energy is instead estimated from rack-strip readings that miss two legacy rows, undercounting by 4%
+    - True IT energy: 12,600,000 kWh
+  </Given>
+  <Find>The reported PUE versus the true one.</Find>
+  <Solution>
+    Estimated IT = 12,600,000 × 0.96 = 12,096,000 kWh, so reported PUE = 16,412,000 ÷ 12,096,000
+    ≈ **1.357**, against a true **1.303**.
+
+    Five points of PUE, about **£126,000 a year at the £25,200-per-point exchange rate**, exist
+    or vanish on the placement of one meter. The lesson generalises: before comparing or
+    trending any data centre metric, establish exactly which meters define it. Due diligence
+    teams do; brochures don't.
+  </Solution>
+</WorkedExample>
+
+## DCIM: from alarm console to energy tool
+
+Most facilities own a DCIM or BMS platform that records everything and analyses nothing: it exists to raise alarms, and its energy potential sleeps. Waking it up is configuration, not procurement:
+
+- **Compute the ratios continuously.** PUE (and partial PUE per hall) trended daily against IT load, so [dilution effects](/courses/data-centres/pue-explained) are visible rather than celebrated.
+- **Normalise the weather term.** Chiller and heat-rejection energy against cooling degree-days, the same [regression discipline](/courses/monitoring-and-targeting/energy-signatures) every sector on this platform uses; a drifting CDD coefficient is a fouled condenser or a failing economiser announcing itself.
+- **Watch the approach temperatures.** Rack inlet versus chilled-water supply versus outside air: the three temperatures that decide compressor hours, logged and charted, make setpoint drift and lost free-cooling hours visible within days.
+- **Alarm on ratios, not just limits.** "Fan power per kW of IT rose 10%" catches creeping bypass months before any temperature alarm would.
+
+## Colocation: metering as the product
+
+In a colo, metering is also the billing system and the customer interface: rack-level meters feed invoices, contracted-capacity reports and, increasingly, the energy and carbon data customers need for their own [SECR and CSRD reporting](/courses/uk-energy-regulation/secr). Clean, auditable customer metering is becoming a sales feature, and the same infrastructure serves the operator's [CCA evidence](/courses/data-centres/cca-esos-and-reporting) obligations. One measurement system, many masters, exactly as in every other sector this platform covers.
+
+<Callout variant="key" title="Structure beats volume">
+A data centre does not need more sensors; it needs its existing meters organised around the boundaries that define its metrics (intake, IT, systems, racks) and its platform configured to trend ratios rather than hoard points. A site that can produce, on demand, a 12-month PUE with named meter points, a CDD-normalised cooling trend and a per-hall breakdown is audit-ready, tender-ready and CCA-ready simultaneously. Most sites are one week of configuration away from this, and have been for years.
+</Callout>
+
+## Sources and further reading
+
+- [The Green Grid](https://www.thegreengrid.org/): PUE measurement categories and meter placement.
+- [ISO/IEC 30134 series](https://www.iso.org/standard/63451.html): standardised data centre KPIs.
+- [CIBSE](https://www.cibse.org/knowledge-research/knowledge-portal): building metering practice (TM39) underlying the hierarchy.

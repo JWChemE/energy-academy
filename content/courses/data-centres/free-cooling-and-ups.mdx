@@ -1,0 +1,50 @@
+Britain's weather is a data centre subsidy. For most hours of most years, the air outside a UK facility is cold enough to cool it with little or no compressor work, and the equipment that harvests that gift (economisers, in their various forms) is the single biggest lever on the cooling bill. This lesson covers free cooling as the UK climate offers it, then turns to the power chain's equivalent quiet win: getting the UPS fleet off the inefficient end of its curve. Between them, these two account for most of the gap between a 1.5 facility and a 1.2 one.
+
+## Free cooling: the UK's structural advantage
+
+An **economiser** lets outside air do the chiller's job whenever it is cold enough. **Air-side** designs bring filtered outside air into the hall directly (or through heat exchangers in the indirect variant, keeping outside air out of the white space); **water-side** designs cool the chilled-water loop against dry coolers or cooling towers, letting the chillers stop. Add **evaporative assistance** and the threshold shifts from dry-bulb to the lower wet-bulb temperature, extending free cooling deep into mild weather at the cost of [water consumption](/courses/data-centres/beyond-pue).
+
+The arithmetic of the UK climate is emphatic. A facility that can free-cool whenever the outside air is below 15 °C gets most of the year's hours for nothing in much of Britain; raise the threshold to 18 or 20 °C (which is what the [setpoint work](/courses/data-centres/airflow-and-temperature) buys) and compressor operation shrinks to summer afternoons. This is why setpoints and free cooling form one programme, not two: every degree of chilled-water temperature converts directly into economiser hours.
+
+The audit findings, though, are rarely about missing kit; they are about **installed economisers not economising**. Changeover setpoints configured conservatively at commissioning and never revisited; economisers locked out after some ancient nuisance trip; control dead bands so wide the chillers run through spring evenings the dry coolers could own. Trending "economiser hours achieved" against "economiser hours available from weather data" (the [exception-reporting habit](/courses/monitoring-and-targeting/exception-reporting), applied here) is how the gap becomes visible and stays closed.
+
+## The UPS fleet: efficiency by configuration
+
+The [power-chain lesson](/courses/data-centres/the-power-chain) established the shape of the problem: double-conversion UPS efficiency collapses at low load, and redundancy plus slower-than-planned fill leaves fleets idling exactly there. The remedies escalate cleanly:
+
+- **Rebalance what exists.** Reconfigure module assignments so active units run in their efficient range at the same contracted redundancy; the [second diagnostic case](/courses/data-centres/two-quick-diagnostics) prices a typical fleet at £31,000 a year for this configuration-level change.
+- **Enable the modes already paid for.** Modern UPS systems offer high-efficiency modes (variants of line-interactive or "eco" operation) reaching 98 to 99%, with transfer-time characteristics that the site's risk assessment, not folklore, should judge.
+- **Buy the curve at replacement.** When fleets reach end of life, modular systems that keep active modules well loaded, and transformerless designs, make the [increment analysis](/courses/economic-analysis/simple-payback-revisited) straightforward at data centre run-hours.
+
+<WorkedExample title="what the two levers deliver together">
+  <Given>
+    - A facility's baseline: 12,600,000 kWh/yr of IT load with a 1.25 overhead coefficient (facility model from this course's capstone)
+    - An airflow-plus-free-cooling programme cuts the coefficient by 0.03; UPS rebalancing by a further 0.02
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The combined annual saving.</Find>
+  <Solution>
+    Coefficient reduction: 0.05 × 12,600,000 = **630,000 kWh a year: £126,000**, and about five
+    points of PUE (1.30 to 1.25).
+
+    Nothing in the programme touched a server, breached a redundancy contract or required a
+    planning application: it is configuration, controls and airflow hardware, sequenced through
+    change control. This is the standard playbook for legacy facilities, and the sector's
+    [CCA target](/courses/data-centres/cca-esos-and-reporting) of 14.5% by 2030 is calibrated
+    on exactly this kind of achievable work.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="The best compressor hour is the one that never runs">
+Free cooling and UPS optimisation share a logic: the cheapest energy is the conversion you avoid entirely: outside air instead of refrigeration, a well-loaded module instead of a loafing one. Both are usually configuration rather than capital, both compound with the airflow and setpoint work, and both are invisible on a walk-through, which is why they survive: the plant looks fine, because it is fine. Only the trend data (economiser hours, module loading) betrays the money being left on the table.
+</Callout>
+
+## Putting the module to work
+
+Airflow, temperature, free cooling, power chain: the four levers are now on the table, none requiring new chillers or frightened change boards. The next lesson hands you two of them as live call-outs with real numbers, diagnosed the same way every capstone on this platform runs.
+
+## Sources and further reading
+
+- [The Green Grid](https://www.thegreengrid.org/): economiser modes and free-cooling maps.
+- [Uptime Institute](https://uptimeinstitute.com/): UPS topology and eco-mode adoption data.
+- [CIBSE](https://www.cibse.org/knowledge-research/knowledge-portal): UK climate data for economiser-hour estimation.

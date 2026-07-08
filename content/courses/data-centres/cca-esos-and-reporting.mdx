@@ -1,0 +1,49 @@
+Data centres are one of the few building types with their own dedicated Climate Change Agreement, a fact that surprises people who associate CCAs with steelworks and dairies. The sector negotiated its way into the scheme on energy-intensity grounds, and the renewed agreement now sets a concrete target: a 14.5% energy-efficiency improvement on a 2022 baseline by the end of 2030. For an operator, that target converts every measure in this course into levy relief; for an auditor, it means the sector arrives with data, baselines and an accountable owner already in place. This lesson covers the CCA as it stands, the reporting schemes around it, and the F-gas obligations sitting on the chiller fleet.
+
+## The data centre CCA
+
+The scheme mechanics are the ones this platform covered at [Level 1](/courses/uk-energy-regulation/climate-change-levy): a discount on the Climate Change Levy in exchange for meeting negotiated efficiency targets, with buy-out payments for shortfalls. The data centre specifics, as at mid-2026:
+
+- **techUK** holds the sector umbrella agreement, with operators holding underlying agreements for their facilities. Eligibility centres on colocation operations.
+- The renewed scheme's **target periods 7 to 9 run 2026 to 2030** (the first, calendar-year 2026; the next two, two years each), with ministerial approval of a sector target of **14.5% improvement against a 2022 baseline** by the end of 2030, and reduced CCL rates for compliant participants running to 31 March 2033.
+- The metric is intensity-based, which for data centres effectively means demonstrating falling overhead per unit of IT load: the [PUE-adjacent arithmetic](/courses/data-centres/pue-explained) this course keeps rehearsing, formalised.
+- A notable condition in the renewed scheme: colocation operators selling capacity to **hyperscale customers must demonstrate renewable supply** at the facility level, a sign of where policy attention has moved.
+
+At data centre consumption scales the discount is material: on a facility drawing 16 GWh a year, CCL relief runs to six figures annually, which both funds efficiency work and puts a hard price on missing the target.
+
+## ESOS, SECR and the customer cascade
+
+The general schemes apply exactly as the [Level 1 lessons](/courses/uk-energy-regulation/esos) describe. **ESOS** catches large operators for four-yearly audits (Phase 4 by December 2027), and a data centre's flat, well-metered load makes it one of the easier estates to assess, provided the [meter structure](/courses/data-centres/metering-the-data-centre) exists. **SECR** puts energy and emissions into large companies' annual reports with an intensity metric; kWh per kWh of IT load, or per rack, are the natural choices.
+
+The distinctive pressure, though, flows *through* the sector rather than onto it: colocation customers need their hosted footprint for their own SECR, CSRD and net-zero reporting, so operators field a rising tide of data requests, and the EU's Energy Efficiency Directive (mandatory reporting for larger EU facilities) sets expectations UK customers increasingly import. Clean per-customer energy and carbon data has become a commercial feature, and the operators who treat reporting as a product rather than a chore are winning tenders on it.
+
+## F-gas on the chiller fleet
+
+Every refrigerant-bearing chiller and CRAC unit carries the [F-gas obligations](/courses/refrigeration-and-heat-pumps/maintenance-and-faults) from the refrigeration course: leak checks scaled by charge, records, certified engineers, and the phase-down squeezing high-GWP refrigerants toward expensive scarcity. Data centre fleets are large and ageing, and the phase-down is quietly strengthening the business case for the [free-cooling and setpoint work](/courses/data-centres/free-cooling-and-ups) that shrinks compressor dependence altogether: every hour an economiser runs is an hour the regulated plant doesn't.
+
+<WorkedExample title="what the CCA is worth to one facility">
+  <Given>
+    - A colocation facility using 16,412,000 kWh of electricity a year
+    - An illustrative main CCL electricity rate of roughly £0.0078/kWh, with a CCA discount of 92% (check current rates on GOV.UK; they change at Budgets)
+  </Given>
+  <Find>The approximate annual value of holding the sector CCA.</Find>
+  <Solution>
+    Full levy ≈ 16,412,000 × 0.0078 ≈ **£128,000 a year**. With the discount, the levy falls by
+    about **£117,800 a year**, every year of compliance.
+
+    Against that, the 14.5%-by-2030 target demands measurable improvement, but the measures in
+    this course's module four routinely exceed it: the capstone facility's airflow and UPS
+    programmes alone deliver around 4% of total consumption. The CCA effectively pays the sector
+    to do what the engineering already justified.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="The CCA baseline is an audit asset">
+A sector with a 2022 baseline and a 2030 target has, by construction, normalised historical data, named responsible owners and an annual reporting rhythm. Walk into any CCA-participating facility and the measurement groundwork this platform usually has to argue for already exists. The auditor's job shifts up a level: not building the baseline, but finding the measures that beat the target, and making sure the reported improvement is genuine efficiency rather than the load-growth dilution the PUE lesson warned about.
+</Callout>
+
+## Sources and further reading
+
+- [techUK: Climate Change Agreements for data centres](https://www.techuk.org/resource/climate-change-agreements-cca-for-data-centres.html), including the TP7-9 target announcement.
+- [GOV.UK: Climate Change Agreements](https://www.gov.uk/guidance/climate-change-agreements--2): scheme rules and current CCL rates.
+- [GOV.UK: F gas regulation guidance](https://www.gov.uk/guidance/f-gas-regulations-in-great-britain).

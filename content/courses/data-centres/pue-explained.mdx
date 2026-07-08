@@ -1,0 +1,50 @@
+One number dominates every data centre conversation: PUE, power usage effectiveness. It appears in tenders, sustainability reports, planning applications and marketing decks, and it is genuinely useful, which is precisely why it is so widely gamed. An energy professional in this sector needs to be able to compute PUE properly, place a figure against the market honestly, and, most importantly, name the three ways the industry's favourite metric flatters a facility without a single kilowatt-hour being saved. This lesson does all three.
+
+## The definition, and a worked figure
+
+**PUE = total facility energy ÷ IT equipment energy**, both over a full year. A PUE of 1.0 would mean every unit of electricity reached the IT with zero overhead; the gap above 1.0 is the power chain, cooling and fixed loads wrapped around the computing.
+
+<WorkedExample title="a colocation facility's annual PUE">
+  <Given>
+    - Annual IT energy (metered at the UPS output): 12,600,000 kWh
+    - Annual whole-facility energy (metered at the intake): 16,412,000 kWh
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The PUE, and what each point of it is worth.</Find>
+  <Solution>
+    PUE = 16,412,000 ÷ 12,600,000 ≈ **1.30**: for every kWh of computing, the facility buys
+    0.30 kWh of overhead.
+
+    The useful follow-up is the exchange rate: at this IT load, each **0.01 of PUE = 126,000 kWh
+    = £25,200 a year**. That one line turns every airflow fix and setpoint change in this course
+    into money a board understands, and it is the first number to compute on any site you audit.
+  </Solution>
+</WorkedExample>
+
+Where do figures land? Legacy enterprise rooms commonly run **1.8 to 2.5**; decent commercial colocation sits around **1.3 to 1.5**; new-build facilities target **1.2 or below**; and the hyperscalers report fleet averages near **1.1**. The gap between a 2.0 site and a 1.3 site, at identical IT load, is roughly a 35% smaller electricity bill.
+
+## Measurement honesty
+
+PUE is only as good as its two meters. The industry convention measures IT energy at the UPS *output* (so UPS losses count as overhead, where they belong) and facility energy at the utility intake, over a full year (a winter-week PUE is advertising, not measurement). The standardised levels of measurement rigour exist precisely because a strategically placed meter can shave a decade of neglect off a brochure figure: when you see a PUE claim, the first questions are always *measured where, over what period*.
+
+## The three flatteries
+
+**Dilution.** PUE's denominator is IT load, so filling the building improves the number with no efficiency change at all: fixed overheads spread over more IT. A facility whose PUE fell from 1.30 to 1.29 the month a big customer onboarded has improved nothing but its occupancy. Any PUE trend must be read alongside the load that produced it, exactly the [normalisation discipline](/courses/monitoring-and-targeting/normalisation) this platform keeps returning to.
+
+**Blindness to the IT itself.** PUE measures the wrapper, not the contents. A hall of idle, obsolete servers at PUE 1.15 consumes more per useful computation than an efficient, well-utilised estate at 1.4. Consolidating servers can even *worsen* PUE (less IT under the same fixed overhead) while dramatically cutting total energy, the opposite of what the metric implies. The [next lesson](/courses/data-centres/beyond-pue) lives in this gap.
+
+**Climate and cherry-picking.** Cooler climates and mild years deliver better PUE for free, and partial-facility or best-month figures abound. Comparing a Nordic hyperscale annual figure with a UK colo's July is comparing nothing.
+
+<Callout variant="key" title="Use PUE as a ratio to manage, not a badge to display">
+PUE earns its keep when it is measured consistently (12 months, defined meter points) and decomposed before being celebrated: how much of a movement is genuine overhead reduction, and how much is IT-load dilution? The facility model this course's capstone builds separates the two in one regression, which is why an auditor's PUE claim survives due diligence and a brochure's often does not. Quote it, but never let it stand alone.
+</Callout>
+
+## Where PUE fits in the toolkit
+
+For all its abuses, PUE remains the right first metric: it isolates exactly the overhead the facility operator controls, it prices improvements cleanly (the £25,200-per-point exchange rate), and its sector benchmarks are well established. The discipline is remembering what it cannot see, which is the subject of the next lesson: utilisation, water and carbon.
+
+## Sources and further reading
+
+- [The Green Grid](https://www.thegreengrid.org/): the PUE definition and measurement methodology.
+- [ISO/IEC 30134-2](https://www.iso.org/standard/63451.html): PUE as an international standard.
+- [Uptime Institute global survey](https://uptimeinstitute.com/): where real-world PUE figures actually sit.

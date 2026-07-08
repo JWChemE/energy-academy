@@ -1,0 +1,51 @@
+Data centres consume around 2.5% of the UK's electricity, and credible forecasts see that multiplying several-fold by 2030 as AI infrastructure builds out. No other building type turns so much power into so little visible activity: no production line, no occupants to speak of, just racks of servers converting electricity into computation and heat, around the clock, behind availability guarantees that shape every decision on site. This lesson maps the territory: who operates data centres, what is physically inside one, and why the load profile is a flat line that makes this sector unlike anything else on this platform.
+
+## Three kinds of operator
+
+**Enterprise data centres** belong to the organisation whose IT they run: a bank's own facility, a university machine room. One owner controls everything from servers to chillers, which makes them the simplest to improve and, often, the worst-run, because computing is nobody's core business there.
+
+**Colocation ("colo") facilities** sell space, power and cooling to customers who install their own IT. The operator controls the building systems; the customers control the servers. That split matters exactly the way the [landlord-tenant split](/courses/commercial-real-estate/the-split-incentive) does in offices: the operator pays for the overhead, customers drive the load, and improving "the IT" is a conversation across a contract, not an instruction.
+
+**Hyperscale facilities** are the giants built by cloud providers: single sites of tens or hundreds of megawatts, custom-designed, relentlessly optimised. They set the efficiency benchmarks the rest of the sector is judged against, with overheads a fraction of typical enterprise sites.
+
+## What's inside
+
+Follow the energy in from the grid and a data centre resolves into four systems. The **IT load** (servers, storage, networking) is the point of the building: typically half to three-quarters of total consumption. The **power chain** (transformers, switchgear, UPS, distribution) conditions and protects the supply, losing a slice at every stage; the [next lesson](/courses/data-centres/the-power-chain) follows it stage by stage. The **cooling chain** removes every watt the IT dissipates, because electricity in is heat out, one for one; the [lesson after](/courses/data-centres/the-cooling-chain) follows the heat. And a **fixed residual** (lighting, offices, security, controls) that is small per square metre but never switches off.
+
+Rack power density is the number reshaping the sector. A traditional hall was designed around 3 to 8 kW per rack; modern general compute runs 10 to 20 kW; AI training clusters demand 40 to 100+ kW per rack, beyond what air cooling can remove, which is why liquid cooling has moved from exotic to inevitable in new builds.
+
+## The flattest load profile in this curriculum
+
+Every other sector on this platform has a rhythm: offices [breathe with occupancy](/courses/commercial-real-estate/where-the-energy-goes), factories follow production. A data centre's half-hourly profile is close to a horizontal line: servers idle hot (an idle server still draws a large fraction of its peak power), cooling follows the IT, and the whole site runs at essentially constant load through nights, weekends and holidays.
+
+<WorkedExample title="what a flat megawatt costs">
+  <Given>
+    - A colocation facility runs a steady 1,400 kW of IT load
+    - Facility overhead (power chain, cooling, fixed loads) brings the total to about 1,870 kW
+    - 8,760 hours per year; electricity £0.20/kWh
+  </Given>
+  <Find>The annual consumption and bill.</Find>
+  <Solution>
+    Energy = 1,870 kW × 8,760 h ≈ **16.4 million kWh a year**, a bill of about **£3.3 million**.
+
+    Two readings matter. First, scale: this modest regional facility uses as much electricity as
+    roughly 5,500 homes, so fractions of a percent are real money. Second, the multiplier: every
+    steady kilowatt costs 8,760 kWh a year, £1,752 at these prices, which is why data centre
+    engineers think in watts where office engineers think in kilowatts. A saving that runs
+    around the clock is worth five times the same saving in a 9-to-5 building.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="Continuous load changes the arithmetic of everything">
+At 8,760 hours a year, a data centre kilowatt is worth roughly five office kilowatts, paybacks shrink accordingly, and there is no "out of hours" to hide waste in: every inefficiency runs all year. That constancy is also the auditor's gift, because a flat, measurable load makes models exact, savings verifiable, and comparisons honest. The rest of this course exploits that gift systematically.
+</Callout>
+
+## Where this course goes
+
+Module by module: the power and cooling chains that wrap the IT (next two lessons); PUE and the metrics that make facilities comparable; the uptime, CCA and grid landscape the UK sector operates in; and the airflow, temperature and power-chain measures that cut the overhead without frightening a change-control board, capped with a full facility audit.
+
+## Sources and further reading
+
+- [House of Commons Library: data centres briefing](https://commonslibrary.parliament.uk/research-briefings/cbp-10315/): the UK policy and energy picture.
+- [techUK data centres programme](https://www.techuk.org/data-centres-programme.html): the sector's UK trade body.
+- [Uptime Institute](https://uptimeinstitute.com/): global data centre standards and survey data.
