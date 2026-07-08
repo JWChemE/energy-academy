@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { useAuth } from "@/app/auth-context";
@@ -39,16 +39,25 @@ export default function GatedLesson({
   const [state, setState] = useState<State>("checking");
   const [mdx, setMdx] = useState<MDXRemoteSerializeResult | null>(null);
 
+  // Supabase refreshes the access token whenever the tab regains focus, which
+  // replaces the session object. If this effect depended on `session`, every
+  // tab switch would flip back to "loading" and unmount the lesson body —
+  // wiping any in-progress quiz or capstone state. So the effect keys on the
+  // stable user id only, and reads the current token from a ref at fetch time.
+  const tokenRef = useRef(session?.access_token);
+  tokenRef.current = session?.access_token;
+  const userId = user?.id;
+
   useEffect(() => {
     if (loading) return;
-    if (!user || !session?.access_token) {
+    if (!userId || !tokenRef.current) {
       setState("locked");
       return;
     }
     let cancelled = false;
     setState("loading");
     fetch(`/api/lesson?course=${encodeURIComponent(course)}&lesson=${encodeURIComponent(lesson)}`, {
-      headers: { Authorization: `Bearer ${session.access_token}` },
+      headers: { Authorization: `Bearer ${tokenRef.current}` },
     })
       .then(async (res) => {
         if (cancelled) return;
@@ -70,7 +79,7 @@ export default function GatedLesson({
     return () => {
       cancelled = true;
     };
-  }, [loading, user, session, course, lesson]);
+  }, [loading, userId, course, lesson]);
 
   if (loading || state === "checking" || state === "loading") {
     return (

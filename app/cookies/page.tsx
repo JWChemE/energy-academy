@@ -57,6 +57,15 @@ export default function CookiePolicy() {
               <td className="py-2 pr-4">Remembers your cookie choice so we don&apos;t ask again.</td>
               <td className="py-2">Until you clear it</td>
             </tr>
+            <tr className="border-b border-slate-100">
+              <td className="py-2 pr-4 font-mono text-xs">energy:quiz / energy:audit / energy:diag</td>
+              <td className="py-2 pr-4">Local storage (functional)</td>
+              <td className="py-2 pr-4">
+                Saves your in-progress quiz and capstone answers on this device so leaving the page
+                doesn&apos;t lose your place. Never sent to us.
+              </td>
+              <td className="py-2">Until you clear it</td>
+            </tr>
           </tbody>
         </table>
       </div>

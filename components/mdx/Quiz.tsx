@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { quizzes, type QuizQuestion } from "@/content/quizzes";
 import { useAuth } from "@/app/auth-context";
 import { saveQuizResult } from "@/lib/supabase";
+import { usePersistentState } from "@/lib/usePersistentState";
 
 export type { QuizQuestion };
 
@@ -25,10 +25,18 @@ export function Quiz({
   const { user } = useAuth();
   const pathname = usePathname();
 
-  const [selected, setSelected] = useState<(number | null)[]>(
-    () => questions.map(() => null),
+  // In-progress answers persist locally so leaving the tab (to research a
+  // question, use a calculator) or a remount never loses the learner's place.
+  const [quizState, setQuizState, resetQuizState] = usePersistentState<{
+    sel: (number | null)[];
+    sub: boolean;
+  }>(
+    id ? `energy:quiz:${id}` : null,
+    () => ({ sel: questions.map(() => null), sub: false }),
+    (v) => Array.isArray(v?.sel) && v.sel.length === questions.length,
   );
-  const [submitted, setSubmitted] = useState(false);
+  const selected = quizState.sel;
+  const submitted = quizState.sub;
 
   const answeredCount = selected.filter((s) => s !== null).length;
   const allAnswered = answeredCount === questions.length;
@@ -39,16 +47,15 @@ export function Quiz({
 
   function choose(qIndex: number, optIndex: number) {
     if (submitted) return;
-    setSelected((prev) => {
-      const next = [...prev];
-      next[qIndex] = optIndex;
-      return next;
+    setQuizState((prev) => {
+      const sel = [...prev.sel];
+      sel[qIndex] = optIndex;
+      return { ...prev, sel };
     });
   }
 
   function reset() {
-    setSelected(questions.map(() => null));
-    setSubmitted(false);
+    resetQuizState();
   }
 
   /**
@@ -57,7 +64,7 @@ export function Quiz({
    * than props, since quiz data never travels through MDX props.
    */
   function submit() {
-    setSubmitted(true);
+    setQuizState((prev) => ({ ...prev, sub: true }));
     if (!user || !id) return;
     const parts = pathname?.split("/").filter(Boolean) ?? [];
     if (parts[0] !== "courses" || parts.length < 3) return;

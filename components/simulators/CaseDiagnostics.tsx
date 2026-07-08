@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { usePersistentState, clearPersistedPrefix } from "@/lib/usePersistentState";
 import {
   CalcStatus,
   CauseDef,
@@ -51,39 +53,44 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
   intro: ReactNode;
   renderReference: (c: T) => ReactNode;
 }) {
-  const [caseId, setCaseId] = useState<string | null>(null);
-  const [step, setStep] = useState<Step>("investigate");
-  const [calcStatuses, setCalcStatuses] = useState<CalcStatus[]>([]);
-  const [causeSel, setCauseSel] = useState<Set<string>>(new Set());
-  const [plan, setPlan] = useState<string[]>([]);
+  // Progress persists locally (keyed by the lesson URL) so leaving the tab to
+  // research or grab a calculator never resets a half-worked case.
+  const pathname = usePathname();
+  const base = `energy:diag:${pathname}`;
+  const [ds, setDs] = usePersistentState<{
+    caseId: string | null;
+    step: Step;
+    calcStatuses: CalcStatus[];
+    causeSel: string[];
+    plan: string[];
+    n: number; // run counter — part of the CalcStep storage key, bumped on reset
+  }>(base, () => ({ caseId: null, step: "investigate", calcStatuses: [], causeSel: [], plan: [], n: 0 }));
+  const { caseId, step, calcStatuses, causeSel, plan } = ds;
+  const setStep = (s: Step) => setDs((prev) => ({ ...prev, step: s }));
+  const setCalcStatuses = (s: CalcStatus[]) => setDs((prev) => ({ ...prev, calcStatuses: s }));
+  const setPlan = (p: string[]) => setDs((prev) => ({ ...prev, plan: p }));
 
   const theCase = caseId ? cases.find((c) => c.id === caseId) ?? null : null;
   const tierOf = (id: string) => actions.find((a) => a.id === id)?.tier ?? 1;
 
   const score = useMemo(
-    () => (theCase ? scoreCase(theCase, calcStatuses, [...causeSel], plan, actions) : null),
+    () => (theCase ? scoreCase(theCase, calcStatuses, causeSel, plan, actions) : null),
     [theCase, calcStatuses, causeSel, plan, actions]
   );
 
   function openCase(id: string) {
-    setCaseId(id);
-    setStep("investigate");
-    setCalcStatuses([]);
-    setCauseSel(new Set());
-    setPlan([]);
+    clearPersistedPrefix(`${base}:`);
+    setDs((prev) => ({ caseId: id, step: "investigate", calcStatuses: [], causeSel: [], plan: [], n: prev.n + 1 }));
   }
   function restart() {
-    setStep("investigate");
-    setCalcStatuses([]);
-    setCauseSel(new Set());
-    setPlan([]);
+    clearPersistedPrefix(`${base}:`);
+    setDs((prev) => ({ ...prev, step: "investigate", calcStatuses: [], causeSel: [], plan: [], n: prev.n + 1 }));
   }
   function toggleCause(id: string) {
-    setCauseSel((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+    setDs((prev) => ({
+      ...prev,
+      causeSel: prev.causeSel.includes(id) ? prev.causeSel.filter((x) => x !== id) : [...prev.causeSel, id],
+    }));
   }
 
   const calcResolved =
@@ -130,7 +137,7 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
           <h2 className="mt-1 text-lg font-bold text-slate-900">{theCase.title}</h2>
         </div>
         <button
-          onClick={() => setCaseId(null)}
+          onClick={() => setDs((prev) => ({ ...prev, caseId: null }))}
           className="rounded-lg bg-slate-200 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-300"
         >
           ← All cases
@@ -195,8 +202,10 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
           <div className="space-y-4">
             {theCase.calcParts.length > 0 ? (
               <CalcStep
+                key={`${ds.n}:${theCase.id}`}
                 parts={theCase.calcParts}
                 reference={renderReference(theCase)}
+                storageKey={`${base}:${ds.n}:calc:${theCase.id}`}
                 onStatuses={setCalcStatuses}
               />
             ) : (
@@ -236,7 +245,7 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
               <p className="mb-3 text-xs text-slate-500">
                 Use your figures and the evidence. Select every root cause that applies — and only those.
               </p>
-              <Checklist items={causeItems} selected={causeSel} onToggle={toggleCause} accent={accent} />
+              <Checklist items={causeItems} selected={new Set(causeSel)} onToggle={toggleCause} accent={accent} />
             </div>
             <div className="flex justify-between">
               <button
@@ -247,7 +256,7 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
               </button>
               <button
                 onClick={() => setStep("prescribe")}
-                disabled={causeSel.size === 0}
+                disabled={causeSel.length === 0}
                 className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-40"
               >
                 Submit diagnosis →
@@ -315,7 +324,7 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-xl border border-slate-200 bg-white p-4">
               <h4 className="mb-2 text-sm font-bold text-slate-900">Your diagnosis</h4>
-              <AnswerReview items={causeItems} selected={causeSel} correct={new Set(theCase.correctCauseIds)} />
+              <AnswerReview items={causeItems} selected={new Set(causeSel)} correct={new Set(theCase.correctCauseIds)} />
 
               <h4 className="mb-2 mt-4 text-sm font-bold text-slate-900">Your prescription</h4>
               <AnswerReview
@@ -389,7 +398,7 @@ export default function CaseDiagnostics<T extends DiagnosticCase>({
               ↺ Try this case again
             </button>
             <button
-              onClick={() => setCaseId(null)}
+              onClick={() => setDs((prev) => ({ ...prev, caseId: null }))}
               className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white hover:bg-slate-700"
             >
               Choose another case →

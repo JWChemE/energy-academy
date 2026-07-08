@@ -1,7 +1,9 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { usePersistentState, clearPersistedPrefix } from "@/lib/usePersistentState";
 import CalcStep from "./CalcStep";
 import {
   type Stage,
@@ -35,18 +37,35 @@ export default function AuditCapstone({
   stages: Stage[];
   renderDataPanel?: () => ReactNode;
 }) {
-  const [current, setCurrent] = useState(0);
-  const [finished, setFinished] = useState(false);
-  const [results, setResults] = useState<Record<string, QResult>>({});
-  const [calc, setCalc] = useState<Record<string, string[]>>({});
+  // Progress persists locally (keyed by the lesson URL) so leaving the tab to
+  // research a question, a remount, or even closing the browser never resets
+  // a half-done capstone.
+  const pathname = usePathname();
+  const base = `energy:audit:${pathname}`;
+  const [run, setRun] = usePersistentState<{
+    current: number;
+    finished: boolean;
+    results: Record<string, QResult>;
+    calc: Record<string, string[]>;
+    n: number; // run counter — part of sub-question storage keys, bumped on restart
+  }>(base, () => ({ current: 0, finished: false, results: {}, calc: {}, n: 0 }));
+  const { current, finished, results, calc } = run;
+  const setCurrent = (fn: (c: number) => number) =>
+    setRun((prev) => ({ ...prev, current: fn(prev.current) }));
 
-  const setQ = useCallback((id: string, score: number) => {
-    setResults((prev) => ({ ...prev, [id]: { checked: true, score } }));
-  }, []);
+  const setQ = useCallback(
+    (id: string, score: number) => {
+      setRun((prev) => ({ ...prev, results: { ...prev.results, [id]: { checked: true, score } } }));
+    },
+    [setRun],
+  );
 
-  const setStageCalc = useCallback((stageId: string, statuses: string[]) => {
-    setCalc((prev) => ({ ...prev, [stageId]: statuses }));
-  }, []);
+  const setStageCalc = useCallback(
+    (stageId: string, statuses: string[]) => {
+      setRun((prev) => ({ ...prev, calc: { ...prev.calc, [stageId]: statuses } }));
+    },
+    [setRun],
+  );
 
   const stagePct = useCallback(
     (stage: Stage): number => {
@@ -78,10 +97,8 @@ export default function AuditCapstone({
         stages={stages}
         stagePct={stagePct}
         onRestart={() => {
-          setCurrent(0);
-          setFinished(false);
-          setResults({});
-          setCalc({});
+          clearPersistedPrefix(`${base}:`);
+          setRun((prev) => ({ current: 0, finished: false, results: {}, calc: {}, n: prev.n + 1 }));
         }}
       />
     );
@@ -107,14 +124,24 @@ export default function AuditCapstone({
 
         {stage.calcParts && (
           <div className="mt-3">
-            <CalcStep parts={stage.calcParts} onStatuses={(s) => setStageCalc(stage.id, s)} />
+            <CalcStep
+              key={`${run.n}:${stage.id}`}
+              parts={stage.calcParts}
+              storageKey={`${base}:${run.n}:calc:${stage.id}`}
+              onStatuses={(s) => setStageCalc(stage.id, s)}
+            />
           </div>
         )}
 
         {stage.questions && (
           <div className="mt-5 space-y-5">
             {stage.questions.map((q) => (
-              <QuestionBlock key={q.id} q={q} onResult={setQ} />
+              <QuestionBlock
+                key={`${run.n}:${q.id}`}
+                q={q}
+                storageKey={`${base}:${run.n}:q:${q.id}`}
+                onResult={setQ}
+              />
             ))}
           </div>
         )}
@@ -142,7 +169,7 @@ export default function AuditCapstone({
             </button>
           ) : (
             <button
-              onClick={() => setFinished(true)}
+              onClick={() => setRun((prev) => ({ ...prev, finished: true }))}
               disabled={!canContinue}
               className="rounded-lg bg-brand-600 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40"
             >
@@ -181,10 +208,18 @@ function Stepper({ stages, current }: { stages: Stage[]; current: number }) {
 
 // ---------- Question primitives ----------
 
-function QuestionBlock({ q, onResult }: { q: Question; onResult: (id: string, score: number) => void }) {
-  if (q.kind === "multi") return <MultiQuestion q={q} onResult={onResult} />;
-  if (q.kind === "single") return <SingleQuestion q={q} onResult={onResult} />;
-  return <OrderQuestion q={q} onResult={onResult} />;
+function QuestionBlock({
+  q,
+  storageKey,
+  onResult,
+}: {
+  q: Question;
+  storageKey: string;
+  onResult: (id: string, score: number) => void;
+}) {
+  if (q.kind === "multi") return <MultiQuestion q={q} storageKey={storageKey} onResult={onResult} />;
+  if (q.kind === "single") return <SingleQuestion q={q} storageKey={storageKey} onResult={onResult} />;
+  return <OrderQuestion q={q} storageKey={storageKey} onResult={onResult} />;
 }
 
 function QShell({
@@ -218,33 +253,51 @@ function Explanation({ correct, text }: { correct: boolean; text: string }) {
   );
 }
 
-function MultiQuestion({ q, onResult }: { q: MultiQ; onResult: (id: string, score: number) => void }) {
-  const [sel, setSel] = useState<Set<string>>(new Set());
-  const [checked, setChecked] = useState(false);
+function MultiQuestion({
+  q,
+  storageKey,
+  onResult,
+}: {
+  q: MultiQ;
+  storageKey: string;
+  onResult: (id: string, score: number) => void;
+}) {
+  const [state, setState] = usePersistentState<{ sel: string[]; checked: boolean }>(
+    storageKey,
+    () => ({ sel: [], checked: false }),
+    (v) => Array.isArray(v?.sel),
+  );
+  const { sel, checked } = state;
+
+  // If this block was restored mid-run as already checked, re-report the score
+  // so the parent's gate stays consistent even if its own record was lost.
+  useEffect(() => {
+    if (checked) onResult(q.id, scoreMulti(sel, q.correctIds));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checked]);
 
   function toggle(id: string) {
     if (checked) return;
-    setSel((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+    setState((prev) => ({
+      ...prev,
+      sel: prev.sel.includes(id) ? prev.sel.filter((x) => x !== id) : [...prev.sel, id],
+    }));
   }
 
   function check() {
-    const score = scoreMulti([...sel], q.correctIds);
-    setChecked(true);
+    const score = scoreMulti(sel, q.correctIds);
+    setState((prev) => ({ ...prev, checked: true }));
     onResult(q.id, score);
   }
 
   const correctSet = new Set(q.correctIds);
-  const fullyRight = checked && sel.size === q.correctIds.length && [...sel].every((id) => correctSet.has(id));
+  const fullyRight = checked && sel.length === q.correctIds.length && sel.every((id) => correctSet.has(id));
 
   return (
     <QShell prompt={q.prompt} help={q.help}>
       <div className="space-y-1.5">
         {q.options.map((o) => {
-          const picked = sel.has(o.id);
+          const picked = sel.includes(o.id);
           const isCorrect = correctSet.has(o.id);
           let cls = "border-slate-200 bg-white hover:border-slate-300";
           if (checked) {
@@ -272,7 +325,7 @@ function MultiQuestion({ q, onResult }: { q: MultiQ; onResult: (id: string, scor
       {!checked ? (
         <button
           onClick={check}
-          disabled={sel.size === 0}
+          disabled={sel.length === 0}
           className="mt-3 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-40"
         >
           Check
@@ -284,13 +337,30 @@ function MultiQuestion({ q, onResult }: { q: MultiQ; onResult: (id: string, scor
   );
 }
 
-function SingleQuestion({ q, onResult }: { q: SingleQ; onResult: (id: string, score: number) => void }) {
-  const [sel, setSel] = useState<string | null>(null);
-  const [checked, setChecked] = useState(false);
+function SingleQuestion({
+  q,
+  storageKey,
+  onResult,
+}: {
+  q: SingleQ;
+  storageKey: string;
+  onResult: (id: string, score: number) => void;
+}) {
+  const [state, setState] = usePersistentState<{ sel: string | null; checked: boolean }>(
+    storageKey,
+    () => ({ sel: null, checked: false }),
+  );
+  const { sel, checked } = state;
+  const setSel = (id: string) => setState((prev) => ({ ...prev, sel: id }));
+
+  useEffect(() => {
+    if (checked && sel) onResult(q.id, sel === q.correctId ? 1 : 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checked]);
 
   function check() {
     if (!sel) return;
-    setChecked(true);
+    setState((prev) => ({ ...prev, checked: true }));
     onResult(q.id, sel === q.correctId ? 1 : 0);
   }
 
@@ -338,16 +408,35 @@ function SingleQuestion({ q, onResult }: { q: SingleQ; onResult: (id: string, sc
   );
 }
 
-function OrderQuestion({ q, onResult }: { q: OrderQ; onResult: (id: string, score: number) => void }) {
+function OrderQuestion({
+  q,
+  storageKey,
+  onResult,
+}: {
+  q: OrderQ;
+  storageKey: string;
+  onResult: (id: string, score: number) => void;
+}) {
   const shuffled = useMemo(() => [...q.items].sort(() => Math.random() - 0.5), [q.items]);
-  const [arranged, setArranged] = useState<string[]>([]);
-  const [checked, setChecked] = useState(false);
+  const [state, setState] = usePersistentState<{ arranged: string[]; checked: boolean }>(
+    storageKey,
+    () => ({ arranged: [], checked: false }),
+    (v) => Array.isArray(v?.arranged),
+  );
+  const { arranged, checked } = state;
+  const setArranged = (fn: (a: string[]) => string[]) =>
+    setState((prev) => ({ ...prev, arranged: fn(prev.arranged) }));
+
+  useEffect(() => {
+    if (checked) onResult(q.id, scoreOrder(arranged, q.correctOrder));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checked]);
 
   const labelOf = (id: string) => q.items.find((i) => i.id === id)?.label ?? id;
   const remaining = shuffled.filter((i) => !arranged.includes(i.id));
 
   function check() {
-    setChecked(true);
+    setState((prev) => ({ ...prev, checked: true }));
     onResult(q.id, scoreOrder(arranged, q.correctOrder));
   }
 
@@ -395,7 +484,7 @@ function OrderQuestion({ q, onResult }: { q: OrderQ; onResult: (id: string, scor
       <div className="mt-3 flex items-center gap-2">
         {!checked && arranged.length > 0 && (
           <button
-            onClick={() => setArranged([])}
+            onClick={() => setArranged(() => [])}
             className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-400 hover:text-slate-600"
           >
             Reset

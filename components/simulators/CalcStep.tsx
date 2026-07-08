@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { CalcPart, CalcStatus, checkAnswer } from "@/lib/diagnostics";
+import { usePersistentState } from "@/lib/usePersistentState";
 
 /**
  * The Calculate step. The learner computes each derived figure from the raw
@@ -27,19 +28,27 @@ function parseNum(s: string): number | null {
 export default function CalcStep({
   parts,
   reference,
+  storageKey = null,
   onStatuses,
 }: {
   parts: CalcPart[];
   reference?: ReactNode;
+  /** When set, in-progress answers persist locally and survive remounts. */
+  storageKey?: string | null;
   onStatuses: (s: CalcStatus[]) => void;
 }) {
-  const [state, setState] = useState<PartState[]>(
-    parts.map(() => ({ value: "", hintsShown: 0, resolved: null, lastWrong: false }))
+  const [state, setState] = usePersistentState<PartState[]>(
+    storageKey,
+    () => parts.map(() => ({ value: "", hintsShown: 0, resolved: null, lastWrong: false })),
+    (v) => Array.isArray(v) && v.length === parts.length,
   );
 
   useEffect(() => {
     onStatuses(state.map((s) => s.resolved ?? "unsolved"));
-  }, [state, onStatuses]);
+    // Report on state changes only — `onStatuses` is an inline lambda in the
+    // parents, and depending on its identity would refire every parent render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
 
   function update(i: number, patch: Partial<PartState>) {
     setState((prev) => prev.map((s, j) => (j === i ? { ...s, ...patch } : s)));
