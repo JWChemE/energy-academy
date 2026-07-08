@@ -13,8 +13,10 @@ tiers aligned to how the profession develops expertise, plus sector courses:
 - **Level 2 – System Deep Dives:** technical, system-by-system courses.
 - **Level 3 – Leadership & Strategy:** policy, finance, procurement, net zero.
 - **Sectors:** a peer section (not a fourth tier) applying Levels 1–2 to one
-  industry at a time (Breweries, then Commercial Real Estate). Sector lessons
-  assume the Level 1/2 grounding and cross-link back rather than re-teach.
+  industry at a time, grouped into Industrial / Buildings / Transportation
+  categories (Breweries, Commercial Real Estate, Food Manufacturing so far).
+  Sector lessons assume the Level 1/2 grounding and cross-link back rather
+  than re-teach.
 
 Level 2/3 and Sector lesson bodies are gated behind a free account (served via
 `/api/lesson` with a Supabase token); only a short lead-paragraph excerpt is

@@ -1,0 +1,47 @@
+Cooking is the reason a food factory exists, and it is where the gas goes. Whether the site boils, bakes, fries or sterilises, the thermal kill step is non-negotiable: food safety law requires the product to reach a verified temperature for a verified time. What *is* negotiable is how much energy each cooked tonne drags along with it, and the range across the industry is enormous, because process heat offers more recovery and less scrutiny than any other load on site. This lesson tours the main heating technologies and works through the sector's great quiet triumph: regenerative pasteurisation.
+
+## The heating technologies
+
+**Steam and hot water systems** dominate wet cooking: jacketed kettles, cook tanks, blanchers and CIP heating, fed from a gas boiler house. Everything from the [steam and condensate course](/courses/steam-and-condensate/steam-basics) applies directly, including its loss mechanisms: flash steam, uninsulated mains and failed traps are as common in food factories as anywhere.
+
+**Direct-fired ovens and fryers** put combustion heat straight into the product zone: bakery travelling ovens, roasters, fryers. Efficiency hinges on the same combustion fundamentals as any [fired system](/courses/boilers-and-fired-systems/excess-air): excess air, flue temperature, and whether anyone has tuned the burners since installation. Fryers add a subtlety: the oil is a thermal store, and idling a fryer hot between production runs burns gas for nothing.
+
+**Retorts and sterilisers** pressure-cook sealed packs (canning, ambient ready meals) in batch cycles of steam heating followed by water cooling: energy-intensive, but highly schedulable, and a classic target for heat recovery between the cooling leg of one batch and the heating leg of the next.
+
+**Pasteurisers** heat a liquid to kill temperature, hold it briefly, and cool it again: milk at 72 °C for 15 seconds is the canonical example. Done naively this is a huge load. Done properly it is almost free, and the difference is worth a worked example.
+
+<WorkedExample title="regeneration: the pasteuriser's magic trick">
+  <Given>
+    - A dairy pasteurises 20,000 litres of milk a day, heating it from 4 °C to 72 °C (specific heat ≈ 3.9 kJ/kg·K, 1 L ≈ 1 kg)
+    - A regenerative plate heat exchanger lets the hot, pasteurised milk preheat the incoming cold milk, with 90% effectiveness
+  </Given>
+  <Find>The daily heating load with and without regeneration.</Find>
+  <Solution>
+    Without regeneration: 20,000 × 3.9 × 68 ÷ 3,600 ≈ **1,473 kWh a day** of heat.
+
+    With 90% regeneration, the outgoing hot milk supplies 90% of that lift to the incoming cold
+    milk, leaving only the final 10% for steam or hot water: about **147 kWh a day**. The product
+    heats the product; the boiler only tops it up. This is why modern continuous pasteurisation
+    barely registers on a dairy's gas bill, and why any heat-then-cool process that *lacks*
+    regeneration (check the retorts, check the cook-chill lines) should make an auditor reach
+    for a [pinch-style temperature map](/courses/pinch-analysis/why-optimise-the-whole-process).
+  </Solution>
+</WorkedExample>
+
+## Where the waste hides
+
+Across the sector the same process-heat findings recur. Idling: ovens and fryers held at temperature through breaks, changeovers and the gaps in a badly sequenced plan. Oversized holding: cook vessels kept hot "in case", the thermal equivalent of leaving the car running. Missing recovery: oven flues at 250 °C venting to roof while the site buys hot water; retort cooling water going to drain warm. And the boiler-house classics, [blowdown](/courses/boilers-and-fired-systems/blowdown), condensate return and insulation, which no food factory escapes. None of these touch the product or the food safety plan, which is exactly why they persist: nothing fails, nobody complains, and the gas bill quietly carries it.
+
+<Callout variant="key" title="The kill step is fixed; everything around it is not">
+Cook temperatures and hold times are food safety law made physical, and no energy measure may touch them. But the energy cost of delivering that kill step is engineering, not law: regeneration, burner tuning, idle discipline, insulation and heat recovery routinely cut a cooking operation's gas by 20 to 40% with the product's thermal history unchanged. The skill this course keeps practising is separating the two: respect the specification, attack the delivery.
+</Callout>
+
+## The measurement habit
+
+Process heat is the least-metered major load in most food factories: one gas meter feeds a boiler house serving twelve users. Sub-metering the big consumers (the [metering discipline](/courses/monitoring-and-targeting/meter-data) applied to steam and gas) converts "the gas bill is up" into "line 2's blancher is up", and it is what makes per-tonne benchmarking in the [next module](/courses/food-manufacturing/kwh-per-tonne) possible at product level. The next lesson crosses to the other side of the thermal ledger: taking all that heat back out of the product, quickly, in the chillers and freezers.
+
+## Sources and further reading
+
+- [Carbon Trust: food and drink processing guidance](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) on process heating and heat recovery.
+- [Food Standards Agency](https://www.food.gov.uk/): the food safety framework that cook steps must satisfy.
+- [Spirax Sarco: steam engineering in food processing](https://www.spiraxsarco.com/learn-about-steam).

@@ -1,0 +1,47 @@
+Every food factory runs a second, hidden utility that most industries don't have: the nightly clean. When production stops, the washdown crews start, and for the next several hours the site consumes hot water, steam and chemicals at rates that rival the production shift's, to bring every product-contact surface back to a verified hygiene standard. On many sites a third or more of the gas bill is spent cleaning rather than cooking. This lesson quantifies the washdown and CIP loads, shows which parts are fixed by food safety and which are habit, and sets up the heat-recovery pairing that later lessons cash in.
+
+## The two cleaning regimes
+
+**Open-plant washdown** is the hose-and-foam clean of floors, walls, belts, and open equipment: pre-rinse, foam detergent, rinse, disinfect. Its energy is almost entirely in the hot water, typically delivered at 50 to 60 °C at the lance, from calorifiers the gas boiler feeds. Volumes are startling: a mid-size factory easily uses 10 to 20 m³ of hot water a night.
+
+**Clean-in-place (CIP)** circulates cleaning solutions through closed process circuits (tanks, lines, heat exchangers) without dismantling: rinse, hot caustic (typically 70 to 80 °C), rinse, and often a disinfection stage. CIP energy hides in three places: heating the solutions, the pumping, and the heat thrown away when a hot circuit is rinsed cold. Well-designed CIP sets recover rinses and hold tank heat between cycles; neglected ones heat fresh solution from cold for every wash.
+
+<WorkedExample title="the nightly hot-water bill">
+  <Given>
+    - Washdown uses 15 m³ of water a night, heated from 10 °C to 60 °C
+    - Gas-fired calorifier at 85% seasonal efficiency; gas £0.06/kWh; 310 production nights a year
+  </Given>
+  <Find>The heat required per night, and the annual gas cost.</Find>
+  <Solution>
+    Heat = 15,000 kg × 4.18 × 50 ÷ 3,600 ≈ **871 kWh a night**.
+
+    Gas input = 871 ÷ 0.85 ≈ 1,025 kWh; annual cost = 1,025 × 310 × £0.06 ≈ **£19,056 a year**,
+    for one mid-size site's open-plant washdown alone, before CIP. This is the number to hold
+    onto for the [heat recovery lesson](/courses/food-manufacturing/heat-recovery-in-food): a
+    large, low-grade, utterly predictable heat demand, occurring every single night, on a site
+    whose refrigeration plant rejects heat continuously twenty metres away.
+  </Solution>
+</WorkedExample>
+
+## What hygiene fixes, and what it doesn't
+
+The hygiene standard itself is not an energy variable: cleaning outcomes are validated (visual, swab and micro results) under the site's HACCP-based plan, and the [next module's opening lesson](/courses/food-manufacturing/food-safety-sets-the-floor) is blunt about the floors this sets. But *how* the standard is met usually has more slack than anyone admits:
+
+- **Temperature at the lance.** Detergents are formulated for a working range; hotter is not cleaner above it. Water delivered hotter than the chemical needs is pure waste, and 5 to 10 °C of habit-creep is common.
+- **Volume discipline.** Trigger nozzles, correct pressures, dry pre-clean (scrape and sweep before the hose) and staff habits routinely cut hot-water volumes 20 to 30% with identical validated outcomes, saving water, effluent and energy together.
+- **CIP recipe rot.** Cycles inherited from commissioning, "extra safety" time bolted on over years, hot caustic dumped instead of recovered: a CIP audit against validated cleaning results, not folklore, is one of the sector's most reliable quick studies.
+- **Scheduling.** Cleaning circuits in sequence rather than in parallel flattens the hot-water draw, letting smaller calorifiers cope and cutting the temptation to run boilers all night.
+
+## The measurement gap
+
+Almost no factory sub-meters its cleaning. The washdown draws from the same calorifiers, boilers and water mains as everything else, so its true cost hides inside "site gas" and "site water". A temporary heat meter on the calorifier circuit, or even logged make-up water volumes and temperatures for a fortnight, is usually revelation enough: sites that measure their clean for the first time typically find it 20 to 40% larger than anyone estimated. Given that the [SEC model](/courses/food-manufacturing/kwh-per-tonne) treats cleaning as base load, measuring it properly also sharpens every benchmark the site reports.
+
+<Callout variant="key" title="The clean is a utility: manage it like one">
+Washdown and CIP consume energy, water and chemicals on a fixed nightly schedule, yet most sites manage them as a hygiene task with an invisible bill. Treat the clean as a utility: meter it, set temperature and volume standards the chemicals actually require, recover heat into it, and review its recipes against validated results. The hygiene outcome is non-negotiable; the kilowatt-hours behind it are very negotiable indeed.
+</Callout>
+
+## Sources and further reading
+
+- [WRAP: water and resource efficiency in food and drink](https://www.wrap.ngo/): washdown volumes and reduction guidance.
+- [Carbon Trust: food and drink processing guides](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Society of Food Hygiene and Technology](https://www.sofht.co.uk/): hygiene practice the energy measures must respect.

@@ -1,0 +1,51 @@
+Everything the cooking line heats, the cold side must take back out, and then keep taking out, hour after hour, until the product leaves site. Refrigeration is almost always a food factory's largest electrical load, and unlike the cookers it never clocks off: chilled prep rooms, blast chillers, spiral freezers and cold stores run through nights, weekends and shutdowns. This lesson puts numbers on the two jobs the cold plant does, removing heat from product and holding space temperatures, and explains why freezing a tonne costs several times more than chilling it.
+
+## Chilling: racing through the danger zone
+
+Food safety drives chilling speed, not preference: cooked product must pass quickly through the 8 to 63 °C zone where bacteria multiply, which is why blast chillers exist. Chilling is mostly a **sensible heat** job: cooling cooked product from, say, 70 °C to 5 °C removes roughly 3.2 kJ/kg·K × 65 K ≈ 208 kJ/kg, about 58 kWh of heat per tonne. At a chill-temperature COP of around 3, that is under 20 kWh of electricity per tonne: real money at thousands of tonnes a year, but modest next to what comes below.
+
+Two things inflate chilling bills in practice. Loading blast chillers with product hotter than it needs to be (a free pre-cool in ambient-safe stages saves compressor work), and running the chilled *rooms* colder than the specification: every degree below the required prep-room temperature is bought at the compressor, a setpoint discipline the [refrigeration course](/courses/refrigeration-and-heat-pumps/practical-improvements) covers in general form.
+
+## Freezing: paying the latent bill
+
+Freezing adds the cost chilling avoids: the **latent heat of fusion**. Most food is largely water, and every kilogram of that water gives up 334 kJ as it freezes, on top of the sensible cooling either side.
+
+<WorkedExample title="what it takes to freeze a tonne of ready meals">
+  <Given>
+    - Product is ≈70% water; freezing from 20 °C to −18 °C
+    - Above freezing: cp ≈ 3.2 kJ/kg·K over ≈21.5 K; below: cp ≈ 1.8 kJ/kg·K over ≈16.5 K
+    - Low-temperature plant COP ≈ 1.5 (evaporating around −30 °C)
+  </Given>
+  <Find>The heat removed per tonne, and the electricity that costs.</Find>
+  <Solution>
+    Sensible above freezing: 3.2 × 21.5 ≈ 68.8 kJ/kg. Latent: 0.70 × 334 ≈ 233.8 kJ/kg.
+    Sensible below: 1.8 × 16.5 ≈ 29.7 kJ/kg. Total ≈ **332 kJ/kg ≈ 92 kWh of heat per tonne**,
+    of which seven-tenths is the latent term alone.
+
+    At COP 1.5, removing it takes 92 ÷ 1.5 ≈ **61 kWh of electricity per tonne**, about
+    £12.30/t at £0.20/kWh. Compare chilling's ≈20 kWh/t and the sector's rule of thumb follows:
+    freezing costs three or more times what chilling costs, and the gap widens with every kilowatt
+    the low-temperature plant wastes, because COP 1.5 means each wasted kWh of heat costs 0.67 kWh
+    at the compressor.
+  </Solution>
+</WorkedExample>
+
+The COP matters as much as the load. Low-temperature suction conditions are brutally expensive, which is why the [running the cold plant lesson](/courses/food-manufacturing/running-the-cold-plant) spends its time on suction pressure, condensing pressure and defrost: percentage improvements at COP 1.5 are worth double what they'd be at COP 3.
+
+## Holding the cold: stores and rooms
+
+Product freezing is episodic; **holding** is forever. Cold stores and chilled warehouses leak heat continuously through fabric, doors and infiltration, and every kilowatt that leaks in is removed at the plant's COP. The recurring culprits are doors (open door discipline, damaged strip curtains, failed door heaters left running), lighting and people heat inside the envelope, and warm product loaded before it has finished chilling, which shifts cooling work into the most expensive room in the building. On the plant side, most large sites run **ammonia** (R717): thermodynamically excellent and F-gas-free, but a toxic refrigerant whose plant rooms have their own safety regime, which is why the capstone's site-visit planning takes it seriously.
+
+<Callout variant="key" title="Latent heat is the freezer's business model">
+Seven-tenths of the energy in freezing is the latent heat of the product's own water, removed at the plant's worst COP. That single fact drives the sector's economics: product water content decides the freezing bill, low-temperature efficiency is worth double attention, and any heat that enters the frozen envelope unnecessarily (defrost excess, open doors, warm product) is paid for at the most expensive rate on site. When this course's diagnostics price a defrost timer at £12,600 a year, this is the arithmetic underneath.
+</Callout>
+
+## What the cold side hands the audit
+
+Refrigeration's saving grace is that it is honest: it is electrically metered, its load is calculable from product and temperatures, and its heat rejection is recoverable. That last point is the bridge to this course's biggest recurring opportunity, taken up properly in the [heat recovery lesson](/courses/food-manufacturing/heat-recovery-in-food): the plant that dominates the electricity bill also rejects, for free, most of the heat the washdown system is buying from the gas main. First, though, the next module builds the measurement framework: what a tonne of product *should* take, and how to benchmark a site that makes food.
+
+## Sources and further reading
+
+- [Institute of Refrigeration](https://ior.org.uk/): technical guidance on industrial and food refrigeration.
+- [Carbon Trust: refrigeration systems guide](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Cold Chain Federation](https://www.coldchainfederation.org.uk/): the UK cold storage and distribution sector body.

@@ -1,0 +1,50 @@
+A food factory is one of the few places in industry where a large heat *rejection* and a large heat *demand* run side by side, all year round. The refrigeration plant throws heat to the roof every hour the cold chain operates; the washdown and CIP systems buy heat from the gas main every production night. They are often twenty metres apart and have usually never been introduced. This lesson works the sector's most reliable heat-recovery pairing end to end, then tours the other matches worth checking, using the [pinch-style discipline](/courses/pinch-analysis/why-optimise-the-whole-process) of matching heat by temperature rather than by habit.
+
+## The headline pairing: refrigeration to washdown
+
+A refrigeration plant must reject everything it absorbs plus its compressor work, and it rejects at usable temperatures: condensing around 25 to 35 °C, and, crucially, a **desuperheating** slice at the compressor discharge (often 60 °C or more on an ammonia plant) that is small in proportion but high in grade. The washdown demand from the [hygiene lesson](/courses/food-manufacturing/hygiene-and-washdown) wants water lifted from mains temperature to 50 or 60 °C. The match writes itself:
+
+<WorkedExample title="desuperheater on the ammonia plant">
+  <Given>
+    - Washdown: 15 m³/night lifted 10 → 60 °C = 871 kWh of heat, via an 85%-efficient gas calorifier, 310 nights/year (≈ £19,056/yr in gas)
+    - A desuperheater on the refrigeration discharge can reliably preheat the water from 10 °C to about 35 °C, into a storage tank the calorifier tops up
+    - Installed cost quoted at £25,000
+  </Given>
+  <Find>The annual saving and simple payback.</Find>
+  <Solution>
+    Preheating 10 → 35 °C supplies half the 50-degree lift, so it displaces half the gas:
+    **£19,056 × 0.5 ≈ £9,528 a year**.
+
+    Payback = 25,000 ÷ 9,528 ≈ **2.6 years**, for heat the condensers were rejecting anyway.
+    The plant even benefits: heat removed at the desuperheater is heat the condensers no longer
+    reject, trimming head pressure on warm days. This pairing recurs across the sector because
+    both sides of it are inherent to making chilled food: the factory cannot stop rejecting heat,
+    and it cannot stop washing down.
+  </Solution>
+</WorkedExample>
+
+Design notes that decide success: recover *before* the condenser (desuperheat first, full condensing heat recovery only if a bigger demand exists), store the preheated water so the day-long rejection meets the night-long demand, and keep the food-safety boundary clean with a double-wall exchanger or intermediate loop where required, agreed with the technical team as the [safety-floor lesson](/courses/food-manufacturing/food-safety-sets-the-floor) prescribed.
+
+## The rest of the matching table
+
+Work down the site's hot streams against its heat demands, highest grade first:
+
+- **Oven and fryer flues (150 to 300 °C)** against washdown water, CIP make-up or boiler feed: an economiser-style recovery, exactly as in the [boiler course](/courses/boilers-and-fired-systems/retrofit-options), with fouling from fat-laden exhausts the design constraint to respect.
+- **Retort and cook-tank cooling water (60 to 90 °C, batchwise)** against the next batch's heating or CIP tanks: batch-to-batch recovery via a storage tank, the classic pinch fix for sequential processes.
+- **Boiler blowdown and condensate**: the standard [steam-system recoveries](/courses/boilers-and-fired-systems/blowdown) apply unchanged, and food factories with old steam distribution usually have both to claim.
+- **Warm effluent** (steady outfalls above ~30 °C) against incoming cold water: viable where flows are continuous and screens manage the fouling; the [effluent lesson](/courses/food-manufacturing/effluent-water-and-fats) explains why the temperature is there to harvest.
+- **Refrigeration heat to space heating**: possible, but seasonal; the washdown match is better because the demand is year-round. Rank matches by *coincidence in time and temperature*, not by size alone.
+
+<Callout variant="key" title="Match temperature to temperature, demand to rejection">
+Heat recovery in food fails when it is bought as a gadget and succeeds when it is designed as a match: a rejection stream and a demand stream, overlapping in temperature, coincident (or bridged by storage) in time, with the hygiene boundary engineered in from the start. The refrigeration-to-washdown pairing tops the list because it scores on every axis, which is why it anchors both this course's diagnostics and its capstone. Before any purchase, sketch the site's hot streams and heat demands on one temperature scale: ten minutes of pinch thinking prevents most of the sector's disappointed heat-recovery kit.
+</Callout>
+
+## From recovery to operations
+
+Recovery shrinks the heat you buy; the remaining lever is running the cold plant so it makes less heat to reject in the first place. That is the next lesson: suction and head pressures, defrost discipline and the operating habits that decide a freezer hall's electricity bill.
+
+## Sources and further reading
+
+- [Carbon Trust: heat recovery guidance](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) for industrial sites.
+- [Institute of Refrigeration](https://ior.org.uk/): heat recovery from refrigeration plant.
+- [Spirax Sarco: steam and condensate recovery references](https://www.spiraxsarco.com/learn-about-steam).

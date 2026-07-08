@@ -151,7 +151,7 @@ export default function Home() {
                     </span>
                     <div>
                       <div className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Sector
+                        {sector.category === "industrial" ? "Industrial" : sector.category === "buildings" ? "Buildings" : "Transportation"}
                       </div>
                       <div className="text-lg font-semibold text-slate-900">{sector.title}</div>
                     </div>

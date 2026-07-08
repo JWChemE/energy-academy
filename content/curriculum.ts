@@ -79,6 +79,8 @@ export type Level =
   | {
       kind: "sector";
       slug: string;
+      /** Groups the /sectors page: process industry, occupied buildings, or transport. */
+      category: SectorCategory;
       title: string;
       tagline: string;
       description: string;
@@ -86,8 +88,32 @@ export type Level =
       courses: Course[];
     };
 
+export type SectorCategory = "industrial" | "buildings" | "transport";
+
+/** Display metadata for the sector categories, in page order. */
+export const SECTOR_CATEGORIES: { id: SectorCategory; title: string; blurb: string }[] = [
+  {
+    id: "industrial",
+    title: "Industrial",
+    blurb: "Process-led sites where energy follows production: what is being made decides what is being used.",
+  },
+  {
+    id: "buildings",
+    title: "Buildings",
+    blurb: "Occupancy-led sites where comfort, hours and the landlord-tenant relationship drive the bill.",
+  },
+  {
+    id: "transport",
+    title: "Transportation",
+    blurb: "Where fleets meet site infrastructure: depot charging, grid connections and the fuels transition.",
+  },
+];
+
 /** The three numbered tiers only (excludes Sectors) — what the homepage's "Tiers" stat counts. */
 export type NumberedLevel = Extract<Level, { number: 1 | 2 | 3 }>;
+
+/** The sector variant of Level (has `category`, no `number`). */
+export type Sector = Extract<Level, { kind: "sector" }>;
 
 /**
  * NOTE on Tailwind classes below: they are written as complete literal
@@ -2744,10 +2770,11 @@ export const curriculum: NumberedLevel[] = [
  * systems matter most there. Sector lessons assume Level 1/2 grounding and
  * cross-link back rather than re-teaching — see AGENTS.md.
  */
-export const sectors: Level[] = [
+export const sectors: Sector[] = [
   {
     kind: "sector",
     slug: "breweries",
+    category: "industrial",
     title: "Breweries",
     tagline: "Process, energy and regulation in the brewhouse and cellar",
     description:
@@ -2925,6 +2952,7 @@ export const sectors: Level[] = [
   {
     kind: "sector",
     slug: "commercial-real-estate",
+    category: "buildings",
     title: "Commercial Real Estate",
     tagline: "Energy in the landlord-tenant world: offices, ratings and retrofit",
     description:
@@ -3099,8 +3127,182 @@ export const sectors: Level[] = [
       },
     ],
   },
+  {
+    kind: "sector",
+    slug: "food-manufacturing",
+    category: "industrial",
+    title: "Food Manufacturing",
+    tagline: "Cooking, freezing and hygiene: energy where food safety sets the rules",
+    description:
+      "Apply Levels 1 and 2 to the UK's largest manufacturing sector. A food factory cooks, chills, freezes and cleans on a fixed hygienic rhythm, so its energy lives in three places: process heat for cooking and baking, refrigeration for chilling and freezing, and the hot water that HACCP-driven washdown demands every single night. This is where steam, refrigeration and heat recovery meet a production line whose safety rules are not negotiable.",
+    accent: sectorAccent,
+    courses: [
+      {
+        slug: "food-manufacturing",
+        title: "Energy Management in Food Manufacturing",
+        summary:
+          "How a food factory uses energy line by line, specific energy per tonne and the hygiene loads that set the floor, the CCA and compliance landscape, and the heat-recovery and refrigeration opportunities the sector reliably offers: capped with a full factory energy audit.",
+        status: "available",
+        modules: [
+          {
+            slug: "food-process-fundamentals",
+            title: "The Food Factory & Where Energy Goes",
+            lessons: [
+              {
+                slug: "the-food-factory",
+                title: "The Food Factory, Line by Line",
+                summary:
+                  "Intake to despatch: how cook, chill and clean shape a food factory's day, and why its three energy centres are heat, cold and hot water.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "process-heating-demand",
+                title: "Cooking, Baking & Process Heat",
+                summary:
+                  "Ovens, fryers, retorts and pasteurisers: where the thermal energy goes, and why regeneration makes pasteurisation astonishingly cheap when it's designed in.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "chilling-and-freezing",
+                title: "Chilling, Freezing & Cold Storage",
+                summary:
+                  "Blast and spiral freezers, the latent heat hiding in every tonne of product, and why freezing costs so much more than chilling.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Fundamentals Check",
+                summary: "Quiz on the food factory's process flow and its heating and freezing loads.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-benchmarks",
+            title: "Energy Use, Benchmarks & Hygiene Loads",
+            lessons: [
+              {
+                slug: "kwh-per-tonne",
+                title: "Specific Energy: kWh per Tonne of Product",
+                summary:
+                  "Normalising by production, why cross-subsector comparisons mislead, and building the per-tonne baseline that makes a factory's performance measurable.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "hygiene-and-washdown",
+                title: "Hygiene: CIP, Washdown & Hot Water",
+                summary:
+                  "The nightly clean is a hidden utility: quantifying washdown hot water, and where hygiene rules leave room for efficiency.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "utilities-and-packaging",
+                title: "Compressed Air, Vacuum & Packaging Lines",
+                summary:
+                  "The electrical loads around the process: pneumatics, vacuum packing, conveyors and the packaging hall's quiet consumption.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "benchmarks-check",
+                title: "Benchmarks & Hygiene Check",
+                summary: "Quiz on specific energy, washdown loads and site utilities.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-regulation",
+            title: "Regulation & Compliance",
+            lessons: [
+              {
+                slug: "food-safety-sets-the-floor",
+                title: "Food Safety Sets the Floor",
+                summary:
+                  "HACCP cook and chill limits are not energy variables: where the hard floors are, and where genuine flexibility hides.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "cca-and-reporting",
+                title: "Climate Change Agreements, ESOS & SECR",
+                summary:
+                  "The CCA scheme running to 2033, the CCL discount it buys, and how the reporting schemes land on a food business.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "effluent-water-and-fats",
+                title: "Trade Effluent, Water & Fat Down the Drain",
+                summary:
+                  "Why food effluent is expensive, what fats and product losses do to the bill, and the water-energy link in every washdown.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "compliance-check",
+                title: "Regulation & Compliance Check",
+                summary: "Quiz on HACCP floors, the CCA scheme and effluent costs.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-efficiency",
+            title: "Efficiency Opportunities in Practice",
+            lessons: [
+              {
+                slug: "heat-recovery-in-food",
+                title: "Heat Recovery in a Food Factory",
+                summary:
+                  "The refrigeration plant rejects heat all day while gas heats washdown water every night: connecting the two, and the other recovery pairings worth checking.",
+                minutes: 11,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "running-the-cold-plant",
+                title: "Running the Cold Plant Well",
+                summary:
+                  "Suction and head pressure, defrost on demand, door discipline and the operating habits that decide a freezer hall's bill.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short factory call-outs: washdown water heated by gas while the refrigeration plant throws heat away, and a freezer defrosting on a timer nobody questioned. Calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on heat recovery pairings and cold-plant operating habits.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "food-audit-capstone",
+                title: "Capstone: Audit a Food Factory",
+                summary:
+                  "A full, staged energy audit of a fictional chilled ready-meals factory: scope it, walk the lines, build the production-and-weather model, and rank what you find.",
+                minutes: 35,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
-
-
-
-

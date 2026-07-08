@@ -8,6 +8,7 @@ import {
   type Level,
   type Module,
   type NumberedLevel,
+  type Sector,
 } from "@/content/curriculum";
 
 const COURSES_DIR = path.join(process.cwd(), "content", "courses");
@@ -29,11 +30,11 @@ export function getLevel(slug: string): NumberedLevel | undefined {
 
 /* ----------------------------- Sector helpers ----------------------------- */
 
-export function getSectors(): Level[] {
+export function getSectors(): Sector[] {
   return sectors;
 }
 
-export function getSector(slug: string): Level | undefined {
+export function getSector(slug: string): Sector | undefined {
   return sectors.find((s) => s.slug === slug);
 }
 

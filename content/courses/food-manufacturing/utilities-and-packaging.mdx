@@ -1,0 +1,44 @@
+Around the cook lines and the cold plant runs a third tier of consumption: the utilities and the packaging hall. None of these loads dominates the way refrigeration does, but together they commonly account for a fifth of a food factory's electricity, and they share a useful property: they are the loads most likely to be running for no reason. This lesson tours compressed air, vacuum, ventilation and the packaging lines, with the food-specific twists on material you already have from Level 2.
+
+## Compressed air, food-grade
+
+Everything from the [compressed air course](/courses/compressed-air/why-expensive) applies, with the sector's usual severity: air is the factory's most expensive utility per delivered kilowatt-hour, leaks bloom in washdown environments (hose-damaged fittings, corroded quick couplings), and demand is dominated by pneumatic actuators on packaging and process machinery. Food adds two twists. First, air that can contact product must meet food-safe quality classes (dry, oil-free or catalytically treated), and over-treating *all* the site's air to the contact standard, rather than point-of-use treatment where needed, is a quiet premium many sites pay. Second, washdown-driven leaks mean leak surveys should follow the hygiene calendar: survey after the deep clean, not before it.
+
+## Vacuum and packaging machinery
+
+Vacuum packing, tray sealing with modified atmosphere, thermoforming: the packaging hall's machines run pumps that behave like compressors in reverse and are neglected in exactly the same ways. Vacuum pumps idling between batches, receivers undersized so pumps cycle constantly, and central vacuum systems serving one machine on a weekend are the standard findings. Flow wrappers, check weighers, conveyors and case packers individually draw little, but they run whenever the line is "on", including the long minutes of changeover and the hour of hygiene standby, so line-level scheduling (machines off at clean-down, not idling) is the cheap win.
+
+<WorkedExample title="the idling packaging line">
+  <Given>
+    - A packaging line's machinery (conveyors, sealer heaters, vacuum pump, control gear) idles at 30 kW when not producing
+    - Changeovers, breaks and end-of-shift standby leave it idling 3 hours per production day; 310 days/year
+    - Electricity £0.20/kWh
+  </Given>
+  <Find>The annual cost of idle time nobody scheduled.</Find>
+  <Solution>
+    Idle energy = 30 × 3 × 310 = **27,900 kWh a year**; cost ≈ **£5,580 a year**, for one line.
+
+    Multiply by a site's three or four lines and idle discipline rivals a capital project, for the
+    price of an agreed shutdown procedure and interlocks that drop heaters and vacuum to standby
+    when the line stops. The [motors course's](/courses/motors-and-drives/motor-basics) first rule
+    applies to whole lines: the cheapest kilowatt-hour is the one where the machine is off.
+  </Solution>
+</WorkedExample>
+
+## Ventilation and the factory environment
+
+Food production areas breathe hard: process extract over cookers and fryers, hygiene-driven air changes, and in high-care areas filtered, sometimes chilled, supply air held at positive pressure. Three energy behaviours matter. Extract that runs at full rate when its process is idle (interlock the canopy to the fryer, not to the light switch). Make-up air that arrives unheated through open doors instead of through the intended tempered supply, chilling the very rooms the refrigeration plant is paying to hold. And high-care air systems whose filters and pressure regimes are maintained for hygiene but whose *fans* nobody has looked at since commissioning: the [affinity-law logic](/courses/motors-and-drives/why-vfds) applies to hygiene ventilation exactly as to any other air system, within the validated air-change floor.
+
+<Callout variant="key" title="The third tier runs on schedules nobody owns">
+Compressed air, vacuum, extract and packaging lines are each somebody's tool and nobody's energy budget: they follow habits, not schedules, which is why "on when the line is on" quietly becomes "on whenever the factory is unlocked". The audit method is unglamorous and effective: walk the site during a changeover, a clean-down and a weekend, list what is running, and ask who decided. Most of what you find, no one did.
+</Callout>
+
+## Where this module lands
+
+You now have the factory's consumption mapped: process heat, the cold chain, the hygiene utility and this third electrical tier, with the per-tonne framework to judge them. The next module turns to the rules of the game: the food safety floors no measure may cross, the CCA scheme that discounts the levy on all this energy, and the effluent charges that make water and energy savings compound.
+
+## Sources and further reading
+
+- [Carbon Trust: compressed air and motor-driven systems guides](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [BCAS (British Compressed Air Society)](https://www.bcas.org.uk/): air quality classes and food-grade air guidance.
+- [PPMA (Processing and Packaging Machinery Association)](https://www.ppma.co.uk/): packaging machinery practice.

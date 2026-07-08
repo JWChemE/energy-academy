@@ -3146,4 +3146,237 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Electricity's price premium (about 3.3×) nearly cancels the efficiency gain (about 3.5×), so the bill barely moves, but the carbon falls by roughly two-thirds and keeps falling as the grid decarbonises. Office conversions are currently driven by MEES trajectory and net-zero positioning more than by the energy bill.",
     },
   ],
+
+  // ---------------------------------------------------------------- Food manufacturing sector
+  "food-fundamentals-check": [
+    {
+      question: "A food factory's three energy centres are best summarised as:",
+      options: [
+        "Lighting, ventilation and the office block that supports the production operation",
+        "Process heat for cooking, refrigeration for chilling and freezing, and hot water for hygiene",
+        "Compressed air, conveyor motors and the packaging hall's sealing machinery",
+        "Steam raising, on-site electricity generation and the standby diesel plant that backs up the freezers",
+      ],
+      answer: 1,
+      explanation: "Cook, chill, clean: a food factory heats product, cools product, and heats water to clean everything the food touched. Almost every significant kilowatt-hour on site serves one of those three, and their physical adjacency is what makes heat recovery the sector's defining opportunity.",
+    },
+    {
+      question: "Why does a large share of a food factory's gas get burned after production stops for the day?",
+      options: [
+        "Night-rate gas tariffs make it cheaper to run the cookers overnight than during the day shift",
+        "The boilers must be kept at full pressure overnight to protect them from thermal shock",
+        "Ovens are left idling overnight so they are at temperature for the following morning",
+        "The nightly washdown and CIP clean consumes large volumes of hot water once the lines stop",
+      ],
+      answer: 3,
+      explanation: "When production ends, the hygiene shift begins: washdown and CIP bring every product-contact surface back to a validated standard, mostly with hot water from gas-fired calorifiers. On many sites a third or more of annual gas is spent cleaning rather than cooking.",
+    },
+    {
+      question: "Regenerative pasteurisation is astonishingly cheap because:",
+      options: [
+        "The outgoing hot product preheats the incoming cold product, leaving only a small top-up for the boiler",
+        "Milk needs to reach only 72 °C for 15 seconds, which is a very modest duty by the standards of industrial process heating",
+        "Modern pasteurisers use electric heating, which is more efficient than gas at that scale",
+        "The hold time is only 15 seconds, so the heating element barely has time to draw power",
+      ],
+      answer: 0,
+      explanation: "A regenerative plate exchanger sets the hot pasteurised stream against the incoming cold stream: at 90% effectiveness, the product supplies 90% of its own heating and the boiler only tops up the last stretch. A 1,473 kWh/day duty becomes about 147 kWh/day.",
+    },
+    {
+      question: "Freezing a tonne of high-moisture food costs far more than chilling it mainly because:",
+      options: [
+        "Freezers must hold temperature around the clock, while blast chillers only need to operate during production hours",
+        "Frozen product needs thicker packaging, which adds mass the plant must also cool down",
+        "The latent heat of the product's water dominates the load and is removed at the plant's worst COP",
+        "Freezer fans consume more electricity than the refrigeration compressors themselves",
+      ],
+      answer: 2,
+      explanation: "About seven-tenths of the freezing load is the latent heat of fusion of the product's own water (334 kJ/kg of it), and it is removed at low-temperature conditions where COP is around 1.5. Chilling is a sensible-heat job at COP ~3; freezing pays a bigger bill at a worse rate.",
+    },
+    {
+      question: "Chilled prep rooms add to the refrigeration bill even when throughput is low because:",
+      options: [
+        "The prep equipment inside them generates most of the heat the plant removes",
+        "They are usually located on the sunny side of the building for daylighting reasons",
+        "Food safety requires frequent door openings to move product in and out quickly",
+        "The rooms themselves are held cold for food safety whether the line is busy or not",
+      ],
+      answer: 3,
+      explanation: "Prep areas are commonly held at 10 to 12 °C as a hygiene control, so the space is a refrigeration load in its own right, independent of tonnage. It is one reason food factories carry unusually large fixed loads, and why quiet months barely dent the bills.",
+    },
+  ],
+
+  "food-benchmarks-check": [
+    {
+      question: "Specific energy consumption (SEC) for a food factory is:",
+      options: [
+        "The site's total annual energy consumption divided by its total floor area in square metres, as used for buildings",
+        "The energy used by the single most intensive machine, quoted per hour of operation",
+        "Energy in divided by product out: kWh per tonne, tracked separately for gas and electricity",
+        "The percentage of energy that comes from renewable sources in a given month",
+      ],
+      answer: 2,
+      explanation: "kWh per tonne of saleable output is the sector's core metric, and splitting it by fuel is the diagnosis: gas per tonne tracks the cooking side, electricity per tonne tracks the cold chain. Floor-area intensity belongs to buildings, not production sites.",
+    },
+    {
+      question: "A factory with a 40,000 kWh/month gas base load and 60 kWh/t slope produces 800 t in a quiet month instead of its usual 1,000 t. Its gas SEC:",
+      options: [
+        "Rises from 100 to 110 kWh/t with nothing on site running any worse",
+        "Falls, because less production always means proportionally less energy",
+        "Stays exactly the same, since SEC is designed to be independent of volume",
+        "Cannot be calculated without knowing the month's weather data as well",
+      ],
+      answer: 0,
+      explanation: "The fixed 40,000 kWh spreads over fewer tonnes: (40,000 + 48,000) ÷ 800 = 110 kWh/t versus 100 in a normal month. Raw SEC punishes quiet months and flatters busy ones, which is why the regression model, base load and slope estimated separately, has to come first.",
+    },
+    {
+      question: "Why are published cross-industry SEC benchmarks of limited use to a food site?",
+      options: [
+        "Publication lags mean the figures are always several years out of date by the time a site can compare against them",
+        "They are usually quoted in imperial units that do not convert cleanly",
+        "Most published figures come from overseas plants with different climates",
+        "A bakery, a dairy and a frozen-meals plant are thermodynamically different businesses",
+      ],
+      answer: 3,
+      explanation: "Product and process decide the physics: fresh prep can run below 100 kWh/t while fried frozen products run several times higher, with nothing wrong at either site. Published figures serve as sanity checks; the benchmark with teeth is the site against its own normalised history.",
+    },
+    {
+      question: "The most reliable way to discover what the nightly clean actually costs is to:",
+      options: [
+        "Ask the hygiene team to estimate their hot water consumption from the chemical dosing records and shift patterns",
+        "Measure it: a temporary heat meter on the calorifier circuit, or logged make-up volumes and temperatures",
+        "Take the water bill and assume half of the total volume is heated for washdown",
+        "Use the detergent supplier's published figures for factories of a similar size",
+      ],
+      answer: 1,
+      explanation: "Cleaning hides inside 'site gas' and 'site water' because it shares calorifiers and mains with everything else. Sites measuring their clean for the first time typically find it 20 to 40% larger than anyone's estimate, which reshapes both the SEC base load and the heat-recovery case.",
+    },
+    {
+      question: "Compressed air in a food factory deserves particular attention because:",
+      options: [
+        "It is the costliest utility per delivered kWh, and washdown environments breed leaks",
+        "It is the largest single electrical load on almost every food manufacturing site",
+        "Food-grade air must be imported from certified suppliers rather than generated on site",
+        "Its pressure must be doubled after every hygiene clean to purge the lines of moisture",
+      ],
+      answer: 0,
+      explanation: "Air keeps its Level 2 reputation (around 90% of the input energy is lost before the tool), and food adds hose-damaged fittings and corrosion from nightly washdown. Surveys should follow the hygiene calendar, and only point-of-use air that can contact product needs the food-grade treatment premium.",
+    },
+  ],
+
+  "food-compliance-check": [
+    {
+      question: "An energy measure that would shorten a validated cook step's time-at-temperature is:",
+      options: [
+        "Acceptable provided the projected energy saving exceeds the estimated cost of any product quality complaints",
+        "Acceptable during low-risk production runs provided extra swab tests are scheduled",
+        "Not an energy measure at all: the kill step is a food safety floor no measure may cross",
+        "Acceptable with the operations manager's sign-off at the weekly production meeting",
+      ],
+      answer: 2,
+      explanation: "Cook steps are critical control points validated to deliver a specified lethality; they are legal obligations, not variables. Energy work changes how the heat is generated, recovered and insulated, never the product's validated thermal history.",
+    },
+    {
+      question: "A freezer specified at −18 °C has been run at −25 °C for years 'to be safe'. The right reading is:",
+      options: [
+        "The extra margin is prudent, and the energy cost is the fair price of that prudence",
+        "Seven degrees of pure compressor cost protecting nothing the validated plan asked for",
+        "The setpoint should be raised to −10 °C to claw back the years of accumulated waste",
+        "The freezer is probably faulty, since no plant should be able to overshoot by that much",
+      ],
+      answer: 1,
+      explanation: "The safety plan specifies −18 °C; below it is habit, not hygiene, and at low-temperature COPs every degree costs roughly 2 to 3% of the plant's bill. The test is always 'show me where the plan requires this', and the fix is agreed with the technical team, not smuggled past them.",
+    },
+    {
+      question: "Under the Climate Change Agreement scheme as renewed, participants get:",
+      options: [
+        "A substantial discount on the Climate Change Levy in exchange for meeting efficiency targets, with reduced rates running to March 2033",
+        "Full exemption from ESOS assessments and SECR reporting obligations for as long as they remain compliant participants in the scheme, plus relief from air-conditioning inspection duties",
+        "Government grants covering half the capital cost of any energy efficiency project",
+        "Exemption from trade effluent strength charges on any process water they discharge",
+      ],
+      answer: 0,
+      explanation: "The CCA deal is levy discount for targets: the renewed scheme's first target period began 1 January 2026 with targets to 2030 and reduced CCL rates for compliant sites until 31 March 2033. For a mid-size factory the discount is worth tens of thousands of pounds a year; ESOS and SECR still apply.",
+    },
+    {
+      question: "Food factory trade effluent is expensive mainly because:",
+      options: [
+        "Water companies charge food sites a punitive flat rate regardless of what they discharge",
+        "Food factories are legally required to pre-treat all effluent to drinking-water standard",
+        "Discharge volumes are metered at a premium rate during night-time washdown hours",
+        "Charges scale with strength, and fats, starches and product losses make food effluent strong",
+      ],
+      answer: 3,
+      explanation: "Strength-based charging (the Mogden formula family) prices the COD and solids the treatment works must digest. Product down the drain is paid for three times: as raw material, as the process energy already spent on it, and as the strength charge. That is why dry clean-up is such a high-value habit.",
+    },
+    {
+      question: "The relationship between a site's CCA target, its SECR disclosure and its retail customers' carbon questionnaires is best handled by:",
+      options: [
+        "Keeping them separate, since each scheme's rules differ too much to share data safely",
+        "One normalised, production-adjusted dataset feeding all three from a single source",
+        "Outsourcing each to a different consultancy so no single error can affect all three",
+        "Reporting raw annual totals everywhere and explaining variances when challenged",
+      ],
+      answer: 1,
+      explanation: "All three ultimately ask the same question: energy per tonne, trending which way? One maintained measurement system answers the CCA reporting, the SECR intensity metric and the retailer questionnaire consistently, and turns every efficiency project into a compliance credit as well as a saving.",
+    },
+  ],
+
+  "food-efficiency-check": [
+    {
+      question: "The most reliable heat-recovery pairing in food manufacturing is:",
+      options: [
+        "Refrigeration heat rejection preheating the washdown and CIP hot water",
+        "Compressed air aftercoolers preheating the boiler house combustion air",
+        "Cold store evaporator defrost water recovered into the staff amenity block",
+        "Packaging hall lighting heat captured by the air handling system in winter",
+      ],
+      answer: 0,
+      explanation: "Both halves are inherent to making chilled food: the plant cannot stop rejecting heat, and the site cannot stop washing down. The streams overlap in temperature (especially via the discharge desuperheat), recur every day of operation, and a desuperheater bridging them typically pays back in two to three years.",
+    },
+    {
+      question: "A desuperheater preheats 15 m³/night of washdown water from 10 °C to 35 °C, against a full requirement of 10 °C to 60 °C costing £19,056/yr in gas. The saving is about:",
+      options: [
+        "£19,000 a year, since the desuperheater effectively replaces the calorifier",
+        "£3,200 a year, limited by the desuperheater's small share of rejected heat",
+        "£9,500 a year: half the temperature lift, so half the gas",
+        "£1,000 a year, because preheating only helps on the coldest winter nights",
+      ],
+      answer: 2,
+      explanation: "Heating is proportional to temperature lift: 10 → 35 °C is 25 of the 50 degrees, so the recovery displaces half the gas, about £9,528/yr. The calorifier still tops up the final 35 → 60 °C, and the plant benefits slightly too, since recovered heat is heat the condensers no longer reject.",
+    },
+    {
+      question: "Defrost heat is described as the most expensive heat in the factory because:",
+      options: [
+        "Defrost heaters run overnight, when many industrial supply contracts charge their premium distribution rates",
+        "The site pays twice: once at the heater, then again at the compressor removing it from the cold space",
+        "Electric defrost elements are less efficient than gas burners at converting energy to heat",
+        "Defrosting must be supervised by an engineer, adding labour cost to every cycle",
+      ],
+      answer: 1,
+      explanation: "Every kWh of defrost heat is released inside the cold envelope and must be removed again at the low-temperature plant's COP: at COP 1.5, a further 0.67 kWh of compressor electricity per kWh of heat. That is why a timer running three unnecessary hours a day can cost £12,600 a year.",
+    },
+    {
+      question: "Floating head pressure control saves energy by:",
+      options: [
+        "Holding the condensing pressure steady at the value the designers chose for the hottest summer design day",
+        "Switching the condenser fans to run only during the site's cheap-rate hours",
+        "Diverting compressor discharge gas around the condenser during cold weather",
+        "Letting condensing temperature follow ambient down instead of sitting at a fixed worst-case setpoint",
+      ],
+      answer: 3,
+      explanation: "A fixed head-pressure setpoint sized for the hottest day wastes the whole British winter. Each degree of condensing temperature saved is worth roughly 2 to 3% of compressor energy, and floating control harvests it automatically whenever the weather cooperates.",
+    },
+    {
+      question: "Warm product loaded into a cold store before blast chilling has finished its cycle:",
+      options: [
+        "Shifts the remaining cooling into the most expensive room on site, at the worst COP",
+        "Is good practice, since the cold store has more spare capacity than the blast chiller",
+        "Saves energy overall by spreading the cooling load across two systems in parallel",
+        "Only matters for frozen product, since chilled storage tolerates any inlet temperature",
+      ],
+      answer: 0,
+      explanation: "Blast chillers are designed for rapid heat extraction; storage rooms are designed to hold temperature. Moving unfinished cooling work into the store means slower cooling (a food safety concern) and heat removed at storage conditions, in a freezer at the plant's worst COP.",
+    },
+  ],
 };

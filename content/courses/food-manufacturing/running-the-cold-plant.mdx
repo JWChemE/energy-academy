@@ -1,0 +1,48 @@
+The refrigeration plant is the biggest electrical machine in the factory, and unlike the cookers it has no recipe card: how it runs is decided by setpoints, timers and habits that were configured at commissioning and have often never been questioned since. The [chilling and freezing lesson](/courses/food-manufacturing/chilling-and-freezing) showed why low-temperature kilowatt-hours are the most expensive on site; this lesson is about earning them back, through four operating levers, none of them exotic: pressures, defrost, doors and load.
+
+## Lever one: suction pressure (the cold end)
+
+Every degree the evaporating temperature rises is roughly 2 to 3% off the compressor's bill, because the plant works across a smaller temperature span. The question, as always in this sector, is what the *validated* requirement is: a freezer specified at −18 °C running at −25 °C is spending seven degrees of suction on superstition. Raising suction setpoints to the highest value that reliably holds the specified product temperatures, and using floating suction control where the plant supports it, is the classic no-capital saving, agreed with the technical team exactly as the [safety-floor lesson](/courses/food-manufacturing/food-safety-sets-the-floor) prescribes.
+
+## Lever two: head pressure (the warm end)
+
+The mirror lever: every degree of condensing temperature saved is another 2 to 3%. Fixed head-pressure setpoints chosen for the hottest day of the year waste the whole British winter; floating head pressure lets condensing follow ambient down. The supporting cast is maintenance: fouled condenser coils, failed fans and non-condensables all raise head pressure and quietly tax every kilowatt-hour, the same fault family the [brewery course's glycol case](/courses/breweries/two-quick-diagnostics) diagnosed. If a desuperheater from the [heat-recovery lesson](/courses/food-manufacturing/heat-recovery-in-food) is fitted, it helps here too.
+
+## Lever three: defrost discipline
+
+Evaporators in freezers frost up and must be defrosted, but defrost heat is the most expensive heat in the factory: it is generated inside the cold envelope and then removed again at the plant's worst COP.
+
+<WorkedExample title="the double payment, priced">
+  <Given>
+    - Spiral freezer defrost heaters: 36 kW, on a fixed timer 4 h/day; frost surveys support 1 h/day
+    - Low-temperature plant COP: 1.5; 350 operating days; electricity £0.20/kWh
+  </Given>
+  <Find>What the excess timer setting costs per year.</Find>
+  <Solution>
+    Excess heater energy: 3 h × 36 kW = 108 kWh/day. Removing that heat again: 108 ÷ 1.5 =
+    72 kWh/day of compressor electricity. Total: 180 kWh/day × 350 days × £0.20 ≈ **£12,600 a
+    year**, paid twice for heat nobody needed.
+
+    On-demand defrost (frost sensing or air-pressure-drop initiation) keeps the hygiene and
+    capacity benefits of defrosting and deletes the excess: a controls change on plant that
+    already exists, and one of this course's two [diagnostic cases](/courses/food-manufacturing/two-quick-diagnostics).
+  </Solution>
+</WorkedExample>
+
+## Lever four: doors, infiltration and load
+
+Every kilowatt of heat that enters the cold envelope is removed at the plant's COP, so the cheapest refrigeration is the heat that never gets in. The habits that matter: door discipline and fast-acting doors on trafficked openings (an open freezer door is a heat *and* moisture load, and the moisture returns as evaporator frost, feeding lever three); strip curtains maintained rather than shredded; lighting inside cold spaces switched, not permanent; and product loaded at its specified temperature, because blast-chilling's unfinished work otherwise transfers to the most expensive room on site. None of this needs capital; all of it needs someone to own it, which is why cold-plant performance belongs on the same [monthly exception report](/courses/monitoring-and-targeting/exception-reporting) as the meters.
+
+<Callout variant="key" title="kWh per tonne of cold, watched monthly">
+The cold plant's health is measurable with what the site already has: its electricity (sub-metered or clamp-logged) against throughput and ambient, the same normalised-model discipline as the site's SEC. Rising kWh per tonne with steady production and weather means one of the four levers has slipped: a setpoint nudged, a timer extended, a condenser fouling, a door failing. The plant rarely announces these; the ratio always does.
+</Callout>
+
+## Putting the module to work
+
+Pressures, defrost, doors and load: four levers, none requiring a new compressor. The next lesson hands you two of them as live call-outs, with real numbers to work: the heat-recovery pairing and the defrost timer, diagnosed the same way every capstone on this platform runs.
+
+## Sources and further reading
+
+- [Institute of Refrigeration: good practice guides](https://ior.org.uk/) for industrial refrigeration operation.
+- [Carbon Trust: refrigeration systems guide](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Cold Chain Federation: cold store operation guidance](https://www.coldchainfederation.org.uk/).

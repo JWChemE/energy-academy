@@ -128,7 +128,11 @@ five batches.
       normalisation walkthrough)
 - [x] Commercial Real Estate sector course — 13 lessons, 4 quizzes, two-case
       diagnostics and an office audit capstone *(Jul 2026)*
-- [ ] More sectors (data centres are the obvious next one)
+- [x] Food Manufacturing sector course — same shape (13 lessons, 4 quizzes,
+      diagnostics, factory audit capstone); sectors page now grouped into
+      Industrial / Buildings / Transportation categories *(Jul 2026)*
+- [ ] More sectors (data centres next; Fleet Electrification & Depot Charging
+      to open the Transportation category)
 
 ## Phase 4 — Commercialisation
 

@@ -1,0 +1,51 @@
+"How efficient is this factory?" has only one honest starting point in food manufacturing: kilowatt-hours per tonne of product. Absolute consumption tells you nothing (a busy month and a wasteful month look identical on the meter), and cross-industry benchmarks tell you little more, because a bakery, a dairy and a frozen-meals plant are thermodynamically different businesses. This lesson builds the specific energy consumption (SEC) discipline: what to divide by what, how to separate the base load that hygiene fixes from the load that production drives, and how to use your own site's history as the benchmark that actually matters.
+
+## Specific energy consumption, done properly
+
+**SEC = energy in ÷ product out**, usually kWh per tonne, tracked separately for gas and electricity because they answer different questions (cooking versus cooling, roughly). The honest rules:
+
+- **Use saleable output**, consistently defined. Tonnes into the freezer and tonnes out of despatch differ by waste and rework; pick one and never switch silently.
+- **Split the fuels.** A site at 305 kWh/t split 100 gas / 205 electricity is a chilled factory; the same total split 250/55 is a bakery. The split *is* the diagnosis.
+- **State the boundary.** Whole site, or production only? Offices and despatch in or out? Exactly the [system-boundary discipline](/courses/mass-and-energy-balances/system-boundaries), applied to a ratio.
+
+Published sector figures vary so widely by product and process (fresh prep at well under 100 kWh/t; chilled ready meals in the low hundreds; fried and frozen products far higher) that they serve only as sanity checks. The comparison with teeth is the site against its own normalised history.
+
+## The base-load trap
+
+Divide a fixed load by a variable output and the ratio dances. Food factories have unusually large fixed loads, because hygiene and cold storage don't scale with tonnage: the washdown happens after a half-speed shift just as after a record one, and the cold stores hold temperature through a shutdown week.
+
+<WorkedExample title="why a quiet month looks inefficient">
+  <Given>
+    - A factory's gas model: 40,000 kWh/month base (washdown, CIP, space heat) + 60 kWh per tonne cooked
+    - A normal month: 1,000 t. A quiet month: 800 t
+  </Given>
+  <Find>The gas SEC in each month.</Find>
+  <Solution>
+    Normal month: (40,000 + 60 × 1,000) ÷ 1,000 = **100 kWh/t**.
+
+    Quiet month: (40,000 + 60 × 800) ÷ 800 = 88,000 ÷ 800 = **110 kWh/t**, a 10% "deterioration"
+    with nothing on site running worse. The fixed 40,000 is simply spread over fewer tonnes.
+    Judge months by raw SEC and you will hunt phantom faults in quiet periods and hand out
+    unearned praise in busy ones. The fix is the regression model: base load and per-tonne
+    coefficient estimated separately, exactly as the [M&T course](/courses/monitoring-and-targeting/normalisation)
+    teaches and exactly as this course's capstone will make you do.
+  </Solution>
+</WorkedExample>
+
+## Building the site's own benchmark
+
+The workflow this course's capstone rehearses end to end: regress monthly energy against tonnage (and cooling degree-days for the refrigeration-heavy electricity meter) to get a base load plus coefficients; use the model to compute what each month *should* have used given its actual production; and investigate the residuals, which is where a failed trap, a drifted setpoint or a defrost timer shows up as a persistent gap the [energy-signature method](/courses/monitoring-and-targeting/energy-signatures) can date. The per-tonne coefficient then becomes the improvement metric a retailer's carbon questionnaire can track: "60 kWh of gas per tonne, down from 68" survives scrutiny that "energy fell 4%" never will.
+
+<Callout variant="key" title="Normalise before you judge">
+A food factory's SEC moves with production mix and volume even when nothing improves or degrades, because so much of its load is fixed by hygiene and storage rather than driven by tonnage. The base load and the per-tonne slope are different numbers with different owners and different fixes: conflate them into one ratio and every quiet month becomes a false alarm. Model first, then benchmark, then judge.
+</Callout>
+
+## What the ratio is for
+
+SEC earns its keep three ways: internally, as the KPI that survives volume changes; commercially, as the number retailer sustainability programmes and [SECR](/courses/uk-energy-regulation/secr) narratives want; and diagnostically, split by fuel and, on sub-metered sites, by line, where a per-tonne creep on one line while its twin holds steady is as good as a fault code. The next lesson turns to the biggest of those fixed loads, the one that makes food factories unlike every other industry: the nightly hot-water bill for hygiene.
+
+## Sources and further reading
+
+- [Carbon Trust: food and drink sector benchmarking guidance](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Food and Drink Federation: energy and emissions guidance](https://www.fdf.org.uk/fdf/business-guidance-hubs/environmental-sustainability/).
+- [ISO 50006](https://www.iso.org/standard/77425.html): energy performance indicators and baselines, the formal frame for SEC.
