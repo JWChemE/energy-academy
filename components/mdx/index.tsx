@@ -44,11 +44,13 @@ import BrewerySystemDiagnostics from "../simulators/BrewerySystemDiagnostics";
 import CreSystemDiagnostics from "../simulators/CreSystemDiagnostics";
 import FoodSystemDiagnostics from "../simulators/FoodSystemDiagnostics";
 import DcSystemDiagnostics from "../simulators/DcSystemDiagnostics";
+import DairySystemDiagnostics from "../simulators/DairySystemDiagnostics";
 import EnergyAuditCapstone from "../simulators/EnergyAuditCapstone";
 import BreweryAuditCapstone from "../simulators/BreweryAuditCapstone";
 import CreAuditCapstone from "../simulators/CreAuditCapstone";
 import FoodAuditCapstone from "../simulators/FoodAuditCapstone";
 import DcAuditCapstone from "../simulators/DcAuditCapstone";
+import DairyAuditCapstone from "../simulators/DairyAuditCapstone";
 
 /** Internal links use next/link for client-side nav; external open in a new tab. */
 function MdxLink({
@@ -122,9 +124,11 @@ export const mdxComponents = {
   CreSystemDiagnostics,
   FoodSystemDiagnostics,
   DcSystemDiagnostics,
+  DairySystemDiagnostics,
   EnergyAuditCapstone,
   BreweryAuditCapstone,
   CreAuditCapstone,
   FoodAuditCapstone,
   DcAuditCapstone,
+  DairyAuditCapstone,
 };

@@ -1,0 +1,50 @@
+"use client";
+
+import AuditCapstone from "./AuditCapstone";
+import { STAGES, DATASET, REFERENCE } from "@/lib/dairyAuditCapstone";
+
+/** Alderbrook Dairy — the on-site data stage's table + reference panel. */
+function DataPanel() {
+  return (
+    <div className="mt-4 space-y-3">
+      <div className="overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full text-right text-xs">
+          <thead className="bg-slate-50 text-slate-500">
+            <tr>
+              <th className="px-2 py-2 text-left font-semibold">Month</th>
+              <th className="px-2 py-2 font-semibold">Avg °C</th>
+              <th className="px-2 py-2 font-semibold">CDD</th>
+              <th className="px-2 py-2 font-semibold">Intake kL</th>
+              <th className="px-2 py-2 font-semibold">Gas kWh</th>
+              <th className="px-2 py-2 font-semibold">Elec kWh</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {DATASET.map((r) => (
+              <tr key={r.month} className="text-slate-700">
+                <td className="px-2 py-1.5 text-left font-medium">{r.month}</td>
+                <td className="px-2 py-1.5">{r.avgTempC.toFixed(1)}</td>
+                <td className="px-2 py-1.5">{r.month === "Jul" ? "?" : r.cdd}</td>
+                <td className="px-2 py-1.5">{r.kL.toLocaleString()}</td>
+                <td className="px-2 py-1.5">{r.gasKwh.toLocaleString()}</td>
+                <td className="px-2 py-1.5">{r.elecKwh.toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-600">
+        <span><strong>Reference</strong> —</span>
+        <span>CDD base {REFERENCE.cddBase} °C</span>
+        <span>Elec £{REFERENCE.elecPrice}/kWh</span>
+        <span>Gas £{REFERENCE.gasPrice}/kWh</span>
+        <span>Grid {REFERENCE.co2Factor} kg CO₂e/kWh</span>
+        <span>Annual intake {REFERENCE.annualKL.toLocaleString()} kL (150M litres)</span>
+      </div>
+    </div>
+  );
+}
+
+export default function DairyAuditCapstone() {
+  return <AuditCapstone stages={STAGES} renderDataPanel={() => <DataPanel />} />;
+}

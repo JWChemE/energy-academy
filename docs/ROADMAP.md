@@ -138,8 +138,12 @@ five batches.
       one multi-course sector with a shared Foundations course (HACCP, CIP,
       effluent, CCAs, cold plant, heat-recovery patterns); process courses
       slimmed to what's process-specific; 12 permanent redirects *(Jul 2026)*
-- [ ] More sectors (Dairies next inside Food & Drink; Fleet Electrification
-      & Depot Charging to open the Transportation category)
+- [x] Dairies course inside Food & Drink — first course authored natively
+      against the shared Foundations (no compliance module of its own):
+      regeneration, UHT, ice banks, evaporation/MVR, whey, the spring
+      flush, diagnostics + dairy audit capstone *(Jul 2026)*
+- [ ] More sectors (Fleet Electrification & Depot Charging to open the
+      Transportation category; hospitals, retail, cold storage candidates)
 
 ## Phase 4 — Commercialisation
 

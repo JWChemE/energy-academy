@@ -3637,4 +3637,179 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Temperature decides whether the match is physically useful, timing (or a storage tank) decides whether the heat is there when the demand is, and the hygiene boundary decides whether the technical team will ever approve it. Projects bought as gadgets fail on the second and third; matches designed on all three succeed.",
     },
   ],
+
+  // ---------------------------------------------------------------- Dairies (Food & Drink sector)
+  "dairy-fundamentals-check": [
+    {
+      question: "Comparing kWh per litre between a liquid-milk dairy and a powder site is:",
+      options: [
+        "Fair, provided both figures cover the same twelve-month period",
+        "Fair, since both denominators are litres of milk intake",
+        "Meaningless: removing milk's water makes powder sites intensive in ways no efficiency programme bridges",
+        "Useful mainly for ranking which of the two sites should receive the group's efficiency capital first, since the higher figure indicates more available headroom",
+      ],
+      answer: 2,
+      explanation: "Milk is 87% water, and powder sites evaporate and spray-dry it away: physics that liquid sites never face. The denominators match but the processes don't, so per-litre comparisons only mean something within a site type, against the site's own normalised history.",
+    },
+    {
+      question: "The spring flush matters to dairy energy analysis because:",
+      options: [
+        "Milk intake swings 15 to 25% across the year on a cycle the cows control, moving energy with it",
+        "Spring milk arrives warmer at reception after grass feeding begins, increasing the chilling load per litre processed",
+        "Processing equipment must be re-validated each spring under HACCP rules",
+        "Tanker deliveries switch to night arrival in spring, moving load into cheap hours",
+      ],
+      answer: 0,
+      explanation: "UK production peaks in April and May and troughs in autumn. A site processes more milk in May with nothing running worse and less in November with nothing running better, so every dairy model needs an intake term before per-litre figures mean anything.",
+    },
+    {
+      question: "A 20,000 L/h HTST pasteuriser with 92% regeneration has a total duty of about 1,473 kW. Its hot section supplies roughly:",
+      options: [
+        "1,355 kW, since the regeneration section only assists with the final approach to the 72 °C hold temperature",
+        "737 kW, because regeneration and the hot section split the duty evenly",
+        "The full 1,473 kW, with regeneration recovering heat downstream instead",
+        "118 kW: the outgoing milk preheats the incoming milk for all but 8% of the lift",
+      ],
+      answer: 3,
+      explanation: "Regeneration effectiveness is the share of the lift the product supplies to itself: at 92%, the hot section tops up only 8% of 1,473 kW. That is why the number's silent decay is so expensive, and why it deserves monthly trending.",
+    },
+    {
+      question: "Dairies chill milk through ice water rather than directly against refrigerant because:",
+      options: [
+        "Ice water transfers heat faster than any refrigerant can in a plate pack",
+        "Water at just above freezing chills milk hard with no risk of freezing product onto the plates",
+        "Food safety law prohibits any refrigerant from passing within one heat-exchange surface of milk or milk products",
+        "Ice water is required to keep the homogenisers' seals at temperature",
+      ],
+      answer: 1,
+      explanation: "Direct refrigerant contact risks freezing a milk film onto the exchange surface: fouling, product loss and a hygiene failure. Water held at 0.5 to 1 °C gets milk to 4 °C safely, and the ice bank behind it makes that water cheap to produce.",
+    },
+    {
+      question: "An ice bank benefits a dairy's refrigeration system by:",
+      options: [
+        "Decoupling when cold is made from when it is used, enabling off-peak charging and smaller plant",
+        "Raising the plant's evaporating temperature during the ice-building phase",
+        "Eliminating the need for defrost cycles on the site's cold-store evaporators",
+        "Providing an emergency reserve of cooling capacity if the ammonia plant trips during a processing shift",
+      ],
+      answer: 0,
+      explanation: "The store lets compressors run overnight (cheap rate, cooler condensing) while the day shift melts ice to meet peaks the plant alone would need oversizing to serve. Ice does build at a lower evaporating temperature; that COP penalty is the price the tariff and sizing benefits must beat.",
+    },
+  ],
+
+  "dairy-benchmarks-check": [
+    {
+      question: "A dairy's gas SEC 'improves' from 38.6 to 37.1 kWh per 1,000 L between February and May with no plant changes. The explanation is:",
+      options: [
+        "The CIP recipes run cooler in warm weather, trimming the base load",
+        "The spring flush: the fixed base load spreads over 21% more milk",
+        "Warmer incoming water reduces the pasteurisers' top-up duty in spring",
+        "Boiler efficiency rises with ambient temperature through the spring",
+      ],
+      answer: 1,
+      explanation: "The 100,000 kWh/month base (CIP, washdown, space heat) divides by 14,000 kL in May and 11,600 in February; the ratio moves with the cows, not the plant. Raw per-litre comparisons across seasons report biology as energy management.",
+    },
+    {
+      question: "Removing a tonne of water from milk by single-effect evaporation, five-effect TVR, and MVR costs roughly:",
+      options: [
+        "£15, £9 and £5 respectively, a useful but modest spread",
+        "About the same in delivered energy terms, differing mainly in maintenance cost and complexity",
+        "£3 by single effect, £10 by TVR and £46 by MVR, favouring simple plant",
+        "£46, £10 and £3 respectively: a fifteen-fold spread from the same physics",
+      ],
+      answer: 3,
+      explanation: "Latent heat (~650 kWh/t at evaporator vacuum) is the bill; effects reuse the steam, TVR squeezes it further, and MVR recycles the vapour's own latent heat for 10 to 20 kWh of electricity per tonne. No other choice moves a powder site's intensity as far as its rung on this ladder.",
+    },
+    {
+      question: "Cheese sites treat whey as a processing stream rather than effluent chiefly because:",
+      options: [
+        "Water companies refuse trade effluent consents to cheese sites entirely",
+        "Whey ferments rapidly in drainage systems, creating an explosive-atmosphere risk that sewerage undertakers refuse to accept under any consent conditions",
+        "Its extreme organic strength makes draining it ruinously expensive, while its protein and lactose carry real value",
+        "HACCP rules classify whey as product until it leaves the site boundary",
+      ],
+      answer: 2,
+      explanation: "Whey's COD runs to tens of grams per litre, on the order of a hundred times domestic sewage, so strength-based charges (and consent limits) make draining untenable, while ultrafiltration and drying turn the same stream into WPC and lactose revenue that dwarfs the processing energy.",
+    },
+    {
+      question: "'Cow water' is:",
+      options: [
+        "Evaporator condensate, recovered from the milk itself and reused as boiler feed, CIP make-up and more",
+        "The chilled water loop serving the raw-milk reception silos and the tanker off-loading heat exchangers",
+        "Borehole water abstracted on site under the dairy's agricultural licence for non-product duties",
+        "The first rinse of each CIP cycle, recovered for yard washing",
+      ],
+      answer: 0,
+      explanation: "Evaporating milk condenses out its water: warm, low-mineral, and produced in volumes rivalling the mains supply. Powder sites treat and reuse it, cutting water purchases, effluent volume and water-heating gas at once. The dairy literally drinks its raw material.",
+    },
+    {
+      question: "The honest way to report a dairy's energy improvement to its CCA and retail customers is:",
+      options: [
+        "Raw annual totals, since normalisation invites accusations of adjustment",
+        "Per-litre figures for whichever months show the clearest progress",
+        "Absolute figures in spring and per-litre figures in autumn, matching each season's strengths",
+        "Model coefficients and intake-adjusted comparisons that separate the flush from performance",
+      ],
+      answer: 3,
+      explanation: "'30 kWh of gas per thousand litres, down from 33' survives technical review because the model separates the cows' contribution from the plant's. Cherry-picked months and raw totals are exactly what a competent reviewer unpicks first.",
+    },
+  ],
+
+  "dairy-efficiency-check": [
+    {
+      question: "A pasteuriser's regeneration drifts from 92% to 84% effectiveness. The hot section's top-up duty:",
+      options: [
+        "Rises by about 9%, matching the relative fall in effectiveness",
+        "Falls, because the plant automatically slows to compensate",
+        "Is unaffected while the milk still reaches its validated temperature",
+        "Doubles: it now supplies 16% of the total lift instead of 8%",
+      ],
+      answer: 3,
+      explanation: "The hot section supplies whatever regeneration doesn't, so the loss lands entirely on it: 8% becomes 16%, roughly £33,000 a year of gas on a 20,000 L/h line running 4,000 hours, with no alarm anywhere, because the product temperature never moved.",
+    },
+    {
+      question: "Why does regeneration degradation go unnoticed on most sites?",
+      options: [
+        "Modern plate packs degrade too slowly for the effect to matter within a typical pack's full service life",
+        "The product still reaches its validated temperature while the hot section silently absorbs the difference",
+        "The effect only appears during the spring flush, when analysis is hardest",
+        "The temperatures needed to compute effectiveness cannot be measured on a live plant",
+      ],
+      answer: 1,
+      explanation: "Nothing fails and nothing alarms: milk fouling and tired gaskets shave points gradually, and operations see a plant that 'works perfectly'. The four terminal temperatures the calculation needs are already measured; the missing ingredient is the monthly trending habit.",
+    },
+    {
+      question: "An ice bank charging 1,000 kWh per cycle drifts from the 14p off-peak window into the 24p day rate, 350 cycles a year. The cost is:",
+      options: [
+        "£35,000 a year, for ice identical in every respect except when the meter was spinning",
+        "£10,000 a year, partly offset by better daytime condensing efficiency",
+        "Nothing, provided the ice is always fully built before the day shift starts",
+        "£3,500 a year, since only the final tenth of each charge crosses the rate boundary",
+      ],
+      answer: 0,
+      explanation: "1,000 kWh × £0.10 premium × 350 charges = £35,000, pure tariff arithmetic, and daytime charging also condenses against warmer air, worsening COP rather than offsetting anything. The fix is a time schedule, owned and watched on the half-hourly data.",
+    },
+    {
+      question: "MVR evaporation is central to dairy electrification because it:",
+      options: [
+        "Runs almost entirely on the site's off-peak tariff without needing any thermal storage to bridge the day",
+        "Uses the spray dryer's exhaust to power the evaporator's compressor",
+        "Replaces hundreds of kWh of steam heat per tonne of water with 10 to 20 kWh of electricity",
+        "Eliminates evaporation entirely in favour of membrane separation",
+      ],
+      answer: 2,
+      explanation: "MVR recompresses the evaporator's own vapour into its heating medium, recycling the latent heat continuously. It converted the sector's biggest gas load into a modest, efficient electrical one decades ago, and remains the most successful industrial electrification story in food and drink.",
+    },
+    {
+      question: "Industrial heat pumps suit dairies particularly well because:",
+      options: [
+        "Dairy sites are exempt from the electricity price premium that hampers heat pumps elsewhere",
+        "The site rejects large, steady, warm streams while its heat demands sit within heat-pump reach",
+        "Ammonia refrigerant can be shared between the refrigeration plant and the heat pump circuit",
+        "Milk must never contact steam, making heat pumps the only compliant heat source",
+      ],
+      answer: 1,
+      explanation: "Ammonia desuperheat and evaporator condensers offer warm source streams all day, while CIP (70 to 80 °C) and washdown (60 °C) demands sit within modern industrial heat pumps' range. Pair the heat pump with hot-water storage and off-peak running and its economics improve further.",
+    },
+  ],
 };

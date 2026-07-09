@@ -1,0 +1,43 @@
+Dairies run on cold water the way breweries run on glycol, and for a reason the product dictates: milk must be chilled fast, in equipment cleaned daily, without any risk of freezing it onto a heat-exchange surface. The sector's answer is **ice water**, water held at 0.5 to 1 °C, and behind it one of industrial refrigeration's most elegant devices: the ice bank, which turns a refrigeration plant into a battery. This lesson covers the dairy cold chain from silo to despatch, the ice-water system at its centre, and why that system makes dairy refrigeration uniquely schedulable.
+
+## The cold loads, silo to despatch
+
+The [foundations course's cold-plant levers](/courses/food-drink-foundations/running-the-cold-plant) (suction, head pressure, defrost, doors) all apply; what is dairy-specific is where the load comes from. Raw-milk silos hold reception-temperature milk against ambient gains. The pasteuriser's cooling section finishes what regeneration started: with 92% regeneration, milk leaves the regenerator at perhaps 10 °C and the ice water takes it the last stretch to 4 °C. Fermented and cultured products add incubation-then-crash-cooling cycles. And the finished-goods cold store and despatch run continuously, the [holding load](/courses/food-manufacturing/chilling-and-freezing) that never clocks off. On most liquid sites the plant is ammonia, with everything the [foundations](/courses/food-drink-foundations/running-the-cold-plant) and the capstone's site-visit planning say about its plant rooms.
+
+<WorkedExample title="the pasteuriser's finishing duty">
+  <Given>
+    - 20,000 L/h leaving regeneration at ≈11 °C, to be chilled to 4 °C
+    - Milk cp ≈ 3.9 kJ/kg·K
+  </Given>
+  <Find>The ice-water cooling duty while the pasteuriser runs.</Find>
+  <Solution>
+    Duty = 20,000 × 3.9 × 7 ÷ 3,600 ≈ **152 kW** of cooling, drawn from the ice-water loop
+    whenever the line runs.
+
+    Notice what regeneration did here too: without it, the cooling section would face the
+    full 72 → 4 °C descent, nearly ten times the duty. Every point of regeneration saves
+    twice, once in gas at the hot end and once in compressor electricity at the cold end.
+  </Solution>
+</WorkedExample>
+
+## Why ice water, and what an ice bank is
+
+Chilling milk in a plate exchanger against a refrigerant directly risks freezing a milk film onto the plates (fouling, product loss, hygiene failure), so dairies interpose water at just above freezing: cold enough to chill milk to 4 °C, warm enough never to freeze it. The **ice bank** is how that water is made cheaply: a tank of coils on which the refrigeration plant builds a store of ice, typically overnight, which the day shift then melts to hold the loop at 0.5 to 1 °C however hard the pasteurisers pull.
+
+Energetically the ice bank does three things at once. It **decouples when cold is made from when it is used**, exactly the [thermal-storage move](/courses/thermal-energy-storage/sensible-latent) from Level 2, using water's latent heat as the store. It lets the site **buy electricity when it is cheap**, charging through off-peak hours, which the [load-shifting lesson](/courses/dairies/ice-banks-and-load-shifting) prices properly. And it lets the refrigeration plant be **sized for the average load, not the peak**: the morning's simultaneous pasteurising, filling and CIP cooling would otherwise dictate a far larger plant that idled all afternoon.
+
+The costs are real too: ice builds at a lower evaporating temperature than chilled water needs (a COP penalty), and storage loses a little to the room. A well-run ice bank earns those costs back through tariff and sizing; a badly scheduled one, as this course's [second diagnostic case](/courses/dairies/two-quick-diagnostics) shows, pays the penalty *and* misses the prize.
+
+<Callout variant="key" title="The ice bank is a battery: schedule it like one">
+An ice bank's entire value is temporal: it moves compressor kilowatt-hours from expensive hours to cheap ones and shaves the plant's peak. That value exists only while someone owns the charge schedule, watches it on the half-hourly data, and re-checks it after every controls change. Ice that is always ready tells you nothing about when it was made, and "when" is the whole point.
+</Callout>
+
+## Reading a dairy's electrical profile
+
+Put the pieces together and a liquid dairy's half-hourly electricity tells its story plainly: an overnight block (ice-bank charging plus CIP pumping), a processing-hours plateau (separators, homogenisers, fillers, ice-water pumps), and a continuous floor (cold stores, silos, controls). Each block has an owner and a lever, which is exactly how the capstone will have you decompose it. Next, the module turns from loads to benchmarks: what a litre *should* cost, and why the answer depends entirely on what kind of dairy is answering.
+
+## Sources and further reading
+
+- [Institute of Refrigeration](https://ior.org.uk/): industrial refrigeration and thermal storage practice.
+- [Dairy Processing Handbook (Tetra Pak)](https://dairyprocessinghandbook.tetrapak.com/): ice-water and cooling system design.
+- [Carbon Trust: refrigeration systems guide](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).

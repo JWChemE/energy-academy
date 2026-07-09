@@ -1,0 +1,48 @@
+Dairies are quietly becoming the most electrifiable sector in food and drink, and the reasons were installed decades ago. The ice bank makes refrigeration schedulable, so a dairy can buy its cold when electricity is cheap; mechanical vapour recompression turned evaporation from the sector's biggest gas load into an efficient electrical one; and the heat the plant needs is low-grade enough for industrial heat pumps to supply. This lesson covers the load-shifting arithmetic first, then the electrification ladder it opens.
+
+## The ice bank as a tradeable battery
+
+The [ice-water lesson](/courses/dairies/ice-water-and-refrigeration) covered what an ice bank is; here is what it earns. Cold made overnight costs off-peak electricity and enjoys better condensing (cooler night air lifts the charging COP); the same cold made mid-afternoon pays peak rates and fights warm condensers. The store between them is what lets the site choose.
+
+<WorkedExample title="the charge window, priced">
+  <Given>
+    - Ice bank storing 3,000 kWh of cooling per daily charge; charging COP ≈ 3.0
+    - Two-rate tariff: 14p/kWh off-peak (00:00–07:00), 24p/kWh day; 350 charges a year
+  </Given>
+  <Find>What the charge window is worth.</Find>
+  <Solution>
+    Each charge takes 3,000 ÷ 3.0 = **1,000 kWh of electricity**. Charged off-peak it costs
+    £140; charged in the day, £240. The window is worth **£100 a charge, ≈£35,000 a year**,
+    for identical ice.
+
+    The catch is that the value lives in a time schedule, and schedules drift: this course's
+    [second diagnostic case](/courses/dairies/two-quick-diagnostics) prices exactly this ice
+    bank after a controls upgrade quietly moved its charging into daylight. Load-shifting
+    assets pay only while someone owns their clock.
+  </Solution>
+</WorkedExample>
+
+The same logic is growing new branches: half-hourly and dynamic tariffs reward finer scheduling than two rates, and a dairy's combination of ice storage, cold stores (which can pre-cool before peaks) and interruptible loads makes it a natural participant in [flexibility markets](/courses/uk-energy-regulation/future-policy), with the ice bank as the anchor asset.
+
+## The electrification ladder
+
+Beyond shifting *when* electricity is used, the sector is switching *what* runs on it:
+
+- **MVR evaporation** (from the [powder lesson](/courses/dairies/evaporation-and-drying)) replaced hundreds of kWh of steam heat per tonne of water with 10 to 20 kWh of electricity: the most successful industrial electrification story in food and drink, decades old and still spreading down to smaller plants.
+- **Heat pumps** suit dairy heat unusually well: the plant rejects large, steady, warm streams (ammonia desuperheat, evaporator condensers) while its demands (CIP at 70 to 80 °C, washdown at 60 °C, pasteuriser top-up) sit within modern industrial heat pumps' reach. Lifting the site's own rejected heat to CIP temperature turns the [foundations pairing](/courses/food-drink-foundations/heat-recovery-patterns) into full gas displacement.
+- **The economics** follow the [platform's honest arithmetic](/courses/commercial-real-estate/retrofit-and-plant-replacement): at £0.20 versus £0.06 per kWh, a heat pump needs its COP to outrun the price ratio before it saves money, so the near-term case leans on carbon, CCA targets and retailer commitments, and on pairing the heat pump with the tariff-shifting this lesson began with: a heat pump feeding a hot-water store, run off-peak, changes its own economics.
+- **The grid connection** becomes the constraint worth checking early: MVR, heat pumps and night charging all add electrical demand, and the [connection lead times](/courses/data-centres/grid-planning-and-heat-reuse) other sectors are discovering apply here too.
+
+<Callout variant="key" title="Storage is the dairy's superpower">
+Every electrification step gets cheaper when the load can choose its hours, and dairies are unusually rich in storage: ice banks on the cold side, hot-water and CIP tanks on the warm side, cold stores with thermal inertia in between. The sector's route off the gas main runs through its tanks: size them, schedule them, and let the tariff do part of the decarbonisation work.
+</Callout>
+
+## Putting the module to work
+
+Regeneration defended, streams harvested, clocks owned: the next lesson hands you two of these as live call-outs with real numbers, diagnosed the same way every capstone on this platform runs.
+
+## Sources and further reading
+
+- [Carbon Trust: industrial heat pumps and thermal storage guidance](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Institute of Refrigeration](https://ior.org.uk/): ice bank and ammonia plant practice.
+- [Dairy UK](https://www.dairyuk.org/): the sector's decarbonisation programmes.

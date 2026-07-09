@@ -1,0 +1,48 @@
+Milk is 87% water, and the dairy sector's most energy-intensive act is taking that water back out. Milk powder, whey powder and concentrated ingredients all require evaporating and then spray-drying away tonnes of water for every tonne of product, and the physics bill is brutal: latent heat does not negotiate. What makes this lesson worth its place is the technology ladder the industry built to cheat that bill, from multi-effect evaporation through vapour recompression to membranes, spanning a fifty-fold range in energy per tonne of water removed. No other choice in the sector moves a site's energy intensity as far as where it stands on this ladder.
+
+## The physics bill
+
+Boiling water off under evaporator vacuum (around 60 to 70 °C) costs roughly 2,330 kJ/kg of latent heat: about **650 kWh per tonne of water removed**, before any inefficiency. A powder line concentrating milk from 13% to 50% solids, then drying to 96%, removes several tonnes of water per tonne of powder, so a naive single-effect process would burn thousands of kilowatt-hours of heat per tonne of product. The ladder exists to divide that number down.
+
+## The ladder: effects, TVR, MVR, membranes
+
+**Multiple effects.** Chain evaporator vessels so each one's vapour boils the next (at successively lower pressure), and the steam is reused as many times as there are effects: five effects cut the heat bill roughly five-fold.
+
+**Thermal vapour recompression (TVR).** A steam ejector recompresses part of an effect's vapour to boil more milk, squeezing extra duty from the same steam: a well-designed multi-effect TVR plant removes water for something like 120 to 160 kWh of heat per tonne.
+
+**Mechanical vapour recompression (MVR).** The decisive step: an electrically driven fan compresses the evaporator's own vapour just enough to make it the heating medium, recycling the latent heat continuously. The energy input collapses to the compressor's work: typically **10 to 20 kWh of electricity per tonne of water**, a thirty-to-fifty-fold reduction on single-effect heat, and the reason modern evaporators are electrical machines and a pillar of the sector's [electrification story](/courses/dairies/ice-banks-and-load-shifting).
+
+**Membranes before heat.** Reverse osmosis removes water with no phase change at all, on pump work alone (a few kWh per tonne), up to the concentration where viscosity and osmotic pressure call a halt. RO pre-concentration ahead of the evaporator, and on farms or satellite sites before tankering, is often the cheapest water ever removed.
+
+<WorkedExample title="the ladder, priced per tonne of water">
+  <Given>
+    - Latent heat at evaporator conditions ≈ 650 kWh/t of water
+    - Gas via an 85%-efficient steam system at £0.06/kWh; electricity at £0.20/kWh
+  </Given>
+  <Find>The cost per tonne of water removed at each rung.</Find>
+  <Solution>
+    Single effect: 650 ÷ 0.85 × £0.06 ≈ **£46/t**. Five-effect TVR at ~140 kWh/t heat:
+    ≈ **£9.90/t**. MVR at ~15 kWh/t electricity: **£3.00/t**, and spray drying (which cannot
+    use effects) stays heat-hungry at roughly 1.2 to 1.5 kWh/kg of water, which is why the
+    design rule is to evaporate as far as the product allows and leave the dryer as little
+    water as possible.
+
+    The ladder's spread, £46 to £3 for the identical tonne of water, dwarfs every housekeeping
+    measure in this course, which is why evaporator technology is a board-level energy decision
+    and why an auditor's first question on a powder site is simply: which rung?
+  </Solution>
+</WorkedExample>
+
+## The spray dryer, and its recoveries
+
+However good the evaporation, powder finishes in a **spray dryer**: concentrate atomised into a tower of gas-heated air. Effects and recompression cannot help a dryer, so its economies are airside: exhaust-air heat recovery to preheat inlet air (fouling permitting), tight control of outlet temperature and humidity (every unnecessary degree of outlet temperature is wasted gas), and fines recovery. Around the whole line sit the [foundations patterns](/courses/food-drink-foundations/heat-recovery-patterns): evaporator condenser heat and hot condensate are large, clean, recoverable streams, and the condensate itself, water that was milk this morning, is the subject of the [next lesson](/courses/dairies/whey-and-coproducts).
+
+<Callout variant="key" title="Ask which rung before asking anything else">
+On powder and ingredients sites, the evaporation technology sets the energy story before housekeeping gets a vote: single-effect and MVR plants doing identical jobs differ by more than every other measure in this course combined. Audit accordingly: identify the rung, check the dryer is fed as dry as the product allows, then apply the usual disciplines to what remains. And when a site plans capacity, the increment analysis between rungs is the sector's single biggest energy decision.
+</Callout>
+
+## Sources and further reading
+
+- [Dairy Processing Handbook (Tetra Pak)](https://dairyprocessinghandbook.tetrapak.com/): evaporation and drying technology.
+- [Carbon Trust: industrial energy efficiency guides](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools).
+- [Society of Dairy Technology](https://www.sdt.org/): concentration and drying practice.

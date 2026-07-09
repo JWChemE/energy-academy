@@ -3012,6 +3012,250 @@ export const sectors: Sector[] = [
           },
         ],
       },
+      {
+        slug: "food-manufacturing",
+        title: "Energy Management in Food Manufacturing",
+        summary:
+          "How a food factory uses energy line by line, specific energy per tonne, and the cooking, freezing and heat-recovery opportunities the sector reliably offers, capped with a full factory energy audit. Assumes the Food & Drink Foundations course.",
+        status: "available",
+        modules: [
+          {
+            slug: "food-process-fundamentals",
+            title: "The Food Factory & Where Energy Goes",
+            lessons: [
+              {
+                slug: "the-food-factory",
+                title: "The Food Factory, Line by Line",
+                summary:
+                  "Intake to despatch: how cook, chill and clean shape a food factory's day, and why its three energy centres are heat, cold and hot water.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "process-heating-demand",
+                title: "Cooking, Baking & Process Heat",
+                summary:
+                  "Ovens, fryers, retorts and pasteurisers: where the thermal energy goes, and why regeneration makes pasteurisation astonishingly cheap when it's designed in.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "chilling-and-freezing",
+                title: "Chilling, Freezing & Cold Storage",
+                summary:
+                  "Blast and spiral freezers, the latent heat hiding in every tonne of product, and why freezing costs so much more than chilling.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Fundamentals Check",
+                summary: "Quiz on the food factory's process flow and its heating and freezing loads.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-benchmarks",
+            title: "Energy Use & Benchmarks",
+            lessons: [
+              {
+                slug: "kwh-per-tonne",
+                title: "Specific Energy: kWh per Tonne of Product",
+                summary:
+                  "Normalising by production, why cross-subsector comparisons mislead, and building the per-tonne baseline that makes a factory's performance measurable.",
+                minutes: 10,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "utilities-and-packaging",
+                title: "Compressed Air, Vacuum & Packaging Lines",
+                summary:
+                  "The electrical loads around the process: pneumatics, vacuum packing, conveyors and the packaging hall's quiet consumption.",
+                minutes: 9,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "benchmarks-check",
+                title: "Benchmarks & Hygiene Check",
+                summary: "Quiz on specific energy, washdown loads and site utilities.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-efficiency",
+            title: "Efficiency Opportunities in Practice",
+            lessons: [
+              {
+                slug: "heat-recovery-in-food",
+                title: "Heat Recovery in a Food Factory",
+                summary:
+                  "The refrigeration plant rejects heat all day while gas heats washdown water every night: connecting the two, and the other recovery pairings worth checking.",
+                minutes: 11,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short factory call-outs: washdown water heated by gas while the refrigeration plant throws heat away, and a freezer defrosting on a timer nobody questioned. Calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+                reviewed: "2026-07-08",
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on heat recovery pairings and cold-plant operating habits.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "food-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "food-audit-capstone",
+                title: "Capstone: Audit a Food Factory",
+                summary:
+                  "A full, staged energy audit of a fictional chilled ready-meals factory: scope it, walk the lines, build the production-and-weather model, and rank what you find.",
+                minutes: 35,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        slug: "dairies",
+        title: "Energy Management in Dairies",
+        summary:
+          "Milk through pasteurisers, separators, ice water and (on powder sites) the sector's hungriest unit operation: dairy-specific loads and benchmarks, the spring flush, whey and co-products, and the regeneration and ice-bank opportunities unique to dairy processing, capped with a full dairy energy audit. Assumes the Food & Drink Foundations course.",
+        status: "available",
+        modules: [
+          {
+            slug: "dairy-fundamentals",
+            title: "The Dairy & Where Energy Goes",
+            lessons: [
+              {
+                slug: "from-tanker-to-chiller",
+                title: "From Tanker to Chiller: The Dairy's Day",
+                summary:
+                  "Reception, separation, standardisation and homogenisation; liquid, cheese and powder sites; and the spring flush that makes dairy intake seasonal.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "pasteurisers-and-uht",
+                title: "Pasteurisers, UHT & the Heat Story",
+                summary:
+                  "HTST with regeneration is the sector's quiet triumph; UHT and sterilisation are its heavyweights. Where dairy heat goes and what decides its bill.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "ice-water-and-refrigeration",
+                title: "Ice Water, Ice Banks & Refrigeration",
+                summary:
+                  "Why dairies cool with ice water, how an ice bank turns refrigeration into storable cold, and the loads from reception to cold store.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "fundamentals-check",
+                title: "Fundamentals Check",
+                summary: "Quiz on the dairy's process flow, heat systems and ice-water plant.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dairy-benchmarks",
+            title: "Benchmarks, Evaporation & Whey",
+            lessons: [
+              {
+                slug: "kwh-per-litre",
+                title: "Specific Energy: kWh per Litre",
+                summary:
+                  "Liquid, cheese and powder sites differ by an order of magnitude; product mix and the spring flush make normalisation non-negotiable.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "evaporation-and-drying",
+                title: "Evaporation & Spray Drying: The Powder Problem",
+                summary:
+                  "Removing water is the sector's hungriest job: multi-effect evaporation, TVR and MVR, membrane pre-concentration, and the spray dryer at the end.",
+                minutes: 11,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "whey-and-coproducts",
+                title: "Whey, Co-products & Cow Water",
+                summary:
+                  "Whey turns cheese sites' effluent economics upside down, and evaporator condensate ('cow water') is a water source hiding in the milk itself.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "benchmarks-check",
+                title: "Benchmarks & Evaporation Check",
+                summary: "Quiz on dairy SEC, evaporation technologies and whey.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dairy-efficiency",
+            title: "Efficiency in Practice",
+            lessons: [
+              {
+                slug: "heat-recovery-in-dairies",
+                title: "Heat Recovery in a Dairy",
+                summary:
+                  "Regeneration effectiveness is the dairy's most valuable maintenance number; around it sit evaporator vapour, condensate and desuperheat recovery.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "ice-banks-and-load-shifting",
+                title: "Ice Banks, Load Shifting & the Electric Dairy",
+                summary:
+                  "Thermal storage lets a dairy buy its cold at night prices; MVR and heat pumps are electrifying the rest. The sector's route off the gas main.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "two-quick-diagnostics",
+                title: "Hands-On: Two Quick Diagnostics",
+                summary:
+                  "Two short dairy call-outs: a pasteuriser whose regeneration has quietly degraded, and an ice bank charging at the wrong time of day. Calculate, diagnose and prescribe the fix.",
+                minutes: 12,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "efficiency-check",
+                title: "Efficiency in Practice Check",
+                summary: "Quiz on regeneration, ice banks and dairy electrification.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "dairy-capstone",
+            title: "Capstone Project",
+            lessons: [
+              {
+                slug: "dairy-audit-capstone",
+                title: "Capstone: Audit a Dairy",
+                summary:
+                  "A full, staged energy audit of a fictional liquid-milk dairy: scope it, walk the plant through a spring-flush year of data, and rank what you find.",
+                minutes: 35,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -3184,120 +3428,6 @@ export const sectors: Sector[] = [
                 title: "Capstone: Audit an Office Building",
                 summary:
                   "A full, staged energy audit of a fictional multi-let office: scope it around the landlord boundary, walk the plant rooms, normalise a year of data, and rank what you find.",
-                minutes: 35,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        slug: "food-manufacturing",
-        title: "Energy Management in Food Manufacturing",
-        summary:
-          "How a food factory uses energy line by line, specific energy per tonne, and the cooking, freezing and heat-recovery opportunities the sector reliably offers, capped with a full factory energy audit. Assumes the Food & Drink Foundations course.",
-        status: "available",
-        modules: [
-          {
-            slug: "food-process-fundamentals",
-            title: "The Food Factory & Where Energy Goes",
-            lessons: [
-              {
-                slug: "the-food-factory",
-                title: "The Food Factory, Line by Line",
-                summary:
-                  "Intake to despatch: how cook, chill and clean shape a food factory's day, and why its three energy centres are heat, cold and hot water.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "process-heating-demand",
-                title: "Cooking, Baking & Process Heat",
-                summary:
-                  "Ovens, fryers, retorts and pasteurisers: where the thermal energy goes, and why regeneration makes pasteurisation astonishingly cheap when it's designed in.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "chilling-and-freezing",
-                title: "Chilling, Freezing & Cold Storage",
-                summary:
-                  "Blast and spiral freezers, the latent heat hiding in every tonne of product, and why freezing costs so much more than chilling.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "fundamentals-check",
-                title: "Fundamentals Check",
-                summary: "Quiz on the food factory's process flow and its heating and freezing loads.",
-                minutes: 5,
-              },
-            ],
-          },
-          {
-            slug: "food-benchmarks",
-            title: "Energy Use & Benchmarks",
-            lessons: [
-              {
-                slug: "kwh-per-tonne",
-                title: "Specific Energy: kWh per Tonne of Product",
-                summary:
-                  "Normalising by production, why cross-subsector comparisons mislead, and building the per-tonne baseline that makes a factory's performance measurable.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "utilities-and-packaging",
-                title: "Compressed Air, Vacuum & Packaging Lines",
-                summary:
-                  "The electrical loads around the process: pneumatics, vacuum packing, conveyors and the packaging hall's quiet consumption.",
-                minutes: 9,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "benchmarks-check",
-                title: "Benchmarks & Hygiene Check",
-                summary: "Quiz on specific energy, washdown loads and site utilities.",
-                minutes: 5,
-              },
-            ],
-          },
-          {
-            slug: "food-efficiency",
-            title: "Efficiency Opportunities in Practice",
-            lessons: [
-              {
-                slug: "heat-recovery-in-food",
-                title: "Heat Recovery in a Food Factory",
-                summary:
-                  "The refrigeration plant rejects heat all day while gas heats washdown water every night: connecting the two, and the other recovery pairings worth checking.",
-                minutes: 11,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "two-quick-diagnostics",
-                title: "Hands-On: Two Quick Diagnostics",
-                summary:
-                  "Two short factory call-outs: washdown water heated by gas while the refrigeration plant throws heat away, and a freezer defrosting on a timer nobody questioned. Calculate, diagnose and prescribe the fix.",
-                minutes: 12,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "efficiency-check",
-                title: "Efficiency in Practice Check",
-                summary: "Quiz on heat recovery pairings and cold-plant operating habits.",
-                minutes: 5,
-              },
-            ],
-          },
-          {
-            slug: "food-capstone",
-            title: "Capstone Project",
-            lessons: [
-              {
-                slug: "food-audit-capstone",
-                title: "Capstone: Audit a Food Factory",
-                summary:
-                  "A full, staged energy audit of a fictional chilled ready-meals factory: scope it, walk the lines, build the production-and-weather model, and rank what you find.",
                 minutes: 35,
               },
             ],

@@ -1,0 +1,50 @@
+Ask what a dairy should use per litre and the only honest first answer is another question: what kind of dairy? The sector's specific energy consumption spans an order of magnitude between a liquid-milk site and a powder plant, for physics reasons no efficiency programme can bridge, and within any one site the cows impose a 20% seasonal swing that flatters spring and damns autumn. This lesson builds dairy benchmarking on the [SEC discipline the food course established](/courses/food-manufacturing/kwh-per-tonne): same method, dairy denominators, and two traps of the sector's own.
+
+## The denominator and the split
+
+Dairy SEC is quoted per litre (or per 1,000 litres) of **milk intake**, tracked separately for gas and electricity exactly as elsewhere: gas per litre follows heat treatment and CIP, electricity per litre follows refrigeration, homogenisation and packing. An efficient liquid-milk site lands well under 0.1 kWh/L total (this course's capstone dairy runs at 0.079, split 38 gas / 41 electricity per thousand litres); typical sites run higher, and older or smaller ones higher still. Quote the split, not just the total: a gas-heavy litre points at regeneration and CIP, an electricity-heavy one at the cold plain.
+
+## Trap one: site type is destiny
+
+Cheese sites carry vats, presses, brine chilling and months of matured cold storage per litre of intake; powder sites carry [evaporation and spray drying](/courses/dairies/evaporation-and-drying), the sector's hungriest operations. The honest ranges differ so much (liquid well under 0.1 kWh/L; cheese several times that per litre of intake; powder several times again) that cross-type comparison is meaningless, and mixed sites need product-level allocation before any benchmark means anything. The rule from the [food course](/courses/food-manufacturing/kwh-per-tonne) applies with extra force: the comparison with teeth is the site against its own normalised history, not against a sector table whose members make different things.
+
+## Trap two: the spring flush
+
+The [first lesson](/courses/dairies/from-tanker-to-chiller) introduced the flush; here is what it does to the ratio.
+
+<WorkedExample title="the flush flatters spring, every spring">
+  <Given>
+    - A dairy's gas model: 100,000 kWh/month base (CIP, washdown, space heat) + 30 kWh per 1,000 L
+    - February intake: 11,600 kL. May intake: 14,000 kL (the flush, +21%)
+  </Given>
+  <Find>The gas SEC in each month.</Find>
+  <Solution>
+    February: (100,000 + 30 × 11,600) ÷ 11,600 = **38.6 kWh/kL**.
+
+    May: (100,000 + 30 × 14,000) ÷ 14,000 = **37.1 kWh/kL**, an apparent 4% "improvement"
+    with nothing on site running differently: the fixed 100,000 simply spread over more milk.
+    The autumn trough runs the same arithmetic in reverse. Any per-litre claim that compares
+    spring with autumn, or this May with a flusher or flatter one, is reporting cow behaviour
+    as energy management, which is why the regression model (base and slope estimated
+    separately, as the [M&T course](/courses/monitoring-and-targeting/normalisation) teaches)
+    comes before any dairy benchmark.
+  </Solution>
+</WorkedExample>
+
+## Building the model that survives scrutiny
+
+The capstone rehearses the full workflow: regress monthly gas against intake (base plus kWh/kL slope), regress electricity against intake and cooling degree-days (the condensers feel summer), then judge each month against what the model says it *should* have used. The residuals are where a fouled regenerator, a drifted ice-bank schedule or a CIP recipe change surface as persistent gaps, datable by the [energy-signature method](/courses/monitoring-and-targeting/energy-signatures). And the coefficients themselves become the honest reporting language: "30 kWh of gas per thousand litres, down from 33" survives a [CCA return](/courses/food-drink-foundations/cca-esos-and-reporting) and a retailer's technical review; "energy fell 4% this spring" survives neither.
+
+<Callout variant="key" title="Normalise for the cows before you judge the plant">
+A dairy's throughput is set by biology and contracts, not by the energy manager, and it moves 15 to 25% across the year. The base load and the per-litre slope are different numbers with different owners: conflate them into one raw ratio and every spring becomes unearned praise, every autumn a phantom fault. Model first, then benchmark, then judge, and never let a per-litre figure cross site types.
+</Callout>
+
+## Where the module goes next
+
+The per-litre framework set, the next two lessons visit the loads that define the sector's extremes: the evaporators and dryers that make powder sites what they are, and the whey stream that turns cheese-site economics upside down.
+
+## Sources and further reading
+
+- [Dairy UK](https://www.dairyuk.org/): sector environmental reporting.
+- [AHDB Dairy](https://ahdb.org.uk/dairy): UK milk intake data and seasonality.
+- [ISO 50006](https://www.iso.org/standard/77425.html): energy performance indicators and baselines.

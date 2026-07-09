@@ -1,0 +1,46 @@
+Dairy heat treatment is where the food and drink sector's smartest energy engineering and its most demanding food safety law meet. The temperatures are legal minima, validated and non-negotiable; yet a well-run pasteuriser delivers them almost for free, because the sector perfected regenerative heat exchange decades before anyone called it heat recovery. This lesson covers the three heat treatments (pasteurisation, UHT, sterilisation), the regeneration arithmetic that makes the first nearly free, and the number that quietly decides a dairy's gas bill.
+
+## HTST pasteurisation: the perfected process
+
+**High-temperature short-time (HTST)** pasteurisation holds milk at a legal minimum of 71.7 °C for 15 seconds (the standard UK/retained-EU combination), then cools it straight back down. Naively that is a brutal load: heating every litre by nearly 70 degrees, then throwing the heat away. The **regeneration section** of the plate heat exchanger is what civilises it: outgoing hot milk preheats incoming cold milk across a plate pack, so the hot-water section only supplies the final few degrees and the chiller only removes the last few.
+
+<WorkedExample title="what regeneration is worth on one pasteuriser">
+  <Given>
+    - Throughput 20,000 L/h (≈20,000 kg/h), milk cp ≈ 3.9 kJ/kg·K, lift 4 → 72 °C
+    - Regeneration effectiveness 92% (a typical modern design)
+  </Given>
+  <Find>The total duty, and what the hot section actually supplies.</Find>
+  <Solution>
+    Total duty = 20,000 × 3.9 × 68 ÷ 3,600 ≈ **1,473 kW** whenever the plant runs.
+
+    At 92% regeneration, the milk heats the milk for all but 8% of that: the hot section
+    supplies just **118 kW**, and the cooling section is relieved by the same arithmetic.
+    This is the [foundations course's batch-to-batch pattern](/courses/food-drink-foundations/heat-recovery-patterns)
+    perfected into continuous form, and it is why a liquid dairy's gas per litre can be so
+    startlingly low: the sector's biggest thermal process runs at one-twelfth throttle.
+  </Solution>
+</WorkedExample>
+
+The catch is that effectiveness is a *maintained* property, not a purchased one. Milk fouls hot plates aggressively, gaskets tire, and every lost point of regeneration lands directly on the hot section: the same plant at 84% instead of 92% doubles its top-up demand, which is exactly the drift this course's [diagnostics](/courses/dairies/two-quick-diagnostics) will make you price. Regeneration effectiveness is, without much competition, **the most valuable maintenance number in a dairy**, and most sites do not trend it.
+
+## UHT and sterilisation: the heavyweights
+
+**UHT** (ultra-high temperature, typically 135 to 140 °C for a few seconds, aseptically packed) buys ambient shelf life with a much deeper thermal cycle. Good UHT plants regenerate too, but the higher lift, the steam injection in direct-heating designs, and the fierce fouling (hence more frequent, hotter CIP) make UHT milk meaningfully more energy-intensive per litre than pasteurised. **In-container sterilisation** (retorting filled bottles) sits at the top of the intensity ladder. The energy manager's angle: the *mix* between pasteurised, UHT and sterilised output moves a site's per-litre figures for pure product-mix reasons, one more thing the [benchmarking lesson](/courses/dairies/kwh-per-litre) insists on separating from performance.
+
+## Homogenisers and the supporting cast
+
+Around the heat exchangers run loads worth naming. Homogenisers (100 to 250 bar) are among the site's largest point electrical loads, and their pressure setpoints deserve the same "show me where the specification requires this" test as any [safety-floor question](/courses/food-drink-foundations/food-safety-sets-the-floor), because pressure creep costs real kilowatts. Separators run on milk flow. And the hot-water sets and steam system behind the top-up duty carry all the usual [boiler-house obligations](/courses/boilers-and-fired-systems/blowdown).
+
+<Callout variant="key" title="Guard the regeneration number">
+A pasteuriser never alarms on lost regeneration: the product still reaches its validated temperature, the plant still "works", and the hot section silently absorbs the difference. Eight lost points on one 20,000 L/h line is over £30,000 a year in gas. Log the regeneration section's terminal temperatures, compute effectiveness monthly, and treat a one-point drift as a maintenance trigger: it is the highest-value monitoring habit this course will give you.
+</Callout>
+
+## What's next
+
+Everything heated must be re-cooled, and dairies do their cooling through a medium the rest of industry barely uses: ice water. The next lesson covers the cold side, and the thermal storage trick (the ice bank) that makes dairy refrigeration uniquely schedulable.
+
+## Sources and further reading
+
+- [Food Standards Agency](https://www.food.gov.uk/): pasteurisation requirements for milk.
+- [Dairy Processing Handbook (Tetra Pak)](https://dairyprocessinghandbook.tetrapak.com/): heat treatment and regeneration design.
+- [Society of Dairy Technology](https://www.sdt.org/): UK dairy processing practice.
