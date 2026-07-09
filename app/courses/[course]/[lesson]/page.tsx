@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ctx = getLessonContext(course, lesson);
   if (!ctx) return {};
   return {
-    title: `${ctx.lesson.title} — ${ctx.course.title}`,
+    title: ctx.lesson.seoTitle ?? `${ctx.lesson.title} — ${ctx.course.title}`,
     description: ctx.lesson.summary,
     authors: [{ name: AUTHOR.name, url: `${SITE_URL}/about` }],
     alternates: { canonical: `/courses/${course}/${lesson}` },

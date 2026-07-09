@@ -8,6 +8,7 @@ import {
   getCourseStats,
 } from "@/lib/content";
 import { SITE_NAME, SITE_URL } from "@/lib/siteUrl";
+import FAQList from "@/components/mdx/FAQList";
 
 type Props = { params: Promise<{ course: string }> };
 
@@ -20,12 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const found = getCourse(slug);
   if (!found) return {};
   return {
-    title: found.course.title,
-    description: found.course.summary,
+    title: found.course.seoTitle ?? found.course.title,
+    description: found.course.seoDescription ?? found.course.summary,
     alternates: { canonical: `/courses/${slug}` },
     openGraph: {
-      title: found.course.title,
-      description: found.course.summary,
+      title: found.course.seoTitle ?? found.course.title,
+      description: found.course.seoDescription ?? found.course.summary,
       url: `/courses/${slug}`,
     },
   };
@@ -178,6 +179,8 @@ export default async function CoursePage({ params }: Props) {
             </Link>
           </div>
         )}
+
+        {found.course.faqId && <FAQList id={found.course.faqId} />}
       </section>
     </div>
   );

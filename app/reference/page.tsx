@@ -30,6 +30,11 @@ const PAGES = [
     blurb: "Boilers, chillers, heat pumps, compressed air and lighting: the working figures for first-pass estimates.",
   },
   {
+    href: "/reference/uk-energy-compliance-deadlines",
+    title: "UK energy compliance deadlines",
+    blurb: "ESOS Phase 4, MEES trajectories, the CCA calendar, heat network regulation, TM44 and every recurring cycle, dated and linked.",
+  },
+  {
     href: "/reference/prices-and-carbon-factors",
     title: "Reference prices & carbon factors",
     blurb: "The platform's standard energy prices and the UK greenhouse-gas conversion factors, dated.",

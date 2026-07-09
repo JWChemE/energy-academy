@@ -41,6 +41,12 @@ export type Lesson = {
    * important for regulation lessons where facts drift.
    */
   reviewed?: string;
+  /**
+   * Optional SEO title override for the browser tab / search snippet
+   * (the visible H1 stays `title`). Use for lessons deliberately tuned to a
+   * search query; the layout template appends "· Energy Academy".
+   */
+  seoTitle?: string;
 };
 
 export type Module = {
@@ -57,6 +63,11 @@ export type Course = {
   summary: string;
   status: CourseStatus;
   modules: Module[];
+  /** Optional SEO overrides for the course page (H1 stays `title`). */
+  seoTitle?: string;
+  seoDescription?: string;
+  /** Key into content/faqs.ts — renders an FAQ section + FAQPage schema on the course page. */
+  faqId?: string;
 };
 
 /**
@@ -174,6 +185,10 @@ export const curriculum: NumberedLevel[] = [
     courses: [
       {
         slug: "intro-to-energy-management",
+        seoTitle: "What is Energy Management? A Free UK Course",
+        seoDescription:
+          "A free, UK-specific introduction to energy management: what energy managers do, the Plan-Do-Check-Act cycle, kWh and bills, and simple payback. No signup needed for Level 1.",
+        faqId: "intro-energy-management",
         title: "Introduction to Energy Management",
         summary:
           "What energy is, how it's measured, why we manage it, and how to turn a saving into a decision. The foundation course for the whole platform.",
@@ -637,9 +652,10 @@ export const curriculum: NumberedLevel[] = [
               {
                 slug: "esos",
                 title: "ESOS: Mandatory Energy Audits",
+                seoTitle: "ESOS Phase 4: Deadline, Who Qualifies & What's Required (2026 Guide)",
                 summary: "Who must comply, timing, scope, and what audits must cover.",
                 minutes: 10,
-                reviewed: "2026-07-03",
+                reviewed: "2026-07-09",
               },
               {
                 slug: "secr",
