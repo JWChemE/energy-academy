@@ -2773,19 +2773,120 @@ export const curriculum: NumberedLevel[] = [
 export const sectors: Sector[] = [
   {
     kind: "sector",
-    slug: "breweries",
+    slug: "food-and-drink",
     category: "industrial",
-    title: "Breweries",
-    tagline: "Process, energy and regulation in the brewhouse and cellar",
+    title: "Food & Drink",
+    tagline: "Cook, chill, clean: one sector, shared rules, many processes",
     description:
-      "Apply everything from Levels 1 and 2 to one of the most process- and utility-intensive site types there is: mashing, boiling, fermentation and cold conditioning all impose real, sequenced thermal and refrigeration loads, and the sector carries its own regulation — trade effluent, food safety, packaging producer responsibility. This is where steam, refrigeration, compressed air, heat recovery and pinch analysis meet a real production line.",
+      "The UK's largest manufacturing sector, taught the way its knowledge actually divides: a shared foundations course covering what every food and drink site has in common (HACCP floors, CIP and washdown, trade effluent, the CCA landscape, cold plant and heat recovery), and process courses that build on it: brewing, food manufacturing, and dairy processing. Start with the foundations; the process courses assume them.",
     accent: sectorAccent,
     courses: [
+      {
+        slug: "food-drink-foundations",
+        title: "Food & Drink Foundations",
+        summary:
+          "The shared block every food and drink site runs on: the food safety floors no measure may cross, hygiene as a hidden utility, effluent and the CCA landscape, and the cold-plant and heat-recovery patterns that recur from brewhouse to dairy. The process courses assume this grounding.",
+        status: "available",
+        modules: [
+          {
+            slug: "fd-safety-hygiene",
+            title: "Food Safety & Hygiene",
+            lessons: [
+              {
+                slug: "the-food-and-drink-sector",
+                title: "The Food & Drink Sector",
+                summary:
+                  "Cook, chill and clean: the shape every food and drink site shares, why the sector earns its own foundations course, and how the process courses build on this one.",
+                minutes: 9,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "food-safety-sets-the-floor",
+                title: "Food Safety Sets the Floor",
+                summary:
+                  "HACCP cook, chill and cleaning limits are not energy variables: where the hard floors are, and where genuine flexibility hides behind them.",
+                minutes: 9,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "cip-and-washdown",
+                title: "Hygiene: CIP, Washdown & Hot Water",
+                summary:
+                  "The nightly clean is a hidden utility on every food and drink site: quantifying washdown hot water, and where hygiene rules leave room for efficiency.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "hygiene-check",
+                title: "Safety & Hygiene Check",
+                summary: "Quiz on HACCP floors, CIP and the washdown utility.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "fd-compliance",
+            title: "Compliance & the Cost of the Drain",
+            lessons: [
+              {
+                slug: "cca-esos-and-reporting",
+                title: "CCAs, ESOS & Reporting Across Food & Drink",
+                summary:
+                  "The sector Climate Change Agreements and who is actually in scope for ESOS and SECR, plus packaging producer responsibility: the scoping questions every audit answers first.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "trade-effluent-and-water",
+                title: "Trade Effluent, Water & What Goes Down the Drain",
+                summary:
+                  "Strength-based charging makes food and drink effluent expensive: consents, the Mogden logic, product losses paid for three times, and the water-energy link in every washdown.",
+                minutes: 11,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "compliance-check",
+                title: "Compliance Check",
+                summary: "Quiz on the CCA landscape, scheme scope and effluent charging.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "fd-utilities",
+            title: "Shared Utilities & Heat Recovery",
+            lessons: [
+              {
+                slug: "running-the-cold-plant",
+                title: "Running the Cold Plant Well",
+                summary:
+                  "Suction and head pressure, defrost on demand, door discipline and the operating habits that decide any food or drink site's refrigeration bill.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "heat-recovery-patterns",
+                title: "Heat Recovery: The Sector's Recurring Matches",
+                summary:
+                  "Every food and drink site rejects heat next to a heat demand: the matching method, the pairings that recur from brewhouse to dairy, and how storage bridges time.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "utilities-check",
+                title: "Utilities & Heat Recovery Check",
+                summary: "Quiz on cold-plant operating levers and heat-recovery matching.",
+                minutes: 5,
+              },
+            ],
+          },
+        ],
+      },
       {
         slug: "breweries",
         title: "Energy Management in Breweries",
         summary:
-          "The brewing process and where energy enters it, brewery-specific benchmarks and regulation, and the heat-recovery and refrigeration opportunities unique to a brewhouse — capped with a full brewery energy audit.",
+          "The brewing process and where energy enters it, brewery-specific benchmarks, and the heat-recovery and refrigeration opportunities unique to a brewhouse, capped with a full brewery energy audit. Assumes the Food & Drink Foundations course.",
         status: "available",
         modules: [
           {
@@ -2856,42 +2957,6 @@ export const sectors: Sector[] = [
                 slug: "benchmarks-check",
                 title: "Energy Benchmarks Check",
                 summary: "Quiz on brewery energy intensity, CIP/packaging and site utilities.",
-                minutes: 5,
-              },
-            ],
-          },
-          {
-            slug: "regulation-and-compliance",
-            title: "Regulation & Compliance for Breweries",
-            lessons: [
-              {
-                slug: "trade-effluent-and-water",
-                title: "Trade Effluent Consent & Water Reuse",
-                summary:
-                  "Why brewery effluent is charged by strength as well as volume, and how heat and water recovery cut both the energy bill and the effluent charge together.",
-                minutes: 10,
-                reviewed: "2026-07-05",
-              },
-              {
-                slug: "food-safety-and-energy",
-                title: "Food Safety Requirements That Set Energy Floors",
-                summary:
-                  "HACCP-driven CIP temperatures and cold-chain limits aren't negotiable — where safety, not efficiency, sets the minimum.",
-                minutes: 9,
-                reviewed: "2026-07-05",
-              },
-              {
-                slug: "reporting-and-schemes",
-                title: "ESOS, SECR, Climate Change Agreements & Packaging EPR",
-                summary:
-                  "Which UK schemes actually apply to a brewery your size, the sector's historic Climate Change Agreement, and the rising cost of packaging producer responsibility.",
-                minutes: 10,
-                reviewed: "2026-07-05",
-              },
-              {
-                slug: "compliance-check",
-                title: "Regulation & Compliance Check",
-                summary: "Quiz on trade effluent, food safety limits and applicable UK schemes.",
                 minutes: 5,
               },
             ],
@@ -3125,23 +3190,11 @@ export const sectors: Sector[] = [
           },
         ],
       },
-    ],
-  },
-  {
-    kind: "sector",
-    slug: "food-manufacturing",
-    category: "industrial",
-    title: "Food Manufacturing",
-    tagline: "Cooking, freezing and hygiene: energy where food safety sets the rules",
-    description:
-      "Apply Levels 1 and 2 to the UK's largest manufacturing sector. A food factory cooks, chills, freezes and cleans on a fixed hygienic rhythm, so its energy lives in three places: process heat for cooking and baking, refrigeration for chilling and freezing, and the hot water that HACCP-driven washdown demands every single night. This is where steam, refrigeration and heat recovery meet a production line whose safety rules are not negotiable.",
-    accent: sectorAccent,
-    courses: [
       {
         slug: "food-manufacturing",
         title: "Energy Management in Food Manufacturing",
         summary:
-          "How a food factory uses energy line by line, specific energy per tonne and the hygiene loads that set the floor, the CCA and compliance landscape, and the heat-recovery and refrigeration opportunities the sector reliably offers: capped with a full factory energy audit.",
+          "How a food factory uses energy line by line, specific energy per tonne, and the cooking, freezing and heat-recovery opportunities the sector reliably offers, capped with a full factory energy audit. Assumes the Food & Drink Foundations course.",
         status: "available",
         modules: [
           {
@@ -3182,21 +3235,13 @@ export const sectors: Sector[] = [
           },
           {
             slug: "food-benchmarks",
-            title: "Energy Use, Benchmarks & Hygiene Loads",
+            title: "Energy Use & Benchmarks",
             lessons: [
               {
                 slug: "kwh-per-tonne",
                 title: "Specific Energy: kWh per Tonne of Product",
                 summary:
                   "Normalising by production, why cross-subsector comparisons mislead, and building the per-tonne baseline that makes a factory's performance measurable.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "hygiene-and-washdown",
-                title: "Hygiene: CIP, Washdown & Hot Water",
-                summary:
-                  "The nightly clean is a hidden utility: quantifying washdown hot water, and where hygiene rules leave room for efficiency.",
                 minutes: 10,
                 reviewed: "2026-07-08",
               },
@@ -3217,42 +3262,6 @@ export const sectors: Sector[] = [
             ],
           },
           {
-            slug: "food-regulation",
-            title: "Regulation & Compliance",
-            lessons: [
-              {
-                slug: "food-safety-sets-the-floor",
-                title: "Food Safety Sets the Floor",
-                summary:
-                  "HACCP cook and chill limits are not energy variables: where the hard floors are, and where genuine flexibility hides.",
-                minutes: 9,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "cca-and-reporting",
-                title: "Climate Change Agreements, ESOS & SECR",
-                summary:
-                  "The CCA scheme running to 2033, the CCL discount it buys, and how the reporting schemes land on a food business.",
-                minutes: 10,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "effluent-water-and-fats",
-                title: "Trade Effluent, Water & Fat Down the Drain",
-                summary:
-                  "Why food effluent is expensive, what fats and product losses do to the bill, and the water-energy link in every washdown.",
-                minutes: 9,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "compliance-check",
-                title: "Regulation & Compliance Check",
-                summary: "Quiz on HACCP floors, the CCA scheme and effluent costs.",
-                minutes: 5,
-              },
-            ],
-          },
-          {
             slug: "food-efficiency",
             title: "Efficiency Opportunities in Practice",
             lessons: [
@@ -3262,14 +3271,6 @@ export const sectors: Sector[] = [
                 summary:
                   "The refrigeration plant rejects heat all day while gas heats washdown water every night: connecting the two, and the other recovery pairings worth checking.",
                 minutes: 11,
-                reviewed: "2026-07-08",
-              },
-              {
-                slug: "running-the-cold-plant",
-                title: "Running the Cold Plant Well",
-                summary:
-                  "Suction and head pressure, defrost on demand, door discipline and the operating habits that decide a freezer hall's bill.",
-                minutes: 10,
                 reviewed: "2026-07-08",
               },
               {

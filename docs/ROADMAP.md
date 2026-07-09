@@ -134,8 +134,12 @@ five batches.
 - [x] Data Centres sector course — same shape (13 lessons, 4 quizzes,
       diagnostics, facility audit capstone); balances the Buildings
       category *(Jul 2026)*
-- [ ] More sectors (Fleet Electrification & Depot Charging to open the
-      Transportation category; hospitals, retail, cold storage candidates)
+- [x] Food & Drink restructure — Breweries + Food Manufacturing merged into
+      one multi-course sector with a shared Foundations course (HACCP, CIP,
+      effluent, CCAs, cold plant, heat-recovery patterns); process courses
+      slimmed to what's process-specific; 12 permanent redirects *(Jul 2026)*
+- [ ] More sectors (Dairies next inside Food & Drink; Fleet Electrification
+      & Depot Charging to open the Transportation category)
 
 ## Phase 4 — Commercialisation
 

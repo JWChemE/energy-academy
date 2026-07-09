@@ -14,9 +14,12 @@ tiers aligned to how the profession develops expertise, plus sector courses:
 - **Level 3 – Leadership & Strategy:** policy, finance, procurement, net zero.
 - **Sectors:** a peer section (not a fourth tier) applying Levels 1–2 to one
   industry at a time, grouped into Industrial / Buildings / Transportation
-  categories (Breweries, Commercial Real Estate, Food Manufacturing, Data Centres so far).
-  Sector lessons assume the Level 1/2 grounding and cross-link back rather
-  than re-teach.
+  categories. A sector may hold multiple courses: Food & Drink has a shared
+  Foundations course (HACCP, CIP, effluent, CCAs, cold plant, heat-recovery
+  patterns) that its process courses (Breweries, Food Manufacturing, Dairies)
+  build on rather than re-teach. Buildings holds Commercial Real Estate and
+  Data Centres. Sector lessons assume the Level 1/2 grounding and cross-link
+  back rather than re-teach.
 
 Level 2/3 and Sector lesson bodies are gated behind a free account (served via
 `/api/lesson` with a Supabase token); only a short lead-paragraph excerpt is

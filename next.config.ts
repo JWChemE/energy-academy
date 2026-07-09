@@ -46,6 +46,26 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+  // Jul 2026: the Breweries and Food Manufacturing sectors merged into one
+  // Food & Drink sector, whose shared lessons moved into the new
+  // food-drink-foundations course. Permanent redirects preserve old URLs.
+  async redirects() {
+    const gone = [
+      ["/sectors/breweries", "/sectors/food-and-drink"],
+      ["/sectors/food-manufacturing", "/sectors/food-and-drink"],
+      ["/courses/food-manufacturing/food-safety-sets-the-floor", "/courses/food-drink-foundations/food-safety-sets-the-floor"],
+      ["/courses/food-manufacturing/hygiene-and-washdown", "/courses/food-drink-foundations/cip-and-washdown"],
+      ["/courses/food-manufacturing/effluent-water-and-fats", "/courses/food-drink-foundations/trade-effluent-and-water"],
+      ["/courses/food-manufacturing/cca-and-reporting", "/courses/food-drink-foundations/cca-esos-and-reporting"],
+      ["/courses/food-manufacturing/running-the-cold-plant", "/courses/food-drink-foundations/running-the-cold-plant"],
+      ["/courses/food-manufacturing/compliance-check", "/courses/food-drink-foundations/compliance-check"],
+      ["/courses/breweries/trade-effluent-and-water", "/courses/food-drink-foundations/trade-effluent-and-water"],
+      ["/courses/breweries/food-safety-and-energy", "/courses/food-drink-foundations/food-safety-sets-the-floor"],
+      ["/courses/breweries/reporting-and-schemes", "/courses/food-drink-foundations/cca-esos-and-reporting"],
+      ["/courses/breweries/compliance-check", "/courses/food-drink-foundations/compliance-check"],
+    ];
+    return gone.map(([source, destination]) => ({ source, destination, permanent: true }));
+  },
 };
 
 export default nextConfig;

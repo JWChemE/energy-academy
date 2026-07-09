@@ -2799,63 +2799,6 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Establishing your own baseline and watching it over time reveals developing problems directly: the same principle as the monitoring & targeting baseline method.",
     },
   ],
-  "brewery-compliance-check": [
-    {
-      question: "Why is brewery trade effluent typically charged more than its raw volume would suggest?",
-      options: [
-        "The charges include the cost of the brewery's incoming water",
-        "Water companies apply a standard sector surcharge to all food and drink producers by default",
-        "Brewery discharge volumes are estimated rather than metered",
-        "Charges also reflect strength (BOD/COD), and brewery effluent is strong",
-      ],
-      answer: 3,
-      explanation: "Trade effluent charging (the Mogden formula) has volume and strength components: brewery effluent's high organic content pushes up the strength charge specifically.",
-    },
-    {
-      question: "Recovering both the heat AND the water from wort cooling (reusing it as brewing liquor, rather than draining it) can reduce:",
-      options: [
-        "Neither bill materially, on a brewery of typical scale",
-        "The trade effluent bill alone, since the heat is low grade",
-        "Both the gas bill and the trade effluent bill at once",
-        "The gas bill alone, since the water was already paid for",
-      ],
-      answer: 2,
-      explanation: "Recovering the water itself, not just its heat, cuts the volume side of the trade effluent charge alongside the energy saving: two benefits from one project.",
-    },
-    {
-      question: "A HACCP critical limit, such as a CIP wash temperature, should be treated as:",
-      options: [
-        "A food-safety requirement never crossed without proper validation",
-        "A starting point for negotiation with the energy assessor",
-        "A guideline that experienced brewers may use their judgement on",
-        "A target that applies to packaging lines but not to vessels",
-      ],
-      answer: 0,
-      explanation: "HACCP critical limits are set to reliably prevent a hazard: lowering one without validating that it still works is a food-safety risk, not a legitimate efficiency measure.",
-    },
-    {
-      question: "Most craft and regional UK breweries, in terms of ESOS and SECR applicability, are:",
-      options: [
-        "Covered only once their exports exceed a set threshold",
-        "In scope for ESOS but exempt from SECR reporting",
-        "In scope for both, as alcohol producers are always covered",
-        "Below the size thresholds and exempt, unlike the large groups",
-      ],
-      answer: 3,
-      explanation: "ESOS and SECR apply to large undertakings by employee count and turnover thresholds: most craft and regional breweries fall below these, unlike large brewing groups.",
-    },
-    {
-      question: "A Climate Change Agreement (CCA), historically available to the brewing sector, works by:",
-      options: [
-        "Exempting breweries from the Climate Change Levy entirely",
-        "Discounting the levy in exchange for meeting efficiency targets",
-        "Funding brewery efficiency projects from a sector-wide pot",
-        "Replacing ESOS audits with a lighter sector assessment",
-      ],
-      answer: 1,
-      explanation: "A CCA is a sector-negotiated agreement trading a lower CCL rate for meeting efficiency targets: always check current eligibility and terms for the specific site.",
-    },
-  ],
   "brewery-efficiency-check": [
     {
       question: "Vapour condensing (recovering heat from the wort boil's evaporated water) and wort-cooling heat recovery (recovering heat from the cooled wort afterward) are:",
@@ -3241,17 +3184,6 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Product and process decide the physics: fresh prep can run below 100 kWh/t while fried frozen products run several times higher, with nothing wrong at either site. Published figures serve as sanity checks; the benchmark with teeth is the site against its own normalised history.",
     },
     {
-      question: "The most reliable way to discover what the nightly clean actually costs is to:",
-      options: [
-        "Ask the hygiene team to estimate their hot water consumption from the chemical dosing records and shift patterns",
-        "Measure it: a temporary heat meter on the calorifier circuit, or logged make-up volumes and temperatures",
-        "Take the water bill and assume half of the total volume is heated for washdown",
-        "Use the detergent supplier's published figures for factories of a similar size",
-      ],
-      answer: 1,
-      explanation: "Cleaning hides inside 'site gas' and 'site water' because it shares calorifiers and mains with everything else. Sites measuring their clean for the first time typically find it 20 to 40% larger than anyone's estimate, which reshapes both the SEC base load and the heat-recovery case.",
-    },
-    {
       question: "Compressed air in a food factory deserves particular attention because:",
       options: [
         "It is the costliest utility per delivered kWh, and washdown environments breed leaks",
@@ -3261,64 +3193,6 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       ],
       answer: 0,
       explanation: "Air keeps its Level 2 reputation (around 90% of the input energy is lost before the tool), and food adds hose-damaged fittings and corrosion from nightly washdown. Surveys should follow the hygiene calendar, and only point-of-use air that can contact product needs the food-grade treatment premium.",
-    },
-  ],
-
-  "food-compliance-check": [
-    {
-      question: "An energy measure that would shorten a validated cook step's time-at-temperature is:",
-      options: [
-        "Acceptable provided the projected energy saving exceeds the estimated cost of any product quality complaints",
-        "Acceptable during low-risk production runs provided extra swab tests are scheduled",
-        "Not an energy measure at all: the kill step is a food safety floor no measure may cross",
-        "Acceptable with the operations manager's sign-off at the weekly production meeting",
-      ],
-      answer: 2,
-      explanation: "Cook steps are critical control points validated to deliver a specified lethality; they are legal obligations, not variables. Energy work changes how the heat is generated, recovered and insulated, never the product's validated thermal history.",
-    },
-    {
-      question: "A freezer specified at −18 °C has been run at −25 °C for years 'to be safe'. The right reading is:",
-      options: [
-        "The extra margin is prudent, and the energy cost is the fair price of that prudence",
-        "Seven degrees of pure compressor cost protecting nothing the validated plan asked for",
-        "The setpoint should be raised to −10 °C to claw back the years of accumulated waste",
-        "The freezer is probably faulty, since no plant should be able to overshoot by that much",
-      ],
-      answer: 1,
-      explanation: "The safety plan specifies −18 °C; below it is habit, not hygiene, and at low-temperature COPs every degree costs roughly 2 to 3% of the plant's bill. The test is always 'show me where the plan requires this', and the fix is agreed with the technical team, not smuggled past them.",
-    },
-    {
-      question: "Under the Climate Change Agreement scheme as renewed, participants get:",
-      options: [
-        "A substantial discount on the Climate Change Levy in exchange for meeting efficiency targets, with reduced rates running to March 2033",
-        "Full exemption from ESOS assessments and SECR reporting obligations for as long as they remain compliant participants in the scheme, plus relief from air-conditioning inspection duties",
-        "Government grants covering half the capital cost of any energy efficiency project",
-        "Exemption from trade effluent strength charges on any process water they discharge",
-      ],
-      answer: 0,
-      explanation: "The CCA deal is levy discount for targets: the renewed scheme's first target period began 1 January 2026 with targets to 2030 and reduced CCL rates for compliant sites until 31 March 2033. For a mid-size factory the discount is worth tens of thousands of pounds a year; ESOS and SECR still apply.",
-    },
-    {
-      question: "Food factory trade effluent is expensive mainly because:",
-      options: [
-        "Water companies charge food sites a punitive flat rate regardless of what they discharge",
-        "Food factories are legally required to pre-treat all effluent to drinking-water standard",
-        "Discharge volumes are metered at a premium rate during night-time washdown hours",
-        "Charges scale with strength, and fats, starches and product losses make food effluent strong",
-      ],
-      answer: 3,
-      explanation: "Strength-based charging (the Mogden formula family) prices the COD and solids the treatment works must digest. Product down the drain is paid for three times: as raw material, as the process energy already spent on it, and as the strength charge. That is why dry clean-up is such a high-value habit.",
-    },
-    {
-      question: "The relationship between a site's CCA target, its SECR disclosure and its retail customers' carbon questionnaires is best handled by:",
-      options: [
-        "Keeping them separate, since each scheme's rules differ too much to share data safely",
-        "One normalised, production-adjusted dataset feeding all three from a single source",
-        "Outsourcing each to a different consultancy so no single error can affect all three",
-        "Reporting raw annual totals everywhere and explaining variances when challenged",
-      ],
-      answer: 1,
-      explanation: "All three ultimately ask the same question: energy per tonne, trending which way? One maintained measurement system answers the CCA reporting, the SECR intensity metric and the retailer questionnaire consistently, and turns every efficiency project into a compliance credit as well as a saving.",
     },
   ],
 
@@ -3346,37 +3220,26 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Heating is proportional to temperature lift: 10 → 35 °C is 25 of the 50 degrees, so the recovery displaces half the gas, about £9,528/yr. The calorifier still tops up the final 35 → 60 °C, and the plant benefits slightly too, since recovered heat is heat the condensers no longer reject.",
     },
     {
-      question: "Defrost heat is described as the most expensive heat in the factory because:",
+      question: "Oven and fryer flue heat recovery in a food factory is constrained mainly by:",
       options: [
-        "Defrost heaters run overnight, when many industrial supply contracts charge their premium distribution rates",
-        "The site pays twice: once at the heater, then again at the compressor removing it from the cold space",
-        "Electric defrost elements are less efficient than gas burners at converting energy to heat",
-        "Defrosting must be supervised by an engineer, adding labour cost to every cycle",
+        "Flue temperatures being too low to heat washdown or CIP water usefully",
+        "Fat-laden exhausts fouling the heat exchange surfaces, which the design must manage",
+        "Food safety rules prohibiting any heat exchange with combustion products",
+        "The flues running only at night, when no heat demand exists on site",
       ],
       answer: 1,
-      explanation: "Every kWh of defrost heat is released inside the cold envelope and must be removed again at the low-temperature plant's COP: at COP 1.5, a further 0.67 kWh of compressor electricity per kWh of heat. That is why a timer running three unnecessary hours a day can cost £12,600 a year.",
+      explanation: "The temperatures (150 to 300 °C) are excellent and the demands are real; the design constraint is fouling from fat and product-laden exhausts, which needs cleanable, appropriately specified exchangers rather than a reason to abandon the recovery.",
     },
     {
-      question: "Floating head pressure control saves energy by:",
+      question: "On a refrigeration plant, heat recovery is normally taken at the desuperheater rather than the whole condenser because:",
       options: [
-        "Holding the condensing pressure steady at the value the designers chose for the hottest summer design day",
-        "Switching the condenser fans to run only during the site's cheap-rate hours",
-        "Diverting compressor discharge gas around the condenser during cold weather",
-        "Letting condensing temperature follow ambient down instead of sitting at a fixed worst-case setpoint",
-      ],
-      answer: 3,
-      explanation: "A fixed head-pressure setpoint sized for the hottest day wastes the whole British winter. Each degree of condensing temperature saved is worth roughly 2 to 3% of compressor energy, and floating control harvests it automatically whenever the weather cooperates.",
-    },
-    {
-      question: "Warm product loaded into a cold store before blast chilling has finished its cycle:",
-      options: [
-        "Shifts the remaining cooling into the most expensive room on site, at the worst COP",
-        "Is good practice, since the cold store has more spare capacity than the blast chiller",
-        "Saves energy overall by spreading the cooling load across two systems in parallel",
-        "Only matters for frozen product, since chilled storage tolerates any inlet temperature",
+        "The desuperheat slice is the highest-grade heat, and recovering it also eases condenser duty",
+        "Condensers are sealed units that cannot legally be modified once installed",
+        "The desuperheater is the only component that operates during washdown hours",
+        "Whole-condenser recovery would raise the plant's suction pressure unacceptably",
       ],
       answer: 0,
-      explanation: "Blast chillers are designed for rapid heat extraction; storage rooms are designed to hold temperature. Moving unfinished cooling work into the store means slower cooling (a food safety concern) and heat removed at storage conditions, in a freezer at the plant's worst COP.",
+      explanation: "The compressor discharge carries a small but hot slice (often 60 °C+ on ammonia plants) ideal for preheating washdown water, and every kilowatt taken there is a kilowatt the condensers no longer reject. Full condensing-heat recovery only makes sense where a much larger low-grade demand exists.",
     },
   ],
 
@@ -3610,6 +3473,168 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       ],
       answer: 2,
       explanation: "The efficiency curve is the whole story: carrying 300 kW at 89% loses 37 kW continuously; at 94% it loses 19 kW. The reconfiguration preserves the contracted redundancy and pays about £31,400 a year, plus the cooling energy behind every recovered watt.",
+    },
+  ],
+  "fd-hygiene-check": [
+    {
+      question: "An energy measure that would shorten a validated cook step's time-at-temperature is:",
+      options: [
+        "Acceptable provided the projected energy saving exceeds the estimated cost of any product quality complaints",
+        "Acceptable during low-risk production runs provided extra swab tests are scheduled",
+        "Not an energy measure at all: the kill step is a food safety floor no measure may cross",
+        "Acceptable with the operations manager's sign-off at the weekly production meeting",
+      ],
+      answer: 2,
+      explanation: "Cook steps are critical control points validated to deliver a specified lethality; they are legal obligations, not variables. Energy work changes how the heat is generated, recovered and insulated, never the product's validated thermal history.",
+    },
+    {
+      question: "A freezer specified at −18 °C has been run at −25 °C for years 'to be safe'. The right reading is:",
+      options: [
+        "The extra margin is prudent, and the energy cost is the fair price of that prudence",
+        "Seven degrees of pure compressor cost protecting nothing the validated plan asked for",
+        "The setpoint should be raised to −10 °C to claw back the years of accumulated waste",
+        "The freezer is probably faulty, since no plant should be able to overshoot by that much",
+      ],
+      answer: 1,
+      explanation: "The safety plan specifies −18 °C; below it is habit, not hygiene, and at low-temperature COPs every degree costs roughly 2 to 3% of the plant's bill. The test is always 'show me where the plan requires this', and the fix is agreed with the technical team, not smuggled past them.",
+    },
+    {
+      question: "A HACCP critical limit, such as a CIP wash temperature, should be treated as:",
+      options: [
+        "A food-safety requirement never crossed without proper validation",
+        "A starting point for negotiation with the energy assessor",
+        "A guideline that experienced brewers may use their judgement on",
+        "A target that applies to packaging lines but not to vessels",
+      ],
+      answer: 0,
+      explanation: "HACCP critical limits are set to reliably prevent a hazard: lowering one without validating that it still works is a food-safety risk, not a legitimate efficiency measure.",
+    },
+    {
+      question: "Washdown water is being delivered at 70 °C where the detergent supplier validates cleaning at 55 °C. The right reading is:",
+      options: [
+        "The extra 15 °C is a prudent hygiene margin worth its energy cost",
+        "The detergent must be changed before any temperature can be reviewed",
+        "Chemistry sets the requirement: above the validated range, hotter is not cleaner, just dearer",
+        "Water temperature is fixed by the calorifier and cannot be adjusted per task",
+      ],
+      answer: 2,
+      explanation: "Detergents are formulated for a working range, and swab results at the validated temperature are the evidence that counts. Five to ten degrees of habit-creep above the chemical's requirement is common, and it is pure gas spend protecting nothing the hygiene plan asked for.",
+    },
+    {
+      question: "The most reliable way to discover what the nightly clean actually costs is to:",
+      options: [
+        "Ask the hygiene team to estimate their hot water consumption from the chemical dosing records and shift patterns",
+        "Measure it: a temporary heat meter on the calorifier circuit, or logged make-up volumes and temperatures",
+        "Take the water bill and assume half of the total volume is heated for washdown",
+        "Use the detergent supplier's published figures for factories of a similar size",
+      ],
+      answer: 1,
+      explanation: "Cleaning hides inside 'site gas' and 'site water' because it shares calorifiers and mains with everything else. Sites measuring their clean for the first time typically find it 20 to 40% larger than anyone's estimate, which reshapes both the SEC base load and the heat-recovery case.",
+    },
+  ],
+
+  "fd-compliance-check": [
+    {
+      question: "Under the Climate Change Agreement scheme as renewed, participants get:",
+      options: [
+        "A substantial discount on the Climate Change Levy in exchange for meeting efficiency targets, with reduced rates running to March 2033",
+        "Full exemption from ESOS assessments and SECR reporting obligations for as long as they remain compliant participants in the scheme, plus relief from air-conditioning inspection duties",
+        "Government grants covering half the capital cost of any energy efficiency project",
+        "Exemption from trade effluent strength charges on any process water they discharge",
+      ],
+      answer: 0,
+      explanation: "The CCA deal is levy discount for targets: the renewed scheme's first target period began 1 January 2026 with targets to 2030 and reduced CCL rates for compliant sites until 31 March 2033. For a mid-size factory the discount is worth tens of thousands of pounds a year; ESOS and SECR still apply.",
+    },
+    {
+      question: "Most craft and regional UK breweries, in terms of ESOS and SECR applicability, are:",
+      options: [
+        "Covered only once their exports exceed a set threshold",
+        "In scope for ESOS but exempt from SECR reporting",
+        "In scope for both, as alcohol producers are always covered",
+        "Below the size thresholds and exempt, unlike the large groups",
+      ],
+      answer: 3,
+      explanation: "ESOS and SECR apply to large undertakings by employee count and turnover thresholds: most craft and regional breweries fall below these, unlike large brewing groups.",
+    },
+    {
+      question: "Food factory trade effluent is expensive mainly because:",
+      options: [
+        "Water companies charge food sites a punitive flat rate regardless of what they discharge",
+        "Food factories are legally required to pre-treat all effluent to drinking-water standard",
+        "Discharge volumes are metered at a premium rate during night-time washdown hours",
+        "Charges scale with strength, and fats, starches and product losses make food effluent strong",
+      ],
+      answer: 3,
+      explanation: "Strength-based charging (the Mogden formula family) prices the COD and solids the treatment works must digest. Product down the drain is paid for three times: as raw material, as the process energy already spent on it, and as the strength charge. That is why dry clean-up is such a high-value habit.",
+    },
+    {
+      question: "Recovering both the heat AND the water from wort cooling (reusing it as brewing liquor, rather than draining it) can reduce:",
+      options: [
+        "Neither bill materially, on a brewery of typical scale",
+        "The trade effluent bill alone, since the heat is low grade",
+        "Both the gas bill and the trade effluent bill at once",
+        "The gas bill alone, since the water was already paid for",
+      ],
+      answer: 2,
+      explanation: "Recovering the water itself, not just its heat, cuts the volume side of the trade effluent charge alongside the energy saving: two benefits from one project.",
+    },
+    {
+      question: "The relationship between a site's CCA target, its SECR disclosure and its retail customers' carbon questionnaires is best handled by:",
+      options: [
+        "Keeping them separate, since each scheme's rules differ too much to share data safely",
+        "One normalised, production-adjusted dataset feeding all three from a single source",
+        "Outsourcing each to a different consultancy so no single error can affect all three",
+        "Reporting raw annual totals everywhere and explaining variances when challenged",
+      ],
+      answer: 1,
+      explanation: "All three ultimately ask the same question: energy per tonne, trending which way? One maintained measurement system answers the CCA reporting, the SECR intensity metric and the retailer questionnaire consistently, and turns every efficiency project into a compliance credit as well as a saving.",
+    },
+  ],
+
+  "fd-utilities-check": [
+    {
+      question: "Defrost heat is described as the most expensive heat in the factory because:",
+      options: [
+        "Defrost heaters run overnight, when many industrial supply contracts charge their premium distribution rates",
+        "The site pays twice: once at the heater, then again at the compressor removing it from the cold space",
+        "Electric defrost elements are less efficient than gas burners at converting energy to heat",
+        "Defrosting must be supervised by an engineer, adding labour cost to every cycle",
+      ],
+      answer: 1,
+      explanation: "Every kWh of defrost heat is released inside the cold envelope and must be removed again at the low-temperature plant's COP: at COP 1.5, a further 0.67 kWh of compressor electricity per kWh of heat. That is why a timer running three unnecessary hours a day can cost £12,600 a year.",
+    },
+    {
+      question: "Floating head pressure control saves energy by:",
+      options: [
+        "Holding the condensing pressure steady at the value the designers chose for the hottest summer design day",
+        "Switching the condenser fans to run only during the site's cheap-rate hours",
+        "Diverting compressor discharge gas around the condenser during cold weather",
+        "Letting condensing temperature follow ambient down instead of sitting at a fixed worst-case setpoint",
+      ],
+      answer: 3,
+      explanation: "A fixed head-pressure setpoint sized for the hottest day wastes the whole British winter. Each degree of condensing temperature saved is worth roughly 2 to 3% of compressor energy, and floating control harvests it automatically whenever the weather cooperates.",
+    },
+    {
+      question: "Warm product loaded into a cold store before blast chilling has finished its cycle:",
+      options: [
+        "Shifts the remaining cooling into the most expensive room on site, at the worst COP",
+        "Is good practice, since the cold store has more spare capacity than the blast chiller",
+        "Saves energy overall by spreading the cooling load across two systems in parallel",
+        "Only matters for frozen product, since chilled storage tolerates any inlet temperature",
+      ],
+      answer: 0,
+      explanation: "Blast chillers are designed for rapid heat extraction; storage rooms are designed to hold temperature. Moving unfinished cooling work into the store means slower cooling (a food safety concern) and heat removed at storage conditions, in a freezer at the plant's worst COP.",
+    },
+    {
+      question: "A viable heat-recovery match between a rejection stream and a demand needs:",
+      options: [
+        "The two streams to belong to the same production line and shift pattern",
+        "Temperature overlap, coincidence in time (or storage to bridge it), and a clean hygiene boundary",
+        "A rejection stream at least ten times larger than the demand it serves",
+        "Direct physical contact between the two fluids to minimise exchanger losses",
+      ],
+      answer: 1,
+      explanation: "Temperature decides whether the match is physically useful, timing (or a storage tank) decides whether the heat is there when the demand is, and the hygiene boundary decides whether the technical team will ever approve it. Projects bought as gadgets fail on the second and third; matches designed on all three succeed.",
     },
   ],
 };

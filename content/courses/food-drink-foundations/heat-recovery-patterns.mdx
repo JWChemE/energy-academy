@@ -1,0 +1,49 @@
+Food and drink is the heat-recovery sector. Almost uniquely in industry, its sites run large heat *rejections* (refrigeration condensers, oven flues, batch cooling) a few metres from large, year-round heat *demands* (washdown water, CIP tanks, the next batch's preheat), and most of the time the two have never been introduced. Every process course on this platform cashes in its own signature pairing; this lesson teaches the method they all share, so that on any site you can build the matching table yourself rather than waiting to recognise a textbook case.
+
+## The method: match by temperature and time
+
+A heat-recovery match needs three things, and the third is the one that kills most failed projects:
+
+1. **Temperature overlap.** The rejection must be usefully hotter than what the demand needs, after exchanger approach temperatures. List the site's hot streams with their temperatures (refrigeration desuperheat 60 °C+, condensing 25 to 35 °C, oven and fryer flues 150 to 300 °C, batch cook-water dumps 60 to 90 °C, warm effluent 30 °C+) against its demands (washdown at 50 to 60 °C, CIP make-up at 70 to 80 °C, boiler feed, space heat). This is [pinch thinking](/courses/pinch-analysis/why-optimise-the-whole-process) in its simplest clothing: one temperature scale, sources on one side, sinks on the other.
+2. **Coincidence in time, or storage to bridge it.** A day-long rejection meeting a night-long demand needs a tank between them, which is exactly how the classic refrigeration-to-washdown pairing works. Batch processes recover batch-to-batch through storage; continuous processes can couple directly.
+3. **A clean hygiene boundary.** Product-contact water needs double-wall exchangers or intermediate loops where the safety plan requires them, designed in from the start and agreed with the technical team, per the [safety-floor discipline](/courses/food-drink-foundations/food-safety-sets-the-floor).
+
+## The recurring matches, ranked
+
+Across the sector the same pairings appear so reliably they amount to a checklist:
+
+- **Refrigeration rejection → washdown and CIP water.** The sector's headline match: both sides are inherent to making food and drink, both run year-round, and a desuperheater typically pays back in two to three years. The [Food Manufacturing course works it end to end](/courses/food-manufacturing/heat-recovery-in-food) at £9,528 a year on a mid-size factory.
+- **Process cooling → the next batch's heating.** A brewery cooling 98 °C wort against the next brew's liquor is the canonical form (the [brewery course prices it](/courses/breweries/heat-recovery-in-the-brewhouse) at ~£14,000 a year); retort and cook-vessel cooling water recovered to the following cycle is the same move in a factory; a dairy pasteuriser's regeneration section is the move perfected, at 90%+ effectiveness.
+- **Flue gas → hot water or feed.** Oven, fryer and boiler flues at 150 to 300 °C against washdown, CIP make-up or [boiler feed](/courses/boilers-and-fired-systems/retrofit-options), with fouling from fat-laden exhausts the design constraint to respect.
+- **Boiler-house recoveries.** [Blowdown heat](/courses/boilers-and-fired-systems/blowdown) and condensate return apply unchanged wherever there is steam, and older food and drink sites usually have both to claim.
+- **Warm effluent → incoming cold water.** Viable where outfalls are steady and screens manage the fouling; it also helps meet the [consent temperature limit](/courses/food-drink-foundations/trade-effluent-and-water), value captured instead of a condition breached.
+
+<WorkedExample title="a batch-to-batch recovery, priced">
+  <Given>
+    - A cook vessel dumps 5,000 L of 85 °C water daily; the next batch heats the same volume from 15 °C
+    - A storage tank and exchanger could transfer 70% of the available heat; gas boiler at 85% efficiency, £0.06/kWh, 310 days/yr
+  </Given>
+  <Find>The annual value of recovering dump heat into the next batch.</Find>
+  <Solution>
+    Available heat = 5,000 × 4.18 × (85 − 15) ÷ 3,600 ≈ 406 kWh/day; recoverable at 70% ≈
+    **284 kWh/day**. Displaced gas = 284 ÷ 0.85 ≈ 334 kWh/day; annual value ≈ 334 × 310 × £0.06
+    ≈ **£6,220 a year**, from water that was going down the drain hot, batch after batch.
+
+    Nothing here is exotic: a tank, an exchanger, and the observation that the same site pays
+    to make heat hours after paying to throw the same heat away.
+  </Solution>
+</WorkedExample>
+
+<Callout variant="key" title="Match temperature to temperature, demand to rejection">
+Heat recovery fails when it is bought as a gadget and succeeds when it is designed as a match: a rejection stream and a demand stream, overlapping in temperature, coincident (or bridged by storage) in time, with the hygiene boundary engineered in from the start. Before any purchase, sketch the site's hot streams and heat demands on one temperature scale: ten minutes of pinch thinking prevents most of the sector's disappointed heat-recovery kit, and it is the single exercise this foundations course most wants you to carry onto site.
+</Callout>
+
+## Where the process courses take this
+
+Each process course works its own signature match with real numbers: wort cooling in [Breweries](/courses/breweries/heat-recovery-in-the-brewhouse), the desuperheater in [Food Manufacturing](/courses/food-manufacturing/heat-recovery-in-food), and regeneration and evaporator heat in Dairies. This course's job is done when the pattern is yours: on any food or drink site, the first audit question after the meter map is "what is being rejected, at what temperature, while what is being heated?"
+
+## Sources and further reading
+
+- [Carbon Trust: heat recovery guidance](https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools) for industrial sites.
+- [Institute of Refrigeration](https://ior.org.uk/): heat recovery from refrigeration plant.
+- [Spirax Sarco: steam and condensate recovery references](https://www.spiraxsarco.com/learn-about-steam).
