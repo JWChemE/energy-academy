@@ -740,6 +740,119 @@ export const curriculum: NumberedLevel[] = [
           },
         ],
       },
+      {
+        slug: "carbon-accounting",
+        title: "Carbon Accounting Fundamentals",
+        summary:
+          "How organisations measure their emissions: scopes 1, 2 and 3, emission factors, the GHG Protocol and ISO 14064, market versus location-based reporting, and building a footprint that survives scrutiny. The measurement language every net-zero conversation assumes.",
+        status: "available",
+        seoTitle: "Carbon Accounting for Beginners: Scopes, GHG Protocol & ISO 14064",
+        seoDescription:
+          "A free introduction to carbon accounting: scope 1, 2 and 3 emissions, UK emission factors, the GHG Protocol, ISO 14064 and 14068, and how to build a defensible carbon footprint. No signup needed.",
+        faqId: "carbon-accounting",
+        modules: [
+          {
+            slug: "carbon-basics",
+            title: "Carbon, Scopes & Factors",
+            lessons: [
+              {
+                slug: "why-count-carbon",
+                title: "Why Count Carbon",
+                summary:
+                  "Tonnes of CO₂e, the greenhouse gases behind them, and the customer, investor and regulatory pressures that made carbon a number every organisation now needs.",
+                minutes: 9,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "scopes-1-2-3",
+                title: "Scopes 1, 2 & 3 Explained",
+                summary:
+                  "The GHG Protocol's three scopes with UK examples: what you burn, what you buy as energy, and everything else, and why the split prevents double counting.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "emission-factors",
+                title: "Emission Factors: kWh into kgCO₂e",
+                summary:
+                  "Activity data times emission factor: the UK government conversion factors, why the electricity factor falls every year, and the habits that keep calculations honest.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "basics-check",
+                title: "Carbon Basics Check",
+                summary: "Quiz on CO₂e, the three scopes and emission factors.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "carbon-standards",
+            title: "The Standards",
+            lessons: [
+              {
+                slug: "the-ghg-protocol",
+                title: "The GHG Protocol",
+                summary:
+                  "The standard behind almost every corporate footprint: its five principles, organisational and operational boundaries, and the base year that makes progress measurable.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "market-vs-location",
+                title: "Market vs Location-Based Reporting",
+                summary:
+                  "Two legitimate answers to one scope 2 question: grid-average versus contract-based accounting, REGOs, and why credible reports show both numbers.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "iso-standards-and-verification",
+                title: "ISO 14064, ISO 14068 & Verification",
+                summary:
+                  "The ISO family that formalises footprints and claims: 14064's three parts, 14068 replacing PAS 2060 for carbon neutrality, and what third-party verification adds.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "standards-check",
+                title: "Standards Check",
+                summary: "Quiz on the GHG Protocol, scope 2 methods and the ISO standards.",
+                minutes: 5,
+              },
+            ],
+          },
+          {
+            slug: "carbon-in-practice",
+            title: "Building & Reporting a Footprint",
+            lessons: [
+              {
+                slug: "building-a-footprint",
+                title: "Building Your First Footprint",
+                summary:
+                  "From energy bills to a defensible number: boundary, data collection, a worked 200-tonne company footprint, and the screening approach that tames scope 3.",
+                minutes: 11,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "reporting-and-claims",
+                title: "Reporting, Offsets & Credible Claims",
+                summary:
+                  "Where the numbers go (SECR, customer questionnaires, net-zero targets), the reduction-before-offsetting hierarchy, and the claims that survive scrutiny.",
+                minutes: 10,
+                reviewed: "2026-07-09",
+              },
+              {
+                slug: "course-check",
+                title: "Carbon Accounting Course Check",
+                summary: "Final quiz across scopes, standards, factors and reporting.",
+                minutes: 5,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -2756,8 +2869,8 @@ export const curriculum: NumberedLevel[] = [
         status: "available",
         modules: [
           { slug: "net-zero-framework", title: "Net Zero Framework & Scopes", lessons: [
-            { slug: "scope-definitions", title: "Scope 1, 2, 3 Emissions & Organizational Boundaries", summary: "Direct (fuel), indirect (electricity), value chain; what to include in commitment.", minutes: 11, reviewed: "2026-07-05" },
-            { slug: "carbon-accounting", title: "Carbon Accounting & Baseline", summary: "Measuring emissions; carbon factors (kgCO₂/kWh); historical baseline.", minutes: 10, reviewed: "2026-07-05" },
+            { slug: "scope-definitions", title: "Scope 1, 2, 3 Emissions & Organizational Boundaries", summary: "Direct (fuel), indirect (electricity), value chain; what to include in commitment.", minutes: 11, reviewed: "2026-07-09" },
+            { slug: "carbon-accounting", title: "Carbon Accounting & Baseline", summary: "Measuring emissions; carbon factors (kgCO₂/kWh); historical baseline.", minutes: 10, reviewed: "2026-07-09" },
             { slug: "net-zero-definition", title: "What Net Zero Means (Reductions + Offsets)", summary: "Net zero = residual emissions balanced by removals/offsets; not 'net neutrality'.", minutes: 10, reviewed: "2026-07-05" },
             { slug: "framework-check", title: "Net Zero Framework Check", summary: "Quiz on scopes and carbon accounting.", minutes: 5 },
           ] },

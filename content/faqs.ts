@@ -57,4 +57,27 @@ export const faqs: Record<string, FaqItem[]> = {
       a: "An ISO 50001 certified energy management system covering the organisation's energy use is a full compliance route: the certified consumption does not need separate ESOS auditing, though the organisation must still notify the Environment Agency. Many large organisations comply almost entirely this way.",
     },
   ],
+
+  "carbon-accounting": [
+    {
+      q: "What are scope 1, 2 and 3 emissions?",
+      a: "Scope 1 is direct emissions from sources you own or control (gas boilers, company vehicles, process and refrigerant emissions). Scope 2 is indirect emissions from the electricity, heat or steam you purchase. Scope 3 is everything else in your value chain: purchased goods, transport, commuting, product use and disposal. The split comes from the GHG Protocol and prevents double counting between organisations.",
+    },
+    {
+      q: "What is the difference between the GHG Protocol and ISO 14064?",
+      a: "The GHG Protocol is the detailed how-to methodology most corporate footprints follow: scopes, boundaries, principles and calculation guidance. ISO 14064 is the formal international standard family that specifies requirements for quantifying (part 1), project accounting (part 2) and verifying (part 3) greenhouse gas statements. They are compatible: organisations typically calculate to the GHG Protocol and verify against ISO 14064-3.",
+    },
+    {
+      q: "How do you convert kWh into carbon emissions?",
+      a: "Multiply the activity data by an emission factor: kWh × kgCO₂e/kWh. The UK government publishes conversion factors annually; the 2024 set puts grid electricity at roughly 0.207 kgCO₂e/kWh and natural gas at roughly 0.183 kgCO₂e/kWh. The electricity factor falls every year as the grid decarbonises, so always use the factor for the year being reported.",
+    },
+    {
+      q: "Is carbon reporting mandatory in the UK?",
+      a: "For large companies, yes: SECR requires quoted and large unquoted companies to report energy use and emissions in their annual accounts. Most SMEs have no legal obligation yet, but customer questionnaires, tender requirements and supply-chain programmes increasingly make a footprint commercially necessary regardless of size.",
+    },
+    {
+      q: "What replaced PAS 2060 for carbon neutrality claims?",
+      a: "ISO 14068-1, published in 2023. PAS 2060 was withdrawn in November 2025, and the ISO standard is stricter: it requires a hierarchy of actual emissions reductions before offsetting can support a carbon-neutrality claim.",
+    },
+  ],
 };

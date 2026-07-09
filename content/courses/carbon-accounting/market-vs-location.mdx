@@ -1,0 +1,47 @@
+Two companies in identical offices on the same street, drawing identical kilowatt-hours from the same wires, can legitimately report scope 2 figures that differ by 100%. One buys standard electricity; the other holds a renewable contract. Whether that contract should change the carbon number is the most argued question in carbon accounting, and the GHG Protocol's answer is characteristically pragmatic: report it both ways. This lesson covers location-based and market-based accounting, the certificates underneath UK renewable claims, and how to read a "100% renewable electricity" statement with professional eyes.
+
+## Two methods, one consumption
+
+**Location-based** scope 2 multiplies your kWh by the average emissions of the grid you are physically connected to: the ≈0.207 kgCO₂e/kWh factor from the [factors lesson](/courses/carbon-accounting/emission-factors). It answers: *what do the physics of my grid attribute to my consumption?* Contracts cannot change it; only using less electricity, or the grid itself decarbonising, moves it.
+
+**Market-based** scope 2 multiplies the same kWh by the factor of what you contractually purchased: zero for electricity backed by renewable certificates, a supplier-specific "residual mix" factor otherwise. It answers: *what does my procurement choice attribute to me?* Since the Protocol's Scope 2 Guidance (2015), organisations reporting a market-based figure must disclose the location-based one alongside it: **dual reporting**, so readers see both the physics and the contract.
+
+## REGOs: the certificate under UK claims
+
+In Great Britain the instrument behind renewable claims is the **REGO** (Renewable Energy Guarantee of Origin): one certificate issued per MWh of renewable generation, tradeable separately from the electricity itself. A "100% renewable" tariff is, at minimum, a promise that your supplier retires REGOs matching your annual consumption. The [procurement course](/courses/energy-procurement/regos) covers the market mechanics; the accounting consequence is the quality spectrum. Certificates bought loose against last year's consumption are the weakest form; supplier tariffs bundling certificates are middling; a **corporate PPA** contracting directly with a named wind or solar farm (the [procurement course's PPA lesson](/courses/energy-procurement/ppas)) is the strongest, because it most plausibly caused new generation to exist. All three can produce a zero market-based scope 2; they differ in how much the claim means.
+
+<WorkedExample title="dual reporting for one office">
+  <Given>
+    - 250,000 kWh of electricity consumed; grid average 0.207 kgCO₂e/kWh
+    - The supplier retires REGOs for 100% of consumption (market-based factor 0)
+  </Given>
+  <Find>The two scope 2 figures, and what each is for.</Find>
+  <Solution>
+    **Location-based**: 250,000 × 0.207 ≈ **51.8 tCO₂e**. **Market-based**: 250,000 × 0 =
+    **0 tCO₂e**.
+
+    Both are correct, and each answers its own question: the location figure tells the energy
+    manager that efficiency still matters (the grid behind the socket is not zero-carbon), while
+    the market figure records that the company paid for renewable attributes. Reporting only the
+    zero, without the 51.8 beside it, is the move that credible reporting exists to prevent, and
+    dual reporting makes the omission visible.
+  </Solution>
+</WorkedExample>
+
+## Reading claims like a professional
+
+The professional habits fall out directly. When you see "100% renewable electricity", ask what instrument backs it (loose certificates, tariff, PPA?) and whether a location-based figure is disclosed alongside. When someone argues efficiency no longer matters "because our electricity is green", point to the location-based line: certificates reallocate the grid's existing renewable output on paper, they do not exempt a site from the physical grid, and every kWh saved still cuts real system emissions. And in your own reporting, follow the Protocol: both figures, instruments named, no netting one against the other. The reduction-versus-offsetting logic returns, harder, in the [claims lesson](/courses/carbon-accounting/reporting-and-claims).
+
+<Callout variant="key" title="Two questions deserve two numbers">
+Location-based scope 2 measures your grid; market-based measures your contract. Neither is a lie and neither alone is the whole truth, which is exactly why the Protocol demands both. The single most reliable credibility test you can apply to any renewable electricity claim is to ask for the number the claimant did not lead with.
+</Callout>
+
+## What's next
+
+The Protocol tells you how to count; the ISO standards formalise how counts and claims are specified and checked. The next lesson covers ISO 14064's three parts, ISO 14068's takeover from PAS 2060 on carbon neutrality, and what third-party verification actually adds.
+
+## Sources and further reading
+
+- [GHG Protocol Scope 2 Guidance](https://ghgprotocol.org/scope-2-guidance): the dual-reporting rules.
+- [Ofgem: Renewable Energy Guarantees of Origin](https://www.ofgem.gov.uk/environmental-and-social-schemes/renewable-energy-guarantees-origin-rego): the GB certificate scheme.
+- [UK conversion factors](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting): location-based factors by year.

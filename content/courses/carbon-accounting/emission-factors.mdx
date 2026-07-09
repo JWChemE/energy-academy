@@ -1,0 +1,49 @@
+All of carbon accounting's arithmetic fits in one line: **emissions = activity data × emission factor**. Kilowatt-hours, litres, miles or tonnes on one side; a published factor turning each unit into kilograms of CO₂e on the other. The skill is not the multiplication, it is knowing which factor to use, where it comes from, and which habits keep the results honest when factors change every year and units lie in wait. This lesson covers the UK factor set that nearly all domestic reporting uses, the numbers worth memorising, and the errors that betray an amateur footprint.
+
+## The UK conversion factors
+
+Each year the UK government publishes its **greenhouse gas conversion factors for company reporting**: a free spreadsheet covering fuels, electricity, transport, waste, water and more, maintained by DESNZ and used by SECR reporters, questionnaire responders and everyone in between. The factors this platform's [reference page](/reference/prices-and-carbon-factors) carries are the ones to anchor on (2024 set, checked July 2026):
+
+- **Grid electricity**: ≈0.207 kgCO₂e per kWh (location-based)
+- **Natural gas**: ≈0.183 kgCO₂e per kWh (gross CV)
+- **Diesel**: ≈2.5 kgCO₂e per litre (average biofuel blend)
+
+Two structural points matter more than any single value. First, **the electricity factor falls every year** as the grid decarbonises: it has dropped by more than half since the mid-2010s, which means an unchanged electricity bill delivers a shrinking footprint with no effort from you, and any year-on-year comparison must say which year's factor it used. Second, factors come in families: the headline "combustion" factor, a **well-to-tank (WTT)** factor for the upstream fuel supply chain (a scope 3 category), and transmission-and-distribution losses for electricity. A basic scopes 1+2 footprint uses the headline factors; completeness adds the others, labelled as scope 3.
+
+<WorkedExample title="one line of the factor arithmetic">
+  <Given>
+    - An office consumes 250,000 kWh of electricity in the reporting year
+    - Grid factor for the year: 0.207 kgCO₂e/kWh (location-based)
+  </Given>
+  <Find>The scope 2 emissions.</Find>
+  <Solution>
+    250,000 × 0.207 = 51,750 kgCO₂e ≈ **51.8 tonnes CO₂e**.
+
+    That is the whole method: metered activity data, the published factor for the right year,
+    one multiplication, and the answer reported in tonnes. The [practice lesson](/courses/carbon-accounting/building-a-footprint)
+    assembles a full company footprint from lines exactly like this one.
+  </Solution>
+</WorkedExample>
+
+## The habits that keep it honest
+
+Factor arithmetic fails in predictable ways, and the fixes are habits rather than mathematics:
+
+- **Match the year.** Use the factor set for the year being reported, and restate history with each year's own factors; grid decarbonisation is not your achievement.
+- **Watch the units.** kWh versus MWh, litres versus kg, net versus gross calorific value for gas: the [energy-units discipline](/courses/intro-to-energy-management/energy-units) prevents thousand-fold embarrassments.
+- **Prefer measured over estimated.** Metered kWh beats floor-area benchmarks; litres from fuel cards beat mileage times an assumed consumption. Note the data quality either way, because the standards in the next module will ask.
+- **Keep the audit trail.** Every line should trace to a bill, a meter or a named factor with its source and year: the same evidence habit as [M&V](/courses/measurement-and-verification/why-mv-matters), because a footprint is a claim someone may check.
+
+<Callout variant="key" title="The factor does the science so you can do the accounting">
+An emission factor compresses combustion chemistry, grid generation mix and supply chains into one published number, so the accountant's job is selection and honesty rather than physics: right activity data, right factor, right year, sources kept. Master that discipline on the energy lines, where the data is best, and the same method extends to travel, waste and water whenever a questionnaire asks.
+</Callout>
+
+## What's next
+
+You can now turn any metered energy into tonnes of CO₂e. The next module supplies the framework that makes those tonnes credible to the outside world: the GHG Protocol's principles and boundaries, the two ways to count purchased electricity, and the ISO standards that formalise verification.
+
+## Sources and further reading
+
+- [UK Government greenhouse gas conversion factors](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting): the annual factor sets and methodology.
+- [Energy Academy reference: prices & carbon factors](/reference/prices-and-carbon-factors): the platform's standing figures with dates.
+- [GHG Protocol calculation tools](https://ghgprotocol.org/calculation-tools): international equivalents.

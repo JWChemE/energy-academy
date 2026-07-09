@@ -142,6 +142,10 @@ five batches.
       against the shared Foundations (no compliance module of its own):
       regeneration, UHT, ice banks, evaporation/MVR, whey, the spring
       flush, diagnostics + dairy audit capstone *(Jul 2026)*
+- [x] Carbon Accounting Fundamentals — new Level 1 course (scopes, factors,
+      GHG Protocol, market vs location, ISO 14064/14068, building and
+      reporting a footprint); Level 3 net-zero lessons re-pointed to build
+      on it *(Jul 2026)*
 - [ ] More sectors (Fleet Electrification & Depot Charging to open the
       Transportation category; hospitals, retail, cold storage candidates)
 

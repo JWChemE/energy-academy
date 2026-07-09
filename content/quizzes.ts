@@ -3812,4 +3812,179 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       explanation: "Ammonia desuperheat and evaporator condensers offer warm source streams all day, while CIP (70 to 80 °C) and washdown (60 °C) demands sit within modern industrial heat pumps' range. Pair the heat pump with hot-water storage and off-peak running and its economics improve further.",
     },
   ],
+
+  // ---------------------------------------------------------------- Carbon accounting (Level 1)
+  "carbon-basics-check": [
+    {
+      question: "A footprint is quoted in tonnes of CO₂e rather than plain CO₂ because:",
+      options: [
+        "European reporting conventions require the equivalent notation on all disclosures",
+        "Other greenhouse gases are counted too, weighted by their global warming potential",
+        "CO₂ tonnages alone would be too small to communicate meaningfully to boards",
+        "The 'e' denotes estimated, distinguishing modelled figures from measured ones",
+      ],
+      answer: 1,
+      explanation: "Methane, nitrous oxide and the fluorinated gases are converted to their CO₂-warming equivalent via GWPs (methane ≈28, some refrigerants in the thousands). That weighting is why a few kilograms of leaked refrigerant can outweigh a month of boiler emissions.",
+    },
+    {
+      question: "A company's owned diesel vans, its purchased electricity, and its subcontracted haulage fall respectively into:",
+      options: [
+        "Scopes 2, 3 and 1",
+        "Scopes 1, 3 and 2",
+        "Scopes 3, 2 and 1",
+        "Scopes 1, 2 and 3",
+      ],
+      answer: 3,
+      explanation: "Owned vehicles are direct (scope 1), purchased electricity is the bought-energy scope (2), and a subcontractor's vehicles sit in the value chain (scope 3). The same lorry journey changes scope with ownership, which is why outsourcing a fleet 'cuts' scopes 1+2 without changing real emissions.",
+    },
+    {
+      question: "Converting energy into emissions uses the formula:",
+      options: [
+        "Emissions = activity data × emission factor, with the factor matched to the reporting year",
+        "Emissions = energy cost × the carbon price prevailing in the UK Emissions Trading Scheme for the reporting year",
+        "Emissions = activity data ÷ the plant's efficiency, summed across all fuels",
+        "Emissions = benchmark intensity × floor area, adjusted for degree days",
+      ],
+      answer: 0,
+      explanation: "kWh (or litres, or miles) times a published kgCO₂e-per-unit factor is the whole method. The UK government publishes the factor set annually, and matching the factor's year to the reporting year matters because the electricity factor falls as the grid decarbonises.",
+    },
+    {
+      question: "The UK grid electricity emission factor falls almost every year, which means:",
+      options: [
+        "Older electricity data cannot be used in any current footprint calculation",
+        "Gas heating becomes relatively more carbon-intensive than the same heat from electricity over time",
+        "An unchanged electricity bill delivers a shrinking footprint through no effort of the reporter's",
+        "Companies should delay reporting to benefit from the following year's lower factor",
+      ],
+      answer: 2,
+      explanation: "Grid decarbonisation flows straight through the factor: the same 250,000 kWh produces fewer reported tonnes each year. Honest reporting therefore separates grid effects from genuine reductions, and always states which year's factors were used. (The second option is also a real long-term trend, but it is a consequence of the electrification case, not of the reporting arithmetic this lesson covers.)",
+    },
+    {
+      question: "For most organisations, the largest share of scope 1 and 2 emissions comes from:",
+      options: [
+        "Business flights and hotel stays booked through the travel system",
+        "Water supply and the treatment of trade effluent",
+        "Purchased goods and services and the upstream supply chain behind everything the organisation buys",
+        "Metered energy: the gas, fuel and electricity already on the energy manager's bills",
+      ],
+      answer: 3,
+      explanation: "Scopes 1 and 2 are substantially the energy story retold: boilers and fleet (scope 1) and purchased electricity (scope 2). Flights and purchased goods are scope 3. This is why an energy-literate professional can assemble a defensible scopes 1+2 footprint from data they already hold.",
+    },
+  ],
+
+  "carbon-standards-check": [
+    {
+      question: "Under the GHG Protocol, an organisation choosing between equity share and operational control is deciding:",
+      options: [
+        "Which greenhouse gases must be included in its reported inventory",
+        "Whether its scope 2 should be reported market-based or location-based",
+        "Its organisational boundary: whose sites and emissions count as its own",
+        "Which historical year serves as the base year against which all reduction progress is measured",
+      ],
+      answer: 2,
+      explanation: "The organisational boundary decides how subsidiaries, joint ventures and shared assets are counted: proportionally to ownership (equity share) or wholly where controlled. The worked example's group reported 3,800 t one way and 5,000 t the other, both legitimately, which is why the choice must be declared and applied consistently.",
+    },
+    {
+      question: "Dual reporting of scope 2 means disclosing:",
+      options: [
+        "Both the location-based (grid average) and market-based (contract) figures together",
+        "Both this year's emissions and the base year's figure, restated using the current factor set",
+        "Both gross emissions and the net figure after offsets are subtracted",
+        "Both UK and overseas electricity consumption as separate line items",
+      ],
+      answer: 0,
+      explanation: "Since the Protocol's Scope 2 Guidance, a market-based figure must be accompanied by the location-based one: the contract story and the physics story, side by side. The most reliable credibility test of a renewable claim is asking for the number the claimant did not lead with.",
+    },
+    {
+      question: "A 'green tariff' backed by REGOs changes:",
+      options: [
+        "The grid's physical carbon intensity at the buyer's connection point",
+        "The market-based scope 2 figure, while the location-based figure is untouched",
+        "Both scope 2 accounting methods simultaneously, since the certificates retire real renewable generation",
+        "The buyer's scope 1, by displacing gas heating with certified electricity",
+      ],
+      answer: 1,
+      explanation: "Certificates reallocate the attributes of existing renewable generation to the buyer's contract, zeroing the market-based figure. The wires deliver the same mix as the neighbour's, so the location-based figure stands, and efficiency still cuts real system emissions regardless of tariff.",
+    },
+    {
+      question: "The current standard governing carbon-neutrality claims is:",
+      options: [
+        "PAS 2060, the British specification that most UK carbon-neutrality claims continue to be made against today",
+        "The GHG Protocol's neutrality annex, updated alongside the Scope 2 Guidance",
+        "SBTi's corporate net-zero standard, which certifies carbon neutrality once validated targets have been met",
+        "ISO 14068-1, which requires demonstrated reductions before offsets can support the claim",
+      ],
+      answer: 3,
+      explanation: "ISO 14068-1 (2023) superseded PAS 2060, which was withdrawn in November 2025. Its defining feature is the hierarchy: quantify, genuinely reduce, and only then cover the residue with high-quality offsets. SBTi validates targets rather than neutrality claims.",
+    },
+    {
+      question: "Third-party verification to ISO 14064-3 gives a footprint:",
+      options: [
+        "An independent assurance opinion, at a stated level, that carries weight self-declaration doesn't",
+        "Automatic compliance with the SECR, ESOS and Climate Change Agreement reporting obligations in one submission",
+        "A guarantee that the underlying emission factors will not change in future years",
+        "Exemption from disclosing methodology, since the verifier has checked it privately",
+      ],
+      answer: 0,
+      explanation: "Verification is an independent examination against the standard, issued at limited or reasonable assurance. What it buys is standing in tenders and investor reviews; what it tests is exactly the Protocol's five principles, which is why honest audit trails make it a formality.",
+    },
+  ],
+
+  "carbon-course-check": [
+    {
+      question: "A distribution company burns 400,000 kWh of gas (0.183 kgCO₂e/kWh) and 30,000 litres of diesel (≈2.51 kgCO₂e/L). Its scope 1 is about:",
+      options: [
+        "73 tCO₂e, since only the stationary combustion counts as direct",
+        "224 tCO₂e, once the electricity is included alongside the fuels",
+        "125 tCO₂e, after netting off the well-to-tank share",
+        "149 tCO₂e: 73.2 t of gas plus 75.3 t of diesel",
+      ],
+      answer: 3,
+      explanation: "Both fuels are direct combustion in owned plant and vehicles: 400,000 × 0.183 = 73.2 t and 30,000 × 2.51 = 75.3 t. Electricity is scope 2, and well-to-tank belongs in scope 3 as a separate, labelled line.",
+    },
+    {
+      question: "The recommended approach to scope 3 for a first footprint is:",
+      options: [
+        "Excluding it entirely until scopes 1 and 2 have been verified externally",
+        "Screening all categories roughly, ranking them, and improving data only where it matters",
+        "Measuring every one of the fifteen categories with full activity data before publishing anything at all",
+        "Reporting only business travel, since it is the category with the best data",
+      ],
+      answer: 1,
+      explanation: "Spend-based screening finds the categories that dominate (haulage for a distributor, materials for a manufacturer), and effort follows the ranking: activity data for the top categories, honest estimates for the tail. Completeness with graded accuracy beats false precision, and the transparency principle blesses exactly that.",
+    },
+    {
+      question: "SECR requires an intensity ratio alongside absolute emissions because:",
+      options: [
+        "Absolute figures are commercially confidential and ratios protect them",
+        "The ratio determines which Climate Change Levy band the company pays",
+        "Absolute footprints can't be compared across growth or between organisations of different size",
+        "Intensity ratios are the figures the ISO 14064-3 verification opinion is formally issued against",
+      ],
+      answer: 2,
+      explanation: "tCO₂e per £m revenue, per tonne of product or per employee makes performance comparable through growth and across peers: the platform's normalisation discipline in carbon units, with all the same traps (a busy year flatters the ratio with no efficiency change).",
+    },
+    {
+      question: "Under the modern claims standards, offsets are properly used to:",
+      options: [
+        "Cover the residual emissions that remain after genuine reductions",
+        "Replace reduction programmes wherever credits are cheaper per tonne",
+        "Convert a location-based scope 2 figure into a market-based zero",
+        "Meet the CCA target in years when the efficiency measures underperform",
+      ],
+      answer: 0,
+      explanation: "ISO 14068-1 and SBTi converge on the hierarchy: reduce first, then cover the residue with high-quality (additional, permanent, verified) credits. And the worked example's arithmetic shows why the honest order is also the profitable one: the reductions pay for themselves in energy.",
+    },
+    {
+      question: "A claim that survives scrutiny looks like:",
+      options: [
+        "'Our operations are environmentally responsible and increasingly sustainable'",
+        "'42% reduction against our 2022 base year, scopes 1 and 2, SBTi-validated, dual-reported'",
+        "'Certified carbon neutral since 2024, with full methodology details available to customers on written request'",
+        "'Emissions fell 15% last year' with the factor years left unstated",
+      ],
+      answer: 1,
+      explanation: "Specific, scoped, evidenced, current: named scopes and boundary, a base year, validation, and both scope 2 methods visible. Vague or unscoped claims are exactly what the CMA's green claims regime and buyers' technical teams now test, and fail.",
+    },
+  ],
 };
