@@ -26,6 +26,8 @@ export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Client-only init: consent lives in localStorage, unreadable during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!getCookieConsent()) setVisible(true);
     const reopen = () => setVisible(true);
     window.addEventListener("energy:cookie-settings", reopen);

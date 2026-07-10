@@ -32,6 +32,8 @@ export default function AuthCallbackPage() {
       new URLSearchParams(url.hash.replace(/^#/, '')).get('error_description');
 
     if (errDesc) {
+      // Client-only init: the error arrives in the URL hash, unreadable during SSR.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setError(errDesc);
       return;
     }

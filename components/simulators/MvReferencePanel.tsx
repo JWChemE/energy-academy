@@ -27,9 +27,9 @@ export default function MvReferencePanel({ tables }: { tables: MvRefTable[] }) {
             <Block title="The savings equation">
               <p className="text-slate-600">
                 <span className="font-mono font-semibold">Saving = adjusted baseline − actual</span>. The
-                adjusted baseline is what it WOULD have used under the reporting period's conditions.
+                adjusted baseline is what it WOULD have used under the reporting period&apos;s conditions.
               </p>
-              <p className="text-slate-500">It's avoided energy use — not just a lower bill.</p>
+              <p className="text-slate-500">It&apos;s avoided energy use — not just a lower bill.</p>
             </Block>
           )}
           {tables.includes("baseline") && (
@@ -47,7 +47,7 @@ export default function MvReferencePanel({ tables }: { tables: MvRefTable[] }) {
                 Use degree-days. Compare actual against what the baseline would have used under the SAME
                 weather.
               </p>
-              <p className="text-slate-500">Never compare raw bills year-on-year — don't credit a mild winter.</p>
+              <p className="text-slate-500">Never compare raw bills year-on-year — don&apos;t credit a mild winter.</p>
             </Block>
           )}
           {tables.includes("ipmvp") && (

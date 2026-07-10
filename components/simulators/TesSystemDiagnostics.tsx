@@ -23,7 +23,7 @@ export default function TesSystemDiagnostics() {
           standing loss), some you judge — is the medium right, the tariff right, the tank stratified,
           the store charged at the right time? The thread through every case: storage stores energy,
           not money. It earns only from a <em>time value</em> — a price spread, a demand charge,
-          avoided plant — and only if it's the right medium, well stratified, well insulated and
+          avoided plant — and only if it&apos;s the right medium, well stratified, well insulated and
           charged when energy is cheap.
         </>
       }

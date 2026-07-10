@@ -18,7 +18,7 @@ export default function VapourCompressionCyclePage() {
       <p className="mt-3 text-slate-600">
         Nearly every fridge, chiller, air conditioner and heat pump runs the
         same four-stage loop. Step through it below: heat is absorbed in the
-        evaporator, the compressor lifts the refrigerant's pressure and
+        evaporator, the compressor lifts the refrigerant&apos;s pressure and
         temperature, the condenser rejects the heat, and the expansion valve
         resets the loop. The machine moves about three units of heat per unit
         of electricity, which is why heat pumps beat every fuel-burning

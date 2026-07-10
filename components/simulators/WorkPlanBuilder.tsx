@@ -51,7 +51,7 @@ export default function WorkPlanBuilder({
     <div className="rounded-xl border border-slate-200 bg-white p-4">
       <h3 className="text-sm font-bold text-slate-900">Build your work plan</h3>
       <p className="mb-3 text-xs text-slate-500">
-        Add the actions you'd take, then order them as you'd carry them out (top first).
+        Add the actions you&apos;d take, then order them as you&apos;d carry them out (top first).
       </p>
 
       {/* Available pool */}

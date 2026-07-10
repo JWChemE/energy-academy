@@ -60,7 +60,8 @@ export default function DiagnosticMode() {
   }
   const toggle = (set: Set<string>, setter: (s: Set<string>) => void) => (id: string) => {
     const next = new Set(set);
-    next.has(id) ? next.delete(id) : next.add(id);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
     setter(next);
   };
 
@@ -70,8 +71,8 @@ export default function DiagnosticMode() {
       <div>
         <p className="mb-4 text-sm text-slate-600">
           Six boiler-house call-outs, each with a different underlying fault. Read the panel,
-          walk the plant, work out what's really wrong, prescribe the fix, and prove it works.
-          The same symptom can have several causes — diagnose, don't guess.
+          walk the plant, work out what&apos;s really wrong, prescribe the fix, and prove it works.
+          The same symptom can have several causes — diagnose, don&apos;t guess.
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {CASES.map((c) => (

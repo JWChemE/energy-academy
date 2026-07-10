@@ -44,8 +44,11 @@ export default function GatedLesson({
   // tab switch would flip back to "loading" and unmount the lesson body —
   // wiping any in-progress quiz or capstone state. So the effect keys on the
   // stable user id only, and reads the current token from a ref at fetch time.
-  const tokenRef = useRef(session?.access_token);
-  tokenRef.current = session?.access_token;
+  const token = session?.access_token;
+  const tokenRef = useRef(token);
+  useEffect(() => {
+    tokenRef.current = token;
+  }, [token]);
   const userId = user?.id;
 
   useEffect(() => {

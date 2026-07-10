@@ -60,7 +60,7 @@ export default function AirReferencePanel({ tables }: { tables: AirRefTable[] })
             <Block title="Heat recovery">
               <p className="text-slate-600">
                 ≈ <span className="font-mono font-semibold">{Math.round(HEAT_RECOVERABLE_FRACTION * 100)}%</span>{" "}
-                of the compressor's electrical input is recoverable as useful heat.
+                of the compressor&apos;s electrical input is recoverable as useful heat.
               </p>
               <p className="text-slate-500">
                 Displacing gas heat: kWh ÷ {PRICES.boilerEff} × £{PRICES.gas}.

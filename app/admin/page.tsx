@@ -42,7 +42,7 @@ export default function AdminDashboard() {
       fetchUsers();
       fetchAnalytics();
     }
-  }, [user?.id]);
+  }, [user?.id, user?.role]);
 
   async function fetchUsers() {
     const { data } = await supabase
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
       .select('course_slug')
       .eq('event_type', 'view');
 
-    const courseFreq = courses?.reduce((acc: Record<string, number>, c: any) => {
+    const courseFreq = courses?.reduce((acc: Record<string, number>, c: { course_slug: string }) => {
       acc[c.course_slug] = (acc[c.course_slug] || 0) + 1;
       return acc;
     }, {}) || {};

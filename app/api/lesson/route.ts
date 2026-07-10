@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
-import { getLessonContext, getLessonSource } from "@/lib/content";
+import { getLessonContext, getLessonSource, isGated } from "@/lib/content";
 import { rateLimit } from "@/lib/rateLimit";
 
 /**
@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
   // Level 1 is free; Levels 2 & 3 and every Sector are gated. (The page serves
   // L1 directly, but guard here too so this endpoint can't be used to bypass
   // anything.)
-  const gated = ctx.level.kind === "sector" || ctx.level.number > 1;
+  const gated = isGated(ctx.level);
 
   if (gated) {
     const authHeader = req.headers.get("authorization") ?? "";

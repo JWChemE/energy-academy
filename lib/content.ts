@@ -38,6 +38,17 @@ export function getSector(slug: string): Sector | undefined {
   return sectors.find((s) => s.slug === slug);
 }
 
+/**
+ * The paywall rule, defined once: Level 1 is free and public; Levels 2 & 3
+ * and every Sector are gated (body served only via /api/lesson with a valid
+ * token; static HTML carries just the excerpt). Every consumer — the lesson
+ * page, the API route and the search index — must use this function rather
+ * than restating the rule.
+ */
+export function isGated(level: Level): boolean {
+  return level.kind === "sector" || level.number > 1;
+}
+
 /* ----------------------------- Course helpers ---------------------------- */
 
 export type CourseWithLevel = { course: Course; level: Level };
@@ -94,14 +105,14 @@ export function getLessonContext(
   const position = flat.findIndex((l) => l.slug === lessonSlug);
   if (position === -1) return undefined;
 
-  const module = course.modules.find((m) =>
+  const mod = course.modules.find((m) =>
     m.lessons.some((l) => l.slug === lessonSlug),
   )!;
 
   return {
     level,
     course,
-    module,
+    module: mod,
     lesson: flat[position],
     prev: position > 0 ? flat[position - 1] : null,
     next: position < flat.length - 1 ? flat[position + 1] : null,

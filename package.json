@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run lint && npm run validate && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint . --max-warnings=0",
+    "validate": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
@@ -26,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
+    "tsx": "^4.23.0",
     "typescript": "^5"
   }
 }

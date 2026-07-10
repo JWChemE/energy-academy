@@ -168,8 +168,8 @@ const sectorAccent: LevelAccent = {
   softBg: "bg-rose-50",
 };
 
-/** Convenience for declaring a not-yet-written course. */
-function comingSoon(slug: string, title: string, summary: string): Course {
+/** Convenience for declaring a not-yet-written course (kept exported for future entries). */
+export function comingSoon(slug: string, title: string, summary: string): Course {
   return { slug, title, summary, status: "coming-soon", modules: [] };
 }
 

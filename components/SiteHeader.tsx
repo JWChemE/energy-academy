@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/app/auth-context";
@@ -28,13 +28,12 @@ const LEVELS = [
 
 export function SiteHeader() {
   const { user, loading } = useAuth();
-  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  // Close the mobile menu on navigation.
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  // The mobile menu is "open for" a specific path, so navigating anywhere
+  // closes it by derivation — no effect, no post-navigation flash.
+  const [openFor, setOpenFor] = useState<string | null>(null);
+  const menuOpen = openFor === pathname;
+  const setMenuOpen = (open: boolean) => setOpenFor(open ? pathname : null);
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
@@ -128,7 +127,7 @@ export function SiteHeader() {
 
           {/* Mobile menu toggle */}
           <button
-            onClick={() => setMenuOpen((o) => !o)}
+            onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 md:hidden"

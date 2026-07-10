@@ -33,6 +33,9 @@ export function usePersistentState<T>(
       if (raw) {
         const parsed = JSON.parse(raw) as { v: number; data: T };
         if (parsed && parsed.v === 1 && (!validate || validate(parsed.data))) {
+          // Client-only init: restoring from localStorage after hydration is the
+          // whole point of this hook; SSR renders `initial` by design.
+          // eslint-disable-next-line react-hooks/set-state-in-effect
           setValue(parsed.data);
         }
       }

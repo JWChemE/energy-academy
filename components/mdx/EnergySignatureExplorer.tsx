@@ -185,7 +185,7 @@ export default function EnergySignatureExplorer() {
 
         <p className="mt-2 text-xs leading-5 text-slate-400">
           Twelve months against degree days (15.5 °C base). The underlying building is the baseline
-          lesson's model, 8,000 kWh a month plus 100 kWh per degree day, with realistic
+          lesson&apos;s model, 8,000 kWh a month plus 100 kWh per degree day, with realistic
           month-to-month variation; the line is refitted by least squares every time you switch.
         </p>
       </div>

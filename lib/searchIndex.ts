@@ -2,13 +2,14 @@ import { promises as fs } from "fs";
 import path from "path";
 import { curriculum, sectors, type Level } from "@/content/curriculum";
 import { lessonExcerpt } from "@/lib/excerpt";
+import { isGated } from "@/lib/content";
 import { GLOSSARY } from "@/content/glossary";
 
 /**
  * Build-time search index.
  *
  * Gating rule (must match app/api/lesson/route.ts and the lesson page):
- *   gated = level.kind === "sector" || level.number > 1
+ *   gated = isGated(level) — the single paywall rule from lib/content.ts
  *
  * For GATED lessons the index carries only what is already public on the
  * lesson page shell: title, summary and the short lead-paragraph excerpt.
@@ -38,9 +39,6 @@ function levelBadge(level: Level): string {
   return level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 }
 
-function isGated(level: Level): boolean {
-  return level.kind === "sector" || level.number > 1;
-}
 
 /** ## headings from MDX source (public lessons only). */
 function extractHeadings(mdx: string): string {
@@ -78,8 +76,8 @@ export async function buildSearchIndex(): Promise<SearchDoc[]> {
 
       if (course.status !== "available") continue;
 
-      for (const module of course.modules) {
-        for (const lesson of module.lessons) {
+      for (const mod of course.modules) {
+        for (const lesson of mod.lessons) {
           let excerpt = "";
           let headings = "";
           try {

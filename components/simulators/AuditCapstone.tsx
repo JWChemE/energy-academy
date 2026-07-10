@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { usePersistentState, clearPersistedPrefix } from "@/lib/usePersistentState";
@@ -25,6 +25,28 @@ import {
  * on-site stage; everything else — the stepper, scoring, question
  * primitives, scorecard — is shared.
  */
+/** Mulberry32-seeded Fisher-Yates keyed on a string: deterministic, pure. */
+function seededShuffle<T>(items: readonly T[], key: string): T[] {
+  let h = 2166136261;
+  for (let i = 0; i < key.length; i++) {
+    h ^= key.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  let s = h >>> 0;
+  const rand = () => {
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
 interface QResult {
   checked: boolean;
   score: number;
@@ -417,7 +439,9 @@ function OrderQuestion({
   storageKey: string;
   onResult: (id: string, score: number) => void;
 }) {
-  const shuffled = useMemo(() => [...q.items].sort(() => Math.random() - 0.5), [q.items]);
+  // Deterministic shuffle seeded by the question id: pure in render, and the
+  // presented order stays stable across remounts (matching persisted answers).
+  const shuffled = useMemo(() => seededShuffle(q.items, q.id), [q.items, q.id]);
   const [state, setState] = usePersistentState<{ arranged: string[]; checked: boolean }>(
     storageKey,
     () => ({ arranged: [], checked: false }),

@@ -35,6 +35,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!user?.id) {
+      // Sign-out path of the auth subscription: clear cached progress.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRows([]);
       setDone(new Set());
       return;
@@ -64,9 +66,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [rows]
   );
 
+  const userId = user?.id;
   const markComplete = useCallback(
     async (c: string, l: string) => {
-      if (!user?.id) return;
+      if (!userId) return;
       const now = new Date().toISOString();
       // Optimistic update so the UI reacts immediately.
       setDone((prev) => new Set(prev).add(key(c, l)));
@@ -77,9 +80,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
             )
           : [...prev, { course_slug: c, lesson_slug: l, completed_at: now }]
       );
-      await markLessonComplete(user.id, c, l);
+      await markLessonComplete(userId, c, l);
     },
-    [user?.id]
+    [userId]
   );
 
   return (

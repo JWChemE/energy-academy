@@ -48,7 +48,7 @@ export default function OhmsLawTriangle() {
     <div className="not-prose my-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div className="border-b border-slate-100 bg-slate-50 px-5 py-2.5">
         <span className="text-sm font-bold text-slate-800">
-          The Ohm's law triangle: cover the one you want
+          The Ohm&apos;s law triangle: cover the one you want
         </span>
       </div>
 
@@ -118,7 +118,7 @@ export default function OhmsLawTriangle() {
 
       <p className="px-5 pb-4 pt-3 text-xs leading-5 text-slate-400">
         Cover the quantity you want with a thumb and the triangle shows how to get it from the
-        other two. The worked numbers are the lesson's kettle: a 17.7 Ω element on a 230 V supply.
+        other two. The worked numbers are the lesson&apos;s kettle: a 17.7 Ω element on a 230 V supply.
       </p>
     </div>
   );

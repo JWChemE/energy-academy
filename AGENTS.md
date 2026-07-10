@@ -37,6 +37,19 @@ streams build an email list for future services.
 
 Run it: `npm run dev` (dev) · `npm run build` (prod build) · `npm run start` (serve build).
 
+`npm run build` first runs `npm run lint` (zero warnings allowed) and
+`npm run validate` (`scripts/validate-content.ts`), which enforces the
+platform's content invariants as build failures: curriculum structure and
+slug uniqueness, lesson-file ↔ manifest agreement, internal link integrity,
+quiz/FAQ registry wiring in both directions, the quiz no-tells rules, the
+no-em-dash style rule, and reviewed-date freshness warnings. CI
+(`.github/workflows/ci.yml`) runs the same gates on every push. When a
+change legitimately needs a new invariant relaxed or added, change the
+validator in the same commit and say why.
+
+The paywall rule lives in one place: `isGated()` in `lib/content.ts`. Never
+restate `kind === "sector" || number > 1` anywhere else.
+
 ## How the content model works
 
 Everything hangs off one manifest: **`content/curriculum.ts`** — the single

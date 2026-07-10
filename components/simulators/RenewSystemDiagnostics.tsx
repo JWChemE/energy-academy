@@ -23,7 +23,7 @@ export default function RenewSystemDiagnostics() {
           self-consumption, the wind cube law), some you judge — is the array sized to demand, the
           roof the right way round, the site actually windy, the fault even visible? The thread
           through every case: self-consumed power is worth two-to-four times exported power, so size
-          and operate renewables to the building's own demand — and PV beats wind on almost every
+          and operate renewables to the building&apos;s own demand — and PV beats wind on almost every
           building.
         </>
       }

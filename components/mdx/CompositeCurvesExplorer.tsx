@@ -196,7 +196,7 @@ export default function CompositeCurvesExplorer() {
         </div>
 
         <p className="mt-3 text-xs leading-5 text-slate-400">
-          The course's four-stream example (H1, H2, C1, C2). Sliding the cold curve right loosens
+          The course&apos;s four-stream example (H1, H2, C1, C2). Sliding the cold curve right loosens
           ΔTmin and adds utility at <em>both</em> ends; sliding left recovers more heat between the
           streams until the curves touch. Costs at {HOURS.toLocaleString()} h/yr, hot utility
           £{PRICES.hotUtility.toFixed(2)}/kWh, cold £{PRICES.coldUtility.toFixed(2)}/kWh.

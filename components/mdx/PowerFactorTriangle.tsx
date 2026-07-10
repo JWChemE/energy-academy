@@ -20,7 +20,6 @@ const COL_REACTIVE = "#d97706"; // amber-600 — reactive power
 
 // Plot geometry: triangle base along the bottom.
 const BX0 = 70, BX1 = 470, BY = 250; // base from (BX0,BY) to (BX1,BY)
-const PX_PER_KW = (BX1 - BX0) / KW; // horizontal scale
 // tan φ at pf 0.6 is 1.333 → max height 533 kVAr → 533*PX_PER_KW = 533px… too
 // tall, so use a smaller vertical scale and label values instead.
 const PX_PER_KVAR = 0.36;
@@ -128,7 +127,7 @@ export default function PowerFactorTriangle() {
         <p className="mt-3 text-xs leading-5 text-slate-400">
           A site doing {KW} kW of useful work. The supply, cables and transformer must all carry the
           kVA, and larger tariffs charge for it, which is why correcting a poor power factor (the
-          lesson's 0.80 → 0.95 example frees ~79 kVA) buys back capacity without saving a single kWh.
+          lesson&apos;s 0.80 → 0.95 example frees ~79 kVA) buys back capacity without saving a single kWh.
         </p>
       </div>
     </div>

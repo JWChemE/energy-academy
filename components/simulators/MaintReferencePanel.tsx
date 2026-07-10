@@ -29,7 +29,7 @@ export default function MaintReferencePanel({ tables }: { tables: MaintRefTable[
                 <strong>Reactive:</strong> {STRATEGIES.reactive}. <strong>Preventive:</strong>{" "}
                 {STRATEGIES.preventive}. <strong>Predictive:</strong> {STRATEGIES.predictive}.
               </p>
-              <p className="text-slate-500">Match the strategy to each asset's criticality and energy significance.</p>
+              <p className="text-slate-500">Match the strategy to each asset&apos;s criticality and energy significance.</p>
             </Block>
           )}
           {tables.includes("degradation") && (
@@ -40,7 +40,7 @@ export default function MaintReferencePanel({ tables }: { tables: MaintRefTable[
               </p>
               <p className="text-slate-500">
                 Neglect compounds — a poorly maintained building drifts {DEGRADATION.buildingDrift} above
-                optimal. Deferral's energy cost usually dwarfs the saving.
+                optimal. Deferral&apos;s energy cost usually dwarfs the saving.
               </p>
             </Block>
           )}

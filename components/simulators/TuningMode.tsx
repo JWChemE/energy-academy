@@ -33,14 +33,18 @@ export default function TuningMode() {
   const hasDanger = output.warnings.some((w) => w.level === "danger");
   const result = evaluate(scenario, output.efficiency, hasDanger);
 
-  // Track first time the target is met (for the celebratory note).
+  // Track first time the target is met (for the celebratory note). This is a
+  // genuine accumulator over render results, so the effect is the right home.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (result.met) setEverMet(true);
   }, [result.met]);
 
   // Accumulate spend at the live rate (£/h → £/sec scaled for visibility).
   const rateRef = useRef(output.totalCostPerHour);
-  rateRef.current = output.totalCostPerHour;
+  useEffect(() => {
+    rateRef.current = output.totalCostPerHour;
+  }, [output.totalCostPerHour]);
   useEffect(() => {
     const t = setInterval(() => {
       // Advance one "simulated minute" per tick so the number moves meaningfully.

@@ -449,12 +449,12 @@ export const quizzes: Record<string, QuizQuestion[]> = {
     {
       question: "The main goal of Monitoring & Targeting is to:",
       options: [
-        "Record consumption accurately for the annual accounts",
-        "Prove to tenants that their bills are calculated fairly",
         "Turn meter data into continuous energy improvement",
+        "Prove to tenants that their bills are calculated fairly",
+        "Record consumption accurately for the annual accounts",
         "Replace the need for periodic energy audits entirely",
       ],
-      answer: 2,
+      answer: 0,
       explanation:
         "M&T is about using data to drive action: baselines, targets, and spotting anomalies early so you improve continuously.",
     },
@@ -475,10 +475,10 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       options: [
         "Continuously and automatically, but reviewed in detail no more than once each year",
         "Only when a problem is already suspected",
-        "Frequently (weekly, daily or half-hourly) so trends show early",
         "Annually, when the utility statement arrives",
+        "Frequently (weekly, daily or half-hourly) so trends show early",
       ],
-      answer: 2,
+      answer: 3,
       explanation:
         "High-frequency data lets you spot changes within days and investigate while the cause is still findable.",
     },
@@ -486,11 +486,11 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       question: "Which is the best interval for comparing energy consumption?",
       options: [
         "Hours, since more granularity always beats less",
-        "Individual days, carefully matched by calendar date and day of week across the years",
         "Weeks or months, normalised for weather and business changes",
+        "Individual days, carefully matched by calendar date and day of week across the years",
         "Annual totals, since they smooth out all the noise",
       ],
-      answer: 2,
+      answer: 1,
       explanation:
         "Weekly or monthly intervals smooth daily variation while staying frequent enough to catch developing problems.",
     },
@@ -3212,7 +3212,7 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       question: "A desuperheater preheats 15 m³/night of washdown water from 10 °C to 35 °C, against a full requirement of 10 °C to 60 °C costing £19,056/yr in gas. The saving is about:",
       options: [
         "£19,000 a year, since the desuperheater effectively replaces the calorifier",
-        "£3,200 a year, limited by the desuperheater's small share of rejected heat",
+        "£3,200 a year, limited by the desuperheater's small share of the plant's total rejected heat",
         "£9,500 a year: half the temperature lift, so half the gas",
         "£1,000 a year, because preheating only helps on the coldest winter nights",
       ],
@@ -3225,7 +3225,7 @@ export const quizzes: Record<string, QuizQuestion[]> = {
         "Flue temperatures being too low to heat washdown or CIP water usefully",
         "Fat-laden exhausts fouling the heat exchange surfaces, which the design must manage",
         "Food safety rules prohibiting any heat exchange with combustion products",
-        "The flues running only at night, when no heat demand exists on site",
+        "The flues running only during night baking shifts, when no matching heat demand exists anywhere on site",
       ],
       answer: 1,
       explanation: "The temperatures (150 to 300 °C) are excellent and the demands are real; the design constraint is fouling from fat and product-laden exhausts, which needs cleanable, appropriately specified exchangers rather than a reason to abandon the recovery.",
@@ -3234,7 +3234,7 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       question: "On a refrigeration plant, heat recovery is normally taken at the desuperheater rather than the whole condenser because:",
       options: [
         "The desuperheat slice is the highest-grade heat, and recovering it also eases condenser duty",
-        "Condensers are sealed units that cannot legally be modified once installed",
+        "Condensers are sealed, pre-charged units that cannot legally be modified once they are installed",
         "The desuperheater is the only component that operates during washdown hours",
         "Whole-condenser recovery would raise the plant's suction pressure unacceptably",
       ],

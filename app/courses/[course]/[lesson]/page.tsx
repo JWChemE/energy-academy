@@ -7,6 +7,7 @@ import {
   getAllLessonParams,
   getLessonContext,
   getLessonSource,
+  isGated,
 } from "@/lib/content";
 import { lessonExcerpt } from "@/lib/excerpt";
 import { AUTHOR, SITE_NAME, SITE_URL } from "@/lib/siteUrl";
@@ -53,7 +54,7 @@ export default async function LessonPage({ params }: Props) {
   // authenticated API, so the text is never baked into this page's HTML for
   // signed-out visitors — except a short lead-paragraph excerpt, rendered
   // statically so the page is indexable and gives visitors a real taste.
-  const gated = level.kind === "sector" || level.number > 1;
+  const gated = isGated(level);
   const source = gated ? null : await getLessonSource(course, lesson);
   const preview = gated ? lessonExcerpt(await getLessonSource(course, lesson)) : "";
   const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;

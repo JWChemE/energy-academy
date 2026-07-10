@@ -570,7 +570,10 @@ export function scoreMulti(selected: string[], correct: string[]): number {
   const cor = new Set(correct);
   let right = 0;
   let wrong = 0;
-  for (const id of selected) (cor.has(id) ? right++ : wrong++);
+  for (const id of selected) {
+    if (cor.has(id)) right++;
+    else wrong++;
+  }
   return Math.max(0, (right - wrong) / correct.length);
 }
 

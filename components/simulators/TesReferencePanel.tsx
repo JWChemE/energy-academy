@@ -39,7 +39,7 @@ export default function TesReferencePanel({ tables }: { tables: TesRefTable[] })
                 <span className="font-mono font-semibold">{ICE_LATENT} kJ/kg</span> — ~10× the density of
                 chilled-water storage.
               </p>
-              <p className="text-slate-500">A PCM must melt/freeze at the application's temperature.</p>
+              <p className="text-slate-500">A PCM must melt/freeze at the application&apos;s temperature.</p>
             </Block>
           )}
           {tables.includes("arbitrage") && (
