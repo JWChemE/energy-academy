@@ -59,7 +59,7 @@ export default function LessonOutline({
                       }`}
                     >
                       <span
-                        className={`mt-0.5 text-xs ${done ? "text-emerald-600" : "text-slate-300"}`}
+                        className={`mt-0.5 text-xs ${done ? "text-brand-600" : "text-slate-300"}`}
                         aria-hidden
                       >
                         {done ? "✓" : "○"}

@@ -39,9 +39,21 @@ export default async function SectorPage({ params }: Props) {
           </Link>
           <div className="mt-4 flex items-center gap-4">
             <span
-              className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl ${sector.accent.badge}`}
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl ${sector.accent.badge}`}
             >
-              🏭
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-7 w-7"
+                aria-hidden
+              >
+                <path d="M3 21V9l6 4V9l6 4V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v16" />
+                <path d="M2 21h20" />
+              </svg>
             </span>
             <div>
               <div className="text-sm font-medium uppercase tracking-wide text-slate-500">
@@ -57,11 +69,11 @@ export default async function SectorPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Courses */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sector.courses.map((course) => (
-            <CourseCard key={course.slug} course={course} level={sector} />
+      {/* Courses — detailed rows, not a card grid */}
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+        <div className="space-y-3">
+          {sector.courses.map((course, i) => (
+            <CourseCard key={course.slug} course={course} level={sector} index={i} />
           ))}
         </div>
       </section>
@@ -76,13 +88,9 @@ export default async function SectorPage({ params }: Props) {
                 <Link
                   key={s.slug}
                   href={`/sectors/${s.slug}`}
-                  className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
+                  className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50"
                 >
-                  <span
-                    className={`flex h-7 w-7 items-center justify-center rounded-lg text-sm ${s.accent.badge}`}
-                  >
-                    🏭
-                  </span>
+                  <span className={`h-2 w-2 rounded-full ${s.accent.dot}`} />
                   Go to {s.title} →
                 </Link>
               ))}

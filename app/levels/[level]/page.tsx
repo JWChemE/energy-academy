@@ -66,11 +66,11 @@ export default async function LevelPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Courses */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {level.courses.map((course) => (
-            <CourseCard key={course.slug} course={course} level={level} />
+      {/* Courses — detailed rows, not a card grid */}
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+        <div className="space-y-3">
+          {level.courses.map((course, i) => (
+            <CourseCard key={course.slug} course={course} level={level} index={i} />
           ))}
         </div>
       </section>

@@ -2,17 +2,62 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand palette (energy / sustainability green). Change these to rebrand. */
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-300: #6ee7b7;
-  --color-brand-400: #34d399;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-brand-900: #064e3b;
+  /*
+   * Brand palette: a deep pine green, deliberately tuned away from stock
+   * Tailwind emerald so brand elements don't read as template defaults.
+   * Change these to rebrand.
+   */
+  --color-brand-50: #edf7f2;
+  --color-brand-100: #d8eee3;
+  --color-brand-200: #b0dcc7;
+  --color-brand-300: #7fc3a4;
+  --color-brand-400: #4ba57f;
+  --color-brand-500: #23875f;
+  --color-brand-600: #0d6b4a;
+  --color-brand-700: #0b573d;
+  --color-brand-800: #0a4632;
+  --color-brand-900: #083a2a;
+
+  /*
+   * Per-level identity hues (custom-tuned, not Tailwind swatches). Wired up
+   * in content/curriculum.ts (`accents`): L1 uses brand green above,
+   * L2 denim blue, L3 honey amber, Sectors terracotta.
+   */
+  --color-denim-50: #edf3fa;
+  --color-denim-100: #dbe7f5;
+  --color-denim-200: #bad1eb;
+  --color-denim-300: #8fb2db;
+  --color-denim-400: #6190c4;
+  --color-denim-500: #3f72aa;
+  --color-denim-600: #2c5b8f;
+  --color-denim-700: #254b76;
+  --color-denim-800: #1f3d5f;
+  --color-denim-900: #1a3350;
+
+  --color-honey-50: #fbf4e2;
+  --color-honey-100: #f7e8c3;
+  --color-honey-200: #eed393;
+  --color-honey-300: #dfb55c;
+  --color-honey-400: #c99433;
+  --color-honey-500: #ac781a;
+  --color-honey-600: #8c5f0e;
+  --color-honey-700: #714c0d;
+  --color-honey-800: #5a3d0f;
+  --color-honey-900: #4a3310;
+
+  --color-terra-50: #fbf0ec;
+  --color-terra-100: #f6dfd6;
+  --color-terra-200: #ecc2b2;
+  --color-terra-300: #dc9c83;
+  --color-terra-400: #c67456;
+  --color-terra-500: #a95536;
+  --color-terra-600: #8a4227;
+  --color-terra-700: #6f3620;
+  --color-terra-800: #5a2d1d;
+  --color-terra-900: #4a261a;
+
+  /* Near-black green for the dark footer. */
+  --color-pine-950: #0a211a;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -45,6 +90,6 @@ html {
 }
 .input:focus {
   outline: none;
-  border-color: #059669; /* brand-600 */
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+  border-color: var(--color-brand-600);
+  box-shadow: 0 0 0 3px rgba(13, 107, 74, 0.15); /* brand-600 at 15% */
 }

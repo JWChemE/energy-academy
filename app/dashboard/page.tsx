@@ -147,7 +147,7 @@ export default function Dashboard() {
               </Link>
             </div>
           ) : (
-            <p className="mt-2 text-slate-700">🎉 You&apos;re all caught up on every course you&apos;ve started. Pick a new one below.</p>
+            <p className="mt-2 text-slate-700">You&apos;re all caught up on every course you&apos;ve started. Pick a new one below.</p>
           )}
         </section>
 
@@ -173,7 +173,7 @@ export default function Dashboard() {
                         <span className="text-[11px] font-semibold text-slate-400">L{c.levelNumber}</span>
                         <h3 className="font-medium text-slate-900">{c.title}</h3>
                         {finished && (
-                          <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">
+                          <span className="rounded-full bg-brand-100 px-2 py-0.5 text-[11px] font-semibold text-brand-700">
                             ✓ Complete
                           </span>
                         )}
@@ -184,7 +184,7 @@ export default function Dashboard() {
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
                       <div
-                        className={`h-full rounded-full transition-all ${finished ? "bg-emerald-500" : "bg-brand-500"}`}
+                        className={`h-full rounded-full transition-all ${finished ? "bg-brand-600" : "bg-brand-500"}`}
                         style={{ width: `${c.pct}%` }}
                       />
                     </div>

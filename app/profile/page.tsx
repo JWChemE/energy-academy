@@ -239,7 +239,7 @@ export default function ProfilePage() {
             </button>
           )}
         </div>
-        {done && <p className="mt-2 text-sm text-emerald-700">Progress reset.</p>}
+        {done && <p className="mt-2 text-sm text-brand-700">Progress reset.</p>}
       </Card>
     );
   }
@@ -351,7 +351,7 @@ function SaveRow({
       >
         {status === "saving" ? "Saving…" : label}
       </button>
-      {status === "saved" && <span className="text-sm text-emerald-700">✓ {savedLabel}</span>}
+      {status === "saved" && <span className="text-sm text-brand-700">✓ {savedLabel}</span>}
       {status === "error" && <span className="text-sm text-red-600">Something went wrong.</span>}
     </div>
   );

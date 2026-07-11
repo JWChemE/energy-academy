@@ -126,7 +126,7 @@ export function Quiz({
 
                   let cls =
                     "border-slate-200 bg-white hover:border-brand-300 hover:bg-brand-50/50";
-                  if (showRight) cls = "border-emerald-400 bg-emerald-50";
+                  if (showRight) cls = "border-brand-400 bg-brand-50";
                   else if (showWrong) cls = "border-rose-400 bg-rose-50";
                   else if (isChosen) cls = "border-brand-400 bg-brand-50";
 
@@ -147,7 +147,7 @@ export function Quiz({
                       />
                       <span className="text-slate-700">{opt}</span>
                       {showRight && (
-                        <span className="ml-auto font-semibold text-emerald-600">
+                        <span className="ml-auto font-semibold text-brand-600">
                           ✓
                         </span>
                       )}

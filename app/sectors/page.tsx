@@ -14,7 +14,7 @@ export default function SectorsPage() {
 
   return (
     <div>
-      <section className="border-b border-slate-200 bg-rose-50">
+      <section className="border-b border-slate-200 bg-terra-50">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <Link href="/" className="text-sm font-medium text-slate-500 hover:text-slate-900">
             ← Home

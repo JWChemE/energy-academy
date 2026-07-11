@@ -104,7 +104,7 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-brand-50 via-white to-sky-50 p-4">
+    <div className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-brand-50 via-white to-white p-4">
       <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
         {mode === 'forgot' ? (
           <ForgotPassword initialEmail={email} onBack={() => switchMode('signin')} />
@@ -244,7 +244,7 @@ function ForgotPassword({
   if (state === 'sent') {
     return (
       <div className="text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-2xl">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-2xl">
           ✉️
         </div>
         <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">
@@ -419,7 +419,7 @@ function CommsStep({
 function ConfirmEmailScreen({ email }: { email: string }) {
   return (
     <div className="text-center">
-      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-2xl">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-2xl">
         ✉️
       </div>
       <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">

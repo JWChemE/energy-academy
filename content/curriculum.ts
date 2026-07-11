@@ -133,39 +133,39 @@ export type Sector = Extract<Level, { kind: "sector" }>;
  */
 const accents: Record<1 | 2 | 3, LevelAccent> = {
   1: {
-    badge: "bg-emerald-100 text-emerald-700",
-    dot: "bg-emerald-500",
-    gradient: "from-emerald-500 to-teal-600",
-    ring: "ring-emerald-500/20",
-    text: "text-emerald-700",
-    softBg: "bg-emerald-50",
+    badge: "bg-brand-100 text-brand-800",
+    dot: "bg-brand-500",
+    gradient: "from-brand-500 to-brand-700",
+    ring: "ring-brand-500/20",
+    text: "text-brand-700",
+    softBg: "bg-brand-50",
   },
   2: {
-    badge: "bg-sky-100 text-sky-700",
-    dot: "bg-sky-500",
-    gradient: "from-sky-500 to-indigo-600",
-    ring: "ring-sky-500/20",
-    text: "text-sky-700",
-    softBg: "bg-sky-50",
+    badge: "bg-denim-100 text-denim-800",
+    dot: "bg-denim-500",
+    gradient: "from-denim-500 to-denim-700",
+    ring: "ring-denim-500/20",
+    text: "text-denim-700",
+    softBg: "bg-denim-50",
   },
   3: {
-    badge: "bg-amber-100 text-amber-800",
-    dot: "bg-amber-500",
-    gradient: "from-amber-500 to-orange-600",
-    ring: "ring-amber-500/20",
-    text: "text-amber-700",
-    softBg: "bg-amber-50",
+    badge: "bg-honey-100 text-honey-800",
+    dot: "bg-honey-500",
+    gradient: "from-honey-400 to-honey-600",
+    ring: "ring-honey-500/20",
+    text: "text-honey-700",
+    softBg: "bg-honey-50",
   },
 };
 
 /** Accent for the Sectors section — distinct from all three numbered tiers. */
 const sectorAccent: LevelAccent = {
-  badge: "bg-rose-100 text-rose-700",
-  dot: "bg-rose-500",
-  gradient: "from-rose-500 to-fuchsia-600",
-  ring: "ring-rose-500/20",
-  text: "text-rose-700",
-  softBg: "bg-rose-50",
+  badge: "bg-terra-100 text-terra-800",
+  dot: "bg-terra-500",
+  gradient: "from-terra-400 to-terra-600",
+  ring: "ring-terra-500/20",
+  text: "text-terra-700",
+  softBg: "bg-terra-50",
 };
 
 /** Convenience for declaring a not-yet-written course (kept exported for future entries). */

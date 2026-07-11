@@ -49,7 +49,7 @@ export default function LeadCaptureForm({
 
   if (state === "done") {
     return (
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
+      <div className="rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-800">
         <strong>You&apos;re in.</strong> The checklist is unlocked below — bookmark this page or use
         your browser&apos;s print function to save it as a PDF.
       </div>

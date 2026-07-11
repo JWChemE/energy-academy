@@ -31,9 +31,21 @@ export function WorkedExample({
   children: React.ReactNode;
 }) {
   return (
-    <div className="not-prose my-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+    <div className="not-prose my-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-5 py-2.5">
-        <span aria-hidden>✏️</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-4 w-4 text-slate-500"
+          aria-hidden
+        >
+          <rect x="5" y="3" width="14" height="18" rx="2" />
+          <path d="M9 7h6M9 12h.01M13 12h2M9 16h.01M13 16h2" />
+        </svg>
         <span className="text-sm font-bold text-slate-800">
           Worked example{title ? ` — ${title}` : ""}
         </span>
@@ -81,8 +93,8 @@ export function Solution({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="-mx-5 -mb-4 border-t border-slate-100 bg-emerald-50/40 px-5 py-3.5">
-      <div className="mb-1 text-xs font-bold uppercase tracking-wide text-emerald-600">
+    <div className="-mx-5 -mb-4 border-t border-slate-100 bg-brand-50/60 px-5 py-3.5">
+      <div className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-600">
         Solution
       </div>
       <div className="text-sm text-slate-700 [&_p]:my-1.5">{children}</div>

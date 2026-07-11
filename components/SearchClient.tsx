@@ -45,15 +45,17 @@ function scoreDoc(doc: SearchDoc, tokens: string[]): number {
   return total;
 }
 
+// Level/sector badges use the custom identity hues (matching the curriculum
+// accents); content-type badges stay neutral.
 const BADGE_STYLES: Record<string, string> = {
-  "Level 1": "bg-emerald-50 text-emerald-700 ring-emerald-200",
-  "Level 2": "bg-sky-50 text-sky-700 ring-sky-200",
-  "Level 3": "bg-violet-50 text-violet-700 ring-violet-200",
-  Sector: "bg-amber-50 text-amber-700 ring-amber-200",
+  "Level 1": "bg-brand-50 text-brand-700 ring-brand-200",
+  "Level 2": "bg-denim-50 text-denim-700 ring-denim-200",
+  "Level 3": "bg-honey-50 text-honey-700 ring-honey-200",
+  Sector: "bg-terra-50 text-terra-700 ring-terra-200",
   Course: "bg-slate-100 text-slate-700 ring-slate-200",
-  Reference: "bg-teal-50 text-teal-700 ring-teal-200",
-  Tool: "bg-indigo-50 text-indigo-700 ring-indigo-200",
-  Glossary: "bg-rose-50 text-rose-700 ring-rose-200",
+  Reference: "bg-slate-100 text-slate-700 ring-slate-200",
+  Tool: "bg-slate-100 text-slate-700 ring-slate-200",
+  Glossary: "bg-slate-100 text-slate-700 ring-slate-200",
 };
 
 export default function SearchClient({ docs }: { docs: SearchDoc[] }) {

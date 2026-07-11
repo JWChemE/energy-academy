@@ -133,15 +133,17 @@ export default async function CoursePage({ params }: Props) {
                   </span>
                   {module.title}
                 </h2>
-                <ol className="divide-y divide-slate-100 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                  {module.lessons.map((lesson) => (
+                <ol className="divide-y divide-slate-100 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                  {module.lessons.map((lesson, li) => (
                     <li key={lesson.slug}>
                       <Link
                         href={`/courses/${course.slug}/${lesson.slug}`}
                         className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-slate-50"
                       >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">
-                          ▶
+                        <span
+                          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${level.accent.badge}`}
+                        >
+                          {String(li + 1).padStart(2, "0")}
                         </span>
                         <span className="min-w-0 flex-1">
                           <span className="block font-medium text-slate-900">
@@ -163,7 +165,11 @@ export default async function CoursePage({ params }: Props) {
           </div>
         ) : (
           <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
-            <div className="text-4xl">🚧</div>
+            <span
+              className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${level.accent.badge}`}
+            >
+              In development
+            </span>
             <h2 className="mt-4 text-xl font-semibold text-slate-900">
               This course is on the way
             </h2>

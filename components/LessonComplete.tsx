@@ -64,13 +64,13 @@ export default function LessonComplete({
     <div className="not-prose my-10 flex flex-col gap-3 rounded-xl border border-slate-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
       {done ? (
         <>
-          <p className="flex items-center gap-2 text-sm font-medium text-emerald-700">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-xs">✓</span>
+          <p className="flex items-center gap-2 text-sm font-medium text-brand-700">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-100 text-xs">✓</span>
             Lesson complete
           </p>
           <Link
             href={continueHref}
-            className="shrink-0 rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+            className="shrink-0 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
           >
             {next ? `Next: ${next.title} →` : "Back to course →"}
           </Link>

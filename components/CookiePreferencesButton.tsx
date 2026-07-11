@@ -6,7 +6,7 @@ export default function CookiePreferencesButton() {
   return (
     <button
       onClick={() => window.dispatchEvent(new Event("energy:cookie-settings"))}
-      className="text-slate-400 transition-colors hover:text-slate-700"
+      className="transition-colors hover:text-white"
     >
       Cookie preferences
     </button>

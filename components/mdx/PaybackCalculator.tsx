@@ -29,17 +29,17 @@ export function PaybackCalculator({
     if (years <= 2)
       verdict = {
         label: "Fast payback — usually an easy yes.",
-        cls: "text-emerald-700 bg-emerald-50 border-emerald-200",
+        cls: "text-brand-700 bg-brand-50 border-brand-200",
       };
     else if (years <= 5)
       verdict = {
         label: "Moderate payback — typically attractive.",
-        cls: "text-sky-700 bg-sky-50 border-sky-200",
+        cls: "text-denim-700 bg-denim-50 border-denim-200",
       };
     else
       verdict = {
         label: "Long payback — may need a stronger strategic case.",
-        cls: "text-amber-700 bg-amber-50 border-amber-200",
+        cls: "text-honey-700 bg-honey-50 border-honey-200",
       };
   }
 

@@ -178,13 +178,14 @@ export default async function LessonPage({ params }: Props) {
 
         <hr className="my-8 border-slate-200" />
 
-        <div className="prose prose-slate max-w-none prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-700 prose-a:no-underline hover:prose-a:underline">
+        <div className="prose prose-slate max-w-[70ch] prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-700 prose-a:no-underline hover:prose-a:underline">
           {gated ? (
             <GatedLesson
               course={course}
               lesson={lesson}
               levelLabel={levelLabel}
               levelTitle={level.title}
+              badgeClass={level.accent.badge}
               summary={ctx.lesson.summary}
               preview={preview}
             />
@@ -241,7 +242,7 @@ export default async function LessonPage({ params }: Props) {
               className="group flex flex-1 flex-col rounded-xl border border-brand-200 bg-brand-50 p-4 text-right transition-colors hover:bg-brand-100"
             >
               <span className="text-xs font-medium text-brand-600">
-                You finished the course 🎉
+                Course complete
               </span>
               <span className="mt-0.5 font-medium text-brand-800">
                 Back to course overview
