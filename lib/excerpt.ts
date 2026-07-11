@@ -34,3 +34,20 @@ export function lessonExcerpt(mdxSource: string, maxWords = 120): string {
   if (words.length <= maxWords) return text;
   return `${words.slice(0, maxWords).join(" ")}…`;
 }
+
+/**
+ * Extract a gated lesson's `##` section headings, for the public
+ * "In this lesson" list rendered above the sign-in wall (and therefore in
+ * the crawlable HTML). Headings sell the content without revealing it, so
+ * exposing them is deliberate; the body still only leaves the server via
+ * the authenticated /api/lesson route.
+ */
+export function lessonHeadings(mdxSource: string): string[] {
+  // Strip fenced code blocks so a `##` inside code can't masquerade as a heading.
+  const withoutCode = mdxSource.replace(/```[\s\S]*?```/g, "");
+  const headings: string[] = [];
+  for (const m of withoutCode.matchAll(/^##\s+(.+?)\s*$/gm)) {
+    headings.push(m[1].replace(/[*_`]/g, "").trim());
+  }
+  return headings;
+}

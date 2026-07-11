@@ -9,12 +9,13 @@ import {
   getLessonSource,
   isGated,
 } from "@/lib/content";
-import { lessonExcerpt } from "@/lib/excerpt";
+import { lessonExcerpt, lessonHeadings } from "@/lib/excerpt";
 import { AUTHOR, SITE_NAME, SITE_URL } from "@/lib/siteUrl";
 import { mdxComponents } from "@/components/mdx";
 import GatedLesson from "@/components/GatedLesson";
 import LessonOutline from "@/components/LessonOutline";
 import LessonComplete from "@/components/LessonComplete";
+import FAQList from "@/components/mdx/FAQList";
 
 type Props = { params: Promise<{ course: string; lesson: string }> };
 
@@ -52,11 +53,13 @@ export default async function LessonPage({ params }: Props) {
   // Level 1 is free and rendered statically (public, indexable). Levels 2 & 3,
   // and all Sectors, are gated: their body is fetched client-side from an
   // authenticated API, so the text is never baked into this page's HTML for
-  // signed-out visitors — except a short lead-paragraph excerpt, rendered
-  // statically so the page is indexable and gives visitors a real taste.
+  // signed-out visitors — except two deliberate, limited slices rendered
+  // statically so the page is indexable and gives visitors a real taste:
+  // a short lead-paragraph excerpt, and the list of section headings.
   const gated = isGated(level);
-  const source = gated ? null : await getLessonSource(course, lesson);
-  const preview = gated ? lessonExcerpt(await getLessonSource(course, lesson)) : "";
+  const source = await getLessonSource(course, lesson);
+  const preview = gated ? lessonExcerpt(source) : "";
+  const sections = gated ? lessonHeadings(source) : [];
   const levelHref = level.kind === "sector" ? `/sectors/${level.slug}` : `/levels/${level.slug}`;
   const levelLabel = level.kind === "sector" ? "Sector" : `Level ${level.number}`;
 
@@ -79,6 +82,15 @@ export default async function LessonPage({ params }: Props) {
     },
     timeRequired: `PT${ctx.lesson.minutes}M`,
     ...(ctx.lesson.reviewed && { dateModified: ctx.lesson.reviewed }),
+    // Google's paywalled-content markup: declare the gated section explicitly
+    // so the excerpt-then-wall pattern reads as flexible sampling, not cloaking.
+    ...(gated && {
+      hasPart: {
+        "@type": "WebPageElement",
+        isAccessibleForFree: false,
+        cssSelector: ".lesson-gated-body",
+      },
+    }),
   };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -180,23 +192,31 @@ export default async function LessonPage({ params }: Props) {
 
         <div className="prose prose-slate max-w-[70ch] prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-700 prose-a:no-underline hover:prose-a:underline">
           {gated ? (
-            <GatedLesson
-              course={course}
-              lesson={lesson}
-              levelLabel={levelLabel}
-              levelTitle={level.title}
-              badgeClass={level.accent.badge}
-              summary={ctx.lesson.summary}
-              preview={preview}
-            />
+            <div className="lesson-gated-body">
+              <GatedLesson
+                course={course}
+                lesson={lesson}
+                levelLabel={levelLabel}
+                levelTitle={level.title}
+                badgeClass={level.accent.badge}
+                summary={ctx.lesson.summary}
+                preview={preview}
+                sections={sections}
+              />
+            </div>
           ) : (
             <MDXRemote
-              source={source!}
+              source={source}
               components={mdxComponents}
               options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
             />
           )}
         </div>
+
+        {/* Lesson FAQs render OUTSIDE the gated body, in the server HTML, so
+            signed-out visitors and crawlers always see them (with their
+            FAQPage structured data) even when the lesson itself is locked. */}
+        {ctx.lesson.faqId && <FAQList id={ctx.lesson.faqId} />}
 
         {/* Mark complete & continue */}
         <LessonComplete

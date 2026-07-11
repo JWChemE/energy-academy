@@ -1,9 +1,14 @@
 /**
- * FAQ registry — question/answer sets rendered by <FAQList id="…" /> in
- * lesson MDX, or on a course page via the course's `faqId`. Each render also
- * emits FAQPage structured data, so keep answers self-contained, factual and
- * concise (they may be shown directly in search results). Same registry
- * principle as quizzes: never pass complex data as MDX props.
+ * FAQ registry — question/answer sets rendered by <FAQList id="…" />, wired
+ * up three ways: a course's `faqId` (course page), a lesson's `faqId`
+ * (lesson page, rendered OUTSIDE the gated body so it stays in the public
+ * HTML), or <FAQList id> directly in free-lesson MDX. Gated lessons must use
+ * the lesson `faqId` route — embedding <FAQList> in a gated body hides it
+ * from signed-out visitors and crawlers (validator-enforced). Each render
+ * also emits FAQPage structured data, so keep answers self-contained,
+ * factual and concise (they may be quoted directly in search results and AI
+ * answers). Same registry principle as quizzes: never pass complex data as
+ * MDX props.
  */
 
 export type FaqItem = {

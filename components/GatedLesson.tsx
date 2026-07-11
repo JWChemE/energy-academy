@@ -23,6 +23,7 @@ export default function GatedLesson({
   badgeClass,
   summary,
   preview,
+  sections,
 }: {
   course: string;
   lesson: string;
@@ -37,6 +38,12 @@ export default function GatedLesson({
    * signed-out visitors), and replaced by the full body once it arrives.
    */
   preview?: string;
+  /**
+   * The lesson's `##` section headings, extracted server-side. Shown as an
+   * "In this lesson" list while locked/loading (same crawlability reasoning
+   * as `preview`): the headings sell the lesson without revealing it.
+   */
+  sections?: string[];
 }) {
   const { user, session, loading } = useAuth();
   const [state, setState] = useState<State>("checking");
@@ -91,6 +98,7 @@ export default function GatedLesson({
     return (
       <>
         <Preview text={preview} />
+        <SectionList sections={sections} />
         <Skeleton />
       </>
     );
@@ -100,6 +108,7 @@ export default function GatedLesson({
     return (
       <>
         <Preview text={preview} />
+        <SectionList sections={sections} />
         <Wall
           levelLabel={levelLabel}
           levelTitle={levelTitle}
@@ -132,6 +141,31 @@ function Preview({ text }: { text?: string }) {
         aria-hidden
       />
     </div>
+  );
+}
+
+/** What the reader gets on the other side of the wall, as section headings. */
+function SectionList({ sections }: { sections?: string[] }) {
+  if (!sections || sections.length === 0) return null;
+  return (
+    <section
+      className="not-prose mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+      aria-label="Lesson contents"
+    >
+      <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+        In this lesson
+      </h2>
+      <ul className="mt-3 space-y-2">
+        {sections.map((heading, i) => (
+          <li key={heading} className="flex items-baseline gap-3 text-sm text-slate-700">
+            <span className="shrink-0 font-semibold text-brand-600">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            {heading}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

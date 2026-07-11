@@ -12,7 +12,13 @@
  *   3. Internal links         — every /courses/... link in MDX resolves.
  *   4. Quiz wiring            — every <Quiz id> exists in the registry and
  *                               every registry entry is referenced somewhere.
- *   5. FAQ wiring             — same, for <FAQList id> and course faqId.
+ *   5. FAQ wiring             — same, for <FAQList id>, course faqId and
+ *                               lesson faqId. Gated lessons must not embed
+ *                               <FAQList> in their MDX: the body never
+ *                               reaches signed-out visitors or crawlers, so
+ *                               the FAQs (and their FAQPage schema) would be
+ *                               invisible exactly where they matter. Use the
+ *                               lesson's faqId, rendered outside the gate.
  *   6. Quiz no-tells rules    — answers must not be predictable by position
  *                               or by option length (style guide, bullet 8).
  *   7. House style            — no em-dashes in lesson prose (style guide,
@@ -24,6 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { curriculum, sectors, SECTOR_CATEGORIES, type Course, type Level } from "../content/curriculum";
+import { isGated } from "../lib/content";
 import { quizzes } from "../content/quizzes";
 import { faqs } from "../content/faqs";
 
@@ -102,10 +109,17 @@ const quizIdsUsed = new Set<string>();
 const faqIdsUsed = new Set<string>();
 const oneYearAgo = new Date(Date.now() - 365 * 24 * 3600 * 1000);
 
-for (const { course } of allCourses) {
+for (const { level, course } of allCourses) {
   for (const mod of course.modules) {
     for (const lesson of mod.lessons) {
       const key = `${course.slug}/${lesson.slug}`;
+
+      if (lesson.faqId) {
+        faqIdsUsed.add(lesson.faqId);
+        if (!faqs[lesson.faqId])
+          fail(`${key}: faqId "${lesson.faqId}" not in content/faqs.ts`);
+      }
+
       const file = path.join(COURSES_DIR, course.slug, `${lesson.slug}.mdx`);
       if (!fs.existsSync(file)) continue;
       const src = fs.readFileSync(file, "utf8");
@@ -127,6 +141,12 @@ for (const { course } of allCourses) {
       for (const m of src.matchAll(/<FAQList id="([a-z0-9-]+)"/g)) {
         faqIdsUsed.add(m[1]);
         if (!faqs[m[1]]) fail(`${key}: <FAQList id="${m[1]}"> not in content/faqs.ts`);
+        if (isGated(level))
+          fail(
+            `${key}: <FAQList> inside a gated lesson body is invisible to ` +
+              `signed-out visitors and crawlers; set faqId on the lesson's ` +
+              `curriculum entry instead (rendered outside the gate)`,
+          );
       }
 
       // 7. house style: no em-dashes in lesson prose

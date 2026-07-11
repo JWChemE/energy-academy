@@ -93,18 +93,25 @@ Article + breadcrumb structured data. Good foundations, three gaps to close.
 ### 4a. Lesson-level FAQs rendered outside the gate (the core ask)
 
 The registry (`content/faqs.ts`), the renderer with FAQPage structured data
-(`components/mdx/FAQList.tsx`) and course-level wiring all exist. But the one
-lesson-level use, ESOS, sits inside the gated MDX body, so signed-out
-visitors and crawlers never see it. **Google currently gets no FAQ content
-for the exact lesson the FAQs were written for.**
+(`components/mdx/FAQList.tsx`) and course-level wiring all exist. But there
+was no way to attach FAQs to a *gated* lesson: embedding `<FAQList>` in the
+MDX body only works for free lessons, because a gated body never reaches
+signed-out visitors or crawlers. (An earlier draft of this plan claimed the
+ESOS lesson's FAQ was affected; that was wrong — UK Energy Regulation is a
+Level 1 course, so its body and FAQ were always public. The gap is real for
+every Level 2/3 and Sector lesson, which is where new FAQ sets will go.)
 
 1. Add `faqId?: string` to the lesson entry type in `content/curriculum.ts`.
+   *Done, July 2026.*
 2. Render `<FAQList id={lesson.faqId} />` in the lesson page server
    component, after the gated body / wall, so it is always in the static
-   HTML.
+   HTML. *Done, July 2026.*
 3. Move the ESOS FAQ reference out of `esos.mdx` to the lesson entry.
+   *Done, July 2026.*
 4. Extend the validator's FAQ wiring rules (registry ids referenced by
-   course `faqId`, lesson `faqId`, or MDX, and every reference resolves).
+   course `faqId`, lesson `faqId`, or MDX, and every reference resolves;
+   `<FAQList>` inside a gated lesson body is now a build failure).
+   *Done, July 2026.*
 5. Write FAQ sets for the highest-value gated lessons first (regulation and
    compliance topics; they match how people actually search). Target the
    "People also ask" phrasings.
@@ -119,6 +126,7 @@ quote and cite, which increasingly drives discovery.
 
 - Server-render an **"In this lesson"** list of the H2 headings. Headings
   are keyword-rich, they sell the content, and they give nothing away.
+  *Done, July 2026 (shown above the wall on every gated lesson).*
 - Show **related content** below the wall: the free Level 1 lessons the
   gated lesson builds on, plus relevant reference pages. Free-tier internal
   links from every gated URL strengthen the pages that can actually rank.
@@ -131,7 +139,7 @@ Google's guidance for gated content is to mark the gated portion explicitly:
 pointing at the gated container. We set `isAccessibleForFree` on the whole
 Article but not `hasPart`. Adding it keeps us squarely inside the
 flexible-sampling rules and avoids any risk of the excerpt-then-wall pattern
-being read as cloaking.
+being read as cloaking. *Done, July 2026 (`.lesson-gated-body`).*
 
 ### 4d. Aim links at the free assets, not the gated lessons
 

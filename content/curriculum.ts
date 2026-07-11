@@ -47,6 +47,13 @@ export type Lesson = {
    * search query; the layout template appends "· Energy Academy".
    */
   seoTitle?: string;
+  /**
+   * Key into content/faqs.ts — renders an FAQ section + FAQPage schema on
+   * the lesson page, OUTSIDE the gated body, so it stays in the public HTML
+   * for signed-out visitors and crawlers. Gated lessons must use this
+   * instead of embedding <FAQList> in their MDX (validator-enforced).
+   */
+  faqId?: string;
 };
 
 export type Module = {
@@ -656,6 +663,7 @@ export const curriculum: NumberedLevel[] = [
                 summary: "Who must comply, timing, scope, and what audits must cover.",
                 minutes: 10,
                 reviewed: "2026-07-09",
+                faqId: "esos-phase-4",
               },
               {
                 slug: "secr",

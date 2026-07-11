@@ -3,8 +3,10 @@ import { faqs } from "@/content/faqs";
 /**
  * Renders an FAQ section from the registry in content/faqs.ts, with FAQPage
  * structured data so search engines can show the questions directly. Usable
- * from lesson MDX as <FAQList id="…" /> (registry-id pattern, like Quiz) or
- * from course pages. Server component: no hooks, safe in static HTML.
+ * from free-lesson MDX as <FAQList id="…" /> (registry-id pattern, like
+ * Quiz), from course pages (course `faqId`), or from lesson pages (lesson
+ * `faqId`, rendered outside the gated body so it is always in the public
+ * HTML). Server component: no hooks, safe in static HTML.
  */
 export default function FAQList({ id }: { id: string }) {
   const items = faqs[id];
