@@ -490,9 +490,12 @@ export const curriculum: NumberedLevel[] = [
               {
                 slug: "three-phase-basics",
                 title: "Three-Phase Basics",
-                summary: "Why three-phase is used, phase angles, and line vs phase voltages.",
+                seoTitle: "UK Three-Phase Voltage: 400V or 415V? Explained",
+                summary:
+                  "What three-phase power is, why UK sites use it, and the voltages decoded: 400 V vs 415 V, 230 V vs 240 V, and the √3 linking line to phase.",
                 minutes: 10,
-                reviewed: "2026-07-06",
+                reviewed: "2026-07-11",
+                faqId: "uk-three-phase",
               },
               {
                 slug: "three-phase-power",
@@ -541,8 +544,9 @@ export const curriculum: NumberedLevel[] = [
         slug: "monitoring-and-targeting",
         title: "Monitoring & Targeting (M&T)",
         summary:
-          "Turn meter data into action: baselines, energy signatures, regression against drivers, and exception reporting.",
+          "Turn meter data into action: baselines, energy signatures, regression against drivers, exception reporting, and automatic M&T (aM&T) software.",
         status: "available",
+        faqId: "monitoring-and-targeting",
         modules: [
           {
             slug: "mt-fundamentals",
@@ -627,6 +631,15 @@ export const curriculum: NumberedLevel[] = [
                 summary: "How to spot when consumption is higher than it should be and investigate.",
                 minutes: 10,
                 reviewed: "2026-07-03",
+              },
+              {
+                slug: "automatic-mt",
+                title: "Automatic M&T (aM&T) & Choosing Software",
+                seoTitle: "What Is aM&T? Automatic Monitoring & Targeting Explained",
+                summary:
+                  "What automatic monitoring and targeting (aM&T) adds to manual M&T, how alarms and exception reports should work, and a vendor-neutral checklist for choosing aM&T software.",
+                minutes: 10,
+                reviewed: "2026-07-11",
               },
               {
                 slug: "dashboards",

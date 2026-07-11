@@ -1,0 +1,71 @@
+Everything in this course so far can be done with a spreadsheet, and for a single site with a handful of meters, a spreadsheet is a fine place to start. Automatic monitoring and targeting (aM&T) is the same discipline with the mechanical parts handed to software: readings are collected every half hour without anyone typing them in, each one is compared against what the drivers say it should have been, and the exceptions land in front of a named person while the fault is still running. The judgement stays human. What changes is speed, and in M&T, speed is most of the money.
+
+## What aM&T automates (and what it cannot)
+
+An aM&T system automates four of the five steps you have already met in this course. It collects [meter data](/courses/monitoring-and-targeting/meter-data) automatically, from half-hourly settlement feeds, pulse outputs, or sub-meter networks, and validates it as it arrives, flagging gaps and spikes rather than silently filling them. It calculates expected consumption for each period using the driver relationships covered in [energy signatures and regression](/courses/monitoring-and-targeting/energy-signatures), typically degree days for heating load and production for process load. It compares actual against expected and applies your [exception rules](/courses/monitoring-and-targeting/exception-reporting). And it distributes the results, as alarms, league tables or scheduled reports.
+
+What it cannot do is the fifth step: investigate. Software can say "Building 3 used 40% more gas last night than its signature predicts". It cannot walk to Building 3 and find the valve. Every saving credited to aM&T is actually delivered by the person who reads the exception and acts, which is why the deployment decisions that matter are organisational, not technical.
+
+<Callout variant="key" title="Software automates the arithmetic, not the accountability">
+An aM&T system with nobody assigned to read its exceptions is a subscription, not a saving. Before comparing vendors, decide who will investigate alarms, how many hours a week they have for it, and who they escalate to when a fix needs money. A modest system with an owner outperforms a sophisticated one without.
+</Callout>
+
+## Speed is the saving
+
+Manual M&T against monthly data catches faults in weeks; bills alone catch them in months. Half-hourly data with daily exception reporting catches them the next morning. The value of automation is the waste that does not happen in the gap.
+
+<KeyFigures>
+  <KeyFigure value="12 kW" label="the fault: an AHU left running 24/7" />
+  <KeyFigure value="1,296 kWh" label="wasted per week outside occupied hours" />
+  <KeyFigure value="£3,400" label="avoided by catching it in a day, not a quarter" />
+</KeyFigures>
+
+<WorkedExample title="The stuck air handler">
+<Given>
+After a controls contractor visit, an air handling unit that should run 06:00 to 18:00 on weekdays is left running continuously. Its fans and ancillaries draw 12 kW. Occupied hours are 60 per week, so the fault adds 108 unoccupied running hours a week. Electricity costs £0.20/kWh.
+</Given>
+<Find>
+The cost of the fault if it is caught by the quarterly bill review, versus by a daily exception report.
+</Find>
+<Solution>
+Weekly waste: 108 h × 12 kW = 1,296 kWh, which at £0.20/kWh is £259 a week.
+
+Via the bill: the quarter ends, the invoice arrives and gets reviewed a couple of weeks later, roughly 14 weeks after the fault began. Cost: 14 × £259 ≈ £3,630.
+
+Via aM&T: the overnight consumption breaches the expected-value band on day one, the exception is in the morning report, and the schedule is corrected within the week. Cost: about £259.
+
+The automation avoided roughly £3,370, from one fault, on one air handler. Left unfound for a year it would have wasted 67,000 kWh, about £13,500. Sites accumulate several faults like this a year; that is why aM&T systems usually pay for themselves quickly, and why the payback claim should always be tested against your own data.
+</Solution>
+</WorkedExample>
+
+## Alarms people actually read
+
+The failure mode of aM&T is not missed faults but ignored alarms. A system that emails fifty exceptions a day trains everyone to delete them, and the real fault drowns in the noise. Three design rules keep exception reporting useful:
+
+- **Threshold on significance, not just percentage.** Flag a period when it is both a meaningful percentage above expected (say 10%) *and* a meaningful absolute quantity (a kWh or £ floor). A 30% exception on a tiny kitchen sub-meter is not worth a morning's investigation; 5% on the site incomer is.
+- **Route each meter to a named owner.** An alarm sent to a shared inbox is sent to nobody. The owner needs enough site knowledge to judge "expected" against reality: the person who knows a product changeover ran last night.
+- **Prefer a daily or weekly digest to real-time alerts.** Energy faults are rarely emergencies; a ranked morning list of the five biggest exceptions gets read, and it builds the investigation habit. Real-time alerts belong on the few meters where waste accumulates fast.
+
+A good discipline is to review the alarm log quarterly: if more than a small fraction of exceptions led to an investigation, tighten the thresholds; if alarms are being closed without comment, the routing or the ownership is wrong.
+
+## Choosing software: a vendor-neutral checklist
+
+The UK market offers many aM&T platforms, and most look identical in a sales demo because demos are made of dashboards. The differences that matter show up later, so test for them explicitly:
+
+- **Data collection from the meters you already have.** Half-hourly electricity and gas feeds, pulse and Modbus inputs for sub-meters, and manual-read support for the stragglers. Ask exactly how each of your meters would get its data in, and what that costs per meter.
+- **Gaps handled honestly.** Missing data should be flagged and estimated visibly, never silently filled. Ask to see what a week with a dead logger looks like.
+- **Expected values from drivers, not just history.** Comparison against "same period last year" is not M&T. The system should fit consumption against degree days, production or occupancy, and show you the regression it is using.
+- **Configurable exception rules** with percentage and absolute thresholds, per-meter ownership and an audit trail of what was investigated.
+- **Open data export.** Your readings, exportable in bulk (CSV or API), at no extra charge. This is the anti-lock-in test: if leaving the platform means losing your history, negotiate before you depend on it.
+- **Tariffs and carbon factors kept current**, so £ and CO₂e reporting tracks reality without manual maintenance.
+- **Pricing that scales both ways.** Per-meter or per-site pricing you can reduce if you consolidate, not just grow.
+
+Then trial the shortlisted system on one real site with your own data for a month before committing. The evaluation question is not "are the dashboards attractive?" but "did it find something we did not know?". A platform that surfaces nothing on a site it has never seen is unlikely to improve with familiarity.
+
+Once the exceptions are flowing, the remaining job is communication: turning the data into something managers and operators act on, which is where the next lesson on [dashboards and communication](/courses/monitoring-and-targeting/dashboards) picks up.
+
+## Sources and further reading
+
+- [Carbon Trust](https://www.carbontrust.com/) guidance on energy monitoring, targeting and management systems.
+- [ISO 50001 family](https://www.iso.org/iso-50001-energy-management.html), including ISO 50006 on baselines and energy performance indicators, which formalises the expected-value comparisons aM&T automates.
+- [CIBSE](https://www.cibse.org/) knowledge series on energy monitoring and building performance.

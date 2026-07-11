@@ -12,8 +12,11 @@
  *   3. Internal links         — every /courses/... link in MDX resolves.
  *   4. Quiz wiring            — every <Quiz id> exists in the registry and
  *                               every registry entry is referenced somewhere.
- *   5. FAQ wiring             — same, for <FAQList id>, course faqId and
- *                               lesson faqId. Gated lessons must not embed
+ *   5. FAQ wiring             — same, for <FAQList id>, course faqId, lesson
+ *                               faqId, and direct <FAQList id> uses in app/
+ *                               pages (standalone resource pages render the
+ *                               FAQ in their server component). Gated
+ *                               lessons must not embed
  *                               <FAQList> in their MDX: the body never
  *                               reaches signed-out visitors or crawlers, so
  *                               the FAQs (and their FAQPage schema) would be
@@ -160,6 +163,25 @@ for (const { level, course } of allCourses) {
   if (course.faqId) {
     faqIdsUsed.add(course.faqId);
     if (!faqs[course.faqId]) fail(`course ${course.slug}: faqId "${course.faqId}" not in content/faqs.ts`);
+  }
+}
+
+// FAQ references from app/ pages (standalone resource/reference pages render
+// <FAQList id> directly in their server components).
+{
+  const walk = (dir: string): string[] =>
+    fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) return walk(full);
+      return entry.name.endsWith(".tsx") ? [full] : [];
+    });
+  for (const file of walk(path.join(ROOT, "app"))) {
+    const src = fs.readFileSync(file, "utf8");
+    for (const m of src.matchAll(/<FAQList id="([a-z0-9-]+)"/g)) {
+      faqIdsUsed.add(m[1]);
+      if (!faqs[m[1]])
+        fail(`${path.relative(ROOT, file)}: <FAQList id="${m[1]}"> not in content/faqs.ts`);
+    }
   }
 }
 

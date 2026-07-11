@@ -5,9 +5,10 @@ import Link from "next/link";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 /**
- * The Energy Audit Checklist lead magnet. The intro and first section are
- * public (and indexable via the server page's metadata); the full checklist
- * unlocks when the visitor subscribes through the capture form.
+ * The Energy Audit Checklist lead magnet. The intro and the first two
+ * sections are public (indexable proof of quality for searchers landing on
+ * "commercial energy audit checklist"); the remaining sections unlock when
+ * the visitor subscribes through the capture form.
  */
 
 type Item = string;
@@ -81,8 +82,8 @@ const SECTIONS: Section[] = [
 
 export default function ChecklistClient() {
   const [unlocked, setUnlocked] = useState(false);
-  const publicSection = SECTIONS[0];
-  const gatedSections = SECTIONS.slice(1);
+  const publicSections = SECTIONS.slice(0, 2);
+  const gatedSections = SECTIONS.slice(2);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
@@ -90,7 +91,7 @@ export default function ChecklistClient() {
         Free resource
       </p>
       <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-        The Energy Audit Checklist
+        The Commercial Energy Audit Checklist
       </h1>
       <p className="mt-4 text-lg leading-8 text-slate-600">
         Everything to check before, during and after a site energy audit — scoping, the
@@ -102,8 +103,10 @@ export default function ChecklistClient() {
         .
       </p>
 
-      {/* Section 1 is free — proof of quality before the ask. */}
-      <ChecklistSection section={publicSection} />
+      {/* Sections 1–2 are free — proof of quality before the ask. */}
+      {publicSections.map((s) => (
+        <ChecklistSection key={s.title} section={s} />
+      ))}
 
       {!unlocked ? (
         <>
